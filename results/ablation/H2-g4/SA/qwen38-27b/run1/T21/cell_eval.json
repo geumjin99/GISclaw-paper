@@ -1,0 +1,145 @@
+{
+ "cell_id": "ablation.H2-g4.SA.qwen38-27b.r1.T21",
+ "task": 21,
+ "status": "ok",
+ "analytically_correct": true,
+ "scorer_error": false,
+ "checks": [
+  {
+   "name": "landCover_reclassified: file present",
+   "passed": true,
+   "value": "landCover_reclassified.tif",
+   "threshold": [
+    "landCover_reclassified.tif",
+    "landCover_reclassified.tiff"
+   ],
+   "required": true,
+   "note": ""
+  },
+  {
+   "name": "landCover_reclassified: georeferencing preserved",
+   "passed": true,
+   "value": {
+    "shape": [
+     2494,
+     3062
+    ],
+    "crs": "EPSG:26911",
+    "origin": [
+     307049.43822125107,
+     3837890.3523405134
+    ]
+   },
+   "threshold": {
+    "shape": [
+     2494,
+     3062
+    ],
+    "origin": [
+     307049.43822125107,
+     3837890.3523405134
+    ]
+   },
+   "required": true,
+   "note": ""
+  },
+  {
+   "name": "landCover_reclassified: tabulated values (>=99.5 % of mapped cells, and of every class)",
+   "passed": true,
+   "value": {
+    "pooled": 1.0,
+    "worst_class": 1.0
+   },
+   "threshold": 0.995,
+   "required": true,
+   "note": ""
+  },
+  {
+   "name": "protected_status_reclassified: file present",
+   "passed": true,
+   "value": "protected_status_reclassified.tif",
+   "threshold": [
+    "protected_status_reclassified.tif",
+    "protected_status_reclassified.tiff"
+   ],
+   "required": true,
+   "note": ""
+  },
+  {
+   "name": "protected_status_reclassified: georeferencing preserved",
+   "passed": true,
+   "value": {
+    "shape": [
+     2494,
+     3062
+    ],
+    "crs": "EPSG:26911",
+    "origin": [
+     307049.43822125107,
+     3837890.3523405134
+    ]
+   },
+   "threshold": {
+    "shape": [
+     2494,
+     3062
+    ],
+    "origin": [
+     307049.43822125107,
+     3837890.3523405134
+    ]
+   },
+   "required": true,
+   "note": ""
+  },
+  {
+   "name": "protected_status_reclassified: tabulated values (>=99.5 % of mapped cells, and of every class)",
+   "passed": true,
+   "value": {
+    "pooled": 1.0,
+    "worst_class": 1.0
+   },
+   "threshold": 0.995,
+   "required": true,
+   "note": ""
+  },
+  {
+   "name": "deliverable files carry a CRS (uniform rule)",
+   "passed": true,
+   "value": [
+    "landCover_reclassified.tif",
+    "protected_status_reclassified.tif"
+   ],
+   "threshold": "every geographic deliverable file has a CRS",
+   "required": true,
+   "note": "2 geographic deliverable file(s), all with a CRS"
+  }
+ ],
+ "replay": {
+  "success": true,
+  "outputs": [
+   "landCover_reclassified.tif",
+   "protected_status_reclassified.tif"
+  ],
+  "events": [],
+  "blocks_ok": 9,
+  "block_outcome": [
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok"
+  ],
+  "step_timeout_s": 900,
+  "same_outputs_as_original": true,
+  "block_mismatches": []
+ },
+ "replay_faithful": true,
+ "replay_unfaithful_reasons": [],
+ "replay_container_failure": [],
+ "emergency_files": []
+}

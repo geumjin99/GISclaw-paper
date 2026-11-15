@@ -1,0 +1,31 @@
+{
+ "task": 23,
+ "title": "Assess open space to lower flood insurance cost (PAD-US, Georgetown County SC)",
+ "output_type": "raster (GeoTIFF) + vector (shapefile with area attributes)",
+ "required_outputs": [
+  "open_space.tif",
+  "open_space.shp"
+ ],
+ "method": "PADUS_CRS_clip_1.tif is a thematic raster of PAD-US unit OBJECTIDs (EPSG:5070, 30 m) with NoData 2147483648. Reclassify valid PAD-US cells to 1 (open space) and NoData to 0, write open_space.tif, vectorize class 1 into polygons, attach per-polygon area (m2, acres, and acres x 0.85 for the lesson's 85 % accuracy factor) and report the total: 294 448 cells = 265.00 km2 = 65 484 acres (55 661 acres adjusted).",
+ "key_parameters": {
+  "threshold": "valid PAD-US id (value != NoData 2147483648) -> 1",
+  "cell_area_m2": 900,
+  "connectivity": "4 (8 accepted)",
+  "area_units": "m2 / acres / acres*0.85"
+ },
+ "benchmark_defects": [
+  "The benchmark distributes GeorgetownCo_Parcels and PADUS_CRS_attrib only as .lyrx layer files; here they are supplied as data. The instruction asks only for reclassify + vectorize + total area (it does not use the parcels); the parcel-level zonal statistics of the Human Designed Workflow are not part of the instruction and are not judged.",
+  "Dataset description refers to PADUS_CRS_final.tif; the file supplied (and named in the instruction) is PADUS_CRS_clip_1.tif.",
+  "'reclassify based on a threshold' is ambiguous: the raster holds protected-area IDs, so the only meaningful threshold is valid vs NoData; thresholding the ID values is meaningless.",
+  "Domain knowledge mentions NLCD impervious-surface accuracy (85 %), which only makes sense for the parcel-level acreage of the original lesson."
+ ],
+ "checks": [
+  "required: open_space.tif present",
+  "required: open-space cells (==1 / >0) agree with gold, IoU >= 0.95 (pred warped to gold grid if needed)",
+  "required: open-space polygons present (shp/gpkg/geojson, non-empty)",
+  "required: polygon union area IoU with gold >= 0.95 (class-1 only if a 0/1 class column exists)",
+  "required: an area attribute equal to the equal-area (EPSG:5070) polygon area in m2/km2/ha/acres/sq ft/sq mi (x0.85 allowed): per polygon median rel. error <= 3 % and r >= 0.99, or the total +/-3 % for < 3 features (square degrees / cell counts fail)",
+  "optional: polygon geometries >= 99 % valid",
+  "required (the instruction asks for the total area): total of the area attribute equals the gold total in a common unit (m2, km2, ha, acres, sq ft, sq mi; x0.85 allowed), +/-3 %"
+ ]
+}

@@ -1,0 +1,107 @@
+{
+ "cell_id": "main.H1.SA.claude-opus-5-5.r1.T13",
+ "experiment": "main",
+ "tier": "H1",
+ "arch": "SA",
+ "model": "claude-opus-5-5",
+ "run": 1,
+ "task": 13,
+ "elapsed_s": 17.0,
+ "protocol": "native",
+ "tier_config": {
+  "tools": [
+   "list_files",
+   "load_vector",
+   "load_raster",
+   "inspect",
+   "execute",
+   "finish"
+  ],
+  "generic": true,
+  "g1": false,
+  "g2": false,
+  "g3": false,
+  "g4": false,
+  "g5": false,
+  "g6": false,
+  "g7": false,
+  "no_dd": false,
+  "no_dk": false
+ },
+ "outputs": [
+  "ocean_profiles_vis.png"
+ ],
+ "required_outputs": [
+  "ocean_profiles_vis.png"
+ ],
+ "required_present": true,
+ "emergency_files": [],
+ "rounds": 4,
+ "self_corrections": 0,
+ "agent_stats": {
+  "rounds": 4,
+  "format_errors": 0,
+  "format_error_kinds": {},
+  "self_corrections": 0,
+  "exec_blocks": 3,
+  "exec_failed": 0,
+  "finish_rejections": 0,
+  "dedup_blocked": 0,
+  "triggers": {},
+  "checks_run": {},
+  "end_reason": "finish",
+  "empty_retries": 0,
+  "history_truncations": 0,
+  "finished": true,
+  "agent_time_s": 0.5
+ },
+ "llm_stats": {
+  "calls": 4,
+  "retries": 0,
+  "errors": 0,
+  "context_overflow": 0,
+  "empty": 0,
+  "refusals": 0,
+  "prompt_tokens": 10,
+  "completion_tokens": 1249,
+  "cached_tokens": 9648,
+  "cache_write_tokens": 4797
+ },
+ "llm_time_s": 15.6,
+ "agent_time_s": 0.5,
+ "hit_deadline": false,
+ "sandbox_events": [],
+ "inputs_intact": true,
+ "container_memory": "12g",
+ "deliverable_produced": true,
+ "config": {
+  "image": "gisclaw-exec:1.0",
+  "step_timeout_s": 300,
+  "task_wall_s": 1200,
+  "max_rounds": 50,
+  "blocked_packages": {
+   "arcpy": "Use geopandas + rasterio + shapely instead."
+  },
+  "agent": {
+   "history_tokens": 60000,
+   "max_format_errors": 15
+  }
+ },
+ "model_config": {
+  "provider": "anthropic",
+  "model_name": "claude-opus-5-5",
+  "request": {
+   "set": {
+    "max_tokens": 32000,
+    "thinking": {
+     "type": "adaptive",
+     "display": "summarized"
+    },
+    "output_config": {
+     "effort": "high"
+    }
+   }
+  },
+  "history_tokens": 700000
+ }
+}

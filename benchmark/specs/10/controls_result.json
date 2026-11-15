@@ -1,0 +1,224 @@
+[
+ {
+  "control": "correct_deforested_union_get_parts",
+  "expected_correct": true,
+  "judged_correct": true,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [],
+  "scorer_error": false
+ },
+ {
+  "control": "correct_exploded_deforestation",
+  "expected_correct": true,
+  "judged_correct": true,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [],
+  "scorer_error": false
+ },
+ {
+  "control": "correct_hand_built_poly_line_collections",
+  "expected_correct": true,
+  "judged_correct": true,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [],
+  "scorer_error": false
+ },
+ {
+  "control": "correct_ifexp_helper_layers_inset_zoom",
+  "expected_correct": true,
+  "judged_correct": true,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [],
+  "scorer_error": false
+ },
+ {
+  "control": "correct_ifexp_helper_layers_overview_map",
+  "expected_correct": true,
+  "judged_correct": true,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [],
+  "scorer_error": false
+ },
+ {
+  "control": "correct_layers_dict_unpack",
+  "expected_correct": true,
+  "judged_correct": true,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [],
+  "scorer_error": false
+ },
+ {
+  "control": "correct_risk_minus_protected_forest",
+  "expected_correct": true,
+  "judged_correct": true,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [],
+  "scorer_error": false
+ },
+ {
+  "control": "correct_roads_nan_array_axplot",
+  "expected_correct": true,
+  "judged_correct": true,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [],
+  "scorer_error": false
+ },
+ {
+  "control": "correct_shapely_risk_geometry_no_crs",
+  "expected_correct": true,
+  "judged_correct": true,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [],
+  "scorer_error": false
+ },
+ {
+  "control": "correct_utm20_clip_protected",
+  "expected_correct": true,
+  "judged_correct": true,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [],
+  "scorer_error": false
+ },
+ {
+  "control": "wrong_benchmark_script_deforested_not_drawn",
+  "expected_correct": false,
+  "judged_correct": false,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [
+   "context layers drawn (existing roads, protected forest, deforested area)"
+  ],
+  "scorer_error": false
+ },
+ {
+  "control": "wrong_buffer_only",
+  "expected_correct": false,
+  "judged_correct": false,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [
+   "risky area = planned-road buffer minus deforested (or within protected forest)"
+  ],
+  "scorer_error": false
+ },
+ {
+  "control": "wrong_context_loaded_not_drawn",
+  "expected_correct": false,
+  "judged_correct": false,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [
+   "context layers drawn (existing roads, protected forest, deforested area)"
+  ],
+  "scorer_error": false
+ },
+ {
+  "control": "wrong_degree_buffer_intersection",
+  "expected_correct": false,
+  "judged_correct": false,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [
+   "risky area = planned-road buffer minus deforested (or within protected forest)"
+  ],
+  "scorer_error": false
+ },
+ {
+  "control": "wrong_dict_layers_helper_deforested_not_drawn",
+  "expected_correct": false,
+  "judged_correct": false,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [
+   "context layers drawn (existing roads, protected forest, deforested area)"
+  ],
+  "scorer_error": false
+ },
+ {
+  "control": "wrong_hand_built_collections_products_only",
+  "expected_correct": false,
+  "judged_correct": false,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [
+   "context layers drawn (existing roads, protected forest, deforested area)"
+  ],
+  "scorer_error": false
+ },
+ {
+  "control": "wrong_risk_ignores_deforestation",
+  "expected_correct": false,
+  "judged_correct": false,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [
+   "risky area = planned-road buffer minus deforested (or within protected forest)"
+  ],
+  "scorer_error": false
+ },
+ {
+  "control": "wrong_risk_minus_protected_15km_buffer",
+  "expected_correct": false,
+  "judged_correct": false,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [
+   "risky area = planned-road buffer minus deforested (or within protected forest)"
+  ],
+  "scorer_error": false
+ },
+ {
+  "control": "wrong_risk_parts_deforested_not_drawn",
+  "expected_correct": false,
+  "judged_correct": false,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [
+   "context layers drawn (existing roads, protected forest, deforested area)"
+  ],
+  "scorer_error": false
+ },
+ {
+  "control": "wrong_risk_whole_buffer_minus_protected",
+  "expected_correct": false,
+  "judged_correct": false,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [
+   "risky area = planned-road buffer minus deforested (or within protected forest)"
+  ],
+  "scorer_error": false
+ },
+ {
+  "control": "wrong_roads_near_buffer_only_axplot",
+  "expected_correct": false,
+  "judged_correct": false,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [
+   "context layers drawn (existing roads, protected forest, deforested area)"
+  ],
+  "scorer_error": false
+ },
+ {
+  "control": "wrong_shapely_buffer_minus_protected_no_crs",
+  "expected_correct": false,
+  "judged_correct": false,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [
+   "risky area = planned-road buffer minus deforested (or within protected forest)"
+  ],
+  "scorer_error": false
+ }
+]

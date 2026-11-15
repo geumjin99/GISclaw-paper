@@ -1,0 +1,130 @@
+{
+ "cell_id": "main.H2.DA.claude-opus-5-5.r2.T30",
+ "task": 30,
+ "status": "ok",
+ "analytically_correct": true,
+ "scorer_error": false,
+ "checks": [
+  {
+   "name": "map written (non-blank PNG)",
+   "passed": true,
+   "value": [
+    "bike_routes_map.png"
+   ],
+   "threshold": null,
+   "required": false,
+   "note": ""
+  },
+  {
+   "name": "proposed routes cover the three designated corridors",
+   "passed": true,
+   "value": {
+    "Central": 1.0,
+    "East": 1.0,
+    "West": 1.0
+   },
+   "threshold": ">=0.5 each",
+   "required": true,
+   "note": "bike_routes@final; 5.39 mi near Capitol Hill (gold 5.37)"
+  },
+  {
+   "name": "precision: proposed length lies on designated corridors",
+   "passed": true,
+   "value": 1.0,
+   "threshold": 0.5,
+   "required": false,
+   "note": ""
+  },
+  {
+   "name": "map shows the proposed routes",
+   "passed": true,
+   "value": 1.0,
+   "threshold": 0.5,
+   "required": false,
+   "note": "share of proposed route segments whose bbox matches a drawn path"
+  },
+  {
+   "name": "half-mile coverage of Capitol Hill matches gold",
+   "passed": true,
+   "value": null,
+   "threshold": "IoU>=0.85 (clipped to Capitol Hill) or share in [0.95, 0.983]",
+   "required": true,
+   "note": "ch_pct = 96.765"
+  },
+  {
+   "name": "network analysis performed (graph shortest paths)",
+   "passed": true,
+   "value": [
+    "networkx",
+    "nx."
+   ],
+   "threshold": null,
+   "required": true,
+   "note": "instructed: 'Use Network Analyst to propose new routes'"
+  },
+  {
+   "name": "existing trail length in Capitol Hill measured",
+   "passed": false,
+   "value": null,
+   "threshold": null,
+   "required": false,
+   "note": "5227 ft / 0.99 mi / 1593 m"
+  },
+  {
+   "name": "deliverable files carry a CRS (uniform rule)",
+   "passed": true,
+   "value": [
+    "arterials.geojson",
+    "half_mile_buffer.geojson",
+    "proposed_bike_routes.geojson"
+   ],
+   "threshold": "every geographic deliverable file has a CRS",
+   "required": true,
+   "note": "3 geographic deliverable file(s), all with a CRS"
+  }
+ ],
+ "replay": {
+  "success": true,
+  "outputs": [
+   "arterials.geojson",
+   "bike_routes_map.png",
+   "coverage_metrics.csv",
+   "half_mile_buffer.geojson",
+   "proposed_bike_routes.geojson"
+  ],
+  "events": [],
+  "blocks_ok": 23,
+  "block_outcome": [
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok"
+  ],
+  "step_timeout_s": 900,
+  "same_outputs_as_original": true,
+  "block_mismatches": []
+ },
+ "replay_faithful": true,
+ "replay_unfaithful_reasons": [],
+ "replay_container_failure": [],
+ "emergency_files": []
+}

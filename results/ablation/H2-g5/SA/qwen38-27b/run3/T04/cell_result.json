@@ -1,0 +1,111 @@
+{
+ "cell_id": "ablation.H2-g5.SA.qwen38-27b.r3.T04",
+ "experiment": "ablation",
+ "tier": "H2-g5",
+ "arch": "SA",
+ "model": "qwen38-27b",
+ "run": 3,
+ "task": 4,
+ "elapsed_s": 1935.8,
+ "protocol": "native",
+ "tier_config": {
+  "tools": [
+   "list_files",
+   "load_vector",
+   "load_raster",
+   "inspect",
+   "execute",
+   "lookup_api",
+   "finish"
+  ],
+  "generic": true,
+  "g1": true,
+  "g2": true,
+  "g3": true,
+  "g4": true,
+  "g5": false,
+  "g6": true,
+  "g7": true,
+  "no_dd": false,
+  "no_dk": false
+ },
+ "outputs": [
+  "undeveloped_areas.tif"
+ ],
+ "required_outputs": [
+  "undeveloped_areas.tif"
+ ],
+ "required_present": true,
+ "emergency_files": [],
+ "rounds": 21,
+ "self_corrections": 2,
+ "agent_stats": {
+  "rounds": 21,
+  "format_errors": 0,
+  "format_error_kinds": {},
+  "self_corrections": 2,
+  "exec_blocks": 19,
+  "exec_failed": 4,
+  "finish_rejections": 0,
+  "dedup_blocked": 0,
+  "triggers": {
+   "g1:card": 1,
+   "g2:nodata_unmasked": 2,
+   "g2:grid_mismatch": 2,
+   "g6:suggest": 1
+  },
+  "checks_run": {
+   "g2": 19,
+   "g3": 20,
+   "g7": 19,
+   "g6": 4,
+   "g4": 4
+  },
+  "end_reason": "finish",
+  "empty_retries": 0,
+  "history_truncations": 0,
+  "finished": true,
+  "agent_time_s": 12.1
+ },
+ "llm_stats": {
+  "calls": 21,
+  "retries": 0,
+  "errors": 0,
+  "context_overflow": 0,
+  "empty": 0,
+  "prompt_tokens": 281333,
+  "completion_tokens": 77531,
+  "reasoning_tokens": 67786,
+  "cached_tokens": 0
+ },
+ "llm_time_s": 1922.6,
+ "agent_time_s": 12.1,
+ "hit_deadline": false,
+ "sandbox_events": [],
+ "inputs_intact": true,
+ "container_memory": "12g",
+ "deliverable_produced": true,
+ "config": {
+  "image": "gisclaw-exec:1.0",
+  "step_timeout_s": 300,
+  "task_wall_s": 1200,
+  "max_rounds": 50,
+  "blocked_packages": {
+   "arcpy": "Use geopandas + rasterio + shapely instead."
+  },
+  "agent": {
+   "history_tokens": 60000,
+   "max_format_errors": 15
+  }
+ },
+ "model_config": {
+  "provider": "vllm",
+  "model_name": "qwen3.8-27b-fp8",
+  "request": {
+   "set": {
+    "max_tokens": 32768,
+    "temperature": 1.0
+   }
+  }
+ }
+}

@@ -1,0 +1,20 @@
+{
+ "task": 42,
+ "source": "instruction: 'save the output as \"moran_local.png\"'; checks.py file_exists(moran_local.png variants) + png_not_blank; LISA data checks use captured objects",
+ "deliverables": [
+  {
+   "id": "map",
+   "kind": "figure",
+   "patterns": [
+    "moran_local.png"
+   ],
+   "required": true,
+   "crs_required": false,
+   "checked_by": [
+    "required output present",
+    "map not blank"
+   ]
+  }
+ ],
+ "not_deliverables": []
+}

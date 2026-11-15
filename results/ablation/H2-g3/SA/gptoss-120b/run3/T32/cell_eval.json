@@ -1,0 +1,89 @@
+{
+ "cell_id": "ablation.H2-g3.SA.gptoss-120b.r3.T32",
+ "task": 32,
+ "status": "ok",
+ "analytically_correct": false,
+ "scorer_error": false,
+ "checks": [
+  {
+   "name": "required output present",
+   "passed": true,
+   "value": [
+    "optimal_path.png"
+   ],
+   "threshold": [
+    "optimal_path.png",
+    "Optimal_path.png",
+    "optimal_path.PNG"
+   ],
+   "required": true,
+   "note": ""
+  },
+  {
+   "name": "map not blank",
+   "passed": true,
+   "value": 43.44222834814846,
+   "threshold": ">=3 grey-level std",
+   "required": true,
+   "note": ""
+  },
+  {
+   "name": "cost surface = weighted sum of ruggedness, road-distance, land-cover and protection costs",
+   "passed": false,
+   "value": "R2=0.968; weights rug=0.06 landcover=0.06 protected=0.68 roads=0.33 (all roads, linear; ruggedness MSLarge; presence from max-R2 fit (all roads, linear; ruggedness linear): partial r [0.36, 0.19, 0.94, 0.83]); partial r [0.27, 0.27, 0.94, 0.82]",
+   "threshold": "R2>=0.75, every weight>=0.08, every partial r>=0.35",
+   "required": true,
+   "note": "final_cost@final"
+  },
+  {
+   "name": "corridors follow gold least-cost paths (recall & precision >= 0.80 within 1.5 km)",
+   "passed": true,
+   "value": "recall=0.97, precision=0.38",
+   "threshold": "recall>=0.80 and precision>=0.80, or recall>=0.90 and precision>=0.35 (superset network)",
+   "required": true,
+   "note": "paths_gdf@final"
+  },
+  {
+   "name": "map draws the corridors",
+   "passed": true,
+   "value": null,
+   "threshold": "figure lines pass check 3, or drawn path boxes cover/precision >= 0.80",
+   "required": true,
+   "note": "fig_ax0_coll1_paths_bbox@save00 (cover=1.00, boxes on corridors=1.00)"
+  },
+  {
+   "name": "deliverable files carry a CRS (uniform rule)",
+   "passed": true,
+   "value": [],
+   "threshold": "every geographic deliverable file has a CRS",
+   "required": true,
+   "note": "no geographic deliverable file written (presence is judged by the task checks)"
+  }
+ ],
+ "replay": {
+  "success": true,
+  "outputs": [
+   "optimal_path.png"
+  ],
+  "events": [],
+  "blocks_ok": 9,
+  "block_outcome": [
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok"
+  ],
+  "step_timeout_s": 900,
+  "same_outputs_as_original": true,
+  "block_mismatches": []
+ },
+ "replay_faithful": true,
+ "replay_unfaithful_reasons": [],
+ "replay_container_failure": [],
+ "emergency_files": []
+}

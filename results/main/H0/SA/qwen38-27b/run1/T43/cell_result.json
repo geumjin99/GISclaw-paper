@@ -1,0 +1,128 @@
+{
+ "cell_id": "main.H0.SA.qwen38-27b.r1.T43",
+ "experiment": "main",
+ "tier": "H0",
+ "arch": "SA",
+ "model": "qwen38-27b",
+ "run": 1,
+ "task": 43,
+ "elapsed_s": 1488.1,
+ "protocol": "native",
+ "tier_config": {
+  "tools": [
+   "execute",
+   "finish"
+  ],
+  "generic": false,
+  "g1": false,
+  "g2": false,
+  "g3": false,
+  "g4": false,
+  "g5": false,
+  "g6": false,
+  "g7": false,
+  "no_dd": false,
+  "no_dk": false
+ },
+ "outputs": [
+  "_diag.png",
+  "elk_convex_hull_home_ranges.cpg",
+  "elk_convex_hull_home_ranges.dbf",
+  "elk_convex_hull_home_ranges.prj",
+  "elk_convex_hull_home_ranges.shp",
+  "elk_convex_hull_home_ranges.shx",
+  "elk_dbscan_clusters.cpg",
+  "elk_dbscan_clusters.dbf",
+  "elk_dbscan_clusters.prj",
+  "elk_dbscan_clusters.shp",
+  "elk_dbscan_clusters.shx",
+  "elk_dbscan_clusters_stats.csv",
+  "elk_dbscan_kdistance.png",
+  "elk_dbscan_points.cpg",
+  "elk_dbscan_points.dbf",
+  "elk_dbscan_points.prj",
+  "elk_dbscan_points.shp",
+  "elk_dbscan_points.shx",
+  "elk_habitat_selection_ratio.tif",
+  "elk_kernel_density_availability.tif",
+  "elk_kernel_density_use.tif",
+  "elk_minimum_bounding_geometry.cpg",
+  "elk_minimum_bounding_geometry.dbf",
+  "elk_minimum_bounding_geometry.prj",
+  "elk_minimum_bounding_geometry.shp",
+  "elk_minimum_bounding_geometry.shx",
+  "elk_study_wide_convex_hull.cpg",
+  "elk_study_wide_convex_hull.dbf",
+  "elk_study_wide_convex_hull.prj",
+  "elk_study_wide_convex_hull.shp",
+  "elk_study_wide_convex_hull.shx",
+  "home_range_stats.csv"
+ ],
+ "required_outputs": [],
+ "required_present": null,
+ "emergency_files": [],
+ "rounds": 50,
+ "self_corrections": 8,
+ "agent_stats": {
+  "rounds": 50,
+  "format_errors": 0,
+  "format_error_kinds": {},
+  "self_corrections": 8,
+  "exec_blocks": 50,
+  "exec_failed": 16,
+  "finish_rejections": 0,
+  "dedup_blocked": 0,
+  "triggers": {},
+  "checks_run": {},
+  "end_reason": "max_rounds",
+  "empty_retries": 0,
+  "history_truncations": 0,
+  "finished": false,
+  "agent_time_s": 351.5
+ },
+ "llm_stats": {
+  "calls": 50,
+  "retries": 0,
+  "errors": 0,
+  "context_overflow": 0,
+  "empty": 0,
+  "prompt_tokens": 941757,
+  "completion_tokens": 41591,
+  "reasoning_tokens": 27437,
+  "cached_tokens": 0
+ },
+ "llm_time_s": 1135.6,
+ "agent_time_s": 351.5,
+ "hit_deadline": false,
+ "sandbox_events": [
+  {
+   "event": "timeout_interrupted"
+  }
+ ],
+ "inputs_intact": true,
+ "container_memory": "12g",
+ "deliverable_produced": false,
+ "config": {
+  "image": "gisclaw-exec:1.0",
+  "step_timeout_s": 300,
+  "task_wall_s": 1200,
+  "max_rounds": 50,
+  "blocked_packages": {
+   "arcpy": "Use geopandas + rasterio + shapely instead."
+  },
+  "agent": {
+   "history_tokens": 60000,
+   "max_format_errors": 15
+  }
+ },
+ "model_config": {
+  "provider": "vllm",
+  "model_name": "qwen3.8-27b-fp8",
+  "request": {
+   "set": {
+    "max_tokens": 32768,
+    "temperature": 1.0
+   }
+  }
+ }
+}

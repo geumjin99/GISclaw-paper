@@ -1,0 +1,127 @@
+{
+ "cell_id": "ablation.H2-g1.SA.qwen38-27b.r1.T41",
+ "task": 41,
+ "status": "ok",
+ "analytically_correct": false,
+ "scorer_error": false,
+ "checks": [
+  {
+   "name": "result file written to pred_results",
+   "passed": true,
+   "value": [
+    "Campground_DataQuality_Report.csv",
+    "CampsiteData.gpkg",
+    "Campsites_JoinedFacilities.csv",
+    "Campsites_RelatedAttributes.csv",
+    "README.md",
+    "RelationshipClasses.csv"
+   ],
+   "threshold": "any non-empty file",
+   "required": true,
+   "note": ""
+  },
+  {
+   "name": "one-to-many campsite relate materialised (per-campsite related-record counts, Wyoming campsites)",
+   "passed": true,
+   "value": 0.9991,
+   "threshold": ">= 0.95 of the 1,170 Wyoming campsites exact",
+   "required": true,
+   "note": "per_site@final.per_site ~ n_attributes"
+  },
+  {
+   "name": "park-level join ParentOrgID -> OrgID (both parks carry 'National Park Service')",
+   "passed": false,
+   "value": [
+    "national_parks@final",
+    "nparks_small@final",
+    "in_park@final"
+   ],
+   "threshold": "a table with both parks and their organisation",
+   "required": true,
+   "note": ""
+  },
+  {
+   "name": "relationship campground (FacilityID) 1 -> many campsites (ParentFacilityID) materialised",
+   "passed": true,
+   "value": 1.0,
+   "threshold": "per campground: all 6 counts exact; per campsite: >= 0.95 parent facility exact",
+   "required": true,
+   "note": "j@final: FacilityName by CampsiteID (per campsite)"
+  }
+ ],
+ "replay": {
+  "success": true,
+  "outputs": [
+   "Campground_DataQuality_Report.csv",
+   "CampsiteData.gpkg",
+   "Campsites_JoinedFacilities.csv",
+   "Campsites_RelatedAttributes.csv",
+   "README.md",
+   "RelationshipClasses.csv",
+   "RelationshipRules.csv",
+   "campsite_data_quality.png"
+  ],
+  "events": [],
+  "blocks_ok": 24,
+  "block_outcome": [
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok"
+  ],
+  "step_timeout_s": 900,
+  "same_outputs_as_original": true,
+  "block_mismatches": [
+   12,
+   14,
+   43
+  ]
+ },
+ "replay_faithful": false,
+ "replay_unfaithful_reasons": [
+  "block success differs at [12, 14, 43]"
+ ],
+ "replay_container_failure": [],
+ "emergency_files": []
+}

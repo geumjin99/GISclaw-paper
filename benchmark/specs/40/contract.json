@@ -1,0 +1,40 @@
+{
+ "task": 40,
+ "source": "instruction names no file (a diverging change map); checks.py: any *.png figure, and any *.tif* in pred_results scored as the change field (alternative to captured arrays)",
+ "deliverables": [
+  {
+   "id": "map",
+   "kind": "figure",
+   "patterns": [
+    "*.png"
+   ],
+   "required": true,
+   "crs_required": false,
+   "checked_by": [
+    "a figure (PNG) is present",
+    "figure not blank"
+   ]
+  },
+  {
+   "id": "change_raster",
+   "kind": "raster",
+   "patterns": [
+    "*.tif*"
+   ],
+   "required": false,
+   "crs_required": true,
+   "checked_by": [
+    "change field matches gold (Pearson)",
+    "change has gold scale and sign (mean within 25 %)",
+    "nodata masked (not shown as zero change)",
+    "categorical change map derived (ordered classes)"
+   ]
+  }
+ ],
+ "not_deliverables": [
+  {
+   "pattern": "Malaria_Change.tif",
+   "reason": "gold file name, read from the gold directory only"
+  }
+ ]
+}

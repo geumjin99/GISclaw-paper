@@ -1,0 +1,79 @@
+{
+ "cell_id": "main.H0.SA.claude-sonnet-5-5.r1.T31",
+ "task": 31,
+ "status": "ok",
+ "analytically_correct": true,
+ "scorer_error": false,
+ "checks": [
+  {
+   "name": "figure written (non-blank PNG)",
+   "passed": true,
+   "value": [
+    "l_function.png"
+   ],
+   "threshold": null,
+   "required": true,
+   "note": ""
+  },
+  {
+   "name": "L(r) curve matches gold",
+   "passed": true,
+   "value": {
+    "max_abs": 0.0008,
+    "mean_abs": 0.0004
+   },
+   "threshold": "max<=0.012, mean<=0.005 on r in [0.05, 0.35]",
+   "required": true,
+   "note": "fig_ax0_line0@save00"
+  },
+  {
+   "name": "flow K-function (4-D, ~pi^2 r^4) computed - matches gold K",
+   "passed": true,
+   "value": 0.0101,
+   "threshold": "mean rel. error <= 0.10 vs gold K (max-distance flow distance, as defined in the task text)",
+   "required": true,
+   "note": "K@final vs rs@final (max-distance flow K)"
+  },
+  {
+   "name": "local K computed per flow (1000 x m array)",
+   "passed": true,
+   "value": null,
+   "threshold": null,
+   "required": false,
+   "note": ""
+  },
+  {
+   "name": "confidence envelope (CSR simulation or drawn band around L)",
+   "passed": true,
+   "value": {
+    "simulation_code": true,
+    "drawn_band": "fill polygon fig_ax0_coll0_vertices@save00"
+   },
+   "threshold": null,
+   "required": true,
+   "note": "required (the text asks for confidence intervals)"
+  }
+ ],
+ "replay": {
+  "success": true,
+  "outputs": [
+   "l_function.csv",
+   "l_function.png",
+   "local_K.csv"
+  ],
+  "events": [],
+  "blocks_ok": 3,
+  "block_outcome": [
+   "ok",
+   "ok",
+   "ok"
+  ],
+  "step_timeout_s": 900,
+  "same_outputs_as_original": true,
+  "block_mismatches": []
+ },
+ "replay_faithful": true,
+ "replay_unfaithful_reasons": [],
+ "replay_container_failure": [],
+ "emergency_files": []
+}

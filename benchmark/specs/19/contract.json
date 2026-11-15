@@ -1,0 +1,34 @@
+{
+ "task": 19,
+ "source": "instruction: map saved as 'pred_results/interploated_water_quality.png' (corrected spelling accepted); checks.py also reads any output GeoTIFF as unit evidence for a rescaled drawn image",
+ "deliverables": [
+  {
+   "id": "map",
+   "kind": "figure",
+   "patterns": [
+    "interploated_water_quality.png",
+    "interpolated_water_quality.png"
+   ],
+   "required": true,
+   "crs_required": false,
+   "checked_by": [
+    "required output present",
+    "map not blank"
+   ]
+  },
+  {
+   "id": "surface_raster",
+   "kind": "raster",
+   "patterns": [
+    "*.tif",
+    "*.tiff"
+   ],
+   "required": false,
+   "crs_required": true,
+   "checked_by": [
+    "drawn values are DO in mg/L"
+   ]
+  }
+ ],
+ "not_deliverables": []
+}

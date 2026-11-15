@@ -1,0 +1,141 @@
+[
+ {
+  "control": "correct_custom_lcc_function",
+  "expected_correct": true,
+  "judged_correct": true,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [],
+  "scorer_error": false
+ },
+ {
+  "control": "correct_left_inclusive_depth_breaks",
+  "expected_correct": true,
+  "judged_correct": true,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [],
+  "scorer_error": false
+ },
+ {
+  "control": "correct_metric_lcc_30m",
+  "expected_correct": true,
+  "judged_correct": true,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [],
+  "scorer_error": false
+ },
+ {
+  "control": "wrong_alphabetical_drainage_codes",
+  "expected_correct": false,
+  "judged_correct": false,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [
+   "cell values equal gold (drainage*5 + depth*4)",
+   "drainage and depth scores correct for every class (>= 0.80)"
+  ],
+  "scorer_error": false
+ },
+ {
+  "control": "wrong_boundary_crs_mixup",
+  "expected_correct": false,
+  "judged_correct": false,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [
+   "valid area matches gold (IoU)",
+   "cell values equal gold (drainage*5 + depth*4)",
+   "drainage and depth scores correct for every class (>= 0.80)"
+  ],
+  "scorer_error": false
+ },
+ {
+  "control": "wrong_cellsize_90m",
+  "expected_correct": false,
+  "judged_correct": false,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [
+   "drainage and depth scores correct for every class (>= 0.80)",
+   "output cell size = land-cover cell size (30 m +/-10 %)"
+  ],
+  "scorer_error": false
+ },
+ {
+  "control": "wrong_deliverable_no_crs",
+  "expected_correct": false,
+  "judged_correct": false,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [
+   "vulnerability raster written",
+   "valid area matches gold (IoU)",
+   "cell values equal gold (drainage*5 + depth*4)",
+   "drainage and depth scores correct for every class (>= 0.80)",
+   "output CRS is Lambert Conformal Conic",
+   "output cell size = land-cover cell size (30 m +/-10 %)",
+   "deliverable files carry a CRS (uniform rule)"
+  ],
+  "scorer_error": false
+ },
+ {
+  "control": "wrong_frequency_drainage_codes",
+  "expected_correct": false,
+  "judged_correct": false,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [
+   "cell values equal gold (drainage*5 + depth*4)",
+   "drainage and depth scores correct for every class (>= 0.80)"
+  ],
+  "scorer_error": false
+ },
+ {
+  "control": "wrong_method_albers_no_lcc",
+  "expected_correct": false,
+  "judged_correct": false,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [
+   "output CRS is Lambert Conformal Conic"
+  ],
+  "scorer_error": false
+ },
+ {
+  "control": "wrong_no_reclassification",
+  "expected_correct": false,
+  "judged_correct": false,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [
+   "cell values equal gold (drainage*5 + depth*4)",
+   "drainage and depth scores correct for every class (>= 0.80)"
+  ],
+  "scorer_error": false
+ },
+ {
+  "control": "wrong_rare_drainage_swapped",
+  "expected_correct": false,
+  "judged_correct": false,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [
+   "drainage and depth scores correct for every class (>= 0.80)"
+  ],
+  "scorer_error": false
+ },
+ {
+  "control": "wrong_weights_swapped",
+  "expected_correct": false,
+  "judged_correct": false,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [
+   "cell values equal gold (drainage*5 + depth*4)",
+   "drainage and depth scores correct for every class (>= 0.80)"
+  ],
+  "scorer_error": false
+ }
+]

@@ -1,0 +1,129 @@
+{
+ "cell_id": "main.H2.DA.gptoss-120b.r1.T30",
+ "task": 30,
+ "status": "ok",
+ "analytically_correct": false,
+ "scorer_error": false,
+ "checks": [
+  {
+   "name": "map written (non-blank PNG)",
+   "passed": false,
+   "value": [],
+   "threshold": null,
+   "required": false,
+   "note": ""
+  },
+  {
+   "name": "proposed routes cover the three designated corridors",
+   "passed": false,
+   "value": null,
+   "threshold": null,
+   "required": true,
+   "note": "no line layer of plausible length (0.5-2.0x gold) near Capitol Hill"
+  },
+  {
+   "name": "precision: proposed length lies on designated corridors",
+   "passed": false,
+   "value": null,
+   "threshold": null,
+   "required": false,
+   "note": ""
+  },
+  {
+   "name": "map shows the proposed routes",
+   "passed": false,
+   "value": null,
+   "threshold": null,
+   "required": false,
+   "note": "no proposed route layer"
+  },
+  {
+   "name": "half-mile coverage of Capitol Hill matches gold",
+   "passed": true,
+   "value": null,
+   "threshold": "IoU>=0.85 (clipped to Capitol Hill) or share in [0.95, 0.983]",
+   "required": true,
+   "note": "coverage_percent = 96.841"
+  },
+  {
+   "name": "network analysis performed (graph shortest paths)",
+   "passed": true,
+   "value": [
+    "networkx",
+    "dijkstra",
+    "nx."
+   ],
+   "threshold": null,
+   "required": true,
+   "note": "instructed: 'Use Network Analyst to propose new routes'"
+  },
+  {
+   "name": "existing trail length in Capitol Hill measured",
+   "passed": true,
+   "value": null,
+   "threshold": null,
+   "required": false,
+   "note": "5227 ft / 0.99 mi / 1593 m"
+  },
+  {
+   "name": "deliverable files carry a CRS (uniform rule)",
+   "passed": true,
+   "value": [
+    "arterial_streets.shp",
+    "demand_hotspots.shp",
+    "proposed_routes.shp"
+   ],
+   "threshold": "every geographic deliverable file has a CRS",
+   "required": true,
+   "note": "3 geographic deliverable file(s), all with a CRS"
+  }
+ ],
+ "replay": {
+  "success": true,
+  "outputs": [
+   "accessibility_report.csv",
+   "arterial_streets.cpg",
+   "arterial_streets.dbf",
+   "arterial_streets.prj",
+   "arterial_streets.shp",
+   "arterial_streets.shx",
+   "demand_hotspots.cpg",
+   "demand_hotspots.dbf",
+   "demand_hotspots.prj",
+   "demand_hotspots.shp",
+   "demand_hotspots.shx",
+   "proposed_routes.cpg",
+   "proposed_routes.dbf",
+   "proposed_routes.prj",
+   "proposed_routes.shp",
+   "proposed_routes.shx",
+   "suitability_scores.csv"
+  ],
+  "events": [],
+  "blocks_ok": 11,
+  "block_outcome": [
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok"
+  ],
+  "step_timeout_s": 900,
+  "same_outputs_as_original": true,
+  "block_mismatches": []
+ },
+ "replay_faithful": true,
+ "replay_unfaithful_reasons": [],
+ "replay_container_failure": [],
+ "emergency_files": []
+}

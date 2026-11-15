@@ -1,0 +1,132 @@
+{
+ "cell_id": "oneshot.C0.SA.claude-opus-5-5.r2.T30",
+ "task": 30,
+ "status": "ok",
+ "analytically_correct": false,
+ "scorer_error": false,
+ "checks": [
+  {
+   "name": "map written (non-blank PNG)",
+   "passed": true,
+   "value": [
+    "bike_routes_map.png"
+   ],
+   "threshold": null,
+   "required": false,
+   "note": ""
+  },
+  {
+   "name": "proposed routes cover the three designated corridors",
+   "passed": true,
+   "value": {
+    "Central": 1.0,
+    "East": 1.0,
+    "West": 1.0
+   },
+   "threshold": ">=0.5 each",
+   "required": true,
+   "note": "bike@final; 5.39 mi near Capitol Hill (gold 5.37)"
+  },
+  {
+   "name": "precision: proposed length lies on designated corridors",
+   "passed": true,
+   "value": 1.0,
+   "threshold": 0.5,
+   "required": false,
+   "note": ""
+  },
+  {
+   "name": "map shows the proposed routes",
+   "passed": true,
+   "value": 1.0,
+   "threshold": 0.5,
+   "required": false,
+   "note": "share of proposed route segments whose bbox matches a drawn path"
+  },
+  {
+   "name": "half-mile coverage of Capitol Hill matches gold",
+   "passed": true,
+   "value": null,
+   "threshold": "IoU>=0.85 (clipped to Capitol Hill) or share in [0.95, 0.983]",
+   "required": true,
+   "note": "metrics = 96.765"
+  },
+  {
+   "name": "network analysis performed (graph shortest paths)",
+   "passed": true,
+   "value": [
+    "networkx",
+    "shortest_path",
+    "nx."
+   ],
+   "threshold": null,
+   "required": true,
+   "note": "instructed: 'Use Network Analyst to propose new routes'"
+  },
+  {
+   "name": "existing trail length in Capitol Hill measured",
+   "passed": false,
+   "value": null,
+   "threshold": null,
+   "required": false,
+   "note": "5227 ft / 0.99 mi / 1593 m"
+  },
+  {
+   "name": "deliverable files carry a CRS (uniform rule)",
+   "passed": false,
+   "value": [
+    "Bike_Routes.geojson: GeoJSON with projected coordinates and no 'crs' member"
+   ],
+   "threshold": "every geographic deliverable file has a CRS",
+   "required": true,
+   "note": "deliverable file(s) without CRS: Bike_Routes.geojson: GeoJSON with projected coordinates and no 'crs' member"
+  }
+ ],
+ "replay": {
+  "success": true,
+  "outputs": [
+   "Arterials.cpg",
+   "Arterials.dbf",
+   "Arterials.prj",
+   "Arterials.shp",
+   "Arterials.shx",
+   "Bike_Routes.cpg",
+   "Bike_Routes.dbf",
+   "Bike_Routes.geojson",
+   "Bike_Routes.prj",
+   "Bike_Routes.shp",
+   "Bike_Routes.shx",
+   "Bike_Routes_Buffer.cpg",
+   "Bike_Routes_Buffer.dbf",
+   "Bike_Routes_Buffer.prj",
+   "Bike_Routes_Buffer.shp",
+   "Bike_Routes_Buffer.shx",
+   "Hotspots.cpg",
+   "Hotspots.dbf",
+   "Hotspots.prj",
+   "Hotspots.shp",
+   "Hotspots.shx",
+   "Proposed_Network_Routes.cpg",
+   "Proposed_Network_Routes.dbf",
+   "Proposed_Network_Routes.prj",
+   "Proposed_Network_Routes.shp",
+   "Proposed_Network_Routes.shx",
+   "accessibility_metrics.csv",
+   "bike_routes_map.png",
+   "run_log.txt",
+   "zoning_within_buffer.csv"
+  ],
+  "events": [],
+  "blocks_ok": 1,
+  "block_outcome": [
+   "ok"
+  ],
+  "step_timeout_s": 3600,
+  "same_outputs_as_original": true,
+  "block_mismatches": []
+ },
+ "replay_faithful": true,
+ "replay_unfaithful_reasons": [],
+ "replay_container_failure": [],
+ "emergency_files": []
+}

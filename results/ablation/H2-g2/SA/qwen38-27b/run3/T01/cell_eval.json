@@ -1,0 +1,135 @@
+{
+ "cell_id": "ablation.H2-g2.SA.qwen38-27b.r3.T01",
+ "task": 1,
+ "status": "ok",
+ "analytically_correct": false,
+ "scorer_error": false,
+ "checks": [
+  {
+   "name": "required output present",
+   "passed": true,
+   "value": [
+    "interpolated_urban_heat.png"
+   ],
+   "threshold": [
+    "interpolated_urban_heat.png"
+   ],
+   "required": true,
+   "note": ""
+  },
+  {
+   "name": "map not blank",
+   "passed": true,
+   "value": 49.28130096092567,
+   "threshold": ">=3 grey-level std",
+   "required": true,
+   "note": ""
+  },
+  {
+   "name": "per-block mean temperature matches gold pattern (Spearman >= 0.90)",
+   "passed": false,
+   "value": 0.509,
+   "threshold": 0.9,
+   "required": true,
+   "note": "blocks.KrigedMeanTempF@final"
+  },
+  {
+   "name": "values are temperatures of this data (mean within 2 F)",
+   "passed": true,
+   "value": 79.08,
+   "threshold": "79.43+/-2",
+   "required": true,
+   "note": ""
+  },
+  {
+   "name": "values come from an interpolated surface, not copied station readings",
+   "passed": true,
+   "value": 0.0,
+   "threshold": "< 0.5 of blocks equal a station value",
+   "required": true,
+   "note": ""
+  },
+  {
+   "name": "drawn choropleth shows the per-block temperature",
+   "passed": false,
+   "value": 0.509,
+   "threshold": 0.9,
+   "required": true,
+   "note": "blocks@final.KrigedMeanTempF drawn (fig_ax0_coll0_values)"
+  },
+  {
+   "name": "hot & elderly-dense highlight set derived",
+   "passed": true,
+   "value": [
+    14,
+    0.71,
+    0.86
+   ],
+   "threshold": "1-60 % of blocks; mean temp & density percentile > 0.6",
+   "required": true,
+   "note": "blocks.Highlight@final"
+  },
+  {
+   "name": "method: Kriging / GP interpolation (prescribed by the task)",
+   "passed": true,
+   "value": null,
+   "threshold": null,
+   "required": true,
+   "note": "pykrige"
+  }
+ ],
+ "replay": {
+  "success": true,
+  "outputs": [
+   "block_kriged_stats.csv",
+   "interpolated_urban_heat.png",
+   "kriged_surface.tif"
+  ],
+  "events": [
+   {
+    "event": "container_exit_137",
+    "exit_code": 137,
+    "oom_killed": false
+   },
+   {
+    "event": "restarted",
+    "replayed": 7
+   }
+  ],
+  "blocks_ok": 16,
+  "block_outcome": [
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "crash",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok"
+  ],
+  "step_timeout_s": 900,
+  "same_outputs_as_original": true,
+  "block_mismatches": []
+ },
+ "replay_faithful": false,
+ "replay_unfaithful_reasons": [
+  "replay block(s) [7] cut off (crash)"
+ ],
+ "replay_container_failure": [],
+ "emergency_files": []
+}

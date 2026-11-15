@@ -1,0 +1,78 @@
+{
+ "cell_id": "main.H2.SA.claude-opus-5-5.r1.T10",
+ "task": 10,
+ "status": "ok",
+ "analytically_correct": true,
+ "scorer_error": false,
+ "checks": [
+  {
+   "name": "required output present",
+   "passed": true,
+   "value": [
+    "predictedRiskyArea.png"
+   ],
+   "threshold": [
+    "predictedRiskyArea.png"
+   ],
+   "required": true,
+   "note": ""
+  },
+  {
+   "name": "map not blank",
+   "passed": true,
+   "value": 48.57822451221161,
+   "threshold": ">=3 grey-level std",
+   "required": true,
+   "note": ""
+  },
+  {
+   "name": "risky area = planned-road buffer minus deforested (or within protected forest)",
+   "passed": true,
+   "value": 1.0,
+   "threshold": 0.85,
+   "required": true,
+   "note": "risk@final ~ gold risky_unprotected (deforested share 0.0%)"
+  },
+  {
+   "name": "context layers drawn (existing roads, protected forest, deforested area)",
+   "passed": true,
+   "value": {
+    "roads": true,
+    "protected": true,
+    "deforested": true
+   },
+   "threshold": null,
+   "required": true,
+   "note": "roads_p.plot(ax=ax,color='grey',lw=0.25); prot_p.plot(ax=ax,color='#4c9a4c',alpha=0.8,edgecolor='darkgreen',lw=0.3); defo_p.plot(ax=ax,color='#e6b88a',edgecolor='none')"
+  },
+  {
+   "name": "Rondonia boundary layer drawn",
+   "passed": true,
+   "value": null,
+   "threshold": null,
+   "required": false,
+   "note": ""
+  }
+ ],
+ "replay": {
+  "success": true,
+  "outputs": [
+   "predictedRiskyArea.geojson",
+   "predictedRiskyArea.png"
+  ],
+  "events": [],
+  "blocks_ok": 3,
+  "block_outcome": [
+   "ok",
+   "ok",
+   "ok"
+  ],
+  "step_timeout_s": 900,
+  "same_outputs_as_original": true,
+  "block_mismatches": []
+ },
+ "replay_faithful": true,
+ "replay_unfaithful_reasons": [],
+ "replay_container_failure": [],
+ "emergency_files": []
+}

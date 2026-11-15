@@ -1,0 +1,127 @@
+{
+ "cell_id": "ablation.H2-g5.SA.qwen38-27b.r3.T36",
+ "task": 36,
+ "status": "ok",
+ "analytically_correct": true,
+ "scorer_error": false,
+ "checks": [
+  {
+   "name": "result file written to pred_results",
+   "passed": true,
+   "value": [
+    "SAVI_after.tif",
+    "SAVI_before.tif",
+    "SAVI_change.tif",
+    "damage_map.png",
+    "emergency_output.csv",
+    "field_damage_summary.csv"
+   ],
+   "threshold": "any non-empty file",
+   "required": true,
+   "note": ""
+  },
+  {
+   "name": "per-field loss result covers >= 80 % of gold fields",
+   "passed": true,
+   "value": 1.0,
+   "threshold": 0.8,
+   "required": true,
+   "note": "d.posmean@final"
+  },
+  {
+   "name": "per-field loss ranking matches gold (Spearman >= 0.85)",
+   "passed": true,
+   "value": 0.892,
+   "threshold": 0.85,
+   "required": true,
+   "note": "d.posmean@final"
+  },
+  {
+   "name": "SAVI (L = 0.5) used",
+   "passed": true,
+   "value": null,
+   "threshold": null,
+   "required": true,
+   "note": "code inspection (soil factor L = 0.5 / (1 + L) / * 1.5)"
+  },
+  {
+   "name": "deliverable files carry a CRS (uniform rule)",
+   "passed": true,
+   "value": [],
+   "threshold": "every geographic deliverable file has a CRS",
+   "required": true,
+   "note": "no geographic deliverable file written (presence is judged by the task checks)"
+  }
+ ],
+ "replay": {
+  "success": true,
+  "outputs": [
+   "SAVI_after.tif",
+   "SAVI_before.tif",
+   "SAVI_change.tif",
+   "damage_map.png",
+   "field_damage_summary.csv"
+  ],
+  "events": [],
+  "blocks_ok": 28,
+  "block_outcome": [
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok"
+  ],
+  "step_timeout_s": 900,
+  "same_outputs_as_original": false,
+  "block_mismatches": []
+ },
+ "replay_faithful": true,
+ "replay_unfaithful_reasons": [],
+ "replay_container_failure": [],
+ "correct_without_emergency": true,
+ "emergency_files": [
+  "emergency_output.csv"
+ ]
+}

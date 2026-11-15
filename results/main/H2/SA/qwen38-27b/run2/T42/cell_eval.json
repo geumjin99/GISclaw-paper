@@ -1,0 +1,128 @@
+{
+ "cell_id": "main.H2.SA.qwen38-27b.r2.T42",
+ "task": 42,
+ "status": "ok",
+ "analytically_correct": true,
+ "scorer_error": false,
+ "checks": [
+  {
+   "name": "required output present",
+   "passed": true,
+   "value": [
+    "moran_local.png"
+   ],
+   "threshold": [
+    "moran_local.png",
+    "Moran_Local.png",
+    "moran_local.PNG"
+   ],
+   "required": true,
+   "note": ""
+  },
+  {
+   "name": "map not blank",
+   "passed": true,
+   "value": 22.683803805475335,
+   "threshold": ">=3 grey-level std",
+   "required": true,
+   "note": ""
+  },
+  {
+   "name": "analysed variable = group median price",
+   "passed": true,
+   "value": 1.0,
+   "threshold": ">=0.90 of neighbourhoods within 3 % of gold",
+   "required": true,
+   "note": "group_median_price in neigh@final"
+  },
+  {
+   "name": "missing values handled (no NaN, plausible fill)",
+   "passed": true,
+   "value": [
+    35.0,
+    50.0,
+    0
+   ],
+   "threshold": "[31.5, 55.0], no NaN",
+   "required": true,
+   "note": "group_median_price in neigh2@final"
+  },
+  {
+   "name": "LISA hot/cold spots match gold (IoU >= 0.7), labels not inverted",
+   "passed": true,
+   "value": [
+    0.947,
+    0.852
+   ],
+   "threshold": ">=0.7 each, no inverted labels",
+   "required": true,
+   "note": "hot: quad|p_sim in out@final==1; cold: quad|p_sim in out@final==3; gold n_hot=36 n_cold=23"
+  },
+  {
+   "name": "Local Moran's I computed (local I values captured or Moran_Local called)",
+   "passed": true,
+   "value": null,
+   "threshold": null,
+   "required": true,
+   "note": "local I values in Ii of moran_local_results.gpkg@file"
+  },
+  {
+   "name": "map colours: hot spots drawn warmer than cold spots (presentation)",
+   "passed": false,
+   "value": {
+    "warmth_hot": 0.408,
+    "warmth_cold": 0.42
+   },
+   "threshold": "warmth(hot) - warmth(cold) >= 0.2 (warmth = R - B)",
+   "required": false,
+   "note": "coll0@save00",
+   "kind": "figure"
+  },
+  {
+   "name": "method: Queen contiguity weights (prescribed)",
+   "passed": true,
+   "value": null,
+   "threshold": null,
+   "required": true,
+   "note": "Queen weights object w@final"
+  }
+ ],
+ "replay": {
+  "success": true,
+  "outputs": [
+   "moran_local.png",
+   "moran_local_results.gpkg"
+  ],
+  "events": [],
+  "blocks_ok": 13,
+  "block_outcome": [
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok"
+  ],
+  "step_timeout_s": 900,
+  "same_outputs_as_original": true,
+  "block_mismatches": []
+ },
+ "replay_faithful": true,
+ "replay_unfaithful_reasons": [],
+ "replay_container_failure": [],
+ "emergency_files": []
+}

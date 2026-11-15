@@ -1,0 +1,98 @@
+{
+ "cell_id": "ablation.H2-g6.SA.qwen38-27b.r3.T10",
+ "task": 10,
+ "status": "ok",
+ "analytically_correct": true,
+ "scorer_error": false,
+ "checks": [
+  {
+   "name": "required output present",
+   "passed": true,
+   "value": [
+    "predictedRiskyArea.png"
+   ],
+   "threshold": [
+    "predictedRiskyArea.png"
+   ],
+   "required": true,
+   "note": ""
+  },
+  {
+   "name": "map not blank",
+   "passed": true,
+   "value": 45.14410439633581,
+   "threshold": ">=3 grey-level std",
+   "required": true,
+   "note": ""
+  },
+  {
+   "name": "risky area = planned-road buffer minus deforested (or within protected forest)",
+   "passed": true,
+   "value": 1.0,
+   "threshold": 0.85,
+   "required": true,
+   "note": "risk@final ~ gold risky_unprotected (deforested share 0.0%)"
+  },
+  {
+   "name": "context layers drawn (existing roads, protected forest, deforested area)",
+   "passed": true,
+   "value": {
+    "roads": true,
+    "protected": true,
+    "deforested": true
+   },
+   "threshold": null,
+   "required": true,
+   "note": "drawn layer #5@save01: 27662 features, 100% = roads.geojson features; drawn layer #2@save01: 52 features, 100% = protectedForest.geojson features; drawn layer #1@save01: 1 features, 100% = deforestedArea.geojson features"
+  },
+  {
+   "name": "Rondonia boundary layer drawn",
+   "passed": true,
+   "value": null,
+   "threshold": null,
+   "required": false,
+   "note": ""
+  }
+ ],
+ "replay": {
+  "success": true,
+  "outputs": [
+   "predictedRiskyArea.png",
+   "risky_forest.gpkg"
+  ],
+  "events": [],
+  "blocks_ok": 17,
+  "block_outcome": [
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok"
+  ],
+  "step_timeout_s": 900,
+  "same_outputs_as_original": true,
+  "block_mismatches": [
+   8
+  ]
+ },
+ "replay_faithful": false,
+ "replay_unfaithful_reasons": [
+  "block success differs at [8]"
+ ],
+ "replay_container_failure": [],
+ "emergency_files": []
+}

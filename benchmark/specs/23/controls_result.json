@@ -1,0 +1,122 @@
+[
+ {
+  "control": "correct_acres_8conn",
+  "expected_correct": true,
+  "judged_correct": true,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [],
+  "scorer_error": false
+ },
+ {
+  "control": "correct_dissolved_total",
+  "expected_correct": true,
+  "judged_correct": true,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [],
+  "scorer_error": false
+ },
+ {
+  "control": "wrong_area_cell_counts",
+  "expected_correct": false,
+  "judged_correct": false,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [
+   "area statistics attribute in a real area unit",
+   "total area matches gold in some unit"
+  ],
+  "scorer_error": false
+ },
+ {
+  "control": "wrong_area_square_degrees",
+  "expected_correct": false,
+  "judged_correct": false,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [
+   "area statistics attribute in a real area unit",
+   "total area matches gold in some unit"
+  ],
+  "scorer_error": false
+ },
+ {
+  "control": "wrong_deliverable_no_crs",
+  "expected_correct": false,
+  "judged_correct": false,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [
+   "open-space cells agree with gold (IoU)",
+   "open-space polygons present (non-empty)",
+   "polygons cover the gold open space (area IoU)",
+   "area statistics attribute in a real area unit",
+   "total area matches gold in some unit",
+   "deliverable files carry a CRS (uniform rule)"
+  ],
+  "scorer_error": false
+ },
+ {
+  "control": "wrong_drop_small_polygons",
+  "expected_correct": false,
+  "judged_correct": false,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [
+   "total area matches gold in some unit"
+  ],
+  "scorer_error": false
+ },
+ {
+  "control": "wrong_inverted_classes",
+  "expected_correct": false,
+  "judged_correct": false,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [
+   "open-space cells agree with gold (IoU)",
+   "polygons cover the gold open space (area IoU)",
+   "total area matches gold in some unit"
+  ],
+  "scorer_error": false
+ },
+ {
+  "control": "wrong_median_threshold_ids",
+  "expected_correct": false,
+  "judged_correct": false,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [
+   "open-space cells agree with gold (IoU)",
+   "polygons cover the gold open space (area IoU)",
+   "total area matches gold in some unit"
+  ],
+  "scorer_error": false
+ },
+ {
+  "control": "wrong_nodata_not_excluded",
+  "expected_correct": false,
+  "judged_correct": false,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [
+   "open-space cells agree with gold (IoU)",
+   "polygons cover the gold open space (area IoU)",
+   "total area matches gold in some unit"
+  ],
+  "scorer_error": false
+ },
+ {
+  "control": "wrong_raw_ids_not_reclassified",
+  "expected_correct": false,
+  "judged_correct": false,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [
+   "open_space.tif present",
+   "open-space cells agree with gold (IoU)"
+  ],
+  "scorer_error": false
+ }
+]

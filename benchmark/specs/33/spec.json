@@ -1,0 +1,30 @@
+{
+ "task": 33,
+ "title": "Model how land subsidence affects flooding - building flood damage in 2050",
+ "output_type": "vector/table (flooded buildings with mean depth and damage) + map",
+ "required_outputs": [
+  "any result file (instruction names none); reference writes Buildings_Flooded_2050.geojson, Buildings_Flooded_2050.csv, flood_damage_2050.png"
+ ],
+ "method": "Flooded = Elevation_2050 (cm, RD New 5 m) <= -200; depth = Int(-(elev+200)) cm; polygonise depth (gridcode); buildings intersecting flood polygons (3928/9068); per-building area-weighted mean gridcode over the flooded part; DamageCosts = (0.298*ln(0.01*MEAN_gridcode)+1.4502)*271*Shape_Area if MEAN_gridcode > 1 else 0; total = 4.11e8.",
+ "key_parameters": {
+  "flood_threshold_cm": -200,
+  "depth_units": "cm (converted to m inside ln)",
+  "log": "natural (Arcade Log)",
+  "flooded_buildings": 3928,
+  "total_damage": 411291391
+ },
+ "benchmark_defects": [
+  "The published reference script is an ArcGIS ModelBuilder export that uses arcpy with the Spatial and Image Analyst extensions.",
+  "The benchmark's data folder is named 'datasets'; the inputs are provided as dataset/.",
+  "The raster CRS is stored as LOCAL_CS 'Amersfoort / RD New' (no EPSG code) while buildings are EPSG:28992; coordinates coincide, but to_crs on the raster CRS can fail.",
+  "No output file and no currency/units for the damage are specified; the dataset description mislabels the 2050 elevation as 'predicted flood elevation'.",
+  "Summarize Within's mean for polygon summaries (area-weighted vs simple) is unspecified; area-weighted used, zonal means accepted."
+ ],
+ "checks": [
+  "required: at least one result file in pred_results",
+  "required: a building-level table (captured, function locals, or CSV/vector file; aligned by id column, geometry or full 0..n-1 index) has a damage column whose >0 set has Jaccard >= 0.80 with gold and Spearman >= 0.90",
+  "required: per-building damage values: median pred/gold ratio on buildings damaged in both within 0.95-1.05 (log10 1.68, max depth 1.12 fail)",
+  "required: total damage within 10 % of gold 4.11e8 (scalar, column sum, or a number in a .txt/.json/.md file)",
+  "optional: per-building mean depth Spearman >= 0.9 with gold"
+ ]
+}

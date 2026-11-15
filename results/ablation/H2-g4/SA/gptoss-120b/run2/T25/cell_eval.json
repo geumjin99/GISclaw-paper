@@ -1,0 +1,143 @@
+{
+ "cell_id": "ablation.H2-g4.SA.gptoss-120b.r2.T25",
+ "task": 25,
+ "status": "ok",
+ "analytically_correct": false,
+ "scorer_error": false,
+ "checks": [
+  {
+   "name": "output written (non-blank map or result file)",
+   "passed": true,
+   "value": [
+    "hkg_constituency_risk_summary.shp",
+    "hkg_exposure_risk.shp",
+    "hkg_healthcare_risk.shp",
+    "hkg_risk_profiles.shp",
+    "hkg_susceptibility_risk.shp",
+    "hkg_transmission_risk.shp"
+   ],
+   "threshold": null,
+   "required": true,
+   "note": ""
+  },
+  {
+   "name": "transmission risk score matches gold (Spearman)",
+   "passed": false,
+   "value": 0.9238,
+   "threshold": 0.95,
+   "required": true,
+   "note": "SIMRANK_transmission in gdf_trans@final"
+  },
+  {
+   "name": "susceptibility risk score matches gold (Spearman)",
+   "passed": false,
+   "value": 0.5238,
+   "threshold": 0.95,
+   "required": true,
+   "note": "SIMRANK_transmission in gdf_trans@final"
+  },
+  {
+   "name": "resource scarcity risk score matches gold (Spearman)",
+   "passed": false,
+   "value": 0.9247,
+   "threshold": 0.95,
+   "required": true,
+   "note": "SIMRANK_healthcare in gdf_health@final"
+  },
+  {
+   "name": "exposure risk score matches gold (Spearman)",
+   "passed": true,
+   "value": 1.0,
+   "threshold": 0.95,
+   "required": true,
+   "note": "SIMRANK_exposure in gdf_expo@final"
+  },
+  {
+   "name": "clustering is a near-optimal K-means partition of the four risk scores",
+   "passed": false,
+   "value": 0.814,
+   "threshold": 0.9,
+   "required": true,
+   "note": "RiskProfile in gdf_cluster@final, k=4"
+  },
+  {
+   "name": "method fidelity: SEEDS-initialised K-means (3 clusters, ARI>=0.8 with gold)",
+   "passed": false,
+   "value": null,
+   "threshold": 0.8,
+   "required": true,
+   "note": "no 3-class column (best k=4); instructed: K-means initialised from SEEDS"
+  },
+  {
+   "name": "deliverable files carry a CRS (uniform rule)",
+   "passed": true,
+   "value": [
+    "hkg_constituency_risk_summary.shp",
+    "hkg_exposure_risk.shp",
+    "hkg_healthcare_risk.shp",
+    "hkg_risk_profiles.shp",
+    "hkg_susceptibility_risk.shp",
+    "hkg_transmission_risk.shp"
+   ],
+   "threshold": "every geographic deliverable file has a CRS",
+   "required": true,
+   "note": "6 geographic deliverable file(s), all with a CRS"
+  }
+ ],
+ "replay": {
+  "success": true,
+  "outputs": [
+   "hkg_constituency_risk_summary.cpg",
+   "hkg_constituency_risk_summary.dbf",
+   "hkg_constituency_risk_summary.prj",
+   "hkg_constituency_risk_summary.shp",
+   "hkg_constituency_risk_summary.shx",
+   "hkg_exposure_risk.cpg",
+   "hkg_exposure_risk.dbf",
+   "hkg_exposure_risk.prj",
+   "hkg_exposure_risk.shp",
+   "hkg_exposure_risk.shx",
+   "hkg_healthcare_risk.cpg",
+   "hkg_healthcare_risk.dbf",
+   "hkg_healthcare_risk.prj",
+   "hkg_healthcare_risk.shp",
+   "hkg_healthcare_risk.shx",
+   "hkg_risk_profiles.cpg",
+   "hkg_risk_profiles.dbf",
+   "hkg_risk_profiles.prj",
+   "hkg_risk_profiles.shp",
+   "hkg_risk_profiles.shx",
+   "hkg_susceptibility_risk.cpg",
+   "hkg_susceptibility_risk.dbf",
+   "hkg_susceptibility_risk.prj",
+   "hkg_susceptibility_risk.shp",
+   "hkg_susceptibility_risk.shx",
+   "hkg_transmission_risk.cpg",
+   "hkg_transmission_risk.dbf",
+   "hkg_transmission_risk.prj",
+   "hkg_transmission_risk.shp",
+   "hkg_transmission_risk.shx"
+  ],
+  "events": [],
+  "blocks_ok": 9,
+  "block_outcome": [
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok"
+  ],
+  "step_timeout_s": 900,
+  "same_outputs_as_original": true,
+  "block_mismatches": []
+ },
+ "replay_faithful": true,
+ "replay_unfaithful_reasons": [],
+ "replay_container_failure": [],
+ "emergency_files": []
+}

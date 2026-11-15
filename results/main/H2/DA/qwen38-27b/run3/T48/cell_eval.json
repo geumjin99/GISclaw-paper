@@ -1,0 +1,133 @@
+{
+ "cell_id": "main.H2.DA.qwen38-27b.r3.T48",
+ "task": 48,
+ "status": "ok",
+ "analytically_correct": false,
+ "scorer_error": false,
+ "checks": [
+  {
+   "name": "selection AcceptedLo >= 30 (808 tracts)",
+   "passed": true,
+   "value": "sub@final",
+   "threshold": 808,
+   "required": true,
+   "note": ""
+  },
+  {
+   "name": "hot spots: Gi* z of AveInteres (Pearson >= 0.85 with a Gi* variant, closer than to Gi* of AveLoanGra)",
+   "passed": true,
+   "value": 0.904,
+   "threshold": 0.85,
+   "required": true,
+   "note": "Z@final ~ Gi[band/self1/row]"
+  },
+  {
+   "name": "GWR (22 NN) of AveInteres: a local slope matches a 22-NN reference fit (Pearson >= 0.95)",
+   "passed": false,
+   "value": 0.669,
+   "threshold": 0.95,
+   "required": true,
+   "note": "gi.Zs@final ~ gaussian22 TotalLoanA+TOTHH_CY: b[TOTHH_CY]"
+  },
+  {
+   "name": "local R2 reported",
+   "passed": false,
+   "value": null,
+   "threshold": null,
+   "required": false,
+   "note": ""
+  },
+  {
+   "name": "FDR correction (code)",
+   "passed": false,
+   "value": null,
+   "threshold": null,
+   "required": false,
+   "note": ""
+  },
+  {
+   "name": "deliverable files carry a CRS (uniform rule)",
+   "passed": true,
+   "value": [
+    "interest_rate_hotspots.shp",
+    "selected_loan_tracts.shp"
+   ],
+   "threshold": "every geographic deliverable file has a CRS",
+   "required": true,
+   "note": "2 geographic deliverable file(s), all with a CRS"
+  }
+ ],
+ "replay": {
+  "success": false,
+  "outputs": [
+   "hotspot_summary.csv",
+   "interest_rate_hotspots.cpg",
+   "interest_rate_hotspots.dbf",
+   "interest_rate_hotspots.prj",
+   "interest_rate_hotspots.shp",
+   "interest_rate_hotspots.shx",
+   "selected_loan_tracts.cpg",
+   "selected_loan_tracts.dbf",
+   "selected_loan_tracts.prj",
+   "selected_loan_tracts.shp",
+   "selected_loan_tracts.shx"
+  ],
+  "events": [],
+  "blocks_ok": 22,
+  "block_outcome": [
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok"
+  ],
+  "step_timeout_s": 900,
+  "same_outputs_as_original": false,
+  "block_mismatches": []
+ },
+ "replay_faithful": true,
+ "replay_unfaithful_reasons": [],
+ "replay_container_failure": [],
+ "correct_without_emergency": false,
+ "emergency_files": [
+  "emergency_output.csv"
+ ]
+}

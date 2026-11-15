@@ -1,0 +1,31 @@
+{
+ "task": 7,
+ "title": "Analyze the impacts of land subsidence on flooding",
+ "output_type": "image (flood depth and building damage map)",
+ "required_outputs": [
+  "flooding_analysis.png"
+ ],
+ "method": "Elevation_2050 is cm relative to NAP (EPSG:28992, 5 m); exact zeros are outside the study area and are masked. Flood-prone = elevation <= -200 cm (water level of the original solution), flood depth = -200 - elevation (7.68 of 12.68 km2, mean 119 cm). Depth raster -> polygons; per building (9 068) the mean depth of flooded cells touching the footprint (rasterstats, all_touched); damage = (0.298 ln(0.01 d) + 1.4502) * 271 * Shape_Area, negatives -> 0 (3 735 buildings, EUR 419 M). Map depth + buildings by damage.",
+ "key_parameters": {
+  "water_level_cm": -200,
+  "nodata": "elevation == 0",
+  "depth_units": "cm (0.01 converts to m in the damage function)",
+  "building_depth": "mean of flooded cells touching the footprint",
+  "unit_cost": 271
+ },
+ "benchmark_defects": [
+  "The task text gives no water level / flood threshold; the -200 cm used by the original solution is not derivable from the instruction. Checks therefore accept any water level W used consistently and report W = -200 separately.",
+  "The elevation raster has no nodata flag; 52 % of cells are exactly 0 outside the study area.",
+  "Units (cm) are not stated; they are implied by the 0.01 factor in the damage formula.",
+  "The published reference script groups the joined rows by flood-polygon index ('index_right') and assigns the resulting summary columns to the buildings table by row index, not by building."
+ ],
+ "checks": [
+  "required: map file present",
+  "required: map not blank",
+  "required: a captured array on the elevation grid equals W - elevation on its flooded cells (>= 95 % within 1 cm; sign and cm/m free) with flooded set = study-area cells below W (IoU >= 0.95); the unmodified elevation array does not count",
+  "required: a building-level damage column (aligned by geometry or row order) rank-correlates >= 0.8 per m2 with damage recomputed from the agent's W, and its total is 0.75-1.33 x the recomputed total over buildings damaged in both",
+  "required: damage function uses the natural log (exact formula fit when a depth column is captured; log10 fit fails)",
+  "note: window-cropped depth arrays are located on the elevation grid (must cover >= 95 % of buildings)",
+  "optional: water level W equals the original -200 cm NAP"
+ ]
+}

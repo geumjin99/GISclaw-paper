@@ -1,0 +1,89 @@
+{
+ "cell_id": "oneshot.C0.SA.gptoss-120b.r2.T33",
+ "task": 33,
+ "status": "ok",
+ "analytically_correct": true,
+ "scorer_error": false,
+ "checks": [
+  {
+   "name": "result file written to pred_results",
+   "passed": true,
+   "value": [
+    "StudyAreaBuildings_FloodDamage.cpg",
+    "StudyAreaBuildings_FloodDamage.csv",
+    "StudyAreaBuildings_FloodDamage.dbf",
+    "StudyAreaBuildings_FloodDamage.prj",
+    "StudyAreaBuildings_FloodDamage.shp",
+    "StudyAreaBuildings_FloodDamage.shx"
+   ],
+   "threshold": "any non-empty file",
+   "required": true,
+   "note": ""
+  },
+  {
+   "name": "per-building damage matches gold (Jaccard>=0.80, Spearman>=0.90)",
+   "passed": true,
+   "value": "Jaccard=0.643, precision=0.993, weighted recall=0.988, rho=0.994",
+   "threshold": "(Jaccard>=0.80 or (precision>=0.90 and weighted recall>=0.90)) and rho>=0.90",
+   "required": true,
+   "note": "buildings.Flood_Damage@final"
+  },
+  {
+   "name": "per-building damage values follow the given function (median pred/gold ratio 0.95-1.05)",
+   "passed": true,
+   "value": 1.0,
+   "threshold": "0.95-1.05",
+   "required": true,
+   "note": "buildings.Flood_Damage@final"
+  },
+  {
+   "name": "total damage within 10 % of gold",
+   "passed": true,
+   "value": 406768928,
+   "threshold": "4.113e+08 +/- 10 %",
+   "required": true,
+   "note": "sum of buildings.Flood_Damage@final"
+  },
+  {
+   "name": "per-building mean flood depth matches gold",
+   "passed": false,
+   "value": 0.682,
+   "threshold": 0.9,
+   "required": false,
+   "note": "buildings.Mean_Flood_Depth_cm@final"
+  },
+  {
+   "name": "deliverable files carry a CRS (uniform rule)",
+   "passed": true,
+   "value": [
+    "StudyAreaBuildings_FloodDamage.shp"
+   ],
+   "threshold": "every geographic deliverable file has a CRS",
+   "required": true,
+   "note": "1 geographic deliverable file(s), all with a CRS"
+  }
+ ],
+ "replay": {
+  "success": true,
+  "outputs": [
+   "StudyAreaBuildings_FloodDamage.cpg",
+   "StudyAreaBuildings_FloodDamage.csv",
+   "StudyAreaBuildings_FloodDamage.dbf",
+   "StudyAreaBuildings_FloodDamage.prj",
+   "StudyAreaBuildings_FloodDamage.shp",
+   "StudyAreaBuildings_FloodDamage.shx"
+  ],
+  "events": [],
+  "blocks_ok": 1,
+  "block_outcome": [
+   "ok"
+  ],
+  "step_timeout_s": 3600,
+  "same_outputs_as_original": true,
+  "block_mismatches": []
+ },
+ "replay_faithful": true,
+ "replay_unfaithful_reasons": [],
+ "replay_container_failure": [],
+ "emergency_files": []
+}

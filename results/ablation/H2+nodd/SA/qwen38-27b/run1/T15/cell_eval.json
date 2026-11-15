@@ -1,0 +1,115 @@
+{
+ "cell_id": "ablation.H2+nodd.SA.qwen38-27b.r1.T15",
+ "task": 15,
+ "status": "ok",
+ "analytically_correct": false,
+ "scorer_error": false,
+ "checks": [
+  {
+   "name": "required output present",
+   "passed": true,
+   "value": [
+    "TEC_vis.png"
+   ],
+   "threshold": [
+    "TEC_vis.png",
+    "tec_vis.png"
+   ],
+   "required": true,
+   "note": ""
+  },
+  {
+   "name": "map not blank",
+   "passed": true,
+   "value": 73.88060041163784,
+   "threshold": ">=3 grey-level std",
+   "required": true,
+   "note": ""
+  },
+  {
+   "name": "figure draws TEC at its true geographic location (plotting call evaluated)",
+   "passed": false,
+   "value": null,
+   "threshold": null,
+   "required": true,
+   "note": "UNVERIFIABLE: contourf: no X/Y coordinates (index space, not georeferenced); contour: no X/Y coordinates (index space, not georeferenced)",
+   "unverifiable": true
+  },
+  {
+   "name": "TEC drawn as filled contours (task: 'filled contour map')",
+   "passed": false,
+   "value": null,
+   "threshold": null,
+   "required": true,
+   "note": "UNVERIFIABLE: contourf: no X/Y coordinates (index space, not georeferenced)"
+  },
+  {
+   "name": "negative TEC cells masked",
+   "passed": false,
+   "value": {
+    "agreement_valid_cells": 1.0,
+    "negatives_masked": false
+   },
+   "threshold": ">=0.99 and negatives masked",
+   "required": false,
+   "note": "nc.TEC@final"
+  },
+  {
+   "name": "contour levels span ~0 .. max TEC",
+   "passed": true,
+   "value": "fig_ax0_coll4_values: levels 2.00..38.00",
+   "threshold": null,
+   "required": false,
+   "note": "",
+   "kind": "figure"
+  },
+  {
+   "name": "coastline / geographic background drawn",
+   "passed": true,
+   "value": null,
+   "threshold": null,
+   "required": true,
+   "note": "code: NaturalEarthFeature"
+  }
+ ],
+ "replay": {
+  "success": true,
+  "outputs": [
+   "TEC_vis.png"
+  ],
+  "events": [],
+  "blocks_ok": 15,
+  "block_outcome": [
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok"
+  ],
+  "step_timeout_s": 900,
+  "same_outputs_as_original": true,
+  "block_mismatches": []
+ },
+ "replay_faithful": true,
+ "replay_unfaithful_reasons": [],
+ "replay_container_failure": [],
+ "emergency_files": []
+}

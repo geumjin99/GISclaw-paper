@@ -1,0 +1,132 @@
+{
+ "cell_id": "main.H2.DA.gptoss-120b.r3.T20",
+ "task": 20,
+ "status": "ok",
+ "analytically_correct": true,
+ "scorer_error": false,
+ "checks": [
+  {
+   "name": "required output present",
+   "passed": true,
+   "value": [
+    "mineral_prospectivity.png"
+   ],
+   "threshold": [
+    "mineral_prospectivity.png"
+   ],
+   "required": true,
+   "note": ""
+  },
+  {
+   "name": "map not blank",
+   "passed": true,
+   "value": 94.89462754274145,
+   "threshold": ">=3 grey-level std",
+   "required": true,
+   "note": ""
+  },
+  {
+   "name": "probability map agrees with gold RF map (Spearman >= 0.60)",
+   "passed": true,
+   "value": 0.817,
+   "threshold": 0.6,
+   "required": true,
+   "note": "fig_ax0_image0@save00"
+  },
+  {
+   "name": "map discriminates known deposits (AUC >= 0.85)",
+   "passed": true,
+   "value": 0.95,
+   "threshold": 0.85,
+   "required": true,
+   "note": ""
+  },
+  {
+   "name": "figure shows the probability map",
+   "passed": true,
+   "value": 0.817,
+   "threshold": 0.6,
+   "required": true,
+   "note": "either row order (orientation is the figure check below)"
+  },
+  {
+   "name": "probability map drawn north-up (figure)",
+   "passed": true,
+   "value": 0.817,
+   "threshold": "rho >= 0.60 as displayed (origin respected)",
+   "required": false,
+   "note": "",
+   "kind": "figure"
+  },
+  {
+   "name": "model uses all 7 evidence layers",
+   "passed": true,
+   "value": 7,
+   "threshold": 7,
+   "required": true,
+   "note": "X@final (7 layer columns: ['tasgrav_IR', 'tasgrav_IR_1VD', 'tasmag_TMI', 'tasmag_TMI_1VD', 'tasrad_K_pct', 'tasrad_Th_ppm', 'tasrad_U_ppm'])"
+  },
+  {
+   "name": "random forest classifier used (task: 'build a random forest classifier')",
+   "passed": true,
+   "value": "RandomForestClassifier(",
+   "threshold": null,
+   "required": true,
+   "note": ""
+  },
+  {
+   "name": "AUC computed and >= 0.9 (task text)",
+   "passed": true,
+   "value": 0.94,
+   "threshold": 0.9,
+   "required": true,
+   "note": "stdout: ROC AUC: 0.9399583333333332"
+  },
+  {
+   "name": "labels = occurrences buffered by 1 km (label raster positives ~ gold)",
+   "passed": false,
+   "value": 936560.0,
+   "threshold": "~110739",
+   "required": false,
+   "note": ""
+  },
+  {
+   "name": "spatially blocked / grouped validation",
+   "passed": true,
+   "value": null,
+   "threshold": null,
+   "required": false,
+   "note": ""
+  }
+ ],
+ "replay": {
+  "success": true,
+  "outputs": [
+   "mineral_prospectivity.png",
+   "mineral_prospectivity.tif"
+  ],
+  "events": [],
+  "blocks_ok": 12,
+  "block_outcome": [
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok"
+  ],
+  "step_timeout_s": 900,
+  "same_outputs_as_original": true,
+  "block_mismatches": []
+ },
+ "replay_faithful": true,
+ "replay_unfaithful_reasons": [],
+ "replay_container_failure": [],
+ "emergency_files": []
+}

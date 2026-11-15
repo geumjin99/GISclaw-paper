@@ -1,0 +1,24 @@
+{
+ "task": 4,
+ "source": "instruction: save the result to 'pred_results/undeveloped_areas.tif'; checks.py takes any pred .tif/.tiff whose name contains 'undeveloped' and scores its selected cells",
+ "deliverables": [
+  {
+   "id": "undeveloped_areas",
+   "kind": "raster",
+   "patterns": [
+    "*undeveloped*.tif",
+    "*undeveloped*.tiff"
+   ],
+   "required": true,
+   "crs_required": true,
+   "checked_by": [
+    "required output present",
+    "georeferenced raster with selected cells",
+    "selected cells match an accepted interpretation (1-cell tolerance)",
+    "selected cells carry undeveloped NLCD codes or a 0/1 mask",
+    "soils projected to Lambert Conformal Conic (prescribed step)"
+   ]
+  }
+ ],
+ "not_deliverables": []
+}

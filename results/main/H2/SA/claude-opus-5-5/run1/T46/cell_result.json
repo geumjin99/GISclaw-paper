@@ -1,0 +1,127 @@
+{
+ "cell_id": "main.H2.SA.claude-opus-5-5.r1.T46",
+ "experiment": "main",
+ "tier": "H2",
+ "arch": "SA",
+ "model": "claude-opus-5-5",
+ "run": 1,
+ "task": 46,
+ "elapsed_s": 75.2,
+ "protocol": "native",
+ "tier_config": {
+  "tools": [
+   "list_files",
+   "load_vector",
+   "load_raster",
+   "inspect",
+   "execute",
+   "lookup_api",
+   "finish"
+  ],
+  "generic": true,
+  "g1": true,
+  "g2": true,
+  "g3": true,
+  "g4": true,
+  "g5": true,
+  "g6": true,
+  "g7": true,
+  "no_dd": false,
+  "no_dk": false
+ },
+ "outputs": [
+  "crash_hotspot_map.png",
+  "crash_hotspots.cpg",
+  "crash_hotspots.dbf",
+  "crash_hotspots.prj",
+  "crash_hotspots.shp",
+  "crash_hotspots.shx",
+  "peak_crashes.cpg",
+  "peak_crashes.dbf",
+  "peak_crashes.prj",
+  "peak_crashes.shp",
+  "peak_crashes.shx",
+  "peak_crashes_snapped.cpg",
+  "peak_crashes_snapped.dbf",
+  "peak_crashes_snapped.prj",
+  "peak_crashes_snapped.shp",
+  "peak_crashes_snapped.shx"
+ ],
+ "required_outputs": [],
+ "required_present": null,
+ "emergency_files": [],
+ "rounds": 7,
+ "self_corrections": 0,
+ "agent_stats": {
+  "rounds": 7,
+  "format_errors": 0,
+  "format_error_kinds": {},
+  "self_corrections": 0,
+  "exec_blocks": 6,
+  "exec_failed": 0,
+  "finish_rejections": 0,
+  "dedup_blocked": 0,
+  "triggers": {
+   "g1:card": 1
+  },
+  "checks_run": {
+   "g2": 6,
+   "g3": 7,
+   "g7": 6
+  },
+  "end_reason": "finish",
+  "empty_retries": 0,
+  "history_truncations": 0,
+  "finished": true,
+  "agent_time_s": 8.0
+ },
+ "llm_stats": {
+  "calls": 7,
+  "retries": 0,
+  "errors": 0,
+  "context_overflow": 0,
+  "empty": 0,
+  "refusals": 0,
+  "prompt_tokens": 16,
+  "completion_tokens": 6770,
+  "cached_tokens": 56605,
+  "cache_write_tokens": 15027
+ },
+ "llm_time_s": 66.3,
+ "agent_time_s": 8.0,
+ "hit_deadline": false,
+ "sandbox_events": [],
+ "inputs_intact": true,
+ "container_memory": "12g",
+ "deliverable_produced": true,
+ "config": {
+  "image": "gisclaw-exec:1.0",
+  "step_timeout_s": 300,
+  "task_wall_s": 1200,
+  "max_rounds": 50,
+  "blocked_packages": {
+   "arcpy": "Use geopandas + rasterio + shapely instead."
+  },
+  "agent": {
+   "history_tokens": 60000,
+   "max_format_errors": 15
+  }
+ },
+ "model_config": {
+  "provider": "anthropic",
+  "model_name": "claude-opus-5-5",
+  "request": {
+   "set": {
+    "max_tokens": 32000,
+    "thinking": {
+     "type": "adaptive",
+     "display": "summarized"
+    },
+    "output_config": {
+     "effort": "high"
+    }
+   }
+  },
+  "history_tokens": 700000
+ }
+}

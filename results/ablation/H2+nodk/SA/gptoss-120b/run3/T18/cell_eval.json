@@ -1,0 +1,81 @@
+{
+ "cell_id": "ablation.H2+nodk.SA.gptoss-120b.r3.T18",
+ "task": 18,
+ "status": "ok",
+ "analytically_correct": true,
+ "scorer_error": false,
+ "checks": [
+  {
+   "name": "required output present",
+   "passed": true,
+   "value": [
+    "trees_count_vis.png"
+   ],
+   "threshold": [
+    "trees_count_vis.png"
+   ],
+   "required": true,
+   "note": ""
+  },
+  {
+   "name": "map not blank",
+   "passed": true,
+   "value": 44.19242104545567,
+   "threshold": ">=3 grey-level std",
+   "required": true,
+   "note": ""
+  },
+  {
+   "name": "species nullity indicator from the Species column",
+   "passed": false,
+   "value": 0.0,
+   "threshold": 0.99,
+   "required": false,
+   "note": "no per-tree 0/1 column matching Species nullity"
+  },
+  {
+   "name": "null share aggregated by region and mapped",
+   "passed": true,
+   "value": null,
+   "threshold": null,
+   "required": true,
+   "note": "drawn: cell_gdf.null_pct (isnull)"
+  },
+  {
+   "name": "NULL share (not its complement) mapped",
+   "passed": true,
+   "value": null,
+   "threshold": null,
+   "required": true,
+   "note": "isnull"
+  },
+  {
+   "name": "regions are quadtree cells (task: 'quadtree format map')",
+   "passed": true,
+   "value": null,
+   "threshold": null,
+   "required": true,
+   "note": "cell_gdf: {'rect_cells': 466, 'on_power2_share': 1.0, 'levels': [0, 1, 2, 3, 4]}"
+  }
+ ],
+ "replay": {
+  "success": true,
+  "outputs": [
+   "trees_count_vis.png"
+  ],
+  "events": [],
+  "blocks_ok": 3,
+  "block_outcome": [
+   "ok",
+   "ok",
+   "ok"
+  ],
+  "step_timeout_s": 900,
+  "same_outputs_as_original": true,
+  "block_mismatches": []
+ },
+ "replay_faithful": true,
+ "replay_unfaithful_reasons": [],
+ "replay_container_failure": [],
+ "emergency_files": []
+}

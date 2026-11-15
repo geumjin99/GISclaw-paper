@@ -1,0 +1,30 @@
+{
+ "task": 11,
+ "title": "Create charts using Python to better explore the distribution of corals and sponges around Catalina Island",
+ "output_type": "image (bar charts) + updated point table",
+ "required_outputs": [
+  "CoralandSponge.png"
+ ],
+ "method": "Bathymetry (elevation, m; NAD83 / California Albers EPSG:3310, 88.03 m cells). Slope (degrees) and aspect (degrees clockwise from north, downslope, -1 flat) by Horn's 3x3 method with the true cell size on the elevation surface. Project the 7 658 observations to EPSG:3310, add slope/aspect of the underlying cell to the table, then per VernacularNameCategory (13 categories) mean slope and circular-mean aspect (arithmetic mean kept for comparison); horizontal bar charts.",
+ "key_parameters": {
+  "raster_crs": "EPSG:3310",
+  "cell_size_m": 88.03,
+  "algorithm": "Horn 3x3 (ArcGIS Slope/Aspect)",
+  "grouping": "VernacularNameCategory",
+  "aspect_mean": "circular (arithmetic accepted)"
+ },
+ "benchmark_defects": [
+  "The raster's ESRI header is read by rasterio as LOCAL_CS 'NAD83 / California Albers'; the EPSG code must be inferred.",
+  "'Each Coral and Sponge species' is ambiguous (VernacularNameCategory, 13 classes incl. 'fish', vs ScientificName, 96 taxa); both groupings are accepted.",
+  "A 'mean aspect' is only meaningful as a circular mean; the arithmetic mean differs by up to 170 deg for some categories. Both are accepted, the circular mean is reported.",
+  "The published reference script passes the array dimensions as the np.gradient spacing, multiplies the raster by -1 before computing slope and aspect, and samples the points through a transform built from the point bounding box instead of the raster's own transform."
+ ],
+ "checks": [
+  "required: figure present",
+  "required: figure not blank",
+  "required: a ~7 658-row point table has a slope column (deg or %) with Spearman >= 0.9 vs gold per-point slope and an aspect column within 25 deg of gold for >= 80 % of points",
+  "required: per-category (VernacularNameCategory or ScientificName, categories with n >= 20) mean slope within max(0.5 deg, 20 %) and mean aspect within 25 deg of the gold circular or arithmetic mean, each for >= 80 % of categories (may be separate tables/series) (fallback: group means of the verified per-point columns when the code groups by category inline)",
+  "required: the figure saved as CoralandSponge.png draws the per-category mean slope and mean aspect (bar lengths, marker/line positions or polar angle; one series each, matched one-to-one to >= 80 % of categories with n >= 20 within the check-3 tolerances; series must have <= 2.5 x n_categories values and not be evenly spaced; a series made mostly of exact per-point values is a raw-point plot and is ignored; when >= 80 % of a series' values equal exactly one of the agent's own per-category numbers, the values are tied to those category labels and compared category by category instead of as a set)",
+  "optional: aspect averaged circularly"
+ ]
+}

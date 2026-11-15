@@ -1,0 +1,102 @@
+{
+ "cell_id": "ablation.H2+nodk.SA.gptoss-120b.r2.T24",
+ "task": 24,
+ "status": "ok",
+ "analytically_correct": false,
+ "scorer_error": false,
+ "checks": [
+  {
+   "name": "point vector file written",
+   "passed": true,
+   "value": [
+    "High_Blood_Level_Results_Rounded.shp"
+   ],
+   "threshold": null,
+   "required": true,
+   "note": ""
+  },
+  {
+   "name": "records preserved (373 or 168 unique)",
+   "passed": true,
+   "value": 373,
+   "threshold": "373 or 168",
+   "required": true,
+   "note": "High_Blood_Level_Results_Rounded.shp"
+  },
+  {
+   "name": "geometries on 0.01-degree WGS84 grid",
+   "passed": true,
+   "value": 1.0,
+   "threshold": 0.99,
+   "required": true,
+   "note": ""
+  },
+  {
+   "name": "unique rounded locations equal gold set",
+   "passed": true,
+   "value": 1.0,
+   "threshold": 0.98,
+   "required": true,
+   "note": "168 unique pred locations vs 168 gold"
+  },
+  {
+   "name": "reduction in unique locations documented (168 / 204-205 / ~55 %)",
+   "passed": true,
+   "value": "unique_after=168.0@final",
+   "threshold": null,
+   "required": true,
+   "note": "searched captured scalars/tables, text outputs and labelled stdout lines"
+  },
+  {
+   "name": "exact original coordinates not kept as attributes",
+   "passed": false,
+   "value": "orig_lon ~ original lon",
+   "threshold": null,
+   "required": true,
+   "note": "published layer must not carry the exact coordinates"
+  },
+  {
+   "name": "rounded coordinate fields added",
+   "passed": true,
+   "value": null,
+   "threshold": null,
+   "required": false,
+   "note": ""
+  },
+  {
+   "name": "deliverable files carry a CRS (uniform rule)",
+   "passed": true,
+   "value": [
+    "High_Blood_Level_Results_Rounded.shp"
+   ],
+   "threshold": "every geographic deliverable file has a CRS",
+   "required": true,
+   "note": "1 geographic deliverable file(s), all with a CRS"
+  }
+ ],
+ "replay": {
+  "success": true,
+  "outputs": [
+   "High_Blood_Level_Results_Rounded.cpg",
+   "High_Blood_Level_Results_Rounded.dbf",
+   "High_Blood_Level_Results_Rounded.prj",
+   "High_Blood_Level_Results_Rounded.shp",
+   "High_Blood_Level_Results_Rounded.shx",
+   "reduction_report.txt"
+  ],
+  "events": [],
+  "blocks_ok": 3,
+  "block_outcome": [
+   "ok",
+   "ok",
+   "ok"
+  ],
+  "step_timeout_s": 900,
+  "same_outputs_as_original": true,
+  "block_mismatches": []
+ },
+ "replay_faithful": true,
+ "replay_unfaithful_reasons": [],
+ "replay_container_failure": [],
+ "emergency_files": []
+}

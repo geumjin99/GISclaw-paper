@@ -1,0 +1,107 @@
+{
+ "cell_id": "main.H2.SA.qwen38-27b.r3.T07",
+ "task": 7,
+ "status": "ok",
+ "analytically_correct": true,
+ "scorer_error": false,
+ "checks": [
+  {
+   "name": "required output present",
+   "passed": true,
+   "value": [
+    "flooding_analysis.png"
+   ],
+   "threshold": [
+    "flooding_analysis.png"
+   ],
+   "required": true,
+   "note": ""
+  },
+  {
+   "name": "map not blank",
+   "passed": true,
+   "value": 54.2047707070984,
+   "threshold": ">=3 grey-level std",
+   "required": true,
+   "note": ""
+  },
+  {
+   "name": "flood depth = W - elevation on the study area",
+   "passed": true,
+   "value": {
+    "W_cm": 0.0,
+    "iou": 1.0,
+    "share_consistent": 1.0,
+    "units": "cm"
+   },
+   "threshold": "share >= 0.95 and IoU >= 0.95",
+   "required": true,
+   "note": "depth@final"
+  },
+  {
+   "name": "building damage consistent with depth and damage function",
+   "passed": true,
+   "value": {
+    "spearman": 0.989,
+    "total_ratio": 0.989,
+    "buildings": 7006
+   },
+   "threshold": "spearman >= 0.8 and total ratio 0.75-1.33",
+   "required": true,
+   "note": "damage_cost in res@final"
+  },
+  {
+   "name": "damage function uses the natural log (as in the original solution)",
+   "passed": true,
+   "value": "ln",
+   "threshold": null,
+   "required": true,
+   "note": "damage_cost = f(depth_mean_cm) in gdf@final"
+  },
+  {
+   "name": "water level equals the original -200 cm NAP",
+   "passed": false,
+   "value": 0.0,
+   "threshold": -200.0,
+   "required": false,
+   "note": ""
+  }
+ ],
+ "replay": {
+  "success": true,
+  "outputs": [
+   "buildings_damage.csv",
+   "buildings_damage.gpkg",
+   "flood_depth_2050.tif",
+   "flooding_analysis.png"
+  ],
+  "events": [],
+  "blocks_ok": 11,
+  "block_outcome": [
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok"
+  ],
+  "step_timeout_s": 900,
+  "same_outputs_as_original": true,
+  "block_mismatches": []
+ },
+ "replay_faithful": true,
+ "replay_unfaithful_reasons": [],
+ "replay_container_failure": [],
+ "emergency_files": []
+}

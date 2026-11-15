@@ -1,0 +1,91 @@
+{
+ "cell_id": "oneshot.C0.SA.claude-opus-5-5.r2.T41",
+ "task": 41,
+ "status": "ok",
+ "analytically_correct": false,
+ "scorer_error": false,
+ "checks": [
+  {
+   "name": "result file written to pred_results",
+   "passed": true,
+   "value": [
+    "attribute_name_counts.csv",
+    "campgrounds_with_campsite_counts.gpkg",
+    "campsites_campgrounds_map.png",
+    "campsites_invalid_relationship.gpkg",
+    "campsites_related_attributes.csv",
+    "campsites_with_attributes.gpkg"
+   ],
+   "threshold": "any non-empty file",
+   "required": true,
+   "note": ""
+  },
+  {
+   "name": "one-to-many campsite relate materialised (per-campsite related-record counts, Wyoming campsites)",
+   "passed": true,
+   "value": 1.0,
+   "threshold": ">= 0.95 of the 1,170 Wyoming campsites exact",
+   "required": true,
+   "note": "camps_attr@final.n_attributes ~ n_attributes"
+  },
+  {
+   "name": "park-level join ParentOrgID -> OrgID (both parks carry 'National Park Service')",
+   "passed": false,
+   "value": [
+    "parks@final",
+    "parks_j@final",
+    "pk@final"
+   ],
+   "threshold": "a table with both parks and their organisation",
+   "required": true,
+   "note": ""
+  },
+  {
+   "name": "relationship campground (FacilityID) 1 -> many campsites (ParentFacilityID) materialised",
+   "passed": true,
+   "value": 1.0,
+   "threshold": "per campground: all 6 counts exact; per campsite: >= 0.95 parent facility exact",
+   "required": true,
+   "note": "cg@final: n_campsites by FacilityName (per campground)"
+  },
+  {
+   "name": "copies of input datasets not counted as results (uniform rule)",
+   "passed": true,
+   "value": {
+    "national_parks_joined.gpkg": "National Parks.gpkg"
+   },
+   "threshold": null,
+   "required": false,
+   "note": "hidden from the task checks: national_parks_joined.gpkg",
+   "info": true
+  }
+ ],
+ "replay": {
+  "success": true,
+  "outputs": [
+   "attribute_name_counts.csv",
+   "campgrounds_with_campsite_counts.gpkg",
+   "campsites_campgrounds_map.png",
+   "campsites_invalid_relationship.gpkg",
+   "campsites_related_attributes.csv",
+   "campsites_with_attributes.gpkg",
+   "log.txt",
+   "national_parks_joined.gpkg",
+   "park_summary.csv",
+   "relationship_campgrounds_campsites.csv",
+   "relationship_class.json"
+  ],
+  "events": [],
+  "blocks_ok": 1,
+  "block_outcome": [
+   "ok"
+  ],
+  "step_timeout_s": 3600,
+  "same_outputs_as_original": true,
+  "block_mismatches": []
+ },
+ "replay_faithful": true,
+ "replay_unfaithful_reasons": [],
+ "replay_container_failure": [],
+ "emergency_files": []
+}

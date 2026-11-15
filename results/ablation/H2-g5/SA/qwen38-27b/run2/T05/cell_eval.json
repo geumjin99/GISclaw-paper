@@ -1,0 +1,144 @@
+{
+ "cell_id": "ablation.H2-g5.SA.qwen38-27b.r2.T05",
+ "task": 5,
+ "status": "ok",
+ "analytically_correct": false,
+ "scorer_error": false,
+ "checks": [
+  {
+   "name": "required output present",
+   "passed": true,
+   "value": [
+    "blood_lead_hotspots.png"
+   ],
+   "threshold": [
+    "blood_lead_hotspots.png",
+    "transit_access.png"
+   ],
+   "required": true,
+   "note": ""
+  },
+  {
+   "name": "map not blank",
+   "passed": true,
+   "value": 64.4832986710047,
+   "threshold": ">=3 grey-level std",
+   "required": true,
+   "note": ""
+  },
+  {
+   "name": "hexagon tessellation with correct case counts",
+   "passed": true,
+   "value": {
+    "cells_with_exact_count": 1.0,
+    "cases_in_cells": 373
+   },
+   "threshold": ">=0.95 of cells exact, >=90 % of 373 cases covered",
+   "required": true,
+   "note": "case_count in hex_out@final"
+  },
+  {
+   "name": "hot spot statistic consistent with Gi* on the hexagon counts",
+   "passed": true,
+   "value": 0.835,
+   "threshold": "Spearman >= 0.6 with recomputed Gi* z and Gi*-type values (signed z or bins)",
+   "required": true,
+   "note": "Gi.Zs@final"
+  },
+  {
+   "name": "the map draws the hot spot result on the hexagons",
+   "passed": true,
+   "value": "4 collections of ax0@save01 merged (one per colour class; significant-set IoU 1.00)",
+   "threshold": null,
+   "required": true,
+   "note": "Z_Gi in hex_out@final"
+  },
+  {
+   "name": "privacy: individual case locations are not drawn",
+   "passed": false,
+   "value": 373,
+   "threshold": "< 20 drawn points on case locations",
+   "required": true,
+   "note": "fig_ax0_coll1_offsets@save00 in EPSG:3857"
+  },
+  {
+   "name": "method fidelity: Getis-Ord hot spot code",
+   "passed": true,
+   "value": null,
+   "threshold": null,
+   "required": false,
+   "note": ""
+  },
+  {
+   "name": "privacy: median hexagon area >= 0.05 km2",
+   "passed": false,
+   "value": null,
+   "threshold": 0.05,
+   "required": false,
+   "note": ""
+  }
+ ],
+ "replay": {
+  "success": true,
+  "outputs": [
+   "blood_lead_hotspots.png",
+   "hex_cases_summary.cpg",
+   "hex_cases_summary.dbf",
+   "hex_cases_summary.prj",
+   "hex_cases_summary.shp",
+   "hex_cases_summary.shx",
+   "hotspot_centroids.cpg",
+   "hotspot_centroids.dbf",
+   "hotspot_centroids.prj",
+   "hotspot_centroids.shp",
+   "hotspot_centroids.shx",
+   "hotspot_hexes.cpg",
+   "hotspot_hexes.dbf",
+   "hotspot_hexes.prj",
+   "hotspot_hexes.shp",
+   "hotspot_hexes.shx",
+   "lead_cases_points.cpg",
+   "lead_cases_points.dbf",
+   "lead_cases_points.prj",
+   "lead_cases_points.shp",
+   "lead_cases_points.shx"
+  ],
+  "events": [],
+  "blocks_ok": 17,
+  "block_outcome": [
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok"
+  ],
+  "step_timeout_s": 900,
+  "same_outputs_as_original": true,
+  "block_mismatches": []
+ },
+ "replay_faithful": true,
+ "replay_unfaithful_reasons": [],
+ "replay_container_failure": [],
+ "emergency_files": []
+}

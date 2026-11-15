@@ -1,0 +1,24 @@
+{
+ "task": 26,
+ "source": "instruction: calculate vulnerable_areas (raster); checks.py globs any *.tif* in pred_results and scores the best-matching one",
+ "deliverables": [
+  {
+   "id": "vulnerable_areas",
+   "kind": "raster",
+   "patterns": [
+    "*.tif*"
+   ],
+   "required": true,
+   "crs_required": true,
+   "checked_by": [
+    "vulnerability raster written",
+    "valid area matches gold (IoU)",
+    "cell values equal gold (drainage*5 + depth*4)",
+    "drainage and depth scores correct for every class (>= 0.80)",
+    "output CRS is Lambert Conformal Conic",
+    "values are valid 5a+4b combinations"
+   ]
+  }
+ ],
+ "not_deliverables": []
+}

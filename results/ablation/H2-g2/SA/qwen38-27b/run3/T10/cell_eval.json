@@ -1,0 +1,87 @@
+{
+ "cell_id": "ablation.H2-g2.SA.qwen38-27b.r3.T10",
+ "task": 10,
+ "status": "ok",
+ "analytically_correct": true,
+ "scorer_error": false,
+ "checks": [
+  {
+   "name": "required output present",
+   "passed": true,
+   "value": [
+    "predictedRiskyArea.png"
+   ],
+   "threshold": [
+    "predictedRiskyArea.png"
+   ],
+   "required": true,
+   "note": ""
+  },
+  {
+   "name": "map not blank",
+   "passed": true,
+   "value": 83.19893001231577,
+   "threshold": ">=3 grey-level std",
+   "required": true,
+   "note": ""
+  },
+  {
+   "name": "risky area = planned-road buffer minus deforested (or within protected forest)",
+   "passed": true,
+   "value": 0.994,
+   "threshold": 0.85,
+   "required": true,
+   "note": "risky_prot@final ~ gold prot_at_risk (deforested share 0.0%)"
+  },
+  {
+   "name": "context layers drawn (existing roads, protected forest, deforested area)",
+   "passed": true,
+   "value": {
+    "roads": true,
+    "protected": true,
+    "deforested": true
+   },
+   "threshold": null,
+   "required": true,
+   "note": "state_bounds.plot(ax=a, color='#1f3864', linewidth=2.2, edgecolor='#1f3864', zorder=6); protected_m.plot(ax=a, color='#2d6a4f', alpha=0.45, edgecolor='#1b4332', linewidth=0.3, zorder=2); drawn layer #1@save00: 1 features, 100% = deforestedArea.geojson features"
+  },
+  {
+   "name": "Rondonia boundary layer drawn",
+   "passed": true,
+   "value": null,
+   "threshold": null,
+   "required": false,
+   "note": ""
+  }
+ ],
+ "replay": {
+  "success": true,
+  "outputs": [
+   "predictedRiskyArea.png"
+  ],
+  "events": [],
+  "blocks_ok": 10,
+  "block_outcome": [
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok"
+  ],
+  "step_timeout_s": 900,
+  "same_outputs_as_original": true,
+  "block_mismatches": []
+ },
+ "replay_faithful": true,
+ "replay_unfaithful_reasons": [],
+ "replay_container_failure": [],
+ "emergency_files": []
+}

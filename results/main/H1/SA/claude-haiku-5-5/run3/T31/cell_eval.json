@@ -1,0 +1,98 @@
+{
+ "cell_id": "main.H1.SA.claude-haiku-5-5.r3.T31",
+ "task": 31,
+ "status": "ok",
+ "analytically_correct": false,
+ "scorer_error": false,
+ "checks": [
+  {
+   "name": "figure written (non-blank PNG)",
+   "passed": true,
+   "value": [
+    "L_function_plot.png"
+   ],
+   "threshold": null,
+   "required": true,
+   "note": ""
+  },
+  {
+   "name": "L(r) curve matches gold",
+   "passed": false,
+   "value": {
+    "max_abs": 0.1403,
+    "mean_abs": 0.1161
+   },
+   "threshold": "max<=0.012, mean<=0.005 on r in [0.05, 0.35]",
+   "required": true,
+   "note": "fig_ax0_line1@save00"
+  },
+  {
+   "name": "flow K-function (4-D, ~pi^2 r^4) computed - matches gold K",
+   "passed": true,
+   "value": 0.0139,
+   "threshold": "mean rel. error <= 0.10 vs gold K (max-distance flow distance, as defined in the task text)",
+   "required": true,
+   "note": "K@final vs R@final (max-distance flow K)"
+  },
+  {
+   "name": "local K computed per flow (1000 x m array)",
+   "passed": true,
+   "value": null,
+   "threshold": null,
+   "required": false,
+   "note": ""
+  },
+  {
+   "name": "confidence envelope (CSR simulation or drawn band around L)",
+   "passed": true,
+   "value": {
+    "simulation_code": true,
+    "drawn_band": null
+   },
+   "threshold": null,
+   "required": true,
+   "note": "required (the text asks for confidence intervals)"
+  }
+ ],
+ "replay": {
+  "success": true,
+  "outputs": [
+   "L_function_plot.png",
+   "L_function_results.csv",
+   "_simL.npy",
+   "local_K_per_flow.csv",
+   "summary.txt"
+  ],
+  "events": [],
+  "blocks_ok": 16,
+  "block_outcome": [
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok"
+  ],
+  "step_timeout_s": 900,
+  "same_outputs_as_original": false,
+  "block_mismatches": [
+   6
+  ]
+ },
+ "replay_faithful": false,
+ "replay_unfaithful_reasons": [
+  "block success differs at [6]"
+ ],
+ "replay_container_failure": [],
+ "emergency_files": []
+}

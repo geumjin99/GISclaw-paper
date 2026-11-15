@@ -1,0 +1,459 @@
+id,Open Source,Task Categories1,Task Categories2,Task Categories3,Task,Instruction,Domain Knowledge,Dataset Description,Human Designed Workflow,Task Length
+102,T,Detecting and quantifying patterns,Finding the best locations and paths,,"Find future bus stop locations in Hamilton, Tennessee","Your task is performing analysis on public transit access in Hamilton County Tennessee. The goal is to map out existing bus stops's service area with enriched map layers for different census blocks, including poverty, population density, and accessibility to a vehicle. You should overlay the three demographical factors with the bus service area using different transparent color schemes. Visualizing the resulting data as ""pred_results/transit_access.png"".","The Overlay toolset contains tools to overlay multiple feature classes to combine, erase, modify, or update spatial features, resulting in a new feature class. The ""overlay"" function manipulations two feature layers using the language of sets, intersection, union, difference and symmetrical difference.","dataset/BusServiceArea.geojson: Geojson file stores the bus stop service areas in polygons
+
+Columns of dataset/BusServiceArea.geojson:
+   OBJECTID FacilityID  ...   Shape_Area, geometry
+
+dataset/HamiltonDemographics.geojson: Geojson file that stores census block demographic information in polygons. 'populationtotals_TOTPOP_CY' stores the total population ('populationToPolygonSizeRating' has the same value, 2.191, in every block group and does not measure density). 'households_ACSHHBPOV' represents poverty rate. 'AtRisk_ACSOVEH0' represents population without ownership to vehicles.
+
+Columns of dataset/HamiltonDemographics.geojson:
+OBJECTID', 'AREALAND', 'AREAWATER', 'BASENAME', 'BLKGRP', 'CENTLAT',
+'CENTLON', 'COUNTY', 'FUNCSTAT', 'GEOID', 'INTPTLAT', 'INTPTLON',
+'LSADC', 'MTFCC', 'NAME', 'ObjID', 'STATE', 'TRACT', 'UR', 'HU100',
+'POP100', 'ALANDHIST', 'AWATERHIST', 'EFFDATE', 'ESTABDATE', 'VINTAGE',
+'STGEOMETRY_AREA', 'STGEOMETRY_LEN', 'aggregationMethod', 'HasData',
+'ORIGINAL_OID', 'sourceCountry', 'apportionmentConfidence',
+'populationToPolygonSizeRating', 'populationtotals_TOTPOP_CY',
+'households_ACSHHBPOV', 'AtRisk_ACSOVEH0', 'Shape_Length', 'Shape_Area',
+'geometry'
+","1. Load dataset
+2. Filter(Poverty)
+3. Filter(population density)
+4. Filter(No Access to vehicle)
+5. Overlay
+6. Visualization",6
+202,T,Detecting and quantifying patterns,Finding the best locations and paths,,"Find future bus stop locations in Hamilton, Tennessee","Your task is performing analysis on public transit access in Hamilton County Tennessee. The goal is to map out existing bus stops's service area with enriched map layers for different census blocks, including poverty, population density, and accessibility to a vehicle. You should overlay the three demographical factors with the bus service area using different transparent color schemes. Visualizing the resulting data as ""pred_results/transit_access.png"".","The Overlay toolset contains tools to overlay multiple feature classes to combine, erase, modify, or update spatial features, resulting in a new feature class. The ""overlay"" function manipulations two feature layers using the language of sets, intersection, union, difference and symmetrical difference.","dataset/BusServiceArea.geojson: Geojson file stores the bus stop service areas in polygons
+
+Columns of dataset/BusServiceArea.geojson:
+   OBJECTID FacilityID  ...   Shape_Area, geometry
+
+dataset/HamiltonDemographics.geojson: Geojson file that stores census block demographic information in polygons. 'pop_total_cy' stores the total population ('pop_size_rating' has the same value, 2.191, in every block group and does not measure density). 'poverty_hh_acs' represents poverty rate. 'no_vehicle_acs' represents population without ownership to vehicles.
+
+Columns of dataset/HamiltonDemographics.geojson:
+OBJECTID', 'AREALAND', 'AREAWATER', 'BASENAME', 'BLKGRP', 'CENTLAT',
+'CENTLON', 'COUNTY', 'FUNCSTAT', 'GEOID', 'INTPTLAT', 'INTPTLON',
+'LSADC', 'MTFCC', 'NAME', 'ObjID', 'STATE', 'TRACT', 'UR', 'HU100',
+'POP100', 'ALANDHIST', 'AWATERHIST', 'EFFDATE', 'ESTABDATE', 'VINTAGE',
+'STGEOMETRY_AREA', 'STGEOMETRY_LEN', 'aggregationMethod', 'HasData',
+'ORIGINAL_OID', 'sourceCountry', 'apportionmentConfidence',
+'pop_size_rating', 'pop_total_cy',
+'poverty_hh_acs', 'no_vehicle_acs', 'Shape_Length', 'Shape_Area',
+'geometry'
+","1. Load dataset
+2. Filter(Poverty)
+3. Filter(population density)
+4. Filter(No Access to vehicle)
+5. Overlay
+6. Visualization",6
+302,T,Detecting and quantifying patterns,Finding the best locations and paths,,"Find future bus stop locations in Hamilton, Tennessee","Your task is to analyze public transit access in Hamilton County, Tennessee. Map the service areas of the existing bus stops together with enriched map layers for the different census blocks covering poverty, population density and access to a vehicle. Overlay these three demographic factors on the bus service area using different transparent color schemes. Save the resulting visualization as ""pred_results/transit_access.png"".","The Overlay toolset contains tools to overlay multiple feature classes to combine, erase, modify, or update spatial features, resulting in a new feature class. The ""overlay"" function manipulations two feature layers using the language of sets, intersection, union, difference and symmetrical difference.","dataset/BusServiceArea.geojson: Geojson file stores the bus stop service areas in polygons
+
+Columns of dataset/BusServiceArea.geojson:
+   OBJECTID FacilityID  ...   Shape_Area, geometry
+
+dataset/HamiltonDemographics.geojson: Geojson file that stores census block demographic information in polygons. 'populationtotals_TOTPOP_CY' stores the total population ('populationToPolygonSizeRating' has the same value, 2.191, in every block group and does not measure density). 'households_ACSHHBPOV' represents poverty rate. 'AtRisk_ACSOVEH0' represents population without ownership to vehicles.
+
+Columns of dataset/HamiltonDemographics.geojson:
+OBJECTID', 'AREALAND', 'AREAWATER', 'BASENAME', 'BLKGRP', 'CENTLAT',
+'CENTLON', 'COUNTY', 'FUNCSTAT', 'GEOID', 'INTPTLAT', 'INTPTLON',
+'LSADC', 'MTFCC', 'NAME', 'ObjID', 'STATE', 'TRACT', 'UR', 'HU100',
+'POP100', 'ALANDHIST', 'AWATERHIST', 'EFFDATE', 'ESTABDATE', 'VINTAGE',
+'STGEOMETRY_AREA', 'STGEOMETRY_LEN', 'aggregationMethod', 'HasData',
+'ORIGINAL_OID', 'sourceCountry', 'apportionmentConfidence',
+'populationToPolygonSizeRating', 'populationtotals_TOTPOP_CY',
+'households_ACSHHBPOV', 'AtRisk_ACSOVEH0', 'Shape_Length', 'Shape_Area',
+'geometry'
+","1. Load dataset
+2. Filter(Poverty)
+3. Filter(population density)
+4. Filter(No Access to vehicle)
+5. Overlay
+6. Visualization",6
+110,T,Making predictions,"Measuring size, shape, and distribution",,Analyze the potential impact of proposed roads on local environment,"Your task is predicting the effect of future proposed roads on the deforestation of in the Brazilian state of Rondônia. A planned road network will be added to Rondônia, create a buffer zone of 5.5km around the new roads. Show the area within the buffer zone that is at risk of new deforestation. Visualize the change created by the roads with the planned roads, existing roads, deforested area, and protected forest along with the boundary of Rondônia. Save the output as ""pred_results/predictedRiskyArea.png"".
+","""Buffer"" creates buffer polygons or zones around input geometry features to a specified distance.
+
+Clip points, lines, or polygon geometries to the mask extent.  ""Clip"" is used to cut out a piece of one map layer using one or more of the features in another layer.
+
+The Overlay toolset contains tools to overlay multiple feature classes to combine, erase, modify, or update spatial features, resulting in a new feature class. The ""overlay"" function manipulations two feature layers using the language of sets, intersection, union, difference and symmetrical difference.","dataset/roads.geojson: Linestring Geojson file storing the current road map in Brazilian state of Rondônia.
+Status columns include values such as ""Official"", ""Unofficial"".
+Column of dataset/roads.geojson:
+OBJECTID        Name        Status        Shape_Length        geometry
+
+dataset/deforestedArea.geojson: Polygon Geojson file include the entire deforested area as one row of polygon.
+
+Columns of dataset/deforestedArea.geojson:
+OBJECTID        Shape_Length        Shape_Area        geometry
+
+dataset/protectedForest.geojson: Polygon Geojson file storing mutiple natural reservation areas.
+Columns of dataset/protectedForest.geojson:
+OBJECTID_1        Name        Category        Jurisdiction        Created        Shape_Length        Shape_Area        geometry
+
+dataset/planned_road.geojson: One row of proposed road in the future urban planning process, saved in linestring Geojson format/
+Columns of dataset/planned_road.geojson
+OBJECTID        Shape_Length        Name        Status        geometry","1. Load Dataset
+2. Buffer
+3. Clip
+4. Overlay
+5. Visulization",5
+310,T,Making predictions,"Measuring size, shape, and distribution",,Analyze the potential impact of proposed roads on local environment,"Your task is to predict how future proposed roads would affect deforestation in the Brazilian state of Rondônia. A planned road network is going to be added to Rondônia; create a 5.5km buffer zone around the new roads. Show which part of the buffer zone is at risk of new deforestation. Visualize the change the roads would create, showing the planned roads, the existing roads, the deforested area and the protected forest together with the boundary of Rondônia. Save the output as ""pred_results/predictedRiskyArea.png"".","""Buffer"" creates buffer polygons or zones around input geometry features to a specified distance.
+
+Clip points, lines, or polygon geometries to the mask extent.  ""Clip"" is used to cut out a piece of one map layer using one or more of the features in another layer.
+
+The Overlay toolset contains tools to overlay multiple feature classes to combine, erase, modify, or update spatial features, resulting in a new feature class. The ""overlay"" function manipulations two feature layers using the language of sets, intersection, union, difference and symmetrical difference.","dataset/roads.geojson: Linestring Geojson file storing the current road map in Brazilian state of Rondônia.
+Status columns include values such as ""Official"", ""Unofficial"".
+Column of dataset/roads.geojson:
+OBJECTID        Name        Status        Shape_Length        geometry
+
+dataset/deforestedArea.geojson: Polygon Geojson file include the entire deforested area as one row of polygon.
+
+Columns of dataset/deforestedArea.geojson:
+OBJECTID        Shape_Length        Shape_Area        geometry
+
+dataset/protectedForest.geojson: Polygon Geojson file storing mutiple natural reservation areas.
+Columns of dataset/protectedForest.geojson:
+OBJECTID_1        Name        Category        Jurisdiction        Created        Shape_Length        Shape_Area        geometry
+
+dataset/planned_road.geojson: One row of proposed road in the future urban planning process, saved in linestring Geojson format/
+Columns of dataset/planned_road.geojson
+OBJECTID        Shape_Length        Name        Status        geometry","1. Load Dataset
+2. Buffer
+3. Clip
+4. Overlay
+5. Visulization",5
+118,T,Understanding where,Detecting and quantifying patterns,,Analyze the street tree species data  in San Francisco,"Your task is using the distribution data data about San Francisco street trees and shapefiles of administrative regions to analyze the tree species NULL percentage in different regions. Visualize the results in a quadtree format map that shows, for each region, the percentage of trees whose species is NULL. Save the figure as 'pred_results/trees_count_vis.png'.","geoplot.quadtree() plots a choropleth map with point aggregate by quadtree neighborhoods.
+geodataframe.assign() function assigns new columns to a GeoDataFrame. A new column could be the data ""nullity"" percentage. geoplot.polyplot() plots a polygon data layer. The DataFrame.isnull() and DataFrame.notnull() functions in Pandas detect missing and non-missing values within a DataFrame. ","dataset/street_trees_sample.geojson: Point Geojson file storing tree sample locations along with their species information.
+Columns of dataset/street_trees_sample.geojson
+'LegalStatus', 'Species', 'Address', 'SiteOrder', 'SiteInfo',
+       'PlantType', 'Caretaker', 'CareAssistant', 'PlantDate', 'DBH',
+       'PlotSize', 'PermitNotes', 'geometry'
+
+dataset/sfo_boroughs.geojson: One row of polygon Geojson file storing boroughs in the San Francisco.
+Columns of dataset/sfo_boroughs.geojson:
+'geometry'","1. Load Dataset
+2. Project
+3. Filter
+4.Visualization",4
+218,T,Understanding where,Detecting and quantifying patterns,,Analyze the street tree species data  in San Francisco,"Your task is using the distribution data data about San Francisco street trees and shapefiles of administrative regions to analyze the tree species NULL percentage in different regions. Visualize the results in a quadtree format map that shows, for each region, the percentage of trees whose species is NULL. Save the figure as 'pred_results/trees_count_vis.png'.","geoplot.quadtree() plots a choropleth map with point aggregate by quadtree neighborhoods.
+geodataframe.assign() function assigns new columns to a GeoDataFrame. A new column could be the data ""nullity"" percentage. geoplot.polyplot() plots a polygon data layer. The DataFrame.isnull() and DataFrame.notnull() functions in Pandas detect missing and non-missing values within a DataFrame. ","dataset/street_trees_sample.geojson: Point Geojson file storing tree sample locations along with their species information.
+Columns of dataset/street_trees_sample.geojson
+'LegalStatus', 'tree_species', 'Address', 'SiteOrder', 'SiteInfo',
+       'PlantType', 'Caretaker', 'CareAssistant', 'PlantDate', 'DBH',
+       'PlotSize', 'PermitNotes', 'geometry'
+
+dataset/sfo_boroughs.geojson: One row of polygon Geojson file storing boroughs in the San Francisco.
+Columns of dataset/sfo_boroughs.geojson:
+'geometry'","1. Load Dataset
+2. Project
+3. Filter
+4.Visualization",4
+318,T,Understanding where,Detecting and quantifying patterns,,Analyze the street tree species data  in San Francisco,"Your task is to analyze, for different regions, the percentage of San Francisco street trees whose species is NULL, using the distribution data of the street trees and the shapefiles of the administrative regions. Visualize the results as a map in quadtree format that shows, for each region, the percentage of trees with a NULL species. Save the figure as 'pred_results/trees_count_vis.png'.","geoplot.quadtree() plots a choropleth map with point aggregate by quadtree neighborhoods.
+geodataframe.assign() function assigns new columns to a GeoDataFrame. A new column could be the data ""nullity"" percentage. geoplot.polyplot() plots a polygon data layer. The DataFrame.isnull() and DataFrame.notnull() functions in Pandas detect missing and non-missing values within a DataFrame. ","dataset/street_trees_sample.geojson: Point Geojson file storing tree sample locations along with their species information.
+Columns of dataset/street_trees_sample.geojson
+'LegalStatus', 'Species', 'Address', 'SiteOrder', 'SiteInfo',
+       'PlantType', 'Caretaker', 'CareAssistant', 'PlantDate', 'DBH',
+       'PlotSize', 'PermitNotes', 'geometry'
+
+dataset/sfo_boroughs.geojson: One row of polygon Geojson file storing boroughs in the San Francisco.
+Columns of dataset/sfo_boroughs.geojson:
+'geometry'","1. Load Dataset
+2. Project
+3. Filter
+4.Visualization",4
+119,T,Understanding where,Making predictions,,Modeling spatial patterns of water quality,"Your task is model water quality using spatial interpolation techniques in Python. The analysis should focus on understanding spatial patterns of water quality by using point sample data and interpolating these values across a broader area including unsampled locations. Your goal is to load the water quality sample data, and apply appropriate spatial interpolation methods to predict water quality across the region. The final output should be a map showing the interpolated water quality surface, saved as ""pred_results/interploated_water_quality.png""","Kernel Density Estimation (KDE) is a statistical method used in spatial analysis to estimate the probability density of a dataset. Unlike Kriging, KDE is non-parametric and does not rely on variogram modeling or assumptions about autocorrelation. It creates a smooth surface by applying a kernel function to each data point and summing their contributions over a spatial grid.","dataset/DissolvedO2.geojson: Point Geojson file storing sampled O2 data in different area of the given bay area.
+Columns of dataset/DissolvedO2.geojson:
+'OBJECTID', 'HUC8', 'EventId', 'Cruise', 'Program', 'Project', 'Agency',
+       'Source', 'Station', 'SampleDate', 'TotalDepth', 'UpperPycnocline',
+       'LowerPycnocline', 'Depth', 'Layer', 'SampleType',
+       'SampleReplicateType', 'Parameter', 'Qualifier', 'MeasureValue', 'Unit',
+       'Method', 'Lab', 'Problem', 'PrecisionPC', 'BiasPC', 'Details',
+       'Latitude', 'Longitude', 'geometry'
+
+dataset/Bay.geojson: One row of Multipolygon Geojson file storing the shape of the Bay area.
+Columns of dataset/Bay.geojson:
+'OBJECTID', 'Shape_Length', 'Shape_Area', 'geometry'","1. Load Dataset
+2. Extract Variables
+3. Interpolation
+4. Visualization",4
+219,T,Understanding where,Making predictions,,Modeling spatial patterns of water quality,"Your task is model water quality using spatial interpolation techniques in Python. The analysis should focus on understanding spatial patterns of water quality by using point sample data and interpolating these values across a broader area including unsampled locations. Your goal is to load the water quality sample data, and apply appropriate spatial interpolation methods to predict water quality across the region. The final output should be a map showing the interpolated water quality surface, saved as ""pred_results/interploated_water_quality.png""","Kernel Density Estimation (KDE) is a statistical method used in spatial analysis to estimate the probability density of a dataset. Unlike Kriging, KDE is non-parametric and does not rely on variogram modeling or assumptions about autocorrelation. It creates a smooth surface by applying a kernel function to each data point and summing their contributions over a spatial grid.","dataset/DissolvedO2.geojson: Point Geojson file storing sampled O2 data in different area of the given bay area.
+Columns of dataset/DissolvedO2.geojson:
+'OBJECTID', 'HUC8', 'EventId', 'Cruise', 'Program', 'Project', 'Agency',
+       'Source', 'station_code', 'SampleDate', 'TotalDepth', 'UpperPycnocline',
+       'LowerPycnocline', 'Depth', 'Layer', 'SampleType',
+       'SampleReplicateType', 'Parameter', 'Qualifier', 'obs_value', 'Unit',
+       'Method', 'Lab', 'Problem', 'PrecisionPC', 'BiasPC', 'Details',
+       'Latitude', 'Longitude', 'geometry'
+
+dataset/Bay.geojson: One row of Multipolygon Geojson file storing the shape of the Bay area.
+Columns of dataset/Bay.geojson:
+'OBJECTID', 'Shape_Length', 'Shape_Area', 'geometry'","1. Load Dataset
+2. Extract Variables
+3. Interpolation
+4. Visualization",4
+319,T,Understanding where,Making predictions,,Modeling spatial patterns of water quality,"Your task is to model water quality in Python with spatial interpolation techniques. The analysis should aim at understanding the spatial patterns of water quality: use the point sample data and interpolate their values over a broader area, including locations that were not sampled. Load the water quality sample data and apply appropriate spatial interpolation methods to predict water quality across the region. The final output should be a map of the interpolated water quality surface, saved as ""pred_results/interploated_water_quality.png""","Kernel Density Estimation (KDE) is a statistical method used in spatial analysis to estimate the probability density of a dataset. Unlike Kriging, KDE is non-parametric and does not rely on variogram modeling or assumptions about autocorrelation. It creates a smooth surface by applying a kernel function to each data point and summing their contributions over a spatial grid.","dataset/DissolvedO2.geojson: Point Geojson file storing sampled O2 data in different area of the given bay area.
+Columns of dataset/DissolvedO2.geojson:
+'OBJECTID', 'HUC8', 'EventId', 'Cruise', 'Program', 'Project', 'Agency',
+       'Source', 'Station', 'SampleDate', 'TotalDepth', 'UpperPycnocline',
+       'LowerPycnocline', 'Depth', 'Layer', 'SampleType',
+       'SampleReplicateType', 'Parameter', 'Qualifier', 'MeasureValue', 'Unit',
+       'Method', 'Lab', 'Problem', 'PrecisionPC', 'BiasPC', 'Details',
+       'Latitude', 'Longitude', 'geometry'
+
+dataset/Bay.geojson: One row of Multipolygon Geojson file storing the shape of the Bay area.
+Columns of dataset/Bay.geojson:
+'OBJECTID', 'Shape_Length', 'Shape_Area', 'geometry'","1. Load Dataset
+2. Extract Variables
+3. Interpolation
+4. Visualization",4
+120,T,Making predictions,Detecting and quantifying patterns,,Predict the likelihood of tin-tungsten deposits in Tasmania,"Your task is performing a random forest prospectivity analysis for tin-tungsten deposits in Tasmania. The analysis should focus on training and evaluating a model using Python tools on some mineral ocurrence point data and geo-related evidence raster layers. Your goal is to set up the environment, load and inspect the data, build a random forest classifier model to identify the probability proximal of the area. The final auc should be at least 0.9. Save the final predicted graph as ""pred_results/mineral_prospectivity.png""","sklearn.ensemble.RandomForestClassifier() is a function to build a random forest classifier. To mitigate data imbalance,random undersampling randomly removes features from the major classes.
+""Buffer"" creates buffer polygons or zones around input geometry features to a specified distance. 
+tasgrav_IR_1VD.tif tasmag_TMI.tif tasrad_Th_ppm.tif tasmag_TMI_1VD.tif tasrad_U_ppm.tif tasrad_K_pct.tif's data structure is similar to tasgrav_IR.tif.","dataset/sn_w_minoccs.gpkg: gpkg file storing point data of mineral ocurrence, Similar to point  Geojson file.
+Columns of dataset/sn_w_minoccs.gpkg:
+'GID', 'DEPOSIT_ID', 'NAME', 'ALIAS', 'PARENT_ID', 'TYPE', 'COMM_TYPE',
+       'COMMODITYS', 'DESCRIPT', 'LOCALITY', 'LOC_ACC', 'LOC_METHOD', 'RL',
+       'RL_ACC', 'STATUS', 'STATUSDATE', 'DEP_SIZE', 'RESOURCES', 'FORM',
+       'STRIKE', 'DIP', 'LITHOSTRAT', 'HOST_AGE', 'LITHOLOGY', 'ORE_DESCRT',
+       'ORE_GENESS', 'MINERALAGE', 'GANGUE', 'EXPL_TYPE', 'OUTCROPS',
+       'WEATHERED', 'XTRCTBLTY', 'USES', 'TESTS', 'GENETIC', 'DATA_MTLGA',
+       'REF', 'geometry'
+
+Several GeoTIFF files with geo-related evidence raster layers:
+dataset/tasgrav_IR_1VD.tif
+dataset/tasgrav_IR.tif
+dataset/tasmag_TMI_1VD.tif
+dataset/tasmag_TMI.tif
+dataset/tasrad_K_pct.tif
+dataset/tasrad_Th_ppm.tif
+dataset/tasrad_U_ppm.tif","1. Load Dataset,
+2. Extract Variables
+3. Create Labels
+4. Random Undersampling
+5. Train Random Forest Classifier
+6. Evaluate auc
+7. Visualization",7
+320,T,Making predictions,Detecting and quantifying patterns,,Predict the likelihood of tin-tungsten deposits in Tasmania,"Your task is to carry out a random forest prospectivity analysis for tin-tungsten deposits in Tasmania. The analysis should concentrate on training and evaluating a model with Python tools on mineral occurrence point data and geo-related evidence raster layers. Set up the environment, load and inspect the data, and build a random forest classifier model that identifies the proximal probability over the area. The final AUC should be at least 0.9. Save the final prediction graph as ""pred_results/mineral_prospectivity.png""","sklearn.ensemble.RandomForestClassifier() is a function to build a random forest classifier. To mitigate data imbalance,random undersampling randomly removes features from the major classes.
+""Buffer"" creates buffer polygons or zones around input geometry features to a specified distance. 
+tasgrav_IR_1VD.tif tasmag_TMI.tif tasrad_Th_ppm.tif tasmag_TMI_1VD.tif tasrad_U_ppm.tif tasrad_K_pct.tif's data structure is similar to tasgrav_IR.tif.","dataset/sn_w_minoccs.gpkg: gpkg file storing point data of mineral ocurrence, Similar to point  Geojson file.
+Columns of dataset/sn_w_minoccs.gpkg:
+'GID', 'DEPOSIT_ID', 'NAME', 'ALIAS', 'PARENT_ID', 'TYPE', 'COMM_TYPE',
+       'COMMODITYS', 'DESCRIPT', 'LOCALITY', 'LOC_ACC', 'LOC_METHOD', 'RL',
+       'RL_ACC', 'STATUS', 'STATUSDATE', 'DEP_SIZE', 'RESOURCES', 'FORM',
+       'STRIKE', 'DIP', 'LITHOSTRAT', 'HOST_AGE', 'LITHOLOGY', 'ORE_DESCRT',
+       'ORE_GENESS', 'MINERALAGE', 'GANGUE', 'EXPL_TYPE', 'OUTCROPS',
+       'WEATHERED', 'XTRCTBLTY', 'USES', 'TESTS', 'GENETIC', 'DATA_MTLGA',
+       'REF', 'geometry'
+
+Several GeoTIFF files with geo-related evidence raster layers:
+dataset/tasgrav_IR_1VD.tif
+dataset/tasgrav_IR.tif
+dataset/tasmag_TMI_1VD.tif
+dataset/tasmag_TMI.tif
+dataset/tasrad_K_pct.tif
+dataset/tasrad_Th_ppm.tif
+dataset/tasrad_U_ppm.tif","1. Load Dataset,
+2. Extract Variables
+3. Create Labels
+4. Random Undersampling
+5. Train Random Forest Classifier
+6. Evaluate auc
+7. Visualization",7
+124,T,Understanding where,"Measuring size, shape, and distribution",,"Providing with a de-identified point-level dataset that includes all the variables of interest for each child, as well as their general location.","Your task is providing with a de-identified point-level dataset that includes all the variables of interest for each child, as well as their general location. You should load the point data and ensure Consistent Coordinate Reference System (CRS), using WGS 1984. You need to round the coordinates to two decimals and create new points features based on the added fields. The goal is to calculate and document the reduction in unique locations, Save the updated shapefile as a result.","Coordinate Reference Systems (CRS): Understanding the importance of using a consistent CRS for accurate spatial analysis and comparison.
+Spatial De-identification: Rounding coordinates is a common method for spatial de-identification to protect individual privacy while maintaining general geographic patterns for analysis.","dataset/High_Blood_Level_Results.shp: This shapefile contains point data representing incidents of elevated blood lead levels in children within the study area. Each point corresponds to a specific geographic location where a blood test was conducted, and the results indicated a high concentration of lead.
+
+dataset/High_Blood_Level_Results.shp has no attribute columns (geometry only).
+
+dataset/Sacramento_ZIP_Codes.shp: This shapefile contains polygon data representing the boundaries of ZIP codes within Sacramento. Each polygon defines the geographic extent of a specific ZIP code.
+
+dataset/Sacramento_ZIP_Codes.shp has no attribute columns (geometry only).","1. Load Dataset
+2. Ensure Consistent Coordinate Reference System (CRS)
+3. Add fields to hold the rounded coordinate values
+4. Round the values for the coordinates
+5. Create new points at the rounded coordinates
+6. Document the coordinate rounding results
+7. Visualization",7
+324,T,Understanding where,"Measuring size, shape, and distribution",,"Providing with a de-identified point-level dataset that includes all the variables of interest for each child, as well as their general location.","Your task is to provide a de-identified point-level dataset that contains all the variables of interest for each child together with their general location. Load the point data and make sure the Coordinate Reference System (CRS) is consistent, using WGS 1984. Round the coordinates to two decimals and create new point features from the added fields. The goal is to calculate and document how much the number of unique locations is reduced. Save the updated shapefile as a result.","Coordinate Reference Systems (CRS): Understanding the importance of using a consistent CRS for accurate spatial analysis and comparison.
+Spatial De-identification: Rounding coordinates is a common method for spatial de-identification to protect individual privacy while maintaining general geographic patterns for analysis.","dataset/High_Blood_Level_Results.shp: This shapefile contains point data representing incidents of elevated blood lead levels in children within the study area. Each point corresponds to a specific geographic location where a blood test was conducted, and the results indicated a high concentration of lead.
+
+dataset/High_Blood_Level_Results.shp has no attribute columns (geometry only).
+
+dataset/Sacramento_ZIP_Codes.shp: This shapefile contains polygon data representing the boundaries of ZIP codes within Sacramento. Each polygon defines the geographic extent of a specific ZIP code.
+
+dataset/Sacramento_ZIP_Codes.shp has no attribute columns (geometry only).","1. Load Dataset
+2. Ensure Consistent Coordinate Reference System (CRS)
+3. Add fields to hold the rounded coordinate values
+4. Round the values for the coordinates
+5. Create new points at the rounded coordinates
+6. Document the coordinate rounding results
+7. Visualization",7
+126,F,Understanding where,,,Use drainage conditions and water depth to calculate groundwater vulnerable areas.,"Your task is to calculate groundwater vulnerable areas in Python. First, project 'mc_land_cover.tif' and 'mc_soils.shp' to Lambert Conformal Conic. Next, using 'mc_boundary.shp' as the extent, land_cover as the cellSize and snapRaster, extract the drainage_conditions and water_depth respectively from 'mc_soils.shp'. Then, use drainage_conditions and water_depth to perform suitability modeling to calculate vulnerable_areas.
+
+Specifications:
+The reclassification of drainage_conditions is [[1, 3], [2, 1], [3, 4], [4, 5], [5, 2]], where codes 1-5 are 'Well drained', 'Poorly drained', 'Somewhat excessively drained', 'Excessively drained', 'Somewhat poorly drained'.
+The reclassification of water_depth is [[0, 10, 5], [10, 33, 4], [33, 61, 3], [61, 80, 2], [80, 92, 1]].
+vulnerable_areas = drainage_conditions * 5 + water_depth * 4","Suitability modeling is an analytical process used to identify the optimal location or suitability of geographic areas. It generally consists of three steps: data preparation, data reclassification, and weighted overlay. In ArcGIS Pro, suitability modeling is implemented through an integrated Modeler, but in Arcpy, it needs to be carried out step by step using basic functions.
+
+For preparation:
+Polygon data needs to be converted into Raster before suitability modeling.","dataset/mc_soils.shp: In this shapefile, three fields are important in groundwater analysis: Drainage Class – Dominant Conditions, Hydrologic Group – Dominant Conditions, and Water Table Depth – Annual – Minimum.
+Key Fields:
+'FID', 'Shape', 'AREASYMBOL', 'SPATIALVER', 'MUSYM', 'MUKEY', 'drclassdcd', 'hydgrpdcd', 'wdepannmin'
+
+dataset/mc_boundary.shp: This shapefile contains the polygon region of study area.
+Key Fields:
+'FID', 'Shape', 'OBJECTID_1', 'AREA', 'PERIMETER', 'BLMCNTYO_', 'BLMCNTYO_I', 'COUNTY_NAM', 'COBCODE'
+
+dataset/mc_land_cover.tif: Raster file showing the land cover of study area, one band.","1. Load dataset
+2. Project (raster)
+3. Project (shapefile)
+4. Polygon to Raster (get drainage conditions from soils)
+5. Polygon to Raster (get water depth from soils)
+6. Reclassify (drainage conditions)
+7. Reclassify (water depth)
+8. Calculate vulnerable areas",8
+226,F,Understanding where,,,Use drainage conditions and water depth to calculate groundwater vulnerable areas.,"Your task is to calculate groundwater vulnerable areas in Python. First, project 'mc_land_cover.tif' and 'mc_soils.shp' to Lambert Conformal Conic. Next, using 'mc_boundary.shp' as the extent, land_cover as the cellSize and snapRaster, extract the drainage_conditions and water_depth respectively from 'mc_soils.shp'. Then, use drainage_conditions and water_depth to perform suitability modeling to calculate vulnerable_areas.
+
+Specifications:
+The reclassification of drainage_conditions is [[1, 3], [2, 1], [3, 4], [4, 5], [5, 2]], where codes 1-5 are 'Well drained', 'Poorly drained', 'Somewhat excessively drained', 'Excessively drained', 'Somewhat poorly drained'.
+The reclassification of water_depth is [[0, 10, 5], [10, 33, 4], [33, 61, 3], [61, 80, 2], [80, 92, 1]].
+vulnerable_areas = drainage_conditions * 5 + water_depth * 4","Suitability modeling is an analytical process used to identify the optimal location or suitability of geographic areas. It generally consists of three steps: data preparation, data reclassification, and weighted overlay. In ArcGIS Pro, suitability modeling is implemented through an integrated Modeler, but in Arcpy, it needs to be carried out step by step using basic functions.
+
+For preparation:
+Polygon data needs to be converted into Raster before suitability modeling.","dataset/mc_soils.shp: In this shapefile, three fields are important in groundwater analysis: Drainage Class – Dominant Conditions, Hydrologic Group – Dominant Conditions, and Water Table Depth – Annual – Minimum.
+Key Fields:
+'FID', 'Shape', 'AREASYMBOL', 'SPATIALVER', 'MUSYM', 'MUKEY', 'drain_cls', 'hydro_grp', 'wt_depth'
+
+dataset/mc_boundary.shp: This shapefile contains the polygon region of study area.
+Key Fields:
+'FID', 'Shape', 'OBJECTID_1', 'AREA', 'PERIMETER', 'BLMCNTYO_', 'BLMCNTYO_I', 'COUNTY_NAM', 'COBCODE'
+
+dataset/mc_land_cover.tif: Raster file showing the land cover of study area, one band.","1. Load dataset
+2. Project (raster)
+3. Project (shapefile)
+4. Polygon to Raster (get drainage conditions from soils)
+5. Polygon to Raster (get water depth from soils)
+6. Reclassify (drainage conditions)
+7. Reclassify (water depth)
+8. Calculate vulnerable areas",8
+326,F,Understanding where,,,Use drainage conditions and water depth to calculate groundwater vulnerable areas.,"Your task is to compute groundwater vulnerable areas in Python. Start by projecting 'mc_land_cover.tif' and 'mc_soils.shp' to Lambert Conformal Conic. After that, extract drainage_conditions and water_depth, each from 'mc_soils.shp', with 'mc_boundary.shp' as the extent and land_cover as the cellSize and snapRaster. Finally, perform suitability modeling with drainage_conditions and water_depth to calculate vulnerable_areas.
+
+Specifications:
+The reclassification of drainage_conditions is [[1, 3], [2, 1], [3, 4], [4, 5], [5, 2]], where codes 1-5 are 'Well drained', 'Poorly drained', 'Somewhat excessively drained', 'Excessively drained', 'Somewhat poorly drained'.
+The reclassification of water_depth is [[0, 10, 5], [10, 33, 4], [33, 61, 3], [61, 80, 2], [80, 92, 1]].
+vulnerable_areas = drainage_conditions * 5 + water_depth * 4","Suitability modeling is an analytical process used to identify the optimal location or suitability of geographic areas. It generally consists of three steps: data preparation, data reclassification, and weighted overlay. In ArcGIS Pro, suitability modeling is implemented through an integrated Modeler, but in Arcpy, it needs to be carried out step by step using basic functions.
+
+For preparation:
+Polygon data needs to be converted into Raster before suitability modeling.","dataset/mc_soils.shp: In this shapefile, three fields are important in groundwater analysis: Drainage Class – Dominant Conditions, Hydrologic Group – Dominant Conditions, and Water Table Depth – Annual – Minimum.
+Key Fields:
+'FID', 'Shape', 'AREASYMBOL', 'SPATIALVER', 'MUSYM', 'MUKEY', 'drclassdcd', 'hydgrpdcd', 'wdepannmin'
+
+dataset/mc_boundary.shp: This shapefile contains the polygon region of study area.
+Key Fields:
+'FID', 'Shape', 'OBJECTID_1', 'AREA', 'PERIMETER', 'BLMCNTYO_', 'BLMCNTYO_I', 'COUNTY_NAM', 'COBCODE'
+
+dataset/mc_land_cover.tif: Raster file showing the land cover of study area, one band.","1. Load dataset
+2. Project (raster)
+3. Project (shapefile)
+4. Polygon to Raster (get drainage conditions from soils)
+5. Polygon to Raster (get water depth from soils)
+6. Reclassify (drainage conditions)
+7. Reclassify (water depth)
+8. Calculate vulnerable areas",8
+129,F,Finding the best locations and paths,Making predictions,,Calculate Travel Time for a Tsunami,"To calculate tsunami travel time, set up your project with bathymetric and coastal data, then identify the tsunami origin. Simulate wave travel over the bathymetric surface to create an arrival time map. Visualize and analyze the results, adjust for accuracy, and prepare a report to aid in preparedness and response planning.","To calculate tsunami speed using √(g*d), where d is ocean depth, you'll need positive depth values. Since AtlanticDEM has negative values for ocean depths (below sea level), you'll modify the expression to invert these values, making ocean areas positive for accurate calculations.
+Geodetic Densify creates new features by replacing the segments of the input features with densified approximations of geodesic segments. 
+Extract by Mask tool is used to extract cell values from a raster using the shape of a feature or another raster as a mask.","dataset/AtlanticDEM.tif: A DEM layer representing Atlantic Ocean bathymetry, essential for analyzing how ocean depth affects tsunami wave propagation. Raster data (single band, 5000 m cells).
+dataset/TsuniamiPaths.gpkg: A layer showing precomputed tsunami travel paths, used to visualize and analyze tsunami wave routes and their impact on coastal areas. Attributes: lengthkm, Route, Shape_Length
+dataset/TsunamiSources.gpkg: Points marking the tsunami source locations. Attributes: Name
+dataset/World_Countries.gpkg: Country boundaries. Attributes: COUNTRY, ISO, COUNTRYAFF, AFF_ISO, Shape_Length, Shape_Area
+dataset/AtlanticDEM.lyrx and dataset/Tsunami Paths.lyrx: ArcGIS layer files for the same data (not readable outside ArcGIS).","1. Load Data
+2. Invert AtlanticDEM values to make ocean depths positive.
+3. Use the Raster Calculator to apply the formula √(g*d)
+4. Mark tsunami origin points.
+5.Use geodesic distance tools to map tsunami travel paths.
+6.Derive travel times based on calculated speeds.
+7.Visualize and interpret the outputs for risk assessment.",7
+229,F,Finding the best locations and paths,Making predictions,,Calculate Travel Time for a Tsunami,"To calculate tsunami travel time, set up your project with bathymetric and coastal data, then identify the tsunami origin. Simulate wave travel over the bathymetric surface to create an arrival time map. Visualize and analyze the results, adjust for accuracy, and prepare a report to aid in preparedness and response planning.","To calculate tsunami speed using √(g*d), where d is ocean depth, you'll need positive depth values. Since AtlanticDEM has negative values for ocean depths (below sea level), you'll modify the expression to invert these values, making ocean areas positive for accurate calculations.
+Geodetic Densify creates new features by replacing the segments of the input features with densified approximations of geodesic segments. 
+Extract by Mask tool is used to extract cell values from a raster using the shape of a feature or another raster as a mask.","dataset/AtlanticDEM.tif: A DEM layer representing Atlantic Ocean bathymetry, essential for analyzing how ocean depth affects tsunami wave propagation. Raster data (single band, 5000 m cells).
+dataset/TsuniamiPaths.gpkg: A layer showing precomputed tsunami travel paths, used to visualize and analyze tsunami wave routes and their impact on coastal areas. Attributes: length_km, route_label, Shape_Length
+dataset/TsunamiSources.gpkg: Points marking the tsunami source locations. Attributes: site_name
+dataset/World_Countries.gpkg: Country boundaries. Attributes: COUNTRY, ISO, COUNTRYAFF, AFF_ISO, Shape_Length, Shape_Area
+dataset/AtlanticDEM.lyrx and dataset/Tsunami Paths.lyrx: ArcGIS layer files for the same data (not readable outside ArcGIS).","1. Load Data
+2. Invert AtlanticDEM values to make ocean depths positive.
+3. Use the Raster Calculator to apply the formula √(g*d)
+4. Mark tsunami origin points.
+5.Use geodesic distance tools to map tsunami travel paths.
+6.Derive travel times based on calculated speeds.
+7.Visualize and interpret the outputs for risk assessment.",7
+329,F,Finding the best locations and paths,Making predictions,,Calculate Travel Time for a Tsunami,"Calculate the travel time of a tsunami: set up the project with the bathymetric and coastal data, and then identify where the tsunami originates. Simulate how the wave travels over the bathymetric surface to produce an arrival time map. Visualize and analyze the results, adjust for accuracy, and prepare a report that supports preparedness and response planning.","To calculate tsunami speed using √(g*d), where d is ocean depth, you'll need positive depth values. Since AtlanticDEM has negative values for ocean depths (below sea level), you'll modify the expression to invert these values, making ocean areas positive for accurate calculations.
+Geodetic Densify creates new features by replacing the segments of the input features with densified approximations of geodesic segments. 
+Extract by Mask tool is used to extract cell values from a raster using the shape of a feature or another raster as a mask.","dataset/AtlanticDEM.tif: A DEM layer representing Atlantic Ocean bathymetry, essential for analyzing how ocean depth affects tsunami wave propagation. Raster data (single band, 5000 m cells).
+dataset/TsuniamiPaths.gpkg: A layer showing precomputed tsunami travel paths, used to visualize and analyze tsunami wave routes and their impact on coastal areas. Attributes: lengthkm, Route, Shape_Length
+dataset/TsunamiSources.gpkg: Points marking the tsunami source locations. Attributes: Name
+dataset/World_Countries.gpkg: Country boundaries. Attributes: COUNTRY, ISO, COUNTRYAFF, AFF_ISO, Shape_Length, Shape_Area
+dataset/AtlanticDEM.lyrx and dataset/Tsunami Paths.lyrx: ArcGIS layer files for the same data (not readable outside ArcGIS).","1. Load Data
+2. Invert AtlanticDEM values to make ocean depths positive.
+3. Use the Raster Calculator to apply the formula √(g*d)
+4. Mark tsunami origin points.
+5.Use geodesic distance tools to map tsunami travel paths.
+6.Derive travel times based on calculated speeds.
+7.Visualize and interpret the outputs for risk assessment.",7
+142,T,Determining how places are related,Determining how places are related,,Investigate spatial patterns for Airbnb prices in Berlin,"Your task is to perform spatial autocorrelation analysis on airbnb prices in Berlin using Python. The analysis involves loading geospatial data of Berlin neighborhoods and real estate listings, and then converting to GeoDataFrame. You will perform a spatial join to associate listings with neighborhoods and calculate the median price for each neighborhood group, assigned to every neighborhood in that group. After handling missing data, you will analyze spatial similarity by creating a spatial weights matrix based on their median prices. The Local Moran's I statistic will be used to identify significant cold spots and hot spots. Finally, you will visualize these spatial patterns on a map, highlighting areas with significant spatial autocorrelation, and save the output as ""moran_local.png"".","esda package: ESDA is an open-source Python library for the exploratory analysis of spatial data.
+
+Spatial Similarity: Queen contiguity treats polygons that share an edge or a vertex as neighbours; queen contiguity weights can be built with the lps.weights.Queen function.
+
+Moran's I: Measures spatial autocorrelation based on feature locations and attribute values using the Moran's I statistic. Can be calculated by esda.moran.Moran_Local function.","dataset/berlin-neighbourhoods.geojson:Geojson file for multipolygons of neighbourhoods in Berlin, properties include ""neighbourhood"" and ""neighbourhood_group"".
+
+dataset/berlin-listings.csv: Csv file of Berlin Airbnb information, with lat and lng of Airbnb.
+Key Columns:	id scrape_id city state zipcode smart_location country_code	country latitude longitude price","1. Load data
+2. Convert dataframe to Geodataframe
+3. Spatial Join
+4. Calculate Median Price
+5. Handle Missing Data
+6. Spatial Similarity Analysis
+7. Local Moran's I Calculation
+8. Visualization",8
+242,T,Determining how places are related,Determining how places are related,,Investigate spatial patterns for Airbnb prices in Berlin,"Your task is to perform spatial autocorrelation analysis on airbnb prices in Berlin using Python. The analysis involves loading geospatial data of Berlin neighborhoods and real estate listings, and then converting to GeoDataFrame. You will perform a spatial join to associate listings with neighborhoods and calculate the median nightly_price for each neighborhood group, assigned to every neighborhood in that group. After handling missing data, you will analyze spatial similarity by creating a spatial weights matrix based on their median prices. The Local Moran's I statistic will be used to identify significant cold spots and hot spots. Finally, you will visualize these spatial patterns on a map, highlighting areas with significant spatial autocorrelation, and save the output as ""moran_local.png"".","esda package: ESDA is an open-source Python library for the exploratory analysis of spatial data.
+
+Spatial Similarity: Queen contiguity treats polygons that share an edge or a vertex as neighbours; queen contiguity weights can be built with the lps.weights.Queen function.
+
+Moran's I: Measures spatial autocorrelation based on feature locations and attribute values using the Moran's I statistic. Can be calculated by esda.moran.Moran_Local function.","dataset/berlin-neighbourhoods.geojson:Geojson file for multipolygons of neighbourhoods in Berlin, properties include ""nbhd_name"" and ""district_name"".
+
+dataset/berlin-listings.csv: Csv file of Berlin Airbnb information, with lat and lng of Airbnb.
+Key Columns:	id scrape_id city state zipcode smart_location country_code	country lat_wgs84 lon_wgs84 nightly_price","1. Load data
+2. Convert dataframe to Geodataframe
+3. Spatial Join
+4. Calculate Median Price
+5. Handle Missing Data
+6. Spatial Similarity Analysis
+7. Local Moran's I Calculation
+8. Visualization",8
+342,T,Determining how places are related,Determining how places are related,,Investigate spatial patterns for Airbnb prices in Berlin,"Your task is to carry out a spatial autocorrelation analysis of Airbnb prices in Berlin using Python. Load the geospatial data of the Berlin neighborhoods and of the real estate listings, and convert them to GeoDataFrames. Spatially join the listings to the neighborhoods, then calculate the median price of each neighborhood group and assign it to every neighborhood belonging to that group. After the missing data have been handled, analyze spatial similarity by building a spatial weights matrix based on their median prices. Use the Local Moran's I statistic to identify significant hot spots and cold spots. Finally, visualize these spatial patterns on a map that highlights the areas with significant spatial autocorrelation, and save the output as ""moran_local.png"".","esda package: ESDA is an open-source Python library for the exploratory analysis of spatial data.
+
+Spatial Similarity: Queen contiguity treats polygons that share an edge or a vertex as neighbours; queen contiguity weights can be built with the lps.weights.Queen function.
+
+Moran's I: Measures spatial autocorrelation based on feature locations and attribute values using the Moran's I statistic. Can be calculated by esda.moran.Moran_Local function.","dataset/berlin-neighbourhoods.geojson:Geojson file for multipolygons of neighbourhoods in Berlin, properties include ""neighbourhood"" and ""neighbourhood_group"".
+
+dataset/berlin-listings.csv: Csv file of Berlin Airbnb information, with lat and lng of Airbnb.
+Key Columns:	id scrape_id city state zipcode smart_location country_code	country latitude longitude price","1. Load data
+2. Convert dataframe to Geodataframe
+3. Spatial Join
+4. Calculate Median Price
+5. Handle Missing Data
+6. Spatial Similarity Analysis
+7. Local Moran's I Calculation
+8. Visualization",8
+149,F,Understanding where,,,Mapping the Impact of Housing Shortage on Oil Workers,"Your task is to analyze homelessness trends in North Dakota during the 2013 oil boom. Join homelessness tabular data to the U.S. states spatial layer using state abbreviations. Then, save the maps for analysis.","Tabular Data Joining: Joining tabular data to spatial layers using a common field (e.g., state abbreviation) is crucial for mapping.
+
+The North Dakota oil boom (2012–2013) attracted thousands of workers due to high-paying jobs in the energy sector.","dataset/homeless_data.xlsx: containing state-level homelessness data in the United States for 2013. The dataset includes the following columns:State, Change, Pop13, Homeless13","1. Load data
+2. Join tabular data to spatial data
+3. Add calculated fields
+4. Save maps",4
+249,F,Understanding where,,,Mapping the Impact of Housing Shortage on Oil Workers,"Your task is to analyze homelessness trends in North Dakota during the 2013 oil boom. Join homelessness tabular data to the U.S. states spatial layer using state abbreviations. Then, save the maps for analysis.","Tabular Data Joining: Joining tabular data to spatial layers using a common field (e.g., state abbreviation) is crucial for mapping.
+
+The North Dakota oil boom (2012–2013) attracted thousands of workers due to high-paying jobs in the energy sector.","dataset/homeless_data.xlsx: containing state-level homelessness data in the United States for 2013. The dataset includes the following columns:StateCode, Chg1213, Pop2013, HomelessCt","1. Load data
+2. Join tabular data to spatial data
+3. Add calculated fields
+4. Save maps",4
+349,F,Understanding where,,,Mapping the Impact of Housing Shortage on Oil Workers,"Your task is to analyze how homelessness developed in North Dakota during the oil boom of 2013. Using state abbreviations, join the tabular homelessness data to the spatial layer of U.S. states. After that, save the maps for analysis.","Tabular Data Joining: Joining tabular data to spatial layers using a common field (e.g., state abbreviation) is crucial for mapping.
+
+The North Dakota oil boom (2012–2013) attracted thousands of workers due to high-paying jobs in the energy sector.","dataset/homeless_data.xlsx: containing state-level homelessness data in the United States for 2013. The dataset includes the following columns:State, Change, Pop13, Homeless13","1. Load data
+2. Join tabular data to spatial data
+3. Add calculated fields
+4. Save maps",4

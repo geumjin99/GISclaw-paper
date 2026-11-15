@@ -1,0 +1,168 @@
+[
+ {
+  "control": "correct_celsius_unweighted_mean",
+  "expected_correct": true,
+  "judged_correct": true,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [],
+  "scorer_error": false
+ },
+ {
+  "control": "correct_extra_extrapolated_2100",
+  "expected_correct": true,
+  "judged_correct": true,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [],
+  "scorer_error": false
+ },
+ {
+  "control": "correct_iris_export_extra_columns",
+  "expected_correct": true,
+  "judged_correct": true,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [],
+  "scorer_error": false
+ },
+ {
+  "control": "correct_rounded_1dp",
+  "expected_correct": true,
+  "judged_correct": true,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [],
+  "scorer_error": false
+ },
+ {
+  "control": "wrong_benchmark_script_first_point",
+  "expected_correct": false,
+  "judged_correct": false,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [
+   "fit describes the domain mean (not a single grid point)"
+  ],
+  "scorer_error": false
+ },
+ {
+  "control": "wrong_cos_degrees_weights",
+  "expected_correct": false,
+  "judged_correct": false,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [
+   "values are the quadratic LS fit of a legitimate series",
+   "fit describes the domain mean (not a single grid point)"
+  ],
+  "scorer_error": false
+ },
+ {
+  "control": "wrong_cubic_first_point",
+  "expected_correct": false,
+  "judged_correct": false,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [
+   "values are the quadratic LS fit of a legitimate series",
+   "fit describes the domain mean (not a single grid point)"
+  ],
+  "scorer_error": false
+ },
+ {
+  "control": "wrong_cubic_fit",
+  "expected_correct": false,
+  "judged_correct": false,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [
+   "values are the quadratic LS fit of a legitimate series",
+   "fit describes the domain mean (not a single grid point)"
+  ],
+  "scorer_error": false
+ },
+ {
+  "control": "wrong_domain_max_series",
+  "expected_correct": false,
+  "judged_correct": false,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [
+   "values are the quadratic LS fit of a legitimate series",
+   "fit describes the domain mean (not a single grid point)"
+  ],
+  "scorer_error": false
+ },
+ {
+  "control": "wrong_first_gridpoint",
+  "expected_correct": false,
+  "judged_correct": false,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [
+   "fit describes the domain mean (not a single grid point)"
+  ],
+  "scorer_error": false
+ },
+ {
+  "control": "wrong_fit_over_latitude",
+  "expected_correct": false,
+  "judged_correct": false,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [
+   "one row per year 1860-2099",
+   "values are the quadratic LS fit of a legitimate series",
+   "fit describes the domain mean (not a single grid point)"
+  ],
+  "scorer_error": false
+ },
+ {
+  "control": "wrong_linear_fit",
+  "expected_correct": false,
+  "judged_correct": false,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [
+   "values are the quadratic LS fit of a legitimate series",
+   "fit describes the domain mean (not a single grid point)"
+  ],
+  "scorer_error": false
+ },
+ {
+  "control": "wrong_linear_fit_extra_2100",
+  "expected_correct": false,
+  "judged_correct": false,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [
+   "values are the quadratic LS fit of a legitimate series",
+   "fit describes the domain mean (not a single grid point)"
+  ],
+  "scorer_error": false
+ },
+ {
+  "control": "wrong_raw_values",
+  "expected_correct": false,
+  "judged_correct": false,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [
+   "values are the quadratic LS fit of a legitimate series",
+   "fit describes the domain mean (not a single grid point)"
+  ],
+  "scorer_error": false
+ },
+ {
+  "control": "wrong_single_interior_gridpoint",
+  "expected_correct": false,
+  "judged_correct": false,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [
+   "fit describes the domain mean (not a single grid point)"
+  ],
+  "scorer_error": false
+ }
+]

@@ -1,0 +1,36 @@
+{
+ "task": 39,
+ "title": "Geographically Weighted Regression of bachelor's-degree share in Georgia counties",
+ "output_type": "image (bandwidth comparison of GWR local coefficients)",
+ "required_outputs": [
+  "GA_GWR.png"
+ ],
+ "method": "y = PctBach, X = PctFB, PctBlack, PctRural (+ intercept), coordinates = county centroids X/Y (UTM 17N, m). mgwr Sel_BW golden-section search (adaptive bisquare, AICc) -> 117 nearest neighbours; fit GWR at the optimum; fit GWR at bandwidths 25..150 and map the local PctRural coefficient per bandwidth next to the optimal model, plus the AICc profile.",
+ "key_parameters": {
+  "kernel": "adaptive bisquare (mgwr default)",
+  "criterion": "AICc",
+  "optimal_bw": 117,
+  "compared_bw": [
+   25,
+   50,
+   75,
+   100,
+   125,
+   150
+  ],
+  "alternatives_accepted": "fixed bisquare (288 km), adaptive gaussian (50 NN), fixed gaussian, standardised variables, lon/lat coordinates; comparison by bandwidth maps, GWR vs MGWR maps, difference maps, AICc profile or diagnostic bars"
+ },
+ "benchmark_defects": [
+  "The published reference script loads its data through libpysal.examples and saves the figure to the working directory instead of pred_results; the inputs are the libpysal 'georgia' example dataset, provided as dataset/G_utm.*.",
+  "'plot their differences in the same graph' is ambiguous (coefficient maps per bandwidth, GWR vs MGWR maps, AICc profile, diagnostic chart); all are accepted, provided that some comparison of >= 2 GWR-family models is drawn.",
+  "G_utm.shp has no .prj (CRS undefined; coordinates are UTM 17N metres)."
+ ],
+ "checks": [
+  "required: GA_GWR.png present",
+  "required: figure not blank",
+  "required: optimal bandwidth: a captured number (scalars, dict/Series values, small arrays/tables, numbers in text files) equals a Sel_BW optimum +/-2 %, or a local PctRural/PctBlack surface reproduces a gold optimum surface at r >= 0.998",
+  "required: a 159-long local slope vector with Pearson >= 0.97 vs a gold surface, and no extra regressor: a captured local-coefficient array matching >= 2 gold slopes (r >= 0.9) has <= 4 columns",
+  "required: the figure shows GWR surfaces (drawn values/colours located per county, |Spearman| >= 0.90 with a gold surface) or the AICc-bandwidth profile (Spearman >= 0.90 against the adaptive-NN, fixed-m or fixed-km gold profile chosen by the drawn x axis, a fixed profile's drawn minimum within 2 gold AICc of the best drawn bandwidth)",
+  "required: the figure compares >= 2 GWR-family models - the same coefficient surface of two different models drawn (|Spearman| >= 0.90 with each model's gold surface, maps not identical; GWR at 25..150 NN / optima, standardised GWR, MGWR), a difference map matching a gold difference surface, an AICc-bandwidth profile (>= 4 bandwidths), or drawn diagnostics (AICc/AIC/BIC/R2) of two different GWR-family models (on a bar / line / scatter with <= 20 points)"
+ ]
+}

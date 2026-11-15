@@ -1,0 +1,30 @@
+{
+ "task": 43,
+ "title": "Elk home range: convex hull, kernel density and density-based clustering",
+ "output_type": "vector (home-range polygon, clustered points) + raster (kernel density) + map",
+ "required_outputs": [
+  "elk_home_range.geojson (any polygon vector file: .geojson/.shp/.gpkg)",
+  "elk_kernel_density.tif (any georeferenced raster)",
+  "elk_clusters.geojson (any point vector file, or captured per-fix labels)"
+ ],
+ "method": "Project the 150 191 fixes to NAD83 / Alberta 10-TM Forest (EPSG:3400, as in the original model); convex hull of all fixes as home range; planar quartic kernel density, search radius 468.8 m, 100 m cells, fixes/km2; HDBSCAN with minimum cluster size 100; outputs written as GeoJSON / GeoTIFF.",
+ "key_parameters": {
+  "crs": "EPSG:3400",
+  "hull": "CONVEX_HULL, no grouping",
+  "kde": "quartic, radius 468.8 m, 100 m cells",
+  "clustering": "HDBSCAN min_cluster_size=100"
+ },
+ "benchmark_defects": [
+  "Instruction names output locations ('dataset/elk_home_range.gdb', 'dataset/') but no file names; the dataset folder is read-only, outputs must go to pred_results/.",
+  "The input folder contains an empty 0-byte Elk_in_MBG.geojson (left-over output of the original model).",
+  "'Home ranges' is ambiguous: the original model builds one hull of all fixes; per-animal hulls are the usual ecological reading - both are accepted."
+ ],
+ "checks": [
+  "required: a stored polygon vector matches the gold convex hull (IoU >= 0.9) or the union of per-animal hulls (IoU >= 0.9)",
+  "required: a stored georeferenced density raster agrees with gold (3 km block means, Pearson >= 0.6, >= 80 % coverage)",
+  "required: per-fix density-based cluster labels with a noise class, >= 2 clusters, clustered fixes in >= 1.5x denser terrain than noise fixes",
+  "required: KDE smoother than fix-count grid on its own grid (lag-1 r >= counts+0.1 or >= 0.95)",
+  "required: cluster labels cover >= 90 % of fixes",
+  "required: DBSCAN/HDBSCAN/OPTICS estimator called (not just imported)"
+ ]
+}

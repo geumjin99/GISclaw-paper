@@ -1,0 +1,159 @@
+{
+ "cell_id": "ablation.H2-g6.SA.qwen38-27b.r3.T05",
+ "task": 5,
+ "status": "ok",
+ "analytically_correct": false,
+ "scorer_error": false,
+ "checks": [
+  {
+   "name": "required output present",
+   "passed": false,
+   "value": [],
+   "threshold": [
+    "blood_lead_hotspots.png",
+    "transit_access.png"
+   ],
+   "required": true,
+   "note": ""
+  },
+  {
+   "name": "map not blank",
+   "passed": false,
+   "value": null,
+   "threshold": null,
+   "required": true,
+   "note": "no map"
+  },
+  {
+   "name": "hexagon tessellation with correct case counts",
+   "passed": true,
+   "value": {
+    "cells_with_exact_count": 1.0,
+    "cases_in_cells": 370
+   },
+   "threshold": ">=0.95 of cells exact, >=90 % of 373 cases covered",
+   "required": true,
+   "note": "cases in hexes@final"
+  },
+  {
+   "name": "hot spot statistic consistent with Gi* on the hexagon counts",
+   "passed": true,
+   "value": 0.925,
+   "threshold": "Spearman >= 0.6 with recomputed Gi* z and Gi*-type values (signed z or bins)",
+   "required": true,
+   "note": "z_gi in hexes@final"
+  },
+  {
+   "name": "the map draws the hot spot result on the hexagons",
+   "passed": false,
+   "value": null,
+   "threshold": null,
+   "required": true,
+   "note": "no drawn hexagon layer shows a passing hot spot column"
+  },
+  {
+   "name": "privacy: individual case locations are not drawn",
+   "passed": true,
+   "value": 0,
+   "threshold": "< 20 drawn points on case locations",
+   "required": true,
+   "note": "no case points in the figure"
+  },
+  {
+   "name": "method fidelity: Getis-Ord hot spot code",
+   "passed": true,
+   "value": null,
+   "threshold": null,
+   "required": false,
+   "note": ""
+  },
+  {
+   "name": "privacy: median hexagon area >= 0.05 km2",
+   "passed": true,
+   "value": 2.105,
+   "threshold": 0.05,
+   "required": false,
+   "note": ""
+  }
+ ],
+ "replay": {
+  "success": false,
+  "outputs": [
+   "hexagon_summary.cpg",
+   "hexagon_summary.dbf",
+   "hexagon_summary.prj",
+   "hexagon_summary.shp",
+   "hexagon_summary.shx",
+   "hotspot_cases_points.cpg",
+   "hotspot_cases_points.dbf",
+   "hotspot_cases_points.prj",
+   "hotspot_cases_points.shp",
+   "hotspot_cases_points.shx"
+  ],
+  "events": [],
+  "blocks_ok": 28,
+  "block_outcome": [
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok"
+  ],
+  "step_timeout_s": 900,
+  "same_outputs_as_original": false,
+  "block_mismatches": []
+ },
+ "replay_faithful": true,
+ "replay_unfaithful_reasons": [],
+ "replay_container_failure": [],
+ "correct_without_emergency": false,
+ "emergency_files": [
+  "emergency_output.geojson",
+  "emergency_plot_0.png",
+  "emergency_plot_1.png"
+ ]
+}

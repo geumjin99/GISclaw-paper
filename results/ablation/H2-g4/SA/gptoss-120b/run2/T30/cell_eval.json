@@ -1,0 +1,132 @@
+{
+ "cell_id": "ablation.H2-g4.SA.gptoss-120b.r2.T30",
+ "task": 30,
+ "status": "ok",
+ "analytically_correct": false,
+ "scorer_error": false,
+ "checks": [
+  {
+   "name": "map written (non-blank PNG)",
+   "passed": true,
+   "value": [
+    "bike_routes_map.png",
+    "hotspots_map.png"
+   ],
+   "threshold": null,
+   "required": false,
+   "note": ""
+  },
+  {
+   "name": "proposed routes cover the three designated corridors",
+   "passed": false,
+   "value": null,
+   "threshold": null,
+   "required": true,
+   "note": "no line layer of plausible length (0.5-2.0x gold) near Capitol Hill"
+  },
+  {
+   "name": "precision: proposed length lies on designated corridors",
+   "passed": false,
+   "value": null,
+   "threshold": null,
+   "required": false,
+   "note": ""
+  },
+  {
+   "name": "map shows the proposed routes",
+   "passed": false,
+   "value": null,
+   "threshold": null,
+   "required": false,
+   "note": "no proposed route layer"
+  },
+  {
+   "name": "half-mile coverage of Capitol Hill matches gold",
+   "passed": false,
+   "value": null,
+   "threshold": "IoU>=0.85 (clipped to Capitol Hill) or share in [0.95, 0.983]",
+   "required": true,
+   "note": "no coverage polygon or share found"
+  },
+  {
+   "name": "network analysis performed (graph shortest paths)",
+   "passed": true,
+   "value": [
+    "networkx",
+    "shortest_path",
+    "nx."
+   ],
+   "threshold": null,
+   "required": true,
+   "note": "instructed: 'Use Network Analyst to propose new routes'"
+  },
+  {
+   "name": "existing trail length in Capitol Hill measured",
+   "passed": true,
+   "value": null,
+   "threshold": null,
+   "required": false,
+   "note": "5227 ft / 0.99 mi / 1593 m"
+  },
+  {
+   "name": "deliverable files carry a CRS (uniform rule)",
+   "passed": true,
+   "value": [
+    "demand_hotspots.shp",
+    "proposed_routes.shp",
+    "routes_buffer.shp",
+    "selected_arterials.shp"
+   ],
+   "threshold": "every geographic deliverable file has a CRS",
+   "required": true,
+   "note": "4 geographic deliverable file(s), all with a CRS"
+  }
+ ],
+ "replay": {
+  "success": true,
+  "outputs": [
+   "bike_routes_map.png",
+   "demand_hotspots.cpg",
+   "demand_hotspots.dbf",
+   "demand_hotspots.prj",
+   "demand_hotspots.shp",
+   "demand_hotspots.shx",
+   "hotspots_map.png",
+   "proposed_routes.cpg",
+   "proposed_routes.dbf",
+   "proposed_routes.prj",
+   "proposed_routes.shp",
+   "proposed_routes.shx",
+   "routes_buffer.cpg",
+   "routes_buffer.dbf",
+   "routes_buffer.prj",
+   "routes_buffer.shp",
+   "routes_buffer.shx",
+   "routes_summary.csv",
+   "selected_arterials.cpg",
+   "selected_arterials.dbf",
+   "selected_arterials.prj",
+   "selected_arterials.shp",
+   "selected_arterials.shx"
+  ],
+  "events": [],
+  "blocks_ok": 6,
+  "block_outcome": [
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok"
+  ],
+  "step_timeout_s": 900,
+  "same_outputs_as_original": true,
+  "block_mismatches": []
+ },
+ "replay_faithful": true,
+ "replay_unfaithful_reasons": [],
+ "replay_container_failure": [],
+ "emergency_files": []
+}

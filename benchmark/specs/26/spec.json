@@ -1,0 +1,40 @@
+{
+ "task": 26,
+ "title": "Groundwater vulnerable areas (Morrow County, Oregon) - suitability modelling",
+ "output_type": "raster (GeoTIFF)",
+ "required_outputs": [
+  "vulnerable_areas.tif (instruction names no file; any GeoTIFF in pred_results is evaluated)"
+ ],
+ "optional_outputs": [
+  "drainage_conditions.tif",
+  "water_depth.tif",
+  "land_cover.tif"
+ ],
+ "method": "Project mc_land_cover.tif (nearest) and mc_soils.shp to NAD83 / Oregon North (ft) (Lambert Conformal Conic, EPSG:2269). On the projected land-cover grid (cell ~98.4 ft = 30 m), within the mc_boundary extent, rasterize (cell centre) drclassdcd - a text field coded by order of first appearance (Well=1, Poorly=2, Somewhat excessively=3, Excessively=4, Somewhat poorly=5) - and wdepannmin. Reclassify drainage {1:3,2:1,3:4,4:5,5:2} and depth ranges [0,10]->5, (10,33]->4, (33,61]->3, (61,80]->2, (80,92]->1; vulnerable_areas = drainage*5 + depth*4 (values 14-37).",
+ "key_parameters": {
+  "crs": "EPSG:2269 (any LCC accepted)",
+  "cell": "projected land-cover cell, ~98.4 ft / 30 m",
+  "extent": "mc_boundary extent",
+  "drainage_coding": "first appearance order of drclassdcd",
+  "weights": {
+   "drainage": 5,
+   "water_depth": 4
+  }
+ },
+ "benchmark_defects": [
+  "drclassdcd is a text field, while the reclassification table uses codes 1-5; the coding is implicit (ArcGIS PolygonToRaster codes strings by first appearance). Only that coding yields an ordinal drainage score (excessively drained 5 ... poorly drained 1) and reproduces the ArcGIS result.",
+  "The instruction names no output file (the original ArcPy writes ./output/vulnerable_areas.tif).",
+  "'Lambert Conformal Conic' is not a complete CRS; the original code uses NAD 1983 StatePlane Oregon North FIPS 3601 (Feet).",
+  "Dataset description has mojibake in field descriptions (UTF-8 en-dash read as GBK)."
+ ],
+ "external_validation": "Gold vs the ArcGIS output shipped as the task 27 input dataset/vulnerable_areas.tif: identical value set, 98.9 % of cells equal, valid-mask IoU 0.9997 (residual = half-cell grid offset at polygon edges).",
+ "checks": [
+  "required: a GeoTIFF written to pred_results",
+  "required: sampled at gold cell centres (pyproj reprojection, any CRS/grid), valid-area IoU >= 0.90",
+  "required: values equal gold on >= 90 % of cells valid in both",
+  "required: per class - values decomposed into drainage score a and depth score b (5a+4b unique); every class with >= 50 sampled gold cells reproduced on >= 80 % of its cells",
+  "required (the instruction says \"project ... to Lambert Conformal Conic\"): output CRS is Lambert Conformal Conic (any LCC variant, from the CRS projection method)",
+  "required (the instruction says \"land_cover as the cellSize\"): output cell size equals the land-cover cell, 30 m +/-10 % in the output CRS units",
+  "optional: value set is a subset of the 25 possible 5a+4b values"
+ ]
+}

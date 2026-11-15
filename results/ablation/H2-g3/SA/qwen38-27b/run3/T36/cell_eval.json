@@ -1,0 +1,121 @@
+{
+ "cell_id": "ablation.H2-g3.SA.qwen38-27b.r3.T36",
+ "task": 36,
+ "status": "ok",
+ "analytically_correct": true,
+ "scorer_error": false,
+ "checks": [
+  {
+   "name": "result file written to pred_results",
+   "passed": true,
+   "value": [
+    "field_vegetation_loss.csv",
+    "hail_damage_map.png",
+    "vegetation_loss.tif"
+   ],
+   "threshold": "any non-empty file",
+   "required": true,
+   "note": ""
+  },
+  {
+   "name": "per-field loss result covers >= 80 % of gold fields",
+   "passed": true,
+   "value": 0.997,
+   "threshold": 0.8,
+   "required": true,
+   "note": "field_vegetation_loss.csv.mean_loss@file (ids-1)"
+  },
+  {
+   "name": "per-field loss ranking matches gold (Spearman >= 0.85)",
+   "passed": true,
+   "value": 0.991,
+   "threshold": 0.85,
+   "required": true,
+   "note": "field_vegetation_loss.csv.mean_loss@file (ids-1)"
+  },
+  {
+   "name": "SAVI (L = 0.5) used",
+   "passed": true,
+   "value": null,
+   "threshold": null,
+   "required": true,
+   "note": "code inspection (soil factor L = 0.5 / (1 + L) / * 1.5)"
+  },
+  {
+   "name": "deliverable files carry a CRS (uniform rule)",
+   "passed": true,
+   "value": [],
+   "threshold": "every geographic deliverable file has a CRS",
+   "required": true,
+   "note": "no geographic deliverable file written (presence is judged by the task checks)"
+  }
+ ],
+ "replay": {
+  "success": false,
+  "outputs": [
+   "vegetation_loss.tif"
+  ],
+  "events": [],
+  "blocks_ok": 12,
+  "block_outcome": [
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok"
+  ],
+  "step_timeout_s": 900,
+  "same_outputs_as_original": false,
+  "block_mismatches": [
+   3,
+   9,
+   21,
+   23,
+   24,
+   28,
+   30,
+   32,
+   34,
+   35,
+   36
+  ]
+ },
+ "replay_faithful": false,
+ "replay_unfaithful_reasons": [
+  "block success differs at [3, 9, 21, 23, 24, 28, 30, 32, 34, 35]"
+ ],
+ "replay_container_failure": [],
+ "emergency_files": []
+}

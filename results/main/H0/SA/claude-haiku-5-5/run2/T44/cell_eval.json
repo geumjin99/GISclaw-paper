@@ -1,0 +1,113 @@
+{
+ "cell_id": "main.H0.SA.claude-haiku-5-5.r2.T44",
+ "task": 44,
+ "status": "ok",
+ "analytically_correct": true,
+ "scorer_error": false,
+ "checks": [
+  {
+   "name": "map present",
+   "passed": true,
+   "value": [
+    "fire_coverage_gaps_map.png"
+   ],
+   "threshold": [
+    "fire_coverage_gaps_map.png"
+   ],
+   "required": true,
+   "note": ""
+  },
+  {
+   "name": "map not blank",
+   "passed": true,
+   "value": 33.91780518632492,
+   "threshold": ">=3 grey-level std",
+   "required": true,
+   "note": ""
+  },
+  {
+   "name": "no-service area saved, non-empty and inside Etobicoke",
+   "passed": true,
+   "value": 1.0,
+   "threshold": ">=0.98 inside",
+   "required": true,
+   "note": "no_service_area.geojson, 21.64 km2"
+  },
+  {
+   "name": "gap = Etobicoke minus station buffers of a plausible radius (IoU >= 0.85)",
+   "passed": true,
+   "value": [
+    0.996,
+    1950.0
+   ],
+   "threshold": "IoU>=0.85, radius 400-5000 m, <=0.5 % of the gap within 0.9 d of a station",
+   "required": true,
+   "note": "no_service_area.geojson; best radius 1950 m (nearest station 1949 m); 0.00 % of the gap within 0.9 d of a station"
+  },
+  {
+   "name": "gap equals the gold 2500 m gap (IoU >= 0.85)",
+   "passed": false,
+   "value": 0.165,
+   "threshold": 0.85,
+   "required": false,
+   "note": ""
+  },
+  {
+   "name": "buffered stations saved as a file",
+   "passed": true,
+   "value": null,
+   "threshold": null,
+   "required": false,
+   "note": ""
+  },
+  {
+   "name": "deliverable files carry a CRS (uniform rule)",
+   "passed": true,
+   "value": [
+    "distance_to_nearest_station_grid.geojson",
+    "fire_station_buffers_2km.geojson",
+    "fire_stations_etobicoke_region.geojson",
+    "no_service_area.geojson",
+    "service_coverage_2km.geojson"
+   ],
+   "threshold": "every geographic deliverable file has a CRS",
+   "required": true,
+   "note": "5 geographic deliverable file(s), all with a CRS"
+  }
+ ],
+ "replay": {
+  "success": true,
+  "outputs": [
+   "distance_to_nearest_station_grid.geojson",
+   "fire_coverage_gaps_map.png",
+   "fire_station_buffers_2km.geojson",
+   "fire_stations_etobicoke_region.geojson",
+   "no_service_area.geojson",
+   "no_service_gaps_summary.csv",
+   "radius_sensitivity.csv",
+   "section_coverage_summary.csv",
+   "service_coverage_2km.geojson"
+  ],
+  "events": [],
+  "blocks_ok": 10,
+  "block_outcome": [
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok"
+  ],
+  "step_timeout_s": 900,
+  "same_outputs_as_original": true,
+  "block_mismatches": []
+ },
+ "replay_faithful": true,
+ "replay_unfaithful_reasons": [],
+ "replay_container_failure": [],
+ "emergency_files": []
+}

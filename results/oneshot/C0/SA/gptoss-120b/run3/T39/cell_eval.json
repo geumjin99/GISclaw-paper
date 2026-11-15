@@ -1,0 +1,78 @@
+{
+ "cell_id": "oneshot.C0.SA.gptoss-120b.r3.T39",
+ "task": 39,
+ "status": "ok",
+ "analytically_correct": false,
+ "scorer_error": false,
+ "checks": [
+  {
+   "name": "required output present",
+   "passed": false,
+   "value": [],
+   "threshold": [
+    "GA_GWR.png",
+    "ga_gwr.png",
+    "GA_GWR.PNG"
+   ],
+   "required": true,
+   "note": ""
+  },
+  {
+   "name": "figure not blank",
+   "passed": false,
+   "value": null,
+   "threshold": null,
+   "required": true,
+   "note": "no GA_GWR.png"
+  },
+  {
+   "name": "optimal bandwidth searched (Sel_BW result present)",
+   "passed": false,
+   "value": null,
+   "threshold": "Sel_BW optimum +/-2 %, optimum surface r >= 0.998, or searched bandwidth with dAICc < 2",
+   "required": true,
+   "note": "; no captured number equals a Sel_BW optimum"
+  },
+  {
+   "name": "local GWR slope surfaces match gold (Pearson >= 0.97) and no extra regressor",
+   "passed": false,
+   "value": null,
+   "threshold": 0.97,
+   "required": true,
+   "note": "no 159-long local coefficient vector captured; no coefficient array captured"
+  },
+  {
+   "name": "figure shows GWR surfaces or the AICc-bandwidth profile",
+   "passed": false,
+   "value": null,
+   "threshold": null,
+   "required": true,
+   "note": "UNVERIFIABLE: no drawn collection / line located on the counties",
+   "unverifiable": true
+  },
+  {
+   "name": "figure compares >= 2 GWR-family models",
+   "passed": false,
+   "value": null,
+   "threshold": "2 models' surfaces (|Spearman| >= 0.90, maps not identical), profile >= 4 bandwidths, or >= 2 model diagnostics",
+   "required": true,
+   "note": "no drawn GWR surface, profile or diagnostic chart"
+  }
+ ],
+ "replay": {
+  "success": false,
+  "outputs": [],
+  "events": [],
+  "blocks_ok": 0,
+  "block_outcome": [
+   "ok"
+  ],
+  "step_timeout_s": 3600,
+  "same_outputs_as_original": true,
+  "block_mismatches": []
+ },
+ "replay_faithful": true,
+ "replay_unfaithful_reasons": [],
+ "replay_container_failure": [],
+ "emergency_files": []
+}

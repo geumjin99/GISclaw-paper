@@ -1,0 +1,139 @@
+{
+ "cell_id": "main.H2.DA.gptoss-120b.r1.T41",
+ "experiment": "main",
+ "tier": "H2",
+ "arch": "DA",
+ "model": "gptoss-120b",
+ "run": 1,
+ "task": 41,
+ "elapsed_s": 73.1,
+ "protocol": "native",
+ "tier_config": {
+  "tools": [
+   "list_files",
+   "load_vector",
+   "load_raster",
+   "inspect",
+   "execute",
+   "lookup_api",
+   "finish"
+  ],
+  "generic": true,
+  "g1": true,
+  "g2": true,
+  "g3": true,
+  "g4": true,
+  "g5": true,
+  "g6": true,
+  "g7": true,
+  "no_dd": false,
+  "no_dk": false
+ },
+ "outputs": [
+  "JoinedCampsites.gpkg",
+  "campsites_with_attributes.csv",
+  "relationship_class.json",
+  "unmatched_campsites.csv"
+ ],
+ "required_outputs": [],
+ "required_present": null,
+ "emergency_files": [],
+ "rounds": 42,
+ "self_corrections": 0,
+ "agent_stats": {
+  "rounds": 42,
+  "format_errors": 6,
+  "format_error_kinds": {
+   "no_action": 6
+  },
+  "self_corrections": 0,
+  "exec_blocks": 12,
+  "exec_failed": 0,
+  "finish_rejections": 1,
+  "dedup_blocked": 13,
+  "triggers": {
+   "g1:card": 1,
+   "h1:repeat_readonly": 13,
+   "g3:validate": 2
+  },
+  "checks_run": {
+   "g2": 12,
+   "g3": 14,
+   "g7": 12
+  },
+  "end_reason": "finish",
+  "empty_retries": 0,
+  "planner_calls": 1,
+  "verifier_calls": 6,
+  "replans": 0,
+  "verify_unknown": 0,
+  "steps": [
+   {
+    "id": 1,
+    "rounds": 9,
+    "pass": true
+   },
+   {
+    "id": 2,
+    "rounds": 6,
+    "pass": true
+   },
+   {
+    "id": 3,
+    "rounds": 15,
+    "pass": true
+   },
+   {
+    "id": 4,
+    "rounds": 5,
+    "pass": true
+   }
+  ],
+  "plan_fallback": false,
+  "history_truncations": 0,
+  "finished": true,
+  "agent_time_s": 4.5
+ },
+ "llm_stats": {
+  "calls": 55,
+  "retries": 0,
+  "errors": 0,
+  "context_overflow": 0,
+  "empty": 0,
+  "prompt_tokens": 329914,
+  "completion_tokens": 12469,
+  "reasoning_tokens": 0,
+  "cached_tokens": 0
+ },
+ "llm_time_s": 67.6,
+ "agent_time_s": 4.5,
+ "hit_deadline": false,
+ "sandbox_events": [],
+ "inputs_intact": true,
+ "container_memory": "12g",
+ "deliverable_produced": true,
+ "config": {
+  "image": "gisclaw-exec:1.0",
+  "step_timeout_s": 300,
+  "task_wall_s": 1200,
+  "max_rounds": 50,
+  "blocked_packages": {
+   "arcpy": "Use geopandas + rasterio + shapely instead."
+  },
+  "agent": {
+   "history_tokens": 60000,
+   "max_format_errors": 15
+  }
+ },
+ "model_config": {
+  "provider": "vllm",
+  "model_name": "gpt-oss-120b",
+  "request": {
+   "set": {
+    "max_tokens": 32768,
+    "temperature": 1.0,
+    "reasoning_effort": "medium"
+   }
+  }
+ }
+}

@@ -1,0 +1,104 @@
+{
+ "cell_id": "main.H1.SA.claude-haiku-5-5.r1.T49",
+ "task": 49,
+ "status": "ok",
+ "analytically_correct": true,
+ "scorer_error": false,
+ "checks": [
+  {
+   "name": "map saved and not blank",
+   "passed": true,
+   "value": [
+    "homelessness_2013_maps_panel.png",
+    "map_Change.png",
+    "map_Homeless13.png",
+    "map_Homeless_per_100k.png"
+   ],
+   "threshold": null,
+   "required": true,
+   "note": ""
+  },
+  {
+   "name": "join: homeless_data.xlsx joined to the states layer on the abbreviation (values aligned per state)",
+   "passed": true,
+   "value": 1.0,
+   "threshold": ">= 0.95 of states; code reads homeless_data.xlsx",
+   "required": true,
+   "note": "Change in m0@final ~ Change x1 (xlsx read: True)"
+  },
+  {
+   "name": "calculated field per state (rate, or 2012-13 change joined from the xlsx)",
+   "passed": true,
+   "value": [
+    1.0,
+    1.0
+   ],
+   "threshold": 0.95,
+   "required": false,
+   "note": "Homeless_per_100k in gdf@final [per 100k]; change: Change in homeless@final (xlsx read: True)"
+  },
+  {
+   "name": "2012-13 change carried per state",
+   "passed": true,
+   "value": 1.0,
+   "threshold": null,
+   "required": false,
+   "note": "Change in homeless@final"
+  },
+  {
+   "name": "map shows the joined homelessness data (drawn colour values rank-match it, rho >= 0.9)",
+   "passed": true,
+   "value": "colours of final ~ Change in gdf (rho -1.000, RdBu)",
+   "threshold": null,
+   "required": true,
+   "note": ""
+  },
+  {
+   "name": "tabular file read and joined (code uses homeless_data.xlsx)",
+   "passed": true,
+   "value": null,
+   "threshold": null,
+   "required": false,
+   "note": ""
+  },
+  {
+   "name": "deliverable files carry a CRS (uniform rule)",
+   "passed": true,
+   "value": [
+    "usa_states_homeless2013.gpkg"
+   ],
+   "threshold": "every geographic deliverable file has a CRS",
+   "required": true,
+   "note": "1 geographic deliverable file(s), all with a CRS"
+  }
+ ],
+ "replay": {
+  "success": true,
+  "outputs": [
+   "homelessness_2013_maps_panel.png",
+   "map_Change.png",
+   "map_Homeless13.png",
+   "map_Homeless_per_100k.png",
+   "usa_states_homeless2013.gpkg"
+  ],
+  "events": [],
+  "blocks_ok": 6,
+  "block_outcome": [
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok"
+  ],
+  "step_timeout_s": 900,
+  "same_outputs_as_original": true,
+  "block_mismatches": []
+ },
+ "replay_faithful": true,
+ "replay_unfaithful_reasons": [],
+ "replay_container_failure": [],
+ "emergency_files": []
+}

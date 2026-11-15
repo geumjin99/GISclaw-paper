@@ -1,0 +1,32 @@
+{
+ "task": 40,
+ "title": "Change in malaria prevalence among children aged 2-10 in Sub-Saharan Africa, 2000-2015",
+ "output_type": "image (diverging change map) + change raster",
+ "required_outputs": [
+  "any *.png (instruction names no file); reference writes malaria_change.png, Malaria_Change.tif, Malaria_Change_Classified.tif"
+ ],
+ "method": "Minus: PfPR2-10(2015) - PfPR2-10(2000) on the common 0.0417-degree grid with nodata (-9999) masked; classify into decrease / no change / increase bands (reference: the authors' 5-class RemapRange -1..-0.3..-0.1..0.1..0.3..1); map with a diverging colour scheme centred on zero.",
+ "key_parameters": {
+  "operation": "2015 minus 2000",
+  "nodata": -9999,
+  "classes": "[-1,-0.3) [-0.3,-0.1) [-0.1,0.1) [0.1,0.3) [0.3,1]",
+  "colormap": "diverging (RdBu_r), TwoSlopeNorm at 0"
+ },
+ "benchmark_defects": [
+  "No output file name is specified, so any PNG is accepted.",
+  "Dataset description contains a mojibake character (in the range '2-10').",
+  "The published reference script (arcpy) references input_2015 and input_2000 without defining them, and its 'Visualize Results' step saves the classified raster without drawing a map."
+ ],
+ "checks": [
+  "required: a PNG figure present",
+  "required: figure not blank",
+  "required: a 2-D change field on the input grid (captured or GeoTIFF) with Pearson >= 0.95 vs gold",
+  "required: its mean equals the gold mean (-0.171) within 25 % (fraction or x100)",
+  "required: an image drawn in a saved figure (imshow by origin, pcolormesh oriented by its mesh coordinates; as drawn or flipped N-S) has Spearman >= 0.85 with the gold change",
+  "required: that drawn change image masks >= 90 % of the gold nodata cells",
+  "optional: nodata masked in the change array",
+  "required (the text asks for 'a diverging color scheme'): diverging colour scheme used (code inspection, comments stripped)",
+  "optional: an ordered categorical change map derived",
+  "figure (kind=figure, not in the main metric): the change map drawn north-up (drawn image as drawn, Spearman >= 0.85)"
+ ]
+}

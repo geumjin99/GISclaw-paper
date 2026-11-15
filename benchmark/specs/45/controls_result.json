@@ -1,0 +1,139 @@
+[
+ {
+  "control": "correct_cost_in_geopackage_ext",
+  "expected_correct": true,
+  "judged_correct": true,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [],
+  "scorer_error": false
+ },
+ {
+  "control": "correct_cost_in_gpkg_raster",
+  "expected_correct": true,
+  "judged_correct": true,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [],
+  "scorer_error": false
+ },
+ {
+  "control": "correct_horn_slope_valid_mode",
+  "expected_correct": true,
+  "judged_correct": true,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [],
+  "scorer_error": false
+ },
+ {
+  "control": "correct_std_linear",
+  "expected_correct": true,
+  "judged_correct": true,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [],
+  "scorer_error": false
+ },
+ {
+  "control": "correct_zscore_standardised",
+  "expected_correct": true,
+  "judged_correct": true,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [],
+  "scorer_error": false
+ },
+ {
+  "control": "wrong_9x9_window",
+  "expected_correct": false,
+  "judged_correct": false,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [
+   "ruggedness from 3x3 focal variation matches gold (|Spearman| >= 0.95)"
+  ],
+  "scorer_error": false
+ },
+ {
+  "control": "wrong_deliverable_no_crs",
+  "expected_correct": false,
+  "judged_correct": false,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [
+   "cost raster saved and georeferenced on the DEM grid",
+   "deliverable files carry a CRS (uniform rule)"
+  ],
+  "scorer_error": false
+ },
+ {
+  "control": "wrong_focal_mean",
+  "expected_correct": false,
+  "judged_correct": false,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [
+   "ruggedness from 3x3 focal variation matches gold (|Spearman| >= 0.95)",
+   "cost = standardised monotone transform of ruggedness"
+  ],
+  "scorer_error": false
+ },
+ {
+  "control": "wrong_gpkg_nodata_not_readable",
+  "expected_correct": false,
+  "judged_correct": false,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [
+   "cost = standardised monotone transform of ruggedness",
+   "DEM NoData kept as NoData in the cost raster (>= 90 % of NoData cells)"
+  ],
+  "scorer_error": false
+ },
+ {
+  "control": "wrong_no_georeference",
+  "expected_correct": false,
+  "judged_correct": false,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [
+   "cost raster saved and georeferenced on the DEM grid",
+   "deliverable files carry a CRS (uniform rule)"
+  ],
+  "scorer_error": false
+ },
+ {
+  "control": "wrong_nodata_as_zero",
+  "expected_correct": false,
+  "judged_correct": false,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [
+   "DEM NoData kept as NoData in the cost raster (>= 90 % of NoData cells)"
+  ],
+  "scorer_error": false
+ },
+ {
+  "control": "wrong_raw_ruggedness_no_rescale",
+  "expected_correct": false,
+  "judged_correct": false,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [
+   "cost = standardised monotone transform of ruggedness"
+  ],
+  "scorer_error": false
+ },
+ {
+  "control": "wrong_valid_mode_shifted_9x9",
+  "expected_correct": false,
+  "judged_correct": false,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [
+   "ruggedness from 3x3 focal variation matches gold (|Spearman| >= 0.95)"
+  ],
+  "scorer_error": false
+ }
+]

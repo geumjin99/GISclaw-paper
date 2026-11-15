@@ -1,0 +1,108 @@
+{
+ "cell_id": "ablation.H2-g6.SA.qwen38-27b.r1.T47",
+ "task": 47,
+ "status": "ok",
+ "analytically_correct": true,
+ "scorer_error": false,
+ "checks": [
+  {
+   "name": "joined parcel layer saved (121 features)",
+   "passed": true,
+   "value": [
+    "parcels_impervious_area.shp"
+   ],
+   "threshold": null,
+   "required": true,
+   "note": ""
+  },
+  {
+   "name": "impervious (Value 0) area per parcel matches gold (>= 90 % within 5 %)",
+   "passed": true,
+   "value": 1.0,
+   "threshold": "0.9 (per parcel: within 5 % or one boundary cell ring)",
+   "required": true,
+   "note": "ImpervCnt in parcels_impervious_area.shp [unit cells(0.25 ft2)]"
+  },
+  {
+   "name": "pervious (Value 1) area also tabulated",
+   "passed": true,
+   "value": 0.959,
+   "threshold": null,
+   "required": false,
+   "note": ""
+  },
+  {
+   "name": "class meaning read from attribute table (vat.dbf / Class_name)",
+   "passed": true,
+   "value": null,
+   "threshold": null,
+   "required": false,
+   "note": ""
+  },
+  {
+   "name": "deliverable files carry a CRS (uniform rule)",
+   "passed": true,
+   "value": [
+    "parcels_impervious_area.shp"
+   ],
+   "threshold": "every geographic deliverable file has a CRS",
+   "required": true,
+   "note": "1 geographic deliverable file(s), all with a CRS"
+  }
+ ],
+ "replay": {
+  "success": true,
+  "outputs": [
+   "parcels_impervious_area.cpg",
+   "parcels_impervious_area.csv",
+   "parcels_impervious_area.dbf",
+   "parcels_impervious_area.prj",
+   "parcels_impervious_area.shp",
+   "parcels_impervious_area.shx",
+   "tabulate_area.csv",
+   "tabulate_area_map.png"
+  ],
+  "events": [],
+  "blocks_ok": 22,
+  "block_outcome": [
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok"
+  ],
+  "step_timeout_s": 900,
+  "same_outputs_as_original": true,
+  "block_mismatches": []
+ },
+ "replay_faithful": true,
+ "replay_unfaithful_reasons": [],
+ "replay_container_failure": [],
+ "emergency_files": []
+}

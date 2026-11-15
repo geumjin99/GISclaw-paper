@@ -1,0 +1,110 @@
+[
+ {
+  "control": "correct_function_shp_only",
+  "expected_correct": true,
+  "judged_correct": true,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [],
+  "scorer_error": false
+ },
+ {
+  "control": "correct_id_table_csv",
+  "expected_correct": true,
+  "judged_correct": true,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [],
+  "scorer_error": false
+ },
+ {
+  "control": "correct_rasterstats_all_touched",
+  "expected_correct": true,
+  "judged_correct": true,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [],
+  "scorer_error": false
+ },
+ {
+  "control": "correct_rasterstats_centre",
+  "expected_correct": true,
+  "judged_correct": true,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [],
+  "scorer_error": false
+ },
+ {
+  "control": "wrong_deliverable_no_crs",
+  "expected_correct": false,
+  "judged_correct": false,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [
+   "deliverable files carry a CRS (uniform rule)"
+  ],
+  "scorer_error": false
+ },
+ {
+  "control": "wrong_depth_sign",
+  "expected_correct": false,
+  "judged_correct": false,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [
+   "per-building damage matches gold (Jaccard>=0.80, Spearman>=0.90)",
+   "per-building damage values follow the given function (median pred/gold ratio 0.95-1.05)",
+   "total damage within 10 % of gold"
+  ],
+  "scorer_error": false
+ },
+ {
+  "control": "wrong_depth_units_in_damage",
+  "expected_correct": false,
+  "judged_correct": false,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [
+   "per-building damage values follow the given function (median pred/gold ratio 0.95-1.05)",
+   "total damage within 10 % of gold"
+  ],
+  "scorer_error": false
+ },
+ {
+  "control": "wrong_flooded_part_area_max_depth",
+  "expected_correct": false,
+  "judged_correct": false,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [
+   "per-building damage values follow the given function (median pred/gold ratio 0.95-1.05)",
+   "total damage within 10 % of gold"
+  ],
+  "scorer_error": false
+ },
+ {
+  "control": "wrong_log10",
+  "expected_correct": false,
+  "judged_correct": false,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [
+   "per-building damage values follow the given function (median pred/gold ratio 0.95-1.05)"
+  ],
+  "scorer_error": false
+ },
+ {
+  "control": "wrong_threshold_sea_level_zero",
+  "expected_correct": false,
+  "judged_correct": false,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [
+   "per-building damage matches gold (Jaccard>=0.80, Spearman>=0.90)",
+   "per-building damage values follow the given function (median pred/gold ratio 0.95-1.05)",
+   "total damage within 10 % of gold"
+  ],
+  "scorer_error": false
+ }
+]

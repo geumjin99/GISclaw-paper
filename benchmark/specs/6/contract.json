@@ -1,0 +1,15 @@
+{
+ "task": 6,
+ "source": "instruction: save the final output as 'pred_results/Elk_Analysis.png'; checks.py file_exists + png_not_blank + overlay layers of the figure saved as Elk_Analysis.png",
+ "deliverables": [
+  {
+   "id": "map",
+   "kind": "figure",
+   "patterns": ["Elk_Analysis.png"],
+   "required": true,
+   "crs_required": false,
+   "checked_by": ["required output present", "map not blank", "Elk_Analysis.png overlays hull, density and clusters"]
+  }
+ ],
+ "not_deliverables": []
+}

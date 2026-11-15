@@ -1,0 +1,33 @@
+{
+ "task": 47,
+ "source": "instruction: 'join the area with land parcels, copy and save the joint result'; checks.py globs pred_results (recursive) for vector files (*.shp/*.geojson/*.gpkg/*.json) with 121 parcels",
+ "deliverables": [
+  {
+   "id": "joined_parcels",
+   "kind": "vector",
+   "patterns": [
+    "*.shp",
+    "*.geojson",
+    "*.gpkg",
+    "*.json"
+   ],
+   "required": true,
+   "crs_required": true,
+   "geometry_type": [
+    "Polygon",
+    "MultiPolygon"
+   ],
+   "checked_by": [
+    "joined parcel layer saved (121 features)",
+    "impervious (Value 0) area per parcel matches gold (>= 90 % within 5 %)",
+    "pervious (Value 1) area also tabulated"
+   ]
+  }
+ ],
+ "not_deliverables": [
+  {
+   "pattern": "parcels_joint.shp",
+   "reason": "gold file name, read from the gold directory only"
+  }
+ ]
+}

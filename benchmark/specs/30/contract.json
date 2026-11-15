@@ -1,0 +1,24 @@
+{
+ "task": 30,
+ "source": "instruction: propose routes, evaluate half-mile coverage (no file named); checks.py: any non-blank *.png (optional: the instruction asks for no map); proposed-route lines and the coverage polygon from any *.shp/*.geojson/*.gpkg/*.json in pred_results, as an alternative to captured layers / a coverage share",
+ "deliverables": [
+  {
+   "id": "map",
+   "kind": "figure",
+   "patterns": ["*.png"],
+   "required": false,
+   "crs_required": false,
+   "checked_by": ["map written (non-blank PNG)"]
+  },
+  {
+   "id": "routes_or_coverage_layer",
+   "kind": "vector",
+   "patterns": ["*.shp", "*.geojson", "*.gpkg", "*.json"],
+   "required": false,
+   "crs_required": true,
+   "geometry_type": ["LineString", "MultiLineString", "Polygon", "MultiPolygon"],
+   "checked_by": ["proposed routes cover the three designated corridors", "precision: proposed length lies on designated corridors", "map shows the proposed routes", "half-mile coverage of Capitol Hill matches gold"]
+  }
+ ],
+ "not_deliverables": []
+}

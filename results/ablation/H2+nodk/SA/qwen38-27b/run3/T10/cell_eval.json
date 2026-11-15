@@ -1,0 +1,87 @@
+{
+ "cell_id": "ablation.H2+nodk.SA.qwen38-27b.r3.T10",
+ "task": 10,
+ "status": "ok",
+ "analytically_correct": true,
+ "scorer_error": false,
+ "checks": [
+  {
+   "name": "required output present",
+   "passed": true,
+   "value": [
+    "predictedRiskyArea.png"
+   ],
+   "threshold": [
+    "predictedRiskyArea.png"
+   ],
+   "required": true,
+   "note": ""
+  },
+  {
+   "name": "map not blank",
+   "passed": true,
+   "value": 38.381955882653735,
+   "threshold": ">=3 grey-level std",
+   "required": true,
+   "note": ""
+  },
+  {
+   "name": "risky area = planned-road buffer minus deforested (or within protected forest)",
+   "passed": true,
+   "value": 0.996,
+   "threshold": 0.85,
+   "required": true,
+   "note": "risk_prot@final ~ gold prot_at_risk (deforested share 0.0%)"
+  },
+  {
+   "name": "context layers drawn (existing roads, protected forest, deforested area)",
+   "passed": true,
+   "value": {
+    "roads": true,
+    "protected": true,
+    "deforested": true
+   },
+   "threshold": null,
+   "required": true,
+   "note": "roadseg.plot(ax=ax, color='#555555', lw=0.25, alpha=0.7, zorder=6); prot.plot(ax=ax, color='#3a8f3a', alpha=0.45, lw=0.5, edgecolor='#1f5c1f', zorder=2); defo.plot(ax=ax, color='#c9995e', alpha=0.85, lw=0.5, edgecolor='#8a5a2b', zorder=3)"
+  },
+  {
+   "name": "Rondonia boundary layer drawn",
+   "passed": false,
+   "value": null,
+   "threshold": null,
+   "required": false,
+   "note": ""
+  }
+ ],
+ "replay": {
+  "success": true,
+  "outputs": [
+   "predictedRiskyArea.png"
+  ],
+  "events": [],
+  "blocks_ok": 9,
+  "block_outcome": [
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok"
+  ],
+  "step_timeout_s": 900,
+  "same_outputs_as_original": true,
+  "block_mismatches": []
+ },
+ "replay_faithful": true,
+ "replay_unfaithful_reasons": [],
+ "replay_container_failure": [],
+ "emergency_files": []
+}

@@ -1,0 +1,112 @@
+{
+ "cell_id": "main.H2.DA.gptoss-120b.r1.T33",
+ "task": 33,
+ "status": "ok",
+ "analytically_correct": true,
+ "scorer_error": false,
+ "checks": [
+  {
+   "name": "result file written to pred_results",
+   "passed": true,
+   "value": [
+    "building_flood_damage.cpg",
+    "building_flood_damage.dbf",
+    "building_flood_damage.prj",
+    "building_flood_damage.shp",
+    "building_flood_damage.shx",
+    "building_flood_damage_summary.csv"
+   ],
+   "threshold": "any non-empty file",
+   "required": true,
+   "note": ""
+  },
+  {
+   "name": "per-building damage matches gold (Jaccard>=0.80, Spearman>=0.90)",
+   "passed": true,
+   "value": "Jaccard=0.643, precision=0.993, weighted recall=0.988, rho=0.994",
+   "threshold": "(Jaccard>=0.80 or (precision>=0.90 and weighted recall>=0.90)) and rho>=0.90",
+   "required": true,
+   "note": "building_stats_df.flood_damage@final"
+  },
+  {
+   "name": "per-building damage values follow the given function (median pred/gold ratio 0.95-1.05)",
+   "passed": true,
+   "value": 1.0,
+   "threshold": "0.95-1.05",
+   "required": true,
+   "note": "building_stats_df.flood_damage@final"
+  },
+  {
+   "name": "total damage within 10 % of gold",
+   "passed": true,
+   "value": 406768928,
+   "threshold": "4.113e+08 +/- 10 %",
+   "required": true,
+   "note": "sum of building_stats_df.flood_damage@final"
+  },
+  {
+   "name": "per-building mean flood depth matches gold",
+   "passed": true,
+   "value": 0.982,
+   "threshold": 0.9,
+   "required": false,
+   "note": "building_stats_df.mean_flood_depth_cm@final"
+  },
+  {
+   "name": "deliverable files carry a CRS (uniform rule)",
+   "passed": true,
+   "value": [
+    "building_flood_damage.shp",
+    "emergency_output.geojson",
+    "flooded_area.shp"
+   ],
+   "threshold": "every geographic deliverable file has a CRS",
+   "required": true,
+   "note": "3 geographic deliverable file(s), all with a CRS"
+  }
+ ],
+ "replay": {
+  "success": true,
+  "outputs": [
+   "building_flood_damage.cpg",
+   "building_flood_damage.dbf",
+   "building_flood_damage.prj",
+   "building_flood_damage.shp",
+   "building_flood_damage.shx",
+   "building_flood_damage_summary.csv",
+   "flood_depth.tif",
+   "flooded_area.cpg",
+   "flooded_area.dbf",
+   "flooded_area.prj",
+   "flooded_area.shp",
+   "flooded_area.shx"
+  ],
+  "events": [],
+  "blocks_ok": 11,
+  "block_outcome": [
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok"
+  ],
+  "step_timeout_s": 900,
+  "same_outputs_as_original": false,
+  "block_mismatches": []
+ },
+ "replay_faithful": true,
+ "replay_unfaithful_reasons": [],
+ "replay_container_failure": [],
+ "correct_without_emergency": true,
+ "emergency_files": [
+  "emergency_output.geojson"
+ ]
+}

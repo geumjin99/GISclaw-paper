@@ -1,0 +1,131 @@
+{
+ "cell_id": "ablation.H2-g1.SA.qwen38-27b.r3.T48",
+ "task": 48,
+ "status": "ok",
+ "analytically_correct": true,
+ "scorer_error": false,
+ "checks": [
+  {
+   "name": "selection AcceptedLo >= 30 (808 tracts)",
+   "passed": true,
+   "value": "sel@final",
+   "threshold": 808,
+   "required": true,
+   "note": ""
+  },
+  {
+   "name": "hot spots: Gi* z of AveInteres (Pearson >= 0.85 with a Gi* variant, closer than to Gi* of AveLoanGra)",
+   "passed": true,
+   "value": 0.904,
+   "threshold": 0.85,
+   "required": true,
+   "note": "gi.Zs@final ~ Gi[band/self1/bin]"
+  },
+  {
+   "name": "GWR (22 NN) of AveInteres: a local slope matches a 22-NN reference fit (Pearson >= 0.95)",
+   "passed": true,
+   "value": 0.97,
+   "threshold": 0.95,
+   "required": true,
+   "note": "betas[:,3]@final ~ bisquare22 AveLoanGra+AcceptedLo+pHHLoanRat: b[pHHLoanRat]"
+  },
+  {
+   "name": "local R2 reported",
+   "passed": true,
+   "value": 0.971,
+   "threshold": null,
+   "required": false,
+   "note": ""
+  },
+  {
+   "name": "FDR correction (code)",
+   "passed": false,
+   "value": null,
+   "threshold": null,
+   "required": false,
+   "note": ""
+  },
+  {
+   "name": "deliverable files carry a CRS (uniform rule)",
+   "passed": true,
+   "value": [
+    "emergency_output.geojson",
+    "selected_loan_tracts.shp"
+   ],
+   "threshold": "every geographic deliverable file has a CRS",
+   "required": true,
+   "note": "2 geographic deliverable file(s), all with a CRS"
+  }
+ ],
+ "replay": {
+  "success": false,
+  "outputs": [
+   "analysis_summary.txt",
+   "gwr_coef_diagnostic.png",
+   "gwr_map.png",
+   "interest_rate_hotspots.png",
+   "selected_loan_tracts.cpg",
+   "selected_loan_tracts.dbf",
+   "selected_loan_tracts.prj",
+   "selected_loan_tracts.shp",
+   "selected_loan_tracts.shx"
+  ],
+  "events": [],
+  "blocks_ok": 22,
+  "block_outcome": [
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok"
+  ],
+  "step_timeout_s": 900,
+  "same_outputs_as_original": false,
+  "block_mismatches": []
+ },
+ "replay_faithful": true,
+ "replay_unfaithful_reasons": [],
+ "replay_container_failure": [],
+ "correct_without_emergency": true,
+ "emergency_files": [
+  "emergency_output.geojson"
+ ]
+}

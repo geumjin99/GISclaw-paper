@@ -1,0 +1,57 @@
+{
+ "cell_id": "oneshot.C0.SA.qwen38-27b.r2.T04",
+ "task": 4,
+ "status": "ok",
+ "analytically_correct": false,
+ "scorer_error": false,
+ "checks": [
+  {
+   "name": "required output present",
+   "passed": false,
+   "value": [],
+   "threshold": [
+    "undeveloped_areas.tif",
+    "undeveloped_areas.tiff"
+   ],
+   "required": true,
+   "note": ""
+  },
+  {
+   "name": "georeferenced raster with selected cells",
+   "passed": false,
+   "value": null,
+   "threshold": null,
+   "required": true,
+   "note": ""
+  },
+  {
+   "name": "selected cells match an accepted interpretation (1-cell tolerance)",
+   "passed": false,
+   "value": null,
+   "threshold": null,
+   "required": true,
+   "note": ""
+  },
+  {
+   "name": "deliverable files carry a CRS (uniform rule)",
+   "passed": true,
+   "value": [],
+   "threshold": "every geographic deliverable file has a CRS",
+   "required": true,
+   "note": "no geographic deliverable file written (presence is judged by the task checks)"
+  }
+ ],
+ "replay": {
+  "success": true,
+  "outputs": [],
+  "events": [],
+  "blocks_ok": 1,
+  "block_outcome": [
+   "ok"
+  ],
+  "step_timeout_s": 3600,
+  "same_outputs_as_original": true
+ },
+ "replay_faithful": null,
+ "emergency_files": []
+}

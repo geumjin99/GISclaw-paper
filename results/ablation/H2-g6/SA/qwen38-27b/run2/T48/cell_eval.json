@@ -1,0 +1,132 @@
+{
+ "cell_id": "ablation.H2-g6.SA.qwen38-27b.r2.T48",
+ "task": 48,
+ "status": "ok",
+ "analytically_correct": false,
+ "scorer_error": false,
+ "checks": [
+  {
+   "name": "selection AcceptedLo >= 30 (808 tracts)",
+   "passed": true,
+   "value": "selected@final",
+   "threshold": 808,
+   "required": true,
+   "note": ""
+  },
+  {
+   "name": "hot spots: Gi* z of AveInteres (Pearson >= 0.85 with a Gi* variant, closer than to Gi* of AveLoanGra)",
+   "passed": false,
+   "value": 0.675,
+   "threshold": 0.85,
+   "required": true,
+   "note": "moran.z@final ~ Gi[queen/self1/bin]"
+  },
+  {
+   "name": "GWR (22 NN) of AveInteres: a local slope matches a 22-NN reference fit (Pearson >= 0.95)",
+   "passed": false,
+   "value": 0.619,
+   "threshold": 0.95,
+   "required": true,
+   "note": "g.CCT[:,0]@final ~ gaussian22 AcceptedLo+pHHLoanRat: b[AcceptedLo]"
+  },
+  {
+   "name": "local R2 reported",
+   "passed": false,
+   "value": null,
+   "threshold": null,
+   "required": false,
+   "note": ""
+  },
+  {
+   "name": "FDR correction (code)",
+   "passed": false,
+   "value": null,
+   "threshold": null,
+   "required": false,
+   "note": ""
+  },
+  {
+   "name": "deliverable files carry a CRS (uniform rule)",
+   "passed": true,
+   "value": [
+    "selected_loan_tracts.shp"
+   ],
+   "threshold": "every geographic deliverable file has a CRS",
+   "required": true,
+   "note": "1 geographic deliverable file(s), all with a CRS"
+  }
+ ],
+ "replay": {
+  "success": true,
+  "outputs": [
+   "selected_loan_tracts.cpg",
+   "selected_loan_tracts.dbf",
+   "selected_loan_tracts.prj",
+   "selected_loan_tracts.shp",
+   "selected_loan_tracts.shx"
+  ],
+  "events": [],
+  "blocks_ok": 27,
+  "block_outcome": [
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok"
+  ],
+  "step_timeout_s": 900,
+  "same_outputs_as_original": false,
+  "block_mismatches": []
+ },
+ "replay_faithful": true,
+ "replay_unfaithful_reasons": [],
+ "replay_container_failure": [],
+ "correct_without_emergency": false,
+ "emergency_files": [
+  "emergency_output.csv"
+ ]
+}

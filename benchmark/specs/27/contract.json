@@ -1,0 +1,15 @@
+{
+ "task": 27,
+ "source": "instruction: 'save the result to output/undeveloped_areas.tif'; checks.py _find (undeveloped_areas.tif/.tiff in pred_results, or output/undeveloped_areas.tif) feeds every check",
+ "deliverables": [
+  {
+   "id": "undeveloped_areas",
+   "kind": "raster",
+   "patterns": ["undeveloped_areas.tif", "undeveloped_areas.tiff"],
+   "required": true,
+   "crs_required": true,
+   "checked_by": ["undeveloped_areas.tif present", "selected cells match gold (IoU)", "every undeveloped class of the gold selection is selected (recall >= 0.5)", "values are undeveloped land-cover codes", "selected area within 25 % of gold"]
+  }
+ ],
+ "not_deliverables": []
+}

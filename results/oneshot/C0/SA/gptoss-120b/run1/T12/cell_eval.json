@@ -1,0 +1,78 @@
+{
+ "cell_id": "oneshot.C0.SA.gptoss-120b.r1.T12",
+ "task": 12,
+ "status": "ok",
+ "analytically_correct": false,
+ "scorer_error": false,
+ "checks": [
+  {
+   "name": "required output present",
+   "passed": false,
+   "value": [],
+   "threshold": [
+    "ruggedness.png",
+    "Ruggedness.png"
+   ],
+   "required": true,
+   "note": ""
+  },
+  {
+   "name": "map not blank",
+   "passed": false,
+   "value": null,
+   "threshold": null,
+   "required": true,
+   "note": "no map"
+  },
+  {
+   "name": "TRI-family ruggedness surface computed (Spearman >= 0.95, resolution-matched)",
+   "passed": false,
+   "value": 0.259,
+   "threshold": 0.95,
+   "required": true,
+   "note": "elevation@final"
+  },
+  {
+   "name": "figure shows the ruggedness surface (Spearman >= 0.95, either vertical orientation)",
+   "passed": false,
+   "value": null,
+   "threshold": null,
+   "required": true,
+   "note": "UNVERIFIABLE: no raster/mesh/contour artist with DEM-shaped data captured in the figure",
+   "unverifiable": true
+  },
+  {
+   "name": "figure: ruggedness surface drawn north-up (Spearman >= 0.95 as drawn)",
+   "passed": false,
+   "value": null,
+   "threshold": null,
+   "required": false,
+   "note": "no drawn surface",
+   "kind": "figure"
+  },
+  {
+   "name": "TRI as defined (Spearman >= 0.99)",
+   "passed": false,
+   "value": 0.259,
+   "threshold": 0.99,
+   "required": false,
+   "note": ""
+  }
+ ],
+ "replay": {
+  "success": false,
+  "outputs": [],
+  "events": [],
+  "blocks_ok": 0,
+  "block_outcome": [
+   "ok"
+  ],
+  "step_timeout_s": 3600,
+  "same_outputs_as_original": true,
+  "block_mismatches": []
+ },
+ "replay_faithful": true,
+ "replay_unfaithful_reasons": [],
+ "replay_container_failure": [],
+ "emergency_files": []
+}

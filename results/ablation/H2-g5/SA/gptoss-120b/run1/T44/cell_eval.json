@@ -1,0 +1,97 @@
+{
+ "cell_id": "ablation.H2-g5.SA.gptoss-120b.r1.T44",
+ "task": 44,
+ "status": "ok",
+ "analytically_correct": true,
+ "scorer_error": false,
+ "checks": [
+  {
+   "name": "map present",
+   "passed": true,
+   "value": [
+    "etobicoke_fire_coverage_gaps.png"
+   ],
+   "threshold": [
+    "etobicoke_fire_coverage_gaps.png"
+   ],
+   "required": true,
+   "note": ""
+  },
+  {
+   "name": "map not blank",
+   "passed": true,
+   "value": 30.38217626294094,
+   "threshold": ">=3 grey-level std",
+   "required": true,
+   "note": ""
+  },
+  {
+   "name": "no-service area saved, non-empty and inside Etobicoke",
+   "passed": true,
+   "value": 1.0,
+   "threshold": ">=0.98 inside",
+   "required": true,
+   "note": "etobicoke_no_service_areas.geojson, 0.67 km2"
+  },
+  {
+   "name": "gap = Etobicoke minus station buffers of a plausible radius (IoU >= 0.85)",
+   "passed": true,
+   "value": [
+    0.993,
+    3000.0
+   ],
+   "threshold": "IoU>=0.85, radius 400-5000 m, <=0.5 % of the gap within 0.9 d of a station",
+   "required": true,
+   "note": "etobicoke_no_service_areas.geojson; best radius 3000 m (nearest station 2763 m); 0.00 % of the gap within 0.9 d of a station"
+  },
+  {
+   "name": "gap equals the gold 2500 m gap (IoU >= 0.85)",
+   "passed": false,
+   "value": 0.187,
+   "threshold": 0.85,
+   "required": false,
+   "note": ""
+  },
+  {
+   "name": "buffered stations saved as a file",
+   "passed": false,
+   "value": null,
+   "threshold": null,
+   "required": false,
+   "note": ""
+  },
+  {
+   "name": "deliverable files carry a CRS (uniform rule)",
+   "passed": true,
+   "value": [
+    "etobicoke_no_service_areas.geojson"
+   ],
+   "threshold": "every geographic deliverable file has a CRS",
+   "required": true,
+   "note": "1 geographic deliverable file(s), all with a CRS"
+  }
+ ],
+ "replay": {
+  "success": true,
+  "outputs": [
+   "etobicoke_fire_coverage_gaps.png",
+   "etobicoke_no_service_areas.geojson"
+  ],
+  "events": [],
+  "blocks_ok": 5,
+  "block_outcome": [
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok"
+  ],
+  "step_timeout_s": 900,
+  "same_outputs_as_original": true,
+  "block_mismatches": []
+ },
+ "replay_faithful": true,
+ "replay_unfaithful_reasons": [],
+ "replay_container_failure": [],
+ "emergency_files": []
+}

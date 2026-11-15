@@ -1,0 +1,43 @@
+{
+ "task": 23,
+ "source": "instruction: save pred_results/open_space.tif and pred_results/open_space.shp with area statistics; checks.py TIF / VEC name lists",
+ "deliverables": [
+  {
+   "id": "open_space_raster",
+   "kind": "raster",
+   "patterns": [
+    "open_space.tif",
+    "open_space.tiff"
+   ],
+   "required": true,
+   "crs_required": true,
+   "checked_by": [
+    "open_space.tif present",
+    "open-space cells agree with gold (IoU)"
+   ]
+  },
+  {
+   "id": "open_space_polygons",
+   "kind": "vector",
+   "patterns": [
+    "open_space.shp",
+    "open_space.gpkg",
+    "open_space.geojson"
+   ],
+   "required": true,
+   "crs_required": true,
+   "geometry_type": [
+    "Polygon",
+    "MultiPolygon"
+   ],
+   "checked_by": [
+    "open-space polygons present (non-empty)",
+    "polygons cover the gold open space (area IoU)",
+    "area statistics attribute in a real area unit",
+    "polygon geometries valid",
+    "total area matches gold in some unit"
+   ]
+  }
+ ],
+ "not_deliverables": []
+}

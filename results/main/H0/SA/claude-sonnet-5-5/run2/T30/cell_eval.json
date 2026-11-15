@@ -1,0 +1,131 @@
+{
+ "cell_id": "main.H0.SA.claude-sonnet-5-5.r2.T30",
+ "task": 30,
+ "status": "ok",
+ "analytically_correct": false,
+ "scorer_error": false,
+ "checks": [
+  {
+   "name": "map written (non-blank PNG)",
+   "passed": true,
+   "value": [
+    "bike_network_maps.png"
+   ],
+   "threshold": null,
+   "required": false,
+   "note": ""
+  },
+  {
+   "name": "proposed routes cover the three designated corridors",
+   "passed": true,
+   "value": {
+    "Central": 1.0,
+    "East": 1.0,
+    "West": 1.0
+   },
+   "threshold": ">=0.5 each",
+   "required": true,
+   "note": "m@final; 5.39 mi near Capitol Hill (gold 5.37)"
+  },
+  {
+   "name": "precision: proposed length lies on designated corridors",
+   "passed": true,
+   "value": 1.0,
+   "threshold": 0.5,
+   "required": false,
+   "note": ""
+  },
+  {
+   "name": "map shows the proposed routes",
+   "passed": true,
+   "value": 0.96,
+   "threshold": 0.5,
+   "required": false,
+   "note": "share of proposed route segments whose bbox matches a drawn path"
+  },
+  {
+   "name": "half-mile coverage of Capitol Hill matches gold",
+   "passed": false,
+   "value": null,
+   "threshold": "IoU>=0.85 (clipped to Capitol Hill) or share in [0.95, 0.983]",
+   "required": true,
+   "note": "values seen: [('cov', 6.0), ('cov', 7.0), ('cov', 7.0), ('cov', 3.0), ('cov', 5.0)]"
+  },
+  {
+   "name": "network analysis performed (graph shortest paths)",
+   "passed": true,
+   "value": [
+    "networkx",
+    "shortest_path",
+    "nx."
+   ],
+   "threshold": null,
+   "required": true,
+   "note": "instructed: 'Use Network Analyst to propose new routes'"
+  },
+  {
+   "name": "existing trail length in Capitol Hill measured",
+   "passed": true,
+   "value": null,
+   "threshold": null,
+   "required": false,
+   "note": "5227 ft / 0.99 mi / 1593 m"
+  },
+  {
+   "name": "deliverable files carry a CRS (uniform rule)",
+   "passed": true,
+   "value": [
+    "street_suitability.gpkg"
+   ],
+   "threshold": "every geographic deliverable file has a CRS",
+   "required": true,
+   "note": "1 geographic deliverable file(s), all with a CRS"
+  }
+ ],
+ "replay": {
+  "success": true,
+  "outputs": [
+   "accessibility_coverage_metrics.csv",
+   "bike_network_maps.png",
+   "city_proposed_lanes_by_street.csv",
+   "od_routes_network_analysis.csv",
+   "street_suitability.gpkg",
+   "summary_report.md"
+  ],
+  "events": [],
+  "blocks_ok": 22,
+  "block_outcome": [
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok"
+  ],
+  "step_timeout_s": 900,
+  "same_outputs_as_original": true,
+  "block_mismatches": []
+ },
+ "replay_faithful": true,
+ "replay_unfaithful_reasons": [],
+ "replay_container_failure": [],
+ "emergency_files": []
+}

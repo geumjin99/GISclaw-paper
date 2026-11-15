@@ -1,0 +1,98 @@
+{
+ "cell_id": "perturbation.H2.SA.qwen38-27b.r2.T102",
+ "task": 102,
+ "status": "ok",
+ "analytically_correct": true,
+ "scorer_error": false,
+ "checks": [
+  {
+   "name": "required output present",
+   "passed": true,
+   "value": [
+    "transit_access.png"
+   ],
+   "threshold": [
+    "transit_access.png"
+   ],
+   "required": true,
+   "note": ""
+  },
+  {
+   "name": "map not blank",
+   "passed": true,
+   "value": 49.65568293131,
+   "threshold": ">=3 grey-level std",
+   "required": true,
+   "note": ""
+  },
+  {
+   "name": "three factors drawn (poverty, no-vehicle, density)",
+   "passed": true,
+   "value": {
+    "poverty": 0.918,
+    "no-vehicle": 0.995,
+    "density": 0.993
+   },
+   "threshold": "poverty/no-vehicle rho>=0.9, density rho>=0.8 (or literal rating column); distinct layers",
+   "required": true,
+   "note": "poverty: ov@final.poverty_rate; no-vehicle: ov@final.no_veh_rate; density: array drawn on overlay@final"
+  },
+  {
+   "name": "bus service area drawn and correctly located",
+   "passed": true,
+   "value": 1.0,
+   "threshold": "IoU >= 0.90",
+   "required": true,
+   "note": "bus_area (IoU 1.0): bus_area.plot(ax=ax, facecolor='#2c7fb8', alpha=0.10, edgecolor='#0a4e7f', linewidth=2.5)"
+  },
+  {
+   "name": "population density derived (pop/area; rating column is constant)",
+   "passed": true,
+   "value": 0.993,
+   "threshold": 0.8,
+   "required": false,
+   "note": ""
+  },
+  {
+   "name": "geometric overlay of block groups and service area",
+   "passed": true,
+   "value": 1.0,
+   "threshold": 0.9,
+   "required": false,
+   "note": ""
+  }
+ ],
+ "replay": {
+  "success": true,
+  "outputs": [
+   "bus_service_overlay.geojson",
+   "bus_service_overlay.gpkg",
+   "transit_access.png"
+  ],
+  "events": [],
+  "blocks_ok": 11,
+  "block_outcome": [
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok"
+  ],
+  "step_timeout_s": 900,
+  "same_outputs_as_original": true,
+  "block_mismatches": []
+ },
+ "replay_faithful": true,
+ "replay_unfaithful_reasons": [],
+ "replay_container_failure": [],
+ "emergency_files": []
+}

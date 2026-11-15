@@ -1,0 +1,91 @@
+[
+ {
+  "control": "correct_numpy_select",
+  "expected_correct": true,
+  "judged_correct": true,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [],
+  "scorer_error": false
+ },
+ {
+  "control": "correct_rioxarray_float",
+  "expected_correct": true,
+  "judged_correct": true,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [],
+  "scorer_error": false
+ },
+ {
+  "control": "wrong_255_as_nodata",
+  "expected_correct": false,
+  "judged_correct": false,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [
+   "landCover_reclassified: tabulated values (>=99.5 % of mapped cells, and of every class)",
+   "protected_status_reclassified: tabulated values (>=99.5 % of mapped cells, and of every class)"
+  ],
+  "scorer_error": false
+ },
+ {
+  "control": "wrong_chained_inplace",
+  "expected_correct": false,
+  "judged_correct": false,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [
+   "protected_status_reclassified: tabulated values (>=99.5 % of mapped cells, and of every class)"
+  ],
+  "scorer_error": false
+ },
+ {
+  "control": "wrong_deliverable_no_crs",
+  "expected_correct": false,
+  "judged_correct": false,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [
+   "landCover_reclassified: georeferencing preserved",
+   "protected_status_reclassified: georeferencing preserved",
+   "deliverable files carry a CRS (uniform rule)"
+  ],
+  "scorer_error": false
+ },
+ {
+  "control": "wrong_no_georef",
+  "expected_correct": false,
+  "judged_correct": false,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [
+   "landCover_reclassified: georeferencing preserved",
+   "protected_status_reclassified: georeferencing preserved",
+   "deliverable files carry a CRS (uniform rule)"
+  ],
+  "scorer_error": false
+ },
+ {
+  "control": "wrong_water_low_cost",
+  "expected_correct": false,
+  "judged_correct": false,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [
+   "landCover_reclassified: tabulated values (>=99.5 % of mapped cells, and of every class)"
+  ],
+  "scorer_error": false
+ },
+ {
+  "control": "wrong_wetlands_unmapped",
+  "expected_correct": false,
+  "judged_correct": false,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [
+   "landCover_reclassified: tabulated values (>=99.5 % of mapped cells, and of every class)"
+  ],
+  "scorer_error": false
+ }
+]

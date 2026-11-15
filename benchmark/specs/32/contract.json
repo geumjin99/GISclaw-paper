@@ -1,0 +1,34 @@
+{
+ "task": 32,
+ "source": "instruction: 'Visualize and save the final output as \"optimal_path.png\"'; checks.py file_exists/png_not_blank on it (required); cost surface from any 2-D array incl. written GeoTIFFs and corridor lines from any line layer incl. written GeoJSON (ctx.objects with files), as alternatives to captured data",
+ "deliverables": [
+  {
+   "id": "map",
+   "kind": "figure",
+   "patterns": ["optimal_path.png"],
+   "required": true,
+   "crs_required": false,
+   "checked_by": ["required output present", "map not blank"]
+  },
+  {
+   "id": "cost_surface",
+   "kind": "raster",
+   "patterns": ["*.tif*"],
+   "required": false,
+   "crs_required": true,
+   "checked_by": ["cost surface = weighted sum of ruggedness, road-distance, land-cover and protection costs", "corridors follow gold least-cost paths (recall & precision >= 0.80 within 1.5 km)"]
+  },
+  {
+   "id": "corridor_paths",
+   "kind": "vector",
+   "patterns": ["*.geojson"],
+   "required": false,
+   "crs_required": true,
+   "geometry_type": ["LineString", "MultiLineString"],
+   "checked_by": ["corridors follow gold least-cost paths (recall & precision >= 0.80 within 1.5 km)", "map draws the corridors"]
+  }
+ ],
+ "not_deliverables": [
+  {"pattern": "no optimal_path.png", "reason": "a result note string in checks.py, not a file name"}
+ ]
+}

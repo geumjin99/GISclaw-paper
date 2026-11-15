@@ -1,0 +1,63 @@
+{
+ "cell_id": "oneshot.C0.SA.qwen38-27b.r3.T16",
+ "task": 16,
+ "status": "ok",
+ "analytically_correct": false,
+ "scorer_error": false,
+ "checks": [
+  {
+   "name": "polynomial_fit_pred.csv present and readable",
+   "passed": true,
+   "value": "polynomial_fit_pred.csv",
+   "threshold": null,
+   "required": true,
+   "note": ""
+  },
+  {
+   "name": "one row per year 1860-2099",
+   "passed": false,
+   "value": null,
+   "threshold": [
+    1860,
+    2099,
+    240
+   ],
+   "required": true,
+   "note": ""
+  },
+  {
+   "name": "values are the quadratic LS fit of a legitimate series",
+   "passed": false,
+   "value": null,
+   "threshold": "RMSE <= 0.020 K (0.02 K + output rounding)",
+   "required": true,
+   "note": "no usable numeric column / years"
+  },
+  {
+   "name": "fit describes the domain mean (not a single grid point)",
+   "passed": false,
+   "value": null,
+   "threshold": null,
+   "required": true,
+   "note": ""
+  }
+ ],
+ "replay": {
+  "success": true,
+  "outputs": [
+   "polynomial_fit_pred.csv"
+  ],
+  "events": [],
+  "blocks_ok": 1,
+  "block_outcome": [
+   "ok"
+  ],
+  "step_timeout_s": 3600,
+  "same_outputs_as_original": true,
+  "block_mismatches": []
+ },
+ "replay_faithful": true,
+ "replay_unfaithful_reasons": [],
+ "replay_container_failure": [],
+ "emergency_files": []
+}

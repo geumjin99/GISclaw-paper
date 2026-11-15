@@ -1,0 +1,30 @@
+{
+ "task": 2,
+ "title": "Find future bus stop locations in Hamilton, Tennessee",
+ "output_type": "image (overlay map)",
+ "required_outputs": [
+  "transit_access.png"
+ ],
+ "method": "Overlay the bus-stop service area (1 polygon, 0-10 min) with three block-group demographic layers (278 block groups): population density, households below poverty (households_ACSHHBPOV) and households without a vehicle (AtRisk_ACSOVEH0), each drawn with its own semi-transparent colour ramp; the service area is outlined on top. Because the supplied density rating is constant, density is derived as total population / land area (persons per km2) in a metric CRS (UTM 16N). The reference also intersects block groups with the service area (served / unserved parts).",
+ "key_parameters": {
+  "density": "populationtotals_TOTPOP_CY / area_km2 (EPSG:32616)",
+  "poverty": "households_ACSHHBPOV",
+  "no_vehicle": "AtRisk_ACSOVEH0",
+  "overlay": "gpd.overlay intersection/difference with the dissolved service area",
+  "transparency": "alpha 0.35 per layer"
+ },
+ "benchmark_defects": [
+  "'populationToPolygonSizeRating' (described as population density) is constant 2.191 for all 278 block groups, so a literal map of it carries no information; checks do not penalise its literal use (reported only).",
+  "households_ACSHHBPOV and AtRisk_ACSOVEH0 are household counts, not rates, although the description calls the first a 'poverty rate'.",
+  "POP100 and HU100 are entirely empty.",
+  "The published reference script performs no geometric overlay; it plots the block-group columns (including populationToPolygonSizeRating) and draws the service-area outline on top."
+ ],
+ "checks": [
+  "required: map file present",
+  "required: map not blank",
+  "required: three distinct drawn polygon layers carry poverty (rho>=0.9), no-vehicle (rho>=0.9) and density (pop/area rho>=0.8, or the literal constant rating column)",
+  "required: a BusServiceArea-derived layer is plotted (geometry-preserving chain; not centroids / CRS override) and, when captured, matches the service area (IoU>=0.90)",
+  "optional: varying population density derived and drawn",
+  "optional: geometric overlay of block groups and service area"
+ ]
+}

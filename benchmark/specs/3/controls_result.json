@@ -1,0 +1,138 @@
+[
+ {
+  "control": "correct_benchmark_script_contours",
+  "expected_correct": true,
+  "judged_correct": true,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [],
+  "scorer_error": false
+ },
+ {
+  "control": "correct_postminuspre_thresh01_wgs84",
+  "expected_correct": true,
+  "judged_correct": true,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [],
+  "scorer_error": false
+ },
+ {
+  "control": "correct_rioxarray_decimated",
+  "expected_correct": true,
+  "judged_correct": true,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [],
+  "scorer_error": false
+ },
+ {
+  "control": "correct_severity_classes_drawn_in_loop",
+  "expected_correct": true,
+  "judged_correct": true,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [],
+  "scorer_error": false
+ },
+ {
+  "control": "correct_toa_reflectance_gain_bias",
+  "expected_correct": true,
+  "judged_correct": true,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [],
+  "scorer_error": false
+ },
+ {
+  "control": "wrong_largest_scar_only",
+  "expected_correct": false,
+  "judged_correct": false,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [
+   "burn-scar polygons cover the burned core and little else"
+  ],
+  "scorer_error": false
+ },
+ {
+  "control": "wrong_loop_high_class_only",
+  "expected_correct": false,
+  "judged_correct": false,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [
+   "burn-scar polygons cover the burned core and little else"
+  ],
+  "scorer_error": false
+ },
+ {
+  "control": "wrong_ndvi_bands",
+  "expected_correct": false,
+  "judged_correct": false,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [
+   "dNBR surface matches gold (|r| >= 0.98)",
+   "burn-scar polygons cover the burned core and little else"
+  ],
+  "scorer_error": false
+ },
+ {
+  "control": "wrong_pixel_coordinates",
+  "expected_correct": false,
+  "judged_correct": false,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [
+   "burn-scar polygons cover the burned core and little else"
+  ],
+  "scorer_error": false
+ },
+ {
+  "control": "wrong_postfire_nbr_only_polygons",
+  "expected_correct": false,
+  "judged_correct": false,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [
+   "burn-scar polygons cover the burned core and little else"
+  ],
+  "scorer_error": false
+ },
+ {
+  "control": "wrong_toa_reflectance_swir1",
+  "expected_correct": false,
+  "judged_correct": false,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [
+   "dNBR surface matches gold (|r| >= 0.98)"
+  ],
+  "scorer_error": false
+ },
+ {
+  "control": "wrong_uint_overflow",
+  "expected_correct": false,
+  "judged_correct": false,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [
+   "dNBR surface matches gold (|r| >= 0.98)",
+   "burn-scar polygons cover the burned core and little else"
+  ],
+  "scorer_error": false
+ },
+ {
+  "control": "wrong_zero_based_band_index",
+  "expected_correct": false,
+  "judged_correct": false,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [
+   "dNBR surface matches gold (|r| >= 0.98)",
+   "burn-scar polygons cover the burned core and little else"
+  ],
+  "scorer_error": false
+ }
+]

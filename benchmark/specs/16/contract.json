@@ -1,0 +1,22 @@
+{
+ "task": 16,
+ "source": "instruction: output the fitting results by year in 'pred_results/polynomial_fit_pred.csv'; checks.py reads that csv",
+ "deliverables": [
+  {
+   "id": "fit_table",
+   "kind": "table",
+   "patterns": [
+    "polynomial_fit_pred.csv"
+   ],
+   "required": true,
+   "crs_required": false,
+   "checked_by": [
+    "polynomial_fit_pred.csv present and readable",
+    "one row per year 1860-2099",
+    "values are the quadratic LS fit of a legitimate series",
+    "fit describes the domain mean (not a single grid point)"
+   ]
+  }
+ ],
+ "not_deliverables": []
+}

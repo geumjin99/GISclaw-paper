@@ -1,0 +1,778 @@
+id,Open Source,Task Categories1,Task Categories2,Task Categories3,Task,Instruction,Domain Knowledge,Dataset Description,Human Designed Workflow,Task Length
+1,T,Making predictions,Understanding where,,"Find heat islands and at-risk populations in Madison, Wisconsin","Your task is analyzing urban heat using Kriging interpolation techniques in Python. The analysis should focus on understanding spatial patterns of urban heat islands by using point temperature data and interpolating these values across a city. You will have to use a demographic layer to extract and enhance the data visualization on the elder group(Age>65). The goal is to load the temperature sample data, apply the Kriging method to predict temperature across the urban area, and generate a choropleth map showing the average interpolated temperature surface in each census block group.  Highlighting the area with high interpolated temperature as well as high density of the elder population. The final output should be saved as ""pred_results/interpolated_urban_heat.png"".
+","Kriging is a commonly used spatial interpolation method in soil science and geology. It is based on statistical models that include autocorrelation. It involves fitting into a variogram and using weights derived from covariance to interpolate. 
+
+A choropleth map is a thematic map that is used to represent statistical data using the color mapping symbology technique. It displays enumeration units, or divided geographical areas or regions that are colored, shaded or patterned in relation to a data variable.
+
+Attribute joins are accomplished using the pandas.merge() method. In general, it is recommended to use the merge() method called from the GeoDataFrame in the left argument.
+","dataset/Temperature.geojson: Geojson file that stores temperature at different coordinates as points. 'TemperatureF'' Column stores the temperature information in Fahrenheit.
+Columns of dataset/Temperature.geojson:
+Columns: OBJECTID  SID   LATITUDE  LONGITUDE  TemperatureF geometry
+
+dataset/block.geojson: Geojson file that stores the census block of Madison as polygons. ""Block_Groups_Over65Density"" column stores the density of the elderly population per census block.
+Columns of dataset/block.geojson:
+OBJECTID, Block_Groups_TOTPOP10, Block_Groups_PopOver65, Block_Groups_Over65Density, Shape_Length, Shape_Area, geometry
+","1. Load dataset
+2. Interpolate(Temperature)
+3. Filter(Senior Population)
+4. Merge dataset
+5. Average interpolated data
+6. Highlight
+7. Visualization",7
+2,T,Detecting and quantifying patterns,Finding the best locations and paths,,"Find future bus stop locations in Hamilton, Tennessee","Your task is performing analysis on public transit access in Hamilton County Tennessee. The goal is to map out existing bus stops's service area with enriched map layers for different census blocks, including poverty, population density, and accessibility to a vehicle. You should overlay the three demographical factors with the bus service area using different transparent color schemes. Visualizing the resulting data as ""pred_results/transit_access.png"".","The Overlay toolset contains tools to overlay multiple feature classes to combine, erase, modify, or update spatial features, resulting in a new feature class. The ""overlay"" function manipulations two feature layers using the language of sets, intersection, union, difference and symmetrical difference.","dataset/BusServiceArea.geojson: Geojson file stores the bus stop service areas in polygons
+
+Columns of dataset/BusServiceArea.geojson:
+   OBJECTID FacilityID  ...   Shape_Area, geometry
+
+dataset/HamiltonDemographics.geojson: Geojson file that stores census block demographic information in polygons. 'populationtotals_TOTPOP_CY' stores the total population ('populationToPolygonSizeRating' has the same value, 2.191, in every block group and does not measure density). 'households_ACSHHBPOV' represents poverty rate. 'AtRisk_ACSOVEH0' represents population without ownership to vehicles.
+
+Columns of dataset/HamiltonDemographics.geojson:
+OBJECTID', 'AREALAND', 'AREAWATER', 'BASENAME', 'BLKGRP', 'CENTLAT',
+'CENTLON', 'COUNTY', 'FUNCSTAT', 'GEOID', 'INTPTLAT', 'INTPTLON',
+'LSADC', 'MTFCC', 'NAME', 'ObjID', 'STATE', 'TRACT', 'UR', 'HU100',
+'POP100', 'ALANDHIST', 'AWATERHIST', 'EFFDATE', 'ESTABDATE', 'VINTAGE',
+'STGEOMETRY_AREA', 'STGEOMETRY_LEN', 'aggregationMethod', 'HasData',
+'ORIGINAL_OID', 'sourceCountry', 'apportionmentConfidence',
+'populationToPolygonSizeRating', 'populationtotals_TOTPOP_CY',
+'households_ACSHHBPOV', 'AtRisk_ACSOVEH0', 'Shape_Length', 'Shape_Area',
+'geometry'
+","1. Load dataset
+2. Filter(Poverty)
+3. Filter(population density)
+4. Filter(No Access to vehicle)
+5. Overlay
+6. Visualization",6
+3,T,Understanding where,Detecting and quantifying patterns,,Assess burn scars and understanding the impact of wildfire in Montana using satellite imagery,"Your task is assessing burn scars using satellite imagery and perform spatial analysis to understand the impact of wildfires. The goal is to use the satellite imagery data from 2014 and 2015 on analyzing burn scars by determining the change in Normalized Burn Ratio. Then you should generate a map that visualizes the spatial extent of the damage areas in vector data. The final output should be a visual representation of the burn scars, saved as ""pred_results/burn_scar_analysis.png"".","Normalized Burn Ratio (NBR) is used to identify burned areas and provide a measure of burn severity. NBR ranges between -1 and 1. A high NBR value indicates healthy vegetation. A low value indicates bare ground and recently burnt areas.It is calculated as a ratio between the NIR and SWIR values in traditional fashion. 
+
+In Landsat 8-9, NBR = (Band 5 - Band 7) / (Band 5 + Band 7). ","dataset/G_2014.tif: Raster file of satellite imageries in 2014, taken by Landsat 8
+No preview
+dataset/G_2015.tif: Raster file of satellite imageries in 2015, taken by Landsat 8
+No Preview
+
+Landsat 8 satellite imageries have 9 bands; the files contain 8 of them (no Band 8 Panchromatic, so the 8th band in the files is Cirrus): 
+Band 1 Coastal Aerosol (0.43 - 0.45 µm) 30 m
+Band 2 Blue (0.450 - 0.51 µm) 30 m
+Band 3 Green (0.53 - 0.59 µm) 30 m
+Band 4 Red (0.64 - 0.67 µm) 30 m
+Band 5 Near-Infrared (0.85 - 0.88 µm) 30 m
+Band 6 SWIR 1(1.57 - 1.65 µm) 30 m
+Band 7 SWIR 2 (2.11 - 2.29 µm) 30 m
+Band 8 Panchromatic (PAN) (0.50 - 0.68 µm) 15 m
+Band 9 Cirrus (1.36 - 1.38 µm) 30 m","1. Load dataset
+2. Filter(2014 bands)
+3. Filter(2015 bands)
+4. Calculate NBR
+5. Store in polygons
+6. Visualization",6
+4,F,Understanding where,Finding the best locations and paths,,Identify groundwater vulnerable areas that need protection,"Your task is identifying groundwater vulnerable areas that need protection in Python. First, project 'mc_soils.shp' to Lambert Conformal Conic. Next, using 'mc_boundary.shp' as the extent, land_cover as the cellSize and snapRaster, extract the drainage_conditions and water_depth respectively from 'mc_soils.shp'. Use drainage_conditions and water_depth to perform suitability modeling to calculate vulnerable_areas, and then use vulnerable_areas and land_cover to perform suitability modeling to calculate risk_zones. The goal is to use the drainage condition and water depth from landcover data to perform suitability modeling for risk areas of ground water. Finally, filter out high_risk_zones and undeveloped_areas based on risk_zones, and save the result to 'pred_results/undeveloped_areas.tif'.
+
+Specifications:
+The reclassification of drainage_conditions is [[1, 3], [2, 1], [3, 4], [4, 5], [5, 2]], where codes 1-5 are 'Well drained', 'Poorly drained', 'Somewhat excessively drained', 'Excessively drained', 'Somewhat poorly drained'.
+The reclassification of water_depth is [[0, 10, 5], [10, 33, 4], [33, 61, 3], [61, 80, 2], [80, 92, 1]].
+vulnerable_areas = drainage_conditions * 5 + water_depth * 4
+The reclassification of vulnerable_areas is standardization to [1, 10] (continuous linear min-max rescaling, not rounded).
+The reclassification of land_cover is [[11, 1],[21, 6],[22, 7],[23, 8],[24, 10],[31, 4],[41, 3],[42, 1],[43, 3],[52, 3],[71, 2],[81, 5],[82, 9],[90, 1],[95, 1]].
+risk_zones = vulnerable_areas * 8 + land_cover * 10
+Undeveloped areas in the high risk zones (risk_zones > 100) need more protection. Seek for the areas in land_cover masking high risk zone, use the following rule: where_clause=""Class IN ('Deciduous Forest', 'Emergent Herbaceous Wetlands', 'Hay/Pasture', 'Herbaceous', 'Mixed Forest', 'Shrub/Scrub', 'Woody Wetlands', 'Barren Land')""","Suitability modeling is an analytical process used to identify the optimal location or suitability of geographic areas. It generally consists of three steps: data preparation, data reclassification, and weighted overlay. In ArcGIS Pro, suitability modeling is implemented through an integrated Modeler, but in Arcpy, it needs to be carried out step by step using basic functions.
+
+For preparation:
+Polygon data needs to be converted into Raster before suitability modeling.","dataset/mc_soils.shp: In this shapefile, three fields are important in groundwater analysis: Drainage Class – Dominant Conditions, Hydrologic Group – Dominant Conditions, and Water Table Depth – Annual – Minimum. Drainage conditions describe the movement of water through soil. It explains how water infiltrates into the ground based on the hydrologic group. There are four hydrologic soil groups (A, B, C, D) that are defined based on runoff potentials, hydraulic conductivity, and depth to any layer. In some instances, soils may be assigned dual hydrologic groups [(A/D, B/D, C/D). Finally, the water table depth measures the distance to the water table, usually in centimeters.
+Key Fields:
+'FID', 'Shape', 'AREASYMBOL', 'SPATIALVER', 'MUSYM', 'MUKEY', 'drclassdcd', 'hydgrpdcd', 'wdepannmin'
+
+dataset/mc_boundary.shp: This shapefile contains the polygon region of study area.
+Key Fields:
+'FID', 'Shape', 'OBJECTID_1', 'AREA', 'PERIMETER', 'BLMCNTYO_', 'BLMCNTYO_I', 'COUNTY_NAM', 'COBCODE'
+
+dataset/land_cover.tif: Raster file showing the land cover of study area, one band.","1. Load dataset
+2. Project (shapefile)
+3. Polygon to Raster (get drainage conditions from soils)
+4. Reclassify (drainage conditions)
+5. Polygon to Raster (get water depth from soils)
+6. Reclassify (water depth)
+7. Calculate vulnerable areas
+8. Reclassify (vulnerable areas)
+9. Reclassify (land cover)
+10. Calculate risk zones
+11. Conditional Evaluation the high risk zones
+12. Conditional Evaluation the undeveloped areas",10
+5,F,Detecting and quantifying patterns,,,Visualize the data about children with elevated blood lead levels in a manner that protects individual privacy,"Your task is visualizing data about children with elevated blood lead levels in a privacy-conscious manner. First, conduct Optimized Hot Spot Analysis to identify clusters without revealing individual points. Then, apply tessellation to summarize cases within hexagonal polygons. This approach protects sensitive data while clearly representing areas with higher occurrences of elevated blood lead levels. The goal is to find the area with potential blood lead rise with specific cases saved in point files. The final output, saved as ""pred_results/blood_lead_hotspots.png"", ensures stakeholders receive relevant information without accessing specific locations.","Hot spot analysis is based on mathematical calculations that identify statistically significant spatial clusters of high values (hot spots) and low values (cold spots).
+
+Tessellation is a method of tiling a surface with identical, non-overlapping geometric shapes, like squares, triangles, or hexagons.","dataset/High_Blood_Level_Results.shp: This shapefile contains point data representing incidents of elevated blood lead levels in children within the study area. Each point corresponds to a specific geographic location where a blood test was conducted, and the results indicated a high concentration of lead.
+
+dataset/High_Blood_Level_Results.shp has no attribute columns (geometry only).
+
+dataset/Sacramento_ZIP_Codes.shp: This shapefile contains polygon data representing the boundaries of ZIP codes within Sacramento. Each polygon defines the geographic extent of a specific ZIP code.
+
+dataset/Sacramento_ZIP_Codes.shp has no attribute columns (geometry only).","1.Load dataset
+2. Perform Optimized Hot Spot Analysis
+3. Create tessellation using hexagons
+4. Summarize the total number of features within each hexagon
+5. Visualization",5
+6,T,Detecting and quantifying patterns,,,"Use animal GPS tracks to model home range to understand where they are and how they move over time.
+","Your task is analyzing and visualizing Elk movements in the given dataset. The goal is to estimate home ranges and assess habitat preferences using spatial analysis techniques, including Minimum Bounding Geometry (Convex Hull), Kernel Density, and Density-based Clustering(DBSCAN). You should identify the spatial clusters of Elk movements and overlay the findings with maps and visualizations. Save the final output as ""pred_results/Elk_Analysis.png"".","""Home range"" can be defined as the area within which an animal normally lives and finds what it needs for survival. Basically, the home range is the area that an animal travels for its normal daily activities. 
+
+""Minimum Bounding Geometry"" creates a feature class containing polygons which represent a specified minimum bounding geometry enclosing each input feature or each group of input features. 
+
+""Convex hull"" is the smallest convex polygon that can enclose a group of objects, such as a group of points.
+
+""Kernel Density Mapping"" calculates and visualizes features's density in a given area.
+
+""DBSCAN"", Density-Based Spatial Clustering of Applications with Noise that cluster the points based on density criterion.","dataset/Elk_in_Southwestern_Alberta_2009.geojson: geojson files for storing points of Elk movements in Southwestern Alberta 2009.
+
+Columns of dataset/Elk_in_Southwestern_Alberta_2009.geojson:
+'OBJECTID', 'timestamp', 'long', 'lat', 'comments', 'external_t', 'dop',
+'fix_type_r', 'satellite_', 'height', 'crc_status', 'outlier_ma',
+'sensor_typ', 'individual', 'tag_ident', 'ind_ident', 'study_name',
+'date', 'time', 'timestamp_Converted', 'summer_indicator', 'geometry'
+","1. Load Dataset
+2. Minimum Bounding Geometry
+3. Kernel Density
+4. Density-based Clustering
+5. Overlay
+6. Visualization",6
+7,T,Making predictions,,,Analyze the impacts of land subsidence on flooding,"Your task is analyzing the impact of land subsidence on flooding based on future elevation data of the study area. Identify flood-prone areas and estimate potential building damage to support urban planning and mitigation strategies. The damage cost of each building is (0.298 * (ln(0.01 * mean depth)) + 1.4502) * 271 * shape area. Save the results to ""pred_results/flooding_analysis.png"".","Estimate potential building damage based on factors such as flood depth, building type, flood risk classification and economic cost/loss.
+
+Raster calculation involves creating a algebra expression that outputs a raster file.
+
+The Overlay toolset contains tools to overlay multiple feature classes to combine, erase, modify, or update spatial features, resulting in a new feature class. The ""overlay"" function manipulations two feature layers using the language of sets, intersection, union, difference and symmetrical difference.","dataset/Elevation_2050.tif: Raster file for storing predicted ground elevation (cm) in 2050.
+data shape: (878, 1196)
+
+dataset/StudyAreaBuildings.shp: Polygon Shapefile for shape and features of buildings in the study area.
+
+Columns of dataset/StudyAreaBuildings.shp:
+'Shape_Leng', 'Shape_Area', 'geometry'","1. Load Dataset
+2. Raster Calculation
+3. Intersection
+4. Store in polygon
+5. Damage Calculation
+6. Overlay
+7. Visualization",7
+8,T,Understanding where,,,Find gap for Toronto fire station service coverage.,"Your task is analyzing Toronto fire stations and their service coverage. The goal is visualize the current fire station coverage in Etobicoke by buffering to identify coverage gaps. Save the figure as ""pred_results/Fire_Service_Analysis.png"".","""Service Area"" or ""Service Coverage"" is a region that encompasses all accessible locations within the study area. It is usually used to identify how much land, how many people, or how much of anything else is within the neighborhood or a region and served by certain facilities.
+
+The Overlay toolset contains tools to overlay multiple feature classes to combine, erase, modify, or update spatial features, resulting in a new feature class. The ""overlay"" function manipulations two feature layers using the language of sets, intersection, union, difference and symmetrical difference.
+
+""Buffer"" creates buffer polygons or zones around input geometry features to a specified distance in GIS. 
+","dataset/etobicoke.geojson: Polygon Geojson file for neighborhood region for Etobicoke.
+
+Columns of dataset/etobicoke.geojson
+'OBJECTID_1', 'LCODE_NAME', 'SECTION', 'DISTRICT', 'DIVISION',
+       'OBJECTID', 'Shape_Length', 'Shape_Area', 'geometry'
+
+dataset/fire_station.geojson: Point Geojson file for current fire stations distribution as points.
+
+Columns of dataset/fire_station.geojson:
+'OBJECTID_1', 'NAME', 'ADDRESS', 'WARD_NAME', 'MUN_NAME', 'geometry'
+","1. Load Dataset
+2. Buffer
+3. Calculate no service area(Overlay)
+4. Visualization",4
+9,T,"Measuring size, shape, and distribution",,,Find the deforestation rate for Rond么nia,"Your task is finding the deforestation rate for Brazilian state of Rondônia. The goal is calculating the deforestation area percentage in the Rondônia within the buffer zone of 5.5km around road layers. Save the percentage result in a CSV file named ""pred_results/deforestation_rate.csv"" with a column title percentage_deforestation.","""Buffer"" creates buffer polygons or zones around input geometry features to a specified distance in GIS. 
+
+Clip points, lines, or polygon geometries to the mask extent.  ""Clip"" is used to cut out a piece of one map layer using one or more of the features in another layer. ","dataset/roads.geojson: Linestring Geojson file storing the current road map in Brazilian state of Rondônia.
+Status columns include values such as ""Official"", ""Unofficial"".
+Column of dataset/roads.geojson:
+OBJECTID        Name        Status        Shape_Length        geometry
+
+
+dataset/deforestedArea.geojson: Polygon Geojson file include the entire deforested area as one row of polygon.
+
+Columns of dataset/deforestedArea.geojson:
+OBJECTID        Shape_Length        Shape_Area        geometry
+","1. Load Dataset
+2. Buffer
+3. Calculate road buffer area
+4. Clip
+5. Calculate deforest area
+6. Calculate percentage
+",6
+10,T,Making predictions,"Measuring size, shape, and distribution",,Analyze the potential impact of proposed roads on local environment,"Your task is predicting the effect of future proposed roads on the deforestation of in the Brazilian state of Rondônia. A planned road network will be added to Rondônia, create a buffer zone of 5.5km around the new roads. Show the area within the buffer zone that is at risk of new deforestation. Visualize the change created by the roads with the planned roads, existing roads, deforested area, and protected forest along with the boundary of Rondônia. Save the output as ""pred_results/predictedRiskyArea.png"".
+","""Buffer"" creates buffer polygons or zones around input geometry features to a specified distance.
+
+Clip points, lines, or polygon geometries to the mask extent.  ""Clip"" is used to cut out a piece of one map layer using one or more of the features in another layer.
+
+The Overlay toolset contains tools to overlay multiple feature classes to combine, erase, modify, or update spatial features, resulting in a new feature class. The ""overlay"" function manipulations two feature layers using the language of sets, intersection, union, difference and symmetrical difference.","dataset/roads.geojson: Linestring Geojson file storing the current road map in Brazilian state of Rondônia.
+Status columns include values such as ""Official"", ""Unofficial"".
+Column of dataset/roads.geojson:
+OBJECTID        Name        Status        Shape_Length        geometry
+
+dataset/deforestedArea.geojson: Polygon Geojson file include the entire deforested area as one row of polygon.
+
+Columns of dataset/deforestedArea.geojson:
+OBJECTID        Shape_Length        Shape_Area        geometry
+
+dataset/protectedForest.geojson: Polygon Geojson file storing mutiple natural reservation areas.
+Columns of dataset/protectedForest.geojson:
+OBJECTID_1        Name        Category        Jurisdiction        Created        Shape_Length        Shape_Area        geometry
+
+dataset/planned_road.geojson: One row of proposed road in the future urban planning process, saved in linestring Geojson format/
+Columns of dataset/planned_road.geojson
+OBJECTID        Shape_Length        Name        Status        geometry","1. Load Dataset
+2. Buffer
+3. Clip
+4. Overlay
+5. Visulization",5
+11,T,"Measuring size, shape, and distribution",,,Create charts using Python to better explore the distribution of corals and sponges around Catalina Island.,"Your task is performing raster analysis on the elevation and environmental factors influencing coral and sponge distribution at Catalina Island. Update the database with the slope and aspect analysis results. Use the updated database to visualize the mean slope and aspect distribution of each Coral and Sponge species in Catalina Island as ""pred_results/CoralandSponge.png"".","The Slope tool identifies the steepness at each cell of a raster surface. The lower the slope value, the flatter the terrain; the higher the slope value, the steeper the terrain. 
+
+The Aspect tool identifies the direction the downhill slope faces. The values of each cell in the output raster indicate the compass direction the surface faces at that location. It is measured clockwise in degrees from 0 (due north) to 360 (again due north), coming full circle. Flat areas having no downslope direction are given a value of -1.","dataset/CatalinaBathymetry.tif: Raster files for storing Bathymetry data in the Catalina Island area.
+Shape of dataset/CatalinaBathymetry.tif:(664, 853)
+
+dataset/CoralandSpongeCatalina.geojson: Geojson file for storing Coral and Sponge species distributions as point along with their attributes.
+
+Columns of dataset/CoralandSpongeCatalina.geojson:
+'OBJECTID', 'ShallowFlag', 'DatasetID', 'CatalogNumber', 'SampleID',
+'Repository', 'ScientificName', 'VernacularNameCategory', 'TaxonRank',
+'IdentificationQualifier', 'Locality', 'latitude', 'longitude',
+'DepthInMeters', 'DepthMethod', 'ObservationDate', 'SurveyID',
+'Station', 'EventID', 'SamplingEquipment', 'LocationAccuracy',
+'RecordType', 'DataProvider', 'geometry'","1. Load Dataset
+2. Convert to Geodataframe
+3. Calculate Slope
+4. Caclulate Aspect
+5. Define New Geodataframe
+6. Calculate attribute mean
+7. Visualization",7
+12,T,"Measuring size, shape, and distribution",,,Find optimal corridors to connect dwindling mountain lion populations.,"Your task is evaluating mountain lion habitat suitability, and the first step is calculating terrain ruggedness using elevation data. Visualizing the ruggedness and save the outputs as ""pred_results/ruggedness.png"".","Terrain Ruggedness Index (TRI) expresses the amount of elevation difference between adjacent cells of a DEM. The TRI function measures the difference in elevation values from a center cell and eight cells directly surrounding it. Then, the eight elevation differences are squared and averaged. The square root of this average results is a TRI measurement for the center cell. This calculation is then conducted on every cell of the DEM. The ""generic_filter"" function imported from the ""scipy.ndimage"" package can calculate a multidimensional filter using a given ""filter_range"" function.","dataset/Elevation.tif: Raster files for storing elevation data.
+Shape of dataset/Elevation.tif: (2494, 3062)","1. Load Dataset
+2. Calculate Ruggedness
+3. Visualization",3
+13,T,"Measuring size, shape, and distribution",,,Understand the relationship between ocean temperature and salinity at various depths in the South Atlantic Ocean.,"Your task is using sea temperature and salinity data from the South Atlantic Ocean to calculate and analyze a vertical temperature-salinity profile within a specified range of latitude, longitude, and depth. Plot the profile and save the figure as 'pred_results/ocean_profiles_vis.png'.","iris.plot is a Iris-specific package extensions to matplotlib and for handling multi-dimensional data and associated metadata. Cubes can be pattern matched and filtered according to specific criteria. Constraints are the mechanism by which cubes can be pattern matched and filtered according to specific criteria. Once a constraint has been defined, it can be applied to cubes using the Constraint.extract() method. The iris.load() function automatically recognises the format of the given files and attempts to produce Iris multidimensional Cubes from their contents.",dataset/atlantic_profiles.nc: NetCDF profile data of partial Atlantic ocean with temperature and salinity data.,"1. Load Dataset
+2. Extract temperature
+3. Extract Salinity
+4. Define Constraints
+5. Overlay
+6. Visualization",6
+14,T,Detecting and quantifying patterns,,,Detecting persistent periods of high temperature over time in past 240 years.,Your task is using 240 years of annual average surface temperature data from North America to calculate and plot the number of occurrences where the temperature exceeds 280K for five consecutive years. Save the figure as 'pred_results/temperature_statistic_vis.png'.,"iris.plot is a Iris-specific package extensions to matplotlib and for handling multi-dimensional data and associated metadata.  Cubes can be pattern matched and filtered according to specific criteria. Constraints are the mechanism by which cubes can be pattern matched and filtered according to specific criteria. Once a constraint has been defined, it can be applied to cubes using the Constraint.extract() method. The iris.load() function automatically recognises the format of the given files and attempts to produce Iris multidimensional Cubes from their contents. cube.collapsed () function can collapse one or more dimensions over the cube given the coordinate/s and an aggregation.",dataset/E1_north_america.nc: NetCDF Temperature data in North America for a 240 year period.,"1. Load
+2. Define Temperature Theshold
+3. Count Spells
+4. Visualization",4
+15,T,Understanding where,,,Understand the geographical distribution of Total Electron Content (TEC) in the ionosphere.,Your task is analyzing the distribution of Total Electron Content. Load Total Electron Content (TEC) data from a space weather NetCDF file and visualize it as a filled contour map with a geographical and coastline background. Save the figure as 'pred_results/TEC_vis.png'.,"matplotlib.pyplot.contour() draw contour lines while matplotlib.pyplot.contourf() draw filled contours. NetCDF (Network Common Data Form) files are commonly used to store multi-dimensional scientific data such as temperature, humidity, wind speed, etc.",dataset/space_weather.nc: Total ELectron Content data in netCDF format.,"1. Load
+2. Mask Invalid data
+3. visualization",3
+16,T,Making predictions,,,Analyze climate change trends in North America using spatial temporal data,"Load North America climate data in NetCDF file and extract the regional mean temperature over the whole North America grid along the time series, then perform a quadratic polynomial fit analysis on this regional mean temperature series, and output the fitting results by year in 'pred_results/polynomial_fit_pred.csv'.","NetCDF (Network Common Data Form) files are commonly used to store multi-dimensional scientific data such as temperature, humidity, wind speed, etc.  numpy.polyfit() is a least squares polynomial fitting function. numpy.polyval() estimates polynomial Y values at specific input X values.",dataset/A1B_north_america.nc: NetCDF data of climate data and temperature data in North America.,"1. Load Dataset
+2. Extract Data Points
+3. Polynomial Fit
+4. Convert data types
+5. Write output",5
+17,T,Understanding where,Detecting and quantifying patterns,,Analyze the geographical distribution of fatal car crashes in New York City during 2016,Your task is using data on the locations and related information of fatal car crashes in New York City to analyze fatal car crash distribution in 2016. You will use the car crash data along with the GeoJSON data of NYC administrative regions to plot the geographical distribution of fatal crashes in 2016 on a map by geoplot. Save the figure as 'pred_results/collisions_map_vis.png'.,geoplot is a high-level Python geospatial plotting library. It is an extension to cartopy and matplotlib. The geoplot.pointplot() is a geospatial scatter plot function that plots each observation in your dataset as a single point on a map.,"dataset/nyc_boroughs.geojson:Multipolygon Geojson file storing boroughs in the NewYork city.
+Columns of dataset/nyc_boroughs.geojson:
+'BoroCode', 'BoroName', 'Shape_Leng', 'Shape_Area', 'geometry'
+
+dataset/fatal_collisions.geojson: Point Geojson file storing fatal collisions in each boroughs along with the number of persons killed in 2016.
+Columns of dataset/fatal_collisions.geojson:
+'id', 'NUMBER OF PERSONS KILLED', 'BOROUGH', 'geometry'","1. Load Dataset
+2. Project
+3. Visualization",3
+18,T,Understanding where,Detecting and quantifying patterns,,Analyze the street tree species data  in San Francisco,"Your task is using the distribution data data about San Francisco street trees and shapefiles of administrative regions to analyze the tree species NULL percentage in different regions. Visualize the results in a quadtree format map that shows, for each region, the percentage of trees whose species is NULL. Save the figure as 'pred_results/trees_count_vis.png'.","geoplot.quadtree() plots a choropleth map with point aggregate by quadtree neighborhoods.
+geodataframe.assign() function assigns new columns to a GeoDataFrame. A new column could be the data ""nullity"" percentage. geoplot.polyplot() plots a polygon data layer. The DataFrame.isnull() and DataFrame.notnull() functions in Pandas detect missing and non-missing values within a DataFrame. ","dataset/street_trees_sample.geojson: Point Geojson file storing tree sample locations along with their species information.
+Columns of dataset/street_trees_sample.geojson
+'LegalStatus', 'Species', 'Address', 'SiteOrder', 'SiteInfo',
+       'PlantType', 'Caretaker', 'CareAssistant', 'PlantDate', 'DBH',
+       'PlotSize', 'PermitNotes', 'geometry'
+
+dataset/sfo_boroughs.geojson: One row of polygon Geojson file storing boroughs in the San Francisco.
+Columns of dataset/sfo_boroughs.geojson:
+'geometry'","1. Load Dataset
+2. Project
+3. Filter
+4.Visualization",4
+19,T,Understanding where,Making predictions,,Modeling spatial patterns of water quality,"Your task is model water quality using spatial interpolation techniques in Python. The analysis should focus on understanding spatial patterns of water quality by using point sample data and interpolating these values across a broader area including unsampled locations. Your goal is to load the water quality sample data, and apply appropriate spatial interpolation methods to predict water quality across the region. The final output should be a map showing the interpolated water quality surface, saved as ""pred_results/interploated_water_quality.png""","Kernel Density Estimation (KDE) is a statistical method used in spatial analysis to estimate the probability density of a dataset. Unlike Kriging, KDE is non-parametric and does not rely on variogram modeling or assumptions about autocorrelation. It creates a smooth surface by applying a kernel function to each data point and summing their contributions over a spatial grid.","dataset/DissolvedO2.geojson: Point Geojson file storing sampled O2 data in different area of the given bay area.
+Columns of dataset/DissolvedO2.geojson:
+'OBJECTID', 'HUC8', 'EventId', 'Cruise', 'Program', 'Project', 'Agency',
+       'Source', 'Station', 'SampleDate', 'TotalDepth', 'UpperPycnocline',
+       'LowerPycnocline', 'Depth', 'Layer', 'SampleType',
+       'SampleReplicateType', 'Parameter', 'Qualifier', 'MeasureValue', 'Unit',
+       'Method', 'Lab', 'Problem', 'PrecisionPC', 'BiasPC', 'Details',
+       'Latitude', 'Longitude', 'geometry'
+
+dataset/Bay.geojson: One row of Multipolygon Geojson file storing the shape of the Bay area.
+Columns of dataset/Bay.geojson:
+'OBJECTID', 'Shape_Length', 'Shape_Area', 'geometry'","1. Load Dataset
+2. Extract Variables
+3. Interpolation
+4. Visualization",4
+20,T,Making predictions,Detecting and quantifying patterns,,Predict the likelihood of tin-tungsten deposits in Tasmania,"Your task is performing a random forest prospectivity analysis for tin-tungsten deposits in Tasmania. The analysis should focus on training and evaluating a model using Python tools on some mineral ocurrence point data and geo-related evidence raster layers. Your goal is to set up the environment, load and inspect the data, build a random forest classifier model to identify the probability proximal of the area. The final auc should be at least 0.9. Save the final predicted graph as ""pred_results/mineral_prospectivity.png""","sklearn.ensemble.RandomForestClassifier() is a function to build a random forest classifier. To mitigate data imbalance,random undersampling randomly removes features from the major classes.
+""Buffer"" creates buffer polygons or zones around input geometry features to a specified distance. 
+tasgrav_IR_1VD.tif tasmag_TMI.tif tasrad_Th_ppm.tif tasmag_TMI_1VD.tif tasrad_U_ppm.tif tasrad_K_pct.tif's data structure is similar to tasgrav_IR.tif.","dataset/sn_w_minoccs.gpkg: gpkg file storing point data of mineral ocurrence, Similar to point  Geojson file.
+Columns of dataset/sn_w_minoccs.gpkg:
+'GID', 'DEPOSIT_ID', 'NAME', 'ALIAS', 'PARENT_ID', 'TYPE', 'COMM_TYPE',
+       'COMMODITYS', 'DESCRIPT', 'LOCALITY', 'LOC_ACC', 'LOC_METHOD', 'RL',
+       'RL_ACC', 'STATUS', 'STATUSDATE', 'DEP_SIZE', 'RESOURCES', 'FORM',
+       'STRIKE', 'DIP', 'LITHOSTRAT', 'HOST_AGE', 'LITHOLOGY', 'ORE_DESCRT',
+       'ORE_GENESS', 'MINERALAGE', 'GANGUE', 'EXPL_TYPE', 'OUTCROPS',
+       'WEATHERED', 'XTRCTBLTY', 'USES', 'TESTS', 'GENETIC', 'DATA_MTLGA',
+       'REF', 'geometry'
+
+Several GeoTIFF files with geo-related evidence raster layers:
+dataset/tasgrav_IR_1VD.tif
+dataset/tasgrav_IR.tif
+dataset/tasmag_TMI_1VD.tif
+dataset/tasmag_TMI.tif
+dataset/tasrad_K_pct.tif
+dataset/tasrad_Th_ppm.tif
+dataset/tasrad_U_ppm.tif","1. Load Dataset,
+2. Extract Variables
+3. Create Labels
+4. Random Undersampling
+5. Train Random Forest Classifier
+6. Evaluate auc
+7. Visualization",7
+21,T,Understanding where,"Measuring size, shape, and distribution",Detecting and quantifying patterns,Find optimal corridors to connect dwindling mountain lion populations.,"You task is standardizing land cover and protected status datasets for consistency in analysis for mountain lion habitat. Reclassify these categorical datasets to a common scale using geospatial tools, with the following mappings (original value: new value):
+
+landCover_classification = {
+  11:10,#Open Water
+  21:8,#Developed, Open Space
+  22:7,#Developed, Low Intensity
+  23:8,#Developed, Medium Intensity
+  24:9,#Developed, High Intensity
+  31:6,#Barren Land
+  41:2,#Deciduous Forest
+  42:1,#Evergreen Forest
+  43:2,#Mixed Forest
+  52:3,#Shrub/Scrub
+  71:3,#Grassland/Herbaceous
+  72:3,#Sedge/Herbaceous
+  81:4,#Hay/Pasture
+  82:6,#Cultivated Crops
+  90:4,#Woody Wetlands
+  95:4,#Emergent Herbaceous Wetlands
+  255:10
+}
+
+protected_status_classification = {
+  0:1,
+  1:3,
+  2:6,
+  3:9,
+  4:10,
+  255:10
+}
+
+Save the reclassified data as pred_results/landCover_reclassified.tif and pred_results/protected_status_reclassified.tif.","Reclassify is to change the input cell values in a raster in the purpose of standardlization or regrouping different categories. There are several approaches to reclassifying data, such as Individual values (Lookup, Reclassify), Ranges of values (Reclass by ASCII File, Reclass by Table, Reclassify), Intervals (Slice), and continuous values using functions (Rescale by Function).","dataset/landCover.tif: GeoTiff file storing the landcover types defined by National Land Cover Database
+Shape of dataset/landCover.tif: (2494, 3062)
+
+dataset/Protected_Status.tif: GeoTiff file storing the Protected status in 5 levels as well as the null data.
+Shape of dataset/Protected_Status.tif: (2494, 3062)
+","1. Load Datasets
+2. Reclassify landcover
+3. Reclassify protected status
+4. Save landcover
+5. Save protected status",5
+22,T,Understanding where,Detecting and quantifying patterns,Finding the best locations and paths,Find optimal corridors to connect dwindling mountain lion populations.,"Your task is integrating ruggedness, road distance, land cover, and protected status into a single cost surface. Assign weights to each criterion (distance: 1, ruggedness: 1.25, protected status: 1, land cover: 1.25) to create a comprehensive habitat suitability map. Save the composite cost surface as ""pred_results/mountainLionCorridor.png"".","The Raster Calculator tool allows you to create and run map algebra expressions in a tool.  The map algebra expressions allow users to enter mathematical (addition, division, and so on) and logical (greater than, equal to, and so on) operators in the expression to operate on raster layers. The general structure of a map algebra statement is an assignment operator (=), which is used to separate the action to its right from the name of the output (a raster object) to its left. The input raster layers need to have same size (col, row).","dataset/landcover_reclassified.tif: GeoTiff file storing the reclassified and normalized landcover types.
+Shape of dataset/landcover_reclassified.tif: (2494, 3062)
+
+dataset/protected_status_reclassified.tif: GeoTiff file storing the reclassified Protected status in 5 levels as well as the null data.
+Shape of dataset/protected_status_reclassified.tif: (2494, 3062)
+
+dataset/distance.tif: GeoTiff file storing the distance of each location to the nearest mountain lion habitats.
+Shape of dataset/distance.tif: (2494, 3062)
+
+dataset/ruggedness.tif: GeoTiff file storing the calculated ruggedness of the area.
+Shape of dataset/ruggedness.tif: (2494, 3062)
+","1. Load Datasets
+2. Raster Calcualtion
+3. Visualization",3
+23,F,Understanding where,,,Assess Open Space to Lower Flood Insurance Cost,"Your task is assessing open space to lower flood insurance cost. Using the PADUS raster data (dataset/PADUS_CRS_clip_1.tif), reclassify the raster into open space (1) vs non-open-space (0). Then vectorize the open space regions and calculate the total open space area. Save the reclassified raster as pred_results/open_space.tif and the vectorized open space polygons as pred_results/open_space.shp with area statistics.","Zonal Statistics as Table is summarizes the values of a raster within the zones of another dataset and reports the results as a table.
+In this example, the 2011 National Land Cover Database (NLCD) Impervious Surface Estimation layer has a measured accuracy of 85%.","dataset/PADUS_CRS_clip_1.tif: a raster file derived from the Protected Areas Database of the United States (PAD-US). It represents areas potentially eligible for open space preservation (OSP) within Georgetown County, South Carolina. 
+dataset/GeorgetownCo_Parcels.gpkg (ArcGIS layer file: GeorgetownCo_Parcels.lyrx) comprises vector data of property parcels within Georgetown County. Each parcel is delineated with its boundaries and associated attributes, such as parcel identification numbers (PARCEL_ID).
+dataset/PADUS_CRS_attrib.csv (ArcGIS layer file: PADUS_CRS_attrib.lyrx) serves as an attribute table for the PADUS_CRS_clip_1.tif raster. It contains detailed information about each protected area, including attributes like OBJECTID, Category, and Ownership Type (Own_Type).","1.Prepare Raster Data
+2.Calculate Zonal Statistics for Eligible Open Space
+3.Aggregate Open Space by Parcel
+4.Join and Relate Parcel Data",4
+24,T,Understanding where,"Measuring size, shape, and distribution",,"Providing with a de-identified point-level dataset that includes all the variables of interest for each child, as well as their general location.","Your task is providing with a de-identified point-level dataset that includes all the variables of interest for each child, as well as their general location. You should load the point data and ensure Consistent Coordinate Reference System (CRS), using WGS 1984. You need to round the coordinates to two decimals and create new points features based on the added fields. The goal is to calculate and document the reduction in unique locations, Save the updated shapefile as a result.","Coordinate Reference Systems (CRS): Understanding the importance of using a consistent CRS for accurate spatial analysis and comparison.
+Spatial De-identification: Rounding coordinates is a common method for spatial de-identification to protect individual privacy while maintaining general geographic patterns for analysis.","dataset/High_Blood_Level_Results.shp: This shapefile contains point data representing incidents of elevated blood lead levels in children within the study area. Each point corresponds to a specific geographic location where a blood test was conducted, and the results indicated a high concentration of lead.
+
+dataset/High_Blood_Level_Results.shp has no attribute columns (geometry only).
+
+dataset/Sacramento_ZIP_Codes.shp: This shapefile contains polygon data representing the boundaries of ZIP codes within Sacramento. Each polygon defines the geographic extent of a specific ZIP code.
+
+dataset/Sacramento_ZIP_Codes.shp has no attribute columns (geometry only).","1. Load Dataset
+2. Ensure Consistent Coordinate Reference System (CRS)
+3. Add fields to hold the rounded coordinate values
+4. Round the values for the coordinates
+5. Create new points at the rounded coordinates
+6. Document the coordinate rounding results
+7. Visualization",7
+25,F,Determining how places are related,Detecting and quantifying patterns,,"Create risk maps for transmission, susceptibility, and resource scarcity. Then create a map of risk profiles to help pinpoint targeted intervention areas.","Your task is to analyze COVID-19 risk in HKG in Python. First, use similarity search to map transmission risk from hkg_constituency.shp and target_risk.shp, ranking all constituencies by similarity to the target on the attributes ""PopDensity;SpInterIdx"". Second, use add join, calculate field and remove join to join transmission risk map to the hkg_constituency.shp, using ""ID"" as the join field and calculating the new field as 432 minus the similarity rank (SIMRANK). Then do the same search and join functions for the other three risk map (susceptibility risk: ""PopDensity;Seniors60t;spending_c;keyfacts_p""; healthcare resource scarcity risk: ""Seniors60t;SUM_Beds""; exposure risk: ""RelativeCa""). Finally, use multivariate clustering on the four risk fields to map the COVID-19 risk profiles of HKG.","For Search Similarity: Number Of Results = 0 (rank all features); Fields To Append To Output = ""ID"".
+
+For Multivariate Clustering: use K means as clustering method, ""SEEDS"" as initialization field.","dataset/hkg_constituency.shp: This shapefile contains data for 431 Hong Kong constituencies. The data includes demographic and spatial information that can be used to assess the risk of disease transmission, COVID- 19 susceptibility, and healthcare resource scarcity.
+Key Features:
+'ID', 'Constituen', 'TotalPop', 'PopDensity', 'Seniors60t', 'spending_c', 'keyfacts_p', 'SUM_Beds', 'SpInterIdx', 'RelativeCa', 'SEEDS'
+
+dataset/target_risk.shp: The attributes for the target_risk shapefile are similar to those for the hkg_constituency.shp. The values in the target_risk, however, are the worst-case values found throughout Hong Kong. They include the densest population value, the largest number of seniors per 1,000 people, the highest index for tobacco, and so on. These worst-case values will be used as the target against which all other constituencies will be ranked in order to determine risk.
+Key Features:
+'ID', 'Constituen', 'TotalPop', 'PopDensity', 'Seniors60t', 'spending_c', 'keyfacts_p', 'SUM_Beds', 'SpInterIdx', 'RelativeCa'","1. Load Dataset
+2. Search Similarity (transmission risk)
+3. Join transmission risk result
+4. Search Similarity (susceptibility risk)
+5. Join susceptibility risk result
+6. Search Similarity (healthcare resource scarcity risk)
+7. Join healthcare resource scarcity risk result
+8. Search Similarity (exposure risk)
+9. Join exposure risk result
+10. Multivariate Clustering",10
+26,F,Understanding where,,,Use drainage conditions and water depth to calculate groundwater vulnerable areas.,"Your task is to calculate groundwater vulnerable areas in Python. First, project 'mc_land_cover.tif' and 'mc_soils.shp' to Lambert Conformal Conic. Next, using 'mc_boundary.shp' as the extent, land_cover as the cellSize and snapRaster, extract the drainage_conditions and water_depth respectively from 'mc_soils.shp'. Then, use drainage_conditions and water_depth to perform suitability modeling to calculate vulnerable_areas.
+
+Specifications:
+The reclassification of drainage_conditions is [[1, 3], [2, 1], [3, 4], [4, 5], [5, 2]], where codes 1-5 are 'Well drained', 'Poorly drained', 'Somewhat excessively drained', 'Excessively drained', 'Somewhat poorly drained'.
+The reclassification of water_depth is [[0, 10, 5], [10, 33, 4], [33, 61, 3], [61, 80, 2], [80, 92, 1]].
+vulnerable_areas = drainage_conditions * 5 + water_depth * 4","Suitability modeling is an analytical process used to identify the optimal location or suitability of geographic areas. It generally consists of three steps: data preparation, data reclassification, and weighted overlay. In ArcGIS Pro, suitability modeling is implemented through an integrated Modeler, but in Arcpy, it needs to be carried out step by step using basic functions.
+
+For preparation:
+Polygon data needs to be converted into Raster before suitability modeling.","dataset/mc_soils.shp: In this shapefile, three fields are important in groundwater analysis: Drainage Class – Dominant Conditions, Hydrologic Group – Dominant Conditions, and Water Table Depth – Annual – Minimum.
+Key Fields:
+'FID', 'Shape', 'AREASYMBOL', 'SPATIALVER', 'MUSYM', 'MUKEY', 'drclassdcd', 'hydgrpdcd', 'wdepannmin'
+
+dataset/mc_boundary.shp: This shapefile contains the polygon region of study area.
+Key Fields:
+'FID', 'Shape', 'OBJECTID_1', 'AREA', 'PERIMETER', 'BLMCNTYO_', 'BLMCNTYO_I', 'COUNTY_NAM', 'COBCODE'
+
+dataset/mc_land_cover.tif: Raster file showing the land cover of study area, one band.","1. Load dataset
+2. Project (raster)
+3. Project (shapefile)
+4. Polygon to Raster (get drainage conditions from soils)
+5. Polygon to Raster (get water depth from soils)
+6. Reclassify (drainage conditions)
+7. Reclassify (water depth)
+8. Calculate vulnerable areas",8
+27,F,Finding the best locations and paths,,,Identify undeveloped areas from groundwater risk zones.,"Your task is to identify those high risk zones of groundwater vulnerable areas that need protection in Python. First, use vulnerable_areas and land_cover to perform suitability modeling to calculate risk_zones. Next, filter out high_risk_zones, and then undeveloped_areas based on risk_zones, and save the result to 'pred_results/undeveloped_areas.tif'.
+
+Specifications:
+The reclassification of vulnerable_areas is standardization to [1, 10] (continuous linear min-max rescaling, not rounded).
+The reclassification of land_cover is [[11, 1],[21, 6],[22, 7],[23, 8],[24, 10],[31, 4],[41, 3],[42, 1],[43, 3],[52, 3],[71, 2],[81, 5],[82, 9],[90, 1],[95, 1]].
+risk_zones = vulnerable_areas * 8 + land_cover * 10
+Undeveloped areas in the high risk zones (risk_zones > 100) need more protection. Seek for the areas in land_cover masking high risk zone, use the following rule: where_clause=""Class IN ('Deciduous Forest', 'Emergent Herbaceous Wetlands', 'Hay/Pasture', 'Herbaceous', 'Mixed Forest', 'Shrub/Scrub', 'Woody Wetlands', 'Barren Land')""","Suitability modeling is an analytical process used to identify the optimal location or suitability of geographic areas. It generally consists of three steps: data preparation, data reclassification, and weighted overlay. In ArcGIS Pro, suitability modeling is implemented through an integrated Modeler, but in Arcpy, it needs to be carried out step by step using basic functions.","dataset/vulnerable_areas.tif: Raster file showing the whole groundwater vulnerable areas of study area, one band.
+
+dataset/land_cover.tif: Raster file showing the land cover of study area, one band.","1. Load dataset
+2. Reclassify (vulnerable areas)
+3. Reclassify (land cover)
+4. Calculate risk zones
+5. Conditional Evaluation the high risk zones
+6. Conditional Evaluation the undeveloped areas",6
+28,T,Making predictions,,,Estimate the origin-destination (OD) flows between regions based on the socioeconomic attributes of regions and the mobility data.,"Your task is to estimate the interaction strengths between subregions using a Random Forest model. First, load the OD flow data and socio-economic attribute data for each subregion. Second, aggregate the OD flow data to the subregion scale to create subregion spatial interaction data. Third, prepare the dataset by merging the aggregated OD flows with the socio-economic attributes of origin and destination subregions. Finally, build a Random Forest model with hyperparameter tuning using GridSearchCV to predict interaction strengths and evaluate the model performance using mean squared error.","OD Flows: Origin-Destination (OD) flows represent the movement volume between locations, crucial for understanding regional connectivity, transportation, and economic interactions.
+
+Random Forest (RF) Model: An ensemble machine learning method that builds multiple decision trees to improve prediction accuracy and feature importance analysis. RF is effective for modeling complex, non-linear relationships, making it suitable for analyzing factors influencing OD flows.
+
+GridSearchCV: GridSearchCV is a hyperparameter tuning tool that systematically tests combinations of specified hyperparameter values to find the best configuration for a machine learning model. It performs cross-validation for each parameter set to evaluate performance, ensuring robust and optimal model settings for improved accuracy and generalization.","dataset/od_data.csv: Represents the movement volume between subregions, used for analyzing interaction strengths and regional connectivity.
+Columns of dataset/od_data.csv include Origin, Destination, and FlowVolume.
+
+dataset/socioeconomic_data.csv: Contains socio-economic details for each subregion, providing contextual data that can be merged with OD flow data to enhance analysis by incorporating socio-economic factors influencing interactions.
+Columns of dataset/socioeconomic_data.csv include Subregion, Population, GDP, EmploymentRate, AverageIncome, EducationIndex, and HealthcareAccess.","1. Load dataset
+2. Aggregate OD flow data to subregion scale, and merge socio-economic data to create interaction pairs
+3. Prepare data for Random Forest model
+4. Split data into training and testing sets
+5. Hyperparameter tuning using GridSearchCV
+6. Use the best model from GridSearchCV for prediction
+7. Make predictions and evaluate the model",7
+29,F,Finding the best locations and paths,Making predictions,,Calculate Travel Time for a Tsunami,"To calculate tsunami travel time, set up your project with bathymetric and coastal data, then identify the tsunami origin. Simulate wave travel over the bathymetric surface to create an arrival time map. Visualize and analyze the results, adjust for accuracy, and prepare a report to aid in preparedness and response planning.","To calculate tsunami speed using √(g*d), where d is ocean depth, you'll need positive depth values. Since AtlanticDEM has negative values for ocean depths (below sea level), you'll modify the expression to invert these values, making ocean areas positive for accurate calculations.
+Geodetic Densify creates new features by replacing the segments of the input features with densified approximations of geodesic segments. 
+Extract by Mask tool is used to extract cell values from a raster using the shape of a feature or another raster as a mask.","dataset/AtlanticDEM.tif: A DEM layer representing Atlantic Ocean bathymetry, essential for analyzing how ocean depth affects tsunami wave propagation. Raster data (single band, 5000 m cells).
+dataset/TsuniamiPaths.gpkg: A layer showing precomputed tsunami travel paths, used to visualize and analyze tsunami wave routes and their impact on coastal areas. Attributes: lengthkm, Route, Shape_Length
+dataset/TsunamiSources.gpkg: Points marking the tsunami source locations. Attributes: Name
+dataset/World_Countries.gpkg: Country boundaries. Attributes: COUNTRY, ISO, COUNTRYAFF, AFF_ISO, Shape_Length, Shape_Area
+dataset/AtlanticDEM.lyrx and dataset/Tsunami Paths.lyrx: ArcGIS layer files for the same data (not readable outside ArcGIS).","1. Load Data
+2. Invert AtlanticDEM values to make ocean depths positive.
+3. Use the Raster Calculator to apply the formula √(g*d)
+4. Mark tsunami origin points.
+5.Use geodesic distance tools to map tsunami travel paths.
+6.Derive travel times based on calculated speeds.
+7.Visualize and interpret the outputs for risk assessment.",7
+30,F,Finding the best locations and paths,,,Designate bike routes for commuting professionals,"Your task is to design optimal bike routes for a commuter network in the Capitol Hill neighborhood of Seattle. Analyze demand hotspots using spatial clustering tools.Evaluate existing infrastructure by overlaying bike lane and road network data. Apply suitability analysis by combining traffic volume, road slope, and safety data using a weighted overlay. Use Network Analyst to propose new routes, ensuring connectivity to major employment centers and evaluating the solution through accessibility metrics like coverage within a half-mile radius. The City's proposed protected bike lanes use arterial streets (segment type code 1 and arterial code 1) in three sections: East, E Madison St in Capitol Hill and Madison St downtown; West, 10th Ave E; and Central, 23rd Ave, 23rd Ave E, 24th Ave E and Turner Way E, which align with E Madison St.","The City of Seattle plans to construct protected bike lanes, prioritizing busier streets to identify direct routes. Using attribute selection, the arterial roads were copied to a new layer, clearing selections in the street network attribute table. Most of the block lies within a half-mile of the selected streets.","dataset/Neighborhoods: Spatial polygons representing different urban and suburban areas, often linked with demographic or socioeconomic data.
+dataset/Streets: Line features depicting road networks, including attributes like segment type, arterial class, and street name.
+dataset/Zoning: Polygons indicating land use designations such as residential, commercial, industrial, or mixed-use, often tied to urban planning and development policies.","1. Load the Neighborhoods, Streets, and Zoning datasets.
+2. Perform spatial joins to link zoning data with neighborhoods.
+3. Identify and classify streets by type and connectivity.
+4. Conduct a suitability analysis by overlaying zoning and street data.
+5. Use geoprocessing tools to delineate high-demand areas within neighborhoods.
+6. Propose bike routes by applying network analysis to streets.
+7. Evaluate proposed routes against zoning and neighborhood coverage metrics.
+8. Adjust routes based on accessibility and land-use compatibility.
+9. Generate final maps and summarize results for reporting.
+
+
+",7
+31,T,Detecting and quantifying patterns,,,Detect aggregation scales of geographical flows,"Your task is to analyze the spatial aggregation patterns and scales of geographical flows using the L-function. First, load the flow data, origin area data , and destination area data. Second, calculate the local K-function for each flow by iterating over flow pairs and applying distance-based analysis with edge correction. Third, compute the global L-function by averaging the local K-functions and transforming the result. Finally, visualize the L-function with confidence intervals and critical distance markers for interpretation.","Complete Spatial Randomness (CSR): a baseline model in spatial analysis, assuming a uniform, random distribution of flows across space. Deviations from CSR indicate clustering or dispersion, which the L-function quantifies.
+
+K-function: Measures the cumulative density of flows within a given distance, normalized by the total flow intensity.
+
+L-function: A transformed version of the K-function, making it easier to interpret deviations from CSR:
+L(r) > 0: Clustering, L(r)<0: Dispersion
+
+Flow distance: two flows are within distance r of each other when both their origins and their destinations are within r.","dataset/flow.csv: Contains the geographical flows represented as connected origin-destination (OD) point pairs.
+Columns: x_o: X-coordinate of the origin point; y_o: Y-coordinate of the origin point; x_d: X-coordinate of the destination point; y_d: Y-coordinate of the destination point.
+
+dataset/o_area.csv: Contains the boundary coordinates for the region where the origin points lie.
+Columns: x: X-coordinate of the boundary point; y: Y-coordinate of the boundary point.
+
+dataset/d_area.csv: Contains the boundary coordinates for the region where the destination points lie.
+Columns: x: X-coordinate of the boundary point; y: Y-coordinate of the boundary point.","1. Load Flow and Area Data.
+2. Calculate the polygon areas
+3. Edge Correction
+5. Local K-function calculation
+6. Aggregate the local K-functions to derive the global K-function
+7. Visualize the L-function with confidence intervals and highlight key aggregation scales",7
+32,F,Understanding where,Finding the best locations and paths,Making predictions,Find optimal corridors to connect dwindling mountain lion populations.,"Your task is to find the optimal path between mountain lion habitats given the local roads, land cover, elevations, and protected status data. You need to calculate the cost of elevation(ruggedness; higher ruggedness = lower cost), distances to road and assign right values and reclassify land cover types and protected status. Then you will add them together with different weights. Finally, you will find the optimal region connections using the final cost layer and habitat information. Visualize and save the final output as ""optimal_path.png"".","Distance Accumulation: Arcgis Pro tool that calculates accumulated distance for each cell to sources.
+
+Focal Statistics: Arcgis Pro tool that calculates the statistics within a given area.
+
+Weighted Sum:The Raster Calculator tool allows you to create and run map algebra expressions in a tool.  The map algebra expressions allow users to enter mathematical (addition, division, and so on) and logical (greater than, equal to, and so on) operators in the expression to operate on raster layers. The general structure of a map algebra statement is an assignment operator (=), which is used to separate the action to its right from the name of the output (a raster object) to its left. The input raster layers need to have same size (col, row).
+
+Optimal Region Connections:Arcgis tool that calculates optimal connectivity network between two or more input regions.","dataset/landCover.tif: GeoTiff file storing the landcover types defined by National Land Cover Database
+Shape of dataset/landCover.tif: (2494, 3062)
+
+dataset/Protected_Status.tif: GeoTiff file storing the Protected status in 4 levels (1 very high to 4 not protected); cells with 0 or 255 have no protected status.
+Shape of dataset/Protected_Status.tif: (2494, 3062)
+
+dataset/Elevation.tif: GeoTiff file storing the elevation data.
+Shape of dataset/Elevation.tif: (2494, 3062)
+
+dataset/Roads.geojson: Geojson file storing major roads.
+
+dataset/habitats.geojson: Geojson file storing major habitats for mountain lions.","1. Load data
+2. Distance Accumulation for road
+3. Focal Statistics for elevation
+4. Rescale by function for road and ruggedness
+5. Reclassify landcover and protected status
+6. Weighted Sum all cost layers
+7. Optimal Region Connections
+8. Visualize results",8
+33,F,Making predictions,,,Analyze the impacts of land subsidence on flooding.,"Your task is analyzing the impact of land subsidence on flooding based on future elevation data of the study area. Your will calculate the flood damage to building in the future given the elevation of sea level in 2050 and shapefile of study area. You need find the flood depth given the elevation: flood depth (cm) = Int(-(elevation + 200)). Then you will filter and select the buildings within the flooded area. The final goal is summarizing the flood depth in each building area and calculate the final flood damage: for a building whose mean flood depth D (cm) is greater than 1, damage = (0.298 * ln(0.01 * D) + 1.4502) * 271 * Shape_Area; otherwise the damage is 0.","Raster Calculator:Build and run a single map algebra expression using Python syntax.
+
+Raster to Polygon:Converts a raster dataset to polygon features.
+
+Select Layer By Location:Selects features based on a spatial relationship to features in another dataset or the same dataset.
+
+Summarize Within:Overlays a polygon layer with another layer to summarize the number of points, length of the lines, or area of the polygons within each polygon, and calculate attribute field statistics about the features within the polygons.
+
+Calculate Field:Calculates the values of a field for a feature class, feature layer, or raster.","dataset/Elevation_2050.tif: Raster file for storing predicted ground elevation (cm) in 2050.
+data shape: (878, 1196)
+
+dataset/StudyAreaBuildings.shp: Polygon Shapefile for shape and features of buildings in the study area.
+
+Columns of dataset/StudyAreaBuildings.shp:
+'Shape_Leng', 'Shape_Area', 'geometry'","1. Load data
+2. Flood Depth Calculations
+3. Select Building in flooded area
+4. Summarize flood depth within building
+5. Calculate flood damage",5
+34,T,Detecting and quantifying patterns,,,Estimate the accessibility of roads to rural areas in Japan.,"To promote sustainable development in the nation's rural areas, your task is estimating access to all-season roads. First, you'll add population and road data and limit your study area to rural regions. With the shape of rural area, you will clip the regional population of the rural areas.Then, you'll create a 2-kilometer buffer around all-season roads and clip the rural area out.  The final goal is calculating the percentage of the rural population within that buffer to get the percentage of population in the rural area that has access to roads in 2km. Finally, visualize the population percentage in each rural area with a choropleth map. Save the result as ""pred_results/accessibility.png"".","""Buffer"" creates buffer polygons or zones around input geometry features to a specified distance in GIS. 
+
+Clip points, lines, or polygon geometries to the mask extent.  ""Clip"" is used to cut out a piece of one map layer using one or more of the features in another layer. ","dataset/ShikokuMetropolitan.geojson: Geojson file that stores the shape and features for towns in Shikoku area of Japan as polygons. Area type indicate whether an area is rural.
+
+Key Fields: 'OBJECTID', 'JISCODE', 'PNAME', 'MEACODE', 'MEANAME', 'AREANAME',
+       'AREATYPE', 'Shape__Area', 'Shape__Length', 'geometry'
+
+dataset/AllSeasonRoads.geojson: Geojson file that stores all season emergency roads in Shikoku area as lines.
+
+Key Fields: 'OBJECTID', 'PrefectureNum', 'EmergencyRoadCategory', 'Road', 'ER_Road',
+       'Dependency', 'LastUpdated', 'Shape__Length', 'geometry'
+
+dataset/ShikokuPopulation.geojson: Geojson file that stores the shape and features for areas in Shikoku. D0001 columns refers to population of that area in 2015.
+
+Key Fields: 'OBJECTID', 'ID', 'D0001', 'Shape__Area', 'Shape__Length', 'geometry'","1. Load Data
+2. Filter Rural Areas
+3. Clip population for rural Areas
+4. Create 2km buffer for roads
+5. Clip population of the rural area in the buffer
+6. Calculate the population percentage
+7. Visualize results",7
+35,T,Determining how places are related,Detecting and quantifying patterns,,"Calculate landslide potential for communities affected by wildfires
+","Your task is doing raster analysis to analyze burn severity, slope and landcover in Santa Rosa, California, region, which was devastated by a wildfire in 2017. You have to calculate the normalized Burn ratio before and after the wildfire using two landsat 8 satellite imageries. Subtracting the resulted layers to get burn severity. Using the elevation layer to find the slope of the map. For the burn severity, slope, and landcover, remapping into 5 categories, from low to high (reclassified values in the range of 0 to 5; landcover: < 12 -> 1, 21-22 -> 3, 23 -> 4, 24-31 -> 5, 41-44 -> 1, 52 -> 3, 71 -> 4, 81 -> 3, 82 -> 4, 90-95 -> 2). Finally, weighted overlaying them together (Landcover 15%, Burn Severity 30%, Slope 55%) and save them as one landslide risk map as 'pred_results/landslide_map.png'","Normalized Burn Ratio (NBR) is used to identify burned areas and provide a measure of burn severity. NBR ranges between -1 and 1. A high NBR value indicates healthy vegetation. A low value indicates bare ground and recently burnt areas.It is calculated as a ratio between the NIR and SWIR values in traditional fashion. 
+
+In Landsat 8-9, NBR = (Band 5 - Band 7) / (Band 5 + Band 7). 
+
+Burn Severity: NBR before wildfire Minus NBR after wildfire
+
+Slope:The Slope tool identifies the steepness at each cell of a raster surface. The lower the slope value, the flatter the terrain; the higher the slope value, the steeper the terrain. 
+
+Remap: Reclassification process that normalizes different raster files to the same range.
+
+Weighted Overlay: Each raster layer's value range should be rescale to the same range.","dataset/DEM_30m.tif: Santa Rosa's elevation in 30 meters spatial resolution.
+
+dataset/Before_L8.tif: Landsat 8 satellite imageries before 2017 wildfire.
+
+dataset/After_L8.tif: Landsat 8 satellite imageries after 2017 wildfire.
+
+dataset/Sonoma_NLCD2011.tif: Landcover status of Santa Rosa area published by NLCD in 2011.","1. Load data
+2. Calculate NBR for pre-fire
+3. Calculate NBR for post-fire
+4. Calculate Burn Severity
+5. Calculate Slope
+6. Landcover remap
+7. Burn severity remap
+8. Slope remap
+9. Weighted Overlay
+10. Visualize results",10
+36,F,"Measuring size, shape, and distribution",,,Compute the change in vegetation before and after a hailstorm with the SAVI index,"Your task is to assess the impact of hail damage on cornfields using pre- and post-storm satellite imagery. You will calculate vegetation loss due to the storm, leveraging the Soil-Adjusted Vegetation Index (SAVI) applied to multispectral imagery from the study area. The process involves determining vegetation health before and after the storm, identifying changes at the pixel level, and analyzing the average vegetation loss for each crop field. The ultimate goal is to summarize the extent of damage for each field, offering valuable insights for agricultural recovery efforts.","SAVI is particularly useful in areas with intermediate vegetation cover and is computed using the formula:
+SAVI=((NIR-Red)/(NIR+Red+L)) * (1+L), where L is a correction factor (commonly set to 0.5).
+
+Raster-based analysis allows pixel-by-pixel calculations, such as vegetation indices, and is fundamental for spatial quantification of phenomena like crop damage.
+
+Zonal Statistics aggregates raster data based on defined zones (e.g., polygons of field boundaries). Metrics such as the mean loss of vegetation can provide valuable insights at the field level.","dataset/Before_storm.tif: Raster file containing multispectral satellite imagery before the hailstorm. Data shape: (9030, 9121)
+
+dataset/After_storm.tif: Raster file containing multispectral satellite imagery after the hailstorm. data shape: (7293,8549)
+
+
+dataset/Field_boundaries.shp: Polygon shapefile representing the boundaries of cultivated fields in the study area. Only the .shp file is provided (no attribute table or .prj).
+","1. Load Data
+2. Calculate SAVI
+3. Compute Vegetation Loss
+4. Remap vegetation loss
+5. Perform Zonal Statistics
+6. Join Zonal Statistics table to field boundaries
+7. Visualize Results",7
+37,T,Determining how places are related,Detecting and quantifying patterns,,Analyze of human sentiments of heat exposure using social media data,"Your task is to do a national-scale analysis of human sentiments of heat exposure using location-based social media Twitter data. Based on a heat vocab dictionary file, you will construct a dictionary to store the values of each vocabulary. You will retrieve all weather related tweets from the loaded json file. Then you will assign the tweets to counties in USA. You will count the number of tweet to sum their values and find the mean to be the heat exposure value. You will also have to normalize the heat exposure values with max and min. Finally, visualize the results in a choropleth map using natural break and save the results as ""pred_results/US_heat_exposure_map.png"".","Human Sentiments: Emotions, opinions, and attitude from posts on social media platform, which reflects people's sentiments.
+
+Heat Exposure: Extreme heat related weather condition.","dataset/data20000.txt: Stores 20000 weather related vocabularies along with their sentiment scores in the form of ""term: 0.42"".
+
+dataset/12500-tweets-2021-09-24_01-48-23.json: Json file that stores 12500 tweets in United states on 2021/09/25. Some of the tweets are geotagged that it has longitudes and latitudes.
+
+dataset/cb_2020_us_county_20m.shp: County Shapefiles for USA. It has polygon geometry for each county.","1. Processing Twitter/X Data
+2. Retrieve All Weather-related Data
+3. Assign All the Collected Social Media Data to Counties in the US
+4. Calculate the The Heat Exposure values in Each County
+5. Calculate the Number of Posts in Each County
+6. Visualization",6
+38,T,Determining how places are related,Detecting and quantifying patterns,Finding the best locations and paths,Calculate travel time from one location to others in a neighborhood.,"Your task is to calculate the travel time from Natural History Building(Geography department, 1301 W Green St, Urbana, IL 61801) at University of Illinois Urbana-Champaign to the other buildings on the campus. You will retreive the place information as graph from Open Street Map networkdata. Using the graph, you will find out the speeds and required travel time between nodes. Calculate the driving-time distances for the location nodes from the nearest node next to Natural History Building. Set the node attributes with the travel time. Finally, visualize the travel time by plotting the nodes with specific colors and save the graph as ""pred_results/travel_time.png"".","Travel-time Calculation: The amount of time traveling from one place to another. It can be calculated by using add_edge_speed and add_edge_travel_times functions in osmnx package, which return the speed limit and total travel time between nodes.
+
+OSM Network data: osmnx.graph_from_address function returns the network graph around a specific location.
+
+","dataset/uiuc_drive_network.graphml: OpenStreetMap drivable street network within 1 km of 1301 W Green St, Urbana, IL (University of Illinois campus), retrieved with osmnx and saved as GraphML (no internet access is available in this environment).","1. Retrive and load data
+2. Save the network graph
+3. Calculate and add speed limit to the edges
+4. Calculate and add travel time to the edges
+6. Find the nearest node
+7. Find distance from each node to the nearest node
+8. Visualization",8
+39,T,Making predictions,,,Train a Geographically Weighted Regression model to predict Georgia's Bachelor's degree rate.,"Your task is to train a Geographically Weighted Regression(GWR) model with demographical data in the state of Georgia. The target variable is the percentage of bachelor's degree in each county while the indepdent variables are the percentage of foreign-born population, black population, and rural populations. You should search for the optimal bandwidth for the GWR models and plot their differences in the same graph. Save the plots as ""pred_results/GA_GWR.png"".","Geographically Weighted Regression Model: A spatial technique that analyzes the relationship between variables by considering their geographical locations. It can be used in python by Multiscale Geographically Weighted Regression (MGWR) packages.
+","dataset/G_utm.shp: Georgia county polygons (UTM). dataset/GData_utm.csv: county demographic table, including PctBach (percentage with bachelor's degree), PctFB (foreign-born), PctBlack, PctRural, and AreaKey for joining to G_utm.","1. Load and Preview Data
+2. Preprocess Data for GWR
+3. Set GWR Bandwidth
+4. Fit GWR Model
+5. Plot Changes in Bandwidth",5
+40,F,"Measuring size, shape, and distribution",,,Calculate and visualize changes in malaria prevalence,"Your task is to analyze changes in malaria prevalence among children aged 2–10 in Sub-Saharan Africa from 2000 to 2015. Using raster data from the Malaria Atlas Project, calculate the difference between the prevalence rates in 2000 and 2015 using the Minus raster function. Then, visualize the change in malaria prevalence with a diverging color scheme and adjust the symbology to highlight areas of increase and decrease. ","Malaria Prevalence Analysis: Understanding malaria's spatial distribution and temporal changes, especially among children in Sub-Saharan Africa.
+
+Raster Analysis Techniques: Applying raster functions (e.g., Minus) to calculate changes over time. Remapping raster values into meaningful categories for analysis and visualization.","dataset/2015_Nature_Africa_PR.2000.tif: GeoTIFF file storing malaria prevalence rates among children aged 2–10 in Sub-Saharan Africa for the year 2000.  Data shape: (1741, 1681)
+
+dataset/2015_Nature_Africa_PR.2015.tif: GeoTIFF file storing malaria prevalence rates among children aged 2–10 in Sub-Saharan Africa for the year 2015.  Data shape:(1741, 1681)
+","1. Load Data
+2. calculate change in Malaria Prevalence
+3. classify change categories
+4. Visualize Results
+",4
+41,F,Determining how places are related,Finding the best locations and paths,,Improve campsite data quality using a relationship class,"In this tutorial, you are a regional GIS specialist tasked with helping improve campsite data quality in Wyoming. You'll initially address the loss of data at the park level by creating joins and relates to incorporate associated records then inspect and create a relationship class between campsites and campgrounds.","Relate, a temporary RDBMS mechanism that links tables via key fields without merging them, enabling a campsite to access multiple dynamic attributes. To make Relate persistent, create a relationship class in a geodatabase.
+Create Relationship Class is to store an association between fields or features in the origin table and the destination table. It is created with one-to-one, one-to-many, or many-to-many cardinality. 
+Add Rule To Relationship Class: Once a rule is added to a relationship class, that rule becomes the only valid relationship that can exist. To make other relationship combinations and cardinalities valid, additional relationship rules must be added.","
+dataset/National Parks.gpkg (ArcGIS layer file: National Parks.lyrx): national park boundaries, polygon
+dataset/CampsiteAttributes.csv: Different features for each camp site.
+Key Columns: ""AttributeID"", ""AttributeName"", ""AttributeValue"", ""EntityID"", ""EntityType""
+dataset/OrganizationsTable.csv: Organization informations. Key Columns: ""OrgID"", ""OrgType"", ""OrgName"", ""OrgImageURL"", ""OrgURLAddress"", ""OrgAbbrevName"", ""OrgJurisdictionType"", ""OrgParentID"", ""LastUpdatedDate""
+dataset/Campsites.gpkg (ArcGIS layer file: Campsites.lyrx): campsites, point
+dataset/Facilities.gpkg (ArcGIS layer file: Facilities.lyrx): facilities' locations, point","1. Load data
+2. Join National Park and Organization
+3. Add relate between Campsite and Campsite attributes
+4. Create relationship class and add rule",4
+42,T,Determining how places are related,Determining how places are related,,Investigate spatial patterns for Airbnb prices in Berlin,"Your task is to perform spatial autocorrelation analysis on airbnb prices in Berlin using Python. The analysis involves loading geospatial data of Berlin neighborhoods and real estate listings, and then converting to GeoDataFrame. You will perform a spatial join to associate listings with neighborhoods and calculate the median price for each neighborhood group, assigned to every neighborhood in that group. After handling missing data, you will analyze spatial similarity by creating a spatial weights matrix based on their median prices. The Local Moran's I statistic will be used to identify significant cold spots and hot spots. Finally, you will visualize these spatial patterns on a map, highlighting areas with significant spatial autocorrelation, and save the output as ""moran_local.png"".","esda package: ESDA is an open-source Python library for the exploratory analysis of spatial data.
+
+Spatial Similarity: Queen contiguity treats polygons that share an edge or a vertex as neighbours; queen contiguity weights can be built with the lps.weights.Queen function.
+
+Moran's I: Measures spatial autocorrelation based on feature locations and attribute values using the Moran's I statistic. Can be calculated by esda.moran.Moran_Local function.","dataset/berlin-neighbourhoods.geojson:Geojson file for multipolygons of neighbourhoods in Berlin, properties include ""neighbourhood"" and ""neighbourhood_group"".
+
+dataset/berlin-listings.csv: Csv file of Berlin Airbnb information, with lat and lng of Airbnb.
+Key Columns:	id scrape_id city state zipcode smart_location country_code	country latitude longitude price","1. Load data
+2. Convert dataframe to Geodataframe
+3. Spatial Join
+4. Calculate Median Price
+5. Handle Missing Data
+6. Spatial Similarity Analysis
+7. Local Moran's I Calculation
+8. Visualization",8
+43,F,Detecting and quantifying patterns,,,Use animal GPS tracks to model home range to understand where they are and how they move over time.,"Your task is to analyze and visualize elk movements using the provided dataset. The goal is to estimate home ranges and assess habitat preferences using spatial analysis techniques, including Minimum Bounding Geometry (Convex Hull), Kernel Density Estimation, and Density-Based Clustering (DBSCAN). The analysis will generate spatial outputs saved as files. ","""Home range"" can be defined as the area within which an animal normally lives and finds what it needs for survival. Basically, the home range is the area that an animal travels for its normal daily activities. 
+
+""Minimum Bounding Geometry"" creates a feature class containing polygons which represent a specified minimum bounding geometry enclosing each input feature or each group of input features. 
+
+""Convex hull"" is the smallest convex polygon that can enclose a group of objects, such as a group of points.
+
+""Kernel Density Mapping"" calculates and visualizes features's density in a given area.
+
+""DBSCAN"", Density-Based Spatial Clustering of Applications with Noise that cluster the points based on density criterion.","dataset/Elk_in_Southwestern_Alberta_2009.geojson: geojson files for storing points of Elk movements in Southwestern Alberta 2009.
+
+Columns of dataset/Elk_in_Southwestern_Alberta_2009.geojson:
+'OBJECTID', 'timestamp', 'long', 'lat', 'comments', 'external_t', 'dop',
+'fix_type_r', 'satellite_', 'height', 'crc_status', 'outlier_ma',
+'sensor_typ', 'individual', 'tag_ident', 'ind_ident', 'study_name',
+'date', 'time', 'timestamp_Converted', 'summer_indicator', 'geometry'
+","1. Load Dataset
+2. Minimum Bounding Geometry
+3. Kernel Density
+4. Density-based Clustering
+",4
+44,T,Understanding where,,,Find gap for Toronto fire station service coverage.,Your task is analyzing Toronto fire stations and their service coverage. The goal is visualize the current fire station coverage in Etobicoke by buffering to identify coverage gaps. Visualize the most compromised areas in terms of fire service and save the no-service area.,"""Service Area"" or ""Service Coverage"" is a region that encompasses all accessible locations within the study area. It is usually used to identify how much land, how many people, or how much of anything else is within the neighborhood or a region and served by certain facilities.
+
+The Overlay toolset contains tools to overlay multiple feature classes to combine, erase, modify, or update spatial features, resulting in a new feature class. The ""overlay"" function manipulations two feature layers using the language of sets, intersection, union, difference and symmetrical difference.
+
+""Buffer"" creates buffer polygons or zones around input geometry features to a specified distance in GIS. 
+","dataset/etobicoke.geojson: Polygon Geojson file for neighborhood region for Etobicoke.
+
+Columns of dataset/etobicoke.geojson
+'OBJECTID_1', 'LCODE_NAME', 'SECTION', 'DISTRICT', 'DIVISION',
+       'OBJECTID', 'Shape_Length', 'Shape_Area', 'geometry'
+
+dataset/fire_station.geojson: Point Geojson file for current fire stations distribution as points.
+
+Columns of dataset/fire_station.geojson:
+'OBJECTID_1', 'NAME', 'ADDRESS', 'WARD_NAME', 'MUN_NAME', 'geometry'
+","1. Load Dataset
+2. Buffer
+3. Save the buffered fire stations
+4. Visualize the most compromised areas in terms of fire service
+5. Save the no service area",5
+45,F,"Measuring size, shape, and distribution",,,Find optimal corridors to connect dwindling mountain lion populations.,"
+Your task is to evaluate mountain lion habitat suitability by calculating terrain ruggedness from elevation data. The analysis applies focal statistics with a 3x3 moving window to measure terrain variation, followed by rescaling to standardize the ruggedness values. The results are saved in the geodatabase.","Terrain Ruggedness Index (TRI) expresses the amount of elevation difference between adjacent cells of a DEM. The TRI function measures the difference in elevation values from a center cell and eight cells directly surrounding it. Then, the eight elevation differences are squared and averaged. The square root of this average results is a TRI measurement for the center cell. This calculation is then conducted on every cell of the DEM.
+
+Distance Accumulation: Calculates accumulated distance for each cell to sources, allowing for straight-line distance, cost distance, and true surface distance, as well as vertical and horizontal cost factors.
+
+Focal Statistic: Calculates for each input cell location a statistic of the values within a specified neighborhood around it.
+
+Rescale by Function: Rescales the input raster values by applying a selected transformation function and transforming the resulting values onto a specified continuous evaluation scale.","dataset/Elevation.tif: Raster files for storing elevation data.
+Shape of dataset/Elevation.tif: (2494, 3062)","1. Load Dataset
+2. Calculate Ruggedness using focal statistic
+3. Calculate Cost using Rescale by function
+4. Save the cost layer",4
+46,F,Understanding where,Determining how places are related,Detecting and quantifying patterns,Identify hot spots for peak crashes,"Your task is identifying hot spots for peak crashes in Brevard County, Florida, 2010 - 2015. Peak crashes are those between 3pm and 5pm on weekdays. The first step is select all the crashes based on peak time zone. Create a copy of selected crashes data. Then, snap the crashes points to the road network within 0.25 miles and spatial join with the road. Calculate the crash rate based on the joint data and use hot spot analysis to get crash hot spot map as the result.","Hot spot analysis looks for high crash rates that cluster close together, accurate distance measurements based on the road network are essential.","dataset/crashes.shp: The locations of crashes in Brevard County, Florida between 2010 and 2015.
+dataset/roads.shp: The road network of Brevard County.
+dataset/nwswm360ft.swm: Spatial weights matrix file created using the Generate Network Spatial Weights tool and a street network built from Brevard County road polylines.","1. Load Dataset
+2. Define crash hotspot
+3. Select Layer By Attribute(Crashes)
+4. Copy Feature
+5. Snap
+6. Spatial Join
+7. Add Fields
+8. Calculates Fields
+9. Hot Spot Analysis (Getis-Ord Gi*)",9
+47,F,Understanding where,"Measuring size, shape, and distribution",,Calculate impervious surface area,"Your task is calculating impervious surface area through the impervious area and lands parcel. Use tabulate area to get the area count, and join the area with land parcels, copy and save the joint result.",Tabulate area calculate the area through the impervious raster and the land parcels. Then use add join function to combine the tabulate area result with land parcels.,"dataset/parcels.shp: The parcels of land in the neighborhood.
+dataset/impervious.tif: Raster file classifying impervious and pervious surface of the whole study area.","1. Load Dataset
+2. Tabulate Area
+3. Add Join
+4. Copy Features",4
+48,F,Understanding where,Detecting and quantifying patterns,Making predictions,Determine how location impacts interest rates,"Your task is to analyze how location impacts interest rates. First, select and copy the tracts with at least 30 loans. Find interest rate hot spots on the selected loan tracts. Then create a Geographically Weighted Regression model on the selected data, with a neighborhood of 22 neighbors, to determine how location impacts interest rates.","Select the attribute ""AcceptedLo"" larger or equal to 30 in loan tracts. The key field in loan data is ""AveInteres"".","dataset/loan_data.shp: The loan data from August 2007 to September 2015, obtained from LendingClub Statistics.","1. Load Dataset
+2. Select Layer By Attribute
+3. Copy Features
+4. Hot Spot Analysis
+5. Geographically Weighted Regression",5
+49,F,Understanding where,,,Mapping the Impact of Housing Shortage on Oil Workers,"Your task is to analyze homelessness trends in North Dakota during the 2013 oil boom. Join homelessness tabular data to the U.S. states spatial layer using state abbreviations. Then, save the maps for analysis.","Tabular Data Joining: Joining tabular data to spatial layers using a common field (e.g., state abbreviation) is crucial for mapping.
+
+The North Dakota oil boom (2012–2013) attracted thousands of workers due to high-paying jobs in the energy sector.","dataset/homeless_data.xlsx: containing state-level homelessness data in the United States for 2013. The dataset includes the following columns:State, Change, Pop13, Homeless13","1. Load data
+2. Join tabular data to spatial data
+3. Add calculated fields
+4. Save maps",4
+50,F,Understanding where,Making predictions,,Predict seagrass habitats,"Your task is to predict seagrass habitats with machine learning methods. First, dissolve the USA seagrass, and create 5000 random points on the dissolved result. Then, use the empirical Bayesian kriging geostatistical method to interpolate raster surfaces for the environmental values stored in the Global ocean measurements layer, for temp and salinity, separately. Finally, use the two kriging result as explanatory rasters to perform presence-only prediction (MaxEnt), get the train features and seagrass predict raster as the outputs.","Empirical Bayesian kriging (EBK) is a geostatistical interpolation method that automates the most difficult aspects of building a valid kriging model.
+The Presence-only Prediction (MaxEnt) tool uses a maximum entropy approach (MaxEnt) to estimate the probability of presence of a phenomenon. The tool uses known occurrence points and explanatory variables in the form of fields, rasters, or distance features to provide an estimate of presence across a study area.","dataset/Global_ocean_measurements.shp: Ecological Marine Units point data that contains ocean measurements up to a 90-meter water depth.
+dataset/Global_shallow_waters.shp: Global shallow bathymetry polygon used to predict seagrass globally.
+dataset/USA_seagrass.shp: For seagrass occurrence, every polygon in USA seagrass is an identified seagrass habitat.
+dataset/USA_shallow_waters.shp: Shallow bathymetry polygon for the continental United States used as the study area for model training.","1. Load Dataset
+2. Pairwise Dissolve
+3. Create Random Points
+4. Empirical Bayesian Kriging
+5. Empirical Bayesian Kriging
+6. Presence-only Prediction (MaxEnt)",6

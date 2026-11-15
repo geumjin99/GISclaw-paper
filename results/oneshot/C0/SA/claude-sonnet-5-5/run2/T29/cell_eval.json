@@ -1,0 +1,131 @@
+{
+ "cell_id": "oneshot.C0.SA.claude-sonnet-5-5.r2.T29",
+ "task": 29,
+ "status": "ok",
+ "analytically_correct": true,
+ "scorer_error": false,
+ "checks": [
+  {
+   "name": "map/figure written (non-blank PNG)",
+   "passed": true,
+   "value": [
+    "arrival_map_Currituck_Slide.png",
+    "arrival_map_La_Palma.png",
+    "arrival_map_Puerto_Rico_Trench.png",
+    "arrival_map_Virginia_Beach.png",
+    "arrival_map_combined.png"
+   ],
+   "threshold": null,
+   "required": true,
+   "note": ""
+  },
+  {
+   "name": "figure shows the analysis (speed/arrival surface or the tsunami routes)",
+   "passed": true,
+   "value": "fig_ax0_image1@save00 rho as drawn 1.000 / flipped 0.919",
+   "threshold": null,
+   "required": true,
+   "note": ""
+  },
+  {
+   "name": "surface drawn north-up (tie as drawn)",
+   "passed": true,
+   "value": null,
+   "threshold": null,
+   "required": false,
+   "note": "fig_ax0_image1@save00 rho as drawn 1.000 / flipped 0.919",
+   "kind": "figure"
+  },
+  {
+   "name": "colour scale covers the drawn data range",
+   "passed": true,
+   "value": {
+    "data_5_95": [
+     1.558,
+     10.734
+    ],
+    "clim": [
+     0.020016359168567265,
+     37.79201707418006
+    ],
+    "span_share": 0.2429,
+    "inside_share": 1.0
+   },
+   "threshold": "5-95 % data span >= 0.1 of the colour range; >= 50 % of values inside it",
+   "required": false,
+   "note": "fig_ax0_image1@save00 rho as drawn 1.000 / flipped 0.919",
+   "kind": "figure"
+  },
+  {
+   "name": "travel time to Virginia Beach correct (route times A or arrival surface B)",
+   "passed": true,
+   "value": {
+    "A_route_times": "chk@final (h least-time)",
+    "B_arrival_surface": "tsec@final: surface from Virginia Beach, at origins currituck 8122.43, palma 33675.14, puerto 17739.49 s"
+   },
+   "threshold": "A: all 3 routes +/-6 % of 2.21/9.45/6.25 h or in the least-time ranges; B: rho>=0.95 & VB +/-15 %, or a surface from VB matching at the origins",
+   "required": true,
+   "note": ""
+  },
+  {
+   "name": "speed raster sqrt(g*d) matches gold (>=95 % cells within 2 m/s)",
+   "passed": true,
+   "value": null,
+   "threshold": null,
+   "required": false,
+   "note": "speed@save03: 1.000 within 2 m/s"
+  },
+  {
+   "name": "both route times and an arrival-time surface",
+   "passed": true,
+   "value": null,
+   "threshold": null,
+   "required": false,
+   "note": ""
+  },
+  {
+   "name": "deliverable files carry a CRS (uniform rule)",
+   "passed": true,
+   "value": [
+    "arrival_hours_Currituck_Slide.tif",
+    "arrival_hours_La_Palma.tif",
+    "arrival_hours_Puerto_Rico_Trench.tif",
+    "arrival_hours_Virginia_Beach.tif",
+    "arrival_hours_combined_min.tif"
+   ],
+   "threshold": "every geographic deliverable file has a CRS",
+   "required": true,
+   "note": "5 geographic deliverable file(s), all with a CRS"
+  }
+ ],
+ "replay": {
+  "success": true,
+  "outputs": [
+   "arrival_hours_Currituck_Slide.tif",
+   "arrival_hours_La_Palma.tif",
+   "arrival_hours_Puerto_Rico_Trench.tif",
+   "arrival_hours_Virginia_Beach.tif",
+   "arrival_hours_combined_min.tif",
+   "arrival_map_Currituck_Slide.png",
+   "arrival_map_La_Palma.png",
+   "arrival_map_Puerto_Rico_Trench.png",
+   "arrival_map_Virginia_Beach.png",
+   "arrival_map_combined.png",
+   "country_arrival_times.csv",
+   "path_validation.csv",
+   "tsunami_report.md"
+  ],
+  "events": [],
+  "blocks_ok": 1,
+  "block_outcome": [
+   "ok"
+  ],
+  "step_timeout_s": 3600,
+  "same_outputs_as_original": true,
+  "block_mismatches": []
+ },
+ "replay_faithful": true,
+ "replay_unfaithful_reasons": [],
+ "replay_container_failure": [],
+ "emergency_files": []
+}

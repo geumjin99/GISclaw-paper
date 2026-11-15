@@ -1,0 +1,58 @@
+{
+ "task": 30,
+ "title": "Bike routes for commuting professionals - Capitol Hill, Seattle (Esri case study)",
+ "output_type": "map + vector (proposed routes, half-mile coverage) + summary table",
+ "required_outputs": [
+  "a map PNG (optional; the instruction names no file)",
+  "proposed routes as a line layer (captured or written)",
+  "half-mile coverage polygon or share"
+ ],
+ "reference_outputs": [
+  "bike_routes.png",
+  "proposed_bike_routes.gpkg",
+  "half_mile_coverage.gpkg",
+  "bike_route_summary.csv"
+ ],
+ "method": "Study area Capitol Hill (L_HOOD = 'CAPITOL HILL', 5 sub-neighbourhoods, 3.77 sq mi); employment centres = Downtown Office Core 1/2 zones; zoning overlaid on the neighbourhood for the land-use mix; existing trails SEGMENT_TY = 8 (6 segments, 5227 ft); arterial network SEGMENT_TY = 1 & ARTERIAL_C = 1 (6605 segments); corridors per the Instruction: East = MADISON arterials within 3.5 ft of Capitol Hill (E Madison St) plus MADISON arterials intersecting L_HOOD = 'DOWNTOWN' (Madison St downtown) (3.67 mi), West = 10TH AVE E touching it (1.23 mi), Central = 23RD AVE / 23RD AVE E / 24TH AVE E / TURNER WAY E touching it (1.64 mi); networkx shortest paths on the arterial graph confirm each corridor connects to the office core (0.25-1.75 mi); 2640 ft buffers, union, clip to Capitol Hill: 96.8 % coverage.",
+ "key_parameters": {
+  "crs": "NAD83(HARN) / Washington North (US ft)",
+  "buffer": "0.5 mile = 2640 ft",
+  "arterial_filter": "SEGMENT_TY = 1 AND ARTERIAL_C = 1",
+  "corridors": {
+   "East": [
+    "MADISON ST",
+    "E MADISON ST"
+   ],
+   "West": [
+    "10TH AVE E"
+   ],
+   "Central": [
+    "23RD AVE",
+    "23RD AVE E",
+    "24TH AVE E",
+    "TURNER WAY E"
+   ]
+  }
+ },
+ "simplifications_vs_arcgis": [
+  "Network Analyst replaced by a networkx graph of arterial segments (endpoints rounded to 1 ft) used only to verify connectivity to the office core",
+  "ArterialStreet OBJECTID = 3661 in the original model refers to a renumbered feature class and cannot be identified; West uses the named streets only",
+  "Traffic volume, slope and safety layers named in the instruction do not exist; no weighted overlay is possible",
+  "Demand 'hotspots' are not computed (no demand data)"
+ ],
+ "benchmark_defects": [
+  "The benchmark distributes only .lyrx layer files for this task; the inputs are taken from the data of the Esri case study.",
+  "The instruction asks for demand-hotspot clustering and a weighted overlay of traffic volume, slope and safety data; none of these attributes exist in the data. The gradable core is the corridor design given in the domain knowledge plus the half-mile accessibility metric.",
+  "The original model's OBJECTID = 3661 selection cannot be reproduced from the shapefile.",
+  "Writing projected layers to GeoJSON drops the CRS (labelled EPSG:4326); checks re-assign the input CRS to out-of-range coordinates."
+ ],
+ "checks": [
+  "optional (the instruction asks for no map): a non-blank map PNG",
+  "required: a line layer of 0.5-2x the gold route length near Capitol Hill that covers >= 50 % of each of the three corridors (50 ft tolerance)",
+  "optional (as above): the map shows the proposed routes - >= 50 % of route segment bboxes match a drawn collection path / line",
+  "required: half-mile coverage of Capitol Hill: polygon IoU >= 0.85 with the clipped gold coverage (not the bare neighbourhood polygon) or a share in [0.95, gold 0.968 + 0.015] (scalars, dict entries, long or wide tables)",
+  "optional: >= 50 % of proposed length on gold corridors",
+  "required (the instruction says \"Use Network Analyst to propose new routes\"): network analysis in the executed code (networkx/osmnx/igraph/pandana/csgraph or a shortest-path routine; comments removed)",
+  "optional: existing trail length measured (5227 ft / 0.99 mi)"
+ ]
+}

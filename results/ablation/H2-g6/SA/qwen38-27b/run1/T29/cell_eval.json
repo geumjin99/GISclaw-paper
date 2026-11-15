@@ -1,0 +1,179 @@
+{
+ "cell_id": "ablation.H2-g6.SA.qwen38-27b.r1.T29",
+ "task": 29,
+ "status": "ok",
+ "analytically_correct": true,
+ "scorer_error": false,
+ "checks": [
+  {
+   "name": "map/figure written (non-blank PNG)",
+   "passed": true,
+   "value": [
+    "map_arrival_LaPalma.png",
+    "map_arrival_combined.png",
+    "sensitivity_validation.png"
+   ],
+   "threshold": null,
+   "required": true,
+   "note": ""
+  },
+  {
+   "name": "figure shows the analysis (speed/arrival surface or the tsunami routes)",
+   "passed": true,
+   "value": "fig_ax0_image0@save00 rho as drawn 1.000 / flipped 0.921",
+   "threshold": null,
+   "required": true,
+   "note": ""
+  },
+  {
+   "name": "surface drawn north-up (tie as drawn)",
+   "passed": true,
+   "value": null,
+   "threshold": null,
+   "required": false,
+   "note": "fig_ax0_image0@save00 rho as drawn 1.000 / flipped 0.921",
+   "kind": "figure"
+  },
+  {
+   "name": "colour scale covers the drawn data range",
+   "passed": true,
+   "value": {
+    "data_5_95": [
+     1.599,
+     10.331
+    ],
+    "clim": [
+     0.0,
+     12.0
+    ],
+    "span_share": 0.7276,
+    "inside_share": 0.973
+   },
+   "threshold": "5-95 % data span >= 0.1 of the colour range; >= 50 % of values inside it",
+   "required": false,
+   "note": "fig_ax0_image0@save00 rho as drawn 1.000 / flipped 0.921",
+   "kind": "figure"
+  },
+  {
+   "name": "travel time to Virginia Beach correct (route times A or arrival surface B)",
+   "passed": true,
+   "value": {
+    "A_route_times": "val@final (h least-time)",
+    "B_arrival_surface": "arr@final: surface from Virginia Beach, at origins currituck 5185.88, palma 31728.65, puerto 15447.45 s"
+   },
+   "threshold": "A: all 3 routes +/-6 % of 2.21/9.45/6.25 h or in the least-time ranges; B: rho>=0.95 & VB +/-15 %, or a surface from VB matching at the origins",
+   "required": true,
+   "note": ""
+  },
+  {
+   "name": "speed raster sqrt(g*d) matches gold (>=95 % cells within 2 m/s)",
+   "passed": false,
+   "value": null,
+   "threshold": null,
+   "required": false,
+   "note": "no speed raster found"
+  },
+  {
+   "name": "both route times and an arrival-time surface",
+   "passed": true,
+   "value": null,
+   "threshold": null,
+   "required": false,
+   "note": ""
+  },
+  {
+   "name": "deliverable files carry a CRS (uniform rule)",
+   "passed": true,
+   "value": [
+    "arrival_CurrituckSlide.tif",
+    "arrival_LaPalma.tif",
+    "arrival_PuertoRicoTrench.tif",
+    "arrival_VirginiaBeach.tif",
+    "arrival_min_all_sources.tif"
+   ],
+   "threshold": "every geographic deliverable file has a CRS",
+   "required": true,
+   "note": "5 geographic deliverable file(s), all with a CRS"
+  }
+ ],
+ "replay": {
+  "success": true,
+  "outputs": [
+   "arrival_CurrituckSlide.tif",
+   "arrival_LaPalma.tif",
+   "arrival_PuertoRicoTrench.tif",
+   "arrival_VirginiaBeach.tif",
+   "arrival_min_all_sources.tif",
+   "country_arrival_times.csv",
+   "map_arrival_LaPalma.png",
+   "map_arrival_combined.png",
+   "sensitivity.csv",
+   "sensitivity_validation.png",
+   "tsunami_travel_time_report.md",
+   "validation_vs_precomputed_paths.csv"
+  ],
+  "events": [],
+  "blocks_ok": 36,
+  "block_outcome": [
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok"
+  ],
+  "step_timeout_s": 900,
+  "same_outputs_as_original": false,
+  "block_mismatches": []
+ },
+ "replay_faithful": true,
+ "replay_unfaithful_reasons": [],
+ "replay_container_failure": [],
+ "correct_without_emergency": true,
+ "emergency_files": [
+  "emergency_output.csv"
+ ]
+}

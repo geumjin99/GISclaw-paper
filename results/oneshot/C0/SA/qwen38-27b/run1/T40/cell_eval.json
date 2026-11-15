@@ -1,0 +1,115 @@
+{
+ "cell_id": "oneshot.C0.SA.qwen38-27b.r1.T40",
+ "task": 40,
+ "status": "ok",
+ "analytically_correct": false,
+ "scorer_error": false,
+ "checks": [
+  {
+   "name": "a figure (PNG) is present",
+   "passed": false,
+   "value": [],
+   "threshold": "any *.png",
+   "required": true,
+   "note": ""
+  },
+  {
+   "name": "figure not blank",
+   "passed": false,
+   "value": null,
+   "threshold": null,
+   "required": true,
+   "note": "no PNG"
+  },
+  {
+   "name": "reversed order (2000 minus 2015) stated and drawn with red = increase",
+   "passed": false,
+   "value": null,
+   "threshold": null,
+   "required": false,
+   "note": "reported only; reversed order not accepted"
+  },
+  {
+   "name": "change field matches gold (Pearson)",
+   "passed": false,
+   "value": null,
+   "threshold": 0.95,
+   "required": true,
+   "note": "no 2-D field on the (1741, 1681) grid (0 candidates)"
+  },
+  {
+   "name": "change has gold scale and sign (mean within 25 %)",
+   "passed": false,
+   "value": null,
+   "threshold": null,
+   "required": true,
+   "note": "no matching change field"
+  },
+  {
+   "name": "map shows the change (drawn image Spearman >= 0.85)",
+   "passed": false,
+   "value": null,
+   "threshold": null,
+   "required": true,
+   "note": "UNVERIFIABLE: no 2-D image drawn in a saved figure",
+   "unverifiable": true
+  },
+  {
+   "name": "drawn change map masks nodata",
+   "passed": false,
+   "value": null,
+   "threshold": null,
+   "required": true,
+   "note": "no drawn change image"
+  },
+  {
+   "name": "figure: change map drawn north-up (drawn image Spearman >= 0.85 as drawn)",
+   "passed": false,
+   "value": null,
+   "threshold": null,
+   "required": false,
+   "note": "no drawn image",
+   "kind": "figure"
+  },
+  {
+   "name": "diverging colour scheme (code inspection)",
+   "passed": false,
+   "value": null,
+   "threshold": null,
+   "required": true,
+   "note": "comments stripped; the text prescribes a diverging colour scheme"
+  },
+  {
+   "name": "categorical change map derived (ordered classes)",
+   "passed": false,
+   "value": null,
+   "threshold": "Spearman >= 0.7",
+   "required": false,
+   "note": "no classified raster/array found"
+  },
+  {
+   "name": "deliverable files carry a CRS (uniform rule)",
+   "passed": true,
+   "value": [],
+   "threshold": "every geographic deliverable file has a CRS",
+   "required": true,
+   "note": "no geographic deliverable file written (presence is judged by the task checks)"
+  }
+ ],
+ "replay": {
+  "success": false,
+  "outputs": [],
+  "events": [],
+  "blocks_ok": 0,
+  "block_outcome": [
+   "ok"
+  ],
+  "step_timeout_s": 3600,
+  "same_outputs_as_original": true,
+  "block_mismatches": []
+ },
+ "replay_faithful": true,
+ "replay_unfaithful_reasons": [],
+ "replay_container_failure": [],
+ "emergency_files": []
+}

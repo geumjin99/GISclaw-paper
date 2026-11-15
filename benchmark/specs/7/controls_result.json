@@ -1,0 +1,95 @@
+[
+ {
+  "control": "correct_cropped_window",
+  "expected_correct": true,
+  "judged_correct": true,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [],
+  "scorer_error": false
+ },
+ {
+  "control": "correct_flood_where_below_zero_unmasked",
+  "expected_correct": true,
+  "judged_correct": true,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [],
+  "scorer_error": false
+ },
+ {
+  "control": "correct_metres_centroid_sampling",
+  "expected_correct": true,
+  "judged_correct": true,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [],
+  "scorer_error": false
+ },
+ {
+  "control": "correct_vector_overlay_area_weighted",
+  "expected_correct": true,
+  "judged_correct": true,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [],
+  "scorer_error": false
+ },
+ {
+  "control": "wrong_benchmark_script_misaligned_join",
+  "expected_correct": false,
+  "judged_correct": false,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [
+   "building damage consistent with depth and damage function"
+  ],
+  "scorer_error": false
+ },
+ {
+  "control": "wrong_damage_depth_below_nap0",
+  "expected_correct": false,
+  "judged_correct": false,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [
+   "building damage consistent with depth and damage function"
+  ],
+  "scorer_error": false
+ },
+ {
+  "control": "wrong_log10_damage",
+  "expected_correct": false,
+  "judged_correct": false,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [
+   "damage function uses the natural log (as in the original solution)"
+  ],
+  "scorer_error": false
+ },
+ {
+  "control": "wrong_no_cm_to_m",
+  "expected_correct": false,
+  "judged_correct": false,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [
+   "building damage consistent with depth and damage function"
+  ],
+  "scorer_error": false
+ },
+ {
+  "control": "wrong_raw_elevation_as_depth",
+  "expected_correct": false,
+  "judged_correct": false,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [
+   "flood depth = W - elevation on the study area",
+   "building damage consistent with depth and damage function",
+   "damage function uses the natural log (as in the original solution)"
+  ],
+  "scorer_error": false
+ }
+]

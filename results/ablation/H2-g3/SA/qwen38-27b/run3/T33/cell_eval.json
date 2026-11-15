@@ -1,0 +1,124 @@
+{
+ "cell_id": "ablation.H2-g3.SA.qwen38-27b.r3.T33",
+ "task": 33,
+ "status": "ok",
+ "analytically_correct": false,
+ "scorer_error": false,
+ "checks": [
+  {
+   "name": "result file written to pred_results",
+   "passed": true,
+   "value": [
+    "BuildingFloodDamage.csv",
+    "FloodDamage_Map.png",
+    "FloodDamage_Summary.txt",
+    "FloodDepth_2050.tif",
+    "FloodedArea.cpg",
+    "FloodedArea.dbf"
+   ],
+   "threshold": "any non-empty file",
+   "required": true,
+   "note": ""
+  },
+  {
+   "name": "per-building damage matches gold (Jaccard>=0.80, Spearman>=0.90)",
+   "passed": false,
+   "value": null,
+   "threshold": null,
+   "required": true,
+   "note": "no building-level table found"
+  },
+  {
+   "name": "per-building damage values follow the given function (median pred/gold ratio 0.95-1.05)",
+   "passed": false,
+   "value": null,
+   "threshold": null,
+   "required": true,
+   "note": "no building-level table found"
+  },
+  {
+   "name": "total damage within 10 % of gold",
+   "passed": false,
+   "value": 23891765,
+   "threshold": "4.113e+08 +/- 10 %",
+   "required": true,
+   "note": "stdout: total damage: 23891765.3"
+  },
+  {
+   "name": "per-building mean flood depth matches gold",
+   "passed": false,
+   "value": null,
+   "threshold": 0.9,
+   "required": false,
+   "note": ""
+  },
+  {
+   "name": "deliverable files carry a CRS (uniform rule)",
+   "passed": true,
+   "value": [
+    "FloodedArea.shp",
+    "FloodedBuildings.shp"
+   ],
+   "threshold": "every geographic deliverable file has a CRS",
+   "required": true,
+   "note": "2 geographic deliverable file(s), all with a CRS"
+  }
+ ],
+ "replay": {
+  "success": true,
+  "outputs": [
+   "BuildingFloodDamage.csv",
+   "FloodDamage_Map.png",
+   "FloodDamage_Summary.txt",
+   "FloodDepth_2050.tif",
+   "FloodedArea.cpg",
+   "FloodedArea.dbf",
+   "FloodedArea.prj",
+   "FloodedArea.shp",
+   "FloodedArea.shx",
+   "FloodedBuildings.cpg",
+   "FloodedBuildings.dbf",
+   "FloodedBuildings.prj",
+   "FloodedBuildings.shp",
+   "FloodedBuildings.shx"
+  ],
+  "events": [],
+  "blocks_ok": 17,
+  "block_outcome": [
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok"
+  ],
+  "step_timeout_s": 900,
+  "same_outputs_as_original": true,
+  "block_mismatches": [
+   7
+  ]
+ },
+ "replay_faithful": false,
+ "replay_unfaithful_reasons": [
+  "block success differs at [7]"
+ ],
+ "replay_container_failure": [],
+ "emergency_files": []
+}

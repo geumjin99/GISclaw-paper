@@ -1,0 +1,62 @@
+{
+ "cell_id": "oneshot.C0.SA.qwen38-27b.r1.T47",
+ "task": 47,
+ "status": "ok",
+ "analytically_correct": false,
+ "scorer_error": false,
+ "checks": [
+  {
+   "name": "joined parcel layer saved (121 features)",
+   "passed": false,
+   "value": [],
+   "threshold": null,
+   "required": true,
+   "note": ""
+  },
+  {
+   "name": "impervious (Value 0) area per parcel matches gold (>= 90 % within 5 %)",
+   "passed": false,
+   "value": 0.0,
+   "threshold": "0.9 (per parcel: within 5 % or one boundary cell ring)",
+   "required": true,
+   "note": "no matching numeric column in a saved parcel layer"
+  },
+  {
+   "name": "pervious (Value 1) area also tabulated",
+   "passed": false,
+   "value": 0.0,
+   "threshold": null,
+   "required": false,
+   "note": ""
+  },
+  {
+   "name": "class meaning read from attribute table (vat.dbf / Class_name)",
+   "passed": false,
+   "value": null,
+   "threshold": null,
+   "required": false,
+   "note": ""
+  },
+  {
+   "name": "deliverable files carry a CRS (uniform rule)",
+   "passed": true,
+   "value": [],
+   "threshold": "every geographic deliverable file has a CRS",
+   "required": true,
+   "note": "no geographic deliverable file written (presence is judged by the task checks)"
+  }
+ ],
+ "replay": {
+  "success": true,
+  "outputs": [],
+  "events": [],
+  "blocks_ok": 1,
+  "block_outcome": [
+   "ok"
+  ],
+  "step_timeout_s": 3600,
+  "same_outputs_as_original": true
+ },
+ "replay_faithful": null,
+ "emergency_files": []
+}

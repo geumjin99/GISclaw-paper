@@ -1,0 +1,124 @@
+[
+ {
+  "control": "correct_ge_threshold_clip",
+  "expected_correct": true,
+  "judged_correct": true,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [],
+  "scorer_error": false
+ },
+ {
+  "control": "correct_landcover_grid",
+  "expected_correct": true,
+  "judged_correct": true,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [],
+  "scorer_error": false
+ },
+ {
+  "control": "wrong_barren_missing",
+  "expected_correct": false,
+  "judged_correct": false,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [
+   "every undeveloped class of the gold selection is selected (recall >= 0.5)"
+  ],
+  "scorer_error": false
+ },
+ {
+  "control": "wrong_deliverable_no_crs",
+  "expected_correct": false,
+  "judged_correct": false,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [
+   "selected cells match gold (IoU)",
+   "every undeveloped class of the gold selection is selected (recall >= 0.5)",
+   "deliverable files carry a CRS (uniform rule)"
+  ],
+  "scorer_error": false
+ },
+ {
+  "control": "wrong_high_risk_only",
+  "expected_correct": false,
+  "judged_correct": false,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [
+   "selected cells match gold (IoU)"
+  ],
+  "scorer_error": false
+ },
+ {
+  "control": "wrong_minmax_with_nodata",
+  "expected_correct": false,
+  "judged_correct": false,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [
+   "selected cells match gold (IoU)"
+  ],
+  "scorer_error": false
+ },
+ {
+  "control": "wrong_no_grid_alignment",
+  "expected_correct": false,
+  "judged_correct": false,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [
+   "selected cells match gold (IoU)",
+   "every undeveloped class of the gold selection is selected (recall >= 0.5)"
+  ],
+  "scorer_error": false
+ },
+ {
+  "control": "wrong_rescale_0_10",
+  "expected_correct": false,
+  "judged_correct": false,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [
+   "selected cells match gold (IoU)",
+   "every undeveloped class of the gold selection is selected (recall >= 0.5)"
+  ],
+  "scorer_error": false
+ },
+ {
+  "control": "wrong_rounded_standardisation",
+  "expected_correct": false,
+  "judged_correct": false,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [
+   "selected cells match gold (IoU)",
+   "every undeveloped class of the gold selection is selected (recall >= 0.5)"
+  ],
+  "scorer_error": false
+ },
+ {
+  "control": "wrong_scale_by_max",
+  "expected_correct": false,
+  "judged_correct": false,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [
+   "selected cells match gold (IoU)"
+  ],
+  "scorer_error": false
+ },
+ {
+  "control": "wrong_ten_classes",
+  "expected_correct": false,
+  "judged_correct": false,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [
+   "selected cells match gold (IoU)"
+  ],
+  "scorer_error": false
+ }
+]

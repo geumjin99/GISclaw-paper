@@ -1,0 +1,32 @@
+{
+ "task": 42,
+ "title": "Investigate spatial patterns for Airbnb prices in Berlin",
+ "output_type": "image (LISA cluster map)",
+ "required_outputs": [
+  "moran_local.png"
+ ],
+ "method": "Listings (lat/lon, EPSG:4326) spatially joined to the 140 neighbourhood polygons; median price per neighbourhood_group (12 districts) assigned to each neighbourhood; the 2 neighbourhoods without a group filled with the mean of group medians; Queen contiguity weights (row-standardised); Local Moran's I (esda, 999 permutations, seed fixed); significant (p < 0.05) HH/LH/LL/HL clusters mapped.",
+ "key_parameters": {
+  "aggregation": "median price per neighbourhood_group",
+  "missing": "2 polygons without group -> mean of group medians",
+  "weights": "Queen, row-standardised",
+  "significance": "pseudo p < 0.05, 999 permutations"
+ },
+ "benchmark_defects": [
+  "Dataset description names 'berling_neighbourhoods.geojson'; the supplied file is 'berlin-neighbourhoods.geojson' ('Berling' typo throughout).",
+  "The published reference script computes the group mean (stored as 'median_pri') although the instruction asks for the median.",
+  "The published reference script saves moran_local.png to the working directory instead of pred_results/.",
+  "Assigning one district value to all its neighbourhoods makes neighbours share identical values, which inflates local autocorrelation; the task design, not the agent, is responsible."
+ ],
+ "checks": [
+  "required: moran_local.png present",
+  "required: map not blank",
+  "required: a per-neighbourhood column equals the gold group MEDIAN prices (within 3 %) for >= 90 % of neighbourhoods",
+  "required: that column has no NaN and lies within the observed range of group medians +/-10 % (no 0-fill)",
+  "required: best-matching captured categorical result reproduces the gold significant hot-spot and cold-spot sets (IoU >= 0.7, no inverted hot/cold labels each); quadrant and significance held in two columns (or q and p arrays extracted into variables, not the esda object attributes) are also scored combined: quadrant where p <= 0.05 / flagged, else 'ns'",
+  "required (prescribed by the domain knowledge): Queen contiguity weights - captured libpysal Queen object, Queen in code, or polygon neighbours by touches/intersects",
+  "required: Local Moran's I evidence (local I values |r|>=0.95 or Moran_Local call)",
+  "note: median check also scans 1-D arrays",
+  "figure (presentation, never required): on the saved map the gold hot spots are drawn warmer (R - B) than the gold cold spots by >= 0.2; UNVERIFIABLE without per-patch colours"
+ ]
+}

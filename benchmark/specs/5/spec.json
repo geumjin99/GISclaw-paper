@@ -1,0 +1,31 @@
+{
+ "task": 5,
+ "title": "Visualize the data about children with elevated blood lead levels in a manner that protects individual privacy",
+ "output_type": "image (hexagon hot-spot and count map)",
+ "required_outputs": [
+  "blood_lead_hotspots.png"
+ ],
+ "method": "Project the 373 case points (EPSG:3857) and 17 ZIP polygons (EPSG:4326) to UTM 10N. Build a 1 km2 flat-top hexagon tessellation over the ZIP area (341 hexagons), count cases per hexagon (zeros kept). Optimized-hot-spot equivalent: distance band from the first peak of incremental global Moran's I (2.2 km), Getis-Ord Gi* (esda G_Local, star, 999 permutations, seed 0), FDR-corrected 90/95/99 % hot/cold bins. Map hot-spot bins and per-hexagon counts; no individual points shown.",
+ "key_parameters": {
+  "crs": "EPSG:32610",
+  "hexagon_area_km2": 1.0,
+  "weights": "binary distance band 2203 m (incremental spatial autocorrelation peak)",
+  "statistic": "Getis-Ord Gi*",
+  "permutations": 999,
+  "multiple_testing": "FDR"
+ },
+ "benchmark_defects": [
+  "The published instruction names the output 'transit_access.png', the output name of task 2; the instruction used here names it 'blood_lead_hotspots.png' (the published name and blood-lead-specific .png names are also accepted).",
+  "The benchmark distributes only the .shp files (no .dbf/.shx/.prj); the 14 attribute columns listed in the description (Blood Level, Age, ...) do not exist. The .shx and .prj files are reconstructed from the .shp files (CRS inferred from the coordinates), so every point is one case and no blood-level field can be analysed."
+ ],
+ "checks": [
+  "required: map present (instructed name or a blood-lead-specific png)",
+  "required: map not blank",
+  "required: a captured polygon layer that is >= 50 % hexagons carries a per-cell case count equal to a spatial-join recount for >= 95 % of cells, holding >= 90 % of the 373 cases",
+  "required: on a hexagon layer, a non-count per-cell value (column or same-length array) rank-correlates >= 0.6 and is a Gi*-type product (signed bins -3..3 or signed z-scaled values) with Gi* z recomputed on that layer (distance band 2.05 x hexagon spacing)",
+  "required: the drawn hexagon collection shows a passing hot-spot column (colour values equal, <= 12 facecolour classes explaining it, eta^2 >= 0.9, or <= 12 colour classes that are ordered intervals of it, e.g. FDR confidence bins of the Gi* z; with a p-value column on the layer the order may follow sign(z)*(1-p); a collection drawing only the significant cells (patches matched to layer cells by geometry, cell set = p <= 0.01/0.05/0.10, |z| >= 1.645/1.96/2.576 or non-zero bins, optionally hot- or cold-only) with colour values equal to the statistic also passes)",
+  "required: privacy - fewer than 20 drawn point markers on case locations",
+  "optional: method fidelity - a Getis-Ord function is called",
+  "optional: median hexagon area >= 0.05 km2"
+ ]
+}

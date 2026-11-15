@@ -1,0 +1,141 @@
+[
+ {
+  "control": "correct_factorize_tiff_utm",
+  "expected_correct": true,
+  "judged_correct": true,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [],
+  "scorer_error": false
+ },
+ {
+  "control": "correct_risk_ge_100",
+  "expected_correct": true,
+  "judged_correct": true,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [],
+  "scorer_error": false
+ },
+ {
+  "control": "correct_stated_codes_digitize_mask",
+  "expected_correct": true,
+  "judged_correct": true,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [],
+  "scorer_error": false
+ },
+ {
+  "control": "wrong_alphabetical_digitize_mask",
+  "expected_correct": false,
+  "judged_correct": false,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [
+   "selected cells match an accepted interpretation (1-cell tolerance)"
+  ],
+  "scorer_error": false
+ },
+ {
+  "control": "wrong_deliverable_no_crs",
+  "expected_correct": false,
+  "judged_correct": false,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [
+   "georeferenced raster with selected cells",
+   "selected cells match an accepted interpretation (1-cell tolerance)",
+   "deliverable files carry a CRS (uniform rule)"
+  ],
+  "scorer_error": false
+ },
+ {
+  "control": "wrong_drainage_from_hydgrp",
+  "expected_correct": false,
+  "judged_correct": false,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [
+   "selected cells match an accepted interpretation (1-cell tolerance)"
+  ],
+  "scorer_error": false
+ },
+ {
+  "control": "wrong_invented_drainage_codes",
+  "expected_correct": false,
+  "judged_correct": false,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [
+   "selected cells match an accepted interpretation (1-cell tolerance)"
+  ],
+  "scorer_error": false
+ },
+ {
+  "control": "wrong_method_albers_grid",
+  "expected_correct": false,
+  "judged_correct": false,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [
+   "soils projected to Lambert Conformal Conic (prescribed step)"
+  ],
+  "scorer_error": false
+ },
+ {
+  "control": "wrong_no_standardization",
+  "expected_correct": false,
+  "judged_correct": false,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [
+   "selected cells match an accepted interpretation (1-cell tolerance)"
+  ],
+  "scorer_error": false
+ },
+ {
+  "control": "wrong_rounded_standardisation",
+  "expected_correct": false,
+  "judged_correct": false,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [
+   "selected cells match an accepted interpretation (1-cell tolerance)"
+  ],
+  "scorer_error": false
+ },
+ {
+  "control": "wrong_skip_high_risk_mask",
+  "expected_correct": false,
+  "judged_correct": false,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [
+   "selected cells match an accepted interpretation (1-cell tolerance)"
+  ],
+  "scorer_error": false
+ },
+ {
+  "control": "wrong_swapped_weights",
+  "expected_correct": false,
+  "judged_correct": false,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [
+   "selected cells match an accepted interpretation (1-cell tolerance)"
+  ],
+  "scorer_error": false
+ },
+ {
+  "control": "wrong_ten_classes",
+  "expected_correct": false,
+  "judged_correct": false,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [
+   "selected cells match an accepted interpretation (1-cell tolerance)"
+  ],
+  "scorer_error": false
+ }
+]

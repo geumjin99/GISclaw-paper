@@ -1,0 +1,44 @@
+{
+ "task": 48,
+ "source": "instruction: select/copy tracts, hot spots, GWR (no file names); checks.py reads *.shp/*.geojson/*.gpkg and *.csv in pred_results (recursive) as per-tract tables, alternative to captured tables",
+ "deliverables": [
+  {
+   "id": "tract_layers",
+   "kind": "vector",
+   "patterns": [
+    "*.shp",
+    "*.geojson",
+    "*.gpkg"
+   ],
+   "required": false,
+   "crs_required": true,
+   "checked_by": [
+    "selection AcceptedLo >= 30 (808 tracts)",
+    "hot spots: Gi* z of AveInteres (Pearson >= 0.85 with a Gi* variant, closer than to Gi* of AveLoanGra)",
+    "GWR (22 NN) of AveInteres: a local slope matches a 22-NN reference fit (Pearson >= 0.95)",
+    "local R2 reported"
+   ]
+  },
+  {
+   "id": "tract_tables",
+   "kind": "table",
+   "patterns": [
+    "*.csv"
+   ],
+   "required": false,
+   "crs_required": false,
+   "checked_by": [
+    "selection AcceptedLo >= 30 (808 tracts)",
+    "hot spots: Gi* z of AveInteres (Pearson >= 0.85 with a Gi* variant, closer than to Gi* of AveLoanGra)",
+    "GWR (22 NN) of AveInteres: a local slope matches a 22-NN reference fit (Pearson >= 0.95)",
+    "local R2 reported"
+   ]
+  }
+ ],
+ "not_deliverables": [
+  {
+   "pattern": "gwr_result.shp",
+   "reason": "gold file name, read from the gold directory only"
+  }
+ ]
+}

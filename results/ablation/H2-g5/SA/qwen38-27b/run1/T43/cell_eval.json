@@ -1,0 +1,118 @@
+{
+ "cell_id": "ablation.H2-g5.SA.qwen38-27b.r1.T43",
+ "task": 43,
+ "status": "ok",
+ "analytically_correct": true,
+ "scorer_error": false,
+ "checks": [
+  {
+   "name": "home range (convex hull) stored and matches gold (IoU >= 0.9)",
+   "passed": true,
+   "value": 1.0,
+   "threshold": 0.9,
+   "required": true,
+   "note": "Elk_Overall_MBG.geojson[scope == 'all_elk_hull'] vs hull of all fixes"
+  },
+  {
+   "name": "kernel density raster stored and agrees with gold (3 km block Pearson >= 0.6)",
+   "passed": true,
+   "value": 0.997,
+   "threshold": 0.6,
+   "required": true,
+   "note": "Elk_KDE_annual.tif (coverage 1.00)"
+  },
+  {
+   "name": "density-based clusters with noise; clustered fixes denser than noise (ratio >= 1.5)",
+   "passed": true,
+   "value": 16.27,
+   "threshold": 1.5,
+   "required": true,
+   "note": "dbscan_cluster in elk@final [n_clusters, noise share, n]=[495, 0.048, 150191]"
+  },
+  {
+   "name": "density-based clustering estimator called (DBSCAN/HDBSCAN/OPTICS)",
+   "passed": true,
+   "value": "DBSCAN(",
+   "threshold": null,
+   "required": true,
+   "note": "call required, not just an import"
+  },
+  {
+   "name": "deliverable files carry a CRS (uniform rule)",
+   "passed": true,
+   "value": [
+    "Elk_95pct_KDE_home_range.geojson",
+    "Elk_ConvexHull.geojson",
+    "Elk_DBSSCAN_clusters.geojson",
+    "Elk_KDE_annual.tif",
+    "Elk_KDE_fall.tif",
+    "Elk_KDE_spring.tif",
+    "Elk_KDE_summer.tif",
+    "Elk_KDE_winter.tif",
+    "Elk_Overall_MBG.geojson",
+    "Elk_in_MBG.geojson"
+   ],
+   "threshold": "every geographic deliverable file has a CRS",
+   "required": true,
+   "note": "10 geographic deliverable file(s), all with a CRS"
+  }
+ ],
+ "replay": {
+  "success": true,
+  "outputs": [
+   "Elk_95pct_KDE_home_range.geojson",
+   "Elk_ConvexHull.geojson",
+   "Elk_DBSSCAN_clusters.geojson",
+   "Elk_KDE_annual.tif",
+   "Elk_KDE_fall.tif",
+   "Elk_KDE_spring.tif",
+   "Elk_KDE_summer.tif",
+   "Elk_KDE_winter.tif",
+   "Elk_Overall_MBG.geojson",
+   "Elk_in_MBG.geojson",
+   "analysis_summary.md",
+   "fig_dbscan_clusters.png",
+   "fig_dbscan_kdistance.png",
+   "fig_home_ranges.png",
+   "fig_kernel_density.png",
+   "fig_seasonal_preference.png",
+   "home_range_summary.csv",
+   "seasonal_home_range_overlap.csv",
+   "seasonal_summary.csv"
+  ],
+  "events": [],
+  "blocks_ok": 19,
+  "block_outcome": [
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok"
+  ],
+  "step_timeout_s": 900,
+  "same_outputs_as_original": true,
+  "block_mismatches": []
+ },
+ "replay_faithful": true,
+ "replay_unfaithful_reasons": [],
+ "replay_container_failure": [],
+ "emergency_files": []
+}

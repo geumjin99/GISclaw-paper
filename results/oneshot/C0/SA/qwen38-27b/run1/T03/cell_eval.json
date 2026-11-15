@@ -1,0 +1,67 @@
+{
+ "cell_id": "oneshot.C0.SA.qwen38-27b.r1.T03",
+ "task": 3,
+ "status": "ok",
+ "analytically_correct": false,
+ "scorer_error": false,
+ "checks": [
+  {
+   "name": "required output present",
+   "passed": false,
+   "value": [],
+   "threshold": [
+    "burn_scar_analysis.png"
+   ],
+   "required": true,
+   "note": ""
+  },
+  {
+   "name": "map not blank",
+   "passed": false,
+   "value": null,
+   "threshold": null,
+   "required": true,
+   "note": "no map"
+  },
+  {
+   "name": "dNBR surface matches gold (|r| >= 0.98)",
+   "passed": false,
+   "value": 0.0,
+   "threshold": 0.98,
+   "required": true,
+   "note": "no raster-shaped array"
+  },
+  {
+   "name": "burn-scar polygons cover the burned core and little else",
+   "passed": false,
+   "value": {
+    "core_coverage": 0.0,
+    "precision_dNBR>0.1": 0.0
+   },
+   "threshold": "coverage>=0.70, precision>=0.60",
+   "required": true,
+   "note": "no plotted polygon layer (code plots: [])"
+  },
+  {
+   "name": "burned area plausible (15-350 km2)",
+   "passed": false,
+   "value": 0.0,
+   "threshold": "15-350",
+   "required": false,
+   "note": ""
+  }
+ ],
+ "replay": {
+  "success": true,
+  "outputs": [],
+  "events": [],
+  "blocks_ok": 1,
+  "block_outcome": [
+   "ok"
+  ],
+  "step_timeout_s": 3600,
+  "same_outputs_as_original": true
+ },
+ "replay_faithful": null,
+ "emergency_files": []
+}

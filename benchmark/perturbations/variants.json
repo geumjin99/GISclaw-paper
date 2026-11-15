@@ -1,0 +1,279 @@
+{
+ "102": {
+  "base": 2,
+  "perturbation": "reprojected inputs",
+  "reprojected": {
+   "BusServiceArea.geojson": {
+    "from": "EPSG:4326",
+    "to": "EPSG:32616"
+   },
+   "HamiltonDemographics.geojson": {
+    "from": "EPSG:4326",
+    "to": "EPSG:32616"
+   }
+  }
+ },
+ "202": {
+  "base": 2,
+  "perturbation": "renamed fields",
+  "renamed": {
+   "HamiltonDemographics.geojson": {
+    "populationtotals_TOTPOP_CY": "pop_total_cy",
+    "households_ACSHHBPOV": "poverty_hh_acs",
+    "AtRisk_ACSOVEH0": "no_vehicle_acs",
+    "populationToPolygonSizeRating": "pop_size_rating"
+   }
+  }
+ },
+ "302": {
+  "base": 2,
+  "perturbation": "reworded instruction"
+ },
+ "110": {
+  "base": 10,
+  "perturbation": "reprojected inputs",
+  "reprojected": {
+   "roads.geojson": {
+    "from": "EPSG:4326",
+    "to": "EPSG:32720"
+   },
+   "deforestedArea.geojson": {
+    "from": "EPSG:4326",
+    "to": "EPSG:32720"
+   },
+   "protectedForest.geojson": {
+    "from": "EPSG:4326",
+    "to": "EPSG:32720"
+   },
+   "planned_road.geojson": {
+    "from": "PROJCS[\"South_America_Albers_Equal_Area_Conic\",GEOGCS[\"SAD69\",DATUM[\"South_American_Datum_1969\",SPHEROID[\"GRS 1967 Modified\",6378160,298.25,AUTHORITY[\"EPSG\",\"7050\"]],AUTHORITY[\"EPSG\",\"6618\"]],PRIMEM[\"Greenwich\",0,AUTHORITY[\"EPSG\",\"8901\"]],UNIT[\"degree\",0.0174532925199433,AUTHORITY[\"EPSG\",\"9122\"]],AUTHORITY[\"EPSG\",\"4618\"]],PROJECTION[\"Albers_Conic_Equal_Area\"],PARAMETER[\"latitude_of_center\",-32],PARAMETER[\"longitude_of_center\",-60],PARAMETER[\"standard_parallel_1\",-5],PARAMETER[\"standard_parallel_2\",-42],PARAMETER[\"false_easting\",0],PARAMETER[\"false_northing\",0],UNIT[\"metre\",1,AUTHORITY[\"EPSG\",\"9001\"]],AXIS[\"Easting\",EAST],AXIS[\"Northing\",NORTH],AUTHORITY[\"ESRI\",\"102033\"]]",
+    "to": "EPSG:4326"
+   }
+  }
+ },
+ "210": {
+  "base": 10,
+  "perturbation": "renamed fields",
+  "not_applicable": "the analysis uses no attribute field (buffer/overlay of geometries only)"
+ },
+ "310": {
+  "base": 10,
+  "perturbation": "reworded instruction"
+ },
+ "118": {
+  "base": 18,
+  "perturbation": "reprojected inputs",
+  "reprojected": {
+   "street_trees_sample.geojson": {
+    "from": "EPSG:4326",
+    "to": "EPSG:32610"
+   },
+   "sfo_boroughs.geojson": {
+    "from": "EPSG:4326",
+    "to": "EPSG:32610"
+   }
+  }
+ },
+ "218": {
+  "base": 18,
+  "perturbation": "renamed fields",
+  "renamed": {
+   "street_trees_sample.geojson": {
+    "Species": "tree_species"
+   }
+  }
+ },
+ "318": {
+  "base": 18,
+  "perturbation": "reworded instruction"
+ },
+ "119": {
+  "base": 19,
+  "perturbation": "reprojected inputs",
+  "reprojected": {
+   "DissolvedO2.geojson": {
+    "from": "EPSG:32618",
+    "to": "EPSG:4326"
+   },
+   "Bay.geojson": {
+    "from": "EPSG:32618",
+    "to": "EPSG:4326"
+   }
+  }
+ },
+ "219": {
+  "base": 19,
+  "perturbation": "renamed fields",
+  "renamed": {
+   "DissolvedO2.geojson": {
+    "MeasureValue": "obs_value",
+    "Station": "station_code"
+   }
+  }
+ },
+ "319": {
+  "base": 19,
+  "perturbation": "reworded instruction"
+ },
+ "120": {
+  "base": 20,
+  "perturbation": "reprojected inputs",
+  "reprojected": {
+   "sn_w_minoccs.gpkg": {
+    "from": "EPSG:28355",
+    "to": "EPSG:4326"
+   }
+  }
+ },
+ "220": {
+  "base": 20,
+  "perturbation": "renamed fields",
+  "not_applicable": "the analysis uses no attribute field of the occurrence points"
+ },
+ "320": {
+  "base": 20,
+  "perturbation": "reworded instruction"
+ },
+ "124": {
+  "base": 24,
+  "perturbation": "reprojected inputs",
+  "reprojected": {
+   "High_Blood_Level_Results.shp": {
+    "from": "EPSG:3857",
+    "to": "EPSG:32610"
+   },
+   "Sacramento_ZIP_Codes.shp": {
+    "from": "EPSG:4326",
+    "to": "EPSG:32610"
+   }
+  }
+ },
+ "224": {
+  "base": 24,
+  "perturbation": "renamed fields",
+  "not_applicable": "both layers are geometry-only (no attribute fields)"
+ },
+ "324": {
+  "base": 24,
+  "perturbation": "reworded instruction"
+ },
+ "126": {
+  "base": 26,
+  "perturbation": "reprojected inputs",
+  "reprojected": {
+   "mc_soils.shp": {
+    "from": "EPSG:5070",
+    "to": "EPSG:4326"
+   },
+   "mc_boundary.shp": {
+    "from": "EPSG:3857",
+    "to": "EPSG:4326"
+   }
+  }
+ },
+ "226": {
+  "base": 26,
+  "perturbation": "renamed fields",
+  "renamed": {
+   "mc_soils.shp": {
+    "drclassdcd": "drain_cls",
+    "wdepannmin": "wt_depth",
+    "hydgrpdcd": "hydro_grp"
+   }
+  }
+ },
+ "326": {
+  "base": 26,
+  "perturbation": "reworded instruction"
+ },
+ "129": {
+  "base": 29,
+  "perturbation": "reprojected inputs",
+  "reprojected": {
+   "TsunamiSources.gpkg": {
+    "from": "PROJCS[\"Atlantic_Albers_EqualArea_Custom\",GEOGCS[\"WGS 84\",DATUM[\"WGS_1984\",SPHEROID[\"WGS 84\",6378137,298.257223563,AUTHORITY[\"EPSG\",\"7030\"]],AUTHORITY[\"EPSG\",\"6326\"]],PRIMEM[\"Greenwich\",0],UNIT[\"Degree\",0.0174532925199433]],PROJECTION[\"Albers_Conic_Equal_Area\"],PARAMETER[\"latitude_of_center\",27.6538611111111],PARAMETER[\"longitude_of_center\",-47.4901388888889],PARAMETER[\"standard_parallel_1\",18.60275],PARAMETER[\"standard_parallel_2\",36.6932777777778],PARAMETER[\"false_easting\",0],PARAMETER[\"false_northing\",0],UNIT[\"metre\",1,AUTHORITY[\"EPSG\",\"9001\"]],AXIS[\"Easting\",EAST],AXIS[\"Northing\",NORTH]]",
+    "to": "EPSG:4326"
+   },
+   "TsuniamiPaths.gpkg": {
+    "from": "PROJCS[\"Atlantic_Albers_EqualArea_Custom\",GEOGCS[\"WGS 84\",DATUM[\"WGS_1984\",SPHEROID[\"WGS 84\",6378137,298.257223563,AUTHORITY[\"EPSG\",\"7030\"]],AUTHORITY[\"EPSG\",\"6326\"]],PRIMEM[\"Greenwich\",0],UNIT[\"Degree\",0.0174532925199433]],PROJECTION[\"Albers_Conic_Equal_Area\"],PARAMETER[\"latitude_of_center\",27.6538611111111],PARAMETER[\"longitude_of_center\",-47.4901388888889],PARAMETER[\"standard_parallel_1\",18.60275],PARAMETER[\"standard_parallel_2\",36.6932777777778],PARAMETER[\"false_easting\",0],PARAMETER[\"false_northing\",0],UNIT[\"metre\",1,AUTHORITY[\"EPSG\",\"9001\"]],AXIS[\"Easting\",EAST],AXIS[\"Northing\",NORTH]]",
+    "to": "EPSG:4326"
+   },
+   "World_Countries.gpkg": {
+    "from": "PROJCS[\"Atlantic_Albers_EqualArea_Custom\",GEOGCS[\"WGS 84\",DATUM[\"WGS_1984\",SPHEROID[\"WGS 84\",6378137,298.257223563,AUTHORITY[\"EPSG\",\"7030\"]],AUTHORITY[\"EPSG\",\"6326\"]],PRIMEM[\"Greenwich\",0],UNIT[\"Degree\",0.0174532925199433]],PROJECTION[\"Albers_Conic_Equal_Area\"],PARAMETER[\"latitude_of_center\",27.6538611111111],PARAMETER[\"longitude_of_center\",-47.4901388888889],PARAMETER[\"standard_parallel_1\",18.60275],PARAMETER[\"standard_parallel_2\",36.6932777777778],PARAMETER[\"false_easting\",0],PARAMETER[\"false_northing\",0],UNIT[\"metre\",1,AUTHORITY[\"EPSG\",\"9001\"]],AXIS[\"Easting\",EAST],AXIS[\"Northing\",NORTH]]",
+    "to": "EPSG:4326"
+   }
+  }
+ },
+ "229": {
+  "base": 29,
+  "perturbation": "renamed fields",
+  "renamed": {
+   "TsuniamiPaths.gpkg": {
+    "Route": "route_label",
+    "lengthkm": "length_km"
+   },
+   "TsunamiSources.gpkg": {
+    "Name": "site_name"
+   }
+  }
+ },
+ "329": {
+  "base": 29,
+  "perturbation": "reworded instruction"
+ },
+ "142": {
+  "base": 42,
+  "perturbation": "reprojected inputs",
+  "reprojected": {
+   "berlin-neighbourhoods.geojson": {
+    "from": "EPSG:4326",
+    "to": "EPSG:32633"
+   }
+  }
+ },
+ "242": {
+  "base": 42,
+  "perturbation": "renamed fields",
+  "renamed": {
+   "berlin-neighbourhoods.geojson": {
+    "neighbourhood_group": "district_name",
+    "neighbourhood": "nbhd_name"
+   },
+   "berlin-listings.csv": {
+    "price": "nightly_price",
+    "latitude": "lat_wgs84",
+    "longitude": "lon_wgs84"
+   }
+  }
+ },
+ "342": {
+  "base": 42,
+  "perturbation": "reworded instruction"
+ },
+ "149": {
+  "base": 49,
+  "perturbation": "reprojected inputs",
+  "reprojected": {
+   "USA_States.shp": {
+    "from": "EPSG:3857",
+    "to": "EPSG:4326"
+   }
+  }
+ },
+ "249": {
+  "base": 49,
+  "perturbation": "renamed fields",
+  "renamed": {
+   "homeless_data.xlsx": {
+    "State": "StateCode",
+    "Change": "Chg1213",
+    "Pop13": "Pop2013",
+    "Homeless13": "HomelessCt"
+   }
+  }
+ },
+ "349": {
+  "base": 49,
+  "perturbation": "reworded instruction"
+ }
+}

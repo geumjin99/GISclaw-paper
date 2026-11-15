@@ -1,0 +1,125 @@
+{
+ "cell_id": "main.H2.DA.qwen38-27b.r2.T39",
+ "task": 39,
+ "status": "ok",
+ "analytically_correct": false,
+ "scorer_error": false,
+ "checks": [
+  {
+   "name": "required output present",
+   "passed": true,
+   "value": [
+    "GA_GWR.png"
+   ],
+   "threshold": [
+    "GA_GWR.png",
+    "ga_gwr.png",
+    "GA_GWR.PNG"
+   ],
+   "required": true,
+   "note": ""
+  },
+  {
+   "name": "figure not blank",
+   "passed": true,
+   "value": 54.38991631716597,
+   "threshold": ">=3 grey-level std",
+   "required": true,
+   "note": ""
+  },
+  {
+   "name": "optimal bandwidth searched (Sel_BW result present)",
+   "passed": true,
+   "value": 147404.28858734912,
+   "threshold": "Sel_BW optimum +/-2 % or optimum surface r >= 0.998",
+   "required": true,
+   "note": "bws@final ~ 144841.95"
+  },
+  {
+   "name": "local GWR slope surfaces match gold (Pearson >= 0.97) and no extra regressor",
+   "passed": false,
+   "value": 0.594,
+   "threshold": 0.97,
+   "required": true,
+   "note": "B[:,2]@final ~ gold bw150_PctBlack; no coefficient array captured"
+  },
+  {
+   "name": "figure shows GWR surfaces or the AICc-bandwidth profile",
+   "passed": false,
+   "value": null,
+   "threshold": null,
+   "required": true,
+   "note": "UNVERIFIABLE: no drawn collection / line located on the counties",
+   "unverifiable": true
+  },
+  {
+   "name": "figure compares >= 2 GWR-family models",
+   "passed": false,
+   "value": null,
+   "threshold": "2 models' surfaces (|Spearman| >= 0.90, maps not identical), profile >= 4 bandwidths, or >= 2 model diagnostics",
+   "required": true,
+   "note": "no drawn GWR surface, profile or diagnostic chart"
+  }
+ ],
+ "replay": {
+  "success": true,
+  "outputs": [
+   "GA_GWR.png"
+  ],
+  "events": [],
+  "blocks_ok": 26,
+  "block_outcome": [
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok"
+  ],
+  "step_timeout_s": 900,
+  "same_outputs_as_original": false,
+  "block_mismatches": []
+ },
+ "replay_faithful": true,
+ "replay_unfaithful_reasons": [],
+ "replay_container_failure": [],
+ "correct_without_emergency": false,
+ "emergency_files": [
+  "emergency_output.csv"
+ ]
+}

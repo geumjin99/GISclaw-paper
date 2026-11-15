@@ -1,0 +1,138 @@
+{
+ "cell_id": "main.H0.SA.claude-opus-5-5.r1.T25",
+ "task": 25,
+ "status": "ok",
+ "analytically_correct": true,
+ "scorer_error": false,
+ "checks": [
+  {
+   "name": "output written (non-blank map or result file)",
+   "passed": true,
+   "value": [
+    "cluster_profiles.png",
+    "covid_risk_profiles.png",
+    "risk_maps.png",
+    "ExpoRisk_similarity.shp",
+    "ScarRisk_similarity.shp",
+    "SuscRisk_similarity.shp",
+    "TransRisk_similarity.shp",
+    "hkg_covid_risk_profiles.csv",
+    "hkg_covid_risk_profiles.shp"
+   ],
+   "threshold": null,
+   "required": true,
+   "note": ""
+  },
+  {
+   "name": "transmission risk score matches gold (Spearman)",
+   "passed": true,
+   "value": 0.9999,
+   "threshold": 0.95,
+   "required": true,
+   "note": "TransRisk in res@final"
+  },
+  {
+   "name": "susceptibility risk score matches gold (Spearman)",
+   "passed": true,
+   "value": 1.0,
+   "threshold": 0.95,
+   "required": true,
+   "note": "SuscRisk in res@final"
+  },
+  {
+   "name": "resource scarcity risk score matches gold (Spearman)",
+   "passed": true,
+   "value": 1.0,
+   "threshold": 0.95,
+   "required": true,
+   "note": "ScarRisk in res@final"
+  },
+  {
+   "name": "exposure risk score matches gold (Spearman)",
+   "passed": true,
+   "value": 1.0,
+   "threshold": 0.95,
+   "required": true,
+   "note": "ExpoRisk in res@final"
+  },
+  {
+   "name": "clustering is a near-optimal K-means partition of the four risk scores",
+   "passed": true,
+   "value": 0.99,
+   "threshold": 0.9,
+   "required": true,
+   "note": "CLUSTER_ID in res@final, k=3"
+  },
+  {
+   "name": "method fidelity: SEEDS-initialised K-means (3 clusters, ARI>=0.8 with gold)",
+   "passed": true,
+   "value": 0.982,
+   "threshold": 0.8,
+   "required": true,
+   "note": "CLUSTER_ID in res@final; instructed: K-means initialised from SEEDS"
+  },
+  {
+   "name": "deliverable files carry a CRS (uniform rule)",
+   "passed": true,
+   "value": [
+    "ExpoRisk_similarity.shp",
+    "ScarRisk_similarity.shp",
+    "SuscRisk_similarity.shp",
+    "TransRisk_similarity.shp",
+    "hkg_covid_risk_profiles.shp"
+   ],
+   "threshold": "every geographic deliverable file has a CRS",
+   "required": true,
+   "note": "5 geographic deliverable file(s), all with a CRS"
+  }
+ ],
+ "replay": {
+  "success": true,
+  "outputs": [
+   "ExpoRisk_similarity.cpg",
+   "ExpoRisk_similarity.dbf",
+   "ExpoRisk_similarity.prj",
+   "ExpoRisk_similarity.shp",
+   "ExpoRisk_similarity.shx",
+   "ScarRisk_similarity.cpg",
+   "ScarRisk_similarity.dbf",
+   "ScarRisk_similarity.prj",
+   "ScarRisk_similarity.shp",
+   "ScarRisk_similarity.shx",
+   "SuscRisk_similarity.cpg",
+   "SuscRisk_similarity.dbf",
+   "SuscRisk_similarity.prj",
+   "SuscRisk_similarity.shp",
+   "SuscRisk_similarity.shx",
+   "TransRisk_similarity.cpg",
+   "TransRisk_similarity.dbf",
+   "TransRisk_similarity.prj",
+   "TransRisk_similarity.shp",
+   "TransRisk_similarity.shx",
+   "cluster_profiles.png",
+   "covid_risk_profiles.png",
+   "hkg_covid_risk_profiles.cpg",
+   "hkg_covid_risk_profiles.csv",
+   "hkg_covid_risk_profiles.dbf",
+   "hkg_covid_risk_profiles.prj",
+   "hkg_covid_risk_profiles.shp",
+   "hkg_covid_risk_profiles.shx",
+   "risk_maps.png"
+  ],
+  "events": [],
+  "blocks_ok": 4,
+  "block_outcome": [
+   "ok",
+   "ok",
+   "ok",
+   "ok"
+  ],
+  "step_timeout_s": 900,
+  "same_outputs_as_original": true,
+  "block_mismatches": []
+ },
+ "replay_faithful": true,
+ "replay_unfaithful_reasons": [],
+ "replay_container_failure": [],
+ "emergency_files": []
+}

@@ -1,0 +1,152 @@
+{
+ "cell_id": "main.H0.SA.claude-opus-5-5.r2.T30",
+ "experiment": "main",
+ "tier": "H0",
+ "arch": "SA",
+ "model": "claude-opus-5-5",
+ "run": 2,
+ "task": 30,
+ "elapsed_s": 191.9,
+ "protocol": "native",
+ "tier_config": {
+  "tools": [
+   "execute",
+   "finish"
+  ],
+  "generic": false,
+  "g1": false,
+  "g2": false,
+  "g3": false,
+  "g4": false,
+  "g5": false,
+  "g6": false,
+  "g7": false,
+  "no_dd": false,
+  "no_dk": false
+ },
+ "outputs": [
+  "README_summary.txt",
+  "accessibility_comparison.png",
+  "accessibility_metrics.csv",
+  "bike_route_analysis_maps.png",
+  "city_proposal_halfmile_buffer.cpg",
+  "city_proposal_halfmile_buffer.dbf",
+  "city_proposal_halfmile_buffer.prj",
+  "city_proposal_halfmile_buffer.shp",
+  "city_proposal_halfmile_buffer.shx",
+  "city_proposal_segments.csv",
+  "city_proposed_bike_lanes.cpg",
+  "city_proposed_bike_lanes.dbf",
+  "city_proposed_bike_lanes.prj",
+  "city_proposed_bike_lanes.shp",
+  "city_proposed_bike_lanes.shx",
+  "city_proposed_bike_lanes_dissolved.cpg",
+  "city_proposed_bike_lanes_dissolved.dbf",
+  "city_proposed_bike_lanes_dissolved.prj",
+  "city_proposed_bike_lanes_dissolved.shp",
+  "city_proposed_bike_lanes_dissolved.shx",
+  "demand_centers.cpg",
+  "demand_centers.dbf",
+  "demand_centers.prj",
+  "demand_centers.shp",
+  "demand_centers.shx",
+  "demand_hotspots_grid.cpg",
+  "demand_hotspots_grid.dbf",
+  "demand_hotspots_grid.prj",
+  "demand_hotspots_grid.shp",
+  "demand_hotspots_grid.shx",
+  "od_route_evaluation.csv",
+  "od_routes.cpg",
+  "od_routes.dbf",
+  "od_routes.prj",
+  "od_routes.shp",
+  "od_routes.shx",
+  "recommended_bike_network.cpg",
+  "recommended_bike_network.dbf",
+  "recommended_bike_network.prj",
+  "recommended_bike_network.shp",
+  "recommended_bike_network.shx",
+  "recommended_halfmile_buffer.cpg",
+  "recommended_halfmile_buffer.dbf",
+  "recommended_halfmile_buffer.prj",
+  "recommended_halfmile_buffer.shp",
+  "recommended_halfmile_buffer.shx",
+  "street_suitability.cpg",
+  "street_suitability.dbf",
+  "street_suitability.prj",
+  "street_suitability.shp",
+  "street_suitability.shx",
+  "zoning_coverage_city_proposal.csv"
+ ],
+ "required_outputs": [],
+ "required_present": null,
+ "emergency_files": [],
+ "rounds": 22,
+ "self_corrections": 1,
+ "agent_stats": {
+  "rounds": 22,
+  "format_errors": 0,
+  "format_error_kinds": {},
+  "self_corrections": 1,
+  "exec_blocks": 21,
+  "exec_failed": 1,
+  "finish_rejections": 0,
+  "dedup_blocked": 0,
+  "triggers": {},
+  "checks_run": {},
+  "end_reason": "finish",
+  "empty_retries": 0,
+  "history_truncations": 0,
+  "finished": true,
+  "agent_time_s": 15.8
+ },
+ "llm_stats": {
+  "calls": 22,
+  "retries": 0,
+  "errors": 0,
+  "context_overflow": 0,
+  "empty": 0,
+  "refusals": 0,
+  "prompt_tokens": 46,
+  "completion_tokens": 18851,
+  "cached_tokens": 391743,
+  "cache_write_tokens": 41217
+ },
+ "llm_time_s": 175.0,
+ "agent_time_s": 15.8,
+ "hit_deadline": false,
+ "sandbox_events": [],
+ "inputs_intact": true,
+ "container_memory": "12g",
+ "deliverable_produced": true,
+ "config": {
+  "image": "gisclaw-exec:1.0",
+  "step_timeout_s": 300,
+  "task_wall_s": 1200,
+  "max_rounds": 50,
+  "blocked_packages": {
+   "arcpy": "Use geopandas + rasterio + shapely instead."
+  },
+  "agent": {
+   "history_tokens": 60000,
+   "max_format_errors": 15
+  }
+ },
+ "model_config": {
+  "provider": "anthropic",
+  "model_name": "claude-opus-5-5",
+  "request": {
+   "set": {
+    "max_tokens": 32000,
+    "thinking": {
+     "type": "adaptive",
+     "display": "summarized"
+    },
+    "output_config": {
+     "effort": "high"
+    }
+   }
+  },
+  "history_tokens": 700000
+ }
+}

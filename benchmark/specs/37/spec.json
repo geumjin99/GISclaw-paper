@@ -1,0 +1,37 @@
+{
+ "task": 37,
+ "title": "National-scale heat-exposure sentiment from Twitter data by US county",
+ "output_type": "image (natural-breaks choropleth of normalised county heat exposure)",
+ "required_outputs": [
+  "US_heat_exposure_map.png"
+ ],
+ "method": "Parse data20000.txt into term->score (19 906 terms); case-insensitive lookup (keys lower-cased, an existing lower-case entry wins on collisions; lower-cased keys of <= 2 characters such as 'oF'/'oC' dropped); tweet value = sum of scores of lower-cased \\w+ tokens; keep tweets with value != 0 and a location (geo point [lat, lon], else centroid of place bounding box); point-in-polygon to 2020 counties; per county count and mean value; min-max normalise; Jenks natural breaks (k=5) choropleth. Gold variants for the checks: authors' literal lookup (lower-cased text, cased dictionary) and exact-case lookup.",
+ "key_parameters": {
+  "weather_tweets_located": 294,
+  "counties_with_posts": 92,
+  "variant_counties": {
+   "authors_literal": 75,
+   "exact_case": 65
+  },
+  "classification": "natural breaks, k=5",
+  "normalisation": "min-max over counties with posts"
+ },
+ "benchmark_defects": [
+  "The heat vocabulary is cased ('Hot', 'Cold', 'Warm', 'Cool' exist only capitalised; 'oF' = degrees F); the authors lower-case the tweet text but not the dictionary, so these core terms never match. The gold uses a case-insensitive lookup without unit fragments; the authors' literal and an exact-case lookup are accepted as variants.",
+  "The published reference script wraps everything in `if __name__ == '__main__':` and saves heat_exposure_map.png outside pred_results.",
+  "Few weather-related tweets fall in US counties and many counties have a single tweet, so the map is noisy.",
+  "Place-tagged tweets with state/country bounding boxes are assigned to the box centroid by the authors' method (spurious county attribution); dropping them is accepted.",
+  "Domain Knowledge contains mojibake after 'Heat Exposure'."
+ ],
+ "checks": [
+  "required: US_heat_exposure_map.png present",
+  "required: map not blank",
+  "required: a one-row-per-county result covers >= 60 % of the best-matching gold variant's counties with Spearman >= 0.80",
+  "required: county value is the mean, not the sum: in a regression on [mean, (n-1)*mean] the (n-1)*mean coefficient is < 0.4 of the mean coefficient",
+  "required: counties with a non-zero value <= 1.5 x the variant's count (weather filter applied)",
+  "required: the result is min-max normalised (min <= 0.02, max >= 0.98, within [0, 1])",
+  "required: drawn polygon colours (located per county via path bounding boxes) rank-correlate with the variant's county means (|rho| >= 0.70, coverage >= 60 %); if the colours do not fit a colormap, grey (achromatic) no-data faces are dropped and the fit retried",
+  "required (the text says 'choropleth map using natural break'): natural breaks / Fisher-Jenks classification used (code inspection, comments stripped)",
+  "optional: per-county post counts computed (Spearman >= 0.8 vs gold)"
+ ]
+}

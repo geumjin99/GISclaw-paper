@@ -1,0 +1,134 @@
+{
+ "cell_id": "main.H0.SA.qwen38-27b.r2.T05",
+ "experiment": "main",
+ "tier": "H0",
+ "arch": "SA",
+ "model": "qwen38-27b",
+ "run": 2,
+ "task": 5,
+ "elapsed_s": 1336.8,
+ "protocol": "native",
+ "tier_config": {
+  "tools": [
+   "execute",
+   "finish"
+  ],
+  "generic": false,
+  "g1": false,
+  "g2": false,
+  "g3": false,
+  "g4": false,
+  "g5": false,
+  "g6": false,
+  "g7": false,
+  "no_dd": false,
+  "no_dk": false
+ },
+ "outputs": [
+  "analysis_summary.csv",
+  "blood_lead_hotspots.png",
+  "case_points.cpg",
+  "case_points.dbf",
+  "case_points.prj",
+  "case_points.shp",
+  "case_points.shx",
+  "case_points_utm.cpg",
+  "case_points_utm.dbf",
+  "case_points_utm.prj",
+  "case_points_utm.shp",
+  "case_points_utm.shx",
+  "hex_summary.csv",
+  "hex_tessellation.cpg",
+  "hex_tessellation.dbf",
+  "hex_tessellation.geojson",
+  "hex_tessellation.prj",
+  "hex_tessellation.shp",
+  "hex_tessellation.shx",
+  "hex_tessellation_wgs84.cpg",
+  "hex_tessellation_wgs84.dbf",
+  "hex_tessellation_wgs84.prj",
+  "hex_tessellation_wgs84.shp",
+  "hex_tessellation_wgs84.shx",
+  "hotspot_hexes_99.cpg",
+  "hotspot_hexes_99.dbf",
+  "hotspot_hexes_99.prj",
+  "hotspot_hexes_99.shp",
+  "hotspot_hexes_99.shx",
+  "hotspot_hexes_99_wgs84.cpg",
+  "hotspot_hexes_99_wgs84.dbf",
+  "hotspot_hexes_99_wgs84.prj",
+  "hotspot_hexes_99_wgs84.shp",
+  "hotspot_hexes_99_wgs84.shx",
+  "hotspot_primary_hull.geojson",
+  "hotspot_primary_hull_wgs84.cpg",
+  "hotspot_primary_hull_wgs84.dbf",
+  "hotspot_primary_hull_wgs84.prj",
+  "hotspot_primary_hull_wgs84.shp",
+  "hotspot_primary_hull_wgs84.shx"
+ ],
+ "required_outputs": [
+  "blood_lead_hotspots.png"
+ ],
+ "required_present": true,
+ "emergency_files": [],
+ "rounds": 49,
+ "self_corrections": 9,
+ "agent_stats": {
+  "rounds": 49,
+  "format_errors": 0,
+  "format_error_kinds": {},
+  "self_corrections": 9,
+  "exec_blocks": 48,
+  "exec_failed": 20,
+  "finish_rejections": 0,
+  "dedup_blocked": 0,
+  "triggers": {},
+  "checks_run": {},
+  "end_reason": "finish",
+  "empty_retries": 0,
+  "history_truncations": 0,
+  "finished": true,
+  "agent_time_s": 39.4
+ },
+ "llm_stats": {
+  "calls": 49,
+  "retries": 0,
+  "errors": 0,
+  "context_overflow": 0,
+  "empty": 0,
+  "prompt_tokens": 1000922,
+  "completion_tokens": 57867,
+  "reasoning_tokens": 36906,
+  "cached_tokens": 0
+ },
+ "llm_time_s": 1295.9,
+ "agent_time_s": 39.4,
+ "hit_deadline": false,
+ "sandbox_events": [],
+ "inputs_intact": true,
+ "container_memory": "12g",
+ "deliverable_produced": true,
+ "config": {
+  "image": "gisclaw-exec:1.0",
+  "step_timeout_s": 300,
+  "task_wall_s": 1200,
+  "max_rounds": 50,
+  "blocked_packages": {
+   "arcpy": "Use geopandas + rasterio + shapely instead."
+  },
+  "agent": {
+   "history_tokens": 60000,
+   "max_format_errors": 15
+  }
+ },
+ "model_config": {
+  "provider": "vllm",
+  "model_name": "qwen3.8-27b-fp8",
+  "request": {
+   "set": {
+    "max_tokens": 32768,
+    "temperature": 1.0
+   }
+  }
+ }
+}

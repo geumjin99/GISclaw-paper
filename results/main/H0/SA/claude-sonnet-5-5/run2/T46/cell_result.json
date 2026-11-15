@@ -1,0 +1,116 @@
+{
+ "cell_id": "main.H0.SA.claude-sonnet-5-5.r2.T46",
+ "experiment": "main",
+ "tier": "H0",
+ "arch": "SA",
+ "model": "claude-sonnet-5-5",
+ "run": 2,
+ "task": 46,
+ "elapsed_s": 58.8,
+ "protocol": "native",
+ "tier_config": {
+  "tools": [
+   "execute",
+   "finish"
+  ],
+  "generic": false,
+  "g1": false,
+  "g2": false,
+  "g3": false,
+  "g4": false,
+  "g5": false,
+  "g6": false,
+  "g7": false,
+  "no_dd": false,
+  "no_dk": false
+ },
+ "outputs": [
+  "hotspot_map.png",
+  "hotspot_roads.cpg",
+  "hotspot_roads.dbf",
+  "hotspot_roads.prj",
+  "hotspot_roads.shp",
+  "hotspot_roads.shx",
+  "peak_crashes.cpg",
+  "peak_crashes.dbf",
+  "peak_crashes.prj",
+  "peak_crashes.shp",
+  "peak_crashes.shx",
+  "snapped_peak_crashes.cpg",
+  "snapped_peak_crashes.dbf",
+  "snapped_peak_crashes.prj",
+  "snapped_peak_crashes.shp",
+  "snapped_peak_crashes.shx"
+ ],
+ "required_outputs": [],
+ "required_present": null,
+ "emergency_files": [],
+ "rounds": 9,
+ "self_corrections": 1,
+ "agent_stats": {
+  "rounds": 9,
+  "format_errors": 0,
+  "format_error_kinds": {},
+  "self_corrections": 1,
+  "exec_blocks": 8,
+  "exec_failed": 1,
+  "finish_rejections": 0,
+  "dedup_blocked": 0,
+  "triggers": {},
+  "checks_run": {},
+  "end_reason": "finish",
+  "empty_retries": 0,
+  "history_truncations": 0,
+  "finished": true,
+  "agent_time_s": 5.7
+ },
+ "llm_stats": {
+  "calls": 9,
+  "retries": 0,
+  "errors": 0,
+  "context_overflow": 0,
+  "empty": 0,
+  "refusals": 0,
+  "prompt_tokens": 20,
+  "completion_tokens": 5776,
+  "cached_tokens": 55106,
+  "cache_write_tokens": 12960
+ },
+ "llm_time_s": 51.9,
+ "agent_time_s": 5.7,
+ "hit_deadline": false,
+ "sandbox_events": [],
+ "inputs_intact": true,
+ "container_memory": "12g",
+ "deliverable_produced": true,
+ "config": {
+  "image": "gisclaw-exec:1.0",
+  "step_timeout_s": 300,
+  "task_wall_s": 1200,
+  "max_rounds": 50,
+  "blocked_packages": {
+   "arcpy": "Use geopandas + rasterio + shapely instead."
+  },
+  "agent": {
+   "history_tokens": 60000,
+   "max_format_errors": 15
+  }
+ },
+ "model_config": {
+  "provider": "anthropic",
+  "model_name": "claude-sonnet-5-5",
+  "request": {
+   "set": {
+    "max_tokens": 32000,
+    "thinking": {
+     "type": "adaptive",
+     "display": "summarized"
+    },
+    "output_config": {
+     "effort": "high"
+    }
+   }
+  },
+  "history_tokens": 700000
+ }
+}

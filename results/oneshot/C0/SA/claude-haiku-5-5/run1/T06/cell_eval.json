@@ -1,0 +1,123 @@
+{
+ "cell_id": "oneshot.C0.SA.claude-haiku-5-5.r1.T06",
+ "task": 6,
+ "status": "ok",
+ "analytically_correct": true,
+ "scorer_error": false,
+ "checks": [
+  {
+   "name": "required output present",
+   "passed": true,
+   "value": [
+    "Elk_Analysis.png"
+   ],
+   "threshold": [
+    "Elk_Analysis.png"
+   ],
+   "required": true,
+   "note": ""
+  },
+  {
+   "name": "map not blank",
+   "passed": true,
+   "value": 61.28063573603692,
+   "threshold": ">=3 grey-level std",
+   "required": true,
+   "note": ""
+  },
+  {
+   "name": "home range polygon matches convex hull (IoU >= 0.90)",
+   "passed": true,
+   "value": 1.0,
+   "threshold": 0.9,
+   "required": true,
+   "note": "ind_mcp@final ~ population hull"
+  },
+  {
+   "name": "kernel density matches gold (grid r >= 0.6 or per-fix rho >= 0.7)",
+   "passed": true,
+   "value": {
+    "grid_r": 0.976,
+    "per_fix_rho": -1.0
+   },
+   "threshold": "grid r >= 0.6 or per-fix rho >= 0.7",
+   "required": true,
+   "note": "arr@final (gold extent)"
+  },
+  {
+   "name": "DBSCAN-style clusters with noise, spatially coherent",
+   "passed": true,
+   "value": {
+    "nn_same_label": 1.0,
+    "clusters": 51,
+    "noise_share": 0.013
+   },
+   "threshold": "noise label present, >=2 clusters, coherence >= 0.90",
+   "required": true,
+   "note": "cluster in s@final"
+  },
+  {
+   "name": "density-based clustering estimator called (DBSCAN/HDBSCAN/OPTICS)",
+   "passed": true,
+   "value": null,
+   "threshold": null,
+   "required": true,
+   "note": "call: DBSCAN("
+  },
+  {
+   "name": "Elk_Analysis.png overlays hull, density and clusters",
+   "passed": true,
+   "value": {
+    "outline": true,
+    "density": true,
+    "clusters": true
+   },
+   "threshold": "hull outline, density layer and cluster layer in the saved figure",
+   "required": true,
+   "note": "save00 wrote Elk_Analysis.png last (savefig record); outline: fig_ax0_line0; density: fig_ax1_image0; clusters: 10 point collections"
+  },
+  {
+   "name": "density image in Elk_Analysis.png drawn north-up at its true location (figure)",
+   "passed": true,
+   "value": null,
+   "threshold": null,
+   "required": false,
+   "note": "not assessable (no density image in map coordinates; contours / mesh / scatter carry their own coordinates)",
+   "kind": "figure"
+  },
+  {
+   "name": "distances computed in a projected CRS",
+   "passed": true,
+   "value": null,
+   "threshold": null,
+   "required": false,
+   "note": ""
+  }
+ ],
+ "replay": {
+  "success": true,
+  "outputs": [
+   "Elk_Analysis.png",
+   "Elk_DBSCAN_cluster_summary.csv",
+   "Elk_DBSCAN_clusters.geojson",
+   "Elk_KDE_density.tif",
+   "Elk_MBG_convex_hulls.geojson",
+   "Elk_MCP_per_individual.csv",
+   "Elk_MCP_per_season.csv",
+   "Elk_cluster_use_index.csv",
+   "Elk_points_with_DBSCAN_label.csv"
+  ],
+  "events": [],
+  "blocks_ok": 1,
+  "block_outcome": [
+   "ok"
+  ],
+  "step_timeout_s": 3600,
+  "same_outputs_as_original": true,
+  "block_mismatches": []
+ },
+ "replay_faithful": true,
+ "replay_unfaithful_reasons": [],
+ "replay_container_failure": [],
+ "emergency_files": []
+}

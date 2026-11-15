@@ -1,0 +1,103 @@
+{
+ "cell_id": "ablation.H2-g6.SA.gptoss-120b.r3.T25",
+ "task": 25,
+ "status": "ok",
+ "analytically_correct": false,
+ "scorer_error": false,
+ "checks": [
+  {
+   "name": "output written (non-blank map or result file)",
+   "passed": true,
+   "value": [
+    "covid_risk_profiles.shp"
+   ],
+   "threshold": null,
+   "required": true,
+   "note": ""
+  },
+  {
+   "name": "transmission risk score matches gold (Spearman)",
+   "passed": true,
+   "value": 0.9967,
+   "threshold": 0.95,
+   "required": true,
+   "note": "RiskScore_transmit in gdf@final"
+  },
+  {
+   "name": "susceptibility risk score matches gold (Spearman)",
+   "passed": true,
+   "value": 0.981,
+   "threshold": 0.95,
+   "required": true,
+   "note": "RiskScore_suscept in gdf@final"
+  },
+  {
+   "name": "resource scarcity risk score matches gold (Spearman)",
+   "passed": true,
+   "value": 0.9981,
+   "threshold": 0.95,
+   "required": true,
+   "note": "RiskScore_health in gdf@final"
+  },
+  {
+   "name": "exposure risk score matches gold (Spearman)",
+   "passed": true,
+   "value": 1.0,
+   "threshold": 0.95,
+   "required": true,
+   "note": "RiskScore_exposure in gdf@final"
+  },
+  {
+   "name": "clustering is a near-optimal K-means partition of the four risk scores",
+   "passed": true,
+   "value": 0.994,
+   "threshold": 0.9,
+   "required": true,
+   "note": "RiskCluster in gdf@final, k=2"
+  },
+  {
+   "name": "method fidelity: SEEDS-initialised K-means (3 clusters, ARI>=0.8 with gold)",
+   "passed": false,
+   "value": null,
+   "threshold": 0.8,
+   "required": true,
+   "note": "no 3-class column (best k=2); instructed: K-means initialised from SEEDS"
+  },
+  {
+   "name": "deliverable files carry a CRS (uniform rule)",
+   "passed": true,
+   "value": [
+    "covid_risk_profiles.shp"
+   ],
+   "threshold": "every geographic deliverable file has a CRS",
+   "required": true,
+   "note": "1 geographic deliverable file(s), all with a CRS"
+  }
+ ],
+ "replay": {
+  "success": true,
+  "outputs": [
+   "covid_risk_profiles.cpg",
+   "covid_risk_profiles.dbf",
+   "covid_risk_profiles.prj",
+   "covid_risk_profiles.shp",
+   "covid_risk_profiles.shx"
+  ],
+  "events": [],
+  "blocks_ok": 5,
+  "block_outcome": [
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok"
+  ],
+  "step_timeout_s": 900,
+  "same_outputs_as_original": true,
+  "block_mismatches": []
+ },
+ "replay_faithful": true,
+ "replay_unfaithful_reasons": [],
+ "replay_container_failure": [],
+ "emergency_files": []
+}

@@ -1,0 +1,15 @@
+{
+ "task": 10,
+ "source": "instruction: save the output as 'pred_results/predictedRiskyArea.png'; checks.py file_exists + png_not_blank (risky area and context layers are scored on captured objects / code)",
+ "deliverables": [
+  {
+   "id": "map",
+   "kind": "figure",
+   "patterns": ["predictedRiskyArea.png"],
+   "required": true,
+   "crs_required": false,
+   "checked_by": ["required output present", "map not blank"]
+  }
+ ],
+ "not_deliverables": []
+}

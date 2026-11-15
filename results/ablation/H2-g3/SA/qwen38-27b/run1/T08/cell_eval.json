@@ -1,0 +1,84 @@
+{
+ "cell_id": "ablation.H2-g3.SA.qwen38-27b.r1.T08",
+ "task": 8,
+ "status": "ok",
+ "analytically_correct": false,
+ "scorer_error": false,
+ "checks": [
+  {
+   "name": "required output present",
+   "passed": true,
+   "value": [
+    "Fire_Service_Analysis.png"
+   ],
+   "threshold": [
+    "Fire_Service_Analysis.png"
+   ],
+   "required": true,
+   "note": ""
+  },
+  {
+   "name": "map not blank",
+   "passed": true,
+   "value": 48.98861130365056,
+   "threshold": ">=3 grey-level std",
+   "required": true,
+   "note": ""
+  },
+  {
+   "name": "coverage-gap polygons match Etobicoke minus station buffers (IoU >= 0.90)",
+   "passed": false,
+   "value": {
+    "iou": 0.888,
+    "buffer_m": 2000
+   },
+   "threshold": "IoU 0.9; true radius = stated distance +-10 %; <= 0.5 % of the gap within 0.9 d of a station",
+   "required": true,
+   "note": "gap@final; stated buffer distance(s) [2000] m; 10.40 % of the gap within 0.9 d of a station -> areas served by some stations left in the gap (subset of stations buffered)"
+  },
+  {
+   "name": "the saved map draws the coverage-gap polygons",
+   "passed": false,
+   "value": 0.0,
+   "threshold": ">= 90 % of the gap area drawn",
+   "required": true,
+   "note": "save00 wrote Fire_Service_Analysis.png last (savefig record); no passing gap layer"
+  },
+  {
+   "name": "buffer distance 1.5-3 km",
+   "passed": true,
+   "value": 2000,
+   "threshold": "1500-3000 m",
+   "required": false,
+   "note": ""
+  }
+ ],
+ "replay": {
+  "success": true,
+  "outputs": [
+   "Fire_Service_Analysis.png"
+  ],
+  "events": [],
+  "blocks_ok": 8,
+  "block_outcome": [
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok"
+  ],
+  "step_timeout_s": 900,
+  "same_outputs_as_original": true,
+  "block_mismatches": []
+ },
+ "replay_faithful": true,
+ "replay_unfaithful_reasons": [],
+ "replay_container_failure": [],
+ "emergency_files": []
+}

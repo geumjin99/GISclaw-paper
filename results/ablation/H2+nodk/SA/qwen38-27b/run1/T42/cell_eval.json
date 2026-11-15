@@ -1,0 +1,137 @@
+{
+ "cell_id": "ablation.H2+nodk.SA.qwen38-27b.r1.T42",
+ "task": 42,
+ "status": "ok",
+ "analytically_correct": false,
+ "scorer_error": false,
+ "checks": [
+  {
+   "name": "required output present",
+   "passed": true,
+   "value": [
+    "moran_local.png"
+   ],
+   "threshold": [
+    "moran_local.png",
+    "Moran_Local.png",
+    "moran_local.PNG"
+   ],
+   "required": true,
+   "note": ""
+  },
+  {
+   "name": "map not blank",
+   "passed": true,
+   "value": 46.060528278373724,
+   "threshold": ">=3 grey-level std",
+   "required": true,
+   "note": ""
+  },
+  {
+   "name": "analysed variable = group median price",
+   "passed": true,
+   "value": 1.0,
+   "threshold": ">=0.90 of neighbourhoods within 3 % of gold",
+   "required": true,
+   "note": "group_median_price in neigh@final"
+  },
+  {
+   "name": "missing values handled (no NaN, plausible fill)",
+   "passed": true,
+   "value": [
+    35.0,
+    50.0,
+    0
+   ],
+   "threshold": "[31.5, 55.0], no NaN",
+   "required": true,
+   "note": "group_median_price in neigh_valid@final"
+  },
+  {
+   "name": "LISA hot/cold spots match gold (IoU >= 0.7), labels not inverted",
+   "passed": true,
+   "value": [
+    0.944,
+    0.808
+   ],
+   "threshold": ">=0.7 each, no inverted labels",
+   "required": true,
+   "note": "hot: fc in res2g@final==#d73027; cold: fc in res2g@final==#4575b4; gold n_hot=36 n_cold=23"
+  },
+  {
+   "name": "Local Moran's I computed (local I values captured or Moran_Local called)",
+   "passed": true,
+   "value": null,
+   "threshold": null,
+   "required": true,
+   "note": "local I values in I_local of res2g@save00"
+  },
+  {
+   "name": "map colours: hot spots drawn warmer than cold spots (presentation)",
+   "passed": false,
+   "value": null,
+   "threshold": null,
+   "required": false,
+   "note": "UNVERIFIABLE: no per-patch colours of the neighbourhoods captured in the map",
+   "kind": "figure",
+   "unverifiable": true
+  },
+  {
+   "name": "method: Queen contiguity weights (prescribed)",
+   "passed": false,
+   "value": null,
+   "threshold": null,
+   "required": true,
+   "note": "no Queen weights object, no Queen in code (Rook / KNN / distance band used?)"
+  }
+ ],
+ "replay": {
+  "success": true,
+  "outputs": [
+   "local_moran_results.csv",
+   "moran_local.png"
+  ],
+  "events": [],
+  "blocks_ok": 16,
+  "block_outcome": [
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok"
+  ],
+  "step_timeout_s": 900,
+  "same_outputs_as_original": true,
+  "block_mismatches": []
+ },
+ "replay_faithful": true,
+ "replay_unfaithful_reasons": [],
+ "replay_container_failure": [],
+ "emergency_files": []
+}

@@ -1,0 +1,28 @@
+{
+ "task": 15,
+ "title": "Geographic distribution of ionospheric Total Electron Content",
+ "output_type": "image (filled-contour map)",
+ "required_outputs": [
+  "TEC_vis.png"
+ ],
+ "method": "Load TEC (31 x 31) from space_weather.nc, mask the 192 negative (invalid) values, and draw a filled contour map in its rotated-pole coordinate system (grid north pole 45N/180E; centre 45N 0E) over a stock-image/coastline background.",
+ "key_parameters": {
+  "variable": "TEC (1e16 e/m^2)",
+  "mask": "TEC < 0",
+  "crs": "RotatedPole(pole_longitude=180, pole_latitude=45)",
+  "levels": "100 filled levels"
+ },
+ "benchmark_defects": [
+  "The TEC grid is on a rotated-pole grid; the task text does not mention it, and the 2-D latitude/longitude auxiliary variables in the file are mostly fill values (9.97e36), so they cannot be used for georeferencing.",
+  "Plotting rLon/rLat as geographic lon/lat places the field over Africa/the South Atlantic instead of Europe/North Atlantic (45 degrees off); the published reference script loads and plots the field with Iris (iris.load_cube, iris.quickplot.contourf)."
+ ],
+ "checks": [
+  "required: TEC_vis.png present",
+  "required: map not blank",
+  "required: the figure draws TEC at its true geographic location: each contour/contourf/pcolormesh call is parsed, X/Y/Z evaluated (no builtins) on the captured arrays (fallback: input file variables), CRS from transform= (or GeoAxes projection); drawn points converted to true lon/lat must coincide with the TEC cells (>= 99 % within 0.3 deg, values on non-negative cells = TEC up to a unit factor, >= 95 % coverage of non-negative cells); negative cells may be masked, raw or clipped; iris qplt/iplt of the cube accepted; nothing evaluable -> UNVERIFIABLE (not passed)",
+  "optional (not asked by the text): negative TEC cells masked (captured 31x31 array equals TEC on >= 99 % of valid cells, all negatives masked)",
+  "figure (kind=figure, never required): contour levels span ~0 .. max TEC (colour-scale range vs data range)",
+  "required (the text asks for 'a geographical and coastline background'): coastline / geographic background drawn - code (coastlines(), COASTLINE, feature.LAND/OCEAN, NaturalEarthFeature, stock_img, basemap tiles) or a polygon/line GeoDataFrame layer drawn in the saved map",
+  "required (the text says 'visualize it as a filled contour map'): TEC drawn as filled contours - a contourf call (matplotlib/cartopy, Iris qplt/iplt.contourf, DataArray.plot.contourf) itself passes the true-location evaluation; pcolormesh/imshow/line contours fail"
+ ]
+}

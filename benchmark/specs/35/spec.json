@@ -1,0 +1,40 @@
+{
+ "task": 35,
+ "title": "Post-wildfire landslide risk, Santa Rosa (2017)",
+ "output_type": "image (landslide risk map) + risk raster",
+ "required_outputs": [
+  "landslide_map.png"
+ ],
+ "method": "Bring DEM (Web Mercator, stored as LOCAL_CS) and NLCD (CONUS Albers) onto the Landsat UTM 10N 30 m grid (bilinear / nearest); NBR=(B5-B7)/(B5+B7) pre and post; dNBR = NBR_pre - NBR_post; slope in degrees from the metric DEM; remap to 1-5: dNBR USGS classes (0.10/0.27/0.44/0.66), slope 5/15/25/35 deg, land cover per the task table; risk = 0.30 burn + 0.55 slope + 0.15 land cover.",
+ "key_parameters": {
+  "grid": "Landsat UTM 10N 30 m (1602 x 1346)",
+  "weights": {
+   "land_cover": 0.15,
+   "burn_severity": 0.3,
+   "slope": 0.55
+  },
+  "burn_classes": "USGS dNBR thresholds",
+  "slope_breaks_deg": [
+   5,
+   15,
+   25,
+   35
+  ]
+ },
+ "benchmark_defects": [
+  "The three inputs are on three CRSs/grids (UTM 10N, Web Mercator as LOCAL_CS, CONUS Albers); the authors used pre-aligned rasters (aligned_DEM.tif, aligned_NLCD.tif) that are not supplied.",
+  "Domain Knowledge defines burn severity as 'after minus before', the opposite of the standard dNBR (pre - post) and of the authors' own code; remapping 'from low to high' then only makes sense with pre - post.",
+  "Burn-severity and slope class breaks are not specified (only the land-cover table); the authors' code min-max rescales slope to 1-91 and dNBR to [-1,1], which is not physically meaningful.",
+  "The published reference script reads the pre-aligned rasters and saves landslideRisk.png outside pred_results; stretching DEM/NLCD to the Landsat array (e.g. scipy zoom) ignores CRS and extent and misregisters the layers by kilometres.",
+  "Basins.tif is supplied but unused."
+ ],
+ "checks": [
+  "required: landslide_map.png present",
+  "required: map not blank",
+  "required: a risk surface on the Landsat/DEM/NLCD grid or georeferenced GeoTIFF with Pearson >= 0.80 vs gold (reprojected)",
+  "required: regression on burn/slope/land-cover classes: land cover = gold table classes; burn and slope = gold breaks, 5 equal-interval or 5 quantile classes of gold dNBR/slope, whichever fits the surface best (breaks are not given in the text); burn/slope >= 0.35 (>= 0.20 when a captured dNBR layer matches gold dNBR at |r| >= 0.97), land cover/slope >= 0.10, slope largest",
+  "required: an image drawn in the saved figure (a 2-D array written with plt.imsave counts as drawn) itself passes the two surface checks, displayed or vertically mirrored orientation",
+  "required (the text prescribes the NBR difference): a captured burn-severity layer with |r| >= 0.97 vs gold dNBR (dNDVI 0.92, bands 6/7 0.94 fail)",
+  "figure (presentation, never required): map drawn north up - the drawn-image check on the image as displayed (imshow origin; pcolormesh mesh y direction)"
+ ]
+}

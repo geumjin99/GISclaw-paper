@@ -1,0 +1,269 @@
+[
+ {
+  "control": "correct_benchmark_script",
+  "expected_correct": true,
+  "judged_correct": true,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [],
+  "scorer_error": false
+ },
+ {
+  "control": "correct_complement_drawn",
+  "expected_correct": true,
+  "judged_correct": true,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [],
+  "scorer_error": false
+ },
+ {
+  "control": "correct_complement_plus_district_outline",
+  "expected_correct": true,
+  "judged_correct": true,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [],
+  "scorer_error": false
+ },
+ {
+  "control": "correct_gap_drawn_in_wgs84_outline",
+  "expected_correct": true,
+  "judged_correct": true,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [],
+  "scorer_error": false
+ },
+ {
+  "control": "correct_mtm10_2km",
+  "expected_correct": true,
+  "judged_correct": true,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [],
+  "scorer_error": false
+ },
+ {
+  "control": "correct_rebound_radius",
+  "expected_correct": true,
+  "judged_correct": true,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [],
+  "scorer_error": false
+ },
+ {
+  "control": "correct_sensitivity_layer_first",
+  "expected_correct": true,
+  "judged_correct": true,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [],
+  "scorer_error": false
+ },
+ {
+  "control": "correct_shapely_gap",
+  "expected_correct": true,
+  "judged_correct": true,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [],
+  "scorer_error": false
+ },
+ {
+  "control": "correct_utm_500m",
+  "expected_correct": true,
+  "judged_correct": true,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [],
+  "scorer_error": false
+ },
+ {
+  "control": "wrong_complement_cov2000_gap2500",
+  "expected_correct": false,
+  "judged_correct": false,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [
+   "the saved map draws the coverage-gap polygons"
+  ],
+  "scorer_error": false
+ },
+ {
+  "control": "wrong_complement_cov2250_gap2500",
+  "expected_correct": false,
+  "judged_correct": false,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [
+   "the saved map draws the coverage-gap polygons"
+  ],
+  "scorer_error": false
+ },
+ {
+  "control": "wrong_complement_district_redrawn",
+  "expected_correct": false,
+  "judged_correct": false,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [
+   "the saved map draws the coverage-gap polygons"
+  ],
+  "scorer_error": false
+ },
+ {
+  "control": "wrong_complement_other_radius",
+  "expected_correct": false,
+  "judged_correct": false,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [
+   "the saved map draws the coverage-gap polygons"
+  ],
+  "scorer_error": false
+ },
+ {
+  "control": "wrong_complement_plus_unclipped_buffers",
+  "expected_correct": false,
+  "judged_correct": false,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [
+   "the saved map draws the coverage-gap polygons"
+  ],
+  "scorer_error": false
+ },
+ {
+  "control": "wrong_degree_buffer",
+  "expected_correct": false,
+  "judged_correct": false,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [
+   "coverage-gap polygons match Etobicoke minus station buffers (IoU >= 0.90)",
+   "the saved map draws the coverage-gap polygons"
+  ],
+  "scorer_error": false
+ },
+ {
+  "control": "wrong_degree_buffer_1km_map_buffers_only",
+  "expected_correct": false,
+  "judged_correct": false,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [
+   "coverage-gap polygons match Etobicoke minus station buffers (IoU >= 0.90)",
+   "the saved map draws the coverage-gap polygons"
+  ],
+  "scorer_error": false
+ },
+ {
+  "control": "wrong_degree_buffer_gap_drawn",
+  "expected_correct": false,
+  "judged_correct": false,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [
+   "coverage-gap polygons match Etobicoke minus station buffers (IoU >= 0.90)",
+   "the saved map draws the coverage-gap polygons"
+  ],
+  "scorer_error": false
+ },
+ {
+  "control": "wrong_gap_computed_not_drawn",
+  "expected_correct": false,
+  "judged_correct": false,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [
+   "the saved map draws the coverage-gap polygons"
+  ],
+  "scorer_error": false
+ },
+ {
+  "control": "wrong_inside_stations_1500m",
+  "expected_correct": false,
+  "judged_correct": false,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [
+   "coverage-gap polygons match Etobicoke minus station buffers (IoU >= 0.90)",
+   "the saved map draws the coverage-gap polygons"
+  ],
+  "scorer_error": false
+ },
+ {
+  "control": "wrong_one_section_only",
+  "expected_correct": false,
+  "judged_correct": false,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [
+   "coverage-gap polygons match Etobicoke minus station buffers (IoU >= 0.90)",
+   "the saved map draws the coverage-gap polygons"
+  ],
+  "scorer_error": false
+ },
+ {
+  "control": "wrong_only_etobicoke_stations",
+  "expected_correct": false,
+  "judged_correct": false,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [
+   "coverage-gap polygons match Etobicoke minus station buffers (IoU >= 0.90)",
+   "the saved map draws the coverage-gap polygons"
+  ],
+  "scorer_error": false
+ },
+ {
+  "control": "wrong_outline_as_gap",
+  "expected_correct": false,
+  "judged_correct": false,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [
+   "coverage-gap polygons match Etobicoke minus station buffers (IoU >= 0.90)",
+   "the saved map draws the coverage-gap polygons"
+  ],
+  "scorer_error": false
+ },
+ {
+  "control": "wrong_reversed_difference",
+  "expected_correct": false,
+  "judged_correct": false,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [
+   "coverage-gap polygons match Etobicoke minus station buffers (IoU >= 0.90)",
+   "the saved map draws the coverage-gap polygons"
+  ],
+  "scorer_error": false
+ },
+ {
+  "control": "wrong_stations_not_reprojected",
+  "expected_correct": false,
+  "judged_correct": false,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [
+   "coverage-gap polygons match Etobicoke minus station buffers (IoU >= 0.90)",
+   "the saved map draws the coverage-gap polygons"
+  ],
+  "scorer_error": false
+ },
+ {
+  "control": "wrong_webmercator_buffer",
+  "expected_correct": false,
+  "judged_correct": false,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [
+   "coverage-gap polygons match Etobicoke minus station buffers (IoU >= 0.90)",
+   "the saved map draws the coverage-gap polygons"
+  ],
+  "scorer_error": false
+ }
+]

@@ -1,0 +1,27 @@
+{
+ "task": 21,
+ "title": "Reclassify land cover and protected status to a common scale (mountain lion corridors)",
+ "output_type": "rasters (GeoTIFF)",
+ "required_outputs": [
+  "landCover_reclassified.tif",
+  "protected_status_reclassified.tif"
+ ],
+ "method": "Lookup-table reclassification of NLCD land cover (16 classes + 255) and protected status (0-4 + 255) to the 1-10 cost scale given in the task, each output value depending only on the original cell value; write uint8 GeoTIFFs on the input grid (NAD83 / UTM 11N, 30 m).",
+ "key_parameters": {
+  "landcover_table": "as given in Domain Knowledge (11->10, 21->8, 22->7, 23->8, 24->9, 31->6, 41->2, 42->1, 43->2, 52/71/72->3, 81->4, 82->6, 90/95->4, 255->10)",
+  "protected_table": "0->1, 1->3, 2->6, 3->9, 4->10, 255->10",
+  "unmapped": "land-cover value 0 (2.1 % of cells, outside the NLCD footprint) is not in the table; written as NoData (0) - any convention accepted"
+ },
+ "benchmark_defects": [
+  "Land-cover value 0 (160 768 cells) is not covered by the given table; the task does not say how to treat it.",
+  "Dataset Description names the file 'dataset/landcover.tif' while the file is 'landCover.tif' (case)."
+ ],
+ "checks": [
+  "required: landCover_reclassified.tif present (.tif/.tiff, case-insensitive)",
+  "required: land cover output on the input grid (same CRS, shape, transform within 1 m)",
+  "required: land cover output equals the given table on >= 99.5 % of cells whose input value is in the table, and within every tabulated input class",
+  "required: protected_status_reclassified.tif present",
+  "required: protected status output on the input grid",
+  "required: protected status output equals the given table on >= 99.5 % of mapped cells, and within every tabulated input class"
+ ]
+}

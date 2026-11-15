@@ -1,0 +1,110 @@
+{
+ "cell_id": "main.H2.DA.gptoss-120b.r2.T33",
+ "task": 33,
+ "status": "ok",
+ "analytically_correct": true,
+ "scorer_error": false,
+ "checks": [
+  {
+   "name": "result file written to pred_results",
+   "passed": true,
+   "value": [
+    "buildings_flood_damage.cpg",
+    "buildings_flood_damage.dbf",
+    "buildings_flood_damage.prj",
+    "buildings_flood_damage.shp",
+    "buildings_flood_damage.shx",
+    "buildings_mean_depth.cpg"
+   ],
+   "threshold": "any non-empty file",
+   "required": true,
+   "note": ""
+  },
+  {
+   "name": "per-building damage matches gold (Jaccard>=0.80, Spearman>=0.90)",
+   "passed": true,
+   "value": "Jaccard=0.643, precision=0.993, weighted recall=0.988, rho=0.994",
+   "threshold": "(Jaccard>=0.80 or (precision>=0.90 and weighted recall>=0.90)) and rho>=0.90",
+   "required": true,
+   "note": "bld.damage@final"
+  },
+  {
+   "name": "per-building damage values follow the given function (median pred/gold ratio 0.95-1.05)",
+   "passed": true,
+   "value": 1.0,
+   "threshold": "0.95-1.05",
+   "required": true,
+   "note": "bld.damage@final"
+  },
+  {
+   "name": "total damage within 10 % of gold",
+   "passed": true,
+   "value": 407533230,
+   "threshold": "4.113e+08 +/- 10 %",
+   "required": true,
+   "note": "total_damage"
+  },
+  {
+   "name": "per-building mean flood depth matches gold",
+   "passed": true,
+   "value": 0.987,
+   "threshold": 0.9,
+   "required": false,
+   "note": "flooded.mean_flood_depth_cm@final"
+  },
+  {
+   "name": "deliverable files carry a CRS (uniform rule)",
+   "passed": true,
+   "value": [
+    "buildings_flood_damage.shp",
+    "buildings_mean_depth.shp",
+    "flooded_area.shp"
+   ],
+   "threshold": "every geographic deliverable file has a CRS",
+   "required": true,
+   "note": "3 geographic deliverable file(s), all with a CRS"
+  }
+ ],
+ "replay": {
+  "success": true,
+  "outputs": [
+   "buildings_flood_damage.cpg",
+   "buildings_flood_damage.dbf",
+   "buildings_flood_damage.prj",
+   "buildings_flood_damage.shp",
+   "buildings_flood_damage.shx",
+   "buildings_mean_depth.cpg",
+   "buildings_mean_depth.dbf",
+   "buildings_mean_depth.prj",
+   "buildings_mean_depth.shp",
+   "buildings_mean_depth.shx",
+   "flood_damage_summary.csv",
+   "flood_depth.tif"
+  ],
+  "events": [],
+  "blocks_ok": 9,
+  "block_outcome": [
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok"
+  ],
+  "step_timeout_s": 900,
+  "same_outputs_as_original": false,
+  "block_mismatches": [
+   2
+  ]
+ },
+ "replay_faithful": false,
+ "replay_unfaithful_reasons": [
+  "block success differs at [2]"
+ ],
+ "replay_container_failure": [],
+ "emergency_files": []
+}

@@ -1,0 +1,25 @@
+{
+ "task": 16,
+ "title": "Quadratic temperature trend, North America (A1B), 1860-2099",
+ "output_type": "table (CSV)",
+ "required_outputs": [
+  "polynomial_fit_pred.csv"
+ ],
+ "method": "Extract the annual air_temperature series (240 years), fit a least-squares 2nd-order polynomial in time (numpy.polyfit), evaluate it for every year and write Year + fitted value. Reference: cos(latitude)-weighted mean over the North America grid; the unweighted domain mean is also accepted; the instruction asks for the regional mean, so a single grid point fails.",
+ "key_parameters": {
+  "degree": 2,
+  "series": "area-weighted domain mean (reference); alternatives accepted",
+  "years": "1860-2099 (240 rows)",
+  "units": "K (Celsius accepted)"
+ },
+ "benchmark_defects": [
+  "The published instruction does not say which location/aggregate to fit; the published reference script fits the first time-series slice of the cube (`next(cube.slices(['time']))`), i.e. a single grid point.",
+  "The published reference script depends on Iris and cftime, which the execution environment must provide."
+ ],
+ "checks": [
+  "required: polynomial_fit_pred.csv present and readable",
+  "required: one row per year 1860-2099 (year column or date strings)",
+  "required: a numeric column equals the least-squares quadratic fit (RMSE <= 0.02 K widened by the output rounding error (0.1 K precision -> 0.039 K; coarser than 0.1 K not credited), K or degC) of some grid-point series, the unweighted domain mean or the area-weighted domain mean",
+  "required: the fitted series is a domain mean (unweighted or area-weighted), not a single grid point"
+ ]
+}

@@ -1,0 +1,96 @@
+{
+ "cell_id": "main.H2.DA.claude-haiku-5-5.r3.T39",
+ "task": 39,
+ "status": "ok",
+ "analytically_correct": true,
+ "scorer_error": false,
+ "checks": [
+  {
+   "name": "required output present",
+   "passed": true,
+   "value": [
+    "GA_GWR.png"
+   ],
+   "threshold": [
+    "GA_GWR.png",
+    "ga_gwr.png",
+    "GA_GWR.PNG"
+   ],
+   "required": true,
+   "note": ""
+  },
+  {
+   "name": "figure not blank",
+   "passed": true,
+   "value": 65.55463656777412,
+   "threshold": ">=3 grey-level std",
+   "required": true,
+   "note": ""
+  },
+  {
+   "name": "optimal bandwidth searched (Sel_BW result present)",
+   "passed": true,
+   "value": 106363.81,
+   "threshold": "Sel_BW optimum +/-2 % or optimum surface r >= 0.998",
+   "required": true,
+   "note": "bw_fixed@final ~ 105939.8"
+  },
+  {
+   "name": "local GWR slope surfaces match gold (Pearson >= 0.97) and no extra regressor",
+   "passed": true,
+   "value": 0.999,
+   "threshold": 0.97,
+   "required": true,
+   "note": "GA_GWR_coefficients.csv.b_PctRural_adaptive@file ~ gold opt_PctRural; coefficient array gwr_tmp_f.params@final has 4 columns"
+  },
+  {
+   "name": "figure shows GWR surfaces or the AICc-bandwidth profile",
+   "passed": true,
+   "value": 0.998,
+   "threshold": "|Spearman| >= 0.90",
+   "required": true,
+   "note": "fig_ax5_coll0@save00 colours (RdBu) ~ gold opt_PctRural"
+  },
+  {
+   "name": "figure compares >= 2 GWR-family models",
+   "passed": true,
+   "value": "surfaces of 2 models",
+   "threshold": null,
+   "required": true,
+   "note": "fig_ax0_coll0@save00 ~ fixedgauss_PctFB (0.999) vs fig_ax3_coll0@save00 ~ opt_PctFB (0.997); between maps 0.941"
+  }
+ ],
+ "replay": {
+  "success": true,
+  "outputs": [
+   "GA_GWR.png",
+   "GA_GWR_coefficients.csv"
+  ],
+  "events": [],
+  "blocks_ok": 11,
+  "block_outcome": [
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok"
+  ],
+  "step_timeout_s": 900,
+  "same_outputs_as_original": true,
+  "block_mismatches": []
+ },
+ "replay_faithful": true,
+ "replay_unfaithful_reasons": [],
+ "replay_container_failure": [],
+ "emergency_files": []
+}

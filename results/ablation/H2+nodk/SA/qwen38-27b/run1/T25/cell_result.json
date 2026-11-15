@@ -1,0 +1,133 @@
+{
+ "cell_id": "ablation.H2+nodk.SA.qwen38-27b.r1.T25",
+ "experiment": "ablation",
+ "tier": "H2+nodk",
+ "arch": "SA",
+ "model": "qwen38-27b",
+ "run": 1,
+ "task": 25,
+ "elapsed_s": 618.4,
+ "protocol": "native",
+ "tier_config": {
+  "tools": [
+   "list_files",
+   "load_vector",
+   "load_raster",
+   "inspect",
+   "execute",
+   "lookup_api",
+   "finish"
+  ],
+  "generic": true,
+  "g1": true,
+  "g2": true,
+  "g3": true,
+  "g4": true,
+  "g5": true,
+  "g6": true,
+  "g7": true,
+  "no_dd": false,
+  "no_dk": true
+ },
+ "outputs": [
+  "covid19_risk_maps.png",
+  "exposure_risk.cpg",
+  "exposure_risk.dbf",
+  "exposure_risk.prj",
+  "exposure_risk.shp",
+  "exposure_risk.shx",
+  "healthcare_risk.cpg",
+  "healthcare_risk.dbf",
+  "healthcare_risk.prj",
+  "healthcare_risk.shp",
+  "healthcare_risk.shx",
+  "hkg_covid19_risk_final.cpg",
+  "hkg_covid19_risk_final.dbf",
+  "hkg_covid19_risk_final.prj",
+  "hkg_covid19_risk_final.shp",
+  "hkg_covid19_risk_final.shx",
+  "profile_summary.csv",
+  "similarity_search_details.csv",
+  "susceptibility_risk.cpg",
+  "susceptibility_risk.dbf",
+  "susceptibility_risk.prj",
+  "susceptibility_risk.shp",
+  "susceptibility_risk.shx",
+  "transmission_risk.cpg",
+  "transmission_risk.dbf",
+  "transmission_risk.prj",
+  "transmission_risk.shp",
+  "transmission_risk.shx"
+ ],
+ "required_outputs": [],
+ "required_present": null,
+ "emergency_files": [],
+ "rounds": 20,
+ "self_corrections": 4,
+ "agent_stats": {
+  "rounds": 20,
+  "format_errors": 0,
+  "format_error_kinds": {},
+  "self_corrections": 4,
+  "exec_blocks": 19,
+  "exec_failed": 4,
+  "finish_rejections": 0,
+  "dedup_blocked": 0,
+  "triggers": {
+   "g1:card": 1
+  },
+  "checks_run": {
+   "g2": 19,
+   "g3": 20,
+   "g7": 19,
+   "g6": 4,
+   "g4": 4
+  },
+  "end_reason": "finish",
+  "empty_retries": 0,
+  "history_truncations": 0,
+  "finished": true,
+  "agent_time_s": 4.7
+ },
+ "llm_stats": {
+  "calls": 20,
+  "retries": 0,
+  "errors": 0,
+  "context_overflow": 0,
+  "empty": 0,
+  "prompt_tokens": 313392,
+  "completion_tokens": 29690,
+  "reasoning_tokens": 20194,
+  "cached_tokens": 0
+ },
+ "llm_time_s": 612.4,
+ "agent_time_s": 4.7,
+ "hit_deadline": false,
+ "sandbox_events": [],
+ "inputs_intact": true,
+ "container_memory": "12g",
+ "deliverable_produced": true,
+ "config": {
+  "image": "gisclaw-exec:1.0",
+  "step_timeout_s": 300,
+  "task_wall_s": 1200,
+  "max_rounds": 50,
+  "blocked_packages": {
+   "arcpy": "Use geopandas + rasterio + shapely instead."
+  },
+  "agent": {
+   "history_tokens": 60000,
+   "max_format_errors": 15
+  }
+ },
+ "model_config": {
+  "provider": "vllm",
+  "model_name": "qwen3.8-27b-fp8",
+  "request": {
+   "set": {
+    "max_tokens": 32768,
+    "temperature": 1.0
+   }
+  }
+ }
+}

@@ -1,0 +1,92 @@
+{
+ "cell_id": "ablation.H2-g1.SA.qwen38-27b.r1.T02",
+ "task": 2,
+ "status": "ok",
+ "analytically_correct": true,
+ "scorer_error": false,
+ "checks": [
+  {
+   "name": "required output present",
+   "passed": true,
+   "value": [
+    "transit_access.png"
+   ],
+   "threshold": [
+    "transit_access.png"
+   ],
+   "required": true,
+   "note": ""
+  },
+  {
+   "name": "map not blank",
+   "passed": true,
+   "value": 46.64676298294167,
+   "threshold": ">=3 grey-level std",
+   "required": true,
+   "note": ""
+  },
+  {
+   "name": "three factors drawn (poverty, no-vehicle, density)",
+   "passed": true,
+   "value": {
+    "poverty": 1.0,
+    "no-vehicle": 1.0,
+    "density": 1.0
+   },
+   "threshold": "poverty/no-vehicle rho>=0.9, density rho>=0.8 (or literal rating column); distinct layers",
+   "required": true,
+   "note": "poverty: blocks@final.households_ACSHHBPOV; no-vehicle: blocks@final.AtRisk_ACSOVEH0; density: blocks@final.POP_DENS_KM2"
+  },
+  {
+   "name": "bus service area drawn and correctly located",
+   "passed": true,
+   "value": 1.0,
+   "threshold": "IoU >= 0.90",
+   "required": true,
+   "note": "bus_sa (IoU 1.0): bus_sa.plot(ax=ax, facecolor='green', alpha=0.18, edgecolor='black', linewidth=2.0, linestyle='--')"
+  },
+  {
+   "name": "population density derived (pop/area; rating column is constant)",
+   "passed": true,
+   "value": 1.0,
+   "threshold": 0.8,
+   "required": false,
+   "note": ""
+  },
+  {
+   "name": "geometric overlay of block groups and service area",
+   "passed": true,
+   "value": 1.0,
+   "threshold": 0.9,
+   "required": false,
+   "note": ""
+  }
+ ],
+ "replay": {
+  "success": true,
+  "outputs": [
+   "transit_access.png"
+  ],
+  "events": [],
+  "blocks_ok": 8,
+  "block_outcome": [
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok"
+  ],
+  "step_timeout_s": 900,
+  "same_outputs_as_original": true,
+  "block_mismatches": []
+ },
+ "replay_faithful": true,
+ "replay_unfaithful_reasons": [],
+ "replay_container_failure": [],
+ "emergency_files": []
+}

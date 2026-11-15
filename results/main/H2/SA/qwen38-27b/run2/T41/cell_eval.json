@@ -1,0 +1,90 @@
+{
+ "cell_id": "main.H2.SA.qwen38-27b.r2.T41",
+ "task": 41,
+ "status": "ok",
+ "analytically_correct": false,
+ "scorer_error": false,
+ "checks": [
+  {
+   "name": "result file written to pred_results",
+   "passed": true,
+   "value": [
+    "Campsites_Campgrounds_Relationship.gpkg",
+    "Campsites_Related_Attributes.csv",
+    "Campsites_WithParkJoin.gpkg",
+    "Park_Campsite_Summary.gpkg",
+    "campsite_data_quality_map.png",
+    "relationship_class.json"
+   ],
+   "threshold": "any non-empty file",
+   "required": true,
+   "note": ""
+  },
+  {
+   "name": "one-to-many campsite relate materialised (per-campsite related-record counts, Wyoming campsites)",
+   "passed": true,
+   "value": 1.0,
+   "threshold": ">= 0.95 of the 1,170 Wyoming campsites exact",
+   "required": true,
+   "note": "relate@final row non-null count ~ n_valued_attribute_names"
+  },
+  {
+   "name": "park-level join ParentOrgID -> OrgID (both parks carry 'National Park Service')",
+   "passed": false,
+   "value": [
+    "parks@final",
+    "sj@final",
+    "sj_out@final"
+   ],
+   "threshold": "a table with both parks and their organisation",
+   "required": true,
+   "note": ""
+  },
+  {
+   "name": "relationship campground (FacilityID) 1 -> many campsites (ParentFacilityID) materialised",
+   "passed": true,
+   "value": 1.0,
+   "threshold": "per campground: all 6 counts exact; per campsite: >= 0.95 parent facility exact",
+   "required": true,
+   "note": "rel_df@final: FacilityID by CampsiteID (per campsite)"
+  }
+ ],
+ "replay": {
+  "success": true,
+  "outputs": [
+   "Campsites_Campgrounds_Relationship.gpkg",
+   "Campsites_Related_Attributes.csv",
+   "Campsites_WithParkJoin.gpkg",
+   "Park_Campsite_Summary.gpkg",
+   "campsite_data_quality_map.png",
+   "relationship_class.json"
+  ],
+  "events": [],
+  "blocks_ok": 13,
+  "block_outcome": [
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok"
+  ],
+  "step_timeout_s": 900,
+  "same_outputs_as_original": true,
+  "block_mismatches": []
+ },
+ "replay_faithful": true,
+ "replay_unfaithful_reasons": [],
+ "replay_container_failure": [],
+ "emergency_files": []
+}

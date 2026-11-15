@@ -1,0 +1,269 @@
+[
+ {
+  "control": "correct_clipped_hexagons",
+  "expected_correct": true,
+  "judged_correct": true,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [],
+  "scorer_error": false
+ },
+ {
+  "control": "correct_fdr_bins_explicit_colours",
+  "expected_correct": true,
+  "judged_correct": true,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [],
+  "scorer_error": false
+ },
+ {
+  "control": "correct_five_class_diverging_95_99",
+  "expected_correct": true,
+  "judged_correct": true,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [],
+  "scorer_error": false
+ },
+ {
+  "control": "correct_h3_gistar",
+  "expected_correct": true,
+  "judged_correct": true,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [],
+  "scorer_error": false
+ },
+ {
+  "control": "correct_knn_halfkm_hexes",
+  "expected_correct": true,
+  "judged_correct": true,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [],
+  "scorer_error": false
+ },
+ {
+  "control": "correct_per_class_single_colour",
+  "expected_correct": true,
+  "judged_correct": true,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [],
+  "scorer_error": false
+ },
+ {
+  "control": "correct_permutation_p_classes",
+  "expected_correct": true,
+  "judged_correct": true,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [],
+  "scorer_error": false
+ },
+ {
+  "control": "correct_queen_bins_2km",
+  "expected_correct": true,
+  "judged_correct": true,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [],
+  "scorer_error": false
+ },
+ {
+  "control": "correct_seven_conf_bins_per_class",
+  "expected_correct": true,
+  "judged_correct": true,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [],
+  "scorer_error": false
+ },
+ {
+  "control": "correct_significant_only_overlay",
+  "expected_correct": true,
+  "judged_correct": true,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [],
+  "scorer_error": false
+ },
+ {
+  "control": "wrong_arbitrary_subset_overlay",
+  "expected_correct": false,
+  "judged_correct": false,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [
+   "the map draws the hot spot result on the hexagons"
+  ],
+  "scorer_error": false
+ },
+ {
+  "control": "wrong_counts_only_no_hotspot",
+  "expected_correct": false,
+  "judged_correct": false,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [
+   "hot spot statistic consistent with Gi* on the hexagon counts",
+   "the map draws the hot spot result on the hexagons"
+  ],
+  "scorer_error": false
+ },
+ {
+  "control": "wrong_crs_mismatch_join",
+  "expected_correct": false,
+  "judged_correct": false,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [
+   "hexagon tessellation with correct case counts",
+   "hot spot statistic consistent with Gi* on the hexagon counts",
+   "the map draws the hot spot result on the hexagons"
+  ],
+  "scorer_error": false
+ },
+ {
+  "control": "wrong_gistar_map_counts_only",
+  "expected_correct": false,
+  "judged_correct": false,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [
+   "the map draws the hot spot result on the hexagons"
+  ],
+  "scorer_error": false
+ },
+ {
+  "control": "wrong_gistar_on_fishnet_outlines",
+  "expected_correct": false,
+  "judged_correct": false,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [
+   "hot spot statistic consistent with Gi* on the hexagon counts",
+   "the map draws the hot spot result on the hexagons"
+  ],
+  "scorer_error": false
+ },
+ {
+  "control": "wrong_hot_flag_only",
+  "expected_correct": false,
+  "judged_correct": false,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [
+   "hot spot statistic consistent with Gi* on the hexagon counts",
+   "the map draws the hot spot result on the hexagons"
+  ],
+  "scorer_error": false
+ },
+ {
+  "control": "wrong_hot_subset_suppressed",
+  "expected_correct": false,
+  "judged_correct": false,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [
+   "the map draws the hot spot result on the hexagons"
+  ],
+  "scorer_error": false
+ },
+ {
+  "control": "wrong_individual_points",
+  "expected_correct": false,
+  "judged_correct": false,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [
+   "hexagon tessellation with correct case counts",
+   "hot spot statistic consistent with Gi* on the hexagon counts",
+   "the map draws the hot spot result on the hexagons",
+   "privacy: individual case locations are not drawn"
+  ],
+  "scorer_error": false
+ },
+ {
+  "control": "wrong_kde_as_hotspot",
+  "expected_correct": false,
+  "judged_correct": false,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [
+   "hot spot statistic consistent with Gi* on the hexagon counts",
+   "the map draws the hot spot result on the hexagons"
+  ],
+  "scorer_error": false
+ },
+ {
+  "control": "wrong_least_extreme_subset_overlay",
+  "expected_correct": false,
+  "judged_correct": false,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [
+   "the map draws the hot spot result on the hexagons"
+  ],
+  "scorer_error": false
+ },
+ {
+  "control": "wrong_local_moran_as_hotspot",
+  "expected_correct": false,
+  "judged_correct": false,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [
+   "hot spot statistic consistent with Gi* on the hexagon counts",
+   "the map draws the hot spot result on the hexagons"
+  ],
+  "scorer_error": false
+ },
+ {
+  "control": "wrong_per_class_count_classes",
+  "expected_correct": false,
+  "judged_correct": false,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [
+   "the map draws the hot spot result on the hexagons"
+  ],
+  "scorer_error": false
+ },
+ {
+  "control": "wrong_points_overlaid",
+  "expected_correct": false,
+  "judged_correct": false,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [
+   "privacy: individual case locations are not drawn"
+  ],
+  "scorer_error": false
+ },
+ {
+  "control": "wrong_square_fishnet",
+  "expected_correct": false,
+  "judged_correct": false,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [
+   "hexagon tessellation with correct case counts",
+   "hot spot statistic consistent with Gi* on the hexagon counts",
+   "the map draws the hot spot result on the hexagons"
+  ],
+  "scorer_error": false
+ },
+ {
+  "control": "wrong_three_class_z1_cut",
+  "expected_correct": false,
+  "judged_correct": false,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [
+   "the map draws the hot spot result on the hexagons"
+  ],
+  "scorer_error": false
+ }
+]

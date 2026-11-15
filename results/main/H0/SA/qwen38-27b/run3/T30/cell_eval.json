@@ -1,0 +1,170 @@
+{
+ "cell_id": "main.H0.SA.qwen38-27b.r3.T30",
+ "task": 30,
+ "status": "ok",
+ "analytically_correct": false,
+ "scorer_error": false,
+ "checks": [
+  {
+   "name": "map written (non-blank PNG)",
+   "passed": true,
+   "value": [
+    "accessibility_coverage.png",
+    "demand_hotspots.png",
+    "route_network.png",
+    "suitability_overlay.png"
+   ],
+   "threshold": null,
+   "required": false,
+   "note": ""
+  },
+  {
+   "name": "proposed routes cover the three designated corridors",
+   "passed": true,
+   "value": {
+    "Central": 1.0,
+    "East": 1.0,
+    "West": 1.0
+   },
+   "threshold": ">=0.5 each",
+   "required": true,
+   "note": "prop@final; 7.51 mi near Capitol Hill (gold 5.37)"
+  },
+  {
+   "name": "precision: proposed length lies on designated corridors",
+   "passed": true,
+   "value": 0.725,
+   "threshold": 0.5,
+   "required": false,
+   "note": ""
+  },
+  {
+   "name": "map shows the proposed routes",
+   "passed": true,
+   "value": 1.0,
+   "threshold": 0.5,
+   "required": false,
+   "note": "share of proposed route segments whose bbox matches a drawn path"
+  },
+  {
+   "name": "half-mile coverage of Capitol Hill matches gold",
+   "passed": false,
+   "value": null,
+   "threshold": "IoU>=0.85 (clipped to Capitol Hill) or share in [0.95, 0.983]",
+   "required": true,
+   "note": "values seen: [('cov_demand_pct', 80.211), ('cov_demand_pct', 80.211), ('cov_demand_pct', 80.211), ('cov_summary', 0.0), ('cov_summary', 1.0)]"
+  },
+  {
+   "name": "network analysis performed (graph shortest paths)",
+   "passed": true,
+   "value": [
+    "networkx",
+    "shortest_path",
+    "nx."
+   ],
+   "threshold": null,
+   "required": true,
+   "note": "instructed: 'Use Network Analyst to propose new routes'"
+  },
+  {
+   "name": "existing trail length in Capitol Hill measured",
+   "passed": true,
+   "value": null,
+   "threshold": null,
+   "required": false,
+   "note": "5227 ft / 0.99 mi / 1593 m"
+  },
+  {
+   "name": "deliverable files carry a CRS (uniform rule)",
+   "passed": false,
+   "value": [
+    "demand_hotspots.geojson: GeoJSON with projected coordinates and no 'crs' member",
+    "intermediate/streets_study.geojson: GeoJSON with projected coordinates and no 'crs' member",
+    "intermediate/study_area.geojson: GeoJSON with projected coordinates and no 'crs' member",
+    "intermediate/zoning_study.geojson: GeoJSON with projected coordinates and no 'crs' member",
+    "proposed_network.geojson: GeoJSON with projected coordinates and no 'crs' member",
+    "street_suitability.geojson: GeoJSON with projected coordinates and no 'crs' member"
+   ],
+   "threshold": "every geographic deliverable file has a CRS",
+   "required": true,
+   "note": "deliverable file(s) without CRS: demand_hotspots.geojson: GeoJSON with projected coordinates and no 'crs' member; intermediate/streets_study.geojson: GeoJSON with projected coordinates and no 'crs' member; intermediate/study_area.geojson: GeoJSON with projected coordinates and no 'crs' member; intermediate/zoning_study.geojson: GeoJSON with projected coordinates and no 'crs' member; proposed_network.geojson: GeoJSON with projected coordinates and no 'crs' member; street_suitability.geojson: GeoJSON with projected coordinates and no 'crs' member"
+  }
+ ],
+ "replay": {
+  "success": true,
+  "outputs": [
+   "accessibility_coverage.png",
+   "accessibility_hotspots.csv",
+   "demand_hotspots.csv",
+   "demand_hotspots.geojson",
+   "demand_hotspots.png",
+   "intermediate",
+   "proposed_network.geojson",
+   "proposed_network_segments.csv",
+   "route_network.png",
+   "street_suitability.geojson",
+   "suitability_overlay.png"
+  ],
+  "events": [],
+  "blocks_ok": 27,
+  "block_outcome": [
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok"
+  ],
+  "step_timeout_s": 900,
+  "same_outputs_as_original": true,
+  "block_mismatches": []
+ },
+ "replay_faithful": true,
+ "replay_unfaithful_reasons": [],
+ "replay_container_failure": [],
+ "emergency_files": []
+}

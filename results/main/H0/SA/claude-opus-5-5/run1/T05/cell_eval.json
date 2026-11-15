@@ -1,0 +1,114 @@
+{
+ "cell_id": "main.H0.SA.claude-opus-5-5.r1.T05",
+ "task": 5,
+ "status": "ok",
+ "analytically_correct": true,
+ "scorer_error": false,
+ "checks": [
+  {
+   "name": "required output present",
+   "passed": true,
+   "value": [
+    "blood_lead_hotspots.png"
+   ],
+   "threshold": [
+    "blood_lead_hotspots.png",
+    "transit_access.png"
+   ],
+   "required": true,
+   "note": ""
+  },
+  {
+   "name": "map not blank",
+   "passed": true,
+   "value": 39.16784201777073,
+   "threshold": ">=3 grey-level std",
+   "required": true,
+   "note": ""
+  },
+  {
+   "name": "hexagon tessellation with correct case counts",
+   "passed": true,
+   "value": {
+    "cells_with_exact_count": 1.0,
+    "cases_in_cells": 373
+   },
+   "threshold": ">=0.95 of cells exact, >=90 % of 373 cases covered",
+   "required": true,
+   "note": "count in H@final"
+  },
+  {
+   "name": "hot spot statistic consistent with Gi* on the hexagon counts",
+   "passed": true,
+   "value": 0.911,
+   "threshold": "Spearman >= 0.6 with recomputed Gi* z and Gi*-type values (signed z or bins)",
+   "required": true,
+   "note": "GiZ in H@final"
+  },
+  {
+   "name": "the map draws the hot spot result on the hexagons",
+   "passed": true,
+   "value": "fig_ax0_coll0_facecolors@save00 (facecolour classes of the statistic)",
+   "threshold": null,
+   "required": true,
+   "note": "GiZ in Hc@final"
+  },
+  {
+   "name": "privacy: individual case locations are not drawn",
+   "passed": true,
+   "value": 0,
+   "threshold": "< 20 drawn points on case locations",
+   "required": true,
+   "note": "no case points in the figure"
+  },
+  {
+   "name": "method fidelity: Getis-Ord hot spot code",
+   "passed": true,
+   "value": null,
+   "threshold": null,
+   "required": false,
+   "note": ""
+  },
+  {
+   "name": "privacy: median hexagon area >= 0.05 km2",
+   "passed": true,
+   "value": 0.65,
+   "threshold": 0.05,
+   "required": false,
+   "note": ""
+  }
+ ],
+ "replay": {
+  "success": true,
+  "outputs": [
+   "blood_lead_hotspot_hexagons.cpg",
+   "blood_lead_hotspot_hexagons.dbf",
+   "blood_lead_hotspot_hexagons.prj",
+   "blood_lead_hotspot_hexagons.shp",
+   "blood_lead_hotspot_hexagons.shx",
+   "blood_lead_hotspots.png",
+   "cases_in_hotspots.cpg",
+   "cases_in_hotspots.dbf",
+   "cases_in_hotspots.prj",
+   "cases_in_hotspots.shp",
+   "cases_in_hotspots.shx"
+  ],
+  "events": [],
+  "blocks_ok": 6,
+  "block_outcome": [
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok"
+  ],
+  "step_timeout_s": 900,
+  "same_outputs_as_original": true,
+  "block_mismatches": []
+ },
+ "replay_faithful": true,
+ "replay_unfaithful_reasons": [],
+ "replay_container_failure": [],
+ "emergency_files": []
+}

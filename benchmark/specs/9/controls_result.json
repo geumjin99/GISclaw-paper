@@ -1,0 +1,95 @@
+[
+ {
+  "control": "correct_percent_string",
+  "expected_correct": true,
+  "judged_correct": true,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [],
+  "scorer_error": false
+ },
+ {
+  "control": "correct_raster_edt_100m",
+  "expected_correct": true,
+  "judged_correct": true,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [],
+  "scorer_error": false
+ },
+ {
+  "control": "correct_tiled_utm23_fraction",
+  "expected_correct": true,
+  "judged_correct": true,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [],
+  "scorer_error": false
+ },
+ {
+  "control": "wrong_difference_overlay",
+  "expected_correct": false,
+  "judged_correct": false,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [
+   "percentage within 1.5 pp of gold"
+  ],
+  "scorer_error": false
+ },
+ {
+  "control": "wrong_half_width_buffer",
+  "expected_correct": false,
+  "judged_correct": false,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [
+   "percentage within 1.5 pp of gold"
+  ],
+  "scorer_error": false
+ },
+ {
+  "control": "wrong_official_roads_only",
+  "expected_correct": false,
+  "judged_correct": false,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [
+   "percentage within 1.5 pp of gold"
+  ],
+  "scorer_error": false
+ },
+ {
+  "control": "wrong_ratio_to_state_extent",
+  "expected_correct": false,
+  "judged_correct": false,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [
+   "percentage within 1.5 pp of gold"
+  ],
+  "scorer_error": false
+ },
+ {
+  "control": "wrong_share_of_all_deforestation",
+  "expected_correct": false,
+  "judged_correct": false,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [
+   "percentage within 1.5 pp of gold"
+  ],
+  "scorer_error": false
+ },
+ {
+  "control": "wrong_undissolved_buffers",
+  "expected_correct": false,
+  "judged_correct": false,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [
+   "percentage within 1.5 pp of gold"
+  ],
+  "scorer_error": false
+ }
+]

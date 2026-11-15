@@ -1,0 +1,111 @@
+{
+ "cell_id": "oneshot.C0.SA.gptoss-120b.r2.T09",
+ "experiment": "oneshot",
+ "tier": "C0",
+ "arch": "SA",
+ "model": "gptoss-120b",
+ "run": 2,
+ "task": 9,
+ "elapsed_s": 54.7,
+ "protocol": "native",
+ "tier_config": {
+  "tools": [],
+  "generic": false,
+  "oneshot": true,
+  "no_dd": false,
+  "no_dk": false,
+  "g1": false,
+  "g2": false,
+  "g3": false,
+  "g4": false,
+  "g5": false,
+  "g6": false,
+  "g7": false
+ },
+ "outputs": [],
+ "required_outputs": [
+  "deforestation_rate.csv"
+ ],
+ "required_present": false,
+ "emergency_files": [],
+ "rounds": 1,
+ "self_corrections": 0,
+ "agent_stats": {
+  "rounds": 1,
+  "format_errors": 0,
+  "format_error_kinds": {},
+  "self_corrections": 0,
+  "exec_blocks": 1,
+  "exec_failed": 1,
+  "finish_rejections": 0,
+  "dedup_blocked": 0,
+  "triggers": {},
+  "checks_run": {},
+  "end_reason": "oneshot",
+  "empty_retries": 0,
+  "history_truncations": 0,
+  "oneshot_no_code": false,
+  "oneshot": {
+   "code_rule": "last_python",
+   "n_fenced_blocks": 1,
+   "code_chars": 1761,
+   "finish_reason": "stop",
+   "timeout_s": 1200
+  },
+  "finished": true,
+  "agent_time_s": 41.6
+ },
+ "llm_stats": {
+  "calls": 1,
+  "retries": 0,
+  "errors": 0,
+  "context_overflow": 0,
+  "empty": 0,
+  "prompt_tokens": 626,
+  "completion_tokens": 858,
+  "reasoning_tokens": 0,
+  "cached_tokens": 0
+ },
+ "llm_time_s": 11.9,
+ "agent_time_s": 41.6,
+ "hit_deadline": false,
+ "sandbox_events": [
+  {
+   "event": "container_oom",
+   "exit_code": 137,
+   "oom_killed": true
+  },
+  {
+   "event": "restarted",
+   "replayed": 0
+  }
+ ],
+ "inputs_intact": true,
+ "container_memory": "12g",
+ "oneshot_no_code": false,
+ "deliverable_produced": false,
+ "config": {
+  "image": "gisclaw-exec:1.0",
+  "step_timeout_s": 1200,
+  "task_wall_s": 1200,
+  "max_rounds": 50,
+  "blocked_packages": {
+   "arcpy": "Use geopandas + rasterio + shapely instead."
+  },
+  "agent": {
+   "history_tokens": 60000,
+   "max_format_errors": 15
+  }
+ },
+ "model_config": {
+  "provider": "vllm",
+  "model_name": "gpt-oss-120b",
+  "request": {
+   "set": {
+    "max_tokens": 32768,
+    "temperature": 1.0,
+    "reasoning_effort": "medium"
+   }
+  }
+ }
+}

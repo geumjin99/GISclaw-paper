@@ -1,0 +1,119 @@
+{
+ "cell_id": "main.H0.SA.qwen38-27b.r1.T33",
+ "task": 33,
+ "status": "ok",
+ "analytically_correct": true,
+ "scorer_error": false,
+ "checks": [
+  {
+   "name": "result file written to pred_results",
+   "passed": true,
+   "value": [
+    "Buildings_FloodDamage_2050.gpkg",
+    "FloodDamage_Map_2050.png",
+    "FloodDamage_Summary_2050.csv",
+    "FloodDepth_2050.tif",
+    "FloodZone_2050.gpkg"
+   ],
+   "threshold": "any non-empty file",
+   "required": true,
+   "note": ""
+  },
+  {
+   "name": "per-building damage matches gold (Jaccard>=0.80, Spearman>=0.90)",
+   "passed": true,
+   "value": "Jaccard=0.964, precision=0.964, weighted recall=1.000, rho=0.995",
+   "threshold": "(Jaccard>=0.80 or (precision>=0.90 and weighted recall>=0.90)) and rho>=0.90",
+   "required": true,
+   "note": "gb.FloodDamage@final"
+  },
+  {
+   "name": "per-building damage values follow the given function (median pred/gold ratio 0.95-1.05)",
+   "passed": true,
+   "value": 1.0,
+   "threshold": "0.95-1.05",
+   "required": true,
+   "note": "gb.FloodDamage@final"
+  },
+  {
+   "name": "total damage within 10 % of gold",
+   "passed": true,
+   "value": 414888990,
+   "threshold": "4.113e+08 +/- 10 %",
+   "required": true,
+   "note": "sum of gb.FloodDamage@final"
+  },
+  {
+   "name": "per-building mean flood depth matches gold",
+   "passed": true,
+   "value": 0.979,
+   "threshold": 0.9,
+   "required": false,
+   "note": "gb.MeanFloodDepth_cm@final"
+  },
+  {
+   "name": "deliverable files carry a CRS (uniform rule)",
+   "passed": true,
+   "value": [
+    "Buildings_FloodDamage_2050.gpkg",
+    "FloodZone_2050.gpkg"
+   ],
+   "threshold": "every geographic deliverable file has a CRS",
+   "required": true,
+   "note": "2 geographic deliverable file(s), all with a CRS"
+  }
+ ],
+ "replay": {
+  "success": true,
+  "outputs": [
+   "Buildings_FloodDamage_2050.gpkg",
+   "FloodDamage_Map_2050.png",
+   "FloodDamage_Summary_2050.csv",
+   "FloodDepth_2050.tif",
+   "FloodZone_2050.gpkg"
+  ],
+  "events": [],
+  "blocks_ok": 19,
+  "block_outcome": [
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok"
+  ],
+  "step_timeout_s": 900,
+  "same_outputs_as_original": true,
+  "block_mismatches": []
+ },
+ "replay_faithful": true,
+ "replay_unfaithful_reasons": [],
+ "replay_container_failure": [],
+ "emergency_files": []
+}

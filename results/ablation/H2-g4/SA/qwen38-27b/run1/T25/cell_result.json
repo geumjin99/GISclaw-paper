@@ -1,0 +1,152 @@
+{
+ "cell_id": "ablation.H2-g4.SA.qwen38-27b.r1.T25",
+ "experiment": "ablation",
+ "tier": "H2-g4",
+ "arch": "SA",
+ "model": "qwen38-27b",
+ "run": 1,
+ "task": 25,
+ "elapsed_s": 470.0,
+ "protocol": "native",
+ "tier_config": {
+  "tools": [
+   "list_files",
+   "load_vector",
+   "load_raster",
+   "inspect",
+   "execute",
+   "lookup_api",
+   "finish"
+  ],
+  "generic": true,
+  "g1": true,
+  "g2": true,
+  "g3": true,
+  "g4": false,
+  "g5": true,
+  "g6": true,
+  "g7": true,
+  "no_dd": false,
+  "no_dk": false
+ },
+ "outputs": [
+  "_risk_fields.csv",
+  "covid19_risk_profiles.png",
+  "exposure_joined_calculated.cpg",
+  "exposure_joined_calculated.dbf",
+  "exposure_joined_calculated.prj",
+  "exposure_joined_calculated.shp",
+  "exposure_joined_calculated.shx",
+  "exposure_ranked.cpg",
+  "exposure_ranked.dbf",
+  "exposure_ranked.prj",
+  "exposure_ranked.shp",
+  "exposure_ranked.shx",
+  "healthcare_joined_calculated.cpg",
+  "healthcare_joined_calculated.dbf",
+  "healthcare_joined_calculated.prj",
+  "healthcare_joined_calculated.shp",
+  "healthcare_joined_calculated.shx",
+  "healthcare_ranked.cpg",
+  "healthcare_ranked.dbf",
+  "healthcare_ranked.prj",
+  "healthcare_ranked.shp",
+  "healthcare_ranked.shx",
+  "hkg_constituency.cpg",
+  "hkg_constituency.dbf",
+  "hkg_constituency.gpkg",
+  "hkg_constituency.prj",
+  "hkg_constituency.shp",
+  "hkg_constituency.shx",
+  "susceptibility_joined_calculated.cpg",
+  "susceptibility_joined_calculated.dbf",
+  "susceptibility_joined_calculated.prj",
+  "susceptibility_joined_calculated.shp",
+  "susceptibility_joined_calculated.shx",
+  "susceptibility_ranked.cpg",
+  "susceptibility_ranked.dbf",
+  "susceptibility_ranked.prj",
+  "susceptibility_ranked.shp",
+  "susceptibility_ranked.shx",
+  "transmission_joined_calculated.cpg",
+  "transmission_joined_calculated.dbf",
+  "transmission_joined_calculated.prj",
+  "transmission_joined_calculated.shp",
+  "transmission_joined_calculated.shx",
+  "transmission_ranked.cpg",
+  "transmission_ranked.dbf",
+  "transmission_ranked.prj",
+  "transmission_ranked.shp",
+  "transmission_ranked.shx"
+ ],
+ "required_outputs": [],
+ "required_present": null,
+ "emergency_files": [],
+ "rounds": 14,
+ "self_corrections": 2,
+ "agent_stats": {
+  "rounds": 14,
+  "format_errors": 0,
+  "format_error_kinds": {},
+  "self_corrections": 2,
+  "exec_blocks": 12,
+  "exec_failed": 3,
+  "finish_rejections": 0,
+  "dedup_blocked": 0,
+  "triggers": {
+   "g1:card": 1
+  },
+  "checks_run": {
+   "g2": 12,
+   "g3": 13,
+   "g7": 12,
+   "g6": 3
+  },
+  "end_reason": "finish",
+  "empty_retries": 0,
+  "history_truncations": 0,
+  "finished": true,
+  "agent_time_s": 5.0
+ },
+ "llm_stats": {
+  "calls": 14,
+  "retries": 0,
+  "errors": 0,
+  "context_overflow": 0,
+  "empty": 0,
+  "prompt_tokens": 138049,
+  "completion_tokens": 24007,
+  "reasoning_tokens": 17237,
+  "cached_tokens": 0
+ },
+ "llm_time_s": 463.9,
+ "agent_time_s": 5.0,
+ "hit_deadline": false,
+ "sandbox_events": [],
+ "inputs_intact": true,
+ "container_memory": "12g",
+ "deliverable_produced": true,
+ "config": {
+  "image": "gisclaw-exec:1.0",
+  "step_timeout_s": 300,
+  "task_wall_s": 1200,
+  "max_rounds": 50,
+  "blocked_packages": {
+   "arcpy": "Use geopandas + rasterio + shapely instead."
+  },
+  "agent": {
+   "history_tokens": 60000,
+   "max_format_errors": 15
+  }
+ },
+ "model_config": {
+  "provider": "vllm",
+  "model_name": "qwen3.8-27b-fp8",
+  "request": {
+   "set": {
+    "max_tokens": 32768,
+    "temperature": 1.0
+   }
+  }
+ }
+}

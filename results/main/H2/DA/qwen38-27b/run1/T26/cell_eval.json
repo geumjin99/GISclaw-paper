@@ -1,0 +1,134 @@
+{
+ "cell_id": "main.H2.DA.qwen38-27b.r1.T26",
+ "task": 26,
+ "status": "ok",
+ "analytically_correct": false,
+ "scorer_error": false,
+ "checks": [
+  {
+   "name": "vulnerability raster written",
+   "passed": false,
+   "value": [],
+   "threshold": null,
+   "required": true,
+   "note": ""
+  },
+  {
+   "name": "valid area matches gold (IoU)",
+   "passed": false,
+   "value": null,
+   "threshold": null,
+   "required": true,
+   "note": "no readable GeoTIFF"
+  },
+  {
+   "name": "cell values equal gold (drainage*5 + depth*4)",
+   "passed": false,
+   "value": null,
+   "threshold": null,
+   "required": true,
+   "note": ""
+  },
+  {
+   "name": "drainage and depth scores correct for every class (>= 0.80)",
+   "passed": false,
+   "value": null,
+   "threshold": null,
+   "required": true,
+   "note": ""
+  },
+  {
+   "name": "output CRS is Lambert Conformal Conic",
+   "passed": false,
+   "value": null,
+   "threshold": null,
+   "required": true,
+   "note": ""
+  },
+  {
+   "name": "output cell size = land-cover cell size (30 m +/-10 %)",
+   "passed": false,
+   "value": null,
+   "threshold": null,
+   "required": true,
+   "note": ""
+  },
+  {
+   "name": "values are valid 5a+4b combinations",
+   "passed": false,
+   "value": null,
+   "threshold": null,
+   "required": false,
+   "note": ""
+  },
+  {
+   "name": "deliverable files carry a CRS (uniform rule)",
+   "passed": true,
+   "value": [],
+   "threshold": "every geographic deliverable file has a CRS",
+   "required": true,
+   "note": "no geographic deliverable file written (presence is judged by the task checks)"
+  }
+ ],
+ "replay": {
+  "success": true,
+  "outputs": [],
+  "events": [],
+  "blocks_ok": 27,
+  "block_outcome": [
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok"
+  ],
+  "step_timeout_s": 900,
+  "same_outputs_as_original": false,
+  "block_mismatches": []
+ },
+ "replay_faithful": true,
+ "replay_unfaithful_reasons": [],
+ "replay_container_failure": [],
+ "correct_without_emergency": false,
+ "emergency_files": [
+  "emergency_output.geojson"
+ ]
+}

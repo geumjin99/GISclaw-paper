@@ -1,0 +1,121 @@
+{
+ "cell_id": "main.H2.SA.qwen38-27b.r2.T35",
+ "task": 35,
+ "status": "ok",
+ "analytically_correct": true,
+ "scorer_error": false,
+ "checks": [
+  {
+   "name": "required output present",
+   "passed": true,
+   "value": [
+    "landslide_map.png"
+   ],
+   "threshold": [
+    "landslide_map.png",
+    "Landslide_map.png",
+    "landslide_map.PNG"
+   ],
+   "required": true,
+   "note": ""
+  },
+  {
+   "name": "map not blank",
+   "passed": true,
+   "value": 68.21063105974832,
+   "threshold": ">=3 grey-level std",
+   "required": true,
+   "note": ""
+  },
+  {
+   "name": "risk surface matches gold (Pearson >= 0.80)",
+   "passed": true,
+   "value": 0.823,
+   "threshold": 0.8,
+   "required": true,
+   "note": "risk@final [basis quantile/quantile]"
+  },
+  {
+   "name": "burn, slope and land cover enter with instructed weights (regression on gold classes)",
+   "passed": true,
+   "value": "burn/slope=0.57, landcover/slope=0.26",
+   "threshold": "burn/slope >= 0.2 (0.2 if a dNBR layer matches gold at |r|>=0.97), landcover/slope >= 0.1, slope largest (gold 0.55/0.27)",
+   "required": true,
+   "note": "risk@final [basis quantile/quantile]"
+  },
+  {
+   "name": "map shows the risk surface (drawn image passes the surface checks)",
+   "passed": true,
+   "value": "r=0.823, burn/slope=0.57, lc/slope=0.26",
+   "threshold": "checks 2 and 3 on the drawn image (vertical orientation free)",
+   "required": true,
+   "note": "fig_ax0_image0@save00 [basis quantile/quantile]"
+  },
+  {
+   "name": "map drawn north up (presentation)",
+   "passed": true,
+   "value": "r=0.823",
+   "threshold": "checks 2 and 3 on the image as displayed",
+   "required": false,
+   "note": "fig_ax0_image0@save00 [basis quantile/quantile]",
+   "kind": "figure"
+  },
+  {
+   "name": "burn severity = NBR difference (captured layer |r| >= 0.97 with gold dNBR)",
+   "passed": true,
+   "value": 1.0,
+   "threshold": 0.97,
+   "required": true,
+   "note": "dnbr@final; the text prescribes NBR"
+  },
+  {
+   "name": "deliverable files carry a CRS (uniform rule)",
+   "passed": true,
+   "value": [],
+   "threshold": "every geographic deliverable file has a CRS",
+   "required": true,
+   "note": "no geographic deliverable file written (presence is judged by the task checks)"
+  }
+ ],
+ "replay": {
+  "success": true,
+  "outputs": [
+   "landslide_map.png"
+  ],
+  "events": [],
+  "blocks_ok": 22,
+  "block_outcome": [
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok"
+  ],
+  "step_timeout_s": 900,
+  "same_outputs_as_original": true,
+  "block_mismatches": []
+ },
+ "replay_faithful": true,
+ "replay_unfaithful_reasons": [],
+ "replay_container_failure": [],
+ "emergency_files": []
+}

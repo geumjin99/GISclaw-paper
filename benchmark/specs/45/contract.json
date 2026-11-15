@@ -1,0 +1,26 @@
+{
+ "task": 45,
+ "source": "instruction: 3x3 focal ruggedness rescaled to a cost layer, results saved; checks.py globs pred_results (recursive) for rasters (*.tif/*.tiff/*.img/*.asc) scored as ruggedness and cost raster",
+ "deliverables": [
+  {
+   "id": "rasters",
+   "kind": "raster",
+   "patterns": [
+    "*.tif",
+    "*.tiff",
+    "*.img",
+    "*.asc"
+   ],
+   "required": true,
+   "crs_required": true,
+   "checked_by": [
+    "ruggedness from 3x3 focal variation matches gold (|Spearman| >= 0.95)",
+    "cost raster saved and georeferenced on the DEM grid",
+    "cost = standardised monotone transform of ruggedness",
+    "DEM NoData kept as NoData in the cost raster (>= 90 % of NoData cells)",
+    "direction: rugged = low cost (as original)"
+   ]
+  }
+ ],
+ "not_deliverables": []
+}

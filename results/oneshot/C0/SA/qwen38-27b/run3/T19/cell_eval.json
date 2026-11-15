@@ -1,0 +1,92 @@
+{
+ "cell_id": "oneshot.C0.SA.qwen38-27b.r3.T19",
+ "task": 19,
+ "status": "ok",
+ "analytically_correct": false,
+ "scorer_error": false,
+ "checks": [
+  {
+   "name": "required output present",
+   "passed": false,
+   "value": [],
+   "threshold": [
+    "interploated_water_quality.png",
+    "interpolated_water_quality.png"
+   ],
+   "required": true,
+   "note": ""
+  },
+  {
+   "name": "map not blank",
+   "passed": false,
+   "value": null,
+   "threshold": null,
+   "required": true,
+   "note": "no map"
+  },
+  {
+   "name": "the DRAWN map is an interpolated DO surface (Spearman >= 0.65 vs a yardstick, any orientation)",
+   "passed": false,
+   "value": null,
+   "threshold": null,
+   "required": true,
+   "note": "UNVERIFIABLE: no drawn field (image with extent, mesh, scatter, contour call) could be placed on the Bay",
+   "unverifiable": true
+  },
+  {
+   "name": "drawn values are DO in mg/L",
+   "passed": false,
+   "value": null,
+   "threshold": null,
+   "required": true,
+   "note": "UNVERIFIABLE: no drawn field",
+   "unverifiable": true
+  },
+  {
+   "name": "figure: drawn surface placed correctly on the Bay (Spearman >= 0.65 as georeferenced)",
+   "passed": false,
+   "value": null,
+   "threshold": null,
+   "required": false,
+   "note": "no drawn field",
+   "kind": "figure"
+  },
+  {
+   "name": "a DO surface was computed (any captured grid, orientation-free)",
+   "passed": false,
+   "value": null,
+   "threshold": null,
+   "required": false,
+   "note": ""
+  },
+  {
+   "name": "surface clipped to the Bay",
+   "passed": false,
+   "value": 1.0,
+   "threshold": 0.25,
+   "required": false,
+   "note": ""
+  },
+  {
+   "name": "deliverable files carry a CRS (uniform rule)",
+   "passed": true,
+   "value": [],
+   "threshold": "every geographic deliverable file has a CRS",
+   "required": true,
+   "note": "no geographic deliverable file written (presence is judged by the task checks)"
+  }
+ ],
+ "replay": {
+  "success": true,
+  "outputs": [],
+  "events": [],
+  "blocks_ok": 1,
+  "block_outcome": [
+   "ok"
+  ],
+  "step_timeout_s": 3600,
+  "same_outputs_as_original": true
+ },
+ "replay_faithful": null,
+ "emergency_files": []
+}

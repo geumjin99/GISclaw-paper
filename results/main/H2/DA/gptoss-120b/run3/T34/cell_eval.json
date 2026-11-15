@@ -1,0 +1,119 @@
+{
+ "cell_id": "main.H2.DA.gptoss-120b.r3.T34",
+ "task": 34,
+ "status": "ok",
+ "analytically_correct": false,
+ "scorer_error": false,
+ "checks": [
+  {
+   "name": "required output present",
+   "passed": true,
+   "value": [
+    "accessibility.png"
+   ],
+   "threshold": [
+    "accessibility.png",
+    "Accessibility.png",
+    "accessibility.PNG"
+   ],
+   "required": true,
+   "note": ""
+  },
+  {
+   "name": "map not blank",
+   "passed": true,
+   "value": 34.38414527567427,
+   "threshold": ">=3 grey-level std",
+   "required": true,
+   "note": ""
+  },
+  {
+   "name": "rural-only per-area access result present",
+   "passed": true,
+   "value": 1.0,
+   "threshold": ">=0.9 of rows RURAL",
+   "required": true,
+   "note": "rural_stats.pop_in_buffer@final"
+  },
+  {
+   "name": "per-area pattern matches gold (Spearman>=0.70 or MAE<=7pp)",
+   "passed": false,
+   "value": "rho=0.410, MAE=37219.6",
+   "threshold": "rho>=0.70 or MAE<=7",
+   "required": true,
+   "note": "rural_stats.pop_in_buffer@final"
+  },
+  {
+   "name": "choropleth draws the per-area access share",
+   "passed": false,
+   "value": [
+    "rural_stats_gdf.access_pct",
+    "rural_stats_gdf.access_pct",
+    "rural_stats_gdf.access_pct",
+    "rural_stats_gdf.access_pct"
+   ],
+   "threshold": null,
+   "required": true,
+   "note": "drawn columns do not carry the per-area access share"
+  },
+  {
+   "name": "overall rural share within 3 pp of gold",
+   "passed": false,
+   "value": 51.9,
+   "threshold": "87.67 +/- 3",
+   "required": true,
+   "note": "stdout (ratio of printed totals): 2  1443109012828       7836           4067   51.901480 (reported)"
+  },
+  {
+   "name": "deliverable files carry a CRS (uniform rule)",
+   "passed": true,
+   "value": [
+    "pop_in_buffer.geojson",
+    "road_buffer.geojson",
+    "rural_areas.geojson",
+    "rural_population.geojson",
+    "rural_stats.geojson",
+    "rural_stats_with_pct.geojson"
+   ],
+   "threshold": "every geographic deliverable file has a CRS",
+   "required": true,
+   "note": "6 geographic deliverable file(s), all with a CRS"
+  }
+ ],
+ "replay": {
+  "success": true,
+  "outputs": [
+   "accessibility.png",
+   "pop_in_buffer.geojson",
+   "road_buffer.geojson",
+   "rural_areas.geojson",
+   "rural_population.geojson",
+   "rural_stats.geojson",
+   "rural_stats_with_pct.geojson"
+  ],
+  "events": [],
+  "blocks_ok": 13,
+  "block_outcome": [
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok"
+  ],
+  "step_timeout_s": 900,
+  "same_outputs_as_original": true,
+  "block_mismatches": []
+ },
+ "replay_faithful": true,
+ "replay_unfaithful_reasons": [],
+ "replay_container_failure": [],
+ "emergency_files": []
+}

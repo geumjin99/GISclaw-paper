@@ -1,0 +1,138 @@
+{
+ "cell_id": "main.H0.SA.qwen38-27b.r2.T36",
+ "task": 36,
+ "status": "ok",
+ "analytically_correct": true,
+ "scorer_error": false,
+ "checks": [
+  {
+   "name": "result file written to pred_results",
+   "passed": true,
+   "value": [
+    "SAVI_after.tif",
+    "SAVI_before.tif",
+    "damage_map.png",
+    "damage_summary.json",
+    "field_boundaries_epsg32612.cpg",
+    "field_boundaries_epsg32612.dbf"
+   ],
+   "threshold": "any non-empty file",
+   "required": true,
+   "note": ""
+  },
+  {
+   "name": "per-field loss result covers >= 80 % of gold fields",
+   "passed": true,
+   "value": 0.965,
+   "threshold": 0.8,
+   "required": true,
+   "note": "field_damage.shp.loss@file"
+  },
+  {
+   "name": "per-field loss ranking matches gold (Spearman >= 0.85)",
+   "passed": true,
+   "value": 0.885,
+   "threshold": 0.85,
+   "required": true,
+   "note": "field_damage.shp.loss@file"
+  },
+  {
+   "name": "SAVI (L = 0.5) used",
+   "passed": true,
+   "value": null,
+   "threshold": null,
+   "required": true,
+   "note": "code inspection (soil factor L = 0.5 / (1 + L) / * 1.5)"
+  },
+  {
+   "name": "deliverable files carry a CRS (uniform rule)",
+   "passed": true,
+   "value": [
+    "field_boundaries_epsg32612.shp",
+    "field_damage.shp"
+   ],
+   "threshold": "every geographic deliverable file has a CRS",
+   "required": true,
+   "note": "2 geographic deliverable file(s), all with a CRS"
+  }
+ ],
+ "replay": {
+  "success": true,
+  "outputs": [
+   "SAVI_after.tif",
+   "SAVI_before.tif",
+   "damage_map.png",
+   "field_damage.cpg",
+   "field_damage.dbf",
+   "field_damage.shp",
+   "field_damage.shx",
+   "field_damage_summary.csv",
+   "severe_damage_mask.tif",
+   "tmp_zonal.csv",
+   "tmp_zonal2.csv",
+   "vegetation_loss.tif"
+  ],
+  "events": [],
+  "blocks_ok": 27,
+  "block_outcome": [
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok"
+  ],
+  "step_timeout_s": 900,
+  "same_outputs_as_original": false,
+  "block_mismatches": [
+   16,
+   41
+  ]
+ },
+ "replay_faithful": false,
+ "replay_unfaithful_reasons": [
+  "block success differs at [16, 41]"
+ ],
+ "replay_container_failure": [],
+ "emergency_files": []
+}

@@ -1,0 +1,126 @@
+{
+ "cell_id": "main.H2.DA.qwen38-27b.r2.T43",
+ "task": 43,
+ "status": "ok",
+ "analytically_correct": false,
+ "scorer_error": false,
+ "checks": [
+  {
+   "name": "home range (convex hull) stored and matches gold (IoU >= 0.9)",
+   "passed": false,
+   "value": 0.387,
+   "threshold": 0.9,
+   "required": true,
+   "note": "kernel_density_90_isopleth.geojson vs per-animal hulls"
+  },
+  {
+   "name": "kernel density raster stored and agrees with gold (3 km block Pearson >= 0.6)",
+   "passed": false,
+   "value": -1.0,
+   "threshold": 0.6,
+   "required": true,
+   "note": "no readable georeferenced raster in pred_results"
+  },
+  {
+   "name": "density-based clusters with noise; clustered fixes denser than noise (ratio >= 1.5)",
+   "passed": true,
+   "value": 10.32,
+   "threshold": 1.5,
+   "required": true,
+   "note": "cluster in dbscan_clusters.geojson [n_clusters, noise share, n]=[113, 0.077, 149781]"
+  },
+  {
+   "name": "density-based clustering estimator called (DBSCAN/HDBSCAN/OPTICS)",
+   "passed": true,
+   "value": "DBSCAN(",
+   "threshold": null,
+   "required": true,
+   "note": "call required, not just an import"
+  },
+  {
+   "name": "deliverable files carry a CRS (uniform rule)",
+   "passed": true,
+   "value": [
+    "dbscan_cluster_centroids.geojson",
+    "dbscan_clusters.geojson",
+    "kernel_density_90_isopleth.geojson"
+   ],
+   "threshold": "every geographic deliverable file has a CRS",
+   "required": true,
+   "note": "3 geographic deliverable file(s), all with a CRS"
+  },
+  {
+   "name": "copies of input datasets not counted as results (uniform rule)",
+   "passed": true,
+   "value": {
+    "elk_points_projected_epsg26911.gpkg": "Elk_in_Southwestern_Alberta_2009.geojson"
+   },
+   "threshold": null,
+   "required": false,
+   "note": "hidden from the task checks: elk_points_projected_epsg26911.gpkg",
+   "info": true
+  }
+ ],
+ "replay": {
+  "success": true,
+  "outputs": [
+   "dbscan_cluster_centroids.geojson",
+   "dbscan_clusters.geojson",
+   "elk_points_projected_epsg26911.gpkg",
+   "kernel_density_90_isopleth.geojson"
+  ],
+  "events": [],
+  "blocks_ok": 27,
+  "block_outcome": [
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok"
+  ],
+  "step_timeout_s": 900,
+  "same_outputs_as_original": false,
+  "block_mismatches": []
+ },
+ "replay_faithful": true,
+ "replay_unfaithful_reasons": [],
+ "replay_container_failure": [],
+ "correct_without_emergency": false,
+ "emergency_files": [
+  "emergency_output.csv"
+ ]
+}

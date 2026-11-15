@@ -1,0 +1,106 @@
+{
+ "cell_id": "ablation.H2-g6.SA.qwen38-27b.r2.T14",
+ "experiment": "ablation",
+ "tier": "H2-g6",
+ "arch": "SA",
+ "model": "qwen38-27b",
+ "run": 2,
+ "task": 14,
+ "elapsed_s": 136.9,
+ "protocol": "native",
+ "tier_config": {
+  "tools": [
+   "list_files",
+   "load_vector",
+   "load_raster",
+   "inspect",
+   "execute",
+   "finish"
+  ],
+  "generic": true,
+  "g1": true,
+  "g2": true,
+  "g3": true,
+  "g4": true,
+  "g5": true,
+  "g6": false,
+  "g7": true,
+  "no_dd": false,
+  "no_dk": false
+ },
+ "outputs": [
+  "temperature_statistic_vis.png"
+ ],
+ "required_outputs": [
+  "temperature_statistic_vis.png"
+ ],
+ "required_present": true,
+ "emergency_files": [],
+ "rounds": 8,
+ "self_corrections": 2,
+ "agent_stats": {
+  "rounds": 8,
+  "format_errors": 0,
+  "format_error_kinds": {},
+  "self_corrections": 2,
+  "exec_blocks": 6,
+  "exec_failed": 2,
+  "finish_rejections": 0,
+  "dedup_blocked": 0,
+  "triggers": {
+   "g1:card": 1
+  },
+  "checks_run": {
+   "g2": 6,
+   "g3": 7,
+   "g7": 6,
+   "g4": 2
+  },
+  "end_reason": "finish",
+  "empty_retries": 0,
+  "history_truncations": 0,
+  "finished": true,
+  "agent_time_s": 2.3
+ },
+ "llm_stats": {
+  "calls": 8,
+  "retries": 0,
+  "errors": 0,
+  "context_overflow": 0,
+  "empty": 0,
+  "prompt_tokens": 42052,
+  "completion_tokens": 6307,
+  "reasoning_tokens": 3269,
+  "cached_tokens": 0
+ },
+ "llm_time_s": 133.5,
+ "agent_time_s": 2.3,
+ "hit_deadline": false,
+ "sandbox_events": [],
+ "inputs_intact": true,
+ "container_memory": "12g",
+ "deliverable_produced": true,
+ "config": {
+  "image": "gisclaw-exec:1.0",
+  "step_timeout_s": 300,
+  "task_wall_s": 1200,
+  "max_rounds": 50,
+  "blocked_packages": {
+   "arcpy": "Use geopandas + rasterio + shapely instead."
+  },
+  "agent": {
+   "history_tokens": 60000,
+   "max_format_errors": 15
+  }
+ },
+ "model_config": {
+  "provider": "vllm",
+  "model_name": "qwen3.8-27b-fp8",
+  "request": {
+   "set": {
+    "max_tokens": 32768,
+    "temperature": 1.0
+   }
+  }
+ }
+}

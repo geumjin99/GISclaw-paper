@@ -1,0 +1,28 @@
+{
+ "task": 48,
+ "title": "Determine how location impacts interest rates (Gi* hot spots + GWR)",
+ "output_type": "vector (hot-spot and GWR results) + map",
+ "required_outputs": [
+  "hot_spots_result.shp",
+  "gwr_result.shp",
+  "interest_rates.png (optional; results are checked from the captured or saved per-tract data)"
+ ],
+ "method": "Select ZIP3 tracts with AcceptedLo >= 30 (808); Gi* on AveInteres with the ArcGIS default fixed distance band (202.6 km, binary incl. self, row-standardised), analytical z, FDR bins; GWR AveInteres ~ AveLoanGra with an adaptive bisquare kernel of 22 nearest neighbours (mgwr) on centroids in USA Contiguous Albers.",
+ "key_parameters": {
+  "selection": "AcceptedLo >= 30",
+  "hotspot": "Gi*, distance band 202.6 km, FDR",
+  "gwr": "y=AveInteres, X=AveLoanGra, 22 NN adaptive bisquare"
+ },
+ "benchmark_defects": [
+  "The task title/instruction says 'Generalized Weighted Regression'; the method is Geographically Weighted Regression.",
+  "Domain knowledge says 'load tracts' / 'load data' for 'loan'; the explanatory variable (AveLoanGra) is not named in the instruction, only in the benchmark's code; any 22-NN GWR of AveInteres is accepted.",
+  "AveInteres and AveLoanGra correlate at r = 0.97 (LendingClub sets rates by grade), so the GWR mostly shows where the grade-to-rate mapping differs; global R2 0.98."
+ ],
+ "checks": [
+  "required: a table of exactly the 808 tracts with AcceptedLo >= 30",
+  "required: a z-like per-tract column with Pearson >= 0.85 to a checker-computed Gi* of AveInteres (distance band / ISA peak band / KNN8 / Queen; self 0/1; binary/row), and not closer to a Gi* of AveLoanGra",
+  "required: a per-tract local slope with Pearson >= 0.95 to the gold 22-NN bisquare GWR or to any 22-NN GWR of AveInteres (checker fits several covariate sets, Gaussian/bisquare)",
+  "optional: local R2 reported",
+  "optional: FDR correction in code"
+ ]
+}

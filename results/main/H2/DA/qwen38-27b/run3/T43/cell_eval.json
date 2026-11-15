@@ -1,0 +1,127 @@
+{
+ "cell_id": "main.H2.DA.qwen38-27b.r3.T43",
+ "task": 43,
+ "status": "ok",
+ "analytically_correct": false,
+ "scorer_error": false,
+ "checks": [
+  {
+   "name": "home range (convex hull) stored and matches gold (IoU >= 0.9)",
+   "passed": true,
+   "value": 1.0,
+   "threshold": 0.9,
+   "required": true,
+   "note": "Elk_convex_hull_all.geojson vs hull of all fixes"
+  },
+  {
+   "name": "kernel density raster stored and agrees with gold (3 km block Pearson >= 0.6)",
+   "passed": false,
+   "value": -1.0,
+   "threshold": 0.6,
+   "required": true,
+   "note": "no readable georeferenced raster in pred_results"
+  },
+  {
+   "name": "density-based clusters with noise; clustered fixes denser than noise (ratio >= 1.5)",
+   "passed": true,
+   "value": 20.52,
+   "threshold": 1.5,
+   "required": true,
+   "note": "cluster in Elk_dbscan_points.geojson [n_clusters, noise share, n]=[138, 0.022, 150191]"
+  },
+  {
+   "name": "density-based clustering estimator called (DBSCAN/HDBSCAN/OPTICS)",
+   "passed": true,
+   "value": "DBSCAN(",
+   "threshold": null,
+   "required": true,
+   "note": "call required, not just an import"
+  },
+  {
+   "name": "deliverable files carry a CRS (uniform rule)",
+   "passed": true,
+   "value": [
+    "Elk_clean_points_4326.geojson",
+    "Elk_convex_hull_all.geojson",
+    "Elk_convex_hull_individual.geojson",
+    "Elk_convex_hull_season.geojson",
+    "Elk_dbscan_centroids.geojson",
+    "Elk_dbscan_points.geojson",
+    "Elk_kde_grid.geojson",
+    "Elk_points_projected.geojson"
+   ],
+   "threshold": "every geographic deliverable file has a CRS",
+   "required": true,
+   "note": "8 geographic deliverable file(s), all with a CRS"
+  }
+ ],
+ "replay": {
+  "success": false,
+  "outputs": [
+   "Elk_clean_points_4326.geojson",
+   "Elk_convex_hull_all.geojson",
+   "Elk_convex_hull_individual.geojson",
+   "Elk_convex_hull_season.geojson",
+   "Elk_dbscan_centroids.geojson",
+   "Elk_dbscan_map.png",
+   "Elk_dbscan_points.geojson",
+   "Elk_kde_grid.geojson",
+   "Elk_kde_map.png",
+   "Elk_points_projected.geojson",
+   "analysis_summary.csv"
+  ],
+  "events": [],
+  "blocks_ok": 30,
+  "block_outcome": [
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok"
+  ],
+  "step_timeout_s": 900,
+  "same_outputs_as_original": false,
+  "block_mismatches": []
+ },
+ "replay_faithful": true,
+ "replay_unfaithful_reasons": [],
+ "replay_container_failure": [],
+ "correct_without_emergency": false,
+ "emergency_files": [
+  "emergency_output.csv"
+ ]
+}

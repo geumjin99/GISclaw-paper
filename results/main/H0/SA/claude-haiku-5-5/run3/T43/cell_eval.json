@@ -1,0 +1,94 @@
+{
+ "cell_id": "main.H0.SA.claude-haiku-5-5.r3.T43",
+ "task": 43,
+ "status": "ok",
+ "analytically_correct": false,
+ "scorer_error": false,
+ "checks": [
+  {
+   "name": "home range (convex hull) stored and matches gold (IoU >= 0.9)",
+   "passed": true,
+   "value": 1.0,
+   "threshold": 0.9,
+   "required": true,
+   "note": "Elk_in_MBG_convex_hull.geojson vs per-animal hulls"
+  },
+  {
+   "name": "kernel density raster stored and agrees with gold (3 km block Pearson >= 0.6)",
+   "passed": false,
+   "value": 0.324,
+   "threshold": 0.6,
+   "required": true,
+   "note": "elk_population_kde.tif (coverage 1.00)"
+  },
+  {
+   "name": "density-based clusters with noise; clustered fixes denser than noise (ratio >= 1.5)",
+   "passed": true,
+   "value": 4.98,
+   "threshold": 1.5,
+   "required": true,
+   "note": "db_cluster in d@final [n_clusters, noise share, n]=[429, 0.587, 147320]"
+  },
+  {
+   "name": "density-based clustering estimator called (DBSCAN/HDBSCAN/OPTICS)",
+   "passed": true,
+   "value": "DBSCAN(",
+   "threshold": null,
+   "required": true,
+   "note": "call required, not just an import"
+  },
+  {
+   "name": "deliverable files carry a CRS (uniform rule)",
+   "passed": true,
+   "value": [
+    "Elk_in_MBG_convex_hull.geojson",
+    "elk_dbscan_clusters.geojson",
+    "elk_kde_isopleths_per_individual.geojson",
+    "elk_mbg_per_individual.geojson",
+    "elk_population_kde.tif"
+   ],
+   "threshold": "every geographic deliverable file has a CRS",
+   "required": true,
+   "note": "5 geographic deliverable file(s), all with a CRS"
+  }
+ ],
+ "replay": {
+  "success": true,
+  "outputs": [
+   "Elk_in_MBG_convex_hull.geojson",
+   "elk_dbscan_clusters.geojson",
+   "elk_home_range_summary.csv",
+   "elk_kde_isopleths_per_individual.geojson",
+   "elk_mbg_per_individual.geojson",
+   "elk_population_kde.tif",
+   "fig1_population_kde_mcp.png",
+   "fig2_example_elk_home_range.png",
+   "fig3_dbscan_clusters.png",
+   "fig4_home_range_stats.png",
+   "methods_notes.txt"
+  ],
+  "events": [],
+  "blocks_ok": 11,
+  "block_outcome": [
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok"
+  ],
+  "step_timeout_s": 900,
+  "same_outputs_as_original": true,
+  "block_mismatches": []
+ },
+ "replay_faithful": true,
+ "replay_unfaithful_reasons": [],
+ "replay_container_failure": [],
+ "emergency_files": []
+}

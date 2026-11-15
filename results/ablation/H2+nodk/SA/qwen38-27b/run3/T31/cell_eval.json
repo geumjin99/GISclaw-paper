@@ -1,0 +1,98 @@
+{
+ "cell_id": "ablation.H2+nodk.SA.qwen38-27b.r3.T31",
+ "task": 31,
+ "status": "ok",
+ "analytically_correct": false,
+ "scorer_error": false,
+ "checks": [
+  {
+   "name": "figure written (non-blank PNG)",
+   "passed": true,
+   "value": [
+    "l_function.png"
+   ],
+   "threshold": null,
+   "required": true,
+   "note": ""
+  },
+  {
+   "name": "L(r) curve matches gold",
+   "passed": true,
+   "value": {
+    "max_abs": 0.0022,
+    "mean_abs": 0.0005
+   },
+   "threshold": "max<=0.012, mean<=0.005 on r in [0.05, 0.35]",
+   "required": true,
+   "note": "fig_ax1_line0@save00"
+  },
+  {
+   "name": "flow K-function (4-D, ~pi^2 r^4) computed - matches gold K",
+   "passed": false,
+   "value": 1.0,
+   "threshold": "mean rel. error <= 0.10 vs gold K (max-distance flow distance, as defined in the task text)",
+   "required": true,
+   "note": "up@final vs r_vals@final (max-distance flow K)"
+  },
+  {
+   "name": "local K computed per flow (1000 x m array)",
+   "passed": true,
+   "value": null,
+   "threshold": null,
+   "required": false,
+   "note": ""
+  },
+  {
+   "name": "confidence envelope (CSR simulation or drawn band around L)",
+   "passed": true,
+   "value": {
+    "simulation_code": true,
+    "drawn_band": "fill polygon fig_ax1_coll0_vertices@save00"
+   },
+   "threshold": null,
+   "required": true,
+   "note": "required (the text asks for confidence intervals)"
+  }
+ ],
+ "replay": {
+  "success": true,
+  "outputs": [
+   "l_function.csv",
+   "l_function.png"
+  ],
+  "events": [],
+  "blocks_ok": 11,
+  "block_outcome": [
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok"
+  ],
+  "step_timeout_s": 900,
+  "same_outputs_as_original": true,
+  "block_mismatches": []
+ },
+ "replay_faithful": true,
+ "replay_unfaithful_reasons": [],
+ "replay_container_failure": [],
+ "emergency_files": []
+}

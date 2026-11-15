@@ -1,0 +1,97 @@
+[
+ {
+  "control": "correct_function_print_only",
+  "expected_correct": true,
+  "judged_correct": true,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [],
+  "scorer_error": false
+ },
+ {
+  "control": "correct_no_intrazonal_pivot",
+  "expected_correct": true,
+  "judged_correct": true,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [],
+  "scorer_error": false
+ },
+ {
+  "control": "correct_print_only",
+  "expected_correct": true,
+  "judged_correct": true,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [],
+  "scorer_error": false
+ },
+ {
+  "control": "correct_renamed_keys_metrics_csv",
+  "expected_correct": true,
+  "judged_correct": true,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [],
+  "scorer_error": false
+ },
+ {
+  "control": "wrong_features_origin_only_model",
+  "expected_correct": false,
+  "judged_correct": false,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [
+   "model features include origin AND destination attributes"
+  ],
+  "scorer_error": false
+ },
+ {
+  "control": "wrong_linear_no_tuning",
+  "expected_correct": false,
+  "judged_correct": false,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [
+   "method: GridSearchCV-tuned RandomForestRegressor"
+  ],
+  "scorer_error": false
+ },
+ {
+  "control": "wrong_no_aggregation",
+  "expected_correct": false,
+  "judged_correct": false,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [
+   "OD records aggregated to pair sums (match gold)",
+   "origin and destination attributes merged",
+   "test-set MSE reported and plausible (0.8-1.5 x var of aggregated flows)"
+  ],
+  "scorer_error": false
+ },
+ {
+  "control": "wrong_origin_attributes_only",
+  "expected_correct": false,
+  "judged_correct": false,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [
+   "origin and destination attributes merged",
+   "model features include origin AND destination attributes"
+  ],
+  "scorer_error": false
+ },
+ {
+  "control": "wrong_train_set_mse",
+  "expected_correct": false,
+  "judged_correct": false,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [
+   "test-set MSE reported and plausible (0.8-1.5 x var of aggregated flows)",
+   "model features include origin AND destination attributes"
+  ],
+  "scorer_error": false
+ }
+]

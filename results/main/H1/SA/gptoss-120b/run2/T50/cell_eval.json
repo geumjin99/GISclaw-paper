@@ -1,0 +1,155 @@
+{
+ "cell_id": "main.H1.SA.gptoss-120b.r2.T50",
+ "task": 50,
+ "status": "ok",
+ "analytically_correct": false,
+ "scorer_error": false,
+ "checks": [
+  {
+   "name": "presence points inside dissolved seagrass (>= 97 %)",
+   "passed": false,
+   "value": 0.0,
+   "threshold": 0.97,
+   "required": true,
+   "note": "no point set of 4 000-5 100 points"
+  },
+  {
+   "name": "training features saved with kriged temp/salinity values (r >= 0.8 / 0.6)",
+   "passed": false,
+   "value": [
+    -1.0,
+    -1.0
+   ],
+   "threshold": [
+    0.8,
+    0.6
+   ],
+   "required": true,
+   "note": "no saved point file with >= 1 000 points"
+  },
+  {
+   "name": "global prediction raster agrees with gold suitability (coverage >= 0.8, Spearman >= 0.5)",
+   "passed": false,
+   "value": [
+    0.0,
+    0.038
+   ],
+   "threshold": [
+    0.5,
+    0.8
+   ],
+   "required": true,
+   "note": "best candidate salinity_kriged.tif (rho 0.205, coverage 0.038); coverage over gold cells with centre inside Global_shallow_waters"
+  },
+  {
+   "name": "prediction is a function of both temperature and salinity (rank R2 gain >= 0.05 each)",
+   "passed": false,
+   "value": null,
+   "threshold": null,
+   "required": true,
+   "note": "no acceptable prediction raster"
+  },
+  {
+   "name": "method: kriging-type interpolation of temp/salinity (prescribed: EBK)",
+   "passed": true,
+   "value": null,
+   "threshold": null,
+   "required": true,
+   "note": "call OrdinaryKriging("
+  },
+  {
+   "name": "method: presence-only MaxEnt-type model (prescribed: MaxEnt)",
+   "passed": true,
+   "value": null,
+   "threshold": null,
+   "required": true,
+   "note": "presence-background GLM (IWLR / MaxEnt-equivalent): LogisticRegression("
+  },
+  {
+   "name": "spatial CV / thinning considered",
+   "passed": true,
+   "value": null,
+   "threshold": null,
+   "required": false,
+   "note": ""
+  },
+  {
+   "name": "deliverable files carry a CRS (uniform rule)",
+   "passed": true,
+   "value": [
+    "salinity_kriged.tif",
+    "seagrass_pred.tif",
+    "temp_kriged.tif"
+   ],
+   "threshold": "every geographic deliverable file has a CRS",
+   "required": true,
+   "note": "3 geographic deliverable file(s), all with a CRS"
+  }
+ ],
+ "replay": {
+  "success": true,
+  "outputs": [
+   "salinity_kriged.tif",
+   "seagrass_pred.tif",
+   "temp_kriged.tif",
+   "train_features.csv"
+  ],
+  "events": [
+   {
+    "event": "container_oom",
+    "exit_code": 137,
+    "oom_killed": true
+   },
+   {
+    "event": "restarted",
+    "replayed": 16
+   },
+   {
+    "event": "container_oom",
+    "exit_code": 137,
+    "oom_killed": true
+   },
+   {
+    "event": "restarted",
+    "replayed": 16
+   }
+  ],
+  "blocks_ok": 23,
+  "block_outcome": [
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "oom",
+   "oom",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok"
+  ],
+  "step_timeout_s": 900,
+  "same_outputs_as_original": true,
+  "block_mismatches": []
+ },
+ "replay_faithful": false,
+ "replay_unfaithful_reasons": [
+  "replay block(s) [14, 15] cut off (oom)"
+ ],
+ "replay_container_failure": [],
+ "emergency_files": []
+}

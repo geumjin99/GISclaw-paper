@@ -1,0 +1,20 @@
+{
+ "task": 46,
+ "source": "instruction: 'crash hot spot map as the result' (no file name); checks.py: any *.png map; selection / segment / Gi* data checks use captured objects",
+ "deliverables": [
+  {
+   "id": "map",
+   "kind": "figure",
+   "patterns": [
+    "*.png"
+   ],
+   "required": true,
+   "crs_required": false,
+   "checked_by": [
+    "map present",
+    "map not blank"
+   ]
+  }
+ ],
+ "not_deliverables": []
+}

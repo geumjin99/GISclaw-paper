@@ -1,0 +1,132 @@
+{
+ "cell_id": "ablation.H2+nodk.SA.qwen38-27b.r2.T36",
+ "task": 36,
+ "status": "ok",
+ "analytically_correct": false,
+ "scorer_error": false,
+ "checks": [
+  {
+   "name": "result file written to pred_results",
+   "passed": true,
+   "value": [
+    "SAVI_after_storm.tif",
+    "SAVI_before_storm.tif",
+    "SAVI_loss.tif",
+    "damage_map.png",
+    "emergency_output.geojson",
+    "hail_damage_by_field.csv"
+   ],
+   "threshold": "any non-empty file",
+   "required": true,
+   "note": ""
+  },
+  {
+   "name": "per-field loss result covers >= 80 % of gold fields",
+   "passed": true,
+   "value": 0.997,
+   "threshold": 0.8,
+   "required": true,
+   "note": "d.mean_savi_loss@final (ids-1)"
+  },
+  {
+   "name": "per-field loss ranking matches gold (Spearman >= 0.85)",
+   "passed": true,
+   "value": 0.984,
+   "threshold": 0.85,
+   "required": true,
+   "note": "d.mean_savi_loss@final (ids-1)"
+  },
+  {
+   "name": "SAVI (L = 0.5) used",
+   "passed": true,
+   "value": null,
+   "threshold": null,
+   "required": true,
+   "note": "code inspection (soil factor L = 0.5 / (1 + L) / * 1.5)"
+  },
+  {
+   "name": "deliverable files carry a CRS (uniform rule)",
+   "passed": false,
+   "value": [
+    "work/Field_boundaries.shp: no CRS (.prj missing or empty)"
+   ],
+   "threshold": "every geographic deliverable file has a CRS",
+   "required": true,
+   "note": "deliverable file(s) without CRS: work/Field_boundaries.shp: no CRS (.prj missing or empty)"
+  }
+ ],
+ "replay": {
+  "success": true,
+  "outputs": [
+   "SAVI_after_storm.tif",
+   "SAVI_before_storm.tif",
+   "SAVI_loss.tif",
+   "damage_map.png",
+   "hail_damage_by_field.csv",
+   "work"
+  ],
+  "events": [],
+  "blocks_ok": 36,
+  "block_outcome": [
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok"
+  ],
+  "step_timeout_s": 900,
+  "same_outputs_as_original": false,
+  "block_mismatches": []
+ },
+ "replay_faithful": true,
+ "replay_unfaithful_reasons": [],
+ "replay_container_failure": [],
+ "correct_without_emergency": false,
+ "emergency_files": [
+  "emergency_output.geojson"
+ ]
+}

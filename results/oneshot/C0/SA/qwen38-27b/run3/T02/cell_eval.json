@@ -1,0 +1,82 @@
+{
+ "cell_id": "oneshot.C0.SA.qwen38-27b.r3.T02",
+ "task": 2,
+ "status": "ok",
+ "analytically_correct": false,
+ "scorer_error": false,
+ "checks": [
+  {
+   "name": "required output present",
+   "passed": false,
+   "value": [],
+   "threshold": [
+    "transit_access.png"
+   ],
+   "required": true,
+   "note": ""
+  },
+  {
+   "name": "map not blank",
+   "passed": false,
+   "value": null,
+   "threshold": null,
+   "required": true,
+   "note": "no map"
+  },
+  {
+   "name": "three factors drawn (poverty, no-vehicle, density)",
+   "passed": false,
+   "value": {
+    "poverty": null,
+    "no-vehicle": null,
+    "density": null
+   },
+   "threshold": "poverty/no-vehicle rho>=0.9, density rho>=0.8 (or literal rating column); distinct layers",
+   "required": true,
+   "note": "0 drawn polygon layers mapped to block groups (save snapshots not mappable; any saved figure)"
+  },
+  {
+   "name": "bus service area drawn and correctly located",
+   "passed": false,
+   "value": null,
+   "threshold": "IoU >= 0.90",
+   "required": true,
+   "note": "no code available"
+  },
+  {
+   "name": "population density derived (pop/area; rating column is constant)",
+   "passed": false,
+   "value": null,
+   "threshold": 0.8,
+   "required": false,
+   "note": ""
+  },
+  {
+   "name": "geometric overlay of block groups and service area",
+   "passed": true,
+   "value": 1.0,
+   "threshold": 0.9,
+   "required": false,
+   "note": ""
+  }
+ ],
+ "replay": {
+  "success": false,
+  "outputs": [
+   "census_blocks_within_bus_service_area.geojson",
+   "transit_access_summary.csv"
+  ],
+  "events": [],
+  "blocks_ok": 0,
+  "block_outcome": [
+   "ok"
+  ],
+  "step_timeout_s": 3600,
+  "same_outputs_as_original": true,
+  "block_mismatches": []
+ },
+ "replay_faithful": true,
+ "replay_unfaithful_reasons": [],
+ "replay_container_failure": [],
+ "emergency_files": []
+}

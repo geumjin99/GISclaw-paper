@@ -1,0 +1,128 @@
+[
+ {
+  "control": "correct_all_touched_masks",
+  "expected_correct": true,
+  "judged_correct": true,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [],
+  "scorer_error": false
+ },
+ {
+  "control": "correct_rasterio_mask_m2",
+  "expected_correct": true,
+  "judged_correct": true,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [],
+  "scorer_error": false
+ },
+ {
+  "control": "correct_rasterize_bincount_ha",
+  "expected_correct": true,
+  "judged_correct": true,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [],
+  "scorer_error": false
+ },
+ {
+  "control": "correct_rasterize_bincount_ha_key",
+  "expected_correct": true,
+  "judged_correct": true,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [],
+  "scorer_error": false
+ },
+ {
+  "control": "wrong_bbox_count_mask_ignored",
+  "expected_correct": false,
+  "judged_correct": false,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [
+   "impervious (Value 0) area per parcel matches gold (>= 90 % within 5 %)"
+  ],
+  "scorer_error": false
+ },
+ {
+  "control": "wrong_deliverable_no_crs",
+  "expected_correct": false,
+  "judged_correct": false,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [
+   "deliverable files carry a CRS (uniform rule)"
+  ],
+  "scorer_error": false
+ },
+ {
+  "control": "wrong_no_join_saved",
+  "expected_correct": false,
+  "judged_correct": false,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [
+   "joined parcel layer saved (121 features)",
+   "impervious (Value 0) area per parcel matches gold (>= 90 % within 5 %)"
+  ],
+  "scorer_error": false
+ },
+ {
+  "control": "wrong_parcels_buffered_1ft",
+  "expected_correct": false,
+  "judged_correct": false,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [
+   "impervious (Value 0) area per parcel matches gold (>= 90 % within 5 %)"
+  ],
+  "scorer_error": false
+ },
+ {
+  "control": "wrong_parcels_buffered_2ft",
+  "expected_correct": false,
+  "judged_correct": false,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [
+   "impervious (Value 0) area per parcel matches gold (>= 90 % within 5 %)"
+  ],
+  "scorer_error": false
+ },
+ {
+  "control": "wrong_percent_only",
+  "expected_correct": false,
+  "judged_correct": false,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [
+   "impervious (Value 0) area per parcel matches gold (>= 90 % within 5 %)"
+  ],
+  "scorer_error": false
+ },
+ {
+  "control": "wrong_unit_double_conversion",
+  "expected_correct": false,
+  "judged_correct": false,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [
+   "impervious (Value 0) area per parcel matches gold (>= 90 % within 5 %)",
+   "deliverable files carry a CRS (uniform rule)"
+  ],
+  "scorer_error": false
+ },
+ {
+  "control": "wrong_value1_as_impervious",
+  "expected_correct": false,
+  "judged_correct": false,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [
+   "impervious (Value 0) area per parcel matches gold (>= 90 % within 5 %)"
+  ],
+  "scorer_error": false
+ }
+]

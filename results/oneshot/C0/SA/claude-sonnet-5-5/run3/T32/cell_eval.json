@@ -1,0 +1,86 @@
+{
+ "cell_id": "oneshot.C0.SA.claude-sonnet-5-5.r3.T32",
+ "task": 32,
+ "status": "ok",
+ "analytically_correct": true,
+ "scorer_error": false,
+ "checks": [
+  {
+   "name": "required output present",
+   "passed": true,
+   "value": [
+    "optimal_path.png"
+   ],
+   "threshold": [
+    "optimal_path.png",
+    "Optimal_path.png",
+    "optimal_path.PNG"
+   ],
+   "required": true,
+   "note": ""
+  },
+  {
+   "name": "map not blank",
+   "passed": true,
+   "value": 67.93387439300776,
+   "threshold": ">=3 grey-level std",
+   "required": true,
+   "note": ""
+  },
+  {
+   "name": "cost surface = weighted sum of ruggedness, road-distance, land-cover and protection costs",
+   "passed": true,
+   "value": "R2=0.937; weights rug=0.18 landcover=0.45 protected=0.18 roads=0.37 (all roads, decile rank; ruggedness MSLarge; presence from max-R2 fit (all roads, decile rank; ruggedness linear): partial r [0.62, 0.78, 0.51, 0.72]); partial r [0.51, 0.79, 0.49, 0.7]",
+   "threshold": "R2>=0.75, every weight>=0.08, every partial r>=0.35",
+   "required": true,
+   "note": "cost@final"
+  },
+  {
+   "name": "corridors follow gold least-cost paths (recall & precision >= 0.80 within 1.5 km)",
+   "passed": true,
+   "value": "recall=0.87, precision=0.85",
+   "threshold": "recall>=0.80 and precision>=0.80, or recall>=0.90 and precision>=0.35 (superset network)",
+   "required": true,
+   "note": "paths@final"
+  },
+  {
+   "name": "map draws the corridors",
+   "passed": true,
+   "value": null,
+   "threshold": "figure lines pass check 3, or drawn path boxes cover/precision >= 0.80",
+   "required": true,
+   "note": "fig_ax0_coll2_paths_bbox@save00 (cover=1.00, boxes on corridors=1.00)"
+  },
+  {
+   "name": "deliverable files carry a CRS (uniform rule)",
+   "passed": true,
+   "value": [
+    "final_cost.tif",
+    "optimal_paths.geojson"
+   ],
+   "threshold": "every geographic deliverable file has a CRS",
+   "required": true,
+   "note": "2 geographic deliverable file(s), all with a CRS"
+  }
+ ],
+ "replay": {
+  "success": true,
+  "outputs": [
+   "final_cost.tif",
+   "optimal_path.png",
+   "optimal_paths.geojson"
+  ],
+  "events": [],
+  "blocks_ok": 1,
+  "block_outcome": [
+   "ok"
+  ],
+  "step_timeout_s": 3600,
+  "same_outputs_as_original": true,
+  "block_mismatches": []
+ },
+ "replay_faithful": true,
+ "replay_unfaithful_reasons": [],
+ "replay_container_failure": [],
+ "emergency_files": []
+}

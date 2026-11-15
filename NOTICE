@@ -1,0 +1,21 @@
+GISclaw
+Copyright (c) 2026 GISclaw Authors
+
+This repository includes material derived from GeoAnalystBench
+(https://github.com/GeoDS/GeoAnalystBench), described in
+
+  Zhang, Q., Gao, S., Wei, C., Zhao, Y., Nie, Y., Chen, Z., Chen, S., Su, Y., Sun, H. (2025).
+  GeoAnalystBench: A GeoAI benchmark for assessing large language models for spatial
+  analysis workflow and code generation. Transactions in GIS, 29(7), e70135.
+
+and distributed under the Apache License, Version 2.0 (a copy is in LICENSE-APACHE-2.0):
+
+- benchmark/tasks.csv and benchmark/perturbations/tasks.csv: the task table of the
+  benchmark. The columns Instruction, Domain Knowledge and Dataset Description were
+  revised for part of the tasks; the other columns are unchanged. The column with the
+  benchmark's reference code is not included.
+- Files under benchmark/specs/ whose header states "Adapted from the reference script of
+  GeoAnalystBench": reference or control solutions based on the benchmark's published
+  reference scripts.
+
+The input data of the benchmark are not part of this repository.

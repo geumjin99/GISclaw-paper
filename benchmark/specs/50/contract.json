@@ -1,0 +1,41 @@
+{
+ "task": 50,
+ "source": "instruction: 'get the train features and seagrass predict raster as the outputs'; checks.py globs pred_results (recursive) for point vector files (*.shp/*.geojson/*.gpkg/*.json) and rasters (*.tif/*.tiff/*.img)",
+ "deliverables": [
+  {
+   "id": "train_features",
+   "kind": "vector",
+   "patterns": [
+    "*.shp",
+    "*.geojson",
+    "*.gpkg",
+    "*.json"
+   ],
+   "required": true,
+   "crs_required": true,
+   "geometry_type": [
+    "Point"
+   ],
+   "checked_by": [
+    "presence points inside dissolved seagrass (>= 97 %)",
+    "training features saved with kriged temp/salinity values (r >= 0.8 / 0.6)"
+   ]
+  },
+  {
+   "id": "prediction_raster",
+   "kind": "raster",
+   "patterns": [
+    "*.tif",
+    "*.tiff",
+    "*.img"
+   ],
+   "required": true,
+   "crs_required": true,
+   "checked_by": [
+    "global prediction raster agrees with gold suitability (coverage >= 0.8, Spearman >= 0.5)",
+    "prediction is a function of both temperature and salinity (rank R2 gain >= 0.05 each)"
+   ]
+  }
+ ],
+ "not_deliverables": []
+}

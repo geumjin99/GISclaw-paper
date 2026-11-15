@@ -1,0 +1,159 @@
+[
+ {
+  "control": "correct_centroid_native_crs",
+  "expected_correct": true,
+  "judged_correct": true,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [],
+  "scorer_error": false
+ },
+ {
+  "control": "correct_function_small_area_level",
+  "expected_correct": true,
+  "judged_correct": true,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [],
+  "scorer_error": false
+ },
+ {
+  "control": "correct_overall_after_describe_table",
+  "expected_correct": true,
+  "judged_correct": true,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [],
+  "scorer_error": false
+ },
+ {
+  "control": "correct_overall_printed_only",
+  "expected_correct": true,
+  "judged_correct": true,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [],
+  "scorer_error": false
+ },
+ {
+  "control": "correct_overall_printed_with_totals",
+  "expected_correct": true,
+  "judged_correct": true,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [],
+  "scorer_error": false
+ },
+ {
+  "control": "correct_pertable_rows_overall_weighted",
+  "expected_correct": true,
+  "judged_correct": true,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [],
+  "scorer_error": false
+ },
+ {
+  "control": "correct_table_indexed_by_jiscode",
+  "expected_correct": true,
+  "judged_correct": true,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [],
+  "scorer_error": false
+ },
+ {
+  "control": "wrong_area_share_not_population",
+  "expected_correct": false,
+  "judged_correct": false,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [
+   "per-area pattern matches gold (Spearman>=0.70 or MAE<=7pp)",
+   "choropleth draws the per-area access share",
+   "overall rural share within 3 pp of gold"
+  ],
+  "scorer_error": false
+ },
+ {
+  "control": "wrong_buffer_units",
+  "expected_correct": false,
+  "judged_correct": false,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [
+   "overall rural share within 3 pp of gold"
+  ],
+  "scorer_error": false
+ },
+ {
+  "control": "wrong_intersects_full_population",
+  "expected_correct": false,
+  "judged_correct": false,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [
+   "per-area pattern matches gold (Spearman>=0.70 or MAE<=7pp)",
+   "choropleth draws the per-area access share",
+   "overall rural share within 3 pp of gold"
+  ],
+  "scorer_error": false
+ },
+ {
+  "control": "wrong_map_shows_population",
+  "expected_correct": false,
+  "judged_correct": false,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [
+   "choropleth draws the per-area access share"
+  ],
+  "scorer_error": false
+ },
+ {
+  "control": "wrong_no_rural_filter",
+  "expected_correct": false,
+  "judged_correct": false,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [
+   "rural-only per-area access result present",
+   "choropleth draws the per-area access share",
+   "overall rural share within 3 pp of gold"
+  ],
+  "scorer_error": false
+ },
+ {
+  "control": "wrong_printed_table_unweighted_overall",
+  "expected_correct": false,
+  "judged_correct": false,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [
+   "overall rural share within 3 pp of gold"
+  ],
+  "scorer_error": false
+ },
+ {
+  "control": "wrong_unweighted_after_describe_table",
+  "expected_correct": false,
+  "judged_correct": false,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [
+   "overall rural share within 3 pp of gold"
+  ],
+  "scorer_error": false
+ },
+ {
+  "control": "wrong_unweighted_overall",
+  "expected_correct": false,
+  "judged_correct": false,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [
+   "overall rural share within 3 pp of gold"
+  ],
+  "scorer_error": false
+ }
+]

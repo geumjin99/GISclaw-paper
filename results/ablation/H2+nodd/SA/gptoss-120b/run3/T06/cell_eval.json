@@ -1,0 +1,118 @@
+{
+ "cell_id": "ablation.H2+nodd.SA.gptoss-120b.r3.T06",
+ "task": 6,
+ "status": "ok",
+ "analytically_correct": true,
+ "scorer_error": false,
+ "checks": [
+  {
+   "name": "required output present",
+   "passed": true,
+   "value": [
+    "Elk_Analysis.png"
+   ],
+   "threshold": [
+    "Elk_Analysis.png"
+   ],
+   "required": true,
+   "note": ""
+  },
+  {
+   "name": "map not blank",
+   "passed": true,
+   "value": 67.03456550647772,
+   "threshold": ">=3 grey-level std",
+   "required": true,
+   "note": ""
+  },
+  {
+   "name": "home range polygon matches convex hull (IoU >= 0.90)",
+   "passed": true,
+   "value": 1.0,
+   "threshold": 0.9,
+   "required": true,
+   "note": "total_hull@final ~ population hull (no CRS; assumed EPSG:32612 from code)"
+  },
+  {
+   "name": "kernel density matches gold (grid r >= 0.6 or per-fix rho >= 0.7)",
+   "passed": true,
+   "value": {
+    "grid_r": 0.861,
+    "per_fix_rho": -0.379
+   },
+   "threshold": "grid r >= 0.6 or per-fix rho >= 0.7",
+   "required": true,
+   "note": "Z@final on grid (X, Y), EPSG:32612"
+  },
+  {
+   "name": "DBSCAN-style clusters with noise, spatially coherent",
+   "passed": true,
+   "value": {
+    "nn_same_label": 1.0,
+    "clusters": 134,
+    "noise_share": 0.038
+   },
+   "threshold": "noise label present, >=2 clusters, coherence >= 0.90",
+   "required": true,
+   "note": "cluster in elk_utm@final"
+  },
+  {
+   "name": "density-based clustering estimator called (DBSCAN/HDBSCAN/OPTICS)",
+   "passed": true,
+   "value": null,
+   "threshold": null,
+   "required": true,
+   "note": "call: DBSCAN("
+  },
+  {
+   "name": "Elk_Analysis.png overlays hull, density and clusters",
+   "passed": true,
+   "value": {
+    "outline": true,
+    "density": true,
+    "clusters": true
+   },
+   "threshold": "hull outline, density layer and cluster layer in the saved figure",
+   "required": true,
+   "note": "save00 wrote Elk_Analysis.png last (savefig record); outline: fig_ax0_coll136_paths_bbox; density: fig_ax0_coll0_values; clusters: 25 point collections"
+  },
+  {
+   "name": "density image in Elk_Analysis.png drawn north-up at its true location (figure)",
+   "passed": true,
+   "value": null,
+   "threshold": null,
+   "required": false,
+   "note": "not assessable (no density image in map coordinates; contours / mesh / scatter carry their own coordinates)",
+   "kind": "figure"
+  },
+  {
+   "name": "distances computed in a projected CRS",
+   "passed": true,
+   "value": null,
+   "threshold": null,
+   "required": false,
+   "note": ""
+  }
+ ],
+ "replay": {
+  "success": true,
+  "outputs": [
+   "Elk_Analysis.png"
+  ],
+  "events": [],
+  "blocks_ok": 4,
+  "block_outcome": [
+   "ok",
+   "ok",
+   "ok",
+   "ok"
+  ],
+  "step_timeout_s": 900,
+  "same_outputs_as_original": true,
+  "block_mismatches": []
+ },
+ "replay_faithful": true,
+ "replay_unfaithful_reasons": [],
+ "replay_container_failure": [],
+ "emergency_files": []
+}

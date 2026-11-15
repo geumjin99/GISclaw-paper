@@ -1,0 +1,92 @@
+{
+ "cell_id": "ablation.H2+nodk.SA.claude-sonnet-5-5.r2.T04",
+ "task": 4,
+ "status": "ok",
+ "analytically_correct": true,
+ "scorer_error": false,
+ "checks": [
+  {
+   "name": "required output present",
+   "passed": true,
+   "value": [
+    "undeveloped_areas.tif"
+   ],
+   "threshold": [
+    "undeveloped_areas.tif",
+    "undeveloped_areas.tiff"
+   ],
+   "required": true,
+   "note": ""
+  },
+  {
+   "name": "georeferenced raster with selected cells",
+   "passed": true,
+   "value": 102,
+   "threshold": ">0",
+   "required": true,
+   "note": "pred CRS; 0 selected cells outside the land_cover grid"
+  },
+  {
+   "name": "selected cells match an accepted interpretation (1-cell tolerance)",
+   "passed": true,
+   "value": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "cells": 102,
+    "variant_cells": 102
+   },
+   "threshold": "precision>=0.85 and recall>=0.85",
+   "required": true,
+   "note": "appearance / lower-inclusive / linear"
+  },
+  {
+   "name": "soils projected to Lambert Conformal Conic (prescribed step)",
+   "passed": true,
+   "value": null,
+   "threshold": null,
+   "required": true,
+   "note": "soils layer s@final in LCC"
+  },
+  {
+   "name": "selected cells carry undeveloped NLCD codes or a 0/1 mask",
+   "passed": true,
+   "value": [
+    52.0,
+    81.0
+   ],
+   "threshold": null,
+   "required": false,
+   "note": ""
+  },
+  {
+   "name": "deliverable files carry a CRS (uniform rule)",
+   "passed": true,
+   "value": [
+    "undeveloped_areas.tif"
+   ],
+   "threshold": "every geographic deliverable file has a CRS",
+   "required": true,
+   "note": "1 geographic deliverable file(s), all with a CRS"
+  }
+ ],
+ "replay": {
+  "success": true,
+  "outputs": [
+   "undeveloped_areas.tif"
+  ],
+  "events": [],
+  "blocks_ok": 3,
+  "block_outcome": [
+   "ok",
+   "ok",
+   "ok"
+  ],
+  "step_timeout_s": 900,
+  "same_outputs_as_original": true,
+  "block_mismatches": []
+ },
+ "replay_faithful": true,
+ "replay_unfaithful_reasons": [],
+ "replay_container_failure": [],
+ "emergency_files": []
+}

@@ -1,0 +1,67 @@
+{
+ "cell_id": "ablation.H2+nodd.SA.claude-haiku-5-5.r2.T09",
+ "task": 9,
+ "status": "ok",
+ "analytically_correct": true,
+ "scorer_error": false,
+ "checks": [
+  {
+   "name": "required output present",
+   "passed": true,
+   "value": [
+    "deforestation_rate.csv"
+   ],
+   "threshold": [
+    "deforestation_rate.csv"
+   ],
+   "required": true,
+   "note": ""
+  },
+  {
+   "name": "column percentage_deforestation with one value",
+   "passed": true,
+   "value": [
+    "percentage_deforestation",
+    "deforested_area_in_buffer_km2",
+    "road_buffer_area_km2",
+    "total_deforested_area_km2",
+    "buffer_distance_m",
+    "crs_used"
+   ],
+   "threshold": null,
+   "required": true,
+   "note": "1 numeric value(s)"
+  },
+  {
+   "name": "percentage within 1.5 pp of gold",
+   "passed": true,
+   "value": 47.546,
+   "threshold": "47.55 +/- 1.5",
+   "required": true,
+   "note": ""
+  }
+ ],
+ "replay": {
+  "success": true,
+  "outputs": [
+   "deforestation_rate.csv"
+  ],
+  "events": [],
+  "blocks_ok": 6,
+  "block_outcome": [
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok"
+  ],
+  "step_timeout_s": 900,
+  "same_outputs_as_original": true,
+  "block_mismatches": []
+ },
+ "replay_faithful": true,
+ "replay_unfaithful_reasons": [],
+ "replay_container_failure": [],
+ "emergency_files": []
+}

@@ -1,0 +1,142 @@
+{
+ "cell_id": "ablation.H2-g5.SA.qwen38-27b.r1.T45",
+ "task": 45,
+ "status": "ok",
+ "analytically_correct": true,
+ "scorer_error": false,
+ "checks": [
+  {
+   "name": "ruggedness from 3x3 focal variation matches gold (|Spearman| >= 0.95)",
+   "passed": true,
+   "value": 0.983,
+   "threshold": 0.95,
+   "required": true,
+   "note": "sq_sum@final"
+  },
+  {
+   "name": "cost raster saved and georeferenced on the DEM grid",
+   "passed": true,
+   "value": "habitat_gdb.gpkg",
+   "threshold": "EPSG:26911, bounds IoU>=0.95",
+   "required": true,
+   "note": ""
+  },
+  {
+   "name": "cost = standardised monotone transform of ruggedness",
+   "passed": true,
+   "value": [
+    0.983,
+    0.0,
+    1.0,
+    0.998
+   ],
+   "threshold": "|rho|>=0.85, values in [0,100] or z-scores, cover>=0.9",
+   "required": true,
+   "note": "habitat_gdb.gpkg"
+  },
+  {
+   "name": "DEM NoData kept as NoData in the cost raster (>= 90 % of NoData cells)",
+   "passed": true,
+   "value": 1.0,
+   "threshold": 0.9,
+   "required": true,
+   "note": "habitat_gdb.gpkg"
+  },
+  {
+   "name": "direction: rugged = low cost (as original)",
+   "passed": false,
+   "value": 0.983,
+   "threshold": null,
+   "required": false,
+   "note": ""
+  },
+  {
+   "name": "method fidelity: MSLarge rescale",
+   "passed": false,
+   "value": null,
+   "threshold": null,
+   "required": false,
+   "note": ""
+  },
+  {
+   "name": "deliverable files carry a CRS (uniform rule)",
+   "passed": true,
+   "value": [
+    "terrain_ruggedness_tri.tif"
+   ],
+   "threshold": "every geographic deliverable file has a CRS",
+   "required": true,
+   "note": "1 geographic deliverable file(s), all with a CRS"
+  }
+ ],
+ "replay": {
+  "success": false,
+  "outputs": [
+   "_ref.gpkg",
+   "habitat_gdb.gpkg",
+   "habitat_suitability.png",
+   "terrain_ruggedness_tri.tif"
+  ],
+  "events": [],
+  "blocks_ok": 30,
+  "block_outcome": [
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok"
+  ],
+  "step_timeout_s": 900,
+  "same_outputs_as_original": false,
+  "block_mismatches": []
+ },
+ "replay_faithful": true,
+ "replay_unfaithful_reasons": [],
+ "replay_container_failure": [],
+ "correct_without_emergency": true,
+ "emergency_files": [
+  "emergency_output.geojson"
+ ]
+}

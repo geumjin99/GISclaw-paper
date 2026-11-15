@@ -1,0 +1,174 @@
+{
+ "cell_id": "main.H1.SA.claude-opus-5-5.r2.T30",
+ "task": 30,
+ "status": "ok",
+ "analytically_correct": true,
+ "scorer_error": false,
+ "checks": [
+  {
+   "name": "map written (non-blank PNG)",
+   "passed": true,
+   "value": [
+    "bike_route_analysis_maps.png",
+    "proposed_bike_lanes_halfmile.png"
+   ],
+   "threshold": null,
+   "required": false,
+   "note": ""
+  },
+  {
+   "name": "proposed routes cover the three designated corridors",
+   "passed": true,
+   "value": {
+    "Central": 1.0,
+    "East": 1.0,
+    "West": 1.0
+   },
+   "threshold": ">=0.5 each",
+   "required": true,
+   "note": "cand@final; 7.51 mi near Capitol Hill (gold 5.37)"
+  },
+  {
+   "name": "precision: proposed length lies on designated corridors",
+   "passed": true,
+   "value": 0.725,
+   "threshold": 0.5,
+   "required": false,
+   "note": ""
+  },
+  {
+   "name": "map shows the proposed routes",
+   "passed": true,
+   "value": 0.606,
+   "threshold": 0.5,
+   "required": false,
+   "note": "share of proposed route segments whose bbox matches a drawn path"
+  },
+  {
+   "name": "half-mile coverage of Capitol Hill matches gold",
+   "passed": true,
+   "value": null,
+   "threshold": "IoU>=0.85 (clipped to Capitol Hill) or share in [0.95, 0.983]",
+   "required": true,
+   "note": "metrics.capitol_hill_area_pct = 96.765"
+  },
+  {
+   "name": "network analysis performed (graph shortest paths)",
+   "passed": true,
+   "value": [
+    "networkx",
+    "dijkstra",
+    "nx."
+   ],
+   "threshold": null,
+   "required": true,
+   "note": "instructed: 'Use Network Analyst to propose new routes'"
+  },
+  {
+   "name": "existing trail length in Capitol Hill measured",
+   "passed": true,
+   "value": null,
+   "threshold": null,
+   "required": false,
+   "note": "5227 ft / 0.99 mi / 1593 m"
+  },
+  {
+   "name": "deliverable files carry a CRS (uniform rule)",
+   "passed": true,
+   "value": [
+    "Arterial_Streets.shp",
+    "Demand_Hotspots_GiStar.shp",
+    "Employment_Centers.shp",
+    "HalfMile_Coverage_Buffers.shp",
+    "Proposed_Bike_Lanes_City.shp",
+    "Recommended_Bike_Network.shp",
+    "Street_Suitability.shp"
+   ],
+   "threshold": "every geographic deliverable file has a CRS",
+   "required": true,
+   "note": "7 geographic deliverable file(s), all with a CRS"
+  }
+ ],
+ "replay": {
+  "success": true,
+  "outputs": [
+   "Arterial_Streets.cpg",
+   "Arterial_Streets.dbf",
+   "Arterial_Streets.prj",
+   "Arterial_Streets.shp",
+   "Arterial_Streets.shx",
+   "Demand_Hotspots_GiStar.cpg",
+   "Demand_Hotspots_GiStar.dbf",
+   "Demand_Hotspots_GiStar.prj",
+   "Demand_Hotspots_GiStar.shp",
+   "Demand_Hotspots_GiStar.shx",
+   "Employment_Centers.cpg",
+   "Employment_Centers.dbf",
+   "Employment_Centers.prj",
+   "Employment_Centers.shp",
+   "Employment_Centers.shx",
+   "HalfMile_Coverage_Buffers.cpg",
+   "HalfMile_Coverage_Buffers.dbf",
+   "HalfMile_Coverage_Buffers.prj",
+   "HalfMile_Coverage_Buffers.shp",
+   "HalfMile_Coverage_Buffers.shx",
+   "Proposed_Bike_Lanes_City.cpg",
+   "Proposed_Bike_Lanes_City.dbf",
+   "Proposed_Bike_Lanes_City.prj",
+   "Proposed_Bike_Lanes_City.shp",
+   "Proposed_Bike_Lanes_City.shx",
+   "Recommended_Bike_Network.cpg",
+   "Recommended_Bike_Network.dbf",
+   "Recommended_Bike_Network.prj",
+   "Recommended_Bike_Network.shp",
+   "Recommended_Bike_Network.shx",
+   "Street_Suitability.cpg",
+   "Street_Suitability.dbf",
+   "Street_Suitability.prj",
+   "Street_Suitability.shp",
+   "Street_Suitability.shx",
+   "accessibility_metrics.csv",
+   "bike_route_analysis_maps.png",
+   "capitol_hill_neighborhood_coverage.csv",
+   "employment_center_network_distance.csv",
+   "proposed_bike_lanes_halfmile.png",
+   "route_summary.csv"
+  ],
+  "events": [],
+  "blocks_ok": 24,
+  "block_outcome": [
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok"
+  ],
+  "step_timeout_s": 900,
+  "same_outputs_as_original": true,
+  "block_mismatches": []
+ },
+ "replay_faithful": true,
+ "replay_unfaithful_reasons": [],
+ "replay_container_failure": [],
+ "emergency_files": []
+}

@@ -1,0 +1,84 @@
+{
+ "cell_id": "oneshot.C0.SA.claude-haiku-5-5.r3.T46",
+ "task": 46,
+ "status": "ok",
+ "analytically_correct": false,
+ "scorer_error": false,
+ "checks": [
+  {
+   "name": "map present",
+   "passed": false,
+   "value": [],
+   "threshold": [
+    "<any>.png"
+   ],
+   "required": true,
+   "note": ""
+  },
+  {
+   "name": "map not blank",
+   "passed": false,
+   "value": null,
+   "threshold": null,
+   "required": true,
+   "note": "no PNG"
+  },
+  {
+   "name": "peak selection: weekday 15-17 h (or 15-16 h) crashes",
+   "passed": false,
+   "value": "no captured crash table with the peak-hour row count",
+   "threshold": {
+    "15-17": 24746,
+    "15-16": 16515,
+    "15-16+17:00": 16978
+   },
+   "required": true,
+   "note": ""
+  },
+  {
+   "name": "per-segment crash count/rate matches gold (Pearson >= 0.9)",
+   "passed": false,
+   "value": -1.0,
+   "threshold": 0.9,
+   "required": true,
+   "note": "no per-segment table (69 531 rows)"
+  },
+  {
+   "name": "Gi* z-scores on the network SWM (Pearson >= 0.9 with a spatially meaningful Gi* variant)",
+   "passed": false,
+   "value": -1.0,
+   "threshold": 0.9,
+   "required": true,
+   "note": "no per-segment z column"
+  },
+  {
+   "name": "FDR correction applied (code)",
+   "passed": false,
+   "value": null,
+   "threshold": null,
+   "required": false,
+   "note": ""
+  },
+  {
+   "name": "map colours drawn from the Gi* column (data-coloured maps only)",
+   "passed": false,
+   "value": [],
+   "threshold": null,
+   "required": false,
+   "note": "maps coloured class-by-class (colour=) leave no drawn values; reported only"
+  }
+ ],
+ "replay": {
+  "success": true,
+  "outputs": [],
+  "events": [],
+  "blocks_ok": 1,
+  "block_outcome": [
+   "ok"
+  ],
+  "step_timeout_s": 3600,
+  "same_outputs_as_original": true
+ },
+ "replay_faithful": null,
+ "emergency_files": []
+}

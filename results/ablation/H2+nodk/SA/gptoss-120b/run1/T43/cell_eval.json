@@ -1,0 +1,101 @@
+{
+ "cell_id": "ablation.H2+nodk.SA.gptoss-120b.r1.T43",
+ "task": 43,
+ "status": "ok",
+ "analytically_correct": false,
+ "scorer_error": false,
+ "checks": [
+  {
+   "name": "home range (convex hull) stored and matches gold (IoU >= 0.9)",
+   "passed": true,
+   "value": 1.0,
+   "threshold": 0.9,
+   "required": true,
+   "note": "convex_hull.geojson vs hull of all fixes"
+  },
+  {
+   "name": "kernel density raster stored and agrees with gold (3 km block Pearson >= 0.6)",
+   "passed": false,
+   "value": 0.394,
+   "threshold": 0.6,
+   "required": true,
+   "note": "kde_density.tif (coverage 1.00)"
+  },
+  {
+   "name": "density-based clusters with noise; clustered fixes denser than noise (ratio >= 1.5)",
+   "passed": true,
+   "value": 34.78,
+   "threshold": 1.5,
+   "required": true,
+   "note": "cluster in dbscan_clusters.geojson [n_clusters, noise share, n]=[14, 0.001, 150191]"
+  },
+  {
+   "name": "density-based clustering estimator called (DBSCAN/HDBSCAN/OPTICS)",
+   "passed": true,
+   "value": "DBSCAN(",
+   "threshold": null,
+   "required": true,
+   "note": "call required, not just an import"
+  },
+  {
+   "name": "deliverable files carry a CRS (uniform rule)",
+   "passed": true,
+   "value": [
+    "convex_hull.geojson",
+    "dbscan_clusters.geojson",
+    "dbscan_hulls.geojson",
+    "kde_density.tif"
+   ],
+   "threshold": "every geographic deliverable file has a CRS",
+   "required": true,
+   "note": "4 geographic deliverable file(s), all with a CRS"
+  }
+ ],
+ "replay": {
+  "success": true,
+  "outputs": [
+   "convex_hull.geojson",
+   "dbscan_clusters.geojson",
+   "dbscan_hulls.geojson",
+   "elk_movement_map.png",
+   "kde_density.tif"
+  ],
+  "events": [
+   {
+    "event": "timeout"
+   },
+   {
+    "event": "restarted",
+    "replayed": 5
+   }
+  ],
+  "blocks_ok": 8,
+  "block_outcome": [
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "timeout_killed",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok"
+  ],
+  "step_timeout_s": 900,
+  "same_outputs_as_original": true,
+  "block_mismatches": [
+   6
+  ]
+ },
+ "replay_faithful": false,
+ "replay_unfaithful_reasons": [
+  "block success differs at [6]",
+  "replay block(s) [5] cut off (timeout_killed)"
+ ],
+ "replay_container_failure": [],
+ "emergency_files": []
+}

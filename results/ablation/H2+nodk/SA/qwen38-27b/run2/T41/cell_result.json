@@ -1,0 +1,118 @@
+{
+ "cell_id": "ablation.H2+nodk.SA.qwen38-27b.r2.T41",
+ "experiment": "ablation",
+ "tier": "H2+nodk",
+ "arch": "SA",
+ "model": "qwen38-27b",
+ "run": 2,
+ "task": 41,
+ "elapsed_s": 416.4,
+ "protocol": "native",
+ "tier_config": {
+  "tools": [
+   "list_files",
+   "load_vector",
+   "load_raster",
+   "inspect",
+   "execute",
+   "lookup_api",
+   "finish"
+  ],
+  "generic": true,
+  "g1": true,
+  "g2": true,
+  "g3": true,
+  "g4": true,
+  "g5": true,
+  "g6": true,
+  "g7": true,
+  "no_dd": false,
+  "no_dk": true
+ },
+ "outputs": [
+  "Campsites_Facilities_Relationship.gpkg",
+  "README.md",
+  "campground_summary.csv",
+  "campsite_joins_map.png",
+  "campsites_enriched.gpkg",
+  "campsites_joined_campgrounds.csv",
+  "campsites_with_attributes.csv",
+  "facilities_organizations.csv",
+  "park_summary.csv",
+  "parks_organizations.csv"
+ ],
+ "required_outputs": [],
+ "required_present": null,
+ "emergency_files": [],
+ "rounds": 31,
+ "self_corrections": 4,
+ "agent_stats": {
+  "rounds": 31,
+  "format_errors": 0,
+  "format_error_kinds": {},
+  "self_corrections": 4,
+  "exec_blocks": 27,
+  "exec_failed": 5,
+  "finish_rejections": 1,
+  "dedup_blocked": 0,
+  "triggers": {
+   "g1:card": 1,
+   "g6:suggest": 1,
+   "g2:merge_few_matches": 2,
+   "g3:validate": 2
+  },
+  "checks_run": {
+   "g2": 27,
+   "g3": 29,
+   "g7": 27,
+   "g6": 5,
+   "g4": 5
+  },
+  "end_reason": "finish",
+  "empty_retries": 0,
+  "history_truncations": 0,
+  "finished": true,
+  "agent_time_s": 4.3
+ },
+ "llm_stats": {
+  "calls": 31,
+  "retries": 0,
+  "errors": 0,
+  "context_overflow": 0,
+  "empty": 0,
+  "prompt_tokens": 545703,
+  "completion_tokens": 21590,
+  "reasoning_tokens": 10463,
+  "cached_tokens": 0
+ },
+ "llm_time_s": 410.9,
+ "agent_time_s": 4.3,
+ "hit_deadline": false,
+ "sandbox_events": [],
+ "inputs_intact": true,
+ "container_memory": "12g",
+ "deliverable_produced": true,
+ "config": {
+  "image": "gisclaw-exec:1.0",
+  "step_timeout_s": 300,
+  "task_wall_s": 1200,
+  "max_rounds": 50,
+  "blocked_packages": {
+   "arcpy": "Use geopandas + rasterio + shapely instead."
+  },
+  "agent": {
+   "history_tokens": 60000,
+   "max_format_errors": 15
+  }
+ },
+ "model_config": {
+  "provider": "vllm",
+  "model_name": "qwen3.8-27b-fp8",
+  "request": {
+   "set": {
+    "max_tokens": 32768,
+    "temperature": 1.0
+   }
+  }
+ }
+}

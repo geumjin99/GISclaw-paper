@@ -1,0 +1,96 @@
+{
+ "cell_id": "main.H2.DA.gptoss-120b.r1.T04",
+ "task": 4,
+ "status": "ok",
+ "analytically_correct": false,
+ "scorer_error": false,
+ "checks": [
+  {
+   "name": "required output present",
+   "passed": false,
+   "value": [],
+   "threshold": [
+    "undeveloped_areas.tif",
+    "undeveloped_areas.tiff"
+   ],
+   "required": true,
+   "note": ""
+  },
+  {
+   "name": "georeferenced raster with selected cells",
+   "passed": false,
+   "value": null,
+   "threshold": null,
+   "required": true,
+   "note": ""
+  },
+  {
+   "name": "selected cells match an accepted interpretation (1-cell tolerance)",
+   "passed": false,
+   "value": null,
+   "threshold": null,
+   "required": true,
+   "note": ""
+  },
+  {
+   "name": "deliverable files carry a CRS (uniform rule)",
+   "passed": true,
+   "value": [],
+   "threshold": "every geographic deliverable file has a CRS",
+   "required": true,
+   "note": "no geographic deliverable file written (presence is judged by the task checks)"
+  }
+ ],
+ "replay": {
+  "success": true,
+  "outputs": [
+   "drainage.tif",
+   "drainage_raw.tif",
+   "drainage_reclass.tif",
+   "mc_soils_lcc.cpg",
+   "mc_soils_lcc.dbf",
+   "mc_soils_lcc.prj",
+   "mc_soils_lcc.shp",
+   "mc_soils_lcc.shx",
+   "water_depth.tif",
+   "water_depth_raw.tif",
+   "water_depth_reclass.tif"
+  ],
+  "events": [],
+  "blocks_ok": 22,
+  "block_outcome": [
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok"
+  ],
+  "step_timeout_s": 900,
+  "same_outputs_as_original": false,
+  "block_mismatches": []
+ },
+ "replay_faithful": true,
+ "replay_unfaithful_reasons": [],
+ "replay_container_failure": [],
+ "correct_without_emergency": false,
+ "emergency_files": [
+  "emergency_output.geojson"
+ ]
+}

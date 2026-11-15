@@ -1,0 +1,29 @@
+{
+ "task": 25,
+ "title": "COVID-19 risk profiles of Hong Kong constituencies (similarity search + multivariate clustering)",
+ "output_type": "vector (constituencies with risk scores and cluster) + map",
+ "required_outputs": [
+  "risk_profiles.shp (instruction names no file; any map PNG or result vector/table accepted)",
+  "covid_risk.png"
+ ],
+ "method": "For each of four attribute sets (transmission: PopDensity, SpInterIdx; susceptibility: PopDensity, Seniors60t, spending_c, keyfacts_p; resource scarcity: Seniors60t, SUM_Beds; exposure: RelativeCa) rank the 431 constituencies by similarity to the worst-case target (z-standardised attributes, sum of squared differences; SIMRANK 1 = most similar), join on ID and store 432 - SIMRANK. Cluster the four scores with K-means on standardised fields, initial centres = the 3 constituencies with SEEDS = 1 (A14, B02, J35).",
+ "key_parameters": {
+  "similarity": "ATTRIBUTE_VALUES, z-score standardisation, MOST_SIMILAR, all candidates ranked",
+  "risk": "432 - SIMRANK",
+  "clustering": "K-means, k = 3 (number of seeds), init = SEEDS features, standardised analysis fields"
+ },
+ "benchmark_defects": [
+  "The instruction names no output file (the published ArcPy script writes output/risk_profiles.shp, outside pred_results).",
+  "Domain knowledge says the target holds 'the smallest purchasing power value', but target spending_c (123.9) is the maximum; the target is used as supplied.",
+  "K-means on these scores has several near-equivalent optima: the SEEDS-initialised partition and k-means++ partitions agree only at ARI ~0.33 although both explain the same variance, so cluster identity cannot be required without the seeds."
+ ],
+ "checks": [
+  "required: output written (non-blank PNG or result vector/table)",
+  "required: transmission risk score Spearman >= 0.95 with gold (aligned on ID, raw input columns excluded)",
+  "required: susceptibility risk score Spearman >= 0.95",
+  "required: resource-scarcity risk score Spearman >= 0.95",
+  "required: exposure risk score Spearman >= 0.95",
+  "required: a 2-10 class cluster column (numeric or text/categorical labels) whose partition explains >= 0.90 of the variance explained by the best K-means partition (same k) of the standardised gold risk scores",
+  "required (the domain knowledge prescribes K-means with SEEDS as initialization field): method fidelity - a 3-class cluster column with ARI >= 0.8 to the SEEDS-initialised gold"
+ ]
+}

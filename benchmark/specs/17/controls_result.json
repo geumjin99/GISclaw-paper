@@ -1,0 +1,168 @@
+[
+ {
+  "control": "correct_extent_total_bounds",
+  "expected_correct": true,
+  "judged_correct": true,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [],
+  "scorer_error": false
+ },
+ {
+  "control": "correct_figonly_reds_near_white_markers",
+  "expected_correct": true,
+  "judged_correct": true,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [],
+  "scorer_error": false
+ },
+ {
+  "control": "correct_geoplot_alias_gp",
+  "expected_correct": true,
+  "judged_correct": true,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [],
+  "scorer_error": false
+ },
+ {
+  "control": "correct_geoplot_inline_boroughs",
+  "expected_correct": true,
+  "judged_correct": true,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [],
+  "scorer_error": false
+ },
+ {
+  "control": "wrong_boroughs_not_drawn",
+  "expected_correct": false,
+  "judged_correct": false,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [
+   "borough polygons drawn, in the points' coordinate space"
+  ],
+  "scorer_error": false
+ },
+ {
+  "control": "wrong_crs_mix",
+  "expected_correct": false,
+  "judged_correct": false,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [
+   "borough polygons drawn, in the points' coordinate space",
+   "crashes plotted with geoplot (task: 'on a map by geoplot')"
+  ],
+  "scorer_error": false
+ },
+ {
+  "control": "wrong_extent_cuts_off_area",
+  "expected_correct": false,
+  "judged_correct": false,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [
+   "all 72 collisions drawn at their positions and visible on the map"
+  ],
+  "scorer_error": false
+ },
+ {
+  "control": "wrong_extent_subset_total_bounds",
+  "expected_correct": false,
+  "judged_correct": false,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [
+   "all 72 collisions drawn at their positions and visible on the map"
+  ],
+  "scorer_error": false
+ },
+ {
+  "control": "wrong_filtered_multi_fatality",
+  "expected_correct": false,
+  "judged_correct": false,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [
+   "all 72 collisions drawn at their positions and visible on the map",
+   "borough polygons drawn, in the points' coordinate space"
+  ],
+  "scorer_error": false
+ },
+ {
+  "control": "wrong_manhattan_only",
+  "expected_correct": false,
+  "judged_correct": false,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [
+   "all 72 collisions drawn at their positions and visible on the map",
+   "borough polygons drawn, in the points' coordinate space",
+   "crashes plotted with geoplot (task: 'on a map by geoplot')"
+  ],
+  "scorer_error": false
+ },
+ {
+  "control": "wrong_map_overwritten_by_empty_figure",
+  "expected_correct": false,
+  "judged_correct": false,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [
+   "all 72 collisions drawn at their positions and visible on the map",
+   "borough polygons drawn, in the points' coordinate space",
+   "crashes plotted with geoplot (task: 'on a map by geoplot')"
+  ],
+  "scorer_error": false
+ },
+ {
+  "control": "wrong_method_cartopy_loop_by_borough",
+  "expected_correct": false,
+  "judged_correct": false,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [
+   "crashes plotted with geoplot (task: 'on a map by geoplot')"
+  ],
+  "scorer_error": false
+ },
+ {
+  "control": "wrong_method_geopandas_stateplane",
+  "expected_correct": false,
+  "judged_correct": false,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [
+   "crashes plotted with geoplot (task: 'on a map by geoplot')"
+  ],
+  "scorer_error": false
+ },
+ {
+  "control": "wrong_points_in_other_file",
+  "expected_correct": false,
+  "judged_correct": false,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [
+   "all 72 collisions drawn at their positions and visible on the map",
+   "borough polygons drawn, in the points' coordinate space"
+  ],
+  "scorer_error": false
+ },
+ {
+  "control": "wrong_swapped_latlon",
+  "expected_correct": false,
+  "judged_correct": false,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [
+   "all 72 collisions drawn at their positions and visible on the map",
+   "borough polygons drawn, in the points' coordinate space",
+   "crashes plotted with geoplot (task: 'on a map by geoplot')"
+  ],
+  "scorer_error": false
+ }
+]

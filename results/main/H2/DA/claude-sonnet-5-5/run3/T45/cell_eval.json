@@ -1,0 +1,99 @@
+{
+ "cell_id": "main.H2.DA.claude-sonnet-5-5.r3.T45",
+ "task": 45,
+ "status": "ok",
+ "analytically_correct": true,
+ "scorer_error": false,
+ "checks": [
+  {
+   "name": "ruggedness from 3x3 focal variation matches gold (|Spearman| >= 0.95)",
+   "passed": true,
+   "value": 0.994,
+   "threshold": 0.95,
+   "required": true,
+   "note": "focal_std@final"
+  },
+  {
+   "name": "cost raster saved and georeferenced on the DEM grid",
+   "passed": true,
+   "value": "ruggedness_rescaled.tif",
+   "threshold": "EPSG:26911, bounds IoU>=0.95",
+   "required": true,
+   "note": ""
+  },
+  {
+   "name": "cost = standardised monotone transform of ruggedness",
+   "passed": true,
+   "value": [
+    0.983,
+    1.0,
+    10.0,
+    1.0
+   ],
+   "threshold": "|rho|>=0.85, values in [0,100] or z-scores, cover>=0.9",
+   "required": true,
+   "note": "ruggedness_rescaled.tif"
+  },
+  {
+   "name": "DEM NoData kept as NoData in the cost raster (>= 90 % of NoData cells)",
+   "passed": true,
+   "value": 1.0,
+   "threshold": 0.9,
+   "required": true,
+   "note": "ruggedness_rescaled.tif"
+  },
+  {
+   "name": "direction: rugged = low cost (as original)",
+   "passed": false,
+   "value": 0.983,
+   "threshold": null,
+   "required": false,
+   "note": ""
+  },
+  {
+   "name": "method fidelity: MSLarge rescale",
+   "passed": false,
+   "value": null,
+   "threshold": null,
+   "required": false,
+   "note": ""
+  },
+  {
+   "name": "deliverable files carry a CRS (uniform rule)",
+   "passed": true,
+   "value": [
+    "ruggedness_focal.tif",
+    "ruggedness_rescaled.tif"
+   ],
+   "threshold": "every geographic deliverable file has a CRS",
+   "required": true,
+   "note": "2 geographic deliverable file(s), all with a CRS"
+  }
+ ],
+ "replay": {
+  "success": true,
+  "outputs": [
+   "ruggedness_focal.tif",
+   "ruggedness_rescaled.tif",
+   "tri_preview.png"
+  ],
+  "events": [],
+  "blocks_ok": 6,
+  "block_outcome": [
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok"
+  ],
+  "step_timeout_s": 900,
+  "same_outputs_as_original": true,
+  "block_mismatches": []
+ },
+ "replay_faithful": true,
+ "replay_unfaithful_reasons": [],
+ "replay_container_failure": [],
+ "emergency_files": []
+}

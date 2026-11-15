@@ -1,0 +1,96 @@
+{
+ "cell_id": "main.H1.SA.gptoss-120b.r1.T43",
+ "task": 43,
+ "status": "ok",
+ "analytically_correct": false,
+ "scorer_error": false,
+ "checks": [
+  {
+   "name": "home range (convex hull) stored and matches gold (IoU >= 0.9)",
+   "passed": true,
+   "value": 1.0,
+   "threshold": 0.9,
+   "required": true,
+   "note": "elk_convex_hulls.gpkg:elk_convex_hulls vs per-collar (tag_ident) hulls"
+  },
+  {
+   "name": "kernel density raster stored and agrees with gold (3 km block Pearson >= 0.6)",
+   "passed": false,
+   "value": 0.374,
+   "threshold": 0.6,
+   "required": true,
+   "note": "elk_kde_500m.tif (coverage 1.00)"
+  },
+  {
+   "name": "density-based clusters with noise; clustered fixes denser than noise (ratio >= 1.5)",
+   "passed": true,
+   "value": 34.78,
+   "threshold": 1.5,
+   "required": true,
+   "note": "cluster in elk_points_dbscan.gpkg:elk_points_dbscan [n_clusters, noise share, n]=[14, 0.001, 150191]"
+  },
+  {
+   "name": "density-based clustering estimator called (DBSCAN/HDBSCAN/OPTICS)",
+   "passed": true,
+   "value": "DBSCAN(",
+   "threshold": null,
+   "required": true,
+   "note": "call required, not just an import"
+  },
+  {
+   "name": "deliverable files carry a CRS (uniform rule)",
+   "passed": true,
+   "value": [
+    "elk_convex_hulls.gpkg",
+    "elk_dbscan_hulls.gpkg",
+    "elk_kde_500m.tif",
+    "elk_points_dbscan.gpkg"
+   ],
+   "threshold": "every geographic deliverable file has a CRS",
+   "required": true,
+   "note": "4 geographic deliverable file(s), all with a CRS"
+  }
+ ],
+ "replay": {
+  "success": true,
+  "outputs": [
+   "elk_convex_hulls.gpkg",
+   "elk_dbscan_hulls.gpkg",
+   "elk_kde_500m.tif",
+   "elk_movement_map.png",
+   "elk_points_dbscan.gpkg"
+  ],
+  "events": [
+   {
+    "event": "timeout"
+   },
+   {
+    "event": "restarted",
+    "replayed": 7
+   }
+  ],
+  "blocks_ok": 10,
+  "block_outcome": [
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "timeout_killed",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok"
+  ],
+  "step_timeout_s": 900,
+  "same_outputs_as_original": true,
+  "block_mismatches": []
+ },
+ "replay_faithful": false,
+ "replay_unfaithful_reasons": [
+  "replay block(s) [5] cut off (timeout_killed)"
+ ],
+ "replay_container_failure": [],
+ "emergency_files": []
+}

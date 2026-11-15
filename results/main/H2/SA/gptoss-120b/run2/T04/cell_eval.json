@@ -1,0 +1,98 @@
+{
+ "cell_id": "main.H2.SA.gptoss-120b.r2.T04",
+ "task": 4,
+ "status": "ok",
+ "analytically_correct": true,
+ "scorer_error": false,
+ "checks": [
+  {
+   "name": "required output present",
+   "passed": true,
+   "value": [
+    "undeveloped_areas.tif"
+   ],
+   "threshold": [
+    "undeveloped_areas.tif",
+    "undeveloped_areas.tiff"
+   ],
+   "required": true,
+   "note": ""
+  },
+  {
+   "name": "georeferenced raster with selected cells",
+   "passed": true,
+   "value": 665,
+   "threshold": ">0",
+   "required": true,
+   "note": "pred CRS; 0 selected cells outside the land_cover grid"
+  },
+  {
+   "name": "selected cells match an accepted interpretation (1-cell tolerance)",
+   "passed": true,
+   "value": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "cells": 665,
+    "variant_cells": 665
+   },
+   "threshold": "precision>=0.85 and recall>=0.85",
+   "required": true,
+   "note": "appearance / upper-inclusive / linear"
+  },
+  {
+   "name": "soils projected to Lambert Conformal Conic (prescribed step)",
+   "passed": true,
+   "value": null,
+   "threshold": null,
+   "required": true,
+   "note": "soils layer soils_proj@final in LCC"
+  },
+  {
+   "name": "selected cells carry undeveloped NLCD codes or a 0/1 mask",
+   "passed": true,
+   "value": [
+    1.0
+   ],
+   "threshold": null,
+   "required": false,
+   "note": ""
+  },
+  {
+   "name": "deliverable files carry a CRS (uniform rule)",
+   "passed": true,
+   "value": [
+    "undeveloped_areas.tif"
+   ],
+   "threshold": "every geographic deliverable file has a CRS",
+   "required": true,
+   "note": "1 geographic deliverable file(s), all with a CRS"
+  }
+ ],
+ "replay": {
+  "success": true,
+  "outputs": [
+   "undeveloped_areas.tif"
+  ],
+  "events": [],
+  "blocks_ok": 8,
+  "block_outcome": [
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok"
+  ],
+  "step_timeout_s": 900,
+  "same_outputs_as_original": true,
+  "block_mismatches": []
+ },
+ "replay_faithful": true,
+ "replay_unfaithful_reasons": [],
+ "replay_container_failure": [],
+ "emergency_files": []
+}

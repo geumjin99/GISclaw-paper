@@ -1,0 +1,141 @@
+{
+ "cell_id": "main.H1.SA.qwen38-27b.r1.T40",
+ "task": 40,
+ "status": "ok",
+ "analytically_correct": true,
+ "scorer_error": false,
+ "checks": [
+  {
+   "name": "a figure (PNG) is present",
+   "passed": true,
+   "value": [
+    "malaria_change_2000_2015.png"
+   ],
+   "threshold": "any *.png",
+   "required": true,
+   "note": ""
+  },
+  {
+   "name": "figure not blank",
+   "passed": true,
+   "value": 49.47371612072534,
+   "threshold": ">=3 grey-level std",
+   "required": true,
+   "note": ""
+  },
+  {
+   "name": "reversed order (2000 minus 2015) stated and drawn with red = increase",
+   "passed": false,
+   "value": null,
+   "threshold": null,
+   "required": false,
+   "note": "reported only; reversed order not accepted"
+  },
+  {
+   "name": "change field matches gold (Pearson)",
+   "passed": true,
+   "value": 1.0,
+   "threshold": 0.95,
+   "required": true,
+   "note": "diff_f32@final"
+  },
+  {
+   "name": "change has gold scale and sign (mean within 25 %)",
+   "passed": true,
+   "value": -0.1706,
+   "threshold": "-0.1706 (or x100)",
+   "required": true,
+   "note": ""
+  },
+  {
+   "name": "nodata masked (not shown as zero change)",
+   "passed": true,
+   "value": 1.0,
+   "threshold": 0.9,
+   "required": false,
+   "note": ""
+  },
+  {
+   "name": "map shows the change (drawn image Spearman >= 0.85)",
+   "passed": true,
+   "value": 1.0,
+   "threshold": 0.85,
+   "required": true,
+   "note": "fig_ax4_image0@save00"
+  },
+  {
+   "name": "drawn change map masks nodata",
+   "passed": true,
+   "value": 1.0,
+   "threshold": ">= 0.9 of nodata cells masked",
+   "required": true,
+   "note": "fig_ax4_image0@save00"
+  },
+  {
+   "name": "figure: change map drawn north-up (drawn image Spearman >= 0.85 as drawn)",
+   "passed": true,
+   "value": 1.0,
+   "threshold": 0.85,
+   "required": false,
+   "note": "fig_ax4_image0@save00",
+   "kind": "figure"
+  },
+  {
+   "name": "diverging colour scheme (code inspection)",
+   "passed": true,
+   "value": null,
+   "threshold": null,
+   "required": true,
+   "note": "comments stripped; the text prescribes a diverging colour scheme"
+  },
+  {
+   "name": "categorical change map derived (ordered classes)",
+   "passed": false,
+   "value": -0.481,
+   "threshold": "Spearman >= 0.7",
+   "required": false,
+   "note": "a@final"
+  },
+  {
+   "name": "deliverable files carry a CRS (uniform rule)",
+   "passed": true,
+   "value": [
+    "malaria_change_classes_2000_2015.tif",
+    "malaria_prevalence_change_2000_2015.tif"
+   ],
+   "threshold": "every geographic deliverable file has a CRS",
+   "required": true,
+   "note": "2 geographic deliverable file(s), all with a CRS"
+  }
+ ],
+ "replay": {
+  "success": true,
+  "outputs": [
+   "malaria_change_2000_2015.png",
+   "malaria_change_classes_2000_2015.tif",
+   "malaria_prevalence_change_2000_2015.tif"
+  ],
+  "events": [],
+  "blocks_ok": 9,
+  "block_outcome": [
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok"
+  ],
+  "step_timeout_s": 900,
+  "same_outputs_as_original": true,
+  "block_mismatches": []
+ },
+ "replay_faithful": true,
+ "replay_unfaithful_reasons": [],
+ "replay_container_failure": [],
+ "emergency_files": []
+}

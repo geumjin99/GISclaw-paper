@@ -1,0 +1,95 @@
+{
+ "cell_id": "oneshot.C0.SA.claude-haiku-5-5.r2.T48",
+ "task": 48,
+ "status": "ok",
+ "analytically_correct": false,
+ "scorer_error": false,
+ "checks": [
+  {
+   "name": "selection AcceptedLo >= 30 (808 tracts)",
+   "passed": true,
+   "value": "sel@final",
+   "threshold": 808,
+   "required": true,
+   "note": ""
+  },
+  {
+   "name": "hot spots: Gi* z of AveInteres (Pearson >= 0.85 with a Gi* variant, closer than to Gi* of AveLoanGra)",
+   "passed": true,
+   "value": 1.0,
+   "threshold": 0.85,
+   "required": true,
+   "note": "gi.Zs@final ~ Gi[knn8/self1/bin]"
+  },
+  {
+   "name": "GWR (22 NN) of AveInteres: a local slope matches a 22-NN reference fit (Pearson >= 0.95)",
+   "passed": false,
+   "value": 0.935,
+   "threshold": 0.95,
+   "required": true,
+   "note": "b_AveLoanG in gwr_hotspot_results.shp@file ~ bisquare22 AveLoanGra+TotalLoanA+pHHLoanRat: b[AveLoanGra]"
+  },
+  {
+   "name": "local R2 reported",
+   "passed": false,
+   "value": null,
+   "threshold": null,
+   "required": false,
+   "note": ""
+  },
+  {
+   "name": "FDR correction (code)",
+   "passed": false,
+   "value": null,
+   "threshold": null,
+   "required": false,
+   "note": ""
+  },
+  {
+   "name": "deliverable files carry a CRS (uniform rule)",
+   "passed": true,
+   "value": [
+    "gwr_hotspot_results.gpkg",
+    "gwr_hotspot_results.shp",
+    "selected_tracts.gpkg",
+    "selected_tracts.shp"
+   ],
+   "threshold": "every geographic deliverable file has a CRS",
+   "required": true,
+   "note": "4 geographic deliverable file(s), all with a CRS"
+  }
+ ],
+ "replay": {
+  "success": true,
+  "outputs": [
+   "gwr_hotspot_results.cpg",
+   "gwr_hotspot_results.dbf",
+   "gwr_hotspot_results.gpkg",
+   "gwr_hotspot_results.prj",
+   "gwr_hotspot_results.shp",
+   "gwr_hotspot_results.shx",
+   "gwr_local_coefficients.csv",
+   "gwr_local_intercept.png",
+   "gwr_summary.txt",
+   "hotspot_and_gwr_maps.png",
+   "selected_tracts.cpg",
+   "selected_tracts.dbf",
+   "selected_tracts.gpkg",
+   "selected_tracts.prj",
+   "selected_tracts.shp",
+   "selected_tracts.shx"
+  ],
+  "events": [],
+  "blocks_ok": 1,
+  "block_outcome": [
+   "ok"
+  ],
+  "step_timeout_s": 3600,
+  "same_outputs_as_original": true,
+  "block_mismatches": []
+ },
+ "replay_faithful": true,
+ "replay_unfaithful_reasons": [],
+ "replay_container_failure": [],
+ "emergency_files": []
+}

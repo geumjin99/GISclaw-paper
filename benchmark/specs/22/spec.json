@@ -1,0 +1,36 @@
+{
+ "task": 22,
+ "title": "Mountain lion corridor - composite cost surface",
+ "output_type": "image (raster map)",
+ "required_outputs": [
+  "mountainLionCorridor.png"
+ ],
+ "method": "Map algebra on four co-registered 2494 x 3062 criterion rasters (30 m, NAD83 / UTM 11N): cost = (1*distance + 1.25*ruggedness + 1*protected_status + 1.25*landcover) / 4.5, with landcover code 255 (ocean, unflagged NoData) masked; the surface is mapped.",
+ "key_parameters": {
+  "weights": {
+   "distance": 1,
+   "ruggedness": 1.25,
+   "protected_status": 1,
+   "landcover": 1.25
+  },
+  "normalisation": "divide by weight total 4.5 (optional, rank-preserving)",
+  "nodata": "landcover_reclassified == 255"
+ },
+ "benchmark_defects": [
+  "landcover_reclassified.tif stores NoData as 255 without a NoData flag (158k ocean cells); a naive weighted sum gives these cells cost ~70-80 on a 0-10 scale.",
+  "Ruggedness is on a 0-36 scale while the other criteria are 0-10; the task gives weights but does not say whether criteria must first be put on a common scale.",
+  "Dataset description names 'landCover_reclassified.tif' / 'Protected_Status_reclassified.tif' but the files are lower-case (landcover_reclassified.tif, protected_status_reclassified.tif).",
+  "The published reference script calls main() only under an `if __name__ == '__main__'` guard."
+ ],
+ "checks": [
+  "required: map file present",
+  "required: map not blank",
+  "required: a captured 2-D surface on the study grid agrees with the gold composite (Pearson >= 0.85 on gold-valid cells)",
+  "required: least-squares decomposition of that surface on the four inputs: R2 >= 0.98 and every coefficient relative to distance within +/-10 % of the given weight on the raw scale or after range normalisation (ruggedness 1.25 or 0.347, protected 1.0 or 1.111, land cover 1.25)",
+  "required: the map shows that surface - a drawn image/mesh passes the same decomposition against the inputs brought to its grid (as drawn or flipped N-S)",
+  "figure (kind=figure, never required): map drawn north-up - the drawn composite passes the decomposition without the N-S flip",
+  "figure (kind=figure, never required): map readable - landcover 255 NoData summed as cost does not swamp the colour scale (sea masked/in range, or the PNG spreads the land over >= 0.15 of the colormap)",
+  "optional: ruggedness:distance = 1.25 (no rescaling of ruggedness)",
+  "optional: landcover 255 NoData excluded"
+ ]
+}

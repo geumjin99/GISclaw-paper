@@ -1,0 +1,179 @@
+[
+ {
+  "control": "correct_dem_grid_authors_bins",
+  "expected_correct": true,
+  "judged_correct": true,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [],
+  "scorer_error": false
+ },
+ {
+  "control": "correct_figonly_map_upside_down",
+  "expected_correct": true,
+  "judged_correct": true,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [],
+  "scorer_error": false
+ },
+ {
+  "control": "correct_imsave_map",
+  "expected_correct": true,
+  "judged_correct": true,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [],
+  "scorer_error": false
+ },
+ {
+  "control": "correct_landsat_quantile_burn_slope",
+  "expected_correct": true,
+  "judged_correct": true,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [],
+  "scorer_error": false
+ },
+ {
+  "control": "correct_nlcd_grid_quantiles",
+  "expected_correct": true,
+  "judged_correct": true,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [],
+  "scorer_error": false
+ },
+ {
+  "control": "wrong_band_offbyone",
+  "expected_correct": false,
+  "judged_correct": false,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [
+   "burn, slope and land cover enter with instructed weights (regression on gold classes)",
+   "map shows the risk surface (drawn image passes the surface checks)",
+   "burn severity = NBR difference (captured layer |r| >= 0.97 with gold dNBR)"
+  ],
+  "scorer_error": false
+ },
+ {
+  "control": "wrong_burn_severity_sign",
+  "expected_correct": false,
+  "judged_correct": false,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [
+   "burn, slope and land cover enter with instructed weights (regression on gold classes)",
+   "map shows the risk surface (drawn image passes the surface checks)"
+  ],
+  "scorer_error": false
+ },
+ {
+  "control": "wrong_deliverable_no_crs",
+  "expected_correct": false,
+  "judged_correct": false,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [
+   "deliverable files carry a CRS (uniform rule)"
+  ],
+  "scorer_error": false
+ },
+ {
+  "control": "wrong_equal_weights",
+  "expected_correct": false,
+  "judged_correct": false,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [
+   "burn, slope and land cover enter with instructed weights (regression on gold classes)",
+   "map shows the risk surface (drawn image passes the surface checks)"
+  ],
+  "scorer_error": false
+ },
+ {
+  "control": "wrong_imsave_slope_not_risk",
+  "expected_correct": false,
+  "judged_correct": false,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [
+   "map shows the risk surface (drawn image passes the surface checks)"
+  ],
+  "scorer_error": false
+ },
+ {
+  "control": "wrong_map_shows_slope_not_risk",
+  "expected_correct": false,
+  "judged_correct": false,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [
+   "map shows the risk surface (drawn image passes the surface checks)"
+  ],
+  "scorer_error": false
+ },
+ {
+  "control": "wrong_method_dndvi_burn",
+  "expected_correct": false,
+  "judged_correct": false,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [
+   "burn, slope and land cover enter with instructed weights (regression on gold classes)",
+   "map shows the risk surface (drawn image passes the surface checks)",
+   "burn severity = NBR difference (captured layer |r| >= 0.97 with gold dNBR)"
+  ],
+  "scorer_error": false
+ },
+ {
+  "control": "wrong_no_burn",
+  "expected_correct": false,
+  "judged_correct": false,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [
+   "burn, slope and land cover enter with instructed weights (regression on gold classes)",
+   "map shows the risk surface (drawn image passes the surface checks)"
+  ],
+  "scorer_error": false
+ },
+ {
+  "control": "wrong_no_landcover",
+  "expected_correct": false,
+  "judged_correct": false,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [
+   "burn, slope and land cover enter with instructed weights (regression on gold classes)",
+   "map shows the risk surface (drawn image passes the surface checks)"
+  ],
+  "scorer_error": false
+ },
+ {
+  "control": "wrong_no_remap_raw",
+  "expected_correct": false,
+  "judged_correct": false,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [
+   "burn, slope and land cover enter with instructed weights (regression on gold classes)",
+   "map shows the risk surface (drawn image passes the surface checks)"
+  ],
+  "scorer_error": false
+ },
+ {
+  "control": "wrong_zoom_resample_ignores_crs",
+  "expected_correct": false,
+  "judged_correct": false,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [
+   "risk surface matches gold (Pearson >= 0.80)",
+   "burn, slope and land cover enter with instructed weights (regression on gold classes)",
+   "map shows the risk surface (drawn image passes the surface checks)"
+  ],
+  "scorer_error": false
+ }
+]

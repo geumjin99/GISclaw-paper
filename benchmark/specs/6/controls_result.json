@@ -1,0 +1,155 @@
+[
+ {
+  "control": "correct_figonly_kde_image_mirrored",
+  "expected_correct": true,
+  "judged_correct": true,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [],
+  "scorer_error": false
+ },
+ {
+  "control": "correct_gaussian_5km_padded",
+  "expected_correct": true,
+  "judged_correct": true,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [],
+  "scorer_error": false
+ },
+ {
+  "control": "correct_mgrid_kde_shapely_hull",
+  "expected_correct": true,
+  "judged_correct": true,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [],
+  "scorer_error": false
+ },
+ {
+  "control": "correct_per_collar_hulls",
+  "expected_correct": true,
+  "judged_correct": true,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [],
+  "scorer_error": false
+ },
+ {
+  "control": "correct_scipy_kde_degrees_hdbscan",
+  "expected_correct": true,
+  "judged_correct": true,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [],
+  "scorer_error": false
+ },
+ {
+  "control": "correct_seaborn_kde",
+  "expected_correct": true,
+  "judged_correct": true,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [],
+  "scorer_error": false
+ },
+ {
+  "control": "correct_sklearn_kde_1km_dbscan300",
+  "expected_correct": true,
+  "judged_correct": true,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [],
+  "scorer_error": false
+ },
+ {
+  "control": "wrong_benchmark_script_degree_bandwidth",
+  "expected_correct": false,
+  "judged_correct": false,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [
+   "kernel density matches gold (grid r >= 0.6 or per-fix rho >= 0.7)"
+  ],
+  "scorer_error": false
+ },
+ {
+  "control": "wrong_comments_group_hulls",
+  "expected_correct": false,
+  "judged_correct": false,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [
+   "home range polygon matches convex hull (IoU >= 0.90)"
+  ],
+  "scorer_error": false
+ },
+ {
+  "control": "wrong_final_map_clusters_only",
+  "expected_correct": false,
+  "judged_correct": false,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [
+   "Elk_Analysis.png overlays hull, density and clusters"
+  ],
+  "scorer_error": false
+ },
+ {
+  "control": "wrong_head_subsample",
+  "expected_correct": false,
+  "judged_correct": false,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [
+   "home range polygon matches convex hull (IoU >= 0.90)"
+  ],
+  "scorer_error": false
+ },
+ {
+  "control": "wrong_histogram_not_kde",
+  "expected_correct": false,
+  "judged_correct": false,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [
+   "kernel density matches gold (grid r >= 0.6 or per-fix rho >= 0.7)"
+  ],
+  "scorer_error": false
+ },
+ {
+  "control": "wrong_kmeans_envelope",
+  "expected_correct": false,
+  "judged_correct": false,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [
+   "home range polygon matches convex hull (IoU >= 0.90)",
+   "DBSCAN-style clusters with noise, spatially coherent",
+   "density-based clustering estimator called (DBSCAN/HDBSCAN/OPTICS)"
+  ],
+  "scorer_error": false
+ },
+ {
+  "control": "wrong_method_kde_threshold_regions",
+  "expected_correct": false,
+  "judged_correct": false,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [
+   "density-based clustering estimator called (DBSCAN/HDBSCAN/OPTICS)"
+  ],
+  "scorer_error": false
+ },
+ {
+  "control": "wrong_one_season_only",
+  "expected_correct": false,
+  "judged_correct": false,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [
+   "home range polygon matches convex hull (IoU >= 0.90)"
+  ],
+  "scorer_error": false
+ }
+]

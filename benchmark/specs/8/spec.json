@@ -1,0 +1,26 @@
+{
+ "task": 8,
+ "title": "Find gap for Toronto fire station service coverage",
+ "output_type": "image (coverage-gap map)",
+ "required_outputs": [
+  "Fire_Service_Analysis.png"
+ ],
+ "method": "Project all 84 Toronto fire stations and the Etobicoke district (3 sections, 187.9 km2) to UTM 17N; buffer every station by 2.5 km (stations outside Etobicoke also cover its edges), dissolve, and take Etobicoke minus the coverage (overlay difference): 3.60 km2 (1.9 %) uncovered. Map district, covered area, gaps and stations.",
+ "key_parameters": {
+  "crs": "EPSG:32617",
+  "buffer_m": 2500,
+  "stations": "all 84 (not only MUN_NAME == Etobicoke)",
+  "overlay": "difference(Etobicoke, union of buffers)"
+ },
+ "benchmark_defects": [
+  "The instruction names dataset/fire_stations.geojson; the file is dataset/fire_station.geojson.",
+  "No buffer distance is given; the uncovered share ranges from 65 % (1 km) to 0.4 % (3 km). Checks accept any 0.4-5 km distance applied consistently; 2.5 km (the published reference script) is used for the gold.",
+  "The 'etobicoke' layer (188 km2) is larger than the former City of Etobicoke (~124 km2) and contains 22 stations, although only 12 have MUN_NAME 'Etobicoke'."
+ ],
+ "checks": [
+  "required: map file present",
+  "required: map not blank",
+  "required: a captured polygon layer equals Etobicoke minus the union of d-m buffers around all stations for some d in 0.4-5 km (area IoU >= 0.90, d searched in 50 m steps); <= 0.5 % of the gap within 0.9 d of any station (subset constraint); layers explained as well by the district outline are ignored; inferred true radius equals the stated buffer distance (+-10 %)",
+  "optional: d within 1.5-3 km"
+ ]
+}

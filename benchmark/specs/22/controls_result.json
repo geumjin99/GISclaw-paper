@@ -1,0 +1,148 @@
+[
+ {
+  "control": "correct_benchmark_script_unmasked",
+  "expected_correct": true,
+  "judged_correct": true,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [],
+  "scorer_error": false
+ },
+ {
+  "control": "correct_downsampled_plot",
+  "expected_correct": true,
+  "judged_correct": true,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [],
+  "scorer_error": false
+ },
+ {
+  "control": "correct_figonly_drawn_upside_down",
+  "expected_correct": true,
+  "judged_correct": true,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [],
+  "scorer_error": false
+ },
+ {
+  "control": "correct_figonly_unmasked_255_default_stretch",
+  "expected_correct": true,
+  "judged_correct": true,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [],
+  "scorer_error": false
+ },
+ {
+  "control": "correct_minmax_all_layers",
+  "expected_correct": true,
+  "judged_correct": true,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [],
+  "scorer_error": false
+ },
+ {
+  "control": "correct_rescaled_1_10_ruggedness",
+  "expected_correct": true,
+  "judged_correct": true,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [],
+  "scorer_error": false
+ },
+ {
+  "control": "correct_rescaled_ruggedness",
+  "expected_correct": true,
+  "judged_correct": true,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [],
+  "scorer_error": false
+ },
+ {
+  "control": "correct_rioxarray_function",
+  "expected_correct": true,
+  "judged_correct": true,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [],
+  "scorer_error": false
+ },
+ {
+  "control": "wrong_equal_weights",
+  "expected_correct": false,
+  "judged_correct": false,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [
+   "weighted combination of all four layers with the given weights",
+   "map shows the weighted composite surface"
+  ],
+  "scorer_error": false
+ },
+ {
+  "control": "wrong_missing_landcover",
+  "expected_correct": false,
+  "judged_correct": false,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [
+   "weighted combination of all four layers with the given weights",
+   "map shows the weighted composite surface"
+  ],
+  "scorer_error": false
+ },
+ {
+  "control": "wrong_plot_raw_ruggedness",
+  "expected_correct": false,
+  "judged_correct": false,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [
+   "composite surface agrees with gold (Pearson)",
+   "weighted combination of all four layers with the given weights",
+   "map shows the weighted composite surface"
+  ],
+  "scorer_error": false
+ },
+ {
+  "control": "wrong_rescaled_ruggedness_weight_one",
+  "expected_correct": false,
+  "judged_correct": false,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [
+   "weighted combination of all four layers with the given weights",
+   "map shows the weighted composite surface"
+  ],
+  "scorer_error": false
+ },
+ {
+  "control": "wrong_ruggedness_inverted",
+  "expected_correct": false,
+  "judged_correct": false,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [
+   "composite surface agrees with gold (Pearson)",
+   "weighted combination of all four layers with the given weights",
+   "map shows the weighted composite surface"
+  ],
+  "scorer_error": false
+ },
+ {
+  "control": "wrong_ruggedness_weight_one",
+  "expected_correct": false,
+  "judged_correct": false,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [
+   "weighted combination of all four layers with the given weights",
+   "map shows the weighted composite surface"
+  ],
+  "scorer_error": false
+ }
+]

@@ -1,0 +1,25 @@
+{
+ "task": 35,
+ "source": "instruction: 'save them as one landslide risk map as pred_results/landslide_map.png'; checks.py file_exists/png_not_blank on it (required); risk surface from captured arrays or any written *.tif* (glob), as an alternative",
+ "deliverables": [
+  {
+   "id": "map",
+   "kind": "figure",
+   "patterns": ["landslide_map.png"],
+   "required": true,
+   "crs_required": false,
+   "checked_by": ["required output present", "map not blank"]
+  },
+  {
+   "id": "risk_surface",
+   "kind": "raster",
+   "patterns": ["*.tif*"],
+   "required": false,
+   "crs_required": true,
+   "checked_by": ["risk surface matches gold (Pearson >= 0.80)", "burn, slope and land cover enter with instructed weights (regression on gold classes)", "burn severity = NBR difference (captured layer |r| >= 0.97 with gold dNBR)"]
+  }
+ ],
+ "not_deliverables": [
+  {"pattern": "no landslide_map.png", "reason": "a result note string in checks.py, not a file name"}
+ ]
+}

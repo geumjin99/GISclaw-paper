@@ -1,0 +1,107 @@
+{
+ "cell_id": "ablation.H2+nodd.SA.qwen38-27b.r1.T02",
+ "task": 2,
+ "status": "ok",
+ "analytically_correct": true,
+ "scorer_error": false,
+ "checks": [
+  {
+   "name": "required output present",
+   "passed": true,
+   "value": [
+    "transit_access.png"
+   ],
+   "threshold": [
+    "transit_access.png"
+   ],
+   "required": true,
+   "note": ""
+  },
+  {
+   "name": "map not blank",
+   "passed": true,
+   "value": 58.49507987013527,
+   "threshold": ">=3 grey-level std",
+   "required": true,
+   "note": ""
+  },
+  {
+   "name": "three factors drawn (poverty, no-vehicle, density)",
+   "passed": true,
+   "value": {
+    "poverty": 1.0,
+    "no-vehicle": 1.0,
+    "density": 0.993
+   },
+   "threshold": "poverty/no-vehicle rho>=0.9, density rho>=0.8 (or literal rating column); distinct layers",
+   "required": true,
+   "note": "poverty: overlay_bg@final.households_ACSHHBPOV (face colours, OrRd, class IoU 1.00); no-vehicle: overlay_bg@final.AtRisk_ACSOVEH0 (face colours, Blues, class IoU 1.00); density: overlay_bg@final.pop_density (face colours, YlGnBu, class IoU 1.00)"
+  },
+  {
+   "name": "bus service area drawn and correctly located",
+   "passed": true,
+   "value": 1.0,
+   "threshold": "IoU >= 0.90",
+   "required": true,
+   "note": "hand-drawn patches: save00 patch group 2 (2 Polygon patches, EPSG:32616) (IoU 1.000)"
+  },
+  {
+   "name": "population density derived (pop/area; rating column is constant)",
+   "passed": true,
+   "value": 0.993,
+   "threshold": 0.8,
+   "required": false,
+   "note": ""
+  },
+  {
+   "name": "geometric overlay of block groups and service area",
+   "passed": true,
+   "value": 1.0,
+   "threshold": 0.9,
+   "required": false,
+   "note": ""
+  }
+ ],
+ "replay": {
+  "success": true,
+  "outputs": [
+   "transit_access.png"
+  ],
+  "events": [],
+  "blocks_ok": 13,
+  "block_outcome": [
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok"
+  ],
+  "step_timeout_s": 900,
+  "same_outputs_as_original": true,
+  "block_mismatches": [
+   4
+  ]
+ },
+ "replay_faithful": false,
+ "replay_unfaithful_reasons": [
+  "block success differs at [4]"
+ ],
+ "replay_container_failure": [],
+ "emergency_files": []
+}

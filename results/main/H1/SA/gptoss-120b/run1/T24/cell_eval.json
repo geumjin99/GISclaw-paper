@@ -1,0 +1,86 @@
+{
+ "cell_id": "main.H1.SA.gptoss-120b.r1.T24",
+ "task": 24,
+ "status": "ok",
+ "analytically_correct": false,
+ "scorer_error": false,
+ "checks": [
+  {
+   "name": "point vector file written",
+   "passed": false,
+   "value": [],
+   "threshold": null,
+   "required": true,
+   "note": ""
+  },
+  {
+   "name": "records preserved (373 or 168 unique)",
+   "passed": false,
+   "value": null,
+   "threshold": null,
+   "required": true,
+   "note": "no point layer"
+  },
+  {
+   "name": "geometries on 0.01-degree WGS84 grid",
+   "passed": false,
+   "value": null,
+   "threshold": null,
+   "required": true,
+   "note": "no point layer"
+  },
+  {
+   "name": "unique rounded locations equal gold set",
+   "passed": false,
+   "value": null,
+   "threshold": null,
+   "required": true,
+   "note": "no point layer"
+  },
+  {
+   "name": "reduction in unique locations documented (168 / 204-205 / ~55 %)",
+   "passed": false,
+   "value": null,
+   "threshold": null,
+   "required": true,
+   "note": "searched captured scalars/tables, text outputs and labelled stdout lines"
+  },
+  {
+   "name": "exact original coordinates not kept as attributes",
+   "passed": false,
+   "value": null,
+   "threshold": null,
+   "required": true,
+   "note": ""
+  },
+  {
+   "name": "rounded coordinate fields added",
+   "passed": false,
+   "value": null,
+   "threshold": null,
+   "required": false,
+   "note": ""
+  },
+  {
+   "name": "deliverable files carry a CRS (uniform rule)",
+   "passed": true,
+   "value": [],
+   "threshold": "every geographic deliverable file has a CRS",
+   "required": true,
+   "note": "no geographic deliverable file written (presence is judged by the task checks)"
+  }
+ ],
+ "replay": {
+  "success": true,
+  "outputs": [],
+  "events": [],
+  "blocks_ok": 1,
+  "block_outcome": [
+   "ok"
+  ],
+  "step_timeout_s": 900,
+  "same_outputs_as_original": true
+ },
+ "replay_faithful": null,
+ "emergency_files": []
+}

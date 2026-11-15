@@ -1,0 +1,133 @@
+[
+ {
+  "control": "correct_long_merge_left",
+  "expected_correct": true,
+  "judged_correct": true,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [],
+  "scorer_error": false
+ },
+ {
+  "control": "correct_long_merged_no_count",
+  "expected_correct": true,
+  "judged_correct": true,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [],
+  "scorer_error": false
+ },
+ {
+  "control": "correct_orphans_labelled",
+  "expected_correct": true,
+  "judged_correct": true,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [],
+  "scorer_error": false
+ },
+ {
+  "control": "correct_pivot_merged_in_memory",
+  "expected_correct": true,
+  "judged_correct": true,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [],
+  "scorer_error": false
+ },
+ {
+  "control": "correct_pivot_prefixed_sanitised",
+  "expected_correct": true,
+  "judged_correct": true,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [],
+  "scorer_error": false
+ },
+ {
+  "control": "correct_series_in_function",
+  "expected_correct": true,
+  "judged_correct": true,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [],
+  "scorer_error": false
+ },
+ {
+  "control": "correct_us_pivot_groupby_name",
+  "expected_correct": true,
+  "judged_correct": true,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [],
+  "scorer_error": false
+ },
+ {
+  "control": "wrong_fk_counts_no_join",
+  "expected_correct": false,
+  "judged_correct": false,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [
+   "relationship campground (FacilityID) 1 -> many campsites (ParentFacilityID) materialised"
+  ],
+  "scorer_error": false
+ },
+ {
+  "control": "wrong_join_orgparentid",
+  "expected_correct": false,
+  "judged_correct": false,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [
+   "park-level join ParentOrgID -> OrgID (both parks carry 'National Park Service')"
+  ],
+  "scorer_error": false
+ },
+ {
+  "control": "wrong_relate_on_attributeid",
+  "expected_correct": false,
+  "judged_correct": false,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [
+   "one-to-many campsite relate materialised (per-campsite related-record counts, Wyoming campsites)"
+  ],
+  "scorer_error": false
+ },
+ {
+  "control": "wrong_relate_one_to_one",
+  "expected_correct": false,
+  "judged_correct": false,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [
+   "one-to-many campsite relate materialised (per-campsite related-record counts, Wyoming campsites)"
+  ],
+  "scorer_error": false
+ },
+ {
+  "control": "wrong_relationship_nearest",
+  "expected_correct": false,
+  "judged_correct": false,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [
+   "relationship campground (FacilityID) 1 -> many campsites (ParentFacilityID) materialised"
+  ],
+  "scorer_error": false
+ },
+ {
+  "control": "wrong_summary_only",
+  "expected_correct": false,
+  "judged_correct": false,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [
+   "one-to-many campsite relate materialised (per-campsite related-record counts, Wyoming campsites)",
+   "park-level join ParentOrgID -> OrgID (both parks carry 'National Park Service')",
+   "relationship campground (FacilityID) 1 -> many campsites (ParentFacilityID) materialised"
+  ],
+  "scorer_error": false
+ }
+]

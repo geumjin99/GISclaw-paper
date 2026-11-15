@@ -1,0 +1,169 @@
+[
+ {
+  "control": "correct_csv_groups_array_codes",
+  "expected_correct": true,
+  "judged_correct": true,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [],
+  "scorer_error": false
+ },
+ {
+  "control": "correct_csv_groups_dropna",
+  "expected_correct": true,
+  "judged_correct": true,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [],
+  "scorer_error": false
+ },
+ {
+  "control": "correct_figonly_swapped_map_colours",
+  "expected_correct": true,
+  "judged_correct": true,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [],
+  "scorer_error": false
+ },
+ {
+  "control": "correct_hh_sig_above_mean_equivalent",
+  "expected_correct": true,
+  "judged_correct": true,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [],
+  "scorer_error": false
+ },
+ {
+  "control": "correct_nan_intermediate_then_filled",
+  "expected_correct": true,
+  "judged_correct": true,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [],
+  "scorer_error": false
+ },
+ {
+  "control": "correct_quadrant_plus_sig_column",
+  "expected_correct": true,
+  "judged_correct": true,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [],
+  "scorer_error": false
+ },
+ {
+  "control": "correct_quadrant_plus_sig_nearest_fill",
+  "expected_correct": true,
+  "judged_correct": true,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [],
+  "scorer_error": false
+ },
+ {
+  "control": "wrong_fill_zero",
+  "expected_correct": false,
+  "judged_correct": false,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [
+   "missing values handled (no NaN, plausible fill)",
+   "LISA hot/cold spots match gold (IoU >= 0.7), labels not inverted"
+  ],
+  "scorer_error": false
+ },
+ {
+  "control": "wrong_getis_ord_instead",
+  "expected_correct": false,
+  "judged_correct": false,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [
+   "Local Moran's I computed (local I values captured or Moran_Local called)"
+  ],
+  "scorer_error": false
+ },
+ {
+  "control": "wrong_group_mean",
+  "expected_correct": false,
+  "judged_correct": false,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [
+   "analysed variable = group median price",
+   "missing values handled (no NaN, plausible fill)",
+   "LISA hot/cold spots match gold (IoU >= 0.7), labels not inverted"
+  ],
+  "scorer_error": false
+ },
+ {
+  "control": "wrong_hot_spots_labelled_hl",
+  "expected_correct": false,
+  "judged_correct": false,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [
+   "LISA hot/cold spots match gold (IoU >= 0.7), labels not inverted"
+  ],
+  "scorer_error": false
+ },
+ {
+  "control": "wrong_knn5_weights_not_queen",
+  "expected_correct": false,
+  "judged_correct": false,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [
+   "LISA hot/cold spots match gold (IoU >= 0.7), labels not inverted"
+  ],
+  "scorer_error": false
+ },
+ {
+  "control": "wrong_neighbourhood_level",
+  "expected_correct": false,
+  "judged_correct": false,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [
+   "analysed variable = group median price",
+   "missing values handled (no NaN, plausible fill)",
+   "LISA hot/cold spots match gold (IoU >= 0.7), labels not inverted"
+  ],
+  "scorer_error": false
+ },
+ {
+  "control": "wrong_no_significance_filter",
+  "expected_correct": false,
+  "judged_correct": false,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [
+   "LISA hot/cold spots match gold (IoU >= 0.7), labels not inverted"
+  ],
+  "scorer_error": false
+ },
+ {
+  "control": "wrong_nonsig_quadrants_labelled_hotcold",
+  "expected_correct": false,
+  "judged_correct": false,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [
+   "LISA hot/cold spots match gold (IoU >= 0.7), labels not inverted"
+  ],
+  "scorer_error": false
+ },
+ {
+  "control": "wrong_swapped_hot_cold_labels",
+  "expected_correct": false,
+  "judged_correct": false,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [
+   "LISA hot/cold spots match gold (IoU >= 0.7), labels not inverted"
+  ],
+  "scorer_error": false
+ }
+]

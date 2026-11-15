@@ -1,0 +1,137 @@
+{
+ "cell_id": "oneshot.C0.SA.claude-sonnet-5-5.r3.T22",
+ "task": 22,
+ "status": "ok",
+ "analytically_correct": false,
+ "scorer_error": false,
+ "checks": [
+  {
+   "name": "required output present",
+   "passed": true,
+   "value": [
+    "mountainLionCorridor.png"
+   ],
+   "threshold": [
+    "mountainLionCorridor.png",
+    "mountainlioncorridor.png",
+    "mountainLionCorridor.PNG"
+   ],
+   "required": true,
+   "note": ""
+  },
+  {
+   "name": "map not blank",
+   "passed": true,
+   "value": 64.72680830089351,
+   "threshold": ">=3 grey-level std",
+   "required": true,
+   "note": ""
+  },
+  {
+   "name": "composite surface agrees with gold (Pearson)",
+   "passed": true,
+   "value": 0.8896,
+   "threshold": 0.85,
+   "required": true,
+   "note": "cost@final"
+  },
+  {
+   "name": "weighted combination of all four layers with the given weights",
+   "passed": false,
+   "value": {
+    "r2": 1.0,
+    "w_dist": 1.0,
+    "w_rug": 0.347,
+    "w_prot": 1.111,
+    "w_lc": 0.049
+   },
+   "threshold": "R2>=0.98; relative to distance, +/-10 %: rug 1.25 or 0.347 (or 0.3125 +/-1 %, 1-10 rescale), prot 1.0 or 1.111, lc 1.25",
+   "required": true,
+   "note": ""
+  },
+  {
+   "name": "map shows the weighted composite surface",
+   "passed": false,
+   "value": [
+    1.0,
+    [
+     1.0,
+     0.347,
+     1.111,
+     0.049
+    ]
+   ],
+   "threshold": "drawn array (as drawn or flipped N-S): R2>=0.98, weights as check 3",
+   "required": true,
+   "note": "fig_ax0_image0@save00"
+  },
+  {
+   "name": "map drawn north-up (composite as drawn)",
+   "passed": false,
+   "value": [
+    1.0,
+    [
+     1.0,
+     0.347,
+     1.111,
+     0.049
+    ]
+   ],
+   "threshold": null,
+   "required": false,
+   "note": "fig_ax0_image0@save00",
+   "kind": "figure"
+  },
+  {
+   "name": "map readable: NoData (landcover 255) does not swamp the colour scale",
+   "passed": false,
+   "value": null,
+   "threshold": null,
+   "required": false,
+   "note": "no drawn composite surface",
+   "kind": "figure"
+  },
+  {
+   "name": "ruggedness weight exactly 1.25 (no rescaling)",
+   "passed": false,
+   "value": 0.347,
+   "threshold": "1.25+/-0.125",
+   "required": false,
+   "note": "~0.35 means ruggedness was min-max rescaled to 0-10 first"
+  },
+  {
+   "name": "landcover 255 (NoData) excluded",
+   "passed": false,
+   "value": null,
+   "threshold": null,
+   "required": false,
+   "note": "255 cells are ocean in the SW corner; adding 1.25*255 gives spurious extreme cost"
+  },
+  {
+   "name": "deliverable files carry a CRS (uniform rule)",
+   "passed": true,
+   "value": [],
+   "threshold": "every geographic deliverable file has a CRS",
+   "required": true,
+   "note": "no geographic deliverable file written (presence is judged by the task checks)"
+  }
+ ],
+ "replay": {
+  "success": true,
+  "outputs": [
+   "mountainLionCorridor.png"
+  ],
+  "events": [],
+  "blocks_ok": 1,
+  "block_outcome": [
+   "ok"
+  ],
+  "step_timeout_s": 3600,
+  "same_outputs_as_original": true,
+  "block_mismatches": []
+ },
+ "replay_faithful": true,
+ "replay_unfaithful_reasons": [],
+ "replay_container_failure": [],
+ "emergency_files": []
+}

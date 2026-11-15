@@ -1,0 +1,117 @@
+{
+ "cell_id": "ablation.H2-g5.SA.qwen38-27b.r2.T23",
+ "task": 23,
+ "status": "ok",
+ "analytically_correct": true,
+ "scorer_error": false,
+ "checks": [
+  {
+   "name": "open_space.tif present",
+   "passed": true,
+   "value": "open_space.tif",
+   "threshold": null,
+   "required": true,
+   "note": ""
+  },
+  {
+   "name": "open-space cells agree with gold (IoU)",
+   "passed": true,
+   "value": 1.0,
+   "threshold": "IoU >= 0.95 and a single open-space value",
+   "required": true,
+   "note": "pred open cells 294448, gold 294448; distinct positive values 1"
+  },
+  {
+   "name": "open-space polygons present (non-empty)",
+   "passed": true,
+   "value": {
+    "file": "open_space.shp",
+    "n": 291
+   },
+   "threshold": null,
+   "required": true,
+   "note": ""
+  },
+  {
+   "name": "polygon geometries valid",
+   "passed": true,
+   "value": 1.0,
+   "threshold": ">=99 % valid",
+   "required": false,
+   "note": "8-connected vectorization yields self-touching rings; area is unaffected"
+  },
+  {
+   "name": "polygons cover the gold open space (area IoU)",
+   "passed": true,
+   "value": 1.0,
+   "threshold": 0.95,
+   "required": true,
+   "note": ""
+  },
+  {
+   "name": "area statistics attribute in a real area unit",
+   "passed": true,
+   "value": {
+    "column": "AREA_m2",
+    "unit": "m2"
+   },
+   "threshold": "attribute = equal-area polygon area in m2/km2/ha/acres/sqft/sqmi (x0.85 ok), +/-3 %",
+   "required": true,
+   "note": ""
+  },
+  {
+   "name": "total area matches gold in some unit",
+   "passed": true,
+   "value": "m2",
+   "threshold": "gold 265.00 km2 +/-3 %",
+   "required": true,
+   "note": ""
+  },
+  {
+   "name": "deliverable files carry a CRS (uniform rule)",
+   "passed": true,
+   "value": [
+    "open_space.shp",
+    "open_space.tif"
+   ],
+   "threshold": "every geographic deliverable file has a CRS",
+   "required": true,
+   "note": "2 geographic deliverable file(s), all with a CRS"
+  }
+ ],
+ "replay": {
+  "success": true,
+  "outputs": [
+   "open_space.cpg",
+   "open_space.dbf",
+   "open_space.prj",
+   "open_space.shp",
+   "open_space.shx",
+   "open_space.tif",
+   "open_space_area_stats.csv"
+  ],
+  "events": [],
+  "blocks_ok": 8,
+  "block_outcome": [
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok"
+  ],
+  "step_timeout_s": 900,
+  "same_outputs_as_original": true,
+  "block_mismatches": []
+ },
+ "replay_faithful": true,
+ "replay_unfaithful_reasons": [],
+ "replay_container_failure": [],
+ "emergency_files": []
+}

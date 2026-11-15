@@ -1,0 +1,114 @@
+{
+ "cell_id": "main.H2.SA.claude-sonnet-5-5.r1.T38",
+ "experiment": "main",
+ "tier": "H2",
+ "arch": "SA",
+ "model": "claude-sonnet-5-5",
+ "run": 1,
+ "task": 38,
+ "elapsed_s": 18.6,
+ "protocol": "native",
+ "tier_config": {
+  "tools": [
+   "list_files",
+   "load_vector",
+   "load_raster",
+   "inspect",
+   "execute",
+   "lookup_api",
+   "finish"
+  ],
+  "generic": true,
+  "g1": true,
+  "g2": true,
+  "g3": true,
+  "g4": true,
+  "g5": true,
+  "g6": true,
+  "g7": true,
+  "no_dd": false,
+  "no_dk": false
+ },
+ "outputs": [
+  "travel_time.png"
+ ],
+ "required_outputs": [
+  "travel_time.png"
+ ],
+ "required_present": true,
+ "emergency_files": [],
+ "rounds": 3,
+ "self_corrections": 0,
+ "agent_stats": {
+  "rounds": 3,
+  "format_errors": 0,
+  "format_error_kinds": {},
+  "self_corrections": 0,
+  "exec_blocks": 2,
+  "exec_failed": 0,
+  "finish_rejections": 0,
+  "dedup_blocked": 0,
+  "triggers": {
+   "g1:card": 1
+  },
+  "checks_run": {
+   "g2": 2,
+   "g3": 3,
+   "g7": 2
+  },
+  "end_reason": "finish",
+  "empty_retries": 0,
+  "history_truncations": 0,
+  "finished": true,
+  "agent_time_s": 1.1
+ },
+ "llm_stats": {
+  "calls": 3,
+  "retries": 0,
+  "errors": 0,
+  "context_overflow": 0,
+  "empty": 0,
+  "refusals": 0,
+  "prompt_tokens": 8,
+  "completion_tokens": 1527,
+  "cached_tokens": 8387,
+  "cache_write_tokens": 5808
+ },
+ "llm_time_s": 15.0,
+ "agent_time_s": 1.1,
+ "hit_deadline": false,
+ "sandbox_events": [],
+ "inputs_intact": true,
+ "container_memory": "12g",
+ "deliverable_produced": true,
+ "config": {
+  "image": "gisclaw-exec:1.0",
+  "step_timeout_s": 300,
+  "task_wall_s": 1200,
+  "max_rounds": 50,
+  "blocked_packages": {
+   "arcpy": "Use geopandas + rasterio + shapely instead."
+  },
+  "agent": {
+   "history_tokens": 60000,
+   "max_format_errors": 15
+  }
+ },
+ "model_config": {
+  "provider": "anthropic",
+  "model_name": "claude-sonnet-5-5",
+  "request": {
+   "set": {
+    "max_tokens": 32000,
+    "thinking": {
+     "type": "adaptive",
+     "display": "summarized"
+    },
+    "output_config": {
+     "effort": "high"
+    }
+   }
+  },
+  "history_tokens": 700000
+ }
+}

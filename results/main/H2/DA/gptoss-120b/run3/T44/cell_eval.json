@@ -1,0 +1,108 @@
+{
+ "cell_id": "main.H2.DA.gptoss-120b.r3.T44",
+ "task": 44,
+ "status": "ok",
+ "analytically_correct": false,
+ "scorer_error": false,
+ "checks": [
+  {
+   "name": "map present",
+   "passed": true,
+   "value": [
+    "coverage_map.png"
+   ],
+   "threshold": [
+    "coverage_map.png"
+   ],
+   "required": true,
+   "note": ""
+  },
+  {
+   "name": "map not blank",
+   "passed": true,
+   "value": 43.04016632341171,
+   "threshold": ">=3 grey-level std",
+   "required": true,
+   "note": ""
+  },
+  {
+   "name": "no-service area saved, non-empty and inside Etobicoke",
+   "passed": true,
+   "value": 1.0,
+   "threshold": ">=0.98 inside",
+   "required": true,
+   "note": "service_area.geojson, 187.91 km2"
+  },
+  {
+   "name": "gap = Etobicoke minus station buffers of a plausible radius (IoU >= 0.85)",
+   "passed": false,
+   "value": [
+    0.941,
+    400.0
+   ],
+   "threshold": "IoU>=0.85, radius 400-5000 m, <=0.5 % of the gap within 0.9 d of a station",
+   "required": true,
+   "note": "service_area.geojson; best radius 400 m (nearest station 0 m); 4.77 % of the gap within 0.9 d of a station -> areas served by some stations left in the gap (subset of stations buffered)"
+  },
+  {
+   "name": "gap equals the gold 2500 m gap (IoU >= 0.85)",
+   "passed": false,
+   "value": 0.019,
+   "threshold": 0.85,
+   "required": false,
+   "note": ""
+  },
+  {
+   "name": "buffered stations saved as a file",
+   "passed": true,
+   "value": null,
+   "threshold": null,
+   "required": false,
+   "note": ""
+  },
+  {
+   "name": "deliverable files carry a CRS (uniform rule)",
+   "passed": true,
+   "value": [
+    "service_area.geojson",
+    "stations_buffer.geojson",
+    "uncovered_areas.geojson"
+   ],
+   "threshold": "every geographic deliverable file has a CRS",
+   "required": true,
+   "note": "3 geographic deliverable file(s), all with a CRS"
+  }
+ ],
+ "replay": {
+  "success": true,
+  "outputs": [
+   "coverage_map.png",
+   "service_area.geojson",
+   "stations_buffer.geojson",
+   "uncovered_areas.geojson"
+  ],
+  "events": [],
+  "blocks_ok": 12,
+  "block_outcome": [
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok"
+  ],
+  "step_timeout_s": 900,
+  "same_outputs_as_original": true,
+  "block_mismatches": []
+ },
+ "replay_faithful": true,
+ "replay_unfaithful_reasons": [],
+ "replay_container_failure": [],
+ "emergency_files": []
+}

@@ -1,0 +1,59 @@
+{
+ "cell_id": "oneshot.C0.SA.gptoss-120b.r1.T41",
+ "task": 41,
+ "status": "ok",
+ "analytically_correct": false,
+ "scorer_error": false,
+ "checks": [
+  {
+   "name": "result file written to pred_results",
+   "passed": false,
+   "value": [],
+   "threshold": "any non-empty file",
+   "required": true,
+   "note": ""
+  },
+  {
+   "name": "one-to-many campsite relate materialised (per-campsite related-record counts, Wyoming campsites)",
+   "passed": true,
+   "value": 0.9991,
+   "threshold": ">= 0.95 of the 1,170 Wyoming campsites exact",
+   "required": true,
+   "note": "attr_wide@ret01_main row non-null count ~ n_valued_attribute_names"
+  },
+  {
+   "name": "park-level join ParentOrgID -> OrgID (both parks carry 'National Park Service')",
+   "passed": false,
+   "value": [
+    "parks@ret01_main"
+   ],
+   "threshold": "a table with both parks and their organisation",
+   "required": true,
+   "note": ""
+  },
+  {
+   "name": "relationship campground (FacilityID) 1 -> many campsites (ParentFacilityID) materialised",
+   "passed": false,
+   "value": 0.2308,
+   "threshold": "per campground: all 6 counts exact; per campsite: >= 0.95 parent facility exact",
+   "required": true,
+   "note": "campsites@ret01_main: ParentFacilityID by CampsiteID (per campsite)"
+  }
+ ],
+ "replay": {
+  "success": false,
+  "outputs": [],
+  "events": [],
+  "blocks_ok": 0,
+  "block_outcome": [
+   "ok"
+  ],
+  "step_timeout_s": 3600,
+  "same_outputs_as_original": true,
+  "block_mismatches": []
+ },
+ "replay_faithful": true,
+ "replay_unfaithful_reasons": [],
+ "replay_container_failure": [],
+ "emergency_files": []
+}

@@ -1,0 +1,76 @@
+{
+ "cell_id": "main.H2.SA.claude-sonnet-5-5.r1.T03",
+ "task": 3,
+ "status": "ok",
+ "analytically_correct": false,
+ "scorer_error": false,
+ "checks": [
+  {
+   "name": "required output present",
+   "passed": true,
+   "value": [
+    "burn_scar_analysis.png"
+   ],
+   "threshold": [
+    "burn_scar_analysis.png"
+   ],
+   "required": true,
+   "note": ""
+  },
+  {
+   "name": "map not blank",
+   "passed": true,
+   "value": 47.3381613259629,
+   "threshold": ">=3 grey-level std",
+   "required": true,
+   "note": ""
+  },
+  {
+   "name": "dNBR surface matches gold (|r| >= 0.98)",
+   "passed": true,
+   "value": 1.0,
+   "threshold": 0.98,
+   "required": true,
+   "note": "d@final"
+  },
+  {
+   "name": "burn-scar polygons cover the burned core and little else",
+   "passed": false,
+   "value": {
+    "core_coverage": 0.677,
+    "precision_dNBR>0.1": 1.0
+   },
+   "threshold": "coverage>=0.70, precision>=0.60",
+   "required": true,
+   "note": "gdf@final"
+  },
+  {
+   "name": "burned area plausible (15-350 km2)",
+   "passed": true,
+   "value": 45.5,
+   "threshold": "15-350",
+   "required": false,
+   "note": ""
+  }
+ ],
+ "replay": {
+  "success": true,
+  "outputs": [
+   "burn_scar_analysis.png",
+   "burn_scars.gpkg"
+  ],
+  "events": [],
+  "blocks_ok": 2,
+  "block_outcome": [
+   "ok",
+   "ok"
+  ],
+  "step_timeout_s": 900,
+  "same_outputs_as_original": true,
+  "block_mismatches": []
+ },
+ "replay_faithful": true,
+ "replay_unfaithful_reasons": [],
+ "replay_container_failure": [],
+ "emergency_files": []
+}

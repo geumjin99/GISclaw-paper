@@ -1,0 +1,76 @@
+{
+ "cell_id": "main.H0.SA.gptoss-120b.r2.T10",
+ "task": 10,
+ "status": "ok",
+ "analytically_correct": false,
+ "scorer_error": false,
+ "checks": [
+  {
+   "name": "required output present",
+   "passed": true,
+   "value": [
+    "predictedRiskyArea.png"
+   ],
+   "threshold": [
+    "predictedRiskyArea.png"
+   ],
+   "required": true,
+   "note": ""
+  },
+  {
+   "name": "map not blank",
+   "passed": true,
+   "value": 49.81701401265913,
+   "threshold": ">=3 grey-level std",
+   "required": true,
+   "note": ""
+  },
+  {
+   "name": "risky area = planned-road buffer minus deforested (or within protected forest)",
+   "passed": false,
+   "value": 0.573,
+   "threshold": 0.85,
+   "required": true,
+   "note": "risk_area@final ~ gold prot_at_risk (IoU 0.900) but 10% of it is already deforested"
+  },
+  {
+   "name": "context layers drawn (existing roads, protected forest, deforested area)",
+   "passed": true,
+   "value": {
+    "roads": true,
+    "protected": true,
+    "deforested": true
+   },
+   "threshold": null,
+   "required": true,
+   "note": "roads.plot(ax=ax, color='gray', linewidth=0.5, label='Existing roads'); protected.plot(ax=ax, color='green', alpha=0.5, label='Protected forest'); deforested.plot(ax=ax, color='saddlebrown', alpha=0.6, label='Deforested area')"
+  },
+  {
+   "name": "Rondonia boundary layer drawn",
+   "passed": false,
+   "value": null,
+   "threshold": null,
+   "required": false,
+   "note": ""
+  }
+ ],
+ "replay": {
+  "success": true,
+  "outputs": [
+   "predictedRiskyArea.png"
+  ],
+  "events": [],
+  "blocks_ok": 1,
+  "block_outcome": [
+   "ok",
+   "ok"
+  ],
+  "step_timeout_s": 900,
+  "same_outputs_as_original": true,
+  "block_mismatches": []
+ },
+ "replay_faithful": true,
+ "replay_unfaithful_reasons": [],
+ "replay_container_failure": [],
+ "emergency_files": []
+}

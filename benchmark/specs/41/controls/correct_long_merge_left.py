@@ -1,0 +1,13 @@
+# Correct: all three parts; relate as a long merged table with a per-campsite transform count; relationship per campsite (left merge)
+import os, pandas as pd, geopandas as gpd
+os.makedirs("pred_results", exist_ok=True)
+parks = gpd.read_file("dataset/National Parks.gpkg"); cs = gpd.read_file("dataset/Campsites.gpkg")
+fac = gpd.read_file("dataset/Facilities.gpkg"); orgs = pd.read_csv("dataset/OrganizationsTable.csv")
+attrs = pd.read_csv("dataset/CampsiteAttributes.csv", low_memory=False)
+parks_joined = parks.merge(orgs, left_on="ParentOrgID", right_on="OrgID", how="left")
+parks_joined.to_file("pred_results/parks_joined.gpkg")
+rel = cs[["CampsiteID", "CampsiteName"]].merge(attrs, left_on="CampsiteID", right_on="EntityID", how="inner")
+rel["n_related"] = rel.groupby("CampsiteID")["AttributeID"].transform("size")
+rel.to_csv("pred_results/campsite_related_records.csv", index=False)
+link = cs.merge(fac[["FacilityID", "FacilityName"]], left_on="ParentFacilityID", right_on="FacilityID", how="left")
+link.drop(columns="geometry").to_csv("pred_results/campsites_with_campground.csv", index=False)

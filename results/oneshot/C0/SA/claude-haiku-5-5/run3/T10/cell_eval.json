@@ -1,0 +1,83 @@
+{
+ "cell_id": "oneshot.C0.SA.claude-haiku-5-5.r3.T10",
+ "task": 10,
+ "status": "ok",
+ "analytically_correct": false,
+ "scorer_error": false,
+ "checks": [
+  {
+   "name": "required output present",
+   "passed": false,
+   "value": [],
+   "threshold": [
+    "predictedRiskyArea.png"
+   ],
+   "required": true,
+   "note": ""
+  },
+  {
+   "name": "map not blank",
+   "passed": false,
+   "value": null,
+   "threshold": null,
+   "required": true,
+   "note": "no map"
+  },
+  {
+   "name": "risky area = planned-road buffer minus deforested (or within protected forest)",
+   "passed": false,
+   "value": 0.0,
+   "threshold": 0.85,
+   "required": true,
+   "note": "no polygon layer"
+  },
+  {
+   "name": "context layers drawn (existing roads, protected forest, deforested area)",
+   "passed": false,
+   "value": {
+    "roads": false,
+    "protected": false,
+    "deforested": false
+   },
+   "threshold": null,
+   "required": true,
+   "note": "no plot of the input context layers found in the code"
+  },
+  {
+   "name": "Rondonia boundary layer drawn",
+   "passed": false,
+   "value": null,
+   "threshold": null,
+   "required": false,
+   "note": ""
+  }
+ ],
+ "replay": {
+  "success": false,
+  "outputs": [],
+  "events": [
+   {
+    "event": "container_oom",
+    "exit_code": 137,
+    "oom_killed": true
+   },
+   {
+    "event": "restarted",
+    "replayed": 2
+   }
+  ],
+  "blocks_ok": 0,
+  "block_outcome": [
+   "oom"
+  ],
+  "step_timeout_s": 3600,
+  "same_outputs_as_original": true,
+  "block_mismatches": []
+ },
+ "replay_faithful": false,
+ "replay_unfaithful_reasons": [
+  "replay block(s) [0] cut off (oom)"
+ ],
+ "replay_container_failure": [],
+ "emergency_files": []
+}

@@ -1,0 +1,126 @@
+{
+ "cell_id": "ablation.H2+nodk.SA.claude-sonnet-5-5.r2.T30",
+ "experiment": "ablation",
+ "tier": "H2+nodk",
+ "arch": "SA",
+ "model": "claude-sonnet-5-5",
+ "run": 2,
+ "task": 30,
+ "elapsed_s": 199.2,
+ "protocol": "native",
+ "tier_config": {
+  "tools": [
+   "list_files",
+   "load_vector",
+   "load_raster",
+   "inspect",
+   "execute",
+   "lookup_api",
+   "finish"
+  ],
+  "generic": true,
+  "g1": true,
+  "g2": true,
+  "g3": true,
+  "g4": true,
+  "g5": true,
+  "g6": true,
+  "g7": true,
+  "no_dd": false,
+  "no_dk": true
+ },
+ "outputs": [
+  "README_method.md",
+  "accessibility_metrics.csv",
+  "city_proposed_lanes.gpkg",
+  "commuter_routes.gpkg",
+  "demand_hotspot_grid.gpkg",
+  "demand_hubs.gpkg",
+  "employment_centers.gpkg",
+  "infrastructure_evaluation.csv",
+  "map_half_mile_coverage.png",
+  "map_hotspots_and_network.png",
+  "proposed_bike_network.gpkg",
+  "road_suitability.gpkg"
+ ],
+ "required_outputs": [],
+ "required_present": null,
+ "emergency_files": [],
+ "rounds": 26,
+ "self_corrections": 1,
+ "agent_stats": {
+  "rounds": 26,
+  "format_errors": 0,
+  "format_error_kinds": {},
+  "self_corrections": 1,
+  "exec_blocks": 24,
+  "exec_failed": 1,
+  "finish_rejections": 1,
+  "dedup_blocked": 0,
+  "triggers": {
+   "g1:card": 1,
+   "g3:validate": 1
+  },
+  "checks_run": {
+   "g2": 24,
+   "g3": 26,
+   "g7": 24,
+   "g6": 1,
+   "g4": 1
+  },
+  "end_reason": "finish",
+  "empty_retries": 0,
+  "history_truncations": 0,
+  "finished": true,
+  "agent_time_s": 17.4
+ },
+ "llm_stats": {
+  "calls": 26,
+  "retries": 0,
+  "errors": 0,
+  "context_overflow": 0,
+  "empty": 0,
+  "refusals": 0,
+  "prompt_tokens": 54,
+  "completion_tokens": 25021,
+  "cached_tokens": 707533,
+  "cache_write_tokens": 50805
+ },
+ "llm_time_s": 180.7,
+ "agent_time_s": 17.4,
+ "hit_deadline": false,
+ "sandbox_events": [],
+ "inputs_intact": true,
+ "container_memory": "12g",
+ "deliverable_produced": true,
+ "config": {
+  "image": "gisclaw-exec:1.0",
+  "step_timeout_s": 300,
+  "task_wall_s": 1200,
+  "max_rounds": 50,
+  "blocked_packages": {
+   "arcpy": "Use geopandas + rasterio + shapely instead."
+  },
+  "agent": {
+   "history_tokens": 60000,
+   "max_format_errors": 15
+  }
+ },
+ "model_config": {
+  "provider": "anthropic",
+  "model_name": "claude-sonnet-5-5",
+  "request": {
+   "set": {
+    "max_tokens": 32000,
+    "thinking": {
+     "type": "adaptive",
+     "display": "summarized"
+    },
+    "output_config": {
+     "effort": "high"
+    }
+   }
+  },
+  "history_tokens": 700000
+ }
+}

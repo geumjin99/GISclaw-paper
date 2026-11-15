@@ -1,0 +1,15 @@
+{
+ "task": 12,
+ "source": "instruction: save the outputs as 'pred_results/ruggedness.png'; checks.py file_exists (ruggedness.png or Ruggedness.png) + png_not_blank (TRI surface and drawn data are scored on captured objects)",
+ "deliverables": [
+  {
+   "id": "map",
+   "kind": "figure",
+   "patterns": ["ruggedness.png"],
+   "required": true,
+   "crs_required": false,
+   "checked_by": ["required output present", "map not blank"]
+  }
+ ],
+ "not_deliverables": []
+}

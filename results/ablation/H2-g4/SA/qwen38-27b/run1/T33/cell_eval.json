@@ -1,0 +1,126 @@
+{
+ "cell_id": "ablation.H2-g4.SA.qwen38-27b.r1.T33",
+ "task": 33,
+ "status": "ok",
+ "analytically_correct": true,
+ "scorer_error": false,
+ "checks": [
+  {
+   "name": "result file written to pred_results",
+   "passed": true,
+   "value": [
+    "BuildingFloodDamage_2050.csv",
+    "FloodExtent_2050.cpg",
+    "FloodExtent_2050.dbf",
+    "FloodExtent_2050.prj",
+    "FloodExtent_2050.shp",
+    "FloodExtent_2050.shx"
+   ],
+   "threshold": "any non-empty file",
+   "required": true,
+   "note": ""
+  },
+  {
+   "name": "per-building damage matches gold (Jaccard>=0.80, Spearman>=0.90)",
+   "passed": true,
+   "value": "Jaccard=0.964, precision=0.964, weighted recall=1.000, rho=0.995",
+   "threshold": "(Jaccard>=0.80 or (precision>=0.90 and weighted recall>=0.90)) and rho>=0.90",
+   "required": true,
+   "note": "summ.Damage@final"
+  },
+  {
+   "name": "per-building damage values follow the given function (median pred/gold ratio 0.95-1.05)",
+   "passed": true,
+   "value": 1.0,
+   "threshold": "0.95-1.05",
+   "required": true,
+   "note": "summ.Damage@final"
+  },
+  {
+   "name": "total damage within 10 % of gold",
+   "passed": true,
+   "value": 415120455,
+   "threshold": "4.113e+08 +/- 10 %",
+   "required": true,
+   "note": "sum of summ.Damage@final"
+  },
+  {
+   "name": "per-building mean flood depth matches gold",
+   "passed": true,
+   "value": 0.982,
+   "threshold": 0.9,
+   "required": false,
+   "note": "cv.MeanDepth_cm@final"
+  },
+  {
+   "name": "deliverable files carry a CRS (uniform rule)",
+   "passed": true,
+   "value": [
+    "FloodExtent_2050.shp",
+    "FloodedBuildings_2050.shp"
+   ],
+   "threshold": "every geographic deliverable file has a CRS",
+   "required": true,
+   "note": "2 geographic deliverable file(s), all with a CRS"
+  }
+ ],
+ "replay": {
+  "success": true,
+  "outputs": [
+   "BuildingFloodDamage_2050.csv",
+   "FloodExtent_2050.cpg",
+   "FloodExtent_2050.dbf",
+   "FloodExtent_2050.prj",
+   "FloodExtent_2050.shp",
+   "FloodExtent_2050.shx",
+   "FloodedBuildings_2050.cpg",
+   "FloodedBuildings_2050.dbf",
+   "FloodedBuildings_2050.prj",
+   "FloodedBuildings_2050.shp",
+   "FloodedBuildings_2050.shx",
+   "Summary_2050.csv",
+   "flood_damage_map.png",
+   "flood_depth_2050.tif"
+  ],
+  "events": [],
+  "blocks_ok": 17,
+  "block_outcome": [
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok"
+  ],
+  "step_timeout_s": 900,
+  "same_outputs_as_original": true,
+  "block_mismatches": []
+ },
+ "replay_faithful": true,
+ "replay_unfaithful_reasons": [],
+ "replay_container_failure": [],
+ "emergency_files": []
+}

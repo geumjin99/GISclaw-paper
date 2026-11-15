@@ -1,0 +1,112 @@
+{
+ "cell_id": "main.H0.SA.claude-sonnet-5-5.r2.T25",
+ "task": 25,
+ "status": "ok",
+ "analytically_correct": true,
+ "scorer_error": false,
+ "checks": [
+  {
+   "name": "output written (non-blank map or result file)",
+   "passed": true,
+   "value": [
+    "risk_profiles.png",
+    "hkg_covid_risk_clusters.csv",
+    "hkg_covid_risk_clusters.shp",
+    "simsearch_Expos.csv",
+    "simsearch_Health.csv",
+    "simsearch_Suscep.csv",
+    "simsearch_Trans.csv"
+   ],
+   "threshold": null,
+   "required": true,
+   "note": ""
+  },
+  {
+   "name": "transmission risk score matches gold (Spearman)",
+   "passed": true,
+   "value": 1.0,
+   "threshold": 0.95,
+   "required": true,
+   "note": "Trans_R in out@final"
+  },
+  {
+   "name": "susceptibility risk score matches gold (Spearman)",
+   "passed": true,
+   "value": 1.0,
+   "threshold": 0.95,
+   "required": true,
+   "note": "Suscep_R in out@final"
+  },
+  {
+   "name": "resource scarcity risk score matches gold (Spearman)",
+   "passed": true,
+   "value": 1.0,
+   "threshold": 0.95,
+   "required": true,
+   "note": "Health_R in out@final"
+  },
+  {
+   "name": "exposure risk score matches gold (Spearman)",
+   "passed": true,
+   "value": 1.0,
+   "threshold": 0.95,
+   "required": true,
+   "note": "Expos_R in out@final"
+  },
+  {
+   "name": "clustering is a near-optimal K-means partition of the four risk scores",
+   "passed": true,
+   "value": 0.989,
+   "threshold": 0.9,
+   "required": true,
+   "note": "CLUSTER in out@final, k=3"
+  },
+  {
+   "name": "method fidelity: SEEDS-initialised K-means (3 clusters, ARI>=0.8 with gold)",
+   "passed": true,
+   "value": 1.0,
+   "threshold": 0.8,
+   "required": true,
+   "note": "CLUSTER in out@final; instructed: K-means initialised from SEEDS"
+  },
+  {
+   "name": "deliverable files carry a CRS (uniform rule)",
+   "passed": true,
+   "value": [
+    "hkg_covid_risk_clusters.shp"
+   ],
+   "threshold": "every geographic deliverable file has a CRS",
+   "required": true,
+   "note": "1 geographic deliverable file(s), all with a CRS"
+  }
+ ],
+ "replay": {
+  "success": true,
+  "outputs": [
+   "hkg_covid_risk_clusters.cpg",
+   "hkg_covid_risk_clusters.csv",
+   "hkg_covid_risk_clusters.dbf",
+   "hkg_covid_risk_clusters.prj",
+   "hkg_covid_risk_clusters.shp",
+   "hkg_covid_risk_clusters.shx",
+   "risk_profiles.png",
+   "simsearch_Expos.csv",
+   "simsearch_Health.csv",
+   "simsearch_Suscep.csv",
+   "simsearch_Trans.csv"
+  ],
+  "events": [],
+  "blocks_ok": 2,
+  "block_outcome": [
+   "ok",
+   "ok"
+  ],
+  "step_timeout_s": 900,
+  "same_outputs_as_original": true,
+  "block_mismatches": []
+ },
+ "replay_faithful": true,
+ "replay_unfaithful_reasons": [],
+ "replay_container_failure": [],
+ "emergency_files": []
+}

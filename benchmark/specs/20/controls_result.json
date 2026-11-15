@@ -1,0 +1,194 @@
+[
+ {
+  "control": "correct_balanced_small_matrix",
+  "expected_correct": true,
+  "judged_correct": true,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [],
+  "scorer_error": false
+ },
+ {
+  "control": "correct_benchmark_script_seeded",
+  "expected_correct": true,
+  "judged_correct": true,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [],
+  "scorer_error": false
+ },
+ {
+  "control": "correct_cv_auc_table",
+  "expected_correct": true,
+  "judged_correct": true,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [],
+  "scorer_error": false
+ },
+ {
+  "control": "correct_dataframe_pipeline",
+  "expected_correct": true,
+  "judged_correct": true,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [],
+  "scorer_error": false
+ },
+ {
+  "control": "correct_figonly_map_upside_down",
+  "expected_correct": true,
+  "judged_correct": true,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [],
+  "scorer_error": false
+ },
+ {
+  "control": "correct_percent_probability",
+  "expected_correct": true,
+  "judged_correct": true,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [],
+  "scorer_error": false
+ },
+ {
+  "control": "correct_points_not_buffered",
+  "expected_correct": true,
+  "judged_correct": true,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [],
+  "scorer_error": false
+ },
+ {
+  "control": "correct_rf_block_failed_later",
+  "expected_correct": true,
+  "judged_correct": true,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [],
+  "scorer_error": false
+ },
+ {
+  "control": "correct_unbalanced_rf_weighted",
+  "expected_correct": true,
+  "judged_correct": true,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [],
+  "scorer_error": false
+ },
+ {
+  "control": "correct_unlabelled_auc_title",
+  "expected_correct": true,
+  "judged_correct": true,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [],
+  "scorer_error": false
+ },
+ {
+  "control": "wrong_class0_probability",
+  "expected_correct": false,
+  "judged_correct": false,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [
+   "probability map agrees with gold RF map (Spearman >= 0.60)",
+   "map discriminates known deposits (AUC >= 0.85)",
+   "figure shows the probability map",
+   "AUC computed and >= 0.9 (task text)"
+  ],
+  "scorer_error": false
+ },
+ {
+  "control": "wrong_gravity_only",
+  "expected_correct": false,
+  "judged_correct": false,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [
+   "model uses all 7 evidence layers"
+  ],
+  "scorer_error": false
+ },
+ {
+  "control": "wrong_gravity_only_balanced_small",
+  "expected_correct": false,
+  "judged_correct": false,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [
+   "model uses all 7 evidence layers",
+   "AUC computed and >= 0.9 (task text)"
+  ],
+  "scorer_error": false
+ },
+ {
+  "control": "wrong_labels_without_transform",
+  "expected_correct": false,
+  "judged_correct": false,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [
+   "probability map agrees with gold RF map (Spearman >= 0.60)",
+   "map discriminates known deposits (AUC >= 0.85)",
+   "figure shows the probability map",
+   "AUC computed and >= 0.9 (task text)"
+  ],
+  "scorer_error": false
+ },
+ {
+  "control": "wrong_method_gradient_boosting",
+  "expected_correct": false,
+  "judged_correct": false,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [
+   "random forest classifier used (task: 'build a random forest classifier')"
+  ],
+  "scorer_error": false
+ },
+ {
+  "control": "wrong_no_auc_evaluation",
+  "expected_correct": false,
+  "judged_correct": false,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [
+   "AUC computed and >= 0.9 (task text)"
+  ],
+  "scorer_error": false
+ },
+ {
+  "control": "wrong_plots_evidence_layer",
+  "expected_correct": false,
+  "judged_correct": false,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [
+   "probability map agrees with gold RF map (Spearman >= 0.60)",
+   "map discriminates known deposits (AUC >= 0.85)",
+   "figure shows the probability map",
+   "model uses all 7 evidence layers",
+   "random forest classifier used (task: 'build a random forest classifier')",
+   "AUC computed and >= 0.9 (task text)"
+  ],
+  "scorer_error": false
+ },
+ {
+  "control": "wrong_xy_features_leak",
+  "expected_correct": false,
+  "judged_correct": false,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [
+   "probability map agrees with gold RF map (Spearman >= 0.60)",
+   "map discriminates known deposits (AUC >= 0.85)",
+   "figure shows the probability map"
+  ],
+  "scorer_error": false
+ }
+]

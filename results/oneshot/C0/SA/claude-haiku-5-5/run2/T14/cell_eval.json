@@ -1,0 +1,82 @@
+{
+ "cell_id": "oneshot.C0.SA.claude-haiku-5-5.r2.T14",
+ "task": 14,
+ "status": "ok",
+ "analytically_correct": true,
+ "scorer_error": false,
+ "checks": [
+  {
+   "name": "required output present",
+   "passed": true,
+   "value": [
+    "temperature_statistic_vis.png"
+   ],
+   "threshold": [
+    "temperature_statistic_vis.png"
+   ],
+   "required": true,
+   "note": ""
+  },
+  {
+   "name": "map not blank",
+   "passed": true,
+   "value": 37.73324585027637,
+   "threshold": ">=3 grey-level std",
+   "required": true,
+   "note": ""
+  },
+  {
+   "name": "spell-count grid equals an accepted counting rule (>=98 % cells)",
+   "passed": true,
+   "value": 1.0,
+   "threshold": 0.98,
+   "required": true,
+   "note": "grid_counts@final: distinct runs>=5"
+  },
+  {
+   "name": "figure shows the spell count",
+   "passed": true,
+   "value": 1.0,
+   "threshold": 0.98,
+   "required": true,
+   "note": "fig_ax1_coll0_values@save00 (QuadMesh, orientation free): distinct runs>=5"
+  },
+  {
+   "name": "figure drawn north up (presentation)",
+   "passed": true,
+   "value": 1.0,
+   "threshold": 0.98,
+   "required": false,
+   "note": "fig_ax1_coll0_values@save00 (pcolormesh coordinate space (both vertical orientations)): distinct runs>=5",
+   "kind": "figure"
+  },
+  {
+   "name": "reference counting rule (overlapping windows)",
+   "passed": false,
+   "value": null,
+   "threshold": null,
+   "required": false,
+   "note": "distinct runs>=5"
+  }
+ ],
+ "replay": {
+  "success": true,
+  "outputs": [
+   "regional_annual_mean_K.csv",
+   "regional_episodes_280K_5yr.csv",
+   "temperature_statistic_vis.png"
+  ],
+  "events": [],
+  "blocks_ok": 1,
+  "block_outcome": [
+   "ok"
+  ],
+  "step_timeout_s": 3600,
+  "same_outputs_as_original": true,
+  "block_mismatches": []
+ },
+ "replay_faithful": true,
+ "replay_unfaithful_reasons": [],
+ "replay_container_failure": [],
+ "emergency_files": []
+}

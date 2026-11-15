@@ -1,0 +1,112 @@
+{
+ "cell_id": "oneshot.C0.SA.qwen38-27b.r3.T37",
+ "task": 37,
+ "status": "ok",
+ "analytically_correct": false,
+ "scorer_error": false,
+ "checks": [
+  {
+   "name": "required output present",
+   "passed": false,
+   "value": [],
+   "threshold": [
+    "US_heat_exposure_map.png",
+    "us_heat_exposure_map.png",
+    "US_heat_exposure_map.PNG"
+   ],
+   "required": true,
+   "note": ""
+  },
+  {
+   "name": "map not blank",
+   "passed": false,
+   "value": null,
+   "threshold": null,
+   "required": true,
+   "note": "no US_heat_exposure_map.png"
+  },
+  {
+   "name": "per-county heat exposure matches gold (coverage>=60 %, Spearman>=0.80)",
+   "passed": false,
+   "value": null,
+   "threshold": null,
+   "required": true,
+   "note": "no per-county numeric result aligned to GEOID"
+  },
+  {
+   "name": "county value is the mean (not the sum) of tweet values",
+   "passed": false,
+   "value": null,
+   "threshold": null,
+   "required": true,
+   "note": "no per-county numeric result aligned to GEOID"
+  },
+  {
+   "name": "only weather-related tweets used (counties with value <= 1.5x gold)",
+   "passed": false,
+   "value": null,
+   "threshold": null,
+   "required": true,
+   "note": "no per-county numeric result aligned to GEOID"
+  },
+  {
+   "name": "min-max normalised to [0, 1]",
+   "passed": false,
+   "value": null,
+   "threshold": null,
+   "required": true,
+   "note": "no per-county numeric result aligned to GEOID"
+  },
+  {
+   "name": "map shows the county heat exposure (drawn colours vs gold, |rho| >= 0.70)",
+   "passed": false,
+   "value": null,
+   "threshold": null,
+   "required": true,
+   "note": "UNVERIFIABLE: no drawn polygon collection with colormap colours located on counties",
+   "unverifiable": true
+  },
+  {
+   "name": "natural breaks classification used",
+   "passed": false,
+   "value": null,
+   "threshold": null,
+   "required": true,
+   "note": "code inspection (comments stripped); the text prescribes natural breaks"
+  },
+  {
+   "name": "post counts per county computed",
+   "passed": false,
+   "value": null,
+   "threshold": 0.8,
+   "required": false,
+   "note": ""
+  },
+  {
+   "name": "deliverable files carry a CRS (uniform rule)",
+   "passed": true,
+   "value": [],
+   "threshold": "every geographic deliverable file has a CRS",
+   "required": true,
+   "note": "no geographic deliverable file written (presence is judged by the task checks)"
+  }
+ ],
+ "replay": {
+  "success": false,
+  "outputs": [
+   "county_heat_exposure.csv"
+  ],
+  "events": [],
+  "blocks_ok": 0,
+  "block_outcome": [
+   "ok"
+  ],
+  "step_timeout_s": 3600,
+  "same_outputs_as_original": true,
+  "block_mismatches": []
+ },
+ "replay_faithful": true,
+ "replay_unfaithful_reasons": [],
+ "replay_container_failure": [],
+ "emergency_files": []
+}

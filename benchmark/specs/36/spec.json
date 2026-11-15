@@ -1,0 +1,31 @@
+{
+ "task": 36,
+ "title": "Assess hail damage to crop fields with SAVI change",
+ "output_type": "vector/table (mean vegetation loss per field) + map",
+ "required_outputs": [
+  "any result file (instruction names none); reference writes field_vegetation_loss.geojson, field_vegetation_loss.csv, hail_damage_fields.png"
+ ],
+ "method": "Fields: shapefile lacking .shx/.dbf/.prj - restore .shx in a writable copy, coordinates are Web Mercator (EPSG:3857), row order = Field_ID; reproject to UTM 12N. SAVI = (NIR-Red)/(NIR+Red+0.5)*1.5 on reflectance (DN/10000; red = band 3, NIR = band 4, nodata 0) for both images on their overlap (same 3 m lattice); loss = SAVI_before - SAVI_after; negative loss -> NoData (authors' remap); mean per field (287 of 319 fields in the overlap); join and map.",
+ "key_parameters": {
+  "L": 0.5,
+  "bands": {
+   "red": 3,
+   "nir": 4
+  },
+  "reflectance_scale": 10000,
+  "remap": "loss < 0 -> NoData",
+  "fields_crs": "EPSG:3857 (undeclared)",
+  "fields_in_overlap": 287
+ },
+ "benchmark_defects": [
+  "Field_boundaries.shp is supplied without .shx/.dbf/.prj: no Field_ID attribute and no CRS; the coordinates are Web Mercator although the imagery is UTM 12N. Reading needs SHAPE_RESTORE_SHX in a writable copy (dataset is read-only).",
+  "Dataset description names Field_Boundaries.shp/Before_Storm.tif with different capitalisation and a 'Field_ID, Shape_Area' schema that is not present.",
+  "Before/After images have different extents; only 287 of 319 fields are covered by both."
+ ],
+ "checks": [
+  "required: at least one result file in pred_results",
+  "required: per-field loss result (captured table, dict/Series keyed by field id, or CSV/vector file; aligned by geometry in UTM or Web Mercator, id column with 0- or 1-based ids, or full row index) covers >= 80 % of gold fields",
+  "required: per-field ranking Spearman >= 0.85 with gold",
+  "required (the text names SAVI): SAVI L = 0.5 used (code inspection)"
+ ]
+}

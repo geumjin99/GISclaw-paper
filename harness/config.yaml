@@ -1,0 +1,70 @@
+# Experiment configuration. One file for every cell; the settings a cell ran with are
+# copied into its cell_result.json.
+
+image: gisclaw-exec:1.0      # execution image, built from harness/docker/
+container:
+  memory: 12g                # per cell
+  heavy_memory: 24g          # for tasks whose inputs exceed heavy_input_mb
+  heavy_input_mb: 300
+  typical_gb: 4              # memory a typical cell uses; only for the scheduler's host-memory guard
+  cpus: 2
+  pids: 512
+  tmpfs_size: 2g
+
+# --- limits, the same for every model, tier and architecture --------------------------
+step_timeout_s: 300          # per code execution
+task_wall_s: 1200            # budget per cell: the agent's own time (wall time minus time waiting for the model)
+task_hard_wall_s: 5400       # absolute wall-time cap per cell; a cell that reaches it ends as wall_timeout
+max_rounds: 50               # agent rounds per cell (dual agent: worker rounds)
+
+# Imports the sandbox refuses, with the message the agent gets.
+blocked_packages:
+  arcpy: "Use geopandas + rasterio + shapely instead."
+
+agent:
+  history_tokens: 60000      # prompt budget for the conversation history
+  max_format_errors: 15      # format errors do not use up rounds; a cell ends after this many
+
+# --- models --------------------------------------------------------------------------
+# provider anthropic: Anthropic Messages API, key from the environment variable ANTHROPIC_API_KEY.
+# provider vllm: OpenAI-compatible endpoint of a local vLLM server (harness/serving/).
+# request.set holds the parameters sent with every request, in addition to the model name,
+# the messages and the tools.
+models:
+  claude-opus-5-5:
+    provider: anthropic
+    model_name: claude-opus-5-5
+    history_tokens: 700000   # the history is append-only for these models: never truncated
+    request:
+      set: {max_tokens: 32000, thinking: {type: adaptive, display: summarized}, output_config: {effort: high}}
+  claude-sonnet-5-5:
+    provider: anthropic
+    model_name: claude-sonnet-5-5
+    history_tokens: 700000
+    request:
+      set: {max_tokens: 32000, thinking: {type: adaptive, display: summarized}, output_config: {effort: high}}
+  claude-haiku-5-5:
+    provider: anthropic
+    model_name: claude-haiku-5-5
+    history_tokens: 700000
+    request:
+      set: {max_tokens: 32000, thinking: {type: adaptive, display: summarized}, output_config: {effort: high}}
+  gptoss-120b:               # openai/gpt-oss-120b, served by harness/serving/serve_gpt_oss.sh
+    provider: vllm
+    base_url: http://127.0.0.1:8103/v1
+    model_name: gpt-oss-120b
+    request:
+      set: {max_tokens: 32768, temperature: 1.0, reasoning_effort: medium}
+  qwen38-27b:                # Qwen/Qwen3.8-27B-FP8, served by harness/serving/serve_qwen.sh
+    provider: vllm
+    base_url: http://127.0.0.1:8102/v1
+    model_name: qwen3.8-27b-fp8
+    request:
+      set: {max_tokens: 32768, temperature: 1.0}
+
+# --- scheduler: cells running at the same time ------------------------------------------
+concurrency:
+  total: 30
+  anthropic: 8
+  vllm: 32
+  heavy: 2                   # cells of tasks with heavy inputs

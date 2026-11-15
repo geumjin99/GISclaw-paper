@@ -1,0 +1,132 @@
+[
+ {
+  "control": "correct_gp_array_column",
+  "expected_correct": true,
+  "judged_correct": true,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [],
+  "scorer_error": false
+ },
+ {
+  "control": "correct_separate_bool_masks",
+  "expected_correct": true,
+  "judged_correct": true,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [],
+  "scorer_error": false
+ },
+ {
+  "control": "wrong_choropleth_in_other_png",
+  "expected_correct": false,
+  "judged_correct": false,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [
+   "drawn choropleth shows the per-block temperature",
+   "method: Kriging / GP interpolation (prescribed by the task)"
+  ],
+  "scorer_error": false
+ },
+ {
+  "control": "wrong_column_elderly_count",
+  "expected_correct": false,
+  "judged_correct": false,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [
+   "per-block mean temperature matches gold pattern (Spearman >= 0.90)",
+   "values are temperatures of this data (mean within 2 F)",
+   "drawn choropleth shows the per-block temperature",
+   "hot & elderly-dense highlight set derived",
+   "method: Kriging / GP interpolation (prescribed by the task)"
+  ],
+  "scorer_error": false
+ },
+ {
+  "control": "wrong_highlight_hot_not_elderly_masks",
+  "expected_correct": false,
+  "judged_correct": false,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [
+   "hot & elderly-dense highlight set derived"
+  ],
+  "scorer_error": false
+ },
+ {
+  "control": "wrong_highlight_hot_only_mask",
+  "expected_correct": false,
+  "judged_correct": false,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [
+   "hot & elderly-dense highlight set derived"
+  ],
+  "scorer_error": false
+ },
+ {
+  "control": "wrong_map_plots_density",
+  "expected_correct": false,
+  "judged_correct": false,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [
+   "drawn choropleth shows the per-block temperature"
+  ],
+  "scorer_error": false
+ },
+ {
+  "control": "wrong_method_idw",
+  "expected_correct": false,
+  "judged_correct": false,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [
+   "method: Kriging / GP interpolation (prescribed by the task)"
+  ],
+  "scorer_error": false
+ },
+ {
+  "control": "wrong_nearest_station_no_interp",
+  "expected_correct": false,
+  "judged_correct": false,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [
+   "per-block mean temperature matches gold pattern (Spearman >= 0.90)",
+   "values come from an interpolated surface, not copied station readings",
+   "drawn choropleth shows the per-block temperature",
+   "method: Kriging / GP interpolation (prescribed by the task)"
+  ],
+  "scorer_error": false
+ },
+ {
+  "control": "wrong_no_highlight",
+  "expected_correct": false,
+  "judged_correct": false,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [
+   "hot & elderly-dense highlight set derived"
+  ],
+  "scorer_error": false
+ },
+ {
+  "control": "wrong_raw_points_no_interpolation",
+  "expected_correct": false,
+  "judged_correct": false,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [
+   "per-block mean temperature matches gold pattern (Spearman >= 0.90)",
+   "values are temperatures of this data (mean within 2 F)",
+   "values come from an interpolated surface, not copied station readings",
+   "drawn choropleth shows the per-block temperature",
+   "hot & elderly-dense highlight set derived",
+   "method: Kriging / GP interpolation (prescribed by the task)"
+  ],
+  "scorer_error": false
+ }
+]

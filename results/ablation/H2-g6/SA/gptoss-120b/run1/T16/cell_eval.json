@@ -1,0 +1,68 @@
+{
+ "cell_id": "ablation.H2-g6.SA.gptoss-120b.r1.T16",
+ "task": 16,
+ "status": "ok",
+ "analytically_correct": true,
+ "scorer_error": false,
+ "checks": [
+  {
+   "name": "polynomial_fit_pred.csv present and readable",
+   "passed": true,
+   "value": "polynomial_fit_pred.csv",
+   "threshold": null,
+   "required": true,
+   "note": ""
+  },
+  {
+   "name": "one row per year 1860-2099",
+   "passed": true,
+   "value": [
+    1860,
+    2099,
+    240
+   ],
+   "threshold": [
+    1860,
+    2099,
+    240
+   ],
+   "required": true,
+   "note": ""
+  },
+  {
+   "name": "values are the quadratic LS fit of a legitimate series",
+   "passed": true,
+   "value": 0.0,
+   "threshold": "RMSE <= 0.022 K (0.02 K + output rounding)",
+   "required": true,
+   "note": "column 'fitted_temperature_K' ~ domain mean"
+  },
+  {
+   "name": "fit describes the domain mean (not a single grid point)",
+   "passed": true,
+   "value": null,
+   "threshold": null,
+   "required": true,
+   "note": "domain mean"
+  }
+ ],
+ "replay": {
+  "success": true,
+  "outputs": [
+   "polynomial_fit_pred.csv"
+  ],
+  "events": [],
+  "blocks_ok": 2,
+  "block_outcome": [
+   "ok",
+   "ok"
+  ],
+  "step_timeout_s": 900,
+  "same_outputs_as_original": true,
+  "block_mismatches": []
+ },
+ "replay_faithful": true,
+ "replay_unfaithful_reasons": [],
+ "replay_container_failure": [],
+ "emergency_files": []
+}

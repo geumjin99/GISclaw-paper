@@ -1,0 +1,34 @@
+{
+ "task": 32,
+ "title": "Mountain lion habitat connectivity: cost surface and optimal region connections",
+ "output_type": "image (cost surface with least-cost corridors) + paths/cost raster",
+ "required_outputs": [
+  "optimal_path.png"
+ ],
+ "method": "Ruggedness = 3x3 focal range of the (8-bit) elevation, Rescale by Function MSLarge 10->1; distance to roads = Euclidean distance from all Roads.geojson segments (rasterised, 30 m), MSLarge 10->1 (near roads costly); land cover reclassified with the authors' table (0/255 NoData); protected status 1/2/3/4 -> 1/3/6/9, no status (0/255) -> 9; cost = 1.25 ruggedness + roads + land cover + protected; Optimal Region Connections = least-cost distance from each of the 4 habitat regions (skimage MCP, 8-connected), MST over pairwise least costs, traceback of the 3 MST paths.",
+ "key_parameters": {
+  "weights": {
+   "ruggedness": 1.25,
+   "roads": 1,
+   "land_cover": 1,
+   "protected": 1
+  },
+  "ruggedness_window": "3x3 range",
+  "rescale": "MSLarge, 10 (flat) -> 1 (rugged)",
+  "connections": "minimum spanning tree of least-cost links, 3 paths of ~35 km",
+  "roads": "dataset/Roads.geojson (from the task 21 data); max distance 10.95 km (authors' model 10.96 km)"
+ },
+ "benchmark_defects": [
+  "The benchmark distributes no Roads.geojson for this task; the file is taken from the data of task 21 of the benchmark (same project, identical rasters).",
+  "The task names dataset/habitat.geojson and landcover.tif; the files are habitats.geojson and landCover.tif.",
+  "Elevation.tif is an 8-bit (0-255) stretched DEM, not metres - ruggedness is only relative.",
+  "Protected_Status has values 0 and 255 not in its attribute table ('null data'); their treatment is unspecified (reference: not protected)."
+ ],
+ "checks": [
+  "required: optimal_path.png present",
+  "required: map not blank",
+  "required: cost surface (input grid or coarser same-aspect grid / GeoTIFF) regressed on the four gold component layers (4x subsample): R2 >= 0.75, every standardised weight >= 0.08 and every partial correlation >= 0.35; road layer = best-fitting of all roads / FUNC_CLASS<=4 / <=3",
+  "required: corridor vertices (vectors, coordinate arrays, sparse path raster on any same-aspect grid, figure lines) > 1 km from habitats: recall and precision >= 0.80 within 1.5 km of the gold paths",
+  "required: the map draws the corridors (figure lines passing the corridor check, or a drawn collection whose path boxes cover >= 80 % of gold corridor points with >= 80 % of boxes on corridors)"
+ ]
+}

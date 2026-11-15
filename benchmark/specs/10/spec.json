@@ -1,0 +1,28 @@
+{
+ "task": 10,
+ "title": "Analyze the potential impact of proposed roads on local environment",
+ "output_type": "image (risk map)",
+ "required_outputs": [
+  "predictedRiskyArea.png"
+ ],
+ "method": "All layers in South America Albers Equal Area (ESRI:102033). Buffer the planned road BR 421 (208 km) by 5.5 km (2 343 km2); subtract the already deforested area (993 km2, 42 %) -> risky area = forest newly exposed by the road (1 350 km2); intersect with protected forests -> protected forest at risk (791 km2 in Rio Ouro Preto and Guajara-Mirim). Map Rondonia boundary (Natural Earth admin-1 via offline cartopy), protected forest, deforested area, existing roads, planned road, buffer and risky area.",
+ "key_parameters": {
+  "crs": "ESRI:102033",
+  "buffer_m": 5500,
+  "risky_area": "buffer - deforested",
+  "protected_at_risk": "risky area intersect protected forest"
+ },
+ "benchmark_defects": [
+  "The task asks for the boundary of Rondonia but no boundary file is supplied (the reference uses Natural Earth admin-1 from the offline cartopy data; checked only as optional).",
+  "The deforested-area polygon is invalid (self-intersections) and very large (8 257 parts, 0.5 M vertices); overlays need make_valid and are slow without clipping.",
+  "'Visualize the change' is vague: buffer-minus-deforested, its intersection with protected forest and its part outside protected forest are all accepted.",
+  "The published reference script projects all layers to UTM zone 23S (EPSG:32723, central meridian 45 W)."
+ ],
+ "checks": [
+  "required: map file present",
+  "required: map not blank",
+  "required: a captured polygon layer matches the gold risky area (buffer - deforested), the protected forest at risk, or the unprotected forest at risk (risky area - protected forest) (area IoU >= 0.85), with <= 3 % of it on already-deforested land",
+  "required: existing roads, protected forest and deforested area are drawn (code plots layers derived directly from the three input files)",
+  "optional: a Rondonia boundary (state-sized polygon) is drawn"
+ ]
+}

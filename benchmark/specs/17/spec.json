@@ -1,0 +1,28 @@
+{
+ "task": 17,
+ "title": "Geographic distribution of fatal car crashes, New York City 2016",
+ "output_type": "image (point map)",
+ "required_outputs": [
+  "collisions_map_vis.png"
+ ],
+ "method": "Draw all 72 fatal collisions (2016; the file contains nothing else) as points sized by persons killed and coloured by borough, over the 5 NYC borough polygons, with geoplot in an Albers equal-area projection centred on NYC (both layers EPSG:4326 -> reprojected by geoplot/cartopy).",
+ "key_parameters": {
+  "points": "72 (71 distinct locations)",
+  "size": "NUMBER OF PERSONS KILLED (1 or 2)",
+  "hue": "BOROUGH",
+  "projection": "AlbersEqualArea(40.7128, -74.0059)"
+ },
+ "benchmark_defects": [
+  "Mostly a cartographic task: the data are already filtered to 2016 fatal crashes, so 'analysis' reduces to drawing all points correctly located with the borough layer.",
+  "The published reference script calls main() only under an `if __name__ == '__main__'` guard."
+ ],
+ "checks": [
+  "required: collisions_map_vis.png present",
+  "required: map not blank",
+  "required: all 72 collisions drawn at their positions AND visible: visible drawn points (inside axes limits on plain axes; inside the set_extent/extent= frame from the code on cartopy/geoplot axes; all points when no extent is set) hold 71-81 distinct locations and >= 71 inputs match after min-max normalisation",
+  "required: the borough layer is drawn (a polyplot/choropleth/add_geometries/ShapelyFeature/<layer>.plot call resolved to a captured polygon layer or an inline read of nyc_boroughs, covering >= 95 % of the borough area; subsets excluded) and >= 90 % of drawn points lie in its expanded bounds in the CRS it is drawn in; no resolvable drawing call -> UNVERIFIABLE (not passed)",
+  "required (the text says 'plot ... on a map by geoplot'): crashes plotted with geoplot - a geoplot pointplot/kdeplot/quadtree/voronoi/webmap call in the executed code (aliases followed, comments ignored)",
+  "optional: fatalities encoded (size/colour by persons killed)",
+  "figure (kind=\"figure\"; secondary analysis, never required): crash markers visible against a white background - >= 90 % of drawn markers whose colours are captured have face (or per-point edge) luminance <= 0.88 after alpha compositing; uniform colours not captured -> UNVERIFIABLE"
+ ]
+}

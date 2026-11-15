@@ -1,0 +1,44 @@
+{
+ "task": 4,
+ "title": "Identify groundwater vulnerable areas that need protection",
+ "output_type": "raster (GeoTIFF)",
+ "required_outputs": [
+  "undeveloped_areas.tif",
+  "undeveloped_areas.tiff"
+ ],
+ "method": "Project mc_soils to NAD83 / Oregon North LCC (EPSG:32126, the CRS of land_cover.tif). Rasterise drclassdcd (codes 1-5 in ArcGIS order of appearance: Well, Poorly, Somewhat excessively, Excessively, Somewhat poorly) and wdepannmin on the 30 m land_cover grid within the mc_boundary extent (cell-centre rule). Reclassify drainage 1->3, 2->1, 3->4, 4->5, 5->2 (= Excessively 5 ... Poorly 1) and depth 0-10->5, 10-33->4, 33-61->3, 61-80->2, 80-92->1 (upper bound inclusive). vulnerable = 5*drain + 4*depth, rescaled linearly to [1,10]; risk = 8*vulnerable + 10*reclassified NLCD; keep the 8 undeveloped NLCD classes where risk > 100. Result: 665 cells (0.60 km2; Hay/Pasture 601, Barren 62, Shrub/Scrub 2). risk_zones.tif is also written.",
+ "key_parameters": {
+  "crs": "EPSG:32126 (NAD83 / Oregon North, LCC)",
+  "cell": "30 m, snapped to land_cover",
+  "drainage_codes": "order of appearance = stated in the task (1 Well, 2 Poorly, 3 Somewhat excessively, 4 Excessively, 5 Somewhat poorly); alphabetical not accepted",
+  "depth_bins": "upper-inclusive (accepted alternative: lower-inclusive)",
+  "standardisation": "linear 1 + 9*(v-min)/(max-min), not rounded (stated in the task); 10 classes / rounding not accepted",
+  "high_risk": "risk > 100",
+  "undeveloped_codes": [
+   41,
+   95,
+   81,
+   71,
+   43,
+   52,
+   90,
+   31
+  ]
+ },
+ "benchmark_defects": [
+  "The published instruction asks for 'output/undeveloped_areas.tif'; the benchmark convention is pred_results/, which is used.",
+  "The published drainage reclass table refers to codes 1-5 without saying which drainage string each code is; ArcGIS assigns them in order of appearance (which makes the table monotone in drainage rate), np.unique/sorted gives alphabetical codes - the result differs completely.",
+  "wdepannmin takes exactly the break values 10, 33, 61, 80, so the inclusive side of each reclass range decides the class of thousands of polygons.",
+  "'Standardization to [1, 10]' in the published instruction is ambiguous (linear rescale vs 10 classes).",
+  "Because risk > 100 for undeveloped land is reached only at a few exact score combinations, these ambiguities change the answer from 102 to 103 000 cells (mutual IoU 0.006-0.17).",
+  "land_cover.tif carries an ESRI header that rasterio reads as LOCAL_CS 'NAD83 / Oregon North', so soils.to_crs(land_cover.crs) fails; a solution must recognise EPSG:32126. An unmentioned Albers copy mc_land_cover.tif is also present.",
+  "The task text used here states the drainage coding, the continuous (not rounded) standardisation and the output path pred_results/undeveloped_areas.tif; the checks accept 2 interpretations (depth-bound variants), the same standard as tasks 26 and 27."
+ ],
+ "checks": [
+  "required: undeveloped_areas.tif/.tiff present",
+  "required: georeferenced raster with >= 1 selected (valid, non-zero) cell",
+  "required: selected cells, mapped onto the land_cover grid (reprojected if needed), match one of the 2 accepted interpretations (depth bounds upper- or lower-inclusive) with 1-cell tolerance: precision >= 0.85 and recall >= 0.85",
+  "required: soils projected to Lambert Conformal Conic as prescribed: captured soils layer or deliverable raster in an LCC CRS",
+  "optional: selected cells carry undeveloped NLCD codes or a 0/1 mask"
+ ]
+}

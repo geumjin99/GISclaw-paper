@@ -1,0 +1,142 @@
+{
+ "cell_id": "ablation.H2-g5.SA.qwen38-27b.r3.T48",
+ "task": 48,
+ "status": "ok",
+ "analytically_correct": false,
+ "scorer_error": false,
+ "checks": [
+  {
+   "name": "selection AcceptedLo >= 30 (808 tracts)",
+   "passed": true,
+   "value": "sel@final",
+   "threshold": 808,
+   "required": true,
+   "note": ""
+  },
+  {
+   "name": "hot spots: Gi* z of AveInteres (Pearson >= 0.85 with a Gi* variant, closer than to Gi* of AveLoanGra)",
+   "passed": false,
+   "value": 0.187,
+   "threshold": 0.85,
+   "required": true,
+   "note": "gwr_resid in emergency_output.csv@file ~ Gi[queen/self1/bin]"
+  },
+  {
+   "name": "GWR (22 NN) of AveInteres: a local slope matches a 22-NN reference fit (Pearson >= 0.95)",
+   "passed": true,
+   "value": 0.966,
+   "threshold": 0.95,
+   "required": true,
+   "note": "gwr_pHHLoanRat in gdf_gwr@final ~ bisquare22 AcceptedLo+TOTHH_CY+pHHLoanRat: b[pHHLoanRat]"
+  },
+  {
+   "name": "local R2 reported",
+   "passed": true,
+   "value": 0.528,
+   "threshold": null,
+   "required": false,
+   "note": ""
+  },
+  {
+   "name": "FDR correction (code)",
+   "passed": false,
+   "value": null,
+   "threshold": null,
+   "required": false,
+   "note": ""
+  },
+  {
+   "name": "deliverable files carry a CRS (uniform rule)",
+   "passed": true,
+   "value": [
+    "interest_hotspots.shp",
+    "local_Gi_star.shp",
+    "selected_loans.shp"
+   ],
+   "threshold": "every geographic deliverable file has a CRS",
+   "required": true,
+   "note": "3 geographic deliverable file(s), all with a CRS"
+  }
+ ],
+ "replay": {
+  "success": false,
+  "outputs": [
+   "interest_hotspots.cpg",
+   "interest_hotspots.dbf",
+   "interest_hotspots.prj",
+   "interest_hotspots.shp",
+   "interest_hotspots.shx",
+   "local_Gi_star.cpg",
+   "local_Gi_star.dbf",
+   "local_Gi_star.prj",
+   "local_Gi_star.shp",
+   "local_Gi_star.shx",
+   "selected_loans.cpg",
+   "selected_loans.dbf",
+   "selected_loans.prj",
+   "selected_loans.shp",
+   "selected_loans.shx",
+   "spatial_weights.gal"
+  ],
+  "events": [],
+  "blocks_ok": 27,
+  "block_outcome": [
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok"
+  ],
+  "step_timeout_s": 900,
+  "same_outputs_as_original": false,
+  "block_mismatches": []
+ },
+ "replay_faithful": true,
+ "replay_unfaithful_reasons": [],
+ "replay_container_failure": [],
+ "correct_without_emergency": false,
+ "emergency_files": [
+  "emergency_output.csv"
+ ]
+}

@@ -1,0 +1,110 @@
+{
+ "cell_id": "main.H0.SA.claude-haiku-5-5.r3.T30",
+ "experiment": "main",
+ "tier": "H0",
+ "arch": "SA",
+ "model": "claude-haiku-5-5",
+ "run": 3,
+ "task": 30,
+ "elapsed_s": 201.2,
+ "protocol": "native",
+ "tier_config": {
+  "tools": [
+   "execute",
+   "finish"
+  ],
+  "generic": false,
+  "g1": false,
+  "g2": false,
+  "g3": false,
+  "g4": false,
+  "g5": false,
+  "g6": false,
+  "g7": false,
+  "no_dd": false,
+  "no_dk": false
+ },
+ "outputs": [
+  "README_analysis_summary.md",
+  "capitol_hill_bike_routes.png",
+  "ch_street_suitability.gpkg",
+  "city_protected_lane_proposal.gpkg",
+  "demand_hotspots_GiStar.gpkg",
+  "employment_centers.gpkg",
+  "half_mile_coverage_metrics.csv",
+  "network_analyst_od_paths.csv",
+  "proposed_bike_routes.gpkg",
+  "route_origins.gpkg"
+ ],
+ "required_outputs": [],
+ "required_present": null,
+ "emergency_files": [],
+ "rounds": 32,
+ "self_corrections": 2,
+ "agent_stats": {
+  "rounds": 32,
+  "format_errors": 0,
+  "format_error_kinds": {},
+  "self_corrections": 2,
+  "exec_blocks": 31,
+  "exec_failed": 2,
+  "finish_rejections": 0,
+  "dedup_blocked": 0,
+  "triggers": {},
+  "checks_run": {},
+  "end_reason": "finish",
+  "empty_retries": 0,
+  "history_truncations": 0,
+  "finished": true,
+  "agent_time_s": 13.3
+ },
+ "llm_stats": {
+  "calls": 32,
+  "retries": 0,
+  "errors": 0,
+  "context_overflow": 0,
+  "empty": 0,
+  "refusals": 0,
+  "prompt_tokens": 66,
+  "completion_tokens": 32992,
+  "cached_tokens": 917568,
+  "cache_write_tokens": 58356
+ },
+ "llm_time_s": 186.8,
+ "agent_time_s": 13.3,
+ "hit_deadline": false,
+ "sandbox_events": [],
+ "inputs_intact": true,
+ "container_memory": "12g",
+ "deliverable_produced": true,
+ "config": {
+  "image": "gisclaw-exec:1.0",
+  "step_timeout_s": 300,
+  "task_wall_s": 1200,
+  "max_rounds": 50,
+  "blocked_packages": {
+   "arcpy": "Use geopandas + rasterio + shapely instead."
+  },
+  "agent": {
+   "history_tokens": 60000,
+   "max_format_errors": 15
+  }
+ },
+ "model_config": {
+  "provider": "anthropic",
+  "model_name": "claude-haiku-5-5",
+  "request": {
+   "set": {
+    "max_tokens": 32000,
+    "thinking": {
+     "type": "adaptive",
+     "display": "summarized"
+    },
+    "output_config": {
+     "effort": "high"
+    }
+   }
+  },
+  "history_tokens": 700000
+ }
+}

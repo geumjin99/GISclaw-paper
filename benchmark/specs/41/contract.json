@@ -1,0 +1,55 @@
+{
+ "task": 41,
+ "source": "instruction names no file; checks.py: any file in pred_results; the join, relate and relationship tables are taken from captured objects or from table files in pred_results (*.csv, *.xlsx, *.gpkg, *.shp, *.geojson), so no table file is required",
+ "deliverables": [
+  {
+   "id": "any_result_file",
+   "kind": "text",
+   "patterns": [
+    "*"
+   ],
+   "required": true,
+   "crs_required": false,
+   "checked_by": [
+    "result file written to pred_results"
+   ]
+  },
+  {
+   "id": "relate_table",
+   "kind": "table",
+   "patterns": [
+    "*.csv"
+   ],
+   "required": false,
+   "crs_required": false,
+   "checked_by": [
+    "one-to-many campsite relate materialised (per-campsite related-record counts, Wyoming campsites)"
+   ]
+  },
+  {
+   "id": "park_join_table",
+   "kind": "table",
+   "patterns": [
+    "*.csv"
+   ],
+   "required": false,
+   "crs_required": false,
+   "checked_by": [
+    "park-level join ParentOrgID -> OrgID (both parks carry 'National Park Service')"
+   ]
+  },
+  {
+   "id": "relationship_table",
+   "kind": "table",
+   "patterns": [
+    "*.csv"
+   ],
+   "required": false,
+   "crs_required": false,
+   "checked_by": [
+    "relationship campground (FacilityID) 1 -> many campsites (ParentFacilityID) materialised"
+   ]
+  }
+ ],
+ "not_deliverables": []
+}

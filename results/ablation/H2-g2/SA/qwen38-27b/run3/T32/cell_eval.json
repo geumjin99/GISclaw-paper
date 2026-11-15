@@ -1,0 +1,119 @@
+{
+ "cell_id": "ablation.H2-g2.SA.qwen38-27b.r3.T32",
+ "task": 32,
+ "status": "ok",
+ "analytically_correct": false,
+ "scorer_error": false,
+ "checks": [
+  {
+   "name": "required output present",
+   "passed": true,
+   "value": [
+    "optimal_path.png"
+   ],
+   "threshold": [
+    "optimal_path.png",
+    "Optimal_path.png",
+    "optimal_path.PNG"
+   ],
+   "required": true,
+   "note": ""
+  },
+  {
+   "name": "map not blank",
+   "passed": true,
+   "value": 50.0319573029635,
+   "threshold": ">=3 grey-level std",
+   "required": true,
+   "note": ""
+  },
+  {
+   "name": "cost surface = weighted sum of ruggedness, road-distance, land-cover and protection costs",
+   "passed": false,
+   "value": "R2=0.976; weights rug=0.02 landcover=0.03 protected=0.95 roads=0.02 (roads FUNC_CLASS<=3; ruggedness MSLarge; presence from max-R2 fit (roads FUNC_CLASS<=3; ruggedness linear): partial r [0.13, 0.1, 0.98, 0.12]); partial r [0.11, 0.13, 0.98, 0.12]",
+   "threshold": "R2>=0.75, every weight>=0.08, every partial r>=0.35",
+   "required": true,
+   "note": "returned@ret06_disp"
+  },
+  {
+   "name": "corridors follow gold least-cost paths (recall & precision >= 0.80 within 1.5 km)",
+   "passed": true,
+   "value": "recall=0.85, precision=0.86",
+   "threshold": "recall>=0.80 and precision>=0.80, or recall>=0.90 and precision>=0.35 (superset network)",
+   "required": true,
+   "note": "paths_gdf@final"
+  },
+  {
+   "name": "map draws the corridors",
+   "passed": false,
+   "value": null,
+   "threshold": "figure lines pass check 3, or drawn path boxes cover/precision >= 0.80",
+   "required": true,
+   "note": "no drawn lines / collections found"
+  },
+  {
+   "name": "deliverable files carry a CRS (uniform rule)",
+   "passed": true,
+   "value": [
+    "cost_components.tif",
+    "final_cost_surface.tif",
+    "optimal_paths.geojson"
+   ],
+   "threshold": "every geographic deliverable file has a CRS",
+   "required": true,
+   "note": "3 geographic deliverable file(s), all with a CRS"
+  }
+ ],
+ "replay": {
+  "success": true,
+  "outputs": [
+   "cost_components.tif",
+   "final_cost_surface.tif",
+   "optimal_path.png",
+   "optimal_paths.geojson"
+  ],
+  "events": [],
+  "blocks_ok": 19,
+  "block_outcome": [
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok"
+  ],
+  "step_timeout_s": 900,
+  "same_outputs_as_original": true,
+  "block_mismatches": []
+ },
+ "replay_faithful": true,
+ "replay_unfaithful_reasons": [],
+ "replay_container_failure": [],
+ "emergency_files": []
+}

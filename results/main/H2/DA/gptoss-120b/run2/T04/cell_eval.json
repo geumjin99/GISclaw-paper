@@ -1,0 +1,120 @@
+{
+ "cell_id": "main.H2.DA.gptoss-120b.r2.T04",
+ "task": 4,
+ "status": "ok",
+ "analytically_correct": false,
+ "scorer_error": false,
+ "checks": [
+  {
+   "name": "required output present",
+   "passed": true,
+   "value": [
+    "undeveloped_areas.tif"
+   ],
+   "threshold": [
+    "undeveloped_areas.tif",
+    "undeveloped_areas.tiff"
+   ],
+   "required": true,
+   "note": ""
+  },
+  {
+   "name": "georeferenced raster with selected cells",
+   "passed": true,
+   "value": 30812,
+   "threshold": ">0",
+   "required": true,
+   "note": "pred CRS; 0 selected cells outside the land_cover grid"
+  },
+  {
+   "name": "selected cells match an accepted interpretation (1-cell tolerance)",
+   "passed": false,
+   "value": {
+    "precision": 0.006,
+    "recall": 0.295,
+    "cells": 30812,
+    "variant_cells": 665
+   },
+   "threshold": "precision>=0.85 and recall>=0.85",
+   "required": true,
+   "note": "appearance / upper-inclusive / linear"
+  },
+  {
+   "name": "soils projected to Lambert Conformal Conic (prescribed step)",
+   "passed": true,
+   "value": null,
+   "threshold": null,
+   "required": true,
+   "note": "soils layer soil_lcc@final in LCC"
+  },
+  {
+   "name": "selected cells carry undeveloped NLCD codes or a 0/1 mask",
+   "passed": true,
+   "value": [
+    1.0
+   ],
+   "threshold": null,
+   "required": false,
+   "note": ""
+  },
+  {
+   "name": "deliverable files carry a CRS (uniform rule)",
+   "passed": true,
+   "value": [
+    "undeveloped_areas.tif"
+   ],
+   "threshold": "every geographic deliverable file has a CRS",
+   "required": true,
+   "note": "1 geographic deliverable file(s), all with a CRS"
+  }
+ ],
+ "replay": {
+  "success": true,
+  "outputs": [
+   "drainage.tif",
+   "drainage_reclass.tif",
+   "land_cover_reclass.tif",
+   "mc_soils_lcc.cpg",
+   "mc_soils_lcc.dbf",
+   "mc_soils_lcc.prj",
+   "mc_soils_lcc.shp",
+   "mc_soils_lcc.shx",
+   "risk_zones.tif",
+   "undeveloped_areas.tif",
+   "vulnerable_raw.tif",
+   "vulnerable_std.tif",
+   "water_depth.tif",
+   "water_depth_reclass.tif"
+  ],
+  "events": [],
+  "blocks_ok": 16,
+  "block_outcome": [
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok"
+  ],
+  "step_timeout_s": 900,
+  "same_outputs_as_original": false,
+  "block_mismatches": []
+ },
+ "replay_faithful": true,
+ "replay_unfaithful_reasons": [],
+ "replay_container_failure": [],
+ "correct_without_emergency": false,
+ "emergency_files": [
+  "emergency_output.geojson"
+ ]
+}

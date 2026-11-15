@@ -1,0 +1,96 @@
+{
+ "cell_id": "main.H2.DA.claude-opus-5-5.r1.T17",
+ "task": 17,
+ "status": "ok",
+ "analytically_correct": true,
+ "scorer_error": false,
+ "checks": [
+  {
+   "name": "required output present",
+   "passed": true,
+   "value": [
+    "collisions_map_vis.png"
+   ],
+   "threshold": [
+    "collisions_map_vis.png"
+   ],
+   "required": true,
+   "note": ""
+  },
+  {
+   "name": "map not blank",
+   "passed": true,
+   "value": 23.57675515121387,
+   "threshold": ">=3 grey-level std",
+   "required": true,
+   "note": ""
+  },
+  {
+   "name": "all 72 collisions drawn at their positions and visible on the map",
+   "passed": true,
+   "value": {
+    "drawn_points": 71,
+    "inputs_matched": 72
+   },
+   "threshold": "71-81 distinct drawn, >=71 matched",
+   "required": true,
+   "note": "save00; projected axes, no extent set: autoscaled frame shows all points"
+  },
+  {
+   "name": "borough polygons drawn, in the points' coordinate space",
+   "passed": true,
+   "value": 1.0,
+   "threshold": 0.9,
+   "required": true,
+   "note": "drawn: boroughs"
+  },
+  {
+   "name": "crash markers visible against a white background",
+   "passed": true,
+   "value": 1.0,
+   "threshold": ">=0.90 of markers with luminance <=0.88",
+   "required": false,
+   "note": "72/72 markers visible",
+   "kind": "figure"
+  },
+  {
+   "name": "crashes plotted with geoplot (task: 'on a map by geoplot')",
+   "passed": true,
+   "value": [
+    "pointplot"
+   ],
+   "threshold": null,
+   "required": true,
+   "note": "geoplot pointplot/kdeplot/quadtree/voronoi/webmap call in the executed code"
+  },
+  {
+   "name": "fatalities encoded (size/colour by persons killed)",
+   "passed": true,
+   "value": null,
+   "threshold": null,
+   "required": false,
+   "note": ""
+  }
+ ],
+ "replay": {
+  "success": true,
+  "outputs": [
+   "collisions_map_vis.png"
+  ],
+  "events": [],
+  "blocks_ok": 4,
+  "block_outcome": [
+   "ok",
+   "ok",
+   "ok",
+   "ok"
+  ],
+  "step_timeout_s": 900,
+  "same_outputs_as_original": true,
+  "block_mismatches": []
+ },
+ "replay_faithful": true,
+ "replay_unfaithful_reasons": [],
+ "replay_container_failure": [],
+ "emergency_files": []
+}

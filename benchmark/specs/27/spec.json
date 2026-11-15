@@ -1,0 +1,38 @@
+{
+ "task": 27,
+ "title": "High-risk groundwater zones needing protection: undeveloped land (Morrow County, OR)",
+ "output_type": "raster (GeoTIFF)",
+ "required_outputs": [
+  "undeveloped_areas.tif (pred_results/; output/undeveloped_areas.tif as literally instructed is also accepted)"
+ ],
+ "optional_outputs": [
+  "risk_zones.tif"
+ ],
+ "method": "Align land_cover.tif (Oregon North metres, 30 m, larger extent) to the vulnerable_areas.tif grid (Oregon North US feet, 98.4 ft) with nearest-neighbour resampling. Standardise vulnerable areas to 1-10 using the min/max of valid cells (14/37), reclassify NLCD codes with the given table, risk_zones = vul*8 + lc*10; keep risk_zones > 100 and, within it, the undeveloped classes (codes 31, 41, 43, 52, 71, 81, 90, 95), keeping the land-cover code as value. Gold: 665 cells (0.60 km2): 601 Hay/Pasture, 62 Barren, 2 Shrub/Scrub.",
+ "key_parameters": {
+  "standardisation": "9*(v-14)/(37-14)+1 over valid cells",
+  "risk_threshold": "> 100",
+  "undeveloped_codes": [
+   31,
+   41,
+   43,
+   52,
+   71,
+   81,
+   90,
+   95
+  ]
+ },
+ "benchmark_defects": [
+  "The two inputs are on different grids and in different linear units (vulnerable areas: StatePlane Oregon North US feet; land cover: Oregon North metres, larger extent); the task does not mention it, but array-index map algebra is wrong.",
+  "The instruction asks to save to 'output/undeveloped_areas.tif' rather than pred_results/.",
+  "With the given weights, Herbaceous and the wetland classes can never exceed 100, and forest/shrub only on the most vulnerable cells, so the result is tiny (665 cells)."
+ ],
+ "checks": [
+  "required: undeveloped_areas.tif present (pred_results or output/)",
+  "required: selected cells (valid & > 0) sampled at gold cell centres (pyproj) overlap the gold selection, IoU >= 0.70",
+  "required: every land-cover class of the gold selection with >= 20 cells (Hay/Pasture 81, Barren 31) has recall >= 0.5",
+  "optional: values are the undeveloped land-cover codes",
+  "optional: selected area within +/-25 % of gold"
+ ]
+}

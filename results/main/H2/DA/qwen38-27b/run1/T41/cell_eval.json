@@ -1,0 +1,126 @@
+{
+ "cell_id": "main.H2.DA.qwen38-27b.r1.T41",
+ "task": 41,
+ "status": "ok",
+ "analytically_correct": true,
+ "scorer_error": false,
+ "checks": [
+  {
+   "name": "result file written to pred_results",
+   "passed": true,
+   "value": [
+    "01_input_profile.csv",
+    "02_campsites_with_facility_orgs.csv",
+    "02_facilities_with_orgs.csv",
+    "02_parks_with_orgs.csv",
+    "03_campsites_with_park.csv",
+    "03_facilities_with_park.csv"
+   ],
+   "threshold": "any non-empty file",
+   "required": true,
+   "note": ""
+  },
+  {
+   "name": "one-to-many campsite relate materialised (per-campsite related-record counts, Wyoming campsites)",
+   "passed": true,
+   "value": 1.0,
+   "threshold": ">= 0.95 of the 1,170 Wyoming campsites exact",
+   "required": true,
+   "note": "summary@final.attribute_count ~ n_attributes"
+  },
+  {
+   "name": "park-level join ParentOrgID -> OrgID (both parks carry 'National Park Service')",
+   "passed": true,
+   "value": [
+    "parks_with_orgs@final",
+    "02_parks_with_orgs.csv@file"
+   ],
+   "threshold": "a table with both parks and their organisation",
+   "required": true,
+   "note": ""
+  },
+  {
+   "name": "relationship campground (FacilityID) 1 -> many campsites (ParentFacilityID) materialised",
+   "passed": true,
+   "value": 1.0,
+   "threshold": "per campground: all 6 counts exact; per campsite: >= 0.95 parent facility exact",
+   "required": true,
+   "note": "cs_with_fac@final: FacilityName by CampsiteID (per campsite)"
+  }
+ ],
+ "replay": {
+  "success": true,
+  "outputs": [
+   "01_input_profile.csv",
+   "02_campsites_with_facility_orgs.csv",
+   "02_facilities_with_orgs.csv",
+   "02_parks_with_orgs.csv",
+   "03_campsites_with_park.csv",
+   "03_facilities_with_park.csv",
+   "03_park_spatial_join_summary.csv",
+   "04_campsite_attribute_summary.csv",
+   "04_campsite_attributes_related.csv",
+   "05_campsite_campground_links.csv",
+   "05_relationship_inspection_stats.csv",
+   "final_campsites_enriched.csv",
+   "final_facilities_enriched.csv"
+  ],
+  "events": [],
+  "blocks_ok": 32,
+  "block_outcome": [
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok"
+  ],
+  "step_timeout_s": 900,
+  "same_outputs_as_original": false,
+  "block_mismatches": [
+   5
+  ]
+ },
+ "replay_faithful": false,
+ "replay_unfaithful_reasons": [
+  "block success differs at [5]"
+ ],
+ "replay_container_failure": [],
+ "correct_without_emergency": true,
+ "emergency_files": [
+  "emergency_output.csv"
+ ]
+}

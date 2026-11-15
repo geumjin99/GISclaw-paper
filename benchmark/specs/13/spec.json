@@ -1,0 +1,28 @@
+{
+ "task": 13,
+ "title": "Vertical temperature-salinity profile, South Atlantic",
+ "output_type": "image (profile plot)",
+ "required_outputs": [
+  "ocean_profiles_vis.png"
+ ],
+ "method": "Select a water column (reference: 330.5E, -10<lat<-9 -> 9.83S, depth <= 1000 m, 31 levels) from atlantic_profiles.nc and plot potential temperature (K) and practical salinity against depth (inverted axis) on twin x-axes.",
+ "key_parameters": {
+  "longitude": "330.5 E",
+  "latitude": "-10 < lat < -9 (one row, -9.834)",
+  "depth": "<= 1000 m",
+  "variables": "theta (sea_water_potential_temperature, K), salinity (PSU)"
+ },
+ "benchmark_defects": [
+  "The instruction speaks of 'a specified range of latitude, longitude, and depth' but never specifies it (the numbers appear only in the published reference script); any vertical profile from the file is accepted.",
+  "The published reference script depends on Iris, which the execution environment must provide."
+ ],
+ "checks": [
+  "required: ocean_profiles_vis.png present",
+  "required: figure not blank",
+  "required: a captured vector equals theta over >= 5 consecutive depth levels of some column/box mean (|diff| <= 0.02, K or degC)",
+  "required: a salinity profile from the same column/box",
+  "required: the figure draws both profiles against depth (lines or scatter markers), and the drawn temperature and salinity come from a common column/box (any legibility); no line/scatter artist -> UNVERIFIABLE (not passed)",
+  "optional: canonical selection (330.5E, 9.83S, <= 1000 m)",
+  "optional, kind=figure: each drawn profile spans >= 3 % of its value axis (legible)"
+ ]
+}

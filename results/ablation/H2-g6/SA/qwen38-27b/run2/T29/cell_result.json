@@ -1,0 +1,113 @@
+{
+ "cell_id": "ablation.H2-g6.SA.qwen38-27b.r2.T29",
+ "experiment": "ablation",
+ "tier": "H2-g6",
+ "arch": "SA",
+ "model": "qwen38-27b",
+ "run": 2,
+ "task": 29,
+ "elapsed_s": 2233.0,
+ "protocol": "native",
+ "tier_config": {
+  "tools": [
+   "list_files",
+   "load_vector",
+   "load_raster",
+   "inspect",
+   "execute",
+   "finish"
+  ],
+  "generic": true,
+  "g1": true,
+  "g2": true,
+  "g3": true,
+  "g4": true,
+  "g5": true,
+  "g6": false,
+  "g7": true,
+  "no_dd": false,
+  "no_dk": false
+ },
+ "outputs": [
+  "arrival_time_CurrituckSlide.tif",
+  "arrival_time_LaPalma.tif",
+  "arrival_time_PuertoRicoTrench.tif",
+  "arrival_time_minimum.tif",
+  "tsunami_arrival_summary.csv",
+  "tsunami_arrival_time_map.png",
+  "tsunami_travel_time_report.pdf",
+  "tsunami_validation.csv"
+ ],
+ "required_outputs": [],
+ "required_present": null,
+ "emergency_files": [],
+ "rounds": 39,
+ "self_corrections": 8,
+ "agent_stats": {
+  "rounds": 39,
+  "format_errors": 0,
+  "format_error_kinds": {},
+  "self_corrections": 8,
+  "exec_blocks": 37,
+  "exec_failed": 8,
+  "finish_rejections": 0,
+  "dedup_blocked": 0,
+  "triggers": {
+   "g1:card": 1,
+   "g2:nodata_unmasked": 5,
+   "g3:figure_no_colorbar": 2
+  },
+  "checks_run": {
+   "g2": 37,
+   "g3": 38,
+   "g7": 37,
+   "g4": 8
+  },
+  "end_reason": "finish",
+  "empty_retries": 0,
+  "history_truncations": 0,
+  "finished": true,
+  "agent_time_s": 28.6
+ },
+ "llm_stats": {
+  "calls": 39,
+  "retries": 0,
+  "errors": 0,
+  "context_overflow": 0,
+  "empty": 0,
+  "prompt_tokens": 892784,
+  "completion_tokens": 74730,
+  "reasoning_tokens": 50906,
+  "cached_tokens": 0
+ },
+ "llm_time_s": 2203.3,
+ "agent_time_s": 28.6,
+ "hit_deadline": false,
+ "sandbox_events": [],
+ "inputs_intact": true,
+ "container_memory": "12g",
+ "deliverable_produced": true,
+ "config": {
+  "image": "gisclaw-exec:1.0",
+  "step_timeout_s": 300,
+  "task_wall_s": 1200,
+  "max_rounds": 50,
+  "blocked_packages": {
+   "arcpy": "Use geopandas + rasterio + shapely instead."
+  },
+  "agent": {
+   "history_tokens": 60000,
+   "max_format_errors": 15
+  }
+ },
+ "model_config": {
+  "provider": "vllm",
+  "model_name": "qwen3.8-27b-fp8",
+  "request": {
+   "set": {
+    "max_tokens": 32768,
+    "temperature": 1.0
+   }
+  }
+ }
+}

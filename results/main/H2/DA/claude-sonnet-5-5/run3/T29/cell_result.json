@@ -1,0 +1,164 @@
+{
+ "cell_id": "main.H2.DA.claude-sonnet-5-5.r3.T29",
+ "experiment": "main",
+ "tier": "H2",
+ "arch": "DA",
+ "model": "claude-sonnet-5-5",
+ "run": 3,
+ "task": 29,
+ "elapsed_s": 256.3,
+ "protocol": "native",
+ "tier_config": {
+  "tools": [
+   "list_files",
+   "load_vector",
+   "load_raster",
+   "inspect",
+   "execute",
+   "lookup_api",
+   "finish"
+  ],
+  "generic": true,
+  "g1": true,
+  "g2": true,
+  "g3": true,
+  "g4": true,
+  "g5": true,
+  "g6": true,
+  "g7": true,
+  "no_dd": false,
+  "no_dk": false
+ },
+ "outputs": [
+  "arrival_map_Currituck_Slide.png",
+  "arrival_map_La_Palma.png",
+  "arrival_map_Puerto_Rico_Trench.png",
+  "arrival_map_Virginia_Beach.png",
+  "arrival_time_h_Currituck_Slide.tif",
+  "arrival_time_h_La_Palma.tif",
+  "arrival_time_h_Puerto_Rico_Trench.tif",
+  "arrival_time_h_Virginia_Beach.tif",
+  "arrival_time_h_min_all_sources.tif",
+  "arrival_time_map.png",
+  "country_arrival.csv",
+  "country_arrival_chart.png",
+  "tsunami_report.md",
+  "us_east_coast_virginia_arrival.csv",
+  "validation_table.csv"
+ ],
+ "required_outputs": [],
+ "required_present": null,
+ "emergency_files": [],
+ "rounds": 28,
+ "self_corrections": 0,
+ "agent_stats": {
+  "rounds": 28,
+  "format_errors": 0,
+  "format_error_kinds": {},
+  "self_corrections": 0,
+  "exec_blocks": 21,
+  "exec_failed": 0,
+  "finish_rejections": 0,
+  "dedup_blocked": 0,
+  "triggers": {
+   "g1:card": 1,
+   "g2:nodata_unmasked": 1
+  },
+  "checks_run": {
+   "g2": 21,
+   "g3": 22,
+   "g7": 21
+  },
+  "end_reason": "finish",
+  "empty_retries": 0,
+  "planner_calls": 1,
+  "verifier_calls": 6,
+  "replans": 0,
+  "verify_unknown": 0,
+  "steps": [
+   {
+    "id": 1,
+    "rounds": 3,
+    "pass": true
+   },
+   {
+    "id": 2,
+    "rounds": 3,
+    "pass": true
+   },
+   {
+    "id": 3,
+    "rounds": 3,
+    "pass": true
+   },
+   {
+    "id": 4,
+    "rounds": 7,
+    "pass": true
+   },
+   {
+    "id": 5,
+    "rounds": 5,
+    "pass": true
+   },
+   {
+    "id": 6,
+    "rounds": 3,
+    "pass": true
+   }
+  ],
+  "plan_fallback": false,
+  "history_truncations": 0,
+  "finished": true,
+  "agent_time_s": 42.1
+ },
+ "llm_stats": {
+  "calls": 35,
+  "retries": 0,
+  "errors": 0,
+  "context_overflow": 0,
+  "empty": 0,
+  "refusals": 0,
+  "prompt_tokens": 98,
+  "completion_tokens": 23681,
+  "cached_tokens": 233034,
+  "cache_write_tokens": 135576
+ },
+ "llm_time_s": 213.1,
+ "agent_time_s": 42.1,
+ "hit_deadline": false,
+ "sandbox_events": [],
+ "inputs_intact": true,
+ "container_memory": "12g",
+ "deliverable_produced": true,
+ "config": {
+  "image": "gisclaw-exec:1.0",
+  "step_timeout_s": 300,
+  "task_wall_s": 1200,
+  "max_rounds": 50,
+  "blocked_packages": {
+   "arcpy": "Use geopandas + rasterio + shapely instead."
+  },
+  "agent": {
+   "history_tokens": 60000,
+   "max_format_errors": 15
+  }
+ },
+ "model_config": {
+  "provider": "anthropic",
+  "model_name": "claude-sonnet-5-5",
+  "request": {
+   "set": {
+    "max_tokens": 32000,
+    "thinking": {
+     "type": "adaptive",
+     "display": "summarized"
+    },
+    "output_config": {
+     "effort": "high"
+    }
+   }
+  },
+  "history_tokens": 700000
+ }
+}

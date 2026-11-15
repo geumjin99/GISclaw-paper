@@ -1,0 +1,108 @@
+{
+ "cell_id": "main.H0.SA.qwen38-27b.r3.T11",
+ "task": 11,
+ "status": "ok",
+ "analytically_correct": false,
+ "scorer_error": false,
+ "checks": [
+  {
+   "name": "required output present",
+   "passed": true,
+   "value": [
+    "CoralandSponge.png"
+   ],
+   "threshold": [
+    "CoralandSponge.png"
+   ],
+   "required": true,
+   "note": ""
+  },
+  {
+   "name": "figure not blank",
+   "passed": true,
+   "value": 31.964012687330584,
+   "threshold": ">=3 grey-level std",
+   "required": true,
+   "note": ""
+  },
+  {
+   "name": "points updated with correct slope and aspect",
+   "passed": true,
+   "value": {
+    "slope_spearman": 0.975,
+    "aspect_within_25deg": 0.864
+   },
+   "threshold": "spearman >= 0.9, >= 80 % within 25 deg",
+   "required": true,
+   "note": "gdf@final"
+  },
+  {
+   "name": "per-category mean slope and aspect match gold",
+   "passed": true,
+   "value": {
+    "slope_share_ok": 1.0,
+    "aspect_share_ok": 0.812
+   },
+   "threshold": ">= 80 % of categories (n >= 20) within tolerance",
+   "required": true,
+   "note": "slope: group means of Slope by ScientificName (inline grouping in code); aspect: group means of Aspect by ScientificName (inline grouping in code)"
+  },
+  {
+   "name": "figure shows per-category mean slope and mean aspect",
+   "passed": false,
+   "value": {
+    "slope_share_drawn": 0.938,
+    "aspect_share_drawn": 0.4
+   },
+   "threshold": ">= 80 % of categories (n >= 20) drawn within tolerance, one-to-one",
+   "required": true,
+   "note": "slope: fig_ax47_bars@save04 bar heights by ScientificName (slope_pct); aspect: fig_ax12_bars@save04 bar heights by VernacularNameCategory (asp_circ)"
+  },
+  {
+   "name": "aspect averaged circularly",
+   "passed": false,
+   "value": null,
+   "threshold": null,
+   "required": false,
+   "note": ""
+  }
+ ],
+ "replay": {
+  "success": true,
+  "outputs": [
+   "CoralandSponge.png",
+   "CoralandSpongeCatalina_updated.geojson",
+   "CoralandSpongeCatalina_updated.gpkg",
+   "species_slope_aspect_stats.csv"
+  ],
+  "events": [],
+  "blocks_ok": 17,
+  "block_outcome": [
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok"
+  ],
+  "step_timeout_s": 900,
+  "same_outputs_as_original": true,
+  "block_mismatches": []
+ },
+ "replay_faithful": true,
+ "replay_unfaithful_reasons": [],
+ "replay_container_failure": [],
+ "emergency_files": []
+}

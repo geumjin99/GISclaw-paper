@@ -1,0 +1,52 @@
+{
+ "task": 25,
+ "source": "instruction names no output file; checks.py accepts any *.png map or *.shp/gpkg/geojson/csv result file and scores result layers/tables for the risk scores and clusters",
+ "deliverables": [
+  {
+   "id": "map",
+   "kind": "figure",
+   "patterns": [
+    "*.png"
+   ],
+   "required": false,
+   "crs_required": false,
+   "checked_by": [
+    "output written (non-blank map or result file)"
+   ]
+  },
+  {
+   "id": "risk_profiles",
+   "kind": "vector",
+   "patterns": [
+    "*.shp",
+    "*.gpkg",
+    "*.geojson"
+   ],
+   "required": false,
+   "crs_required": true,
+   "checked_by": [
+    "output written (non-blank map or result file)",
+    "transmission risk score matches gold (Spearman)",
+    "susceptibility risk score matches gold (Spearman)",
+    "resource scarcity risk score matches gold (Spearman)",
+    "exposure risk score matches gold (Spearman)",
+    "clustering is a near-optimal K-means partition of the four risk scores"
+   ]
+  },
+  {
+   "id": "risk_table",
+   "kind": "table",
+   "patterns": [
+    "*.csv"
+   ],
+   "required": false,
+   "crs_required": false,
+   "checked_by": [
+    "output written (non-blank map or result file)",
+    "transmission risk score matches gold (Spearman)",
+    "clustering is a near-optimal K-means partition of the four risk scores"
+   ]
+  }
+ ],
+ "not_deliverables": []
+}

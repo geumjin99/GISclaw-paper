@@ -1,0 +1,119 @@
+{
+ "cell_id": "main.H2.DA.gptoss-120b.r2.T05",
+ "task": 5,
+ "status": "ok",
+ "analytically_correct": false,
+ "scorer_error": false,
+ "checks": [
+  {
+   "name": "required output present",
+   "passed": false,
+   "value": [],
+   "threshold": [
+    "blood_lead_hotspots.png",
+    "transit_access.png"
+   ],
+   "required": true,
+   "note": ""
+  },
+  {
+   "name": "map not blank",
+   "passed": false,
+   "value": null,
+   "threshold": null,
+   "required": true,
+   "note": "no map"
+  },
+  {
+   "name": "hexagon tessellation with correct case counts",
+   "passed": false,
+   "value": {
+    "cells_with_exact_count": 0.0,
+    "cases_in_cells": 0
+   },
+   "threshold": ">=0.95 of cells exact, >=90 % of 373 cases covered",
+   "required": true,
+   "note": "no hexagon layer with a matching count column"
+  },
+  {
+   "name": "hot spot statistic consistent with Gi* on the hexagon counts",
+   "passed": false,
+   "value": -1.0,
+   "threshold": "Spearman >= 0.6 with recomputed Gi* z and Gi*-type values (signed z or bins)",
+   "required": true,
+   "note": "no candidate column"
+  },
+  {
+   "name": "the map draws the hot spot result on the hexagons",
+   "passed": false,
+   "value": null,
+   "threshold": null,
+   "required": true,
+   "note": "no drawn hexagon layer shows a passing hot spot column"
+  },
+  {
+   "name": "privacy: individual case locations are not drawn",
+   "passed": true,
+   "value": 0,
+   "threshold": "< 20 drawn points on case locations",
+   "required": true,
+   "note": "no case points in the figure"
+  },
+  {
+   "name": "method fidelity: Getis-Ord hot spot code",
+   "passed": true,
+   "value": null,
+   "threshold": null,
+   "required": false,
+   "note": ""
+  },
+  {
+   "name": "privacy: median hexagon area >= 0.05 km2",
+   "passed": false,
+   "value": null,
+   "threshold": 0.05,
+   "required": false,
+   "note": ""
+  }
+ ],
+ "replay": {
+  "success": false,
+  "outputs": [
+   "hotspot_points.geojson"
+  ],
+  "events": [],
+  "blocks_ok": 17,
+  "block_outcome": [
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok"
+  ],
+  "step_timeout_s": 900,
+  "same_outputs_as_original": false,
+  "block_mismatches": []
+ },
+ "replay_faithful": true,
+ "replay_unfaithful_reasons": [],
+ "replay_container_failure": [],
+ "correct_without_emergency": false,
+ "emergency_files": [
+  "emergency_output.geojson"
+ ]
+}

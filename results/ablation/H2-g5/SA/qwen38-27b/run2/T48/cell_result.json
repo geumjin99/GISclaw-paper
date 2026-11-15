@@ -1,0 +1,141 @@
+{
+ "cell_id": "ablation.H2-g5.SA.qwen38-27b.r2.T48",
+ "experiment": "ablation",
+ "tier": "H2-g5",
+ "arch": "SA",
+ "model": "qwen38-27b",
+ "run": 2,
+ "task": 48,
+ "elapsed_s": 801.4,
+ "protocol": "native",
+ "tier_config": {
+  "tools": [
+   "list_files",
+   "load_vector",
+   "load_raster",
+   "inspect",
+   "execute",
+   "lookup_api",
+   "finish"
+  ],
+  "generic": true,
+  "g1": true,
+  "g2": true,
+  "g3": true,
+  "g4": true,
+  "g5": false,
+  "g6": true,
+  "g7": true,
+  "no_dd": false,
+  "no_dk": false
+ },
+ "outputs": [
+  "emergency_output.csv",
+  "gwr_hotspot_maps.png",
+  "gwr_results.cpg",
+  "gwr_results.csv",
+  "gwr_results.dbf",
+  "gwr_results.prj",
+  "gwr_results.shp",
+  "gwr_results.shx",
+  "gwr_summary.txt",
+  "hot_cold_spots.cpg",
+  "hot_cold_spots.dbf",
+  "hot_cold_spots.prj",
+  "hot_cold_spots.shp",
+  "hot_cold_spots.shx",
+  "hotspot_lisa.cpg",
+  "hotspot_lisa.dbf",
+  "hotspot_lisa.prj",
+  "hotspot_lisa.shp",
+  "hotspot_lisa.shx",
+  "lisa_local_morans.csv",
+  "lisa_scatter.png",
+  "selected_loan_tracts.cpg",
+  "selected_loan_tracts.dbf",
+  "selected_loan_tracts.prj",
+  "selected_loan_tracts.shp",
+  "selected_loan_tracts.shx",
+  "spatial_autocorrelation_summary.txt"
+ ],
+ "required_outputs": [],
+ "required_present": null,
+ "emergency_files": [
+  "emergency_output.csv"
+ ],
+ "rounds": 50,
+ "self_corrections": 9,
+ "agent_stats": {
+  "rounds": 50,
+  "format_errors": 0,
+  "format_error_kinds": {},
+  "self_corrections": 9,
+  "exec_blocks": 44,
+  "exec_failed": 19,
+  "finish_rejections": 1,
+  "dedup_blocked": 0,
+  "triggers": {
+   "g1:card": 1,
+   "g6:suggest": 5,
+   "g6:lookup": 3,
+   "g2:weights_islands": 2,
+   "h1:rounds_left": 2,
+   "g3:validate": 1,
+   "h1:emergency_save": 1
+  },
+  "checks_run": {
+   "g2": 44,
+   "g3": 45,
+   "g7": 44,
+   "g6": 19,
+   "g4": 19,
+   "g6_lookup": 3
+  },
+  "end_reason": "max_rounds",
+  "empty_retries": 0,
+  "history_truncations": 0,
+  "finished": false,
+  "agent_time_s": 18.9
+ },
+ "llm_stats": {
+  "calls": 50,
+  "retries": 0,
+  "errors": 0,
+  "context_overflow": 0,
+  "empty": 0,
+  "prompt_tokens": 998515,
+  "completion_tokens": 23521,
+  "reasoning_tokens": 8443,
+  "cached_tokens": 0
+ },
+ "llm_time_s": 781.4,
+ "agent_time_s": 18.9,
+ "hit_deadline": false,
+ "sandbox_events": [],
+ "inputs_intact": true,
+ "container_memory": "12g",
+ "deliverable_produced": false,
+ "config": {
+  "image": "gisclaw-exec:1.0",
+  "step_timeout_s": 300,
+  "task_wall_s": 1200,
+  "max_rounds": 50,
+  "blocked_packages": {
+   "arcpy": "Use geopandas + rasterio + shapely instead."
+  },
+  "agent": {
+   "history_tokens": 60000,
+   "max_format_errors": 15
+  }
+ },
+ "model_config": {
+  "provider": "vllm",
+  "model_name": "qwen3.8-27b-fp8",
+  "request": {
+   "set": {
+    "max_tokens": 32768,
+    "temperature": 1.0
+   }
+  }
+ }
+}

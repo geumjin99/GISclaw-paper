@@ -1,0 +1,56 @@
+{
+ "task": 49,
+ "source": "instruction (join + maps required, calculated field optional): join the table to the states layer, 'save the maps'; checks.py: any *.png map; *.shp/*.geojson/*.gpkg and *.csv in pred_results (recursive) read as per-state tables, alternative to captured tables",
+ "deliverables": [
+  {
+   "id": "map",
+   "kind": "figure",
+   "patterns": [
+    "*.png"
+   ],
+   "required": true,
+   "crs_required": false,
+   "checked_by": [
+    "map saved and not blank"
+   ]
+  },
+  {
+   "id": "state_layers",
+   "kind": "vector",
+   "patterns": [
+    "*.shp",
+    "*.geojson",
+    "*.gpkg"
+   ],
+   "required": false,
+   "crs_required": true,
+   "checked_by": [
+    "join: homeless_data.xlsx joined to the states layer on the abbreviation (values aligned per state)",
+    "calculated field per state (rate, or 2012-13 change joined from the xlsx)",
+    "2012-13 change carried per state",
+    "map shows the joined homelessness data (drawn colour values rank-match it, rho >= 0.9)"
+   ]
+  },
+  {
+   "id": "state_tables",
+   "kind": "table",
+   "patterns": [
+    "*.csv"
+   ],
+   "required": false,
+   "crs_required": false,
+   "checked_by": [
+    "join: homeless_data.xlsx joined to the states layer on the abbreviation (values aligned per state)",
+    "calculated field per state (rate, or 2012-13 change joined from the xlsx)",
+    "2012-13 change carried per state",
+    "map shows the joined homelessness data (drawn colour values rank-match it, rho >= 0.9)"
+   ]
+  }
+ ],
+ "not_deliverables": [
+  {
+   "pattern": "states_homeless_2013.shp",
+   "reason": "gold file name, read from the gold directory only"
+  }
+ ]
+}

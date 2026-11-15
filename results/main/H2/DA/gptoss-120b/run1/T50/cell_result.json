@@ -1,0 +1,189 @@
+{
+ "cell_id": "main.H2.DA.gptoss-120b.r1.T50",
+ "experiment": "main",
+ "tier": "H2",
+ "arch": "DA",
+ "model": "gptoss-120b",
+ "run": 1,
+ "task": 50,
+ "elapsed_s": 290.4,
+ "protocol": "native",
+ "tier_config": {
+  "tools": [
+   "list_files",
+   "load_vector",
+   "load_raster",
+   "inspect",
+   "execute",
+   "lookup_api",
+   "finish"
+  ],
+  "generic": true,
+  "g1": true,
+  "g2": true,
+  "g3": true,
+  "g4": true,
+  "g5": true,
+  "g6": true,
+  "g7": true,
+  "no_dd": false,
+  "no_dk": false
+ },
+ "outputs": [
+  "emergency_output.geojson",
+  "maxent_model_summary.txt",
+  "salinity_ebk.tif",
+  "seagrass_maxent_prediction.tif",
+  "temp_ebk.tif",
+  "train_features.csv",
+  "usa_random_points.cpg",
+  "usa_random_points.dbf",
+  "usa_random_points.prj",
+  "usa_random_points.shp",
+  "usa_random_points.shx",
+  "usa_seagrass_dissolved.cpg",
+  "usa_seagrass_dissolved.dbf",
+  "usa_seagrass_dissolved.prj",
+  "usa_seagrass_dissolved.shp",
+  "usa_seagrass_dissolved.shx"
+ ],
+ "required_outputs": [],
+ "required_present": null,
+ "emergency_files": [
+  "emergency_output.geojson"
+ ],
+ "rounds": 50,
+ "self_corrections": 3,
+ "agent_stats": {
+  "rounds": 50,
+  "format_errors": 6,
+  "format_error_kinds": {
+   "no_action": 6
+  },
+  "self_corrections": 3,
+  "exec_blocks": 22,
+  "exec_failed": 4,
+  "finish_rejections": 2,
+  "dedup_blocked": 2,
+  "triggers": {
+   "g1:card": 1,
+   "g6:lookup": 2,
+   "g2:nodata_unmasked": 1,
+   "h1:repeat_readonly": 2,
+   "g3:validate": 2,
+   "h1:rounds_left": 2,
+   "h1:emergency_save": 1
+  },
+  "checks_run": {
+   "g2": 22,
+   "g3": 24,
+   "g7": 22,
+   "g6": 4,
+   "g4": 4,
+   "g6_lookup": 2
+  },
+  "end_reason": "max_rounds",
+  "empty_retries": 0,
+  "planner_calls": 1,
+  "verifier_calls": 7,
+  "replans": 0,
+  "verify_unknown": 0,
+  "steps": [
+   {
+    "id": 1,
+    "rounds": 4,
+    "pass": true
+   },
+   {
+    "id": 2,
+    "rounds": 3,
+    "pass": true
+   },
+   {
+    "id": 3,
+    "rounds": 10,
+    "pass": true
+   },
+   {
+    "id": 4,
+    "rounds": 13,
+    "pass": true
+   },
+   {
+    "id": 5,
+    "rounds": 3,
+    "pass": true
+   },
+   {
+    "id": 6,
+    "rounds": 17,
+    "pass": true
+   }
+  ],
+  "plan_fallback": false,
+  "history_truncations": 0,
+  "finished": false,
+  "agent_time_s": 148.8
+ },
+ "llm_stats": {
+  "calls": 64,
+  "retries": 1,
+  "errors": 0,
+  "context_overflow": 0,
+  "empty": 0,
+  "prompt_tokens": 463215,
+  "completion_tokens": 23628,
+  "reasoning_tokens": 0,
+  "cached_tokens": 0
+ },
+ "llm_time_s": 140.6,
+ "agent_time_s": 148.8,
+ "hit_deadline": false,
+ "sandbox_events": [
+  {
+   "event": "container_oom",
+   "exit_code": 137,
+   "oom_killed": true
+  },
+  {
+   "event": "restarted",
+   "replayed": 6
+  },
+  {
+   "event": "container_oom",
+   "exit_code": 137,
+   "oom_killed": true
+  },
+  {
+   "event": "restarted",
+   "replayed": 6
+  }
+ ],
+ "inputs_intact": true,
+ "container_memory": "12g",
+ "deliverable_produced": false,
+ "config": {
+  "image": "gisclaw-exec:1.0",
+  "step_timeout_s": 300,
+  "task_wall_s": 1200,
+  "max_rounds": 50,
+  "blocked_packages": {
+   "arcpy": "Use geopandas + rasterio + shapely instead."
+  },
+  "agent": {
+   "history_tokens": 60000,
+   "max_format_errors": 15
+  }
+ },
+ "model_config": {
+  "provider": "vllm",
+  "model_name": "gpt-oss-120b",
+  "request": {
+   "set": {
+    "max_tokens": 32768,
+    "temperature": 1.0,
+    "reasoning_effort": "medium"
+   }
+  }
+ }
+}

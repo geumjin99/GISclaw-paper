@@ -1,0 +1,140 @@
+{
+ "cell_id": "ablation.H2-g1.SA.qwen38-27b.r1.T43",
+ "task": 43,
+ "status": "ok",
+ "analytically_correct": true,
+ "scorer_error": false,
+ "checks": [
+  {
+   "name": "home range (convex hull) stored and matches gold (IoU >= 0.9)",
+   "passed": true,
+   "value": 1.0,
+   "threshold": 0.9,
+   "required": true,
+   "note": "elk_home_range_convex_hull.geojson vs per-animal hulls"
+  },
+  {
+   "name": "kernel density raster stored and agrees with gold (3 km block Pearson >= 0.6)",
+   "passed": true,
+   "value": 1.0,
+   "threshold": 0.6,
+   "required": true,
+   "note": "elk_kde_annual.tif (coverage 1.00)"
+  },
+  {
+   "name": "density-based clusters with noise; clustered fixes denser than noise (ratio >= 1.5)",
+   "passed": true,
+   "value": 8.2,
+   "threshold": 1.5,
+   "required": true,
+   "note": "cluster in gp_m@final [n_clusters, noise share, n]=[2632, 0.127, 150191]"
+  },
+  {
+   "name": "density-based clustering estimator called (DBSCAN/HDBSCAN/OPTICS)",
+   "passed": true,
+   "value": "DBSCAN(",
+   "threshold": null,
+   "required": true,
+   "note": "call required, not just an import"
+  },
+  {
+   "name": "deliverable files carry a CRS (uniform rule)",
+   "passed": true,
+   "value": [
+    "elk_dbscan_clusters.geojson",
+    "elk_home_range_convex_hull.geojson",
+    "elk_home_range_mbr.geojson",
+    "elk_kde_annual.tif",
+    "elk_kde_fall.tif",
+    "elk_kde_spring.tif",
+    "elk_kde_summer.tif",
+    "elk_kde_winter.tif"
+   ],
+   "threshold": "every geographic deliverable file has a CRS",
+   "required": true,
+   "note": "8 geographic deliverable file(s), all with a CRS"
+  }
+ ],
+ "replay": {
+  "success": true,
+  "outputs": [
+   "README.md",
+   "elk_dbscan_clusters.geojson",
+   "elk_dbscan_map.png",
+   "elk_dbscan_summary.csv",
+   "elk_habitat_preference.csv",
+   "elk_habitat_preference_map.png",
+   "elk_home_range_convex_hull.geojson",
+   "elk_home_range_distribution.png",
+   "elk_home_range_mbr.geojson",
+   "elk_home_ranges_map.png",
+   "elk_home_ranges_summary.csv",
+   "elk_kde_annual.tif",
+   "elk_kde_fall.tif",
+   "elk_kde_map.png",
+   "elk_kde_spring.tif",
+   "elk_kde_summary.csv",
+   "elk_kde_summer.tif",
+   "elk_kde_winter.tif",
+   "elk_seasonal_utilization_of_annual_core.csv"
+  ],
+  "events": [
+   {
+    "event": "timeout"
+   },
+   {
+    "event": "restarted",
+    "replayed": 12
+   }
+  ],
+  "blocks_ok": 29,
+  "block_outcome": [
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "timeout_killed",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok"
+  ],
+  "step_timeout_s": 900,
+  "same_outputs_as_original": true,
+  "block_mismatches": []
+ },
+ "replay_faithful": false,
+ "replay_unfaithful_reasons": [
+  "replay block(s) [12] cut off (timeout_killed)"
+ ],
+ "replay_container_failure": [],
+ "emergency_files": []
+}

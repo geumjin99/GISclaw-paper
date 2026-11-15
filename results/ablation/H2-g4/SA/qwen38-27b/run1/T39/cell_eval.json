@@ -1,0 +1,120 @@
+{
+ "cell_id": "ablation.H2-g4.SA.qwen38-27b.r1.T39",
+ "task": 39,
+ "status": "ok",
+ "analytically_correct": true,
+ "scorer_error": false,
+ "checks": [
+  {
+   "name": "required output present",
+   "passed": true,
+   "value": [
+    "GA_GWR.png"
+   ],
+   "threshold": [
+    "GA_GWR.png",
+    "ga_gwr.png",
+    "GA_GWR.PNG"
+   ],
+   "required": true,
+   "note": ""
+  },
+  {
+   "name": "figure not blank",
+   "passed": true,
+   "value": 45.199658579941385,
+   "threshold": ">=3 grey-level std",
+   "required": true,
+   "note": ""
+  },
+  {
+   "name": "optimal bandwidth searched (Sel_BW result present)",
+   "passed": true,
+   "value": 50.0,
+   "threshold": "Sel_BW optimum +/-2 % or optimum surface r >= 0.998",
+   "required": true,
+   "note": "ks@final ~ 50"
+  },
+  {
+   "name": "local GWR slope surfaces match gold (Pearson >= 0.97) and no extra regressor",
+   "passed": true,
+   "value": 0.999,
+   "threshold": 0.97,
+   "required": true,
+   "note": "mm.params[:,3]@final ~ gold bw150_PctRural; coefficient array mm.params@final has 4 columns"
+  },
+  {
+   "name": "figure shows GWR surfaces or the AICc-bandwidth profile",
+   "passed": true,
+   "value": 0.997,
+   "threshold": "|Spearman| >= 0.90",
+   "required": true,
+   "note": "fig_ax0_line0@save00 ~ gold AICc profile, adaptive NN"
+  },
+  {
+   "name": "figure compares >= 2 GWR-family models",
+   "passed": true,
+   "value": 0.997,
+   "threshold": null,
+   "required": true,
+   "note": "criterion-vs-bandwidth profile fig_ax0_line0@save00 (adaptive NN) ~ gold AICc profile"
+  }
+ ],
+ "replay": {
+  "success": true,
+  "outputs": [
+   "GA_GWR.png",
+   "GA_GWR_bandwidth_sweep.csv",
+   "GA_GWR_k115_local_coefficients.csv",
+   "GA_counties_merged.gpkg"
+  ],
+  "events": [],
+  "blocks_ok": 20,
+  "block_outcome": [
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok"
+  ],
+  "step_timeout_s": 900,
+  "same_outputs_as_original": true,
+  "block_mismatches": []
+ },
+ "replay_faithful": true,
+ "replay_unfaithful_reasons": [],
+ "replay_container_failure": [],
+ "emergency_files": []
+}

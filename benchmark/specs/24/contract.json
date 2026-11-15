@@ -1,0 +1,44 @@
+{
+ "task": 24,
+ "source": "instruction: 'Save the updated shapefile as a result' and document the reduction; checks.py globs *.shp/gpkg/geojson/json point layers and *.csv/txt/json/md text outputs (stdout/captured scalars accepted instead)",
+ "deliverables": [
+  {
+   "id": "rounded_points",
+   "kind": "vector",
+   "patterns": [
+    "*.shp",
+    "*.gpkg",
+    "*.geojson",
+    "*.json"
+   ],
+   "required": true,
+   "crs_required": true,
+   "geometry_type": [
+    "Point"
+   ],
+   "checked_by": [
+    "point vector file written",
+    "records preserved (373 or 168 unique)",
+    "geometries on 0.01-degree WGS84 grid",
+    "unique rounded locations equal gold set",
+    "exact original coordinates not kept as attributes"
+   ]
+  },
+  {
+   "id": "reduction_doc",
+   "kind": "text",
+   "patterns": [
+    "*.csv",
+    "*.txt",
+    "*.json",
+    "*.md"
+   ],
+   "required": false,
+   "crs_required": false,
+   "checked_by": [
+    "reduction in unique locations documented (168 / 204-205 / ~55 %)"
+   ]
+  }
+ ],
+ "not_deliverables": []
+}

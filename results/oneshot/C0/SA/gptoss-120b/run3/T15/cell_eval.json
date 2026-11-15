@@ -1,0 +1,89 @@
+{
+ "cell_id": "oneshot.C0.SA.gptoss-120b.r3.T15",
+ "task": 15,
+ "status": "ok",
+ "analytically_correct": false,
+ "scorer_error": false,
+ "checks": [
+  {
+   "name": "required output present",
+   "passed": false,
+   "value": [],
+   "threshold": [
+    "TEC_vis.png",
+    "tec_vis.png"
+   ],
+   "required": true,
+   "note": ""
+  },
+  {
+   "name": "map not blank",
+   "passed": false,
+   "value": null,
+   "threshold": null,
+   "required": true,
+   "note": "no map"
+  },
+  {
+   "name": "figure draws TEC at its true geographic location (plotting call evaluated)",
+   "passed": false,
+   "value": null,
+   "threshold": null,
+   "required": true,
+   "note": "UNVERIFIABLE: no contour/contourf/pcolormesh call found in the code",
+   "unverifiable": true
+  },
+  {
+   "name": "TEC drawn as filled contours (task: 'filled contour map')",
+   "passed": false,
+   "value": null,
+   "threshold": null,
+   "required": true,
+   "note": "UNVERIFIABLE: no contour/contourf/pcolormesh call found in the code"
+  },
+  {
+   "name": "negative TEC cells masked",
+   "passed": false,
+   "value": {
+    "agreement_valid_cells": 1.0,
+    "negatives_masked": false
+   },
+   "threshold": ">=0.99 and negatives masked",
+   "required": false,
+   "note": "ds.TEC@final"
+  },
+  {
+   "name": "contour levels span ~0 .. max TEC",
+   "passed": false,
+   "value": null,
+   "threshold": null,
+   "required": false,
+   "note": "",
+   "kind": "figure"
+  },
+  {
+   "name": "coastline / geographic background drawn",
+   "passed": false,
+   "value": null,
+   "threshold": null,
+   "required": true,
+   "note": "no coastline / land / geographic background found in code or drawn layers"
+  }
+ ],
+ "replay": {
+  "success": false,
+  "outputs": [],
+  "events": [],
+  "blocks_ok": 0,
+  "block_outcome": [
+   "ok"
+  ],
+  "step_timeout_s": 3600,
+  "same_outputs_as_original": true,
+  "block_mismatches": []
+ },
+ "replay_faithful": true,
+ "replay_unfaithful_reasons": [],
+ "replay_container_failure": [],
+ "emergency_files": []
+}

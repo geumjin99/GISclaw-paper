@@ -1,0 +1,140 @@
+{
+ "cell_id": "main.H0.SA.qwen38-27b.r3.T32",
+ "task": 32,
+ "status": "ok",
+ "analytically_correct": false,
+ "scorer_error": false,
+ "checks": [
+  {
+   "name": "required output present",
+   "passed": true,
+   "value": [
+    "optimal_path.png"
+   ],
+   "threshold": [
+    "optimal_path.png",
+    "Optimal_path.png",
+    "optimal_path.PNG"
+   ],
+   "required": true,
+   "note": ""
+  },
+  {
+   "name": "map not blank",
+   "passed": true,
+   "value": 70.37807320308221,
+   "threshold": ">=3 grey-level std",
+   "required": true,
+   "note": ""
+  },
+  {
+   "name": "cost surface = weighted sum of ruggedness, road-distance, land-cover and protection costs",
+   "passed": false,
+   "value": "R2=0.942; weights rug=0.04 landcover=0.90 protected=0.02 roads=0.06 (all roads, decile rank; ruggedness MSLarge; presence from max-R2 fit (all roads, decile rank; ruggedness linear): partial r [0.21, 0.93, 0.05, 0.16]); partial r [0.12, 0.94, 0.07, 0.18]",
+   "threshold": "R2>=0.75, every weight>=0.08, every partial r>=0.35",
+   "required": true,
+   "note": "lc_norm@final"
+  },
+  {
+   "name": "corridors follow gold least-cost paths (recall & precision >= 0.80 within 1.5 km)",
+   "passed": false,
+   "value": "recall=0.64, precision=0.59",
+   "threshold": "recall>=0.80 and precision>=0.80, or recall>=0.90 and precision>=0.35 (superset network)",
+   "required": true,
+   "note": "g@final"
+  },
+  {
+   "name": "map draws the corridors",
+   "passed": false,
+   "value": null,
+   "threshold": "figure lines pass check 3, or drawn path boxes cover/precision >= 0.80",
+   "required": true,
+   "note": "no drawn lines / collections found"
+  },
+  {
+   "name": "deliverable files carry a CRS (uniform rule)",
+   "passed": true,
+   "value": [
+    "cost_elevation_ruggedness.tif",
+    "cost_final.tif",
+    "cost_landcover.tif",
+    "cost_protected.tif",
+    "cost_road_distance.tif",
+    "optimal_paths.geojson"
+   ],
+   "threshold": "every geographic deliverable file has a CRS",
+   "required": true,
+   "note": "6 geographic deliverable file(s), all with a CRS"
+  }
+ ],
+ "replay": {
+  "success": true,
+  "outputs": [
+   "cost_elevation_ruggedness.tif",
+   "cost_final.tif",
+   "cost_landcover.tif",
+   "cost_protected.tif",
+   "cost_road_distance.tif",
+   "optimal_path.png",
+   "optimal_paths.geojson",
+   "pairwise_cost_matrix.csv",
+   "summary.txt"
+  ],
+  "events": [],
+  "blocks_ok": 23,
+  "block_outcome": [
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok"
+  ],
+  "step_timeout_s": 900,
+  "same_outputs_as_original": true,
+  "block_mismatches": []
+ },
+ "replay_faithful": true,
+ "replay_unfaithful_reasons": [],
+ "replay_container_failure": [],
+ "emergency_files": []
+}

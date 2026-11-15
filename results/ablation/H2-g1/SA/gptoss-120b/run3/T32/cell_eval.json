@@ -1,0 +1,107 @@
+{
+ "cell_id": "ablation.H2-g1.SA.gptoss-120b.r3.T32",
+ "task": 32,
+ "status": "ok",
+ "analytically_correct": false,
+ "scorer_error": false,
+ "checks": [
+  {
+   "name": "required output present",
+   "passed": true,
+   "value": [
+    "optimal_path.png"
+   ],
+   "threshold": [
+    "optimal_path.png",
+    "Optimal_path.png",
+    "optimal_path.PNG"
+   ],
+   "required": true,
+   "note": ""
+  },
+  {
+   "name": "map not blank",
+   "passed": true,
+   "value": 44.29633974538541,
+   "threshold": ">=3 grey-level std",
+   "required": true,
+   "note": ""
+  },
+  {
+   "name": "cost surface = weighted sum of ruggedness, road-distance, land-cover and protection costs",
+   "passed": false,
+   "value": "R2=0.891; weights rug=0.84 landcover=0.14 protected=0.01 roads=0.05 (all roads, decile rank; ruggedness MSLarge; presence from max-R2 fit (all roads; ruggedness linear): partial r [1.0, 0.09, 0.01, 0.0]); partial r [0.9, 0.28, 0.04, 0.09]",
+   "threshold": "R2>=0.75, every weight>=0.08, every partial r>=0.35",
+   "required": true,
+   "note": "cost_rugged_norm@final"
+  },
+  {
+   "name": "corridors follow gold least-cost paths (recall & precision >= 0.80 within 1.5 km)",
+   "passed": false,
+   "value": "recall=0.79, precision=0.01",
+   "threshold": "recall>=0.80 and precision>=0.80, or recall>=0.90 and precision>=0.35 (superset network)",
+   "required": true,
+   "note": "roads@final"
+  },
+  {
+   "name": "map draws the corridors",
+   "passed": false,
+   "value": null,
+   "threshold": "figure lines pass check 3, or drawn path boxes cover/precision >= 0.80",
+   "required": true,
+   "note": "no drawn lines / collections found"
+  },
+  {
+   "name": "deliverable files carry a CRS (uniform rule)",
+   "passed": true,
+   "value": [],
+   "threshold": "every geographic deliverable file has a CRS",
+   "required": true,
+   "note": "no geographic deliverable file written (presence is judged by the task checks)"
+  }
+ ],
+ "replay": {
+  "success": false,
+  "outputs": [],
+  "events": [
+   {
+    "event": "container_exit_139",
+    "exit_code": 139,
+    "oom_killed": false
+   },
+   {
+    "event": "restarted",
+    "replayed": 9
+   }
+  ],
+  "blocks_ok": 7,
+  "block_outcome": [
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "crash",
+   "ok",
+   "ok",
+   "ok"
+  ],
+  "step_timeout_s": 900,
+  "same_outputs_as_original": false,
+  "block_mismatches": [
+   11,
+   12
+  ]
+ },
+ "replay_faithful": false,
+ "replay_unfaithful_reasons": [
+  "block success differs at [11, 12]",
+  "replay block(s) [9] cut off (crash)"
+ ],
+ "replay_container_failure": [],
+ "emergency_files": []
+}

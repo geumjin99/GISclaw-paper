@@ -1,0 +1,163 @@
+{
+ "cell_id": "ablation.H2-g1.SA.qwen38-27b.r3.T30",
+ "task": 30,
+ "status": "ok",
+ "analytically_correct": false,
+ "scorer_error": false,
+ "checks": [
+  {
+   "name": "map written (non-blank PNG)",
+   "passed": false,
+   "value": [],
+   "threshold": null,
+   "required": false,
+   "note": ""
+  },
+  {
+   "name": "proposed routes cover the three designated corridors",
+   "passed": true,
+   "value": {
+    "Central": 1.0,
+    "East": 0.79,
+    "West": 1.0
+   },
+   "threshold": ">=0.5 each",
+   "required": true,
+   "note": "city@final; 6.58 mi near Capitol Hill (gold 5.37)"
+  },
+  {
+   "name": "precision: proposed length lies on designated corridors",
+   "passed": true,
+   "value": 0.688,
+   "threshold": 0.5,
+   "required": false,
+   "note": ""
+  },
+  {
+   "name": "map shows the proposed routes",
+   "passed": false,
+   "value": null,
+   "threshold": null,
+   "required": false,
+   "note": "UNVERIFIABLE: no drawn line data captured",
+   "unverifiable": true
+  },
+  {
+   "name": "half-mile coverage of Capitol Hill matches gold",
+   "passed": false,
+   "value": null,
+   "threshold": "IoU>=0.85 (clipped to Capitol Hill) or share in [0.95, 0.983]",
+   "required": true,
+   "note": "no coverage polygon or share found"
+  },
+  {
+   "name": "network analysis performed (graph shortest paths)",
+   "passed": true,
+   "value": [
+    "networkx"
+   ],
+   "threshold": null,
+   "required": true,
+   "note": "instructed: 'Use Network Analyst to propose new routes'"
+  },
+  {
+   "name": "existing trail length in Capitol Hill measured",
+   "passed": false,
+   "value": null,
+   "threshold": null,
+   "required": false,
+   "note": "5227 ft / 0.99 mi / 1593 m"
+  },
+  {
+   "name": "deliverable files carry a CRS (uniform rule)",
+   "passed": false,
+   "value": [
+    "city_proposed_bike_lanes.geojson: GeoJSON with projected coordinates and no 'crs' member",
+    "demand_hotspots.geojson: GeoJSON with projected coordinates and no 'crs' member",
+    "emergency_output.geojson: GeoJSON with projected coordinates and no 'crs' member",
+    "study_area_streets_clipped.geojson: GeoJSON with projected coordinates and no 'crs' member",
+    "study_area_zoning_classified.geojson: GeoJSON with projected coordinates and no 'crs' member",
+    "study_area_zoning_clipped.geojson: GeoJSON with projected coordinates and no 'crs' member",
+    "suitability_scores.geojson: GeoJSON with projected coordinates and no 'crs' member"
+   ],
+   "threshold": "every geographic deliverable file has a CRS",
+   "required": true,
+   "note": "deliverable file(s) without CRS: city_proposed_bike_lanes.geojson: GeoJSON with projected coordinates and no 'crs' member; demand_hotspots.geojson: GeoJSON with projected coordinates and no 'crs' member; emergency_output.geojson: GeoJSON with projected coordinates and no 'crs' member; study_area_streets_clipped.geojson: GeoJSON with projected coordinates and no 'crs' member; study_area_zoning_classified.geojson: GeoJSON with projected coordinates and no 'crs' member; study_area_zoning_clipped.geojson: GeoJSON with projected coordinates and no 'crs' member; suitability_scores.geojson: GeoJSON with projected coordinates and no 'crs' member"
+  }
+ ],
+ "replay": {
+  "success": false,
+  "outputs": [
+   "city_proposed_bike_lanes.geojson",
+   "demand_hotspots.geojson",
+   "demand_points.geojson",
+   "study_area_streets_clipped.geojson",
+   "study_area_zoning_classified.geojson",
+   "study_area_zoning_clipped.geojson",
+   "suitability_scores.geojson"
+  ],
+  "events": [],
+  "blocks_ok": 30,
+  "block_outcome": [
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok"
+  ],
+  "step_timeout_s": 900,
+  "same_outputs_as_original": false,
+  "block_mismatches": [
+   6
+  ]
+ },
+ "replay_faithful": false,
+ "replay_unfaithful_reasons": [
+  "block success differs at [6]"
+ ],
+ "replay_container_failure": [],
+ "correct_without_emergency": false,
+ "emergency_files": [
+  "emergency_output.geojson"
+ ]
+}

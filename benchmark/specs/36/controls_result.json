@@ -1,0 +1,116 @@
+[
+ {
+  "control": "correct_abs_change_benign",
+  "expected_correct": true,
+  "judged_correct": true,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [],
+  "scorer_error": false
+ },
+ {
+  "control": "correct_coarse12m_savi",
+  "expected_correct": true,
+  "judged_correct": true,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [],
+  "scorer_error": false
+ },
+ {
+  "control": "correct_dict_csv_only",
+  "expected_correct": true,
+  "judged_correct": true,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [],
+  "scorer_error": false
+ },
+ {
+  "control": "correct_rasterstats_dn_savi_warp",
+  "expected_correct": true,
+  "judged_correct": true,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [],
+  "scorer_error": false
+ },
+ {
+  "control": "wrong_after_minus_before",
+  "expected_correct": false,
+  "judged_correct": false,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [
+   "per-field loss ranking matches gold (Spearman >= 0.85)"
+  ],
+  "scorer_error": false
+ },
+ {
+  "control": "wrong_after_only",
+  "expected_correct": false,
+  "judged_correct": false,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [
+   "per-field loss ranking matches gold (Spearman >= 0.85)"
+  ],
+  "scorer_error": false
+ },
+ {
+  "control": "wrong_bands_blue_green",
+  "expected_correct": false,
+  "judged_correct": false,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [
+   "per-field loss ranking matches gold (Spearman >= 0.85)"
+  ],
+  "scorer_error": false
+ },
+ {
+  "control": "wrong_before_only",
+  "expected_correct": false,
+  "judged_correct": false,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [
+   "per-field loss ranking matches gold (Spearman >= 0.85)"
+  ],
+  "scorer_error": false
+ },
+ {
+  "control": "wrong_deliverable_no_crs",
+  "expected_correct": false,
+  "judged_correct": false,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [
+   "deliverable files carry a CRS (uniform rule)"
+  ],
+  "scorer_error": false
+ },
+ {
+  "control": "wrong_fields_crs_assumed_utm",
+  "expected_correct": false,
+  "judged_correct": false,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [
+   "per-field loss result covers >= 80 % of gold fields",
+   "per-field loss ranking matches gold (Spearman >= 0.85)"
+  ],
+  "scorer_error": false
+ },
+ {
+  "control": "wrong_ndvi_not_savi",
+  "expected_correct": false,
+  "judged_correct": false,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [
+   "SAVI (L = 0.5) used"
+  ],
+  "scorer_error": false
+ }
+]

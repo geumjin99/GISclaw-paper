@@ -1,0 +1,114 @@
+{
+ "cell_id": "ablation.H2-g4.SA.qwen38-27b.r2.T43",
+ "task": 43,
+ "status": "ok",
+ "analytically_correct": true,
+ "scorer_error": false,
+ "checks": [
+  {
+   "name": "home range (convex hull) stored and matches gold (IoU >= 0.9)",
+   "passed": true,
+   "value": 1.0,
+   "threshold": 0.9,
+   "required": true,
+   "note": "home_range_overall.geojson vs hull of all fixes"
+  },
+  {
+   "name": "kernel density raster stored and agrees with gold (3 km block Pearson >= 0.6)",
+   "passed": true,
+   "value": 0.974,
+   "threshold": 0.6,
+   "required": true,
+   "note": "kernel_density.tif (coverage 1.00)"
+  },
+  {
+   "name": "density-based clusters with noise; clustered fixes denser than noise (ratio >= 1.5)",
+   "passed": true,
+   "value": 27.53,
+   "threshold": 1.5,
+   "required": true,
+   "note": "cluster_id in dbscan_cluster_points.geojson [n_clusters, noise share, n]=[669, 0.02, 150191]"
+  },
+  {
+   "name": "density-based clustering estimator called (DBSCAN/HDBSCAN/OPTICS)",
+   "passed": true,
+   "value": "DBSCAN(",
+   "threshold": null,
+   "required": true,
+   "note": "call required, not just an import"
+  },
+  {
+   "name": "deliverable files carry a CRS (uniform rule)",
+   "passed": true,
+   "value": [
+    "dbscan_cluster_points.geojson",
+    "dbscan_cluster_polygons.geojson",
+    "home_range_convex_hull.geojson",
+    "home_range_overall.geojson",
+    "kernel_density.tif"
+   ],
+   "threshold": "every geographic deliverable file has a CRS",
+   "required": true,
+   "note": "5 geographic deliverable file(s), all with a CRS"
+  }
+ ],
+ "replay": {
+  "success": true,
+  "outputs": [
+   "analysis_summary.csv",
+   "dbscan_cluster_points.geojson",
+   "dbscan_cluster_polygons.geojson",
+   "dbscan_clusters_map.png",
+   "home_range_convex_hull.geojson",
+   "home_range_convex_hull_map.png",
+   "home_range_overall.geojson",
+   "kernel_density.tif",
+   "kernel_density_map.png"
+  ],
+  "events": [],
+  "blocks_ok": 26,
+  "block_outcome": [
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok"
+  ],
+  "step_timeout_s": 900,
+  "same_outputs_as_original": true,
+  "block_mismatches": []
+ },
+ "replay_faithful": true,
+ "replay_unfaithful_reasons": [],
+ "replay_container_failure": [],
+ "emergency_files": []
+}

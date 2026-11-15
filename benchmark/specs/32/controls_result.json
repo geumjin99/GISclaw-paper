@@ -1,0 +1,250 @@
+[
+ {
+  "control": "correct_all_pairs_links",
+  "expected_correct": true,
+  "judged_correct": true,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [],
+  "scorer_error": false
+ },
+ {
+  "control": "correct_any_road_variant_passes",
+  "expected_correct": true,
+  "judged_correct": true,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [],
+  "scorer_error": false
+ },
+ {
+  "control": "correct_decile_classes_road_cells_max_cost",
+  "expected_correct": true,
+  "judged_correct": true,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [],
+  "scorer_error": false
+ },
+ {
+  "control": "correct_downsampled_4x_major_roads",
+  "expected_correct": true,
+  "judged_correct": true,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [],
+  "scorer_error": false
+ },
+ {
+  "control": "correct_equal_interval_ruggedness_quantile_roads",
+  "expected_correct": true,
+  "judged_correct": true,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [],
+  "scorer_error": false
+ },
+ {
+  "control": "correct_figure_lines_besides_geojson",
+  "expected_correct": true,
+  "judged_correct": true,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [],
+  "scorer_error": false
+ },
+ {
+  "control": "correct_imshow_path_mask",
+  "expected_correct": true,
+  "judged_correct": true,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [],
+  "scorer_error": false
+ },
+ {
+  "control": "correct_linear_rescale_route_through_array",
+  "expected_correct": true,
+  "judged_correct": true,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [],
+  "scorer_error": false
+ },
+ {
+  "control": "correct_linear_rugged_and_roads",
+  "expected_correct": true,
+  "judged_correct": true,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [],
+  "scorer_error": false
+ },
+ {
+  "control": "correct_manual_bin_road_distance",
+  "expected_correct": true,
+  "judged_correct": true,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [],
+  "scorer_error": false
+ },
+ {
+  "control": "correct_quantile_classes_ruggedness_and_roads",
+  "expected_correct": true,
+  "judged_correct": true,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [],
+  "scorer_error": false
+ },
+ {
+  "control": "wrong_deliverable_no_crs",
+  "expected_correct": false,
+  "judged_correct": false,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [
+   "deliverable files carry a CRS (uniform rule)"
+  ],
+  "scorer_error": false
+ },
+ {
+  "control": "wrong_downsampled_4x_no_roads",
+  "expected_correct": false,
+  "judged_correct": false,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [
+   "cost surface = weighted sum of ruggedness, road-distance, land-cover and protection costs"
+  ],
+  "scorer_error": false
+ },
+ {
+  "control": "wrong_elevation_as_cost",
+  "expected_correct": false,
+  "judged_correct": false,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [
+   "cost surface = weighted sum of ruggedness, road-distance, land-cover and protection costs",
+   "corridors follow gold least-cost paths (recall & precision >= 0.80 within 1.5 km)",
+   "map draws the corridors"
+  ],
+  "scorer_error": false
+ },
+ {
+  "control": "wrong_linear_no_ruggedness",
+  "expected_correct": false,
+  "judged_correct": false,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [
+   "cost surface = weighted sum of ruggedness, road-distance, land-cover and protection costs"
+  ],
+  "scorer_error": false
+ },
+ {
+  "control": "wrong_no_protected_status",
+  "expected_correct": false,
+  "judged_correct": false,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [
+   "cost surface = weighted sum of ruggedness, road-distance, land-cover and protection costs"
+  ],
+  "scorer_error": false
+ },
+ {
+  "control": "wrong_no_protected_status_with_roads",
+  "expected_correct": false,
+  "judged_correct": false,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [
+   "cost surface = weighted sum of ruggedness, road-distance, land-cover and protection costs"
+  ],
+  "scorer_error": false
+ },
+ {
+  "control": "wrong_no_roads",
+  "expected_correct": false,
+  "judged_correct": false,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [
+   "cost surface = weighted sum of ruggedness, road-distance, land-cover and protection costs"
+  ],
+  "scorer_error": false
+ },
+ {
+  "control": "wrong_no_roads_linear",
+  "expected_correct": false,
+  "judged_correct": false,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [
+   "cost surface = weighted sum of ruggedness, road-distance, land-cover and protection costs"
+  ],
+  "scorer_error": false
+ },
+ {
+  "control": "wrong_protected_inverted",
+  "expected_correct": false,
+  "judged_correct": false,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [
+   "cost surface = weighted sum of ruggedness, road-distance, land-cover and protection costs",
+   "corridors follow gold least-cost paths (recall & precision >= 0.80 within 1.5 km)",
+   "map draws the corridors"
+  ],
+  "scorer_error": false
+ },
+ {
+  "control": "wrong_road_cost_inverted",
+  "expected_correct": false,
+  "judged_correct": false,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [
+   "cost surface = weighted sum of ruggedness, road-distance, land-cover and protection costs"
+  ],
+  "scorer_error": false
+ },
+ {
+  "control": "wrong_ruggedness_cost_inverted",
+  "expected_correct": false,
+  "judged_correct": false,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [
+   "cost surface = weighted sum of ruggedness, road-distance, land-cover and protection costs"
+  ],
+  "scorer_error": false
+ },
+ {
+  "control": "wrong_straight_lines",
+  "expected_correct": false,
+  "judged_correct": false,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [
+   "cost surface = weighted sum of ruggedness, road-distance, land-cover and protection costs",
+   "corridors follow gold least-cost paths (recall & precision >= 0.80 within 1.5 km)"
+  ],
+  "scorer_error": false
+ },
+ {
+  "control": "wrong_straight_lines_all_pairs",
+  "expected_correct": false,
+  "judged_correct": false,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [
+   "corridors follow gold least-cost paths (recall & precision >= 0.80 within 1.5 km)",
+   "map draws the corridors"
+  ],
+  "scorer_error": false
+ }
+]

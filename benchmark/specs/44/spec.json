@@ -1,0 +1,30 @@
+{
+ "task": 44,
+ "title": "Find gaps in Toronto fire-station service coverage (Etobicoke)",
+ "output_type": "vector (no-service polygons) + map",
+ "required_outputs": [
+  "no_service.geojson (any polygon vector file name/format)",
+  "any .png map"
+ ],
+ "method": "Re-project both EPSG:4326 layers to a metric CRS (NAD83 / UTM 17N, EPSG:26917); buffer all 84 stations by 2 500 m (original code's distance), dissolve, subtract from the Etobicoke district polygons; save buffers, no-service polygons and a map.",
+ "key_parameters": {
+  "crs": "EPSG:26917 (any metric CRS accepted)",
+  "buffer_m": 2500,
+  "stations": "all 84 Toronto stations"
+ },
+ "benchmark_defects": [
+  "No buffer distance is given in the instruction (2500 appears only in the published reference script); checks infer the radius used by the solution instead of fixing it.",
+  "Dataset description names 'fire_stations.geojson'; the file is 'fire_station.geojson'.",
+  "Inputs are in EPSG:4326; the published reference script calls buffer(2500) without re-projecting, so the distance is taken in the layer's units (degrees), and it writes its outputs into the dataset/ folder instead of pred_results/.",
+  "'etobicoke.geojson' is the Etobicoke York planning district (3 sections, 189 km2), not the former municipality."
+ ],
+ "checks": [
+  "required: a PNG map present",
+  "required: map not blank",
+  "required: a saved polygon vector holds a non-empty no-service area >= 98 % inside Etobicoke",
+  "required: radius searched over 400-5000 m - the gap matches Etobicoke minus all station buffers of that radius (IoU >= 0.85) and <= 0.5 % of it lies within 0.9 d of any station (subset constraint)",
+  "optional: gap equals the gold 2500 m gap (IoU >= 0.85)",
+  "optional: buffered stations saved as a file",
+  "required (part of radius check): not a Web-Mercator distance (code uses 3857, radius = round distance x cos 43.7 deg)"
+ ]
+}

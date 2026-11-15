@@ -1,0 +1,113 @@
+{
+ "cell_id": "ablation.H2+nodd.SA.qwen38-27b.r1.T45",
+ "task": 45,
+ "status": "ok",
+ "analytically_correct": false,
+ "scorer_error": false,
+ "checks": [
+  {
+   "name": "ruggedness from 3x3 focal variation matches gold (|Spearman| >= 0.95)",
+   "passed": true,
+   "value": 0.983,
+   "threshold": 0.95,
+   "required": true,
+   "note": "acc@final"
+  },
+  {
+   "name": "cost raster saved and georeferenced on the DEM grid",
+   "passed": false,
+   "value": null,
+   "threshold": null,
+   "required": true,
+   "note": "no raster file"
+  },
+  {
+   "name": "cost = standardised monotone transform of ruggedness",
+   "passed": false,
+   "value": null,
+   "threshold": null,
+   "required": true,
+   "note": ""
+  },
+  {
+   "name": "direction: rugged = low cost (as original)",
+   "passed": false,
+   "value": null,
+   "threshold": null,
+   "required": false,
+   "note": ""
+  },
+  {
+   "name": "method fidelity: MSLarge rescale",
+   "passed": false,
+   "value": null,
+   "threshold": null,
+   "required": false,
+   "note": ""
+  },
+  {
+   "name": "deliverable files carry a CRS (uniform rule)",
+   "passed": true,
+   "value": [],
+   "threshold": "every geographic deliverable file has a CRS",
+   "required": true,
+   "note": "no geographic deliverable file written (presence is judged by the task checks)"
+  }
+ ],
+ "replay": {
+  "success": true,
+  "outputs": [
+   "TRI.gpkg",
+   "TRI_Rescaled.gpkg"
+  ],
+  "events": [],
+  "blocks_ok": 29,
+  "block_outcome": [
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok"
+  ],
+  "step_timeout_s": 900,
+  "same_outputs_as_original": true,
+  "block_mismatches": []
+ },
+ "replay_faithful": true,
+ "replay_unfaithful_reasons": [],
+ "replay_container_failure": [],
+ "emergency_files": []
+}

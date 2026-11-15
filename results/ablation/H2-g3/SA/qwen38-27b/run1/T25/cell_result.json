@@ -1,0 +1,152 @@
+{
+ "cell_id": "ablation.H2-g3.SA.qwen38-27b.r1.T25",
+ "experiment": "ablation",
+ "tier": "H2-g3",
+ "arch": "SA",
+ "model": "qwen38-27b",
+ "run": 1,
+ "task": 25,
+ "elapsed_s": 390.1,
+ "protocol": "native",
+ "tier_config": {
+  "tools": [
+   "list_files",
+   "load_vector",
+   "load_raster",
+   "inspect",
+   "execute",
+   "lookup_api",
+   "finish"
+  ],
+  "generic": true,
+  "g1": true,
+  "g2": true,
+  "g3": false,
+  "g4": true,
+  "g5": true,
+  "g6": true,
+  "g7": true,
+  "no_dd": false,
+  "no_dk": false
+ },
+ "outputs": [
+  "hkg_covid_risk_profiles.cpg",
+  "hkg_covid_risk_profiles.dbf",
+  "hkg_covid_risk_profiles.prj",
+  "hkg_covid_risk_profiles.shp",
+  "hkg_covid_risk_profiles.shx",
+  "hkg_exposure_similarity.cpg",
+  "hkg_exposure_similarity.dbf",
+  "hkg_exposure_similarity.prj",
+  "hkg_exposure_similarity.shp",
+  "hkg_exposure_similarity.shx",
+  "hkg_exposure_simtable.cpg",
+  "hkg_exposure_simtable.dbf",
+  "hkg_exposure_simtable.prj",
+  "hkg_exposure_simtable.shp",
+  "hkg_exposure_simtable.shx",
+  "hkg_healthcare_similarity.cpg",
+  "hkg_healthcare_similarity.dbf",
+  "hkg_healthcare_similarity.prj",
+  "hkg_healthcare_similarity.shp",
+  "hkg_healthcare_similarity.shx",
+  "hkg_healthcare_simtable.cpg",
+  "hkg_healthcare_simtable.dbf",
+  "hkg_healthcare_simtable.prj",
+  "hkg_healthcare_simtable.shp",
+  "hkg_healthcare_simtable.shx",
+  "hkg_risk_clusters.png",
+  "hkg_risk_maps.png",
+  "hkg_susceptibility_similarity.cpg",
+  "hkg_susceptibility_similarity.dbf",
+  "hkg_susceptibility_similarity.prj",
+  "hkg_susceptibility_similarity.shp",
+  "hkg_susceptibility_similarity.shx",
+  "hkg_susceptibility_simtable.cpg",
+  "hkg_susceptibility_simtable.dbf",
+  "hkg_susceptibility_simtable.prj",
+  "hkg_susceptibility_simtable.shp",
+  "hkg_susceptibility_simtable.shx",
+  "hkg_transmission_similarity.cpg",
+  "hkg_transmission_similarity.dbf",
+  "hkg_transmission_similarity.prj",
+  "hkg_transmission_similarity.shp",
+  "hkg_transmission_similarity.shx",
+  "hkg_transmission_simtable.cpg",
+  "hkg_transmission_simtable.dbf",
+  "hkg_transmission_simtable.prj",
+  "hkg_transmission_simtable.shp",
+  "hkg_transmission_simtable.shx"
+ ],
+ "required_outputs": [],
+ "required_present": null,
+ "emergency_files": [],
+ "rounds": 15,
+ "self_corrections": 1,
+ "agent_stats": {
+  "rounds": 15,
+  "format_errors": 0,
+  "format_error_kinds": {},
+  "self_corrections": 1,
+  "exec_blocks": 13,
+  "exec_failed": 3,
+  "finish_rejections": 0,
+  "dedup_blocked": 0,
+  "triggers": {
+   "g1:card": 1,
+   "g6:suggest": 1
+  },
+  "checks_run": {
+   "g2": 13,
+   "g7": 13,
+   "g6": 3,
+   "g4": 3
+  },
+  "end_reason": "finish",
+  "empty_retries": 0,
+  "history_truncations": 0,
+  "finished": true,
+  "agent_time_s": 3.6
+ },
+ "llm_stats": {
+  "calls": 15,
+  "retries": 0,
+  "errors": 0,
+  "context_overflow": 0,
+  "empty": 0,
+  "prompt_tokens": 158433,
+  "completion_tokens": 19812,
+  "reasoning_tokens": 13314,
+  "cached_tokens": 0
+ },
+ "llm_time_s": 385.6,
+ "agent_time_s": 3.6,
+ "hit_deadline": false,
+ "sandbox_events": [],
+ "inputs_intact": true,
+ "container_memory": "12g",
+ "deliverable_produced": true,
+ "config": {
+  "image": "gisclaw-exec:1.0",
+  "step_timeout_s": 300,
+  "task_wall_s": 1200,
+  "max_rounds": 50,
+  "blocked_packages": {
+   "arcpy": "Use geopandas + rasterio + shapely instead."
+  },
+  "agent": {
+   "history_tokens": 60000,
+   "max_format_errors": 15
+  }
+ },
+ "model_config": {
+  "provider": "vllm",
+  "model_name": "qwen3.8-27b-fp8",
+  "request": {
+   "set": {
+    "max_tokens": 32768,
+    "temperature": 1.0
+   }
+  }
+ }
+}

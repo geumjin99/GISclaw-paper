@@ -1,0 +1,108 @@
+{
+ "cell_id": "ablation.H2-g6.SA.qwen38-27b.r1.T28",
+ "task": 28,
+ "status": "ok",
+ "analytically_correct": true,
+ "scorer_error": false,
+ "checks": [
+  {
+   "name": "OD records aggregated to pair sums (match gold)",
+   "passed": true,
+   "value": null,
+   "threshold": "2139 pairs (or 2095 without intra-subregion), >= 99 % equal",
+   "required": true,
+   "note": "InteractionStrength in subregion_interactions.csv@file"
+  },
+  {
+   "name": "origin and destination attributes merged",
+   "passed": true,
+   "value": {
+    "origin_attrs": 6,
+    "destination_attrs": 6
+   },
+   "threshold": ">=3 each",
+   "required": true,
+   "note": "model_df@final"
+  },
+  {
+   "name": "test-set MSE reported and plausible (0.8-1.5 x var of aggregated flows)",
+   "passed": true,
+   "value": [
+    "metrics[MSE]@final",
+    5950.978436749961
+   ],
+   "threshold": "[4606, 8636]",
+   "required": true,
+   "note": "18 MSE-named values found"
+  },
+  {
+   "name": "model features include origin AND destination attributes",
+   "passed": true,
+   "value": 6,
+   "threshold": ">=3 attributes present for both sides in a train/test matrix",
+   "required": true,
+   "note": "X_train@final"
+  },
+  {
+   "name": "method: GridSearchCV-tuned RandomForestRegressor",
+   "passed": true,
+   "value": {
+    "RandomForestRegressor": true,
+    "GridSearchCV": true
+   },
+   "threshold": null,
+   "required": true,
+   "note": "instructed method; only the code can show it on this signal-free data"
+  },
+  {
+   "name": "results written to pred_results",
+   "passed": true,
+   "value": [
+    "best_hyperparameters.csv",
+    "feature_importances.csv",
+    "gridsearch_top10.csv",
+    "merged_model_dataset.csv",
+    "model_performance.csv"
+   ],
+   "threshold": null,
+   "required": false,
+   "note": ""
+  }
+ ],
+ "replay": {
+  "success": true,
+  "outputs": [
+   "best_hyperparameters.csv",
+   "feature_importances.csv",
+   "gridsearch_top10.csv",
+   "merged_model_dataset.csv",
+   "model_performance.csv",
+   "predictions.csv",
+   "rf_model_diagnostics.png",
+   "subregion_interactions.csv"
+  ],
+  "events": [],
+  "blocks_ok": 8,
+  "block_outcome": [
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok"
+  ],
+  "step_timeout_s": 900,
+  "same_outputs_as_original": true,
+  "block_mismatches": []
+ },
+ "replay_faithful": true,
+ "replay_unfaithful_reasons": [],
+ "replay_container_failure": [],
+ "emergency_files": []
+}

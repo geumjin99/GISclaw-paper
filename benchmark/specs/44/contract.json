@@ -1,0 +1,47 @@
+{
+ "task": 44,
+ "source": "instruction: visualize coverage gaps and 'save the no-service area'; checks.py: any *.png map, and polygon vector files (*.geojson/*.json/*.shp/*.gpkg, recursive glob) scored as no-service area / station buffers",
+ "deliverables": [
+  {
+   "id": "map",
+   "kind": "figure",
+   "patterns": [
+    "*.png"
+   ],
+   "required": true,
+   "crs_required": false,
+   "checked_by": [
+    "map present",
+    "map not blank"
+   ]
+  },
+  {
+   "id": "polygons",
+   "kind": "vector",
+   "patterns": [
+    "*.geojson",
+    "*.json",
+    "*.shp",
+    "*.gpkg"
+   ],
+   "required": true,
+   "crs_required": true,
+   "geometry_type": [
+    "Polygon",
+    "MultiPolygon"
+   ],
+   "checked_by": [
+    "no-service area saved, non-empty and inside Etobicoke",
+    "gap = Etobicoke minus station buffers of a plausible radius (IoU >= 0.85)",
+    "gap equals the gold 2500 m gap (IoU >= 0.85)",
+    "buffered stations saved as a file"
+   ]
+  }
+ ],
+ "not_deliverables": [
+  {
+   "pattern": "no_service.geojson",
+   "reason": "gold file name, read from the gold directory only"
+  }
+ ]
+}

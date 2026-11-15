@@ -1,0 +1,65 @@
+{
+ "cell_id": "oneshot.C0.SA.qwen38-27b.r2.T31",
+ "task": 31,
+ "status": "ok",
+ "analytically_correct": false,
+ "scorer_error": false,
+ "checks": [
+  {
+   "name": "figure written (non-blank PNG)",
+   "passed": false,
+   "value": [],
+   "threshold": null,
+   "required": true,
+   "note": ""
+  },
+  {
+   "name": "L(r) curve matches gold",
+   "passed": false,
+   "value": null,
+   "threshold": null,
+   "required": true,
+   "note": "no drawn (r, L) curve covering r in [0.05, 0.2]"
+  },
+  {
+   "name": "flow K-function (4-D, ~pi^2 r^4) computed - matches gold K",
+   "passed": false,
+   "value": null,
+   "threshold": "mean rel. error <= 0.10 vs gold K (max-distance flow distance, as defined in the task text)",
+   "required": true,
+   "note": "no K curve or local-K matrix on an r grid captured"
+  },
+  {
+   "name": "local K computed per flow (1000 x m array)",
+   "passed": false,
+   "value": null,
+   "threshold": null,
+   "required": false,
+   "note": ""
+  },
+  {
+   "name": "confidence envelope (CSR simulation or drawn band around L)",
+   "passed": false,
+   "value": {
+    "simulation_code": false,
+    "drawn_band": null
+   },
+   "threshold": null,
+   "required": true,
+   "note": "required (the text asks for confidence intervals)"
+  }
+ ],
+ "replay": {
+  "success": true,
+  "outputs": [],
+  "events": [],
+  "blocks_ok": 1,
+  "block_outcome": [
+   "ok"
+  ],
+  "step_timeout_s": 3600,
+  "same_outputs_as_original": true
+ },
+ "replay_faithful": null,
+ "emergency_files": []
+}

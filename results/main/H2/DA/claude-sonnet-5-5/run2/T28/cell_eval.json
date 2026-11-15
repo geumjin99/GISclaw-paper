@@ -1,0 +1,95 @@
+{
+ "cell_id": "main.H2.DA.claude-sonnet-5-5.r2.T28",
+ "task": 28,
+ "status": "ok",
+ "analytically_correct": true,
+ "scorer_error": false,
+ "checks": [
+  {
+   "name": "OD records aggregated to pair sums (match gold)",
+   "passed": true,
+   "value": null,
+   "threshold": "2139 pairs (or 2095 without intra-subregion), >= 99 % equal",
+   "required": true,
+   "note": "Actual_Flow in interaction_predictions.csv@file"
+  },
+  {
+   "name": "origin and destination attributes merged",
+   "passed": true,
+   "value": {
+    "origin_attrs": 6,
+    "destination_attrs": 6
+   },
+   "threshold": ">=3 each",
+   "required": true,
+   "note": "merged@final"
+  },
+  {
+   "name": "test-set MSE reported and plausible (0.8-1.5 x var of aggregated flows)",
+   "passed": true,
+   "value": [
+    "test_mse",
+    5679.81588587832
+   ],
+   "threshold": "[4606, 8636]",
+   "required": true,
+   "note": "5 MSE-named values found"
+  },
+  {
+   "name": "model features include origin AND destination attributes",
+   "passed": true,
+   "value": 6,
+   "threshold": ">=3 attributes present for both sides in a train/test matrix",
+   "required": true,
+   "note": "X_train@final"
+  },
+  {
+   "name": "method: GridSearchCV-tuned RandomForestRegressor",
+   "passed": true,
+   "value": {
+    "RandomForestRegressor": true,
+    "GridSearchCV": true
+   },
+   "threshold": null,
+   "required": true,
+   "note": "instructed method; only the code can show it on this signal-free data"
+  },
+  {
+   "name": "results written to pred_results",
+   "passed": true,
+   "value": [
+    "feature_importances.csv",
+    "interaction_predictions.csv",
+    "model_metrics.txt"
+   ],
+   "threshold": null,
+   "required": false,
+   "note": ""
+  }
+ ],
+ "replay": {
+  "success": true,
+  "outputs": [
+   "feature_importances.csv",
+   "interaction_predictions.csv",
+   "model_metrics.txt"
+  ],
+  "events": [],
+  "blocks_ok": 6,
+  "block_outcome": [
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok"
+  ],
+  "step_timeout_s": 900,
+  "same_outputs_as_original": true,
+  "block_mismatches": []
+ },
+ "replay_faithful": true,
+ "replay_unfaithful_reasons": [],
+ "replay_container_failure": [],
+ "emergency_files": []
+}

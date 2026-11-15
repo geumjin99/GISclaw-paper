@@ -1,0 +1,181 @@
+{
+ "cell_id": "ablation.H2-g6.SA.qwen38-27b.r1.T50",
+ "task": 50,
+ "status": "ok",
+ "analytically_correct": false,
+ "scorer_error": false,
+ "checks": [
+  {
+   "name": "presence points inside dissolved seagrass (>= 97 %)",
+   "passed": true,
+   "value": 1.0,
+   "threshold": 0.97,
+   "required": true,
+   "note": "seagrass_presence_points.shp (5000 pts)"
+  },
+  {
+   "name": "training features saved with kriged temp/salinity values (r >= 0.8 / 0.6)",
+   "passed": true,
+   "value": [
+    0.999,
+    0.99
+   ],
+   "threshold": [
+    0.8,
+    0.6
+   ],
+   "required": true,
+   "note": "train_features.csv"
+  },
+  {
+   "name": "global prediction raster agrees with gold suitability (coverage >= 0.8, Spearman >= 0.5)",
+   "passed": false,
+   "value": [
+    0.0,
+    0.028
+   ],
+   "threshold": [
+    0.5,
+    0.8
+   ],
+   "required": true,
+   "note": "best candidate seagrass_predict.tif (rho 0.926, coverage 0.028); coverage over gold cells with centre inside Global_shallow_waters; not candidates (kriged explanatory surfaces): EBK_salinity.tif, EBK_temp.tif"
+  },
+  {
+   "name": "prediction is a function of both temperature and salinity (rank R2 gain >= 0.05 each)",
+   "passed": false,
+   "value": null,
+   "threshold": null,
+   "required": true,
+   "note": "no acceptable prediction raster"
+  },
+  {
+   "name": "method: kriging-type interpolation of temp/salinity (prescribed: EBK)",
+   "passed": true,
+   "value": null,
+   "threshold": null,
+   "required": true,
+   "note": "call empirical_variogram("
+  },
+  {
+   "name": "method: presence-only MaxEnt-type model (prescribed: MaxEnt)",
+   "passed": true,
+   "value": null,
+   "threshold": null,
+   "required": true,
+   "note": "presence-background GLM (IWLR / MaxEnt-equivalent): LogisticRegression("
+  },
+  {
+   "name": "spatial CV / thinning considered",
+   "passed": true,
+   "value": null,
+   "threshold": null,
+   "required": false,
+   "note": ""
+  },
+  {
+   "name": "deliverable files carry a CRS (uniform rule)",
+   "passed": true,
+   "value": [
+    "EBK_salinity.tif",
+    "EBK_temp.tif",
+    "USA_seagrass_dissolved.shp",
+    "background_points.shp",
+    "emergency_output.geojson",
+    "seagrass_predict.tif",
+    "seagrass_presence_points.shp"
+   ],
+   "threshold": "every geographic deliverable file has a CRS",
+   "required": true,
+   "note": "7 geographic deliverable file(s), all with a CRS"
+  }
+ ],
+ "replay": {
+  "success": true,
+  "outputs": [
+   "EBK_salinity.tif",
+   "EBK_temp.tif",
+   "USA_seagrass_dissolved.cpg",
+   "USA_seagrass_dissolved.dbf",
+   "USA_seagrass_dissolved.prj",
+   "USA_seagrass_dissolved.shp",
+   "USA_seagrass_dissolved.shx",
+   "background_points.cpg",
+   "background_points.dbf",
+   "background_points.prj",
+   "background_points.shp",
+   "background_points.shx",
+   "diag_trend.png",
+   "seagrass_predict.tif",
+   "seagrass_prediction_map.png",
+   "seagrass_presence_points.cpg",
+   "seagrass_presence_points.dbf",
+   "seagrass_presence_points.prj",
+   "seagrass_presence_points.shp",
+   "seagrass_presence_points.shx",
+   "train_features.csv"
+  ],
+  "events": [],
+  "blocks_ok": 34,
+  "block_outcome": [
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok"
+  ],
+  "step_timeout_s": 900,
+  "same_outputs_as_original": false,
+  "block_mismatches": []
+ },
+ "replay_faithful": true,
+ "replay_unfaithful_reasons": [],
+ "replay_container_failure": [],
+ "correct_without_emergency": false,
+ "emergency_files": [
+  "emergency_output.geojson"
+ ]
+}

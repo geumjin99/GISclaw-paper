@@ -1,0 +1,139 @@
+{
+ "cell_id": "main.H0.SA.qwen38-27b.r1.T25",
+ "task": 25,
+ "status": "ok",
+ "analytically_correct": false,
+ "scorer_error": false,
+ "checks": [
+  {
+   "name": "output written (non-blank map or result file)",
+   "passed": true,
+   "value": [
+    "covid19_hkg_risk_maps.png",
+    "cluster_profiles.csv",
+    "covid19_hkg_rankings.csv",
+    "covid19_risk_profiles.shp",
+    "hkg_constituency_risk.gpkg",
+    "hkg_constituency_risk.shp",
+    "hkg_constituency_risk_full.csv"
+   ],
+   "threshold": null,
+   "required": true,
+   "note": ""
+  },
+  {
+   "name": "transmission risk score matches gold (Spearman)",
+   "passed": false,
+   "value": 0.9238,
+   "threshold": 0.95,
+   "required": true,
+   "note": "SUSC_RANK in g@final"
+  },
+  {
+   "name": "susceptibility risk score matches gold (Spearman)",
+   "passed": false,
+   "value": 0.64,
+   "threshold": 0.95,
+   "required": true,
+   "note": "TOT_SCORE in g@final"
+  },
+  {
+   "name": "resource scarcity risk score matches gold (Spearman)",
+   "passed": false,
+   "value": 0.9247,
+   "threshold": 0.95,
+   "required": true,
+   "note": "HC_RANK in g@final"
+  },
+  {
+   "name": "exposure risk score matches gold (Spearman)",
+   "passed": true,
+   "value": 1.0,
+   "threshold": 0.95,
+   "required": true,
+   "note": "EXPOS_RANK in g@final"
+  },
+  {
+   "name": "clustering is a near-optimal K-means partition of the four risk scores",
+   "passed": false,
+   "value": 0.785,
+   "threshold": 0.9,
+   "required": true,
+   "note": "CLUSTER in g@final, k=3"
+  },
+  {
+   "name": "method fidelity: SEEDS-initialised K-means (3 clusters, ARI>=0.8 with gold)",
+   "passed": false,
+   "value": 0.283,
+   "threshold": 0.8,
+   "required": true,
+   "note": "CLUSTER in g@final; instructed: K-means initialised from SEEDS"
+  },
+  {
+   "name": "deliverable files carry a CRS (uniform rule)",
+   "passed": true,
+   "value": [
+    "covid19_risk_profiles.shp",
+    "hkg_constituency_risk.gpkg",
+    "hkg_constituency_risk.shp"
+   ],
+   "threshold": "every geographic deliverable file has a CRS",
+   "required": true,
+   "note": "3 geographic deliverable file(s), all with a CRS"
+  }
+ ],
+ "replay": {
+  "success": true,
+  "outputs": [
+   "cluster_profiles.csv",
+   "covid19_hkg_rankings.csv",
+   "covid19_hkg_risk_maps.png",
+   "covid19_risk_profiles.cpg",
+   "covid19_risk_profiles.dbf",
+   "covid19_risk_profiles.prj",
+   "covid19_risk_profiles.shp",
+   "covid19_risk_profiles.shx",
+   "hkg_constituency_risk.cpg",
+   "hkg_constituency_risk.dbf",
+   "hkg_constituency_risk.gpkg",
+   "hkg_constituency_risk.prj",
+   "hkg_constituency_risk.shp",
+   "hkg_constituency_risk.shx",
+   "hkg_constituency_risk_full.csv"
+  ],
+  "events": [],
+  "blocks_ok": 10,
+  "block_outcome": [
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok"
+  ],
+  "step_timeout_s": 900,
+  "same_outputs_as_original": true,
+  "block_mismatches": []
+ },
+ "replay_faithful": true,
+ "replay_unfaithful_reasons": [],
+ "replay_container_failure": [],
+ "emergency_files": []
+}

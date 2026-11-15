@@ -1,0 +1,92 @@
+{
+ "cell_id": "main.H1.SA.gptoss-120b.r3.T45",
+ "task": 45,
+ "status": "ok",
+ "analytically_correct": true,
+ "scorer_error": false,
+ "checks": [
+  {
+   "name": "ruggedness from 3x3 focal variation matches gold (|Spearman| >= 0.95)",
+   "passed": true,
+   "value": 0.983,
+   "threshold": 0.95,
+   "required": true,
+   "note": "tri@final"
+  },
+  {
+   "name": "cost raster saved and georeferenced on the DEM grid",
+   "passed": true,
+   "value": "terrain_ruggedness_rescaled.tif",
+   "threshold": "EPSG:26911, bounds IoU>=0.95",
+   "required": true,
+   "note": ""
+  },
+  {
+   "name": "cost = standardised monotone transform of ruggedness",
+   "passed": true,
+   "value": [
+    0.983,
+    0.0,
+    1.0,
+    0.998
+   ],
+   "threshold": "|rho|>=0.85, values in [0,100] or z-scores, cover>=0.9",
+   "required": true,
+   "note": "terrain_ruggedness_rescaled.tif"
+  },
+  {
+   "name": "DEM NoData kept as NoData in the cost raster (>= 90 % of NoData cells)",
+   "passed": true,
+   "value": 1.0,
+   "threshold": 0.9,
+   "required": true,
+   "note": "terrain_ruggedness_rescaled.tif"
+  },
+  {
+   "name": "direction: rugged = low cost (as original)",
+   "passed": false,
+   "value": 0.983,
+   "threshold": null,
+   "required": false,
+   "note": ""
+  },
+  {
+   "name": "method fidelity: MSLarge rescale",
+   "passed": false,
+   "value": null,
+   "threshold": null,
+   "required": false,
+   "note": ""
+  },
+  {
+   "name": "deliverable files carry a CRS (uniform rule)",
+   "passed": true,
+   "value": [
+    "terrain_ruggedness_rescaled.tif"
+   ],
+   "threshold": "every geographic deliverable file has a CRS",
+   "required": true,
+   "note": "1 geographic deliverable file(s), all with a CRS"
+  }
+ ],
+ "replay": {
+  "success": true,
+  "outputs": [
+   "terrain_ruggedness_rescaled.tif"
+  ],
+  "events": [],
+  "blocks_ok": 3,
+  "block_outcome": [
+   "ok",
+   "ok",
+   "ok"
+  ],
+  "step_timeout_s": 900,
+  "same_outputs_as_original": true,
+  "block_mismatches": []
+ },
+ "replay_faithful": true,
+ "replay_unfaithful_reasons": [],
+ "replay_container_failure": [],
+ "emergency_files": []
+}

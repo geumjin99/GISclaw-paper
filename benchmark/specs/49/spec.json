@@ -1,0 +1,28 @@
+{
+ "task": 49,
+ "title": "Mapping the impact of housing shortage on oil workers (homelessness 2013)",
+ "output_type": "image (choropleth maps) + joined state layer",
+ "required_outputs": [
+  "any .png map (reference: homeless_map.png, homeless_change_map.png)"
+ ],
+ "method": "Read homeless_data.xlsx Sheet1 (53 rows: 50 states + DC + PR + blank), join to USA_States.shp on L0USA_St_1 = State (51 matched, PR unmatched), add HomelessPopPer10k = Homeless13 / Pop13 * 10 000, map it (ND 28.6 per 10k, US median 13.5) and the 2012-13 change (ND +201 %).",
+ "key_parameters": {
+  "join": "L0USA_St_1 <-> State",
+  "rate": "Homeless13 / Pop13 * 10000"
+ },
+ "benchmark_defects": [
+  "The reference reads the .xlsx with a minimal zip/XML reader. Solutions may equally use pandas.read_excel or the Sheet1__* columns already joined in the shapefile.",
+  "USA_States.shp already contains a join (Sheet1__St/Ch/Po/Ho) and the rounded result field HomelessPe, so the answer is partly present in the input.",
+  "The instruction says the states layer is joined 'using state abbreviations' but the dataset description does not list USA_States.shp or its key field (L0USA_St_1).",
+  "Mojibake in domain knowledge (in '2012-2013'); 'save the maps' does not name files or the field to compute.",
+  "The instruction names no calculated field; the rate / change field is therefore optional and the join itself is required."
+ ],
+ "checks": [
+  "required: at least one non-blank PNG map",
+  "required: the join - code reads homeless_data.xlsx and a states-layer table (geometry or the layer's attribute columns) carries an xlsx value (Homeless13, Pop13, Change x1/x100, or a rate from them) aligned per state for >= 95 % of states; positional joins and the pre-joined Sheet1__*/HomelessPe fields fail",
+  "optional: calculated field - Homeless13/Pop13 in a rate unit (per 10k/100k/1k, per capita, percent), or the 2012-13 change joined from the xlsx, for >= 95 % of states (pre-joined HomelessPe not credited unless the xlsx is read)",
+  "optional: 2012-13 change carried per state",
+  "optional: code reads homeless_data.xlsx",
+  "required: map colours rank-match the joined homelessness data - rate, 2012-13 change or 2013 homeless count (|rho| >= 0.9 or class intervals); population alone fails; UNVERIFIABLE if no colour data captured"
+ ]
+}

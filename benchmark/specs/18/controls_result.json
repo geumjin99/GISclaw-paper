@@ -1,0 +1,263 @@
+[
+ {
+  "control": "correct_add_patch_quadtree",
+  "expected_correct": true,
+  "judged_correct": true,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [],
+  "scorer_error": false
+ },
+ {
+  "control": "correct_custom_quadtree_lonlat",
+  "expected_correct": true,
+  "judged_correct": true,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [],
+  "scorer_error": false
+ },
+ {
+  "control": "correct_geoplot_quadtree_isnull",
+  "expected_correct": true,
+  "judged_correct": true,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [],
+  "scorer_error": false
+ },
+ {
+  "control": "correct_pct_indicator_nmax100_nmin10",
+  "expected_correct": true,
+  "judged_correct": true,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [],
+  "scorer_error": false
+ },
+ {
+  "control": "correct_pct_indicator_nmax100_nmin20",
+  "expected_correct": true,
+  "judged_correct": true,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [],
+  "scorer_error": false
+ },
+ {
+  "control": "correct_pct_indicator_nmax150",
+  "expected_correct": true,
+  "judged_correct": true,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [],
+  "scorer_error": false
+ },
+ {
+  "control": "correct_pct_indicator_nmax1_centred_projection",
+  "expected_correct": true,
+  "judged_correct": true,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [],
+  "scorer_error": false
+ },
+ {
+  "control": "correct_pct_indicator_nmax1_guarded",
+  "expected_correct": true,
+  "judged_correct": true,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [],
+  "scorer_error": false
+ },
+ {
+  "control": "correct_quadtree_custom_agg_percent",
+  "expected_correct": true,
+  "judged_correct": true,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [],
+  "scorer_error": false
+ },
+ {
+  "control": "wrong_add_patch_quadtree_counts",
+  "expected_correct": false,
+  "judged_correct": false,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [
+   "null share aggregated by region and mapped",
+   "NULL share (not its complement) mapped",
+   "regions are quadtree cells (task: 'quadtree format map')"
+  ],
+  "scorer_error": false
+ },
+ {
+  "control": "wrong_column_plantdate",
+  "expected_correct": false,
+  "judged_correct": false,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [
+   "null share aggregated by region and mapped",
+   "NULL share (not its complement) mapped"
+  ],
+  "scorer_error": false
+ },
+ {
+  "control": "wrong_geoplot_gallery_notnull",
+  "expected_correct": false,
+  "judged_correct": false,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [
+   "NULL share (not its complement) mapped"
+  ],
+  "scorer_error": false
+ },
+ {
+  "control": "wrong_grid_maps_count",
+  "expected_correct": false,
+  "judged_correct": false,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [
+   "null share aggregated by region and mapped",
+   "NULL share (not its complement) mapped",
+   "regions are quadtree cells (task: 'quadtree format map')"
+  ],
+  "scorer_error": false
+ },
+ {
+  "control": "wrong_grid_notnull_pct",
+  "expected_correct": false,
+  "judged_correct": false,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [
+   "NULL share (not its complement) mapped",
+   "regions are quadtree cells (task: 'quadtree format map')"
+  ],
+  "scorer_error": false
+ },
+ {
+  "control": "wrong_hexbin_counts",
+  "expected_correct": false,
+  "judged_correct": false,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [
+   "null share aggregated by region and mapped",
+   "NULL share (not its complement) mapped",
+   "regions are quadtree cells (task: 'quadtree format map')"
+  ],
+  "scorer_error": false
+ },
+ {
+  "control": "wrong_method_groupby_isna_inline",
+  "expected_correct": false,
+  "judged_correct": false,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [
+   "regions are quadtree cells (task: 'quadtree format map')"
+  ],
+  "scorer_error": false
+ },
+ {
+  "control": "wrong_method_hexbin_in_function",
+  "expected_correct": false,
+  "judged_correct": false,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [
+   "regions are quadtree cells (task: 'quadtree format map')"
+  ],
+  "scorer_error": false
+ },
+ {
+  "control": "wrong_method_square_grid",
+  "expected_correct": false,
+  "judged_correct": false,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [
+   "regions are quadtree cells (task: 'quadtree format map')"
+  ],
+  "scorer_error": false
+ },
+ {
+  "control": "wrong_points_by_nullity",
+  "expected_correct": false,
+  "judged_correct": false,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [
+   "null share aggregated by region and mapped",
+   "NULL share (not its complement) mapped",
+   "regions are quadtree cells (task: 'quadtree format map')"
+  ],
+  "scorer_error": false
+ },
+ {
+  "control": "wrong_quadtree_custom_agg_count",
+  "expected_correct": false,
+  "judged_correct": false,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [
+   "null share aggregated by region and mapped",
+   "NULL share (not its complement) mapped"
+  ],
+  "scorer_error": false
+ },
+ {
+  "control": "wrong_quadtree_notnull_pct",
+  "expected_correct": false,
+  "judged_correct": false,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [
+   "NULL share (not its complement) mapped"
+  ],
+  "scorer_error": false
+ },
+ {
+  "control": "wrong_quadtree_rows_subset",
+  "expected_correct": false,
+  "judged_correct": false,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [
+   "null share aggregated by region and mapped",
+   "NULL share (not its complement) mapped",
+   "regions are quadtree cells (task: 'quadtree format map')"
+  ],
+  "scorer_error": false
+ },
+ {
+  "control": "wrong_quadtree_sum_agg",
+  "expected_correct": false,
+  "judged_correct": false,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [
+   "null share aggregated by region and mapped",
+   "NULL share (not its complement) mapped"
+  ],
+  "scorer_error": false
+ },
+ {
+  "control": "wrong_tree_count_quadtree",
+  "expected_correct": false,
+  "judged_correct": false,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [
+   "null share aggregated by region and mapped",
+   "NULL share (not its complement) mapped"
+  ],
+  "scorer_error": false
+ }
+]

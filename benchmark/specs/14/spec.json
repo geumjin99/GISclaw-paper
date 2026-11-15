@@ -1,0 +1,25 @@
+{
+ "task": 14,
+ "title": "Persistent warm periods (5-year spells > 280 K), North America, 1860-2099",
+ "output_type": "image (map)",
+ "required_outputs": [
+  "temperature_statistic_vis.png"
+ ],
+ "method": "Per grid cell (37 x 49), threshold the 240 annual means at 280 K and count the 5-consecutive-year windows that are entirely above it (overlapping windows, as Iris rolling_window + all + sum); map the count with coastlines.",
+ "key_parameters": {
+  "threshold": "280 K (strictly greater)",
+  "spell_length": "5 years",
+  "counting": "overlapping windows (reference); distinct runs >= 5, non-overlapping blocks or years-in-runs accepted"
+ },
+ "benchmark_defects": [
+  "'Number of occurrences ... for five consecutive years' does not fix the counting rule (overlapping windows vs distinct spells); the checks accept the four common readings."
+ ],
+ "checks": [
+  "required: temperature_statistic_vis.png present",
+  "required: map not blank",
+  "required: a captured 37x49 grid (any orientation) equals one of four accepted counting rules on >= 98 % of cells",
+  "required: the figure shows the spell count (drawn grid in any flip; contour/contourf via the Z argument of the plotting call, consistent with the captured levels); otherwise UNVERIFIABLE (not passed)",
+  "optional: reference counting rule (overlapping windows)",
+  "figure (presentation, never required): map drawn north up - imshow by origin, pcolormesh by index-space y direction (coordinate space: both vertical orientations); contour: UNVERIFIABLE"
+ ]
+}

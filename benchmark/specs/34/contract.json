@@ -1,0 +1,34 @@
+{
+ "task": 34,
+ "source": "instruction: 'Save the result as \"pred_results/accessibility.png\"'; checks.py file_exists/png_not_blank on it (required); per-area access table from captured objects or output files (ctx.objects with files); overall share also from numbers in *.txt/*.json/*.md",
+ "deliverables": [
+  {
+   "id": "map",
+   "kind": "figure",
+   "patterns": ["accessibility.png"],
+   "required": true,
+   "crs_required": false,
+   "checked_by": ["required output present", "map not blank"]
+  },
+  {
+   "id": "per_area_access_layer",
+   "kind": "vector",
+   "patterns": ["*.geojson", "*.json"],
+   "required": false,
+   "crs_required": true,
+   "geometry_type": ["Polygon", "MultiPolygon"],
+   "checked_by": ["rural-only per-area access result present", "per-area pattern matches gold (Spearman>=0.70 or MAE<=7pp)", "choropleth draws the per-area access share"]
+  },
+  {
+   "id": "overall_share_text",
+   "kind": "text",
+   "patterns": ["*.txt", "*.json", "*.md"],
+   "required": false,
+   "crs_required": false,
+   "checked_by": ["overall rural share within 3 pp of gold"]
+  }
+ ],
+ "not_deliverables": [
+  {"pattern": "no accessibility.png", "reason": "a result note string in checks.py, not a file name"}
+ ]
+}

@@ -1,0 +1,172 @@
+{
+ "cell_id": "main.H2.DA.qwen38-27b.r2.T25",
+ "task": 25,
+ "status": "ok",
+ "analytically_correct": false,
+ "scorer_error": false,
+ "checks": [
+  {
+   "name": "output written (non-blank map or result file)",
+   "passed": true,
+   "value": [
+    "emergency_output.csv",
+    "exposure_rank.csv",
+    "exposure_risk.shp",
+    "scarcity_rank.csv",
+    "scarcity_risk.shp",
+    "susceptibility_rank.csv",
+    "susceptibility_risk.shp",
+    "transmission_rank.csv",
+    "transmission_risk.shp"
+   ],
+   "threshold": null,
+   "required": true,
+   "note": ""
+  },
+  {
+   "name": "transmission risk score matches gold (Spearman)",
+   "passed": false,
+   "value": 0.5823,
+   "threshold": 0.95,
+   "required": true,
+   "note": "SUSCRANK in sus_joined@final"
+  },
+  {
+   "name": "susceptibility risk score matches gold (Spearman)",
+   "passed": true,
+   "value": 0.981,
+   "threshold": 0.95,
+   "required": true,
+   "note": "SUSCRANK in sus_joined@final"
+  },
+  {
+   "name": "resource scarcity risk score matches gold (Spearman)",
+   "passed": true,
+   "value": 0.9981,
+   "threshold": 0.95,
+   "required": true,
+   "note": "SCARCRANK in scar_joined@final"
+  },
+  {
+   "name": "exposure risk score matches gold (Spearman)",
+   "passed": true,
+   "value": 1.0,
+   "threshold": 0.95,
+   "required": true,
+   "note": "EXPOCRANK in chk@final"
+  },
+  {
+   "name": "clustering is a near-optimal K-means partition of the four risk scores",
+   "passed": false,
+   "value": 0.0,
+   "threshold": 0.9,
+   "required": true,
+   "note": "__tgt in all_df@ret01_similarity_rank, k=2"
+  },
+  {
+   "name": "method fidelity: SEEDS-initialised K-means (3 clusters, ARI>=0.8 with gold)",
+   "passed": false,
+   "value": null,
+   "threshold": 0.8,
+   "required": true,
+   "note": "no 3-class column (best k=2); instructed: K-means initialised from SEEDS"
+  },
+  {
+   "name": "deliverable files carry a CRS (uniform rule)",
+   "passed": true,
+   "value": [
+    "exposure_risk.shp",
+    "scarcity_risk.shp",
+    "susceptibility_risk.shp",
+    "transmission_risk.shp"
+   ],
+   "threshold": "every geographic deliverable file has a CRS",
+   "required": true,
+   "note": "4 geographic deliverable file(s), all with a CRS"
+  }
+ ],
+ "replay": {
+  "success": true,
+  "outputs": [
+   "exposure_rank.csv",
+   "exposure_risk.cpg",
+   "exposure_risk.dbf",
+   "exposure_risk.prj",
+   "exposure_risk.shp",
+   "exposure_risk.shx",
+   "scarcity_rank.csv",
+   "scarcity_risk.cpg",
+   "scarcity_risk.dbf",
+   "scarcity_risk.prj",
+   "scarcity_risk.shp",
+   "scarcity_risk.shx",
+   "susceptibility_rank.csv",
+   "susceptibility_risk.cpg",
+   "susceptibility_risk.dbf",
+   "susceptibility_risk.prj",
+   "susceptibility_risk.shp",
+   "susceptibility_risk.shx",
+   "transmission_rank.csv",
+   "transmission_risk.cpg",
+   "transmission_risk.dbf",
+   "transmission_risk.prj",
+   "transmission_risk.shp",
+   "transmission_risk.shx"
+  ],
+  "events": [],
+  "blocks_ok": 31,
+  "block_outcome": [
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok"
+  ],
+  "step_timeout_s": 900,
+  "same_outputs_as_original": false,
+  "block_mismatches": []
+ },
+ "replay_faithful": true,
+ "replay_unfaithful_reasons": [],
+ "replay_container_failure": [],
+ "correct_without_emergency": false,
+ "emergency_files": [
+  "emergency_output.csv"
+ ]
+}

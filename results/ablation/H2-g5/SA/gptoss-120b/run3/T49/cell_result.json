@@ -1,0 +1,110 @@
+{
+ "cell_id": "ablation.H2-g5.SA.gptoss-120b.r3.T49",
+ "experiment": "ablation",
+ "tier": "H2-g5",
+ "arch": "SA",
+ "model": "gptoss-120b",
+ "run": 3,
+ "task": 49,
+ "elapsed_s": 36.2,
+ "protocol": "native",
+ "tier_config": {
+  "tools": [
+   "list_files",
+   "load_vector",
+   "load_raster",
+   "inspect",
+   "execute",
+   "lookup_api",
+   "finish"
+  ],
+  "generic": true,
+  "g1": true,
+  "g2": true,
+  "g3": true,
+  "g4": true,
+  "g5": false,
+  "g6": true,
+  "g7": true,
+  "no_dd": false,
+  "no_dk": false
+ },
+ "outputs": [
+  "homeless_change_map.png",
+  "merged_states.geojson",
+  "north_dakota_homeless_map.png"
+ ],
+ "required_outputs": [],
+ "required_present": null,
+ "emergency_files": [],
+ "rounds": 12,
+ "self_corrections": 0,
+ "agent_stats": {
+  "rounds": 12,
+  "format_errors": 5,
+  "format_error_kinds": {
+   "bad_args": 4,
+   "no_action": 1
+  },
+  "self_corrections": 0,
+  "exec_blocks": 8,
+  "exec_failed": 0,
+  "finish_rejections": 0,
+  "dedup_blocked": 0,
+  "triggers": {
+   "g1:card": 1
+  },
+  "checks_run": {
+   "g2": 8,
+   "g3": 9,
+   "g7": 8
+  },
+  "end_reason": "finish",
+  "empty_retries": 0,
+  "history_truncations": 0,
+  "finished": true,
+  "agent_time_s": 1.1
+ },
+ "llm_stats": {
+  "calls": 17,
+  "retries": 0,
+  "errors": 0,
+  "context_overflow": 0,
+  "empty": 0,
+  "prompt_tokens": 67330,
+  "completion_tokens": 6017,
+  "reasoning_tokens": 0,
+  "cached_tokens": 0
+ },
+ "llm_time_s": 34.1,
+ "agent_time_s": 1.1,
+ "hit_deadline": false,
+ "sandbox_events": [],
+ "inputs_intact": true,
+ "container_memory": "12g",
+ "deliverable_produced": true,
+ "config": {
+  "image": "gisclaw-exec:1.0",
+  "step_timeout_s": 300,
+  "task_wall_s": 1200,
+  "max_rounds": 50,
+  "blocked_packages": {
+   "arcpy": "Use geopandas + rasterio + shapely instead."
+  },
+  "agent": {
+   "history_tokens": 60000,
+   "max_format_errors": 15
+  }
+ },
+ "model_config": {
+  "provider": "vllm",
+  "model_name": "gpt-oss-120b",
+  "request": {
+   "set": {
+    "max_tokens": 32768,
+    "temperature": 1.0,
+    "reasoning_effort": "medium"
+   }
+  }
+ }
+}

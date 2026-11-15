@@ -1,0 +1,11 @@
+__pycache__/
+*.pyc
+.pytest_cache/
+benchmark/inputs/
+benchmark/gold/
+benchmark/manifest.json
+benchmark/supplements/*/
+benchmark/specs/[1-9][0-9][0-9]/
+analysis/out/
+results/*/logs/
+results/*/progress.json

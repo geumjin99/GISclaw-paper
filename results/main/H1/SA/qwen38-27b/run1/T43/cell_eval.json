@@ -1,0 +1,147 @@
+{
+ "cell_id": "main.H1.SA.qwen38-27b.r1.T43",
+ "task": 43,
+ "status": "ok",
+ "analytically_correct": true,
+ "scorer_error": false,
+ "checks": [
+  {
+   "name": "home range (convex hull) stored and matches gold (IoU >= 0.9)",
+   "passed": true,
+   "value": 1.0,
+   "threshold": 0.9,
+   "required": true,
+   "note": "elk_convex_hull_home_ranges.geojson vs hull of all fixes"
+  },
+  {
+   "name": "kernel density raster stored and agrees with gold (3 km block Pearson >= 0.6)",
+   "passed": true,
+   "value": 0.995,
+   "threshold": 0.6,
+   "required": true,
+   "note": "elk_kde_all_year.tif (coverage 1.00)"
+  },
+  {
+   "name": "density-based clusters with noise; clustered fixes denser than noise (ratio >= 1.5)",
+   "passed": true,
+   "value": 6.06,
+   "threshold": 1.5,
+   "required": true,
+   "note": "cluster in elk_dbscan_cluster_points.geojson [n_clusters, noise share, n]=[1450, 0.258, 150191]"
+  },
+  {
+   "name": "density-based clustering estimator called (DBSCAN/HDBSCAN/OPTICS)",
+   "passed": true,
+   "value": "DBSCAN(",
+   "threshold": null,
+   "required": true,
+   "note": "call required, not just an import"
+  },
+  {
+   "name": "deliverable files carry a CRS (uniform rule)",
+   "passed": true,
+   "value": [
+    "elk_convex_hull_by_individual.geojson",
+    "elk_convex_hull_home_ranges.geojson",
+    "elk_dbscan_cluster_points.geojson",
+    "elk_dbscan_clusters_centroids.geojson",
+    "elk_kde_all_year.tif",
+    "elk_kde_non_summer.tif",
+    "elk_kde_summer.tif"
+   ],
+   "threshold": "every geographic deliverable file has a CRS",
+   "required": true,
+   "note": "7 geographic deliverable file(s), all with a CRS"
+  }
+ ],
+ "replay": {
+  "success": true,
+  "outputs": [
+   "analysis_summary.md",
+   "elk_convex_hull_by_individual.geojson",
+   "elk_convex_hull_home_ranges.geojson",
+   "elk_dbscan_cluster_points.geojson",
+   "elk_dbscan_cluster_stats.csv",
+   "elk_dbscan_clusters_centroids.geojson",
+   "elk_kde_all_year.tif",
+   "elk_kde_non_summer.tif",
+   "elk_kde_summer.tif",
+   "fig1_overview_convex_hull.png",
+   "fig2_individual_home_ranges.png",
+   "fig3_kde_seasonal.png",
+   "fig4_dbscan_clusters.png"
+  ],
+  "events": [
+   {
+    "event": "timeout"
+   },
+   {
+    "event": "restarted",
+    "replayed": 9
+   }
+  ],
+  "blocks_ok": 33,
+  "block_outcome": [
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "timeout_killed",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok"
+  ],
+  "step_timeout_s": 900,
+  "same_outputs_as_original": false,
+  "block_mismatches": []
+ },
+ "replay_faithful": false,
+ "replay_unfaithful_reasons": [
+  "replay block(s) [9] cut off (timeout_killed)"
+ ],
+ "replay_container_failure": [],
+ "correct_without_emergency": true,
+ "emergency_files": [
+  "emergency_output.csv"
+ ]
+}

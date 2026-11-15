@@ -1,0 +1,31 @@
+{
+ "task": 6,
+ "title": "Use animal GPS tracks to model home range to understand where they are and how they move over time",
+ "output_type": "image (overlay map)",
+ "required_outputs": [
+  "Elk_Analysis.png"
+ ],
+ "method": "Project 150 191 elk GPS fixes (68 animals) to UTM 11N. Minimum bounding geometry: convex hull of all fixes (population home range, 10 607 km2) plus one hull per animal. Binned Gaussian kernel density (bandwidth 468.8 m, 200 m cells). DBSCAN (eps 500 m, min_samples 100): 91 clusters, 17.6 % noise. Overlay density, hulls and clusters on one map.",
+ "key_parameters": {
+  "crs": "EPSG:32611",
+  "kde": "Gaussian, bandwidth 468.8 m, 200 m grid",
+  "dbscan": "eps 500 m, min_samples 100",
+  "hull": "convex hull of all fixes (+ per ind_ident)"
+ },
+ "benchmark_defects": [
+  "An empty file dataset/Elk_in_MBG.geojson (0 bytes) is shipped with the inputs and cannot be read.",
+  "Data are in geographic coordinates; no CRS/units guidance is given although bandwidth and DBSCAN distance must be metric.",
+  "The published reference script passes bandwidth=468.805 to KernelDensity on the coordinates as read, without re-projection, and clusters with HDBSCAN, whereas the instruction names DBSCAN."
+ ],
+ "checks": [
+  "required: map file present",
+  "required: map not blank",
+  "required: a captured polygon layer matches the convex hull of all fixes or the union of per-animal hulls (area IoU >= 0.90)",
+  "required: a captured 2-D density array (assumed to span the fix extent, padded or not, either row order) correlates with the gold KDE (Pearson on sqrt density >= 0.6, 40 x 40 grid), or a per-fix density vector has Spearman >= 0.7; the array must be kernel-smoothed (corr with its own 3x3 mean >= 0.9, rejects raw histograms); runs with no 2-D array: a kdeplot / kernel-density + contour call in the code is accepted",
+  "required: a label vector of the fixes with noise (-1), >= 2 clusters and >= 90 % nearest-neighbour label agreement",
+  "required (as in task 43): a DBSCAN / HDBSCAN / OPTICS call in the code (import alone does not count; DBSCAN named with eps/min_samples accepted when the call sits in a block missing from the checked code)",
+  "required: Elk_Analysis.png (the figure written last to that name) overlays a hull outline, a density layer and a cluster layer",
+  "optional: a projected CRS is used in the code",
+  "optional, kind=figure: a density image drawn in the saved map, placed as drawn (extent + origin), agrees with the gold KDE at least as well as its north-south mirror"
+ ]
+}

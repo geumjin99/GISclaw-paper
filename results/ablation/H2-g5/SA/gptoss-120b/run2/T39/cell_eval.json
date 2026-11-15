@@ -1,0 +1,87 @@
+{
+ "cell_id": "ablation.H2-g5.SA.gptoss-120b.r2.T39",
+ "task": 39,
+ "status": "ok",
+ "analytically_correct": false,
+ "scorer_error": false,
+ "checks": [
+  {
+   "name": "required output present",
+   "passed": true,
+   "value": [
+    "GA_GWR.png"
+   ],
+   "threshold": [
+    "GA_GWR.png",
+    "ga_gwr.png",
+    "GA_GWR.PNG"
+   ],
+   "required": true,
+   "note": ""
+  },
+  {
+   "name": "figure not blank",
+   "passed": true,
+   "value": 33.480754031940535,
+   "threshold": ">=3 grey-level std",
+   "required": true,
+   "note": ""
+  },
+  {
+   "name": "optimal bandwidth searched (Sel_BW result present)",
+   "passed": true,
+   "value": 117.0,
+   "threshold": "Sel_BW optimum +/-2 % or optimum surface r >= 0.998",
+   "required": true,
+   "note": "opt_bw_ad@final ~ 117"
+  },
+  {
+   "name": "local GWR slope surfaces match gold (Pearson >= 0.97) and no extra regressor",
+   "passed": true,
+   "value": 0.999,
+   "threshold": 0.97,
+   "required": true,
+   "note": "model_fx.params[:,3]@final ~ gold fixedbisq_PctRural; coefficient array model_ad.params@final has 4 columns"
+  },
+  {
+   "name": "figure shows GWR surfaces or the AICc-bandwidth profile",
+   "passed": false,
+   "value": 0.328,
+   "threshold": "|Spearman| >= 0.90",
+   "required": true,
+   "note": "fig_ax0_coll0@save00 values ~ gold fixedbisq_PctRural"
+  },
+  {
+   "name": "figure compares >= 2 GWR-family models",
+   "passed": false,
+   "value": null,
+   "threshold": "2 models' surfaces (|Spearman| >= 0.90, maps not identical), profile >= 4 bandwidths, or >= 2 model diagnostics",
+   "required": true,
+   "note": "no drawn GWR surface, profile or diagnostic chart"
+  }
+ ],
+ "replay": {
+  "success": true,
+  "outputs": [
+   "GA_GWR.png"
+  ],
+  "events": [],
+  "blocks_ok": 5,
+  "block_outcome": [
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok"
+  ],
+  "step_timeout_s": 900,
+  "same_outputs_as_original": true,
+  "block_mismatches": []
+ },
+ "replay_faithful": true,
+ "replay_unfaithful_reasons": [],
+ "replay_container_failure": [],
+ "emergency_files": []
+}

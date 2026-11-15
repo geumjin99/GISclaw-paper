@@ -1,0 +1,177 @@
+{
+ "cell_id": "ablation.H2+nodk.SA.qwen38-27b.r3.T46",
+ "task": 46,
+ "status": "ok",
+ "analytically_correct": true,
+ "scorer_error": false,
+ "checks": [
+  {
+   "name": "map present",
+   "passed": true,
+   "value": [
+    "peak_crash_hotspots.png"
+   ],
+   "threshold": [
+    "peak_crash_hotspots.png"
+   ],
+   "required": true,
+   "note": ""
+  },
+  {
+   "name": "map not blank",
+   "passed": true,
+   "value": 19.956991776255418,
+   "threshold": ">=3 grey-level std",
+   "required": true,
+   "note": ""
+  },
+  {
+   "name": "peak selection: weekday 15-17 h (or 15-16 h) crashes",
+   "passed": true,
+   "value": "peak@final: 16515 rows (15-16)",
+   "threshold": {
+    "15-17": 24746,
+    "15-16": 16515,
+    "15-16+17:00": 16978
+   },
+   "required": true,
+   "note": ""
+  },
+  {
+   "name": "per-segment crash count/rate matches gold (Pearson >= 0.9)",
+   "passed": true,
+   "value": 1.0,
+   "threshold": 0.9,
+   "required": true,
+   "note": "CrashCnt in d@final ~ count 15-16"
+  },
+  {
+   "name": "Gi* z-scores on the network SWM (Pearson >= 0.9 with a spatially meaningful Gi* variant)",
+   "passed": true,
+   "value": 0.99,
+   "threshold": 0.9,
+   "required": true,
+   "note": "res.Zs@final ~ Gi[count 15-16/inv/selfmax/none]"
+  },
+  {
+   "name": "FDR correction applied (code)",
+   "passed": false,
+   "value": null,
+   "threshold": null,
+   "required": false,
+   "note": ""
+  },
+  {
+   "name": "map colours drawn from the Gi* column (data-coloured maps only)",
+   "passed": false,
+   "value": [],
+   "threshold": null,
+   "required": false,
+   "note": "maps coloured class-by-class (colour=) leave no drawn values; reported only"
+  },
+  {
+   "name": "hot spots found (>= 0.5 % of segments with z > 1.96)",
+   "passed": true,
+   "value": 0.0227,
+   "threshold": null,
+   "required": false,
+   "note": ""
+  }
+ ],
+ "replay": {
+  "success": true,
+  "outputs": [
+   "crash_hotspots.cpg",
+   "crash_hotspots.csv",
+   "crash_hotspots.dbf",
+   "crash_hotspots.prj",
+   "crash_hotspots.shp",
+   "crash_hotspots.shx",
+   "peak_crash_hotspots.png",
+   "peak_crashes.cpg",
+   "peak_crashes.dbf",
+   "peak_crashes.prj",
+   "peak_crashes.shp",
+   "peak_crashes.shx",
+   "peak_crashes_snapped_roads.cpg",
+   "peak_crashes_snapped_roads.dbf",
+   "peak_crashes_snapped_roads.prj",
+   "peak_crashes_snapped_roads.shp",
+   "peak_crashes_snapped_roads.shx",
+   "roads_crash_rate.cpg",
+   "roads_crash_rate.dbf",
+   "roads_crash_rate.prj",
+   "roads_crash_rate.shp",
+   "roads_crash_rate.shx"
+  ],
+  "events": [
+   {
+    "event": "container_exit_137",
+    "exit_code": 137,
+    "oom_killed": false
+   },
+   {
+    "event": "restarted",
+    "replayed": 23
+   }
+  ],
+  "blocks_ok": 32,
+  "block_outcome": [
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "crash",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok"
+  ],
+  "step_timeout_s": 900,
+  "same_outputs_as_original": true,
+  "block_mismatches": []
+ },
+ "replay_faithful": false,
+ "replay_unfaithful_reasons": [
+  "replay block(s) [21] cut off (crash)"
+ ],
+ "replay_container_failure": [],
+ "emergency_files": []
+}

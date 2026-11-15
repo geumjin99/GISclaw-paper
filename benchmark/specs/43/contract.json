@@ -1,0 +1,47 @@
+{
+ "task": 43,
+ "source": "instruction: convex hull, kernel density and DBSCAN outputs to be stored; checks.py globs pred_results (recursive) for vector files (*.geojson/*.json/*.shp/*.gpkg: polygon home range, per-fix cluster points) and rasters (*.tif/*.tiff/*.img/*.asc: kernel density)",
+ "deliverables": [
+  {
+   "id": "vectors",
+   "kind": "vector",
+   "patterns": [
+    "*.geojson",
+    "*.json",
+    "*.shp",
+    "*.gpkg"
+   ],
+   "required": true,
+   "crs_required": true,
+   "checked_by": [
+    "home range (convex hull) stored and matches gold (IoU >= 0.9)",
+    "density-based clusters with noise; clustered fixes denser than noise (ratio >= 1.5)"
+   ]
+  },
+  {
+   "id": "kernel_density",
+   "kind": "raster",
+   "patterns": [
+    "*.tif",
+    "*.tiff",
+    "*.img",
+    "*.asc"
+   ],
+   "required": true,
+   "crs_required": true,
+   "checked_by": [
+    "kernel density raster stored and agrees with gold (3 km block Pearson >= 0.6)"
+   ]
+  }
+ ],
+ "not_deliverables": [
+  {
+   "pattern": "elk_home_range.geojson",
+   "reason": "gold file name, read from the gold directory only"
+  },
+  {
+   "pattern": "elk_kernel_density.tif",
+   "reason": "gold file name, read from the gold directory only"
+  }
+ ]
+}

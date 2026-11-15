@@ -1,0 +1,34 @@
+{
+ "task": 24,
+ "title": "De-identify child blood-lead point data by coordinate rounding (Sacramento)",
+ "output_type": "vector (point shapefile) + summary",
+ "required_outputs": [
+  "High_Blood_Level_Results_Rounded.shp (any point .shp/.gpkg/.geojson name accepted; the instruction names none)"
+ ],
+ "optional_outputs": [
+  "rounding_summary.csv",
+  "rounded_points.png"
+ ],
+ "method": "Reproject the 373 points from Web Mercator (EPSG:3857) to WGS 84, add longitude/latitude fields, round them to two decimals (0.01 deg), rebuild point geometries at the rounded coordinates, save the de-identified layer, and document the reduction of unique locations: 372 -> 168 (204 fewer, 54.8 %).",
+ "key_parameters": {
+  "crs": "EPSG:4326",
+  "decimals": 2,
+  "records": 373,
+  "unique_before": 372,
+  "unique_after": 168
+ },
+ "benchmark_defects": [
+  "The benchmark distributes only the .shp geometry files: no .dbf, so none of the 14 attribute columns listed in the dataset description (names, birthdays, blood level, ...) exist; no .shx/.prj either (the .shx and .prj files are reconstructed from the .shp files, CRS inferred from the coordinates).",
+  "The instruction names no output file; any point vector file in pred_results is accepted.",
+  "Sacramento_ZIP_Codes is only needed for context/visualisation."
+ ],
+ "checks": [
+  "required: a point vector file written to pred_results",
+  "required: it holds the 373 records (or the 168 de-duplicated locations)",
+  "required: geometries in WGS 84 lie on the 0.01-degree grid (>= 99 %)",
+  "required: set of unique rounded locations equals the gold set (>= 98 % overlap both ways)",
+  "required: reduction documented (168 / 204-205 / 54.6-55.1 % / 45.0-45.2 % retained in a captured scalar incl. function locals, a <= 20-row table/dict/series, or a csv/txt/json/md output)",
+  "required: the published layer keeps no attribute reproducing the exact original coordinates (WGS 84 1e-5 deg / Web Mercator 1 m, off the 0.01-deg grid)",
+  "optional: rounded coordinate fields in the attribute table"
+ ]
+}

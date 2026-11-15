@@ -1,0 +1,150 @@
+{
+ "cell_id": "knowledge_note.H2+hint.SA.claude-haiku-5-5.r1.T50",
+ "task": 50,
+ "status": "ok",
+ "analytically_correct": true,
+ "scorer_error": false,
+ "checks": [
+  {
+   "name": "presence points inside dissolved seagrass (>= 97 %)",
+   "passed": true,
+   "value": 1.0,
+   "threshold": 0.97,
+   "required": true,
+   "note": "USA_seagrass_random_points_5000.gpkg (5000 pts)"
+  },
+  {
+   "name": "training features saved with kriged temp/salinity values (r >= 0.8 / 0.6)",
+   "passed": true,
+   "value": [
+    0.999,
+    0.961
+   ],
+   "threshold": [
+    0.8,
+    0.6
+   ],
+   "required": true,
+   "note": "train_features.gpkg"
+  },
+  {
+   "name": "global prediction raster agrees with gold suitability (coverage >= 0.8, Spearman >= 0.5)",
+   "passed": true,
+   "value": [
+    0.97,
+    1.0
+   ],
+   "threshold": [
+    0.5,
+    0.8
+   ],
+   "required": true,
+   "note": "seagrass_prediction_maxent.tif (rho 0.970, coverage 1.000); coverage over gold cells with centre inside Global_shallow_waters; not candidates (kriged explanatory surfaces): kriging_salinity.tif, kriging_temp.tif"
+  },
+  {
+   "name": "prediction is a function of both temperature and salinity (rank R2 gain >= 0.05 each)",
+   "passed": true,
+   "value": {
+    "R2_temp": 0.707,
+    "R2_sal": 0.188,
+    "R2_both": 0.955
+   },
+   "threshold": "R2_both >= 0.5, R2_both - R2_temp >= 0.05, R2_both - R2_sal >= 0.05",
+   "required": true,
+   "note": "ranks of the prediction explained by 15-bin (2-D) means of the gold kriged surfaces; gold: 0.733/0.189/0.960"
+  },
+  {
+   "name": "method: kriging-type interpolation of temp/salinity (prescribed: EBK)",
+   "passed": true,
+   "value": null,
+   "threshold": null,
+   "required": true,
+   "note": "hand-rolled kriging: fitted model + linear system solve"
+  },
+  {
+   "name": "method: presence-only MaxEnt-type model (prescribed: MaxEnt)",
+   "passed": true,
+   "value": null,
+   "threshold": null,
+   "required": true,
+   "note": "presence-background GLM (IWLR / MaxEnt-equivalent): LogisticRegression("
+  },
+  {
+   "name": "spatial CV / thinning considered",
+   "passed": true,
+   "value": null,
+   "threshold": null,
+   "required": false,
+   "note": ""
+  },
+  {
+   "name": "deliverable files carry a CRS (uniform rule)",
+   "passed": true,
+   "value": [
+    "USA_seagrass_dissolved.gpkg",
+    "USA_seagrass_random_points_5000.gpkg",
+    "kriging_salinity.tif",
+    "kriging_temp.tif",
+    "seagrass_prediction_maxent.tif",
+    "train_features.gpkg"
+   ],
+   "threshold": "every geographic deliverable file has a CRS",
+   "required": true,
+   "note": "6 geographic deliverable file(s), all with a CRS"
+  }
+ ],
+ "replay": {
+  "success": true,
+  "outputs": [
+   "USA_seagrass_dissolved.gpkg",
+   "USA_seagrass_random_points_5000.gpkg",
+   "kriging_salinity.tif",
+   "kriging_temp.tif",
+   "maps_overview.png",
+   "seagrass_prediction_maxent.tif",
+   "train_features.gpkg"
+  ],
+  "events": [
+   {
+    "event": "container_oom",
+    "exit_code": 137,
+    "oom_killed": true
+   },
+   {
+    "event": "restarted",
+    "replayed": 10
+   }
+  ],
+  "blocks_ok": 17,
+  "block_outcome": [
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "oom",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok"
+  ],
+  "step_timeout_s": 900,
+  "same_outputs_as_original": true,
+  "block_mismatches": []
+ },
+ "replay_faithful": false,
+ "replay_unfaithful_reasons": [
+  "replay block(s) [8] cut off (oom)"
+ ],
+ "replay_container_failure": [],
+ "emergency_files": []
+}

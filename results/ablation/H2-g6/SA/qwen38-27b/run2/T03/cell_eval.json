@@ -1,0 +1,114 @@
+{
+ "cell_id": "ablation.H2-g6.SA.qwen38-27b.r2.T03",
+ "task": 3,
+ "status": "ok",
+ "analytically_correct": true,
+ "scorer_error": false,
+ "checks": [
+  {
+   "name": "required output present",
+   "passed": true,
+   "value": [
+    "burn_scar_analysis.png"
+   ],
+   "threshold": [
+    "burn_scar_analysis.png"
+   ],
+   "required": true,
+   "note": ""
+  },
+  {
+   "name": "map not blank",
+   "passed": true,
+   "value": 96.6204710491137,
+   "threshold": ">=3 grey-level std",
+   "required": true,
+   "note": ""
+  },
+  {
+   "name": "dNBR surface matches gold (|r| >= 0.98)",
+   "passed": true,
+   "value": 1.0,
+   "threshold": 0.98,
+   "required": true,
+   "note": "dnbr@final"
+  },
+  {
+   "name": "burn-scar polygons cover the burned core and little else",
+   "passed": true,
+   "value": {
+    "core_coverage": 0.775,
+    "precision_dNBR>0.1": 1.0
+   },
+   "threshold": "coverage>=0.70, precision>=0.60",
+   "required": true,
+   "note": "sev_gdf@final"
+  },
+  {
+   "name": "burned area plausible (15-350 km2)",
+   "passed": true,
+   "value": 239.9,
+   "threshold": "15-350",
+   "required": false,
+   "note": ""
+  }
+ ],
+ "replay": {
+  "success": true,
+  "outputs": [
+   "burn_extent.cpg",
+   "burn_extent.dbf",
+   "burn_extent.prj",
+   "burn_extent.shp",
+   "burn_extent.shx",
+   "burn_scar_analysis.png",
+   "burn_severity.cpg",
+   "burn_severity.dbf",
+   "burn_severity.prj",
+   "burn_severity.shp",
+   "burn_severity.shx"
+  ],
+  "events": [],
+  "blocks_ok": 20,
+  "block_outcome": [
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok"
+  ],
+  "step_timeout_s": 900,
+  "same_outputs_as_original": true,
+  "block_mismatches": []
+ },
+ "replay_faithful": true,
+ "replay_unfaithful_reasons": [],
+ "replay_container_failure": [],
+ "emergency_files": []
+}

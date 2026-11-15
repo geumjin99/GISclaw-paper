@@ -1,0 +1,30 @@
+{
+ "task": 19,
+ "title": "Spatial interpolation of dissolved oxygen, Chesapeake Bay",
+ "output_type": "image (interpolated surface map)",
+ "required_outputs": [
+  "interploated_water_quality.png",
+  "interpolated_water_quality.png"
+ ],
+ "method": "Average the 26 455 DO samples (MeasureValue, mg/L) per station (131 stations), interpolate the station means with Gaussian kernel regression (Nadaraya-Watson; bandwidth 10 km by leave-one-out CV) on a 500 m grid clipped to the Bay polygon (EPSG:32618) and map it. IDW, kriging, splines, nearest-station and surface-/bottom-layer aggregations are accepted.",
+ "key_parameters": {
+  "value": "MeasureValue (DO, mg/L)",
+  "aggregation": "station mean of all samples (surface or bottom layer accepted)",
+  "interpolator": "Gaussian kernel regression, bw 10 km (LOO-CV)",
+  "grid": "500 m, clipped to Bay.geojson"
+ },
+ "benchmark_defects": [
+  "The instruction's output name is misspelt ('interploated_water_quality.png'); the reference uses it, the checks also accept the corrected spelling.",
+  "The Domain Knowledge recommends KDE for interpolating values; a value-weighted KDE estimates a weighted sampling density, not the DO value. The published reference script uses scipy gaussian_kde with weights=MeasureValue. The reference solution here uses kernel regression (the value-interpolating kernel method).",
+  "The samples are depth profiles over two years; the task does not say which depth/time to map. Layer choice changes the pattern drastically (all-depth vs surface station means: Spearman 0.11), so three aggregations are accepted."
+ ],
+ "checks": [
+  "required: map present (instructed misspelt name or corrected)",
+  "required: map not blank",
+  "required: the DRAWN field, placed by its own georeference (imshow extent+origin; pixel-space images on the Bay/sample bbox; pcolormesh cell bboxes; scatter offsets+values or the colour-matched captured point layer; contour/contourf/tricontourf calls evaluated on captured arrays; lon/lat projected) and then taken in any of the 8 orientations within its own bounding box, sampled at 11 789 Bay cells, has Spearman >= 0.65 with an IDW yardstick (all-depth, surface or bottom station means); nothing placeable -> UNVERIFIABLE",
+  "required: drawn values are DO in mg/L (mean within 1 mg/L of the yardstick, p1-p99 in [0, 20]); a display-rescaled image is accepted when it is a linear function (r >= 0.99) of an output GeoTIFF in mg/L",
+  "optional: a DO surface computed (any captured grid, all orientations)",
+  "optional: surface clipped to the Bay",
+  "figure (kind=figure, not in the main metric): the drawn field as georeferenced, without re-orientation, has Spearman >= 0.65"
+ ]
+}

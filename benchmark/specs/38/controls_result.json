@@ -1,0 +1,135 @@
+[
+ {
+  "control": "correct_bbox_centre_plot_graph",
+  "expected_correct": true,
+  "judged_correct": true,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [],
+  "scorer_error": false
+ },
+ {
+  "control": "correct_custom_speeds_minutes",
+  "expected_correct": true,
+  "judged_correct": true,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [],
+  "scorer_error": false
+ },
+ {
+  "control": "correct_origin_other_node_229m",
+  "expected_correct": true,
+  "judged_correct": true,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [],
+  "scorer_error": false
+ },
+ {
+  "control": "correct_projected_utm_scatter",
+  "expected_correct": true,
+  "judged_correct": true,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [],
+  "scorer_error": false
+ },
+ {
+  "control": "correct_scatter_with_nonfinite_offsets",
+  "expected_correct": true,
+  "judged_correct": true,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [],
+  "scorer_error": false
+ },
+ {
+  "control": "wrong_constant_speed",
+  "expected_correct": false,
+  "judged_correct": false,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [
+   "speeds derived from the graph (not a pure network-length field, r < 0.999)"
+  ],
+  "scorer_error": false
+ },
+ {
+  "control": "wrong_constant_speed_offset_origin",
+  "expected_correct": false,
+  "judged_correct": false,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [
+   "speeds derived from the graph (not a pure network-length field, r < 0.999)"
+  ],
+  "scorer_error": false
+ },
+ {
+  "control": "wrong_latlon_swapped_origin",
+  "expected_correct": false,
+  "judged_correct": false,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [
+   "per-node travel times match gold (Pearson >= 0.90)",
+   "values are travel times (median ratio 0.67-1.5, s or min)",
+   "origin within 400 m of Natural History Building",
+   "network routing (r with own-origin network time >= 0.97 and > straight-line r + 0.01)",
+   "speeds derived from the graph (not a pure network-length field, r < 0.999)",
+   "figure colours nodes by travel time (|Spearman| >= 0.90 vs gold)"
+  ],
+  "scorer_error": false
+ },
+ {
+  "control": "wrong_length_not_time",
+  "expected_correct": false,
+  "judged_correct": false,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [
+   "values are travel times (median ratio 0.67-1.5, s or min)",
+   "speeds derived from the graph (not a pure network-length field, r < 0.999)"
+  ],
+  "scorer_error": false
+ },
+ {
+  "control": "wrong_network_only_no_routing",
+  "expected_correct": false,
+  "judged_correct": false,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [
+   "per-node travel times match gold (Pearson >= 0.90)",
+   "values are travel times (median ratio 0.67-1.5, s or min)",
+   "origin within 400 m of Natural History Building",
+   "network routing (r with own-origin network time >= 0.97 and > straight-line r + 0.01)",
+   "speeds derived from the graph (not a pure network-length field, r < 0.999)",
+   "figure colours nodes by travel time (|Spearman| >= 0.90 vs gold)"
+  ],
+  "scorer_error": false
+ },
+ {
+  "control": "wrong_projected_scatter_other_colour",
+  "expected_correct": false,
+  "judged_correct": false,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [
+   "figure colours nodes by travel time (|Spearman| >= 0.90 vs gold)"
+  ],
+  "scorer_error": false
+ },
+ {
+  "control": "wrong_straight_line",
+  "expected_correct": false,
+  "judged_correct": false,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [
+   "network routing (r with own-origin network time >= 0.97 and > straight-line r + 0.01)"
+  ],
+  "scorer_error": false
+ }
+]

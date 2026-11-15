@@ -1,0 +1,15 @@
+{
+ "task": 9,
+ "source": "instruction: save the percentage in 'pred_results/deforestation_rate.csv' with column percentage_deforestation; checks.py reads that csv (case-insensitive name)",
+ "deliverables": [
+  {
+   "id": "rate_table",
+   "kind": "table",
+   "patterns": ["deforestation_rate.csv"],
+   "required": true,
+   "crs_required": false,
+   "checked_by": ["required output present", "column percentage_deforestation with one value", "percentage within 1.5 pp of gold"]
+  }
+ ],
+ "not_deliverables": []
+}

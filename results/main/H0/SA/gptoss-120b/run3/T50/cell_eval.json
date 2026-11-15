@@ -1,0 +1,157 @@
+{
+ "cell_id": "main.H0.SA.gptoss-120b.r3.T50",
+ "task": 50,
+ "status": "ok",
+ "analytically_correct": false,
+ "scorer_error": false,
+ "checks": [
+  {
+   "name": "presence points inside dissolved seagrass (>= 97 %)",
+   "passed": true,
+   "value": 1.0,
+   "threshold": 0.97,
+   "required": true,
+   "note": "USA_seagrass_random_points.shp (5000 pts)"
+  },
+  {
+   "name": "training features saved with kriged temp/salinity values (r >= 0.8 / 0.6)",
+   "passed": false,
+   "value": [
+    0.002,
+    -0.001
+   ],
+   "threshold": [
+    0.8,
+    0.6
+   ],
+   "required": true,
+   "note": "USA_seagrass_random_points.shp"
+  },
+  {
+   "name": "global prediction raster agrees with gold suitability (coverage >= 0.8, Spearman >= 0.5)",
+   "passed": false,
+   "value": [
+    0.0,
+    0.031
+   ],
+   "threshold": [
+    0.5,
+    0.8
+   ],
+   "required": true,
+   "note": "best candidate temp_interpolated.tif (rho 0.215, coverage 0.031); coverage over gold cells with centre inside Global_shallow_waters"
+  },
+  {
+   "name": "prediction is a function of both temperature and salinity (rank R2 gain >= 0.05 each)",
+   "passed": false,
+   "value": null,
+   "threshold": null,
+   "required": true,
+   "note": "no acceptable prediction raster"
+  },
+  {
+   "name": "method: kriging-type interpolation of temp/salinity (prescribed: EBK)",
+   "passed": false,
+   "value": null,
+   "threshold": null,
+   "required": true,
+   "note": "no kriging / GP / variogram call and no hand-rolled kriging system (IDW / NN / RBF used?)"
+  },
+  {
+   "name": "method: presence-only MaxEnt-type model (prescribed: MaxEnt)",
+   "passed": true,
+   "value": null,
+   "threshold": null,
+   "required": true,
+   "note": "presence-background GLM (IWLR / MaxEnt-equivalent): LogisticRegression("
+  },
+  {
+   "name": "spatial CV / thinning considered",
+   "passed": true,
+   "value": null,
+   "threshold": null,
+   "required": false,
+   "note": ""
+  },
+  {
+   "name": "deliverable files carry a CRS (uniform rule)",
+   "passed": true,
+   "value": [
+    "USA_seagrass_dissolved.shp",
+    "USA_seagrass_random_points.shp",
+    "salinity_interpolated.tif",
+    "seagrass_prediction.tif",
+    "temp_interpolated.tif"
+   ],
+   "threshold": "every geographic deliverable file has a CRS",
+   "required": true,
+   "note": "5 geographic deliverable file(s), all with a CRS"
+  }
+ ],
+ "replay": {
+  "success": true,
+  "outputs": [
+   "USA_seagrass_dissolved.cpg",
+   "USA_seagrass_dissolved.dbf",
+   "USA_seagrass_dissolved.prj",
+   "USA_seagrass_dissolved.shp",
+   "USA_seagrass_dissolved.shx",
+   "USA_seagrass_random_points.cpg",
+   "USA_seagrass_random_points.dbf",
+   "USA_seagrass_random_points.prj",
+   "USA_seagrass_random_points.shp",
+   "USA_seagrass_random_points.shx",
+   "maxent_training_data.csv",
+   "salinity_interpolated.tif",
+   "seagrass_prediction.tif",
+   "temp_interpolated.tif"
+  ],
+  "events": [
+   {
+    "event": "container_oom",
+    "exit_code": 137,
+    "oom_killed": true
+   },
+   {
+    "event": "restarted",
+    "replayed": 2
+   },
+   {
+    "event": "container_oom",
+    "exit_code": 137,
+    "oom_killed": true
+   },
+   {
+    "event": "restarted",
+    "replayed": 2
+   },
+   {
+    "event": "container_oom",
+    "exit_code": 137,
+    "oom_killed": true
+   },
+   {
+    "event": "restarted",
+    "replayed": 2
+   }
+  ],
+  "blocks_ok": 2,
+  "block_outcome": [
+   "ok",
+   "oom",
+   "oom",
+   "oom",
+   "ok",
+   "ok"
+  ],
+  "step_timeout_s": 900,
+  "same_outputs_as_original": true,
+  "block_mismatches": []
+ },
+ "replay_faithful": false,
+ "replay_unfaithful_reasons": [
+  "replay block(s) [1, 2, 3] cut off (oom)"
+ ],
+ "replay_container_failure": [],
+ "emergency_files": []
+}

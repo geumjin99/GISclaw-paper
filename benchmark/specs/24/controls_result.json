@@ -1,0 +1,113 @@
+[
+ {
+  "control": "correct_function_markdown_note",
+  "expected_correct": true,
+  "judged_correct": true,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [],
+  "scorer_error": false
+ },
+ {
+  "control": "correct_printed_reduction_only",
+  "expected_correct": true,
+  "judged_correct": true,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [],
+  "scorer_error": false
+ },
+ {
+  "control": "correct_set_precision",
+  "expected_correct": true,
+  "judged_correct": true,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [],
+  "scorer_error": false
+ },
+ {
+  "control": "correct_snap_reproject_back",
+  "expected_correct": true,
+  "judged_correct": true,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [],
+  "scorer_error": false
+ },
+ {
+  "control": "wrong_deliverable_no_crs",
+  "expected_correct": false,
+  "judged_correct": false,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [
+   "point vector file written",
+   "records preserved (373 or 168 unique)",
+   "geometries on 0.01-degree WGS84 grid",
+   "unique rounded locations equal gold set",
+   "exact original coordinates not kept as attributes",
+   "deliverable files carry a CRS (uniform rule)"
+  ],
+  "scorer_error": false
+ },
+ {
+  "control": "wrong_exact_coords_in_attributes",
+  "expected_correct": false,
+  "judged_correct": false,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [
+   "exact original coordinates not kept as attributes"
+  ],
+  "scorer_error": false
+ },
+ {
+  "control": "wrong_fields_only_geometry_kept",
+  "expected_correct": false,
+  "judged_correct": false,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [
+   "geometries on 0.01-degree WGS84 grid",
+   "unique rounded locations equal gold set"
+  ],
+  "scorer_error": false
+ },
+ {
+  "control": "wrong_one_decimal",
+  "expected_correct": false,
+  "judged_correct": false,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [
+   "unique rounded locations equal gold set",
+   "reduction in unique locations documented (168 / 204-205 / ~55 %)"
+  ],
+  "scorer_error": false
+ },
+ {
+  "control": "wrong_reduction_misreported",
+  "expected_correct": false,
+  "judged_correct": false,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [
+   "reduction in unique locations documented (168 / 204-205 / ~55 %)"
+  ],
+  "scorer_error": false
+ },
+ {
+  "control": "wrong_round_web_mercator",
+  "expected_correct": false,
+  "judged_correct": false,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [
+   "geometries on 0.01-degree WGS84 grid",
+   "unique rounded locations equal gold set",
+   "reduction in unique locations documented (168 / 204-205 / ~55 %)"
+  ],
+  "scorer_error": false
+ }
+]

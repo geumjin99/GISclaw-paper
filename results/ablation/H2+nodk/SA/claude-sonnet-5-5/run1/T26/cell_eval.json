@@ -1,0 +1,138 @@
+{
+ "cell_id": "ablation.H2+nodk.SA.claude-sonnet-5-5.r1.T26",
+ "task": 26,
+ "status": "ok",
+ "analytically_correct": true,
+ "scorer_error": false,
+ "checks": [
+  {
+   "name": "vulnerability raster written",
+   "passed": true,
+   "value": [
+    "drainage_conditions.tif",
+    "water_depth.tif",
+    "land_cover_lcc.tif",
+    "vulnerable_areas.tif"
+   ],
+   "threshold": null,
+   "required": true,
+   "note": ""
+  },
+  {
+   "name": "valid area matches gold (IoU)",
+   "passed": true,
+   "value": 0.9997,
+   "threshold": 0.9,
+   "required": true,
+   "note": "vulnerable_areas.tif / breaks to lower class (ArcGIS)"
+  },
+  {
+   "name": "cell values equal gold (drainage*5 + depth*4)",
+   "passed": true,
+   "value": 0.9919,
+   "threshold": 0.9,
+   "required": true,
+   "note": "vulnerable_areas.tif / breaks to lower class (ArcGIS)"
+  },
+  {
+   "name": "drainage and depth scores correct for every class (>= 0.80)",
+   "passed": true,
+   "value": {
+    "drainage1": 0.963,
+    "drainage2": 0.992,
+    "drainage3": 1.0,
+    "drainage4": 0.995,
+    "drainage5": 0.998,
+    "depth1": 0.995,
+    "depth2": 0.994,
+    "depth3": 0.986,
+    "depth4": 0.969,
+    "depth5": 0.961
+   },
+   "threshold": 0.8,
+   "required": true,
+   "note": "value decomposed into drainage a / depth b (5a+4b is unique)"
+  },
+  {
+   "name": "output CRS is Lambert Conformal Conic",
+   "passed": true,
+   "value": "Lambert Conic Conformal (2SP)",
+   "threshold": null,
+   "required": true,
+   "note": "instructed: 'project ... to Lambert Conformal Conic'"
+  },
+  {
+   "name": "output cell size = land-cover cell size (30 m +/-10 %)",
+   "passed": true,
+   "value": [
+    30.0,
+    30.0
+   ],
+   "threshold": "27-33 m",
+   "required": true,
+   "note": "instructed: 'land_cover as the cellSize'"
+  },
+  {
+   "name": "values are valid 5a+4b combinations",
+   "passed": true,
+   "value": [
+    14,
+    17,
+    19,
+    21,
+    23,
+    25,
+    27,
+    28,
+    31,
+    33,
+    35,
+    37
+   ],
+   "threshold": null,
+   "required": false,
+   "note": ""
+  },
+  {
+   "name": "deliverable files carry a CRS (uniform rule)",
+   "passed": true,
+   "value": [
+    "drainage_conditions.tif",
+    "land_cover_lcc.tif",
+    "vulnerable_areas.tif",
+    "water_depth.tif"
+   ],
+   "threshold": "every geographic deliverable file has a CRS",
+   "required": true,
+   "note": "4 geographic deliverable file(s), all with a CRS"
+  }
+ ],
+ "replay": {
+  "success": true,
+  "outputs": [
+   "drainage_conditions.tif",
+   "land_cover_lcc.tif",
+   "mc_soils_lcc.cpg",
+   "mc_soils_lcc.dbf",
+   "mc_soils_lcc.prj",
+   "mc_soils_lcc.shp",
+   "mc_soils_lcc.shx",
+   "vulnerable_areas.png",
+   "vulnerable_areas.tif",
+   "water_depth.tif"
+  ],
+  "events": [],
+  "blocks_ok": 2,
+  "block_outcome": [
+   "ok",
+   "ok"
+  ],
+  "step_timeout_s": 900,
+  "same_outputs_as_original": true,
+  "block_mismatches": []
+ },
+ "replay_faithful": true,
+ "replay_unfaithful_reasons": [],
+ "replay_container_failure": [],
+ "emergency_files": []
+}

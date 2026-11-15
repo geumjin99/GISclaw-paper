@@ -1,0 +1,141 @@
+{
+ "cell_id": "main.H2.SA.qwen38-27b.r3.T48",
+ "task": 48,
+ "status": "ok",
+ "analytically_correct": true,
+ "scorer_error": false,
+ "checks": [
+  {
+   "name": "selection AcceptedLo >= 30 (808 tracts)",
+   "passed": true,
+   "value": "sel_tracts@final",
+   "threshold": 808,
+   "required": true,
+   "note": ""
+  },
+  {
+   "name": "hot spots: Gi* z of AveInteres (Pearson >= 0.85 with a Gi* variant, closer than to Gi* of AveLoanGra)",
+   "passed": true,
+   "value": 0.975,
+   "threshold": 0.85,
+   "required": true,
+   "note": "gg.Zs@final ~ Gi[queen/self1/row]"
+  },
+  {
+   "name": "GWR (22 NN) of AveInteres: a local slope matches a 22-NN reference fit (Pearson >= 0.95)",
+   "passed": true,
+   "value": 1.0,
+   "threshold": 0.95,
+   "required": true,
+   "note": "B_pHHLoanR in g@final ~ bisquare22 AveLoanGra+TOTHH_CY+pHHLoanRat: b[pHHLoanRat]"
+  },
+  {
+   "name": "local R2 reported",
+   "passed": true,
+   "value": 0.982,
+   "threshold": null,
+   "required": false,
+   "note": ""
+  },
+  {
+   "name": "FDR correction (code)",
+   "passed": false,
+   "value": null,
+   "threshold": null,
+   "required": false,
+   "note": ""
+  },
+  {
+   "name": "deliverable files carry a CRS (uniform rule)",
+   "passed": true,
+   "value": [
+    "gwr_results.shp",
+    "interest_hotspots.shp",
+    "selected_tracts.shp"
+   ],
+   "threshold": "every geographic deliverable file has a CRS",
+   "required": true,
+   "note": "3 geographic deliverable file(s), all with a CRS"
+  }
+ ],
+ "replay": {
+  "success": true,
+  "outputs": [
+   "gwr_coefficients_map.png",
+   "gwr_results.cpg",
+   "gwr_results.csv",
+   "gwr_results.dbf",
+   "gwr_results.prj",
+   "gwr_results.shp",
+   "gwr_results.shx",
+   "interest_hotspots.cpg",
+   "interest_hotspots.dbf",
+   "interest_hotspots.prj",
+   "interest_hotspots.shp",
+   "interest_hotspots.shx",
+   "interest_hotspots_map.png",
+   "selected_tracts.cpg",
+   "selected_tracts.dbf",
+   "selected_tracts.prj",
+   "selected_tracts.shp",
+   "selected_tracts.shx"
+  ],
+  "events": [],
+  "blocks_ok": 24,
+  "block_outcome": [
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok"
+  ],
+  "step_timeout_s": 900,
+  "same_outputs_as_original": false,
+  "block_mismatches": []
+ },
+ "replay_faithful": true,
+ "replay_unfaithful_reasons": [],
+ "replay_container_failure": [],
+ "correct_without_emergency": true,
+ "emergency_files": [
+  "emergency_output.csv"
+ ]
+}

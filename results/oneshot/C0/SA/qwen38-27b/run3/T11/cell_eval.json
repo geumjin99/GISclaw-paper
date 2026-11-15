@@ -1,0 +1,78 @@
+{
+ "cell_id": "oneshot.C0.SA.qwen38-27b.r3.T11",
+ "task": 11,
+ "status": "ok",
+ "analytically_correct": false,
+ "scorer_error": false,
+ "checks": [
+  {
+   "name": "required output present",
+   "passed": false,
+   "value": [],
+   "threshold": [
+    "CoralandSponge.png"
+   ],
+   "required": true,
+   "note": ""
+  },
+  {
+   "name": "figure not blank",
+   "passed": false,
+   "value": null,
+   "threshold": null,
+   "required": true,
+   "note": "no figure"
+  },
+  {
+   "name": "points updated with correct slope and aspect",
+   "passed": false,
+   "value": {
+    "slope_spearman": 0.0,
+    "aspect_within_25deg": 0.0
+   },
+   "threshold": "spearman >= 0.9, >= 80 % within 25 deg",
+   "required": true,
+   "note": "no point table"
+  },
+  {
+   "name": "per-category mean slope and aspect match gold",
+   "passed": false,
+   "value": {
+    "slope_share_ok": 0.0,
+    "aspect_share_ok": 0.0
+   },
+   "threshold": ">= 80 % of categories (n >= 20) within tolerance",
+   "required": true,
+   "note": "no per-category table"
+  },
+  {
+   "name": "figure shows per-category mean slope and mean aspect",
+   "passed": false,
+   "value": null,
+   "threshold": null,
+   "required": true,
+   "note": "no drawn bars / points / lines captured for CoralandSponge.png"
+  },
+  {
+   "name": "aspect averaged circularly",
+   "passed": false,
+   "value": null,
+   "threshold": null,
+   "required": false,
+   "note": ""
+  }
+ ],
+ "replay": {
+  "success": true,
+  "outputs": [],
+  "events": [],
+  "blocks_ok": 1,
+  "block_outcome": [
+   "ok"
+  ],
+  "step_timeout_s": 3600,
+  "same_outputs_as_original": true
+ },
+ "replay_faithful": null,
+ "emergency_files": []
+}

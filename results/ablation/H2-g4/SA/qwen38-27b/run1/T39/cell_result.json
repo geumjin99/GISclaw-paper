@@ -1,0 +1,113 @@
+{
+ "cell_id": "ablation.H2-g4.SA.qwen38-27b.r1.T39",
+ "experiment": "ablation",
+ "tier": "H2-g4",
+ "arch": "SA",
+ "model": "qwen38-27b",
+ "run": 1,
+ "task": 39,
+ "elapsed_s": 993.4,
+ "protocol": "native",
+ "tier_config": {
+  "tools": [
+   "list_files",
+   "load_vector",
+   "load_raster",
+   "inspect",
+   "execute",
+   "lookup_api",
+   "finish"
+  ],
+  "generic": true,
+  "g1": true,
+  "g2": true,
+  "g3": true,
+  "g4": false,
+  "g5": true,
+  "g6": true,
+  "g7": true,
+  "no_dd": false,
+  "no_dk": false
+ },
+ "outputs": [
+  "GA_GWR.png",
+  "GA_GWR_bandwidth_sweep.csv",
+  "GA_GWR_k115_local_coefficients.csv",
+  "GA_counties_merged.gpkg"
+ ],
+ "required_outputs": [
+  "GA_GWR.png"
+ ],
+ "required_present": true,
+ "emergency_files": [],
+ "rounds": 42,
+ "self_corrections": 10,
+ "agent_stats": {
+  "rounds": 42,
+  "format_errors": 0,
+  "format_error_kinds": {},
+  "self_corrections": 10,
+  "exec_blocks": 37,
+  "exec_failed": 17,
+  "finish_rejections": 0,
+  "dedup_blocked": 0,
+  "triggers": {
+   "g1:card": 1,
+   "g6:lookup": 3,
+   "g6:suggest": 6
+  },
+  "checks_run": {
+   "g2": 37,
+   "g3": 38,
+   "g7": 37,
+   "g6": 17,
+   "g6_lookup": 3
+  },
+  "end_reason": "finish",
+  "empty_retries": 0,
+  "history_truncations": 0,
+  "finished": true,
+  "agent_time_s": 17.7
+ },
+ "llm_stats": {
+  "calls": 42,
+  "retries": 0,
+  "errors": 0,
+  "context_overflow": 0,
+  "empty": 0,
+  "prompt_tokens": 842880,
+  "completion_tokens": 33571,
+  "reasoning_tokens": 16417,
+  "cached_tokens": 0
+ },
+ "llm_time_s": 974.3,
+ "agent_time_s": 17.7,
+ "hit_deadline": false,
+ "sandbox_events": [],
+ "inputs_intact": true,
+ "container_memory": "12g",
+ "deliverable_produced": true,
+ "config": {
+  "image": "gisclaw-exec:1.0",
+  "step_timeout_s": 300,
+  "task_wall_s": 1200,
+  "max_rounds": 50,
+  "blocked_packages": {
+   "arcpy": "Use geopandas + rasterio + shapely instead."
+  },
+  "agent": {
+   "history_tokens": 60000,
+   "max_format_errors": 15
+  }
+ },
+ "model_config": {
+  "provider": "vllm",
+  "model_name": "qwen3.8-27b-fp8",
+  "request": {
+   "set": {
+    "max_tokens": 32768,
+    "temperature": 1.0
+   }
+  }
+ }
+}

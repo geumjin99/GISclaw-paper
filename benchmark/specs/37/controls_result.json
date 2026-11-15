@@ -1,0 +1,198 @@
+[
+ {
+  "control": "correct_authors_literal_lookup",
+  "expected_correct": true,
+  "judged_correct": true,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [],
+  "scorer_error": false
+ },
+ {
+  "control": "correct_class_by_class_map",
+  "expected_correct": true,
+  "judged_correct": true,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [],
+  "scorer_error": false
+ },
+ {
+  "control": "correct_exact_case",
+  "expected_correct": true,
+  "judged_correct": true,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [],
+  "scorer_error": false
+ },
+ {
+  "control": "correct_fillna0_then_minmax",
+  "expected_correct": true,
+  "judged_correct": true,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [],
+  "scorer_error": false
+ },
+ {
+  "control": "correct_fulltext_drop_coarse_places",
+  "expected_correct": true,
+  "judged_correct": true,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [],
+  "scorer_error": false
+ },
+ {
+  "control": "correct_grey_nodata_same_collection",
+  "expected_correct": true,
+  "judged_correct": true,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [],
+  "scorer_error": false
+ },
+ {
+  "control": "correct_missing_grey_naturalbreaks",
+  "expected_correct": true,
+  "judged_correct": true,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [],
+  "scorer_error": false
+ },
+ {
+  "control": "wrong_abs_scores",
+  "expected_correct": false,
+  "judged_correct": false,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [
+   "per-county heat exposure matches gold (coverage>=60 %, Spearman>=0.80)",
+   "county value is the mean (not the sum) of tweet values",
+   "map shows the county heat exposure (drawn colours vs gold, |rho| >= 0.70)"
+  ],
+  "scorer_error": false
+ },
+ {
+  "control": "wrong_caseinsensitive_keeps_of",
+  "expected_correct": false,
+  "judged_correct": false,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [
+   "per-county heat exposure matches gold (coverage>=60 %, Spearman>=0.80)",
+   "county value is the mean (not the sum) of tweet values",
+   "only weather-related tweets used (counties with value <= 1.5x gold)",
+   "map shows the county heat exposure (drawn colours vs gold, |rho| >= 0.70)"
+  ],
+  "scorer_error": false
+ },
+ {
+  "control": "wrong_class_by_class_map_post_counts",
+  "expected_correct": false,
+  "judged_correct": false,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [
+   "map shows the county heat exposure (drawn colours vs gold, |rho| >= 0.70)"
+  ],
+  "scorer_error": false
+ },
+ {
+  "control": "wrong_lowercase_vocabulary_keeps_of",
+  "expected_correct": false,
+  "judged_correct": false,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [
+   "per-county heat exposure matches gold (coverage>=60 %, Spearman>=0.80)",
+   "county value is the mean (not the sum) of tweet values",
+   "only weather-related tweets used (counties with value <= 1.5x gold)",
+   "map shows the county heat exposure (drawn colours vs gold, |rho| >= 0.70)"
+  ],
+  "scorer_error": false
+ },
+ {
+  "control": "wrong_map_shows_post_counts",
+  "expected_correct": false,
+  "judged_correct": false,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [
+   "map shows the county heat exposure (drawn colours vs gold, |rho| >= 0.70)"
+  ],
+  "scorer_error": false
+ },
+ {
+  "control": "wrong_method_quantiles_map",
+  "expected_correct": false,
+  "judged_correct": false,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [
+   "natural breaks classification used"
+  ],
+  "scorer_error": false
+ },
+ {
+  "control": "wrong_no_weather_filter",
+  "expected_correct": false,
+  "judged_correct": false,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [
+   "min-max normalised to [0, 1]"
+  ],
+  "scorer_error": false
+ },
+ {
+  "control": "wrong_not_normalized",
+  "expected_correct": false,
+  "judged_correct": false,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [
+   "min-max normalised to [0, 1]"
+  ],
+  "scorer_error": false
+ },
+ {
+  "control": "wrong_positive_terms_only",
+  "expected_correct": false,
+  "judged_correct": false,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [
+   "per-county heat exposure matches gold (coverage>=60 %, Spearman>=0.80)",
+   "county value is the mean (not the sum) of tweet values",
+   "map shows the county heat exposure (drawn colours vs gold, |rho| >= 0.70)"
+  ],
+  "scorer_error": false
+ },
+ {
+  "control": "wrong_post_count_as_exposure",
+  "expected_correct": false,
+  "judged_correct": false,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [
+   "per-county heat exposure matches gold (coverage>=60 %, Spearman>=0.80)",
+   "county value is the mean (not the sum) of tweet values",
+   "map shows the county heat exposure (drawn colours vs gold, |rho| >= 0.70)"
+  ],
+  "scorer_error": false
+ },
+ {
+  "control": "wrong_sum_not_mean",
+  "expected_correct": false,
+  "judged_correct": false,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [
+   "county value is the mean (not the sum) of tweet values"
+  ],
+  "scorer_error": false
+ }
+]

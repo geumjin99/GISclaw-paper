@@ -1,0 +1,95 @@
+{
+ "cell_id": "oneshot.C0.SA.qwen38-27b.r3.T42",
+ "task": 42,
+ "status": "ok",
+ "analytically_correct": false,
+ "scorer_error": false,
+ "checks": [
+  {
+   "name": "required output present",
+   "passed": false,
+   "value": [],
+   "threshold": [
+    "moran_local.png",
+    "Moran_Local.png",
+    "moran_local.PNG"
+   ],
+   "required": true,
+   "note": ""
+  },
+  {
+   "name": "map not blank",
+   "passed": false,
+   "value": null,
+   "threshold": null,
+   "required": true,
+   "note": "no map"
+  },
+  {
+   "name": "analysed variable = group median price",
+   "passed": false,
+   "value": -1.0,
+   "threshold": ">=0.90 of neighbourhoods within 3 % of gold",
+   "required": true,
+   "note": "no per-neighbourhood table"
+  },
+  {
+   "name": "missing values handled (no NaN, plausible fill)",
+   "passed": false,
+   "value": null,
+   "threshold": null,
+   "required": true,
+   "note": "no median column"
+  },
+  {
+   "name": "LISA hot/cold spots match gold (IoU >= 0.7), labels not inverted",
+   "passed": false,
+   "value": [
+    -1.0,
+    -1.0
+   ],
+   "threshold": ">=0.7 each, no inverted labels",
+   "required": true,
+   "note": "hot: None; cold: None; gold n_hot=36 n_cold=23"
+  },
+  {
+   "name": "Local Moran's I computed (local I values captured or Moran_Local called)",
+   "passed": false,
+   "value": null,
+   "threshold": null,
+   "required": true,
+   "note": "no local I values and no Moran_Local call (e.g. Gi* used instead)"
+  },
+  {
+   "name": "map colours: hot spots drawn warmer than cold spots (presentation)",
+   "passed": false,
+   "value": null,
+   "threshold": null,
+   "required": false,
+   "note": "UNVERIFIABLE: no per-patch colours of the neighbourhoods captured in the map",
+   "kind": "figure",
+   "unverifiable": true
+  },
+  {
+   "name": "method: Queen contiguity weights (prescribed)",
+   "passed": false,
+   "value": null,
+   "threshold": null,
+   "required": true,
+   "note": "no Queen weights object, no Queen in code (Rook / KNN / distance band used?)"
+  }
+ ],
+ "replay": {
+  "success": true,
+  "outputs": [],
+  "events": [],
+  "blocks_ok": 1,
+  "block_outcome": [
+   "ok"
+  ],
+  "step_timeout_s": 3600,
+  "same_outputs_as_original": true
+ },
+ "replay_faithful": null,
+ "emergency_files": []
+}

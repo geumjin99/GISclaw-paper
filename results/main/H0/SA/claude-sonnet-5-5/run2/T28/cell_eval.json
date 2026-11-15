@@ -1,0 +1,93 @@
+{
+ "cell_id": "main.H0.SA.claude-sonnet-5-5.r2.T28",
+ "task": 28,
+ "status": "ok",
+ "analytically_correct": true,
+ "scorer_error": false,
+ "checks": [
+  {
+   "name": "OD records aggregated to pair sums (match gold)",
+   "passed": true,
+   "value": null,
+   "threshold": "2139 pairs (or 2095 without intra-subregion), >= 99 % equal",
+   "required": true,
+   "note": "FlowVolume in merged_dataset.csv@file"
+  },
+  {
+   "name": "origin and destination attributes merged",
+   "passed": true,
+   "value": {
+    "origin_attrs": 6,
+    "destination_attrs": 6
+   },
+   "threshold": ">=3 each",
+   "required": true,
+   "note": "df@final"
+  },
+  {
+   "name": "test-set MSE reported and plausible (0.8-1.5 x var of aggregated flows)",
+   "passed": true,
+   "value": [
+    "mse",
+    5464.331255691863
+   ],
+   "threshold": "[4606, 8636]",
+   "required": true,
+   "note": "3 MSE-named values found"
+  },
+  {
+   "name": "model features include origin AND destination attributes",
+   "passed": true,
+   "value": 6,
+   "threshold": ">=3 attributes present for both sides in a train/test matrix",
+   "required": true,
+   "note": "Xtr@final"
+  },
+  {
+   "name": "method: GridSearchCV-tuned RandomForestRegressor",
+   "passed": true,
+   "value": {
+    "RandomForestRegressor": true,
+    "GridSearchCV": true
+   },
+   "threshold": null,
+   "required": true,
+   "note": "instructed method; only the code can show it on this signal-free data"
+  },
+  {
+   "name": "results written to pred_results",
+   "passed": true,
+   "value": [
+    "feature_importance.csv",
+    "merged_dataset.csv",
+    "results.txt",
+    "test_predictions.csv"
+   ],
+   "threshold": null,
+   "required": false,
+   "note": ""
+  }
+ ],
+ "replay": {
+  "success": true,
+  "outputs": [
+   "feature_importance.csv",
+   "merged_dataset.csv",
+   "results.txt",
+   "test_predictions.csv"
+  ],
+  "events": [],
+  "blocks_ok": 2,
+  "block_outcome": [
+   "ok",
+   "ok"
+  ],
+  "step_timeout_s": 900,
+  "same_outputs_as_original": true,
+  "block_mismatches": []
+ },
+ "replay_faithful": true,
+ "replay_unfaithful_reasons": [],
+ "replay_container_failure": [],
+ "emergency_files": []
+}

@@ -1,0 +1,148 @@
+{
+ "cell_id": "ablation.H2-g6.SA.gptoss-120b.r3.T30",
+ "experiment": "ablation",
+ "tier": "H2-g6",
+ "arch": "SA",
+ "model": "gptoss-120b",
+ "run": 3,
+ "task": 30,
+ "elapsed_s": 601.3,
+ "protocol": "native",
+ "tier_config": {
+  "tools": [
+   "list_files",
+   "load_vector",
+   "load_raster",
+   "inspect",
+   "execute",
+   "finish"
+  ],
+  "generic": true,
+  "g1": true,
+  "g2": true,
+  "g3": true,
+  "g4": true,
+  "g5": true,
+  "g6": false,
+  "g7": true,
+  "no_dd": false,
+  "no_dk": false
+ },
+ "outputs": [
+  "coverage_map.png",
+  "existing_infra.cpg",
+  "existing_infra.dbf",
+  "existing_infra.geojson",
+  "existing_infra.prj",
+  "existing_infra.shp",
+  "existing_infra.shx",
+  "existing_infra_fixed.cpg",
+  "existing_infra_fixed.dbf",
+  "existing_infra_fixed.prj",
+  "existing_infra_fixed.shp",
+  "existing_infra_fixed.shx",
+  "hotspots.cpg",
+  "hotspots.dbf",
+  "hotspots.geojson",
+  "hotspots.prj",
+  "hotspots.shp",
+  "hotspots.shx",
+  "hotspots_fixed.cpg",
+  "hotspots_fixed.dbf",
+  "hotspots_fixed.prj",
+  "hotspots_fixed.shp",
+  "hotspots_fixed.shx",
+  "proposed_routes.cpg",
+  "proposed_routes.dbf",
+  "proposed_routes.geojson",
+  "proposed_routes.prj",
+  "proposed_routes.shp",
+  "proposed_routes.shx",
+  "proposed_routes_fixed.cpg",
+  "proposed_routes_fixed.dbf",
+  "proposed_routes_fixed.prj",
+  "proposed_routes_fixed.shp",
+  "proposed_routes_fixed.shx",
+  "suitability_score.csv"
+ ],
+ "required_outputs": [],
+ "required_present": null,
+ "emergency_files": [],
+ "rounds": 32,
+ "self_corrections": 3,
+ "agent_stats": {
+  "rounds": 32,
+  "format_errors": 3,
+  "format_error_kinds": {
+   "no_action": 3
+  },
+  "self_corrections": 3,
+  "exec_blocks": 18,
+  "exec_failed": 9,
+  "finish_rejections": 2,
+  "dedup_blocked": 1,
+  "triggers": {
+   "g1:card": 1,
+   "g3:validate": 3,
+   "g4:hint": 1,
+   "h1:repeat_readonly": 1
+  },
+  "checks_run": {
+   "g2": 18,
+   "g3": 21,
+   "g7": 18,
+   "g4": 9
+  },
+  "end_reason": "finish",
+  "empty_retries": 0,
+  "history_truncations": 0,
+  "finished": true,
+  "agent_time_s": 311.0
+ },
+ "llm_stats": {
+  "calls": 35,
+  "retries": 0,
+  "errors": 0,
+  "context_overflow": 0,
+  "empty": 0,
+  "prompt_tokens": 752933,
+  "completion_tokens": 24141,
+  "reasoning_tokens": 0,
+  "cached_tokens": 0
+ },
+ "llm_time_s": 289.2,
+ "agent_time_s": 311.0,
+ "hit_deadline": false,
+ "sandbox_events": [
+  {
+   "event": "timeout_interrupted"
+  }
+ ],
+ "inputs_intact": true,
+ "container_memory": "12g",
+ "deliverable_produced": true,
+ "config": {
+  "image": "gisclaw-exec:1.0",
+  "step_timeout_s": 300,
+  "task_wall_s": 1200,
+  "max_rounds": 50,
+  "blocked_packages": {
+   "arcpy": "Use geopandas + rasterio + shapely instead."
+  },
+  "agent": {
+   "history_tokens": 60000,
+   "max_format_errors": 15
+  }
+ },
+ "model_config": {
+  "provider": "vllm",
+  "model_name": "gpt-oss-120b",
+  "request": {
+   "set": {
+    "max_tokens": 32768,
+    "temperature": 1.0,
+    "reasoning_effort": "medium"
+   }
+  }
+ }
+}

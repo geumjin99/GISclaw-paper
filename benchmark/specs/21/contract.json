@@ -1,0 +1,35 @@
+{
+ "task": 21,
+ "source": "instruction: save pred_results/landCover_reclassified.tif and pred_results/protected_status_reclassified.tif; checks.py _find(stem, .tif/.tiff, case-insensitive)",
+ "deliverables": [
+  {
+   "id": "landcover_reclassified",
+   "kind": "raster",
+   "patterns": [
+    "landCover_reclassified.tif*"
+   ],
+   "required": true,
+   "crs_required": true,
+   "checked_by": [
+    "landCover_reclassified: file present",
+    "landCover_reclassified: georeferencing preserved",
+    "landCover_reclassified: tabulated values (>=99.5 % of mapped cells, and of every class)"
+   ]
+  },
+  {
+   "id": "protected_status_reclassified",
+   "kind": "raster",
+   "patterns": [
+    "protected_status_reclassified.tif*"
+   ],
+   "required": true,
+   "crs_required": true,
+   "checked_by": [
+    "protected_status_reclassified: file present",
+    "protected_status_reclassified: georeferencing preserved",
+    "protected_status_reclassified: tabulated values (>=99.5 % of mapped cells, and of every class)"
+   ]
+  }
+ ],
+ "not_deliverables": []
+}

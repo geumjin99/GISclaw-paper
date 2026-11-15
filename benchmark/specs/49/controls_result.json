@@ -1,0 +1,169 @@
+[
+ {
+  "control": "correct_equalinterval_k5",
+  "expected_correct": true,
+  "judged_correct": true,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [],
+  "scorer_error": false
+ },
+ {
+  "control": "correct_literal_counts_and_change",
+  "expected_correct": true,
+  "judged_correct": true,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [],
+  "scorer_error": false
+ },
+ {
+  "control": "correct_manual_colors_reversed",
+  "expected_correct": true,
+  "judged_correct": true,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [],
+  "scorer_error": false
+ },
+ {
+  "control": "correct_multi_axes_insets",
+  "expected_correct": true,
+  "judged_correct": true,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [],
+  "scorer_error": false
+ },
+ {
+  "control": "correct_reversed_cmap_RdYlGn_r",
+  "expected_correct": true,
+  "judged_correct": true,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [],
+  "scorer_error": false
+ },
+ {
+  "control": "correct_xlsx_join_counts_only",
+  "expected_correct": true,
+  "judged_correct": true,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [],
+  "scorer_error": false
+ },
+ {
+  "control": "correct_xlsx_zip_parse_percent",
+  "expected_correct": true,
+  "judged_correct": true,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [],
+  "scorer_error": false
+ },
+ {
+  "control": "wrong_copy_existing_rate",
+  "expected_correct": false,
+  "judged_correct": false,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [
+   "join: homeless_data.xlsx joined to the states layer on the abbreviation (values aligned per state)",
+   "map shows the joined homelessness data (drawn colour values rank-match it, rho >= 0.9)"
+  ],
+  "scorer_error": false
+ },
+ {
+  "control": "wrong_deliverable_no_crs",
+  "expected_correct": false,
+  "judged_correct": false,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [
+   "deliverable files carry a CRS (uniform rule)"
+  ],
+  "scorer_error": false
+ },
+ {
+  "control": "wrong_method_prejoined_columns_no_join",
+  "expected_correct": false,
+  "judged_correct": false,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [
+   "join: homeless_data.xlsx joined to the states layer on the abbreviation (values aligned per state)"
+  ],
+  "scorer_error": false
+ },
+ {
+  "control": "wrong_multi_axes_population_mapped",
+  "expected_correct": false,
+  "judged_correct": false,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [
+   "map shows the joined homelessness data (drawn colour values rank-match it, rho >= 0.9)"
+  ],
+  "scorer_error": false
+ },
+ {
+  "control": "wrong_positional_join",
+  "expected_correct": false,
+  "judged_correct": false,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [
+   "join: homeless_data.xlsx joined to the states layer on the abbreviation (values aligned per state)",
+   "map shows the joined homelessness data (drawn colour values rank-match it, rho >= 0.9)"
+  ],
+  "scorer_error": false
+ },
+ {
+  "control": "wrong_rate_saved_but_counts_mapped",
+  "expected_correct": false,
+  "judged_correct": false,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [
+   "join: homeless_data.xlsx joined to the states layer on the abbreviation (values aligned per state)",
+   "map shows the joined homelessness data (drawn colour values rank-match it, rho >= 0.9)"
+  ],
+  "scorer_error": false
+ },
+ {
+  "control": "wrong_raw_counts",
+  "expected_correct": false,
+  "judged_correct": false,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [
+   "join: homeless_data.xlsx joined to the states layer on the abbreviation (values aligned per state)",
+   "map shows the joined homelessness data (drawn colour values rank-match it, rho >= 0.9)"
+  ],
+  "scorer_error": false
+ },
+ {
+  "control": "wrong_xlsx_join_population_mapped",
+  "expected_correct": false,
+  "judged_correct": false,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [
+   "map shows the joined homelessness data (drawn colour values rank-match it, rho >= 0.9)"
+  ],
+  "scorer_error": false
+ },
+ {
+  "control": "wrong_xlsx_positional_join",
+  "expected_correct": false,
+  "judged_correct": false,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [
+   "join: homeless_data.xlsx joined to the states layer on the abbreviation (values aligned per state)",
+   "map shows the joined homelessness data (drawn colour values rank-match it, rho >= 0.9)"
+  ],
+  "scorer_error": false
+ }
+]

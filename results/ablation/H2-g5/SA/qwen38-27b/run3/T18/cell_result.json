@@ -1,0 +1,111 @@
+{
+ "cell_id": "ablation.H2-g5.SA.qwen38-27b.r3.T18",
+ "experiment": "ablation",
+ "tier": "H2-g5",
+ "arch": "SA",
+ "model": "qwen38-27b",
+ "run": 3,
+ "task": 18,
+ "elapsed_s": 156.0,
+ "protocol": "native",
+ "tier_config": {
+  "tools": [
+   "list_files",
+   "load_vector",
+   "load_raster",
+   "inspect",
+   "execute",
+   "lookup_api",
+   "finish"
+  ],
+  "generic": true,
+  "g1": true,
+  "g2": true,
+  "g3": true,
+  "g4": true,
+  "g5": false,
+  "g6": true,
+  "g7": true,
+  "no_dd": false,
+  "no_dk": false
+ },
+ "outputs": [
+  "trees_count_vis.png"
+ ],
+ "required_outputs": [
+  "trees_count_vis.png"
+ ],
+ "required_present": true,
+ "emergency_files": [],
+ "rounds": 16,
+ "self_corrections": 2,
+ "agent_stats": {
+  "rounds": 16,
+  "format_errors": 0,
+  "format_error_kinds": {},
+  "self_corrections": 2,
+  "exec_blocks": 12,
+  "exec_failed": 5,
+  "finish_rejections": 0,
+  "dedup_blocked": 0,
+  "triggers": {
+   "g1:card": 1,
+   "g6:lookup": 1,
+   "g6:suggest": 3
+  },
+  "checks_run": {
+   "g2": 12,
+   "g3": 13,
+   "g7": 12,
+   "g6_lookup": 1,
+   "g6": 5,
+   "g4": 5
+  },
+  "end_reason": "finish",
+  "empty_retries": 0,
+  "history_truncations": 0,
+  "finished": true,
+  "agent_time_s": 8.8
+ },
+ "llm_stats": {
+  "calls": 16,
+  "retries": 0,
+  "errors": 0,
+  "context_overflow": 0,
+  "empty": 0,
+  "prompt_tokens": 101902,
+  "completion_tokens": 6278,
+  "reasoning_tokens": 3487,
+  "cached_tokens": 0
+ },
+ "llm_time_s": 146.2,
+ "agent_time_s": 8.8,
+ "hit_deadline": false,
+ "sandbox_events": [],
+ "inputs_intact": true,
+ "container_memory": "12g",
+ "deliverable_produced": true,
+ "config": {
+  "image": "gisclaw-exec:1.0",
+  "step_timeout_s": 300,
+  "task_wall_s": 1200,
+  "max_rounds": 50,
+  "blocked_packages": {
+   "arcpy": "Use geopandas + rasterio + shapely instead."
+  },
+  "agent": {
+   "history_tokens": 60000,
+   "max_format_errors": 15
+  }
+ },
+ "model_config": {
+  "provider": "vllm",
+  "model_name": "qwen3.8-27b-fp8",
+  "request": {
+   "set": {
+    "max_tokens": 32768,
+    "temperature": 1.0
+   }
+  }
+ }
+}

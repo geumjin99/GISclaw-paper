@@ -1,0 +1,23 @@
+{
+ "task": 28,
+ "source": "instruction asks for an MSE evaluation, no file named; checks.py _mse_values reads MSE entries from any *.json/*.txt/*.csv in pred_results, and csv/txt files also enter the pair-table/feature checks via ctx.objects, as alternatives to captured data/stdout; 'results written to pred_results' (reported) accepts any file",
+ "deliverables": [
+  {
+   "id": "metrics_text",
+   "kind": "text",
+   "patterns": ["*.json", "*.txt"],
+   "required": false,
+   "crs_required": false,
+   "checked_by": ["test-set MSE reported and plausible (0.8-1.5 x var of aggregated flows)", "results written to pred_results"]
+  },
+  {
+   "id": "metrics_table",
+   "kind": "table",
+   "patterns": ["*.csv"],
+   "required": false,
+   "crs_required": false,
+   "checked_by": ["OD records aggregated to pair sums (match gold)", "origin and destination attributes merged", "model features include origin AND destination attributes", "test-set MSE reported and plausible (0.8-1.5 x var of aggregated flows)", "results written to pred_results"]
+  }
+ ],
+ "not_deliverables": []
+}

@@ -1,0 +1,130 @@
+{
+ "cell_id": "main.H1.SA.qwen38-27b.r1.T09",
+ "experiment": "main",
+ "tier": "H1",
+ "arch": "SA",
+ "model": "qwen38-27b",
+ "run": 1,
+ "task": 9,
+ "elapsed_s": 2021.0,
+ "protocol": "native",
+ "tier_config": {
+  "tools": [
+   "list_files",
+   "load_vector",
+   "load_raster",
+   "inspect",
+   "execute",
+   "finish"
+  ],
+  "generic": true,
+  "g1": false,
+  "g2": false,
+  "g3": false,
+  "g4": false,
+  "g5": false,
+  "g6": false,
+  "g7": false,
+  "no_dd": false,
+  "no_dk": false
+ },
+ "outputs": [
+  "emergency_output.geojson"
+ ],
+ "required_outputs": [
+  "deforestation_rate.csv"
+ ],
+ "required_present": false,
+ "emergency_files": [
+  "emergency_output.geojson"
+ ],
+ "rounds": 23,
+ "self_corrections": 6,
+ "agent_stats": {
+  "rounds": 23,
+  "format_errors": 0,
+  "format_error_kinds": {},
+  "self_corrections": 6,
+  "exec_blocks": 22,
+  "exec_failed": 7,
+  "finish_rejections": 0,
+  "dedup_blocked": 0,
+  "triggers": {
+   "h1:time_left": 1,
+   "h1:emergency_save": 1
+  },
+  "checks_run": {},
+  "end_reason": "budget",
+  "empty_retries": 0,
+  "history_truncations": 0,
+  "finished": false,
+  "agent_time_s": 1207.4
+ },
+ "llm_stats": {
+  "calls": 23,
+  "retries": 0,
+  "errors": 0,
+  "context_overflow": 0,
+  "empty": 0,
+  "prompt_tokens": 209044,
+  "completion_tokens": 36106,
+  "reasoning_tokens": 29415,
+  "cached_tokens": 0
+ },
+ "llm_time_s": 812.4,
+ "agent_time_s": 1207.4,
+ "hit_deadline": true,
+ "sandbox_events": [
+  {
+   "event": "container_oom",
+   "exit_code": 137,
+   "oom_killed": true
+  },
+  {
+   "event": "restarted",
+   "replayed": 4
+  },
+  {
+   "event": "container_oom",
+   "exit_code": 137,
+   "oom_killed": true
+  },
+  {
+   "event": "restarted",
+   "replayed": 8
+  },
+  {
+   "event": "timeout"
+  },
+  {
+   "event": "restarted",
+   "replayed": 17
+  }
+ ],
+ "inputs_intact": true,
+ "container_memory": "12g",
+ "deliverable_produced": false,
+ "config": {
+  "image": "gisclaw-exec:1.0",
+  "step_timeout_s": 300,
+  "task_wall_s": 1200,
+  "max_rounds": 50,
+  "blocked_packages": {
+   "arcpy": "Use geopandas + rasterio + shapely instead."
+  },
+  "agent": {
+   "history_tokens": 60000,
+   "max_format_errors": 15
+  }
+ },
+ "model_config": {
+  "provider": "vllm",
+  "model_name": "qwen3.8-27b-fp8",
+  "request": {
+   "set": {
+    "max_tokens": 32768,
+    "temperature": 1.0
+   }
+  }
+ }
+}

@@ -1,0 +1,30 @@
+{
+ "task": 38,
+ "title": "Driving travel time from the Natural History Building to the UIUC campus network",
+ "output_type": "image (network nodes coloured by travel time)",
+ "required_outputs": [
+  "travel_time.png"
+ ],
+ "method": "Load the frozen OSM drive network (osmnx.load_graphml, 240 nodes / 709 edges, 1 km around 1301 W Green St); osmnx add_edge_speeds + add_edge_travel_times; origin = nearest node to the Natural History Building (40.10944, -88.22625); Dijkstra on 'travel_time' (s) on the directed graph; store as node attribute; plot nodes coloured by time.",
+ "key_parameters": {
+  "impedance": "travel_time (s) from osmnx imputed speeds (maxspeed 25/30 mph where tagged)",
+  "origin_node": 5902412844,
+  "reachable_nodes": "239 of 240 (one node unreachable on the directed graph)",
+  "mean_time_s": 90.9
+ },
+ "benchmark_defects": [
+  "The task requires retrieving data from OSM, impossible offline; a frozen GraphML snapshot of the network is supplied instead.",
+  "The NHB coordinates are not in the task text; without a geocoder agents must use the snapshot centre (~130 m away) or prior knowledge - checks allow 400 m.",
+  "With the snapshot, the authors' get_node_colors_by_attr + plot_graph pattern crashes because one node is unreachable (NaN attribute); agents must handle unreachable nodes."
+ ],
+ "checks": [
+  "required: travel_time.png present",
+  "required: figure not blank",
+  "required: a per-node vector (graph attributes, dict/series, node table, or scatter values at node positions) with Pearson >= 0.90 vs the reference field: the gold pipeline run from the solution's own origin node when that origin is within 400 m of the NHB, else the gold-origin field",
+  "required: median ratio to the reference field 0.67-1.5 in seconds or minutes",
+  "required: minimum-value (origin) node within 400 m of the NHB",
+  "required: network routing: Pearson with osmnx travel-time Dijkstra from the solution's own origin >= 0.97 and > Pearson with straight-line distance + 0.01",
+  "required: speeds derived from the graph: Pearson with length-Dijkstra (directed or undirected) from the own origin < 0.999",
+  "required: a drawn point collection at node positions carries values or colormap colours with |Spearman| >= 0.90 vs the reference field"
+ ]
+}

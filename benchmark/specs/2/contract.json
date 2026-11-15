@@ -1,0 +1,15 @@
+{
+ "task": 2,
+ "source": "instruction: output saved as 'pred_results/transit_access.png'; checks.py file_exists + png_not_blank + drawn factors taken from the figure saved as transit_access.png",
+ "deliverables": [
+  {
+   "id": "map",
+   "kind": "figure",
+   "patterns": ["transit_access.png"],
+   "required": true,
+   "crs_required": false,
+   "checked_by": ["required output present", "map not blank", "three factors drawn (poverty, no-vehicle, density)"]
+  }
+ ],
+ "not_deliverables": []
+}

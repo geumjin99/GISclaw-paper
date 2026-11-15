@@ -1,0 +1,138 @@
+{
+ "cell_id": "main.H2.DA.qwen38-27b.r1.T34",
+ "experiment": "main",
+ "tier": "H2",
+ "arch": "DA",
+ "model": "qwen38-27b",
+ "run": 1,
+ "task": 34,
+ "elapsed_s": 1266.4,
+ "protocol": "native",
+ "tier_config": {
+  "tools": [
+   "list_files",
+   "load_vector",
+   "load_raster",
+   "inspect",
+   "execute",
+   "lookup_api",
+   "finish"
+  ],
+  "generic": true,
+  "g1": true,
+  "g2": true,
+  "g3": true,
+  "g4": true,
+  "g5": true,
+  "g6": true,
+  "g7": true,
+  "no_dd": false,
+  "no_dk": false
+ },
+ "outputs": [
+  "accessibility.png",
+  "rural_access_percent.csv"
+ ],
+ "required_outputs": [
+  "accessibility.png"
+ ],
+ "required_present": true,
+ "emergency_files": [],
+ "rounds": 44,
+ "self_corrections": 5,
+ "agent_stats": {
+  "rounds": 44,
+  "format_errors": 0,
+  "format_error_kinds": {},
+  "self_corrections": 5,
+  "exec_blocks": 34,
+  "exec_failed": 8,
+  "finish_rejections": 1,
+  "dedup_blocked": 0,
+  "triggers": {
+   "g1:card": 1,
+   "g6:suggest": 2,
+   "g3:validate": 2
+  },
+  "checks_run": {
+   "g2": 34,
+   "g3": 36,
+   "g7": 34,
+   "g6": 8,
+   "g4": 8
+  },
+  "end_reason": "finish",
+  "empty_retries": 0,
+  "planner_calls": 1,
+  "verifier_calls": 4,
+  "replans": 0,
+  "verify_unknown": 0,
+  "steps": [
+   {
+    "id": 1,
+    "rounds": 9,
+    "pass": true
+   },
+   {
+    "id": 2,
+    "rounds": 6,
+    "pass": true
+   },
+   {
+    "id": 3,
+    "rounds": 2,
+    "pass": true
+   },
+   {
+    "id": 4,
+    "rounds": 16,
+    "pass": true
+   }
+  ],
+  "plan_fallback": false,
+  "history_truncations": 0,
+  "finished": true,
+  "agent_time_s": 15.8
+ },
+ "llm_stats": {
+  "calls": 49,
+  "retries": 0,
+  "errors": 0,
+  "context_overflow": 0,
+  "empty": 0,
+  "prompt_tokens": 397603,
+  "completion_tokens": 57058,
+  "reasoning_tokens": 42087,
+  "cached_tokens": 0
+ },
+ "llm_time_s": 1249.6,
+ "agent_time_s": 15.8,
+ "hit_deadline": false,
+ "sandbox_events": [],
+ "inputs_intact": true,
+ "container_memory": "12g",
+ "deliverable_produced": true,
+ "config": {
+  "image": "gisclaw-exec:1.0",
+  "step_timeout_s": 300,
+  "task_wall_s": 1200,
+  "max_rounds": 50,
+  "blocked_packages": {
+   "arcpy": "Use geopandas + rasterio + shapely instead."
+  },
+  "agent": {
+   "history_tokens": 60000,
+   "max_format_errors": 15
+  }
+ },
+ "model_config": {
+  "provider": "vllm",
+  "model_name": "qwen3.8-27b-fp8",
+  "request": {
+   "set": {
+    "max_tokens": 32768,
+    "temperature": 1.0
+   }
+  }
+ }
+}

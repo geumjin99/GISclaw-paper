@@ -1,0 +1,96 @@
+{
+ "cell_id": "main.H1.SA.qwen38-27b.r2.T02",
+ "task": 2,
+ "status": "ok",
+ "analytically_correct": false,
+ "scorer_error": false,
+ "checks": [
+  {
+   "name": "required output present",
+   "passed": true,
+   "value": [
+    "transit_access.png"
+   ],
+   "threshold": [
+    "transit_access.png"
+   ],
+   "required": true,
+   "note": ""
+  },
+  {
+   "name": "map not blank",
+   "passed": true,
+   "value": 55.24441069318453,
+   "threshold": ">=3 grey-level std",
+   "required": true,
+   "note": ""
+  },
+  {
+   "name": "three factors drawn (poverty, no-vehicle, density)",
+   "passed": false,
+   "value": {
+    "poverty": null,
+    "no-vehicle": null,
+    "density": null
+   },
+   "threshold": "poverty/no-vehicle rho>=0.9, density rho>=0.8 (or literal rating column); distinct layers",
+   "required": true,
+   "note": "0 drawn polygon layers mapped to block groups (save01 wrote transit_access.png last (savefig record))"
+  },
+  {
+   "name": "bus service area drawn and correctly located",
+   "passed": true,
+   "value": 1.0,
+   "threshold": "IoU >= 0.90",
+   "required": true,
+   "note": "hand-drawn patches: save01 patch group 0 (2 Polygon patches, EPSG:4326) (IoU 1.000)"
+  },
+  {
+   "name": "population density derived (pop/area; rating column is constant)",
+   "passed": false,
+   "value": null,
+   "threshold": 0.8,
+   "required": false,
+   "note": ""
+  },
+  {
+   "name": "geometric overlay of block groups and service area",
+   "passed": false,
+   "value": 0.068,
+   "threshold": 0.9,
+   "required": false,
+   "note": ""
+  }
+ ],
+ "replay": {
+  "success": true,
+  "outputs": [
+   "transit_access.png"
+  ],
+  "events": [],
+  "blocks_ok": 12,
+  "block_outcome": [
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok"
+  ],
+  "step_timeout_s": 900,
+  "same_outputs_as_original": true,
+  "block_mismatches": []
+ },
+ "replay_faithful": true,
+ "replay_unfaithful_reasons": [],
+ "replay_container_failure": [],
+ "emergency_files": []
+}

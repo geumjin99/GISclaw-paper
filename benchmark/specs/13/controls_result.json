@@ -1,0 +1,125 @@
+[
+ {
+  "control": "correct_benchmark_script",
+  "expected_correct": true,
+  "judged_correct": true,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [],
+  "scorer_error": false
+ },
+ {
+  "control": "correct_box_mean_celsius",
+  "expected_correct": true,
+  "judged_correct": true,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [],
+  "scorer_error": false
+ },
+ {
+  "control": "correct_figonly_salinity_on_kelvin_axis",
+  "expected_correct": true,
+  "judged_correct": true,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [],
+  "scorer_error": false
+ },
+ {
+  "control": "correct_line_and_scatter",
+  "expected_correct": true,
+  "judged_correct": true,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [],
+  "scorer_error": false
+ },
+ {
+  "control": "correct_same_axis_celsius",
+  "expected_correct": true,
+  "judged_correct": true,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [],
+  "scorer_error": false
+ },
+ {
+  "control": "correct_single_column_subplots",
+  "expected_correct": true,
+  "judged_correct": true,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [],
+  "scorer_error": false
+ },
+ {
+  "control": "correct_ts_diagram_with_depth_colour",
+  "expected_correct": true,
+  "judged_correct": true,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [],
+  "scorer_error": false
+ },
+ {
+  "control": "wrong_horizontal_section",
+  "expected_correct": false,
+  "judged_correct": false,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [
+   "temperature profile extracted",
+   "salinity profile from the same column/box",
+   "figure shows both profiles against depth, from the same column/box"
+  ],
+  "scorer_error": false
+ },
+ {
+  "control": "wrong_mismatched_locations",
+  "expected_correct": false,
+  "judged_correct": false,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [
+   "salinity profile from the same column/box",
+   "figure shows both profiles against depth, from the same column/box"
+  ],
+  "scorer_error": false
+ },
+ {
+  "control": "wrong_nan_as_zero_region_mean",
+  "expected_correct": false,
+  "judged_correct": false,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [
+   "temperature profile extracted",
+   "salinity profile from the same column/box",
+   "figure shows both profiles against depth, from the same column/box"
+  ],
+  "scorer_error": false
+ },
+ {
+  "control": "wrong_plots_other_salinity",
+  "expected_correct": false,
+  "judged_correct": false,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [
+   "figure shows both profiles against depth, from the same column/box"
+  ],
+  "scorer_error": false
+ },
+ {
+  "control": "wrong_temperature_only",
+  "expected_correct": false,
+  "judged_correct": false,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [
+   "figure shows both profiles against depth, from the same column/box"
+  ],
+  "scorer_error": false
+ }
+]

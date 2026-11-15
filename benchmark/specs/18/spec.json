@@ -1,0 +1,28 @@
+{
+ "task": 18,
+ "title": "Share of San Francisco street trees with NULL species, by quadtree region",
+ "output_type": "image (quadtree choropleth)",
+ "required_outputs": [
+  "trees_count_vis.png"
+ ],
+ "method": "Flag trees whose Species is NULL (652 of 9 878, 6.6 %), partition the trees with a point quadtree (split while > 150 trees, min cell 250 m, UTM 10N), compute the percentage of NULL-species trees per leaf, clip to the city outline and map it (quantile classes).",
+ "key_parameters": {
+  "indicator": "Species.isnull()",
+  "quadtree": "nmax 150 trees per leaf, min cell 250 m",
+  "crs": "EPSG:32610 for the partition",
+  "classes": "5 quantiles"
+ },
+ "benchmark_defects": [
+  "The required file name 'trees_count_vis.png' suggests tree counts, while the task asks for the NULL-species percentage - an invitation to map density instead.",
+  "The published reference script maps Species.notnull() (the share of trees with a species recorded) and calls gplt.quadtree with nmax=1.",
+  "The published reference script calls main() only under an `if __name__ == '__main__'` guard."
+ ],
+ "checks": [
+  "required: trees_count_vis.png present",
+  "required: map not blank",
+  "required: the regional NULL-species share is computed AND drawn: (a) a captured polygon layer column equals the share recomputed from the input Species column (|diff| <= 0.02 on >= 90 % of cells, fraction/%, null or non-null) and that layer/column is the drawn one (drawn values, or face colours inverted to colormap positions, classified schemes allowed); or (b) a hexbin whose drawn values equal the share among the trees of each hexagon (full hex lattice rebuilt); or (c) geoplot.quadtree(hue=<Species nullity column>) with mean aggregation (agg=np.sum fails)",
+  "optional: per-tree Species nullity indicator column (needed for route c)",
+  "required: the NULL share itself (isnull), not its complement, is mapped",
+  "required (the text asks for 'a quadtree format map'): regions are quadtree cells - a geoplot.quadtree call (aliases followed, comments ignored), or the drawn polygon layer carrying the verified share has rectangular cells in >= 2 sizes, each the largest cell's width and height / 2^k (>= 90 % of rectangular cells, clipped edge cells ignored); square grids and hexbins fail"
+ ]
+}

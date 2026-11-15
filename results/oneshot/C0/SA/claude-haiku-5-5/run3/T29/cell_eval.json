@@ -1,0 +1,123 @@
+{
+ "cell_id": "oneshot.C0.SA.claude-haiku-5-5.r3.T29",
+ "task": 29,
+ "status": "ok",
+ "analytically_correct": true,
+ "scorer_error": false,
+ "checks": [
+  {
+   "name": "map/figure written (non-blank PNG)",
+   "passed": true,
+   "value": [
+    "arrival_time_map.png",
+    "path_validation.png"
+   ],
+   "threshold": null,
+   "required": true,
+   "note": ""
+  },
+  {
+   "name": "figure shows the analysis (speed/arrival surface or the tsunami routes)",
+   "passed": true,
+   "value": "fig_ax0_image1@save00 rho as drawn 0.826 / flipped 1.000",
+   "threshold": null,
+   "required": true,
+   "note": ""
+  },
+  {
+   "name": "surface drawn north-up (tie as drawn)",
+   "passed": false,
+   "value": null,
+   "threshold": null,
+   "required": false,
+   "note": "fig_ax0_image1@save00 rho as drawn 0.826 / flipped 1.000",
+   "kind": "figure"
+  },
+  {
+   "name": "colour scale covers the drawn data range",
+   "passed": true,
+   "value": {
+    "data_5_95": [
+     56.871,
+     538.428
+    ],
+    "clim": [
+     0.0,
+     538.4283593159491
+    ],
+    "span_share": 0.8944,
+    "inside_share": 0.95
+   },
+   "threshold": "5-95 % data span >= 0.1 of the colour range; >= 50 % of values inside it",
+   "required": false,
+   "note": "fig_ax0_image1@save00 rho as drawn 0.826 / flipped 1.000",
+   "kind": "figure"
+  },
+  {
+   "name": "travel time to Virginia Beach correct (route times A or arrival surface B)",
+   "passed": true,
+   "value": {
+    "A_route_times": "val_df@final (min straight path)",
+    "B_arrival_surface": null
+   },
+   "threshold": "A: all 3 routes +/-6 % of 2.21/9.45/6.25 h or in the least-time ranges; B: rho>=0.95 & VB +/-15 %, or a surface from VB matching at the origins",
+   "required": true,
+   "note": ""
+  },
+  {
+   "name": "speed raster sqrt(g*d) matches gold (>=95 % cells within 2 m/s)",
+   "passed": false,
+   "value": null,
+   "threshold": null,
+   "required": false,
+   "note": "no speed raster found"
+  },
+  {
+   "name": "both route times and an arrival-time surface",
+   "passed": false,
+   "value": null,
+   "threshold": null,
+   "required": false,
+   "note": ""
+  },
+  {
+   "name": "deliverable files carry a CRS (uniform rule)",
+   "passed": true,
+   "value": [
+    "arrival_time_calibrated_min.tif",
+    "arrival_time_raw_min.tif",
+    "wave_speed_ms.tif"
+   ],
+   "threshold": "every geographic deliverable file has a CRS",
+   "required": true,
+   "note": "3 geographic deliverable file(s), all with a CRS"
+  }
+ ],
+ "replay": {
+  "success": true,
+  "outputs": [
+   "arrival_time_calibrated_min.tif",
+   "arrival_time_map.png",
+   "arrival_time_raw_min.tif",
+   "country_arrival_times.csv",
+   "path_validation.csv",
+   "path_validation.png",
+   "source_summary.csv",
+   "tsunami_sources_snapped.gpkg",
+   "tsunami_travel_time_report.md",
+   "wave_speed_ms.tif"
+  ],
+  "events": [],
+  "blocks_ok": 1,
+  "block_outcome": [
+   "ok"
+  ],
+  "step_timeout_s": 3600,
+  "same_outputs_as_original": true,
+  "block_mismatches": []
+ },
+ "replay_faithful": true,
+ "replay_unfaithful_reasons": [],
+ "replay_container_failure": [],
+ "emergency_files": []
+}

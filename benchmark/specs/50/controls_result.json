@@ -1,0 +1,247 @@
+[
+ {
+  "control": "correct_centre_mask_ebk_15nn_l1_hinge",
+  "expected_correct": true,
+  "judged_correct": true,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [],
+  "scorer_error": false
+ },
+ {
+  "control": "correct_centre_mask_ebk_cross_validated",
+  "expected_correct": true,
+  "judged_correct": true,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [],
+  "scorer_error": false
+ },
+ {
+  "control": "correct_centre_mask_ebk_maxent_fit_function",
+  "expected_correct": true,
+  "judged_correct": true,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [],
+  "scorer_error": false
+ },
+ {
+  "control": "correct_centre_mask_ebk_spectra_clamped",
+  "expected_correct": true,
+  "judged_correct": true,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [],
+  "scorer_error": false
+ },
+ {
+  "control": "correct_far_ocean_gaps_local_kriging",
+  "expected_correct": true,
+  "judged_correct": true,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [],
+  "scorer_error": false
+ },
+ {
+  "control": "correct_handrolled_fit_maxent",
+  "expected_correct": true,
+  "judged_correct": true,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [],
+  "scorer_error": false
+ },
+ {
+  "control": "correct_local_kriging_l1_logistic",
+  "expected_correct": true,
+  "judged_correct": true,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [],
+  "scorer_error": false
+ },
+ {
+  "control": "correct_train_features_csv_xy",
+  "expected_correct": true,
+  "judged_correct": true,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [],
+  "scorer_error": false
+ },
+ {
+  "control": "wrong_1000_presence_points",
+  "expected_correct": false,
+  "judged_correct": false,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [
+   "presence points inside dissolved seagrass (>= 97 %)",
+   "method: kriging-type interpolation of temp/salinity (prescribed: EBK)"
+  ],
+  "scorer_error": false
+ },
+ {
+  "control": "wrong_deliverable_no_crs",
+  "expected_correct": false,
+  "judged_correct": false,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [
+   "training features saved with kriged temp/salinity values (r >= 0.8 / 0.6)",
+   "global prediction raster agrees with gold suitability (coverage >= 0.8, Spearman >= 0.5)",
+   "prediction is a function of both temperature and salinity (rank R2 gain >= 0.05 each)",
+   "deliverable files carry a CRS (uniform rule)"
+  ],
+  "scorer_error": false
+ },
+ {
+  "control": "wrong_dissolved_oxygen_as_salinity",
+  "expected_correct": false,
+  "judged_correct": false,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [
+   "training features saved with kriged temp/salinity values (r >= 0.8 / 0.6)",
+   "prediction is a function of both temperature and salinity (rank R2 gain >= 0.05 each)",
+   "method: kriging-type interpolation of temp/salinity (prescribed: EBK)",
+   "method: presence-only MaxEnt-type model (prescribed: MaxEnt)"
+  ],
+  "scorer_error": false
+ },
+ {
+  "control": "wrong_method_idw_quadratic_logistic",
+  "expected_correct": false,
+  "judged_correct": false,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [
+   "method: kriging-type interpolation of temp/salinity (prescribed: EBK)"
+  ],
+  "scorer_error": false
+ },
+ {
+  "control": "wrong_method_idw_randomforest_wgs84",
+  "expected_correct": false,
+  "judged_correct": false,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [
+   "method: kriging-type interpolation of temp/salinity (prescribed: EBK)",
+   "method: presence-only MaxEnt-type model (prescribed: MaxEnt)"
+  ],
+  "scorer_error": false
+ },
+ {
+  "control": "wrong_method_kriged_randomforest_not_maxent",
+  "expected_correct": false,
+  "judged_correct": false,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [
+   "method: presence-only MaxEnt-type model (prescribed: MaxEnt)"
+  ],
+  "scorer_error": false
+ },
+ {
+  "control": "wrong_mlp_named_fit_maxent",
+  "expected_correct": false,
+  "judged_correct": false,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [
+   "method: presence-only MaxEnt-type model (prescribed: MaxEnt)"
+  ],
+  "scorer_error": false
+ },
+ {
+  "control": "wrong_model_ignores_salinity",
+  "expected_correct": false,
+  "judged_correct": false,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [
+   "prediction is a function of both temperature and salinity (rank R2 gain >= 0.05 each)",
+   "method: kriging-type interpolation of temp/salinity (prescribed: EBK)"
+  ],
+  "scorer_error": false
+ },
+ {
+  "control": "wrong_no_extrapolation_beyond_training_range",
+  "expected_correct": false,
+  "judged_correct": false,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [
+   "global prediction raster agrees with gold suitability (coverage >= 0.8, Spearman >= 0.5)",
+   "prediction is a function of both temperature and salinity (rank R2 gain >= 0.05 each)"
+  ],
+  "scorer_error": false
+ },
+ {
+  "control": "wrong_presence_in_study_area",
+  "expected_correct": false,
+  "judged_correct": false,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [
+   "presence points inside dissolved seagrass (>= 97 %)",
+   "method: kriging-type interpolation of temp/salinity (prescribed: EBK)",
+   "method: presence-only MaxEnt-type model (prescribed: MaxEnt)"
+  ],
+  "scorer_error": false
+ },
+ {
+  "control": "wrong_rf_named_fit_maxent",
+  "expected_correct": false,
+  "judged_correct": false,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [
+   "method: presence-only MaxEnt-type model (prescribed: MaxEnt)"
+  ],
+  "scorer_error": false
+ },
+ {
+  "control": "wrong_temperature_as_prediction",
+  "expected_correct": false,
+  "judged_correct": false,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [
+   "global prediction raster agrees with gold suitability (coverage >= 0.8, Spearman >= 0.5)",
+   "prediction is a function of both temperature and salinity (rank R2 gain >= 0.05 each)",
+   "method: kriging-type interpolation of temp/salinity (prescribed: EBK)",
+   "method: presence-only MaxEnt-type model (prescribed: MaxEnt)"
+  ],
+  "scorer_error": false
+ },
+ {
+  "control": "wrong_temperature_only_model",
+  "expected_correct": false,
+  "judged_correct": false,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [
+   "global prediction raster agrees with gold suitability (coverage >= 0.8, Spearman >= 0.5)",
+   "prediction is a function of both temperature and salinity (rank R2 gain >= 0.05 each)"
+  ],
+  "scorer_error": false
+ },
+ {
+  "control": "wrong_usa_only_prediction",
+  "expected_correct": false,
+  "judged_correct": false,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [
+   "global prediction raster agrees with gold suitability (coverage >= 0.8, Spearman >= 0.5)",
+   "prediction is a function of both temperature and salinity (rank R2 gain >= 0.05 each)",
+   "method: kriging-type interpolation of temp/salinity (prescribed: EBK)",
+   "method: presence-only MaxEnt-type model (prescribed: MaxEnt)"
+  ],
+  "scorer_error": false
+ }
+]

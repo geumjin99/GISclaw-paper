@@ -1,0 +1,141 @@
+{
+ "cell_id": "main.H2.SA.qwen38-27b.r1.T01",
+ "task": 1,
+ "status": "ok",
+ "analytically_correct": false,
+ "scorer_error": false,
+ "checks": [
+  {
+   "name": "required output present",
+   "passed": true,
+   "value": [
+    "interpolated_urban_heat.png"
+   ],
+   "threshold": [
+    "interpolated_urban_heat.png"
+   ],
+   "required": true,
+   "note": ""
+  },
+  {
+   "name": "map not blank",
+   "passed": true,
+   "value": 51.88057432164088,
+   "threshold": ">=3 grey-level std",
+   "required": true,
+   "note": ""
+  },
+  {
+   "name": "per-block mean temperature matches gold pattern (Spearman >= 0.90)",
+   "passed": false,
+   "value": -0.179,
+   "threshold": 0.9,
+   "required": true,
+   "note": "b.pct_65@final"
+  },
+  {
+   "name": "values are temperatures of this data (mean within 2 F)",
+   "passed": false,
+   "value": 0.11,
+   "threshold": "79.43+/-2",
+   "required": true,
+   "note": ""
+  },
+  {
+   "name": "values come from an interpolated surface, not copied station readings",
+   "passed": true,
+   "value": 0.0,
+   "threshold": "< 0.5 of blocks equal a station value",
+   "required": true,
+   "note": ""
+  },
+  {
+   "name": "drawn choropleth shows the per-block temperature",
+   "passed": false,
+   "value": null,
+   "threshold": 0.9,
+   "required": true,
+   "note": "no drawn block-group choropleth found (0 candidates; save snapshots not mappable; any saved figure)"
+  },
+  {
+   "name": "hot & elderly-dense highlight set derived",
+   "passed": false,
+   "value": null,
+   "threshold": "1-60 % of blocks; mean temp & density percentile > 0.6",
+   "required": true,
+   "note": "no hot & elderly-dense subset of block groups captured"
+  },
+  {
+   "name": "method: Kriging / GP interpolation (prescribed by the task)",
+   "passed": true,
+   "value": null,
+   "threshold": null,
+   "required": true,
+   "note": "pykrige"
+  }
+ ],
+ "replay": {
+  "success": false,
+  "outputs": [],
+  "events": [
+   {
+    "event": "container_oom",
+    "exit_code": 137,
+    "oom_killed": true
+   },
+   {
+    "event": "restarted",
+    "replayed": 5
+   }
+  ],
+  "blocks_ok": 5,
+  "block_outcome": [
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "oom",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok"
+  ],
+  "step_timeout_s": 900,
+  "same_outputs_as_original": false,
+  "block_mismatches": [
+   10,
+   14,
+   15,
+   17,
+   18,
+   19,
+   22,
+   23,
+   25
+  ]
+ },
+ "replay_faithful": false,
+ "replay_unfaithful_reasons": [
+  "block success differs at [10, 14, 15, 17, 18, 19, 22, 23, 25]",
+  "replay block(s) [7] cut off (oom)"
+ ],
+ "replay_container_failure": [],
+ "emergency_files": []
+}

@@ -1,0 +1,170 @@
+{
+ "cell_id": "main.H2.DA.gptoss-120b.r2.T50",
+ "task": 50,
+ "status": "ok",
+ "analytically_correct": false,
+ "scorer_error": false,
+ "checks": [
+  {
+   "name": "presence points inside dissolved seagrass (>= 97 %)",
+   "passed": true,
+   "value": 1.0,
+   "threshold": 0.97,
+   "required": true,
+   "note": "presence_features.shp (5000 pts)"
+  },
+  {
+   "name": "training features saved with kriged temp/salinity values (r >= 0.8 / 0.6)",
+   "passed": false,
+   "value": [
+    0.943,
+    -0.0
+   ],
+   "threshold": [
+    0.8,
+    0.6
+   ],
+   "required": true,
+   "note": "presence_features.csv"
+  },
+  {
+   "name": "global prediction raster agrees with gold suitability (coverage >= 0.8, Spearman >= 0.5)",
+   "passed": false,
+   "value": [
+    0.0,
+    0.037
+   ],
+   "threshold": [
+    0.5,
+    0.8
+   ],
+   "required": true,
+   "note": "best candidate temp_ebk.tif (rho 0.144, coverage 0.037); coverage over gold cells with centre inside Global_shallow_waters"
+  },
+  {
+   "name": "prediction is a function of both temperature and salinity (rank R2 gain >= 0.05 each)",
+   "passed": false,
+   "value": null,
+   "threshold": null,
+   "required": true,
+   "note": "no acceptable prediction raster"
+  },
+  {
+   "name": "method: kriging-type interpolation of temp/salinity (prescribed: EBK)",
+   "passed": true,
+   "value": null,
+   "threshold": null,
+   "required": true,
+   "note": "call GaussianProcessRegressor("
+  },
+  {
+   "name": "method: presence-only MaxEnt-type model (prescribed: MaxEnt)",
+   "passed": false,
+   "value": null,
+   "threshold": null,
+   "required": true,
+   "note": "no MaxEnt implementation and no presence-vs-background logistic/Poisson GLM"
+  },
+  {
+   "name": "spatial CV / thinning considered",
+   "passed": true,
+   "value": null,
+   "threshold": null,
+   "required": false,
+   "note": ""
+  },
+  {
+   "name": "deliverable files carry a CRS (uniform rule)",
+   "passed": true,
+   "value": [
+    "emergency_output.geojson",
+    "presence_features.shp",
+    "salinity_ebk.tif",
+    "salinity_measurements.shp",
+    "temp_ebk.tif",
+    "temp_measurements.shp",
+    "usa_seagrass_dissolved.shp",
+    "usa_seagrass_random_points.shp"
+   ],
+   "threshold": "every geographic deliverable file has a CRS",
+   "required": true,
+   "note": "8 geographic deliverable file(s), all with a CRS"
+  }
+ ],
+ "replay": {
+  "success": true,
+  "outputs": [
+   "presence_features.cpg",
+   "presence_features.csv",
+   "presence_features.dbf",
+   "presence_features.prj",
+   "presence_features.shp",
+   "presence_features.shx",
+   "salinity_ebk.tif",
+   "salinity_ebk_stats.txt",
+   "salinity_measurements.cpg",
+   "salinity_measurements.dbf",
+   "salinity_measurements.prj",
+   "salinity_measurements.shp",
+   "salinity_measurements.shx",
+   "temp_ebk.tif",
+   "temp_measurements.cpg",
+   "temp_measurements.dbf",
+   "temp_measurements.prj",
+   "temp_measurements.shp",
+   "temp_measurements.shx",
+   "usa_seagrass_dissolved.cpg",
+   "usa_seagrass_dissolved.dbf",
+   "usa_seagrass_dissolved.prj",
+   "usa_seagrass_dissolved.shp",
+   "usa_seagrass_dissolved.shx",
+   "usa_seagrass_random_points.cpg",
+   "usa_seagrass_random_points.dbf",
+   "usa_seagrass_random_points.prj",
+   "usa_seagrass_random_points.shp",
+   "usa_seagrass_random_points.shx"
+  ],
+  "events": [
+   {
+    "event": "container_oom",
+    "exit_code": 137,
+    "oom_killed": true
+   },
+   {
+    "event": "restarted",
+    "replayed": 6
+   }
+  ],
+  "blocks_ok": 14,
+  "block_outcome": [
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "oom",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok"
+  ],
+  "step_timeout_s": 900,
+  "same_outputs_as_original": false,
+  "block_mismatches": []
+ },
+ "replay_faithful": false,
+ "replay_unfaithful_reasons": [
+  "replay block(s) [4] cut off (oom)"
+ ],
+ "replay_container_failure": [],
+ "correct_without_emergency": false,
+ "emergency_files": [
+  "emergency_output.geojson"
+ ]
+}

@@ -1,0 +1,76 @@
+{
+ "cell_id": "oneshot.C0.SA.gptoss-120b.r2.T13",
+ "task": 13,
+ "status": "ok",
+ "analytically_correct": false,
+ "scorer_error": false,
+ "checks": [
+  {
+   "name": "required output present",
+   "passed": false,
+   "value": [],
+   "threshold": [
+    "ocean_profiles_vis.png"
+   ],
+   "required": true,
+   "note": ""
+  },
+  {
+   "name": "figure not blank",
+   "passed": false,
+   "value": null,
+   "threshold": null,
+   "required": true,
+   "note": "no figure"
+  },
+  {
+   "name": "temperature profile extracted",
+   "passed": false,
+   "value": 0,
+   "threshold": null,
+   "required": true,
+   "note": "no captured theta profile"
+  },
+  {
+   "name": "salinity profile from the same column/box",
+   "passed": false,
+   "value": 0,
+   "threshold": null,
+   "required": true,
+   "note": "no salinity profile"
+  },
+  {
+   "name": "figure shows both profiles against depth, from the same column/box",
+   "passed": false,
+   "value": null,
+   "threshold": null,
+   "required": true,
+   "note": "UNVERIFIABLE: no line or scatter artists captured in the figure",
+   "unverifiable": true
+  },
+  {
+   "name": "canonical selection (330.5E, 9.83S, <=1000 m)",
+   "passed": false,
+   "value": null,
+   "threshold": null,
+   "required": false,
+   "note": ""
+  }
+ ],
+ "replay": {
+  "success": false,
+  "outputs": [],
+  "events": [],
+  "blocks_ok": 0,
+  "block_outcome": [
+   "ok"
+  ],
+  "step_timeout_s": 3600,
+  "same_outputs_as_original": true,
+  "block_mismatches": []
+ },
+ "replay_faithful": true,
+ "replay_unfaithful_reasons": [],
+ "replay_container_failure": [],
+ "emergency_files": []
+}

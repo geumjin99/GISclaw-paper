@@ -1,0 +1,111 @@
+{
+ "cell_id": "oneshot.C0.SA.claude-haiku-5-5.r1.T31",
+ "experiment": "oneshot",
+ "tier": "C0",
+ "arch": "SA",
+ "model": "claude-haiku-5-5",
+ "run": 1,
+ "task": 31,
+ "elapsed_s": 58.9,
+ "protocol": "native",
+ "tier_config": {
+  "tools": [],
+  "generic": false,
+  "oneshot": true,
+  "no_dd": false,
+  "no_dk": false,
+  "g1": false,
+  "g2": false,
+  "g3": false,
+  "g4": false,
+  "g5": false,
+  "g6": false,
+  "g7": false
+ },
+ "outputs": [
+  "L_function_plot.png",
+  "L_function_results.csv",
+  "L_function_summary.txt",
+  "local_K_per_flow.csv"
+ ],
+ "required_outputs": [],
+ "required_present": null,
+ "emergency_files": [],
+ "rounds": 1,
+ "self_corrections": 0,
+ "agent_stats": {
+  "rounds": 1,
+  "format_errors": 0,
+  "format_error_kinds": {},
+  "self_corrections": 0,
+  "exec_blocks": 1,
+  "exec_failed": 0,
+  "finish_rejections": 0,
+  "dedup_blocked": 0,
+  "triggers": {},
+  "checks_run": {},
+  "end_reason": "oneshot",
+  "empty_retries": 0,
+  "history_truncations": 0,
+  "oneshot_no_code": false,
+  "oneshot": {
+   "code_rule": "last_python",
+   "n_fenced_blocks": 1,
+   "code_chars": 7437,
+   "finish_reason": "end_turn",
+   "timeout_s": 1200
+  },
+  "finished": true,
+  "agent_time_s": 8.5
+ },
+ "llm_stats": {
+  "calls": 1,
+  "retries": 0,
+  "errors": 0,
+  "context_overflow": 0,
+  "empty": 0,
+  "refusals": 0,
+  "prompt_tokens": 4,
+  "completion_tokens": 11640,
+  "cached_tokens": 0,
+  "cache_write_tokens": 1114
+ },
+ "llm_time_s": 49.5,
+ "agent_time_s": 8.5,
+ "hit_deadline": false,
+ "sandbox_events": [],
+ "inputs_intact": true,
+ "container_memory": "12g",
+ "oneshot_no_code": false,
+ "deliverable_produced": true,
+ "config": {
+  "image": "gisclaw-exec:1.0",
+  "step_timeout_s": 1200,
+  "task_wall_s": 1200,
+  "max_rounds": 50,
+  "blocked_packages": {
+   "arcpy": "Use geopandas + rasterio + shapely instead."
+  },
+  "agent": {
+   "history_tokens": 60000,
+   "max_format_errors": 15
+  }
+ },
+ "model_config": {
+  "provider": "anthropic",
+  "model_name": "claude-haiku-5-5",
+  "request": {
+   "set": {
+    "max_tokens": 32000,
+    "thinking": {
+     "type": "adaptive",
+     "display": "summarized"
+    },
+    "output_config": {
+     "effort": "high"
+    }
+   }
+  },
+  "history_tokens": 700000
+ }
+}

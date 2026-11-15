@@ -1,0 +1,27 @@
+{
+ "task": 1,
+ "title": "Find heat islands and at-risk populations in Madison, Wisconsin",
+ "output_type": "image (choropleth map)",
+ "required_outputs": [
+  "interpolated_urban_heat.png"
+ ],
+ "method": "Interpolate 139 station temperatures (TemperatureF, EPSG:6610) to a continuous surface with ordinary Kriging, average the surface within each of the 269 census block groups, map the block-group means as a choropleth and outline block groups that are both hot and dense in people aged 65+.",
+ "key_parameters": {
+  "interpolator": "ordinary Kriging (pykrige), spherical variogram",
+  "grid": "100 x 100 over the station extent",
+  "aggregation": "mean per block group"
+ },
+ "benchmark_defects": [
+  "The published reference script uses pykrige for Kriging; the checks accept any Kriging implementation (pykrige, gstools, a Gaussian-process regressor or a hand-written kriging system)."
+ ],
+ "checks": [
+  "required: map file present",
+  "required: map not blank",
+  "required: per-block-group mean temperature (table, Series or 269-value array) rank-correlates with gold block means (Spearman >= 0.90)",
+  "required: values are temperatures of this data set (mean within 2 F of gold)",
+  "required: block values come from a surface (< 50 % equal a station reading)",
+  "required: the drawn choropleth colour values are the per-block temperature (rho >= 0.90)",
+  "required: hot & elderly-dense highlight subset derived (1-60 % of blocks, mean temp and density percentile > 0.6; code-line evidence for inline selections)",
+  "required: the prescribed method was used - pykrige OK/UK, gstools kriging, a GP regressor or a hand-written kriging system in the code"
+ ]
+}

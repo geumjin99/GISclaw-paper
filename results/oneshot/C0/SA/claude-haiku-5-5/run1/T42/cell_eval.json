@@ -1,0 +1,102 @@
+{
+ "cell_id": "oneshot.C0.SA.claude-haiku-5-5.r1.T42",
+ "task": 42,
+ "status": "ok",
+ "analytically_correct": false,
+ "scorer_error": false,
+ "checks": [
+  {
+   "name": "required output present",
+   "passed": false,
+   "value": [],
+   "threshold": [
+    "moran_local.png",
+    "Moran_Local.png",
+    "moran_local.PNG"
+   ],
+   "required": true,
+   "note": ""
+  },
+  {
+   "name": "map not blank",
+   "passed": false,
+   "value": null,
+   "threshold": null,
+   "required": true,
+   "note": "no map"
+  },
+  {
+   "name": "analysed variable = group median price",
+   "passed": true,
+   "value": 1.0,
+   "threshold": ">=0.90 of neighbourhoods within 3 % of gold",
+   "required": true,
+   "note": "group_median_price in neigh@final"
+  },
+  {
+   "name": "missing values handled (no NaN, plausible fill)",
+   "passed": true,
+   "value": [
+    35.0,
+    50.0,
+    0
+   ],
+   "threshold": "[31.5, 55.0], no NaN",
+   "required": true,
+   "note": "group_median_price in analysis@final"
+  },
+  {
+   "name": "LISA hot/cold spots match gold (IoU >= 0.7), labels not inverted",
+   "passed": false,
+   "value": [
+    0.646,
+    0.417
+   ],
+   "threshold": ">=0.7 each, no inverted labels",
+   "required": true,
+   "note": "hot: group_median_price in analysis@final==50.0; cold: group_median_price in analysis@final==35.0; gold n_hot=36 n_cold=23"
+  },
+  {
+   "name": "Local Moran's I computed (local I values captured or Moran_Local called)",
+   "passed": false,
+   "value": null,
+   "threshold": null,
+   "required": true,
+   "note": "no local I values and no Moran_Local call (e.g. Gi* used instead)"
+  },
+  {
+   "name": "map colours: hot spots drawn warmer than cold spots (presentation)",
+   "passed": false,
+   "value": null,
+   "threshold": null,
+   "required": false,
+   "note": "UNVERIFIABLE: no per-patch colours of the neighbourhoods captured in the map",
+   "kind": "figure",
+   "unverifiable": true
+  },
+  {
+   "name": "method: Queen contiguity weights (prescribed)",
+   "passed": true,
+   "value": null,
+   "threshold": null,
+   "required": true,
+   "note": "Queen weights object w@final"
+  }
+ ],
+ "replay": {
+  "success": false,
+  "outputs": [],
+  "events": [],
+  "blocks_ok": 0,
+  "block_outcome": [
+   "ok"
+  ],
+  "step_timeout_s": 3600,
+  "same_outputs_as_original": true,
+  "block_mismatches": []
+ },
+ "replay_faithful": true,
+ "replay_unfaithful_reasons": [],
+ "replay_container_failure": [],
+ "emergency_files": []
+}

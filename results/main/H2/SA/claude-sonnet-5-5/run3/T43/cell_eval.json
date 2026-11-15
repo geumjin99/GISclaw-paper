@@ -1,0 +1,80 @@
+{
+ "cell_id": "main.H2.SA.claude-sonnet-5-5.r3.T43",
+ "task": 43,
+ "status": "ok",
+ "analytically_correct": true,
+ "scorer_error": false,
+ "checks": [
+  {
+   "name": "home range (convex hull) stored and matches gold (IoU >= 0.9)",
+   "passed": true,
+   "value": 1.0,
+   "threshold": 0.9,
+   "required": true,
+   "note": "Elk_in_MBG.geojson vs per-animal hulls"
+  },
+  {
+   "name": "kernel density raster stored and agrees with gold (3 km block Pearson >= 0.6)",
+   "passed": true,
+   "value": 0.971,
+   "threshold": 0.6,
+   "required": true,
+   "note": "Elk_KDE.tif (coverage 1.00)"
+  },
+  {
+   "name": "density-based clusters with noise; clustered fixes denser than noise (ratio >= 1.5)",
+   "passed": true,
+   "value": 6.82,
+   "threshold": 1.5,
+   "required": true,
+   "note": "cluster in Elk_DBSCAN_clusters.geojson [n_clusters, noise share, n]=[91, 0.176, 150191]"
+  },
+  {
+   "name": "density-based clustering estimator called (DBSCAN/HDBSCAN/OPTICS)",
+   "passed": true,
+   "value": "DBSCAN(",
+   "threshold": null,
+   "required": true,
+   "note": "call required, not just an import"
+  },
+  {
+   "name": "deliverable files carry a CRS (uniform rule)",
+   "passed": true,
+   "value": [
+    "Elk_DBSCAN_cluster_hulls.geojson",
+    "Elk_DBSCAN_clusters.geojson",
+    "Elk_KDE.tif",
+    "Elk_in_MBG.geojson"
+   ],
+   "threshold": "every geographic deliverable file has a CRS",
+   "required": true,
+   "note": "4 geographic deliverable file(s), all with a CRS"
+  }
+ ],
+ "replay": {
+  "success": true,
+  "outputs": [
+   "Elk_DBSCAN_cluster_hulls.geojson",
+   "Elk_DBSCAN_clusters.geojson",
+   "Elk_KDE.tif",
+   "Elk_in_MBG.geojson",
+   "elk_analysis.png"
+  ],
+  "events": [],
+  "blocks_ok": 5,
+  "block_outcome": [
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok"
+  ],
+  "step_timeout_s": 900,
+  "same_outputs_as_original": true,
+  "block_mismatches": []
+ },
+ "replay_faithful": true,
+ "replay_unfaithful_reasons": [],
+ "replay_container_failure": [],
+ "emergency_files": []
+}

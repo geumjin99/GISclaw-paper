@@ -1,0 +1,29 @@
+{
+ "task": 34,
+ "title": "Estimate access to all-season roads for the rural population of Shikoku",
+ "output_type": "image (choropleth of % rural population within 2 km of all-season roads)",
+ "required_outputs": [
+  "accessibility.png"
+ ],
+ "method": "Select RURAL municipalities (48/95); clip population small areas (D0001, 2015) to them with areal weighting; buffer all all-season roads by 2 km in a conformal local CRS (JGD2011 / UTM 53N, EPSG:6690); population inside the buffer by areal weighting; % per rural municipality and overall (87.7 % of 814 k); choropleth.",
+ "key_parameters": {
+  "rural_filter": "AREATYPE == 'RURAL'",
+  "buffer_m": 2000,
+  "crs": "EPSG:6690 (inputs are EPSG:4087, ~20 % E-W stretch at 33.5 N)",
+  "allocation": "areal weighting (centroid allocation accepted)",
+  "overall_share_pct": 87.67
+ },
+ "benchmark_defects": [
+  "Inputs are in EPSG:4087 (equidistant cylindrical), whose metre is not a ground metre east-west; buffering in it is a ~1.9 pp error on these data, tolerated by the checks.",
+  "The published reference script computes, per population polygon, the share of its area inside the 2 km road buffer (D0001 cancels out of 'population_proportion'), and saves population_rural_proportion.png to the working directory.",
+  "'clip the rural area out' is ambiguous (clip to vs erase); the workflow makes clear the population inside the buffer is wanted."
+ ],
+ "checks": [
+  "required: accessibility.png present",
+  "required: map not blank",
+  "required: a per-area table (JISCODE / geometry / index aligned) whose rows are >= 90 % rural",
+  "required: per-area pattern vs gold per-municipality shares: Spearman >= 0.70 or MAE <= 7 pp",
+  "required: a drawn choropleth column (values or inverted face colours) belongs to a per-area table passing the pattern check",
+  "required: the overall rural share reported by the solution (numbers in .txt/.json/.md files, stdout summary lines - an integer there needs '%' or share wording -, or share-named scalars; else any scalar) within 3 pp of 87.7 %; it is not derived from the solution's per-area table"
+ ]
+}

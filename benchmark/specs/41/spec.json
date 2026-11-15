@@ -1,0 +1,28 @@
+{
+ "task": 41,
+ "title": "Improve campsite data quality in Wyoming with joins, relates and a relationship class",
+ "output_type": "tables (park-organisation join, per-campsite one-to-many relate, campground-campsite relationship) + JSON summary",
+ "required_outputs": [
+  "any result file (instruction names none); reference writes national_parks_organizations.csv, campsite_attribute_relate.csv, campsite_campground_relationship.csv, campground_campsite_counts.csv, data_quality_summary.json"
+ ],
+ "method": "The National Parks / Campsites / Facilities layers are supplied as GeoPackages from the lesson geodatabase. 1) join National Parks.ParentOrgID -> OrganizationsTable.OrgID: both parks -> National Park Service; 2) relate Campsites.CampsiteID -> CampsiteAttributes.EntityID (EntityType Campsite), per-campsite counts for the 1,170 Wyoming campsites (1,169 have records; 26,151 records); 3) relationship class Facilities.FacilityID (campgrounds) 1 -> many Campsites.ParentFacilityID, materialised as link table + per-campground counts: 6 campgrounds have campsites (Mammoth 86, Signal Mountain 81, Lizard Creek 59, Pebble Creek 27, Slough Creek 16, Bridge Bay 1; 270 campsites), 900 campsites reference 5 FacilityIDs missing from Facilities, 5 campgrounds have no campsites (violate the 1..100 rule).",
+ "key_parameters": {
+  "join": "ParentOrgID -> OrgID",
+  "relate": "CampsiteID (1) -> EntityID (many)",
+  "relationship": "FacilityID (1) -> ParentFacilityID (many)",
+  "wyoming_campsites": 1170,
+  "csv_encoding": "utf-8-sig (BOM)"
+ },
+ "benchmark_defects": [
+  "The benchmark distributes National Parks, Campsites and Facilities only as .lyrx files (no features); the features are taken from the lesson's public data.",
+  "The CodeString joins on OrgParentID while the layer file joins ParentOrgID -> OrgID; OrgParentID gives 'Historic Hotels of America'.",
+  "Relationship classes/rules are geodatabase objects with no open-source equivalent; judged as the materialised one-to-many link.",
+  "CampsiteAttributes.csv covers all US campsites (103,611), not only Wyoming."
+ ],
+ "checks": [
+  "required: at least one result file in pred_results",
+  "required: per-campsite relate counts equal gold (records / attribute names / valued names) for >= 95 % of the 1,170 Wyoming campsites (US-wide tables accepted)",
+  "required: a table in which both parks carry 'National Park Service' (OrgName or 'NPS'), not 'Historic Hotels of America'",
+  "required: campground-campsite relationship: per-campground counts exact for the 6 facilities with campsites, or per-campsite parent FacilityName / joined FacilityID exact for >= 95 % of campsites with a parent"
+ ]
+}

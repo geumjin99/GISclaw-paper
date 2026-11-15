@@ -1,0 +1,123 @@
+{
+ "cell_id": "ablation.H2-g2.SA.qwen38-27b.r1.T38",
+ "task": 38,
+ "status": "ok",
+ "analytically_correct": false,
+ "scorer_error": false,
+ "checks": [
+  {
+   "name": "required output present",
+   "passed": true,
+   "value": [
+    "travel_time.png"
+   ],
+   "threshold": [
+    "travel_time.png",
+    "Travel_Time.png",
+    "travel_time.PNG"
+   ],
+   "required": true,
+   "note": ""
+  },
+  {
+   "name": "figure not blank",
+   "passed": true,
+   "value": 40.15703371323338,
+   "threshold": ">=3 grey-level std",
+   "required": true,
+   "note": ""
+  },
+  {
+   "name": "per-node travel times match gold (Pearson >= 0.90)",
+   "passed": false,
+   "value": 0.243,
+   "threshold": 0.9,
+   "required": true,
+   "note": "tt.tt@final; vs gold origin field"
+  },
+  {
+   "name": "values are travel times (median ratio 0.67-1.5, s or min)",
+   "passed": false,
+   "value": null,
+   "threshold": null,
+   "required": true,
+   "note": "no matching travel-time vector"
+  },
+  {
+   "name": "origin within 400 m of Natural History Building",
+   "passed": false,
+   "value": null,
+   "threshold": null,
+   "required": true,
+   "note": "no matching travel-time vector"
+  },
+  {
+   "name": "network routing (r with own-origin network time >= 0.97 and > straight-line r + 0.01)",
+   "passed": false,
+   "value": null,
+   "threshold": null,
+   "required": true,
+   "note": "no matching travel-time vector"
+  },
+  {
+   "name": "speeds derived from the graph (not a pure network-length field, r < 0.999)",
+   "passed": false,
+   "value": null,
+   "threshold": null,
+   "required": true,
+   "note": "no matching travel-time vector"
+  },
+  {
+   "name": "figure colours nodes by travel time (|Spearman| >= 0.90 vs gold)",
+   "passed": false,
+   "value": null,
+   "threshold": null,
+   "required": true,
+   "note": "UNVERIFIABLE: no drawn point collection at node positions with values/colours",
+   "unverifiable": true
+  }
+ ],
+ "replay": {
+  "success": true,
+  "outputs": [
+   "travel_time.png",
+   "uiuc_drive_network_with_travel_time.graphml"
+  ],
+  "events": [],
+  "blocks_ok": 20,
+  "block_outcome": [
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok"
+  ],
+  "step_timeout_s": 900,
+  "same_outputs_as_original": true,
+  "block_mismatches": []
+ },
+ "replay_faithful": true,
+ "replay_unfaithful_reasons": [],
+ "replay_container_failure": [],
+ "emergency_files": []
+}

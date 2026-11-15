@@ -1,0 +1,88 @@
+{
+ "cell_id": "oneshot.C0.SA.gptoss-120b.r1.T17",
+ "task": 17,
+ "status": "ok",
+ "analytically_correct": false,
+ "scorer_error": false,
+ "checks": [
+  {
+   "name": "required output present",
+   "passed": false,
+   "value": [],
+   "threshold": [
+    "collisions_map_vis.png"
+   ],
+   "required": true,
+   "note": ""
+  },
+  {
+   "name": "map not blank",
+   "passed": false,
+   "value": null,
+   "threshold": null,
+   "required": true,
+   "note": "no map"
+  },
+  {
+   "name": "all 72 collisions drawn at their positions and visible on the map",
+   "passed": false,
+   "value": {
+    "drawn_points": 0,
+    "inputs_matched": 0
+   },
+   "threshold": "71-81 distinct drawn, >=71 matched",
+   "required": true,
+   "note": "no visible point artist captured; "
+  },
+  {
+   "name": "borough polygons drawn, in the points' coordinate space",
+   "passed": false,
+   "value": null,
+   "threshold": null,
+   "required": true,
+   "note": "UNVERIFIABLE: no drawing call of the borough layer identified in the code (polyplot/choropleth/add_geometries/<layer>.plot)",
+   "unverifiable": true
+  },
+  {
+   "name": "crash markers visible against a white background",
+   "passed": false,
+   "value": null,
+   "threshold": null,
+   "required": false,
+   "note": "no drawn points",
+   "kind": "figure"
+  },
+  {
+   "name": "crashes plotted with geoplot (task: 'on a map by geoplot')",
+   "passed": false,
+   "value": null,
+   "threshold": null,
+   "required": true,
+   "note": "no geoplot point-layer call (pointplot/kdeplot/quadtree/voronoi/webmap) in the code"
+  },
+  {
+   "name": "fatalities encoded (size/colour by persons killed)",
+   "passed": false,
+   "value": null,
+   "threshold": null,
+   "required": false,
+   "note": ""
+  }
+ ],
+ "replay": {
+  "success": false,
+  "outputs": [],
+  "events": [],
+  "blocks_ok": 0,
+  "block_outcome": [
+   "ok"
+  ],
+  "step_timeout_s": 3600,
+  "same_outputs_as_original": true,
+  "block_mismatches": []
+ },
+ "replay_faithful": true,
+ "replay_unfaithful_reasons": [],
+ "replay_container_failure": [],
+ "emergency_files": []
+}

@@ -1,0 +1,146 @@
+{
+ "cell_id": "ablation.H2-g4.SA.qwen38-27b.r2.T25",
+ "task": 25,
+ "status": "ok",
+ "analytically_correct": false,
+ "scorer_error": false,
+ "checks": [
+  {
+   "name": "output written (non-blank map or result file)",
+   "passed": true,
+   "value": [
+    "covid_risk_profiles_map.png",
+    "transmission_risk_map.png",
+    "hkg_covid_risk_profiles.gpkg",
+    "hkg_covid_risk_profiles.shp",
+    "hkg_sim_exposure.shp",
+    "hkg_sim_scarcity.shp",
+    "hkg_sim_susceptibility.shp",
+    "hkg_sim_transmission.shp"
+   ],
+   "threshold": null,
+   "required": true,
+   "note": ""
+  },
+  {
+   "name": "transmission risk score matches gold (Spearman)",
+   "passed": false,
+   "value": 0.5336,
+   "threshold": 0.95,
+   "required": true,
+   "note": "SIMRANK_SUS in check@final"
+  },
+  {
+   "name": "susceptibility risk score matches gold (Spearman)",
+   "passed": true,
+   "value": 0.965,
+   "threshold": 0.95,
+   "required": true,
+   "note": "SIMRANK_SUS in check@final"
+  },
+  {
+   "name": "resource scarcity risk score matches gold (Spearman)",
+   "passed": true,
+   "value": 0.9684,
+   "threshold": 0.95,
+   "required": true,
+   "note": "SIMRANK_SCAR in check@final"
+  },
+  {
+   "name": "exposure risk score matches gold (Spearman)",
+   "passed": true,
+   "value": 1.0,
+   "threshold": 0.95,
+   "required": true,
+   "note": "SIMRANK_EXP in jdf@final"
+  },
+  {
+   "name": "clustering is a near-optimal K-means partition of the four risk scores",
+   "passed": true,
+   "value": 0.988,
+   "threshold": 0.9,
+   "required": true,
+   "note": "CLUSTERID in combined@final, k=2"
+  },
+  {
+   "name": "method fidelity: SEEDS-initialised K-means (3 clusters, ARI>=0.8 with gold)",
+   "passed": false,
+   "value": null,
+   "threshold": 0.8,
+   "required": true,
+   "note": "no 3-class column (best k=2); instructed: K-means initialised from SEEDS"
+  },
+  {
+   "name": "deliverable files carry a CRS (uniform rule)",
+   "passed": true,
+   "value": [
+    "hkg_covid_risk_profiles.gpkg",
+    "hkg_covid_risk_profiles.shp",
+    "hkg_sim_exposure.shp",
+    "hkg_sim_scarcity.shp",
+    "hkg_sim_susceptibility.shp",
+    "hkg_sim_transmission.shp"
+   ],
+   "threshold": "every geographic deliverable file has a CRS",
+   "required": true,
+   "note": "6 geographic deliverable file(s), all with a CRS"
+  }
+ ],
+ "replay": {
+  "success": true,
+  "outputs": [
+   "covid_risk_profiles_map.png",
+   "hkg_covid_risk_profiles.cpg",
+   "hkg_covid_risk_profiles.dbf",
+   "hkg_covid_risk_profiles.gpkg",
+   "hkg_covid_risk_profiles.prj",
+   "hkg_covid_risk_profiles.shp",
+   "hkg_covid_risk_profiles.shx",
+   "hkg_sim_exposure.cpg",
+   "hkg_sim_exposure.dbf",
+   "hkg_sim_exposure.prj",
+   "hkg_sim_exposure.shp",
+   "hkg_sim_exposure.shx",
+   "hkg_sim_scarcity.cpg",
+   "hkg_sim_scarcity.dbf",
+   "hkg_sim_scarcity.prj",
+   "hkg_sim_scarcity.shp",
+   "hkg_sim_scarcity.shx",
+   "hkg_sim_susceptibility.cpg",
+   "hkg_sim_susceptibility.dbf",
+   "hkg_sim_susceptibility.prj",
+   "hkg_sim_susceptibility.shp",
+   "hkg_sim_susceptibility.shx",
+   "hkg_sim_transmission.cpg",
+   "hkg_sim_transmission.dbf",
+   "hkg_sim_transmission.prj",
+   "hkg_sim_transmission.shp",
+   "hkg_sim_transmission.shx",
+   "transmission_risk_map.png"
+  ],
+  "events": [],
+  "blocks_ok": 10,
+  "block_outcome": [
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok"
+  ],
+  "step_timeout_s": 900,
+  "same_outputs_as_original": true,
+  "block_mismatches": []
+ },
+ "replay_faithful": true,
+ "replay_unfaithful_reasons": [],
+ "replay_container_failure": [],
+ "emergency_files": []
+}

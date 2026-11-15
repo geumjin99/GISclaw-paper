@@ -1,0 +1,135 @@
+[
+ {
+  "control": "correct_contourf_tri",
+  "expected_correct": true,
+  "judged_correct": true,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [],
+  "scorer_error": false
+ },
+ {
+  "control": "correct_decimated_generic_filter",
+  "expected_correct": true,
+  "judged_correct": true,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [],
+  "scorer_error": false
+ },
+ {
+  "control": "correct_figonly_imshow_upside_down",
+  "expected_correct": true,
+  "judged_correct": true,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [],
+  "scorer_error": false
+ },
+ {
+  "control": "correct_generic_filter",
+  "expected_correct": true,
+  "judged_correct": true,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [],
+  "scorer_error": false
+ },
+ {
+  "control": "correct_local_range",
+  "expected_correct": true,
+  "judged_correct": true,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [],
+  "scorer_error": false
+ },
+ {
+  "control": "correct_pcolormesh_northup",
+  "expected_correct": true,
+  "judged_correct": true,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [],
+  "scorer_error": false
+ },
+ {
+  "control": "correct_tri_uint8_output",
+  "expected_correct": true,
+  "judged_correct": true,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [],
+  "scorer_error": false
+ },
+ {
+  "control": "wrong_raw_elevation",
+  "expected_correct": false,
+  "judged_correct": false,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [
+   "TRI-family ruggedness surface computed (Spearman >= 0.95, resolution-matched)",
+   "figure shows the ruggedness surface (Spearman >= 0.95, either vertical orientation)"
+  ],
+  "scorer_error": false
+ },
+ {
+  "control": "wrong_slope_int_degrees",
+  "expected_correct": false,
+  "judged_correct": false,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [
+   "TRI-family ruggedness surface computed (Spearman >= 0.95, resolution-matched)",
+   "figure shows the ruggedness surface (Spearman >= 0.95, either vertical orientation)"
+  ],
+  "scorer_error": false
+ },
+ {
+  "control": "wrong_slope_only",
+  "expected_correct": false,
+  "judged_correct": false,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [
+   "TRI-family ruggedness surface computed (Spearman >= 0.95, resolution-matched)",
+   "figure shows the ruggedness surface (Spearman >= 0.95, either vertical orientation)"
+  ],
+  "scorer_error": false
+ },
+ {
+  "control": "wrong_tri_but_plots_elevation",
+  "expected_correct": false,
+  "judged_correct": false,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [
+   "figure shows the ruggedness surface (Spearman >= 0.95, either vertical orientation)"
+  ],
+  "scorer_error": false
+ },
+ {
+  "control": "wrong_tri_contourf_elevation",
+  "expected_correct": false,
+  "judged_correct": false,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [
+   "figure shows the ruggedness surface (Spearman >= 0.95, either vertical orientation)"
+  ],
+  "scorer_error": false
+ },
+ {
+  "control": "wrong_uint8_overflow",
+  "expected_correct": false,
+  "judged_correct": false,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [
+   "TRI-family ruggedness surface computed (Spearman >= 0.95, resolution-matched)",
+   "figure shows the ruggedness surface (Spearman >= 0.95, either vertical orientation)"
+  ],
+  "scorer_error": false
+ }
+]

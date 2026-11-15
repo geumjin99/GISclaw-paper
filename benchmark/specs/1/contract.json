@@ -1,0 +1,15 @@
+{
+ "task": 1,
+ "source": "instruction: 'The final output should be saved as \"pred_results/interpolated_urban_heat.png\"'; checks.py file_exists + png_not_blank",
+ "deliverables": [
+  {
+   "id": "map",
+   "kind": "figure",
+   "patterns": ["interpolated_urban_heat.png"],
+   "required": true,
+   "crs_required": false,
+   "checked_by": ["required output present", "map not blank"]
+  }
+ ],
+ "not_deliverables": []
+}

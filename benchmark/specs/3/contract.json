@@ -1,0 +1,15 @@
+{
+ "task": 3,
+ "source": "instruction: output saved as 'pred_results/burn_scar_analysis.png'; checks.py file_exists + png_not_blank (dNBR and polygons are scored on captured objects)",
+ "deliverables": [
+  {
+   "id": "map",
+   "kind": "figure",
+   "patterns": ["burn_scar_analysis.png"],
+   "required": true,
+   "crs_required": false,
+   "checked_by": ["required output present", "map not blank"]
+  }
+ ],
+ "not_deliverables": []
+}

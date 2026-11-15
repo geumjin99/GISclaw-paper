@@ -1,0 +1,121 @@
+{
+ "cell_id": "ablation.H2+nodk.SA.qwen38-27b.r2.T29",
+ "experiment": "ablation",
+ "tier": "H2+nodk",
+ "arch": "SA",
+ "model": "qwen38-27b",
+ "run": 2,
+ "task": 29,
+ "elapsed_s": 2316.0,
+ "protocol": "native",
+ "tier_config": {
+  "tools": [
+   "list_files",
+   "load_vector",
+   "load_raster",
+   "inspect",
+   "execute",
+   "lookup_api",
+   "finish"
+  ],
+  "generic": true,
+  "g1": true,
+  "g2": true,
+  "g3": true,
+  "g4": true,
+  "g5": true,
+  "g6": true,
+  "g7": true,
+  "no_dd": false,
+  "no_dk": true
+ },
+ "outputs": [
+  "arrival_analysis.png",
+  "arrival_time_currituck_slide.tif",
+  "arrival_time_earliest.tif",
+  "arrival_time_la_palma.tif",
+  "arrival_time_maps.png",
+  "arrival_time_puerto_rico_trench.tif",
+  "country_arrival_chart.png",
+  "country_arrival_summary.csv",
+  "earliest_arrival_map.png",
+  "tsunami_report.md",
+  "tsunami_summary_dashboard.png",
+  "wavefront_contours.png"
+ ],
+ "required_outputs": [],
+ "required_present": null,
+ "emergency_files": [],
+ "rounds": 50,
+ "self_corrections": 4,
+ "agent_stats": {
+  "rounds": 50,
+  "format_errors": 0,
+  "format_error_kinds": {},
+  "self_corrections": 4,
+  "exec_blocks": 48,
+  "exec_failed": 12,
+  "finish_rejections": 0,
+  "dedup_blocked": 0,
+  "triggers": {
+   "g1:card": 1,
+   "g2:nodata_unmasked": 1,
+   "g3:figure_no_colorbar": 1,
+   "g6:suggest": 3,
+   "h1:rounds_left": 2
+  },
+  "checks_run": {
+   "g2": 48,
+   "g3": 49,
+   "g7": 48,
+   "g6": 12,
+   "g4": 12
+  },
+  "end_reason": "finish",
+  "empty_retries": 0,
+  "history_truncations": 0,
+  "finished": true,
+  "agent_time_s": 110.0
+ },
+ "llm_stats": {
+  "calls": 50,
+  "retries": 0,
+  "errors": 0,
+  "context_overflow": 0,
+  "empty": 0,
+  "prompt_tokens": 1435773,
+  "completion_tokens": 74171,
+  "reasoning_tokens": 38456,
+  "cached_tokens": 0
+ },
+ "llm_time_s": 2204.9,
+ "agent_time_s": 110.0,
+ "hit_deadline": false,
+ "sandbox_events": [],
+ "inputs_intact": true,
+ "container_memory": "12g",
+ "deliverable_produced": true,
+ "config": {
+  "image": "gisclaw-exec:1.0",
+  "step_timeout_s": 300,
+  "task_wall_s": 1200,
+  "max_rounds": 50,
+  "blocked_packages": {
+   "arcpy": "Use geopandas + rasterio + shapely instead."
+  },
+  "agent": {
+   "history_tokens": 60000,
+   "max_format_errors": 15
+  }
+ },
+ "model_config": {
+  "provider": "vllm",
+  "model_name": "qwen3.8-27b-fp8",
+  "request": {
+   "set": {
+    "max_tokens": 32768,
+    "temperature": 1.0
+   }
+  }
+ }
+}

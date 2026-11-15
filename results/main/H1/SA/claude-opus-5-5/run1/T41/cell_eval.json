@@ -1,0 +1,90 @@
+{
+ "cell_id": "main.H1.SA.claude-opus-5-5.r1.T41",
+ "task": 41,
+ "status": "ok",
+ "analytically_correct": true,
+ "scorer_error": false,
+ "checks": [
+  {
+   "name": "result file written to pred_results",
+   "passed": true,
+   "value": [
+    "Campground_Campsite_Counts.csv",
+    "CampsiteAttributes_Related_Records.csv",
+    "Campsite_Relationship_Map.png",
+    "Campsites_Attributes_Join_OneToFirst.gpkg",
+    "Campsites_RelationshipClass.gpkg",
+    "Campsites_with_Related_Attributes.gpkg"
+   ],
+   "threshold": "any non-empty file",
+   "required": true,
+   "note": ""
+  },
+  {
+   "name": "one-to-many campsite relate materialised (per-campsite related-record counts, Wyoming campsites)",
+   "passed": true,
+   "value": 1.0,
+   "threshold": ">= 0.95 of the 1,170 Wyoming campsites exact",
+   "required": true,
+   "note": "camps_rel@final row non-null count ~ n_valued_attribute_names"
+  },
+  {
+   "name": "park-level join ParentOrgID -> OrgID (both parks carry 'National Park Service')",
+   "passed": true,
+   "value": [
+    "parks_j@final",
+    "parks_j@save00",
+    "NationalParks_Organizations_Join.gpkg@file"
+   ],
+   "threshold": "a table with both parks and their organisation",
+   "required": true,
+   "note": ""
+  },
+  {
+   "name": "relationship campground (FacilityID) 1 -> many campsites (ParentFacilityID) materialised",
+   "passed": true,
+   "value": 1.0,
+   "threshold": "per campground: all 6 counts exact; per campsite: >= 0.95 parent facility exact",
+   "required": true,
+   "note": "fac_out@final: CampsiteCount by FacilityName (per campground)"
+  }
+ ],
+ "replay": {
+  "success": true,
+  "outputs": [
+   "Campground_Campsite_Counts.csv",
+   "CampsiteAttributes_Related_Records.csv",
+   "Campsite_Relationship_Map.png",
+   "Campsites_Attributes_Join_OneToFirst.gpkg",
+   "Campsites_RelationshipClass.gpkg",
+   "Campsites_with_Related_Attributes.gpkg",
+   "NationalParks_Organizations_Join.gpkg",
+   "Orphan_Campsites_Missing_Facility.csv",
+   "RelationshipClass_Definition.json"
+  ],
+  "events": [],
+  "blocks_ok": 13,
+  "block_outcome": [
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok"
+  ],
+  "step_timeout_s": 900,
+  "same_outputs_as_original": true,
+  "block_mismatches": []
+ },
+ "replay_faithful": true,
+ "replay_unfaithful_reasons": [],
+ "replay_container_failure": [],
+ "emergency_files": []
+}

@@ -1,0 +1,19 @@
+{
+ "task": 9,
+ "title": "Find the deforestation rate for Rondonia",
+ "output_type": "table (CSV, one value)",
+ "required_outputs": ["deforestation_rate.csv"],
+ "method": "Buffer all 27 662 road segments by 5.5 km and dissolve (164 936 km2, South America Albers Equal Area ESRI:102033); intersect with the deforested area (made valid); percentage_deforestation = 100 * deforested area inside the buffer / buffer area = 47.55 %. The overlay is exact but done in 24 x 24 tiles for speed.",
+ "key_parameters": {"crs": "ESRI:102033 (equal area)", "buffer_m": 5500, "roads": "all statuses", "result_pct": 47.55, "units": "percent (fraction <= 1 accepted and scaled)"},
+ "benchmark_defects": [
+  "The published reference script uses overlay how='difference', so the area it divides by the buffer area is the part of the buffer outside the deforested polygons.",
+  "Whether the value is a percentage (0-100) or a fraction is not specified (the published reference script writes a fraction in a column named 'percentage_deforestation'); both are accepted.",
+  "The deforested multipolygon is invalid (needs make_valid/buffer(0)) and very large; a naive global overlay with 27 662 buffers takes many minutes.",
+  "The published reference script projects both layers to UTM zone 23S (EPSG:32723)."
+ ],
+ "checks": [
+  "required: deforestation_rate.csv present",
+  "required: column percentage_deforestation (case-insensitive) with a numeric value",
+  "required: value within 1.5 percentage points of the gold (47.55 %); values <= 1 read as fractions"
+ ]
+}

@@ -1,0 +1,95 @@
+{
+ "cell_id": "main.H2.DA.claude-opus-5-5.r3.T34",
+ "task": 34,
+ "status": "ok",
+ "analytically_correct": true,
+ "scorer_error": false,
+ "checks": [
+  {
+   "name": "required output present",
+   "passed": true,
+   "value": [
+    "accessibility.png"
+   ],
+   "threshold": [
+    "accessibility.png",
+    "Accessibility.png",
+    "accessibility.PNG"
+   ],
+   "required": true,
+   "note": ""
+  },
+  {
+   "name": "map not blank",
+   "passed": true,
+   "value": 54.64310475866132,
+   "threshold": ">=3 grey-level std",
+   "required": true,
+   "note": ""
+  },
+  {
+   "name": "rural-only per-area access result present",
+   "passed": true,
+   "value": 1.0,
+   "threshold": ">=0.9 of rows RURAL",
+   "required": true,
+   "note": "rural.pct_access@final"
+  },
+  {
+   "name": "per-area pattern matches gold (Spearman>=0.70 or MAE<=7pp)",
+   "passed": true,
+   "value": "rho=1.000, MAE=0.0",
+   "threshold": "rho>=0.70 or MAE<=7",
+   "required": true,
+   "note": "rural.pct_access@final"
+  },
+  {
+   "name": "choropleth draws the per-area access share",
+   "passed": true,
+   "value": "rural.pct_access@final",
+   "threshold": null,
+   "required": true,
+   "note": ""
+  },
+  {
+   "name": "overall rural share within 3 pp of gold",
+   "passed": true,
+   "value": 87.67,
+   "threshold": "87.67 +/- 3",
+   "required": true,
+   "note": "stdout: Total rural pop 805,227; within 2 km 705,919; overall access (reported)"
+  },
+  {
+   "name": "deliverable files carry a CRS (uniform rule)",
+   "passed": true,
+   "value": [],
+   "threshold": "every geographic deliverable file has a CRS",
+   "required": true,
+   "note": "no geographic deliverable file written (presence is judged by the task checks)"
+  }
+ ],
+ "replay": {
+  "success": true,
+  "outputs": [
+   "accessibility.png"
+  ],
+  "events": [],
+  "blocks_ok": 7,
+  "block_outcome": [
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok"
+  ],
+  "step_timeout_s": 900,
+  "same_outputs_as_original": true,
+  "block_mismatches": []
+ },
+ "replay_faithful": true,
+ "replay_unfaithful_reasons": [],
+ "replay_container_failure": [],
+ "emergency_files": []
+}

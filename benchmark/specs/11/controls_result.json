@@ -1,0 +1,203 @@
+[
+ {
+  "control": "correct_gradient_arith_mean",
+  "expected_correct": true,
+  "judged_correct": true,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [],
+  "scorer_error": false
+ },
+ {
+  "control": "correct_groupby_by_variable",
+  "expected_correct": true,
+  "judged_correct": true,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [],
+  "scorer_error": false
+ },
+ {
+  "control": "correct_grouped_bars_one_axes",
+  "expected_correct": true,
+  "judged_correct": true,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [],
+  "scorer_error": false
+ },
+ {
+  "control": "correct_inline_groupby_plot",
+  "expected_correct": true,
+  "judged_correct": true,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [],
+  "scorer_error": false
+ },
+ {
+  "control": "correct_mean_dots_scatter",
+  "expected_correct": true,
+  "judged_correct": true,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [],
+  "scorer_error": false
+ },
+ {
+  "control": "correct_percent_slope_circular_dict",
+  "expected_correct": true,
+  "judged_correct": true,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [],
+  "scorer_error": false
+ },
+ {
+  "control": "correct_pivot_table_inline",
+  "expected_correct": true,
+  "judged_correct": true,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [],
+  "scorer_error": false
+ },
+ {
+  "control": "correct_polar_aspect_slope",
+  "expected_correct": true,
+  "judged_correct": true,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [],
+  "scorer_error": false
+ },
+ {
+  "control": "correct_species_bars_circular_dots",
+  "expected_correct": true,
+  "judged_correct": true,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [],
+  "scorer_error": false
+ },
+ {
+  "control": "wrong_aspect_math_convention",
+  "expected_correct": false,
+  "judged_correct": false,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [
+   "points updated with correct slope and aspect",
+   "per-category mean slope and aspect match gold"
+  ],
+  "scorer_error": false
+ },
+ {
+  "control": "wrong_aspect_no_wrap_species_bars",
+  "expected_correct": false,
+  "judged_correct": false,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [
+   "per-category mean slope and aspect match gold",
+   "figure shows per-category mean slope and mean aspect"
+  ],
+  "scorer_error": false
+ },
+ {
+  "control": "wrong_benchmark_script",
+  "expected_correct": false,
+  "judged_correct": false,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [
+   "points updated with correct slope and aspect",
+   "per-category mean slope and aspect match gold",
+   "figure shows per-category mean slope and mean aspect"
+  ],
+  "scorer_error": false
+ },
+ {
+  "control": "wrong_depth_surface_aspect",
+  "expected_correct": false,
+  "judged_correct": false,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [
+   "points updated with correct slope and aspect",
+   "per-category mean slope and aspect match gold",
+   "figure shows per-category mean slope and mean aspect"
+  ],
+  "scorer_error": false
+ },
+ {
+  "control": "wrong_gradient_unit_spacing",
+  "expected_correct": false,
+  "judged_correct": false,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [
+   "per-category mean slope and aspect match gold",
+   "figure shows per-category mean slope and mean aspect"
+  ],
+  "scorer_error": false
+ },
+ {
+  "control": "wrong_points_scatter_no_means",
+  "expected_correct": false,
+  "judged_correct": false,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [
+   "per-category mean slope and aspect match gold",
+   "figure shows per-category mean slope and mean aspect"
+  ],
+  "scorer_error": false
+ },
+ {
+  "control": "wrong_table_ok_plots_histogram",
+  "expected_correct": false,
+  "judged_correct": false,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [
+   "figure shows per-category mean slope and mean aspect"
+  ],
+  "scorer_error": false
+ },
+ {
+  "control": "wrong_table_ok_plots_raw_points",
+  "expected_correct": false,
+  "judged_correct": false,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [
+   "figure shows per-category mean slope and mean aspect"
+  ],
+  "scorer_error": false
+ },
+ {
+  "control": "wrong_table_ok_plots_slope_only",
+  "expected_correct": false,
+  "judged_correct": false,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [
+   "figure shows per-category mean slope and mean aspect"
+  ],
+  "scorer_error": false
+ },
+ {
+  "control": "wrong_unprojected_points",
+  "expected_correct": false,
+  "judged_correct": false,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [
+   "points updated with correct slope and aspect",
+   "per-category mean slope and aspect match gold",
+   "figure shows per-category mean slope and mean aspect"
+  ],
+  "scorer_error": false
+ }
+]

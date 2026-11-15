@@ -1,0 +1,147 @@
+[
+ {
+  "control": "correct_add_patch_polygons",
+  "expected_correct": true,
+  "judged_correct": true,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [],
+  "scorer_error": false
+ },
+ {
+  "control": "correct_clip_overlay_webmercator",
+  "expected_correct": true,
+  "judged_correct": true,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [],
+  "scorer_error": false
+ },
+ {
+  "control": "correct_color_list_quantiles",
+  "expected_correct": true,
+  "judged_correct": true,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [],
+  "scorer_error": false
+ },
+ {
+  "control": "correct_inline_service_area",
+  "expected_correct": true,
+  "judged_correct": true,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [],
+  "scorer_error": false
+ },
+ {
+  "control": "correct_overlay_objectid",
+  "expected_correct": true,
+  "judged_correct": true,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [],
+  "scorer_error": false
+ },
+ {
+  "control": "wrong_add_patch_total_pop_no_service_area",
+  "expected_correct": false,
+  "judged_correct": false,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [
+   "three factors drawn (poverty, no-vehicle, density)",
+   "bus service area drawn and correctly located"
+  ],
+  "scorer_error": false
+ },
+ {
+  "control": "wrong_color_list_total_pop_not_density",
+  "expected_correct": false,
+  "judged_correct": false,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [
+   "three factors drawn (poverty, no-vehicle, density)"
+  ],
+  "scorer_error": false
+ },
+ {
+  "control": "wrong_columns",
+  "expected_correct": false,
+  "judged_correct": false,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [
+   "three factors drawn (poverty, no-vehicle, density)"
+  ],
+  "scorer_error": false
+ },
+ {
+  "control": "wrong_crs_override",
+  "expected_correct": false,
+  "judged_correct": false,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [
+   "bus service area drawn and correctly located"
+  ],
+  "scorer_error": false
+ },
+ {
+  "control": "wrong_factors_in_separate_pngs",
+  "expected_correct": false,
+  "judged_correct": false,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [
+   "three factors drawn (poverty, no-vehicle, density)"
+  ],
+  "scorer_error": false
+ },
+ {
+  "control": "wrong_no_service_area",
+  "expected_correct": false,
+  "judged_correct": false,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [
+   "bus service area drawn and correctly located"
+  ],
+  "scorer_error": false
+ },
+ {
+  "control": "wrong_poverty_vs_vehicle_swapped_and_points",
+  "expected_correct": false,
+  "judged_correct": false,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [
+   "bus service area drawn and correctly located"
+  ],
+  "scorer_error": false
+ },
+ {
+  "control": "wrong_service_area_not_drawn",
+  "expected_correct": false,
+  "judged_correct": false,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [
+   "bus service area drawn and correctly located"
+  ],
+  "scorer_error": false
+ },
+ {
+  "control": "wrong_single_factor_drawn",
+  "expected_correct": false,
+  "judged_correct": false,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [
+   "three factors drawn (poverty, no-vehicle, density)"
+  ],
+  "scorer_error": false
+ }
+]

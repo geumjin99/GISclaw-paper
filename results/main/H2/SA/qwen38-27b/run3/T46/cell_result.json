@@ -1,0 +1,142 @@
+{
+ "cell_id": "main.H2.SA.qwen38-27b.r3.T46",
+ "experiment": "main",
+ "tier": "H2",
+ "arch": "SA",
+ "model": "qwen38-27b",
+ "run": 3,
+ "task": 46,
+ "elapsed_s": 2088.6,
+ "protocol": "native",
+ "tier_config": {
+  "tools": [
+   "list_files",
+   "load_vector",
+   "load_raster",
+   "inspect",
+   "execute",
+   "lookup_api",
+   "finish"
+  ],
+  "generic": true,
+  "g1": true,
+  "g2": true,
+  "g3": true,
+  "g4": true,
+  "g5": true,
+  "g6": true,
+  "g7": true,
+  "no_dd": false,
+  "no_dk": false
+ },
+ "outputs": [
+  "crash_hotspots.cpg",
+  "crash_hotspots.csv",
+  "crash_hotspots.dbf",
+  "crash_hotspots.prj",
+  "crash_hotspots.shp",
+  "crash_hotspots.shx",
+  "emergency_output.geojson",
+  "peak_crash_hotspot_map.png",
+  "peak_crashes.cpg",
+  "peak_crashes.dbf",
+  "peak_crashes.prj",
+  "peak_crashes.shp",
+  "peak_crashes.shx",
+  "peak_crashes_roadjoin.cpg",
+  "peak_crashes_roadjoin.dbf",
+  "peak_crashes_roadjoin.prj",
+  "peak_crashes_roadjoin.shp",
+  "peak_crashes_roadjoin.shx",
+  "peak_crashes_snapped.cpg",
+  "peak_crashes_snapped.dbf",
+  "peak_crashes_snapped.prj",
+  "peak_crashes_snapped.shp",
+  "peak_crashes_snapped.shx",
+  "road_crash_rates.cpg",
+  "road_crash_rates.dbf",
+  "road_crash_rates.prj",
+  "road_crash_rates.shp",
+  "road_crash_rates.shx"
+ ],
+ "required_outputs": [],
+ "required_present": null,
+ "emergency_files": [
+  "emergency_output.geojson"
+ ],
+ "rounds": 50,
+ "self_corrections": 10,
+ "agent_stats": {
+  "rounds": 50,
+  "format_errors": 0,
+  "format_error_kinds": {},
+  "self_corrections": 10,
+  "exec_blocks": 48,
+  "exec_failed": 15,
+  "finish_rejections": 0,
+  "dedup_blocked": 0,
+  "triggers": {
+   "g1:card": 1,
+   "g6:suggest": 4,
+   "g2:weights_islands": 1,
+   "g2:merge_few_matches": 1,
+   "g6:lookup": 1,
+   "h1:rounds_left": 2,
+   "h1:emergency_save": 1
+  },
+  "checks_run": {
+   "g2": 48,
+   "g3": 48,
+   "g7": 48,
+   "g6": 15,
+   "g4": 15,
+   "g6_lookup": 1
+  },
+  "end_reason": "max_rounds",
+  "empty_retries": 0,
+  "history_truncations": 0,
+  "finished": false,
+  "agent_time_s": 25.2
+ },
+ "llm_stats": {
+  "calls": 50,
+  "retries": 0,
+  "errors": 0,
+  "context_overflow": 0,
+  "empty": 0,
+  "prompt_tokens": 1263963,
+  "completion_tokens": 85068,
+  "reasoning_tokens": 67591,
+  "cached_tokens": 0
+ },
+ "llm_time_s": 2062.3,
+ "agent_time_s": 25.2,
+ "hit_deadline": false,
+ "sandbox_events": [],
+ "inputs_intact": true,
+ "container_memory": "12g",
+ "deliverable_produced": false,
+ "config": {
+  "image": "gisclaw-exec:1.0",
+  "step_timeout_s": 300,
+  "task_wall_s": 1200,
+  "max_rounds": 50,
+  "blocked_packages": {
+   "arcpy": "Use geopandas + rasterio + shapely instead."
+  },
+  "agent": {
+   "history_tokens": 60000,
+   "max_format_errors": 15
+  }
+ },
+ "model_config": {
+  "provider": "vllm",
+  "model_name": "qwen3.8-27b-fp8",
+  "request": {
+   "set": {
+    "max_tokens": 32768,
+    "temperature": 1.0
+   }
+  }
+ }
+}

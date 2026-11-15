@@ -1,0 +1,27 @@
+{
+ "task": 45,
+ "title": "Terrain ruggedness cost for mountain-lion corridors",
+ "output_type": "raster (ruggedness, ruggedness cost) + figure",
+ "required_outputs": [
+  "Ruggedness_Cost.tif (any georeferenced raster name/format)"
+ ],
+ "method": "30 m DEM (EPSG:26911, m). Ruggedness = 3x3 focal RANGE ignoring NoData (max = 223.39 m, identical to the upper threshold hard-coded in the benchmark's model). Cost = Rescale by Function MSLarge (mean and std multipliers 1, thresholds 0-223.39) on an evaluation scale from 10 to 1, so flat terrain = 10 and rugged terrain -> 1. Both rasters written as GeoTIFF on the DEM grid.",
+ "key_parameters": {
+  "focal": "3x3 rectangle, RANGE, NoData ignored",
+  "rescale": "MSLarge, a=1, b=1, scale 10 -> 1",
+  "dem": "Elevation.tif 2494 x 3062, 30 m"
+ },
+ "benchmark_defects": [
+  "The benchmark distributes only Elevation.tfw/.aux.xml for this task; the DEM is taken from the Learn ArcGIS mountain-lion project. The distributed Elevation.tif.aux.xml holds statistics of an unrelated 0-255 multi-band image.",
+  "The instruction does not state the focal statistic (domain knowledge describes TRI, the model uses RANGE), the rescale function or its direction; the checks accept any terrain-variation statistic and either direction, reporting the choices of the benchmark's model separately.",
+  "'standardize' admits z-scores; bounded 0-100 cost or z-scores accepted."
+ ],
+ "checks": [
+  "required: ruggedness (file or captured 2-D array) rank-correlates with gold 3x3 range (|Spearman| >= 0.95)",
+  "required: cost raster saved with the DEM CRS and footprint (bounds IoU >= 0.95)",
+  "required: cost is a standardised monotone transform of ruggedness (|Spearman| >= 0.85, values within [0,100] or z-scores, >= 90 % coverage)",
+  "optional: rugged terrain gets low cost (original direction)",
+  "optional: MSLarge rescale named in code",
+  "required: DEM NoData kept as NoData in the cost raster (>= 90 %)"
+ ]
+}

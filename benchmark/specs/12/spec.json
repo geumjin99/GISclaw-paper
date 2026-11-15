@@ -1,0 +1,28 @@
+{
+ "task": 12,
+ "title": "Terrain ruggedness for mountain lion habitat suitability",
+ "output_type": "image (raster map)",
+ "required_outputs": [
+  "ruggedness.png"
+ ],
+ "method": "Terrain Ruggedness Index as defined in the task: per cell, root-mean-square of the elevation differences to the 8 neighbours (Riley-type TRI), NoData from the alpha band excluded; mapped as a continuous raster.",
+ "key_parameters": {
+  "window": "3 x 3 (8 neighbours)",
+  "formula": "sqrt(mean((z_i - z_0)^2))",
+  "nodata": "alpha band 4 == 0",
+  "units": "grey levels of the 8-bit elevation export (relative)"
+ },
+ "benchmark_defects": [
+  "Elevation.tif is a 4-band 8-bit RGBA rendering (grey 0-255 + alpha), not a DEM in metres; TRI is therefore only relative and cannot be interpreted in metres.",
+  "In the published reference script the plotting and savefig lines follow a `return` statement inside a separate function, `rescale_by_function`, which main() does not call; main() computes the filter and writes no file.",
+  "The published reference script computes the 3x3 range (max-min), which differs from the TRI definition given in the Domain Knowledge."
+ ],
+ "checks": [
+  "required: ruggedness.png present",
+  "required: map not blank",
+  "required: a captured DEM-shaped 2-D array is a TRI-family surface: Spearman >= 0.95 against the gold TRI (1/4 grid) or, for coarser arrays, against the TRI recomputed from the gold DEM decimated to that grid (slope 0.93 fails)",
+  "required: the figure shows the ruggedness surface (>= 0.95) in either vertical orientation: imshow by origin, pcolormesh by index-space y direction (coordinate space: both vertical orientations), contour/contourf via the Z argument of the plotting call checked against the contour levels; otherwise UNVERIFIABLE (not passed); transposes / left-right mirrors fail",
+  "optional: TRI as defined (Spearman >= 0.99)",
+  "figure (kind=figure, not in the main metric): the surface is drawn north-up (check above in the orientation drawn)"
+ ]
+}

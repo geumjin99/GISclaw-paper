@@ -1,0 +1,15 @@
+{
+ "task": 13,
+ "source": "instruction: save the figure as 'pred_results/ocean_profiles_vis.png'; checks.py file_exists + png_not_blank (profiles are scored on captured / drawn arrays)",
+ "deliverables": [
+  {
+   "id": "profile_plot",
+   "kind": "figure",
+   "patterns": ["ocean_profiles_vis.png"],
+   "required": true,
+   "crs_required": false,
+   "checked_by": ["required output present", "figure not blank"]
+  }
+ ],
+ "not_deliverables": []
+}

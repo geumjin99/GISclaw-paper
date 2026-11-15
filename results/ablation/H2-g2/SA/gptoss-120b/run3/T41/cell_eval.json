@@ -1,0 +1,78 @@
+{
+ "cell_id": "ablation.H2-g2.SA.gptoss-120b.r3.T41",
+ "task": 41,
+ "status": "ok",
+ "analytically_correct": false,
+ "scorer_error": false,
+ "checks": [
+  {
+   "name": "result file written to pred_results",
+   "passed": true,
+   "value": [
+    "campsite_counts_by_park.csv",
+    "campsite_to_campground.gpkg",
+    "campsites_with_park.gpkg",
+    "merged_campsite_attributes.csv"
+   ],
+   "threshold": "any non-empty file",
+   "required": true,
+   "note": ""
+  },
+  {
+   "name": "one-to-many campsite relate materialised (per-campsite related-record counts, Wyoming campsites)",
+   "passed": true,
+   "value": 0.9991,
+   "threshold": ">= 0.95 of the 1,170 Wyoming campsites exact",
+   "required": true,
+   "note": "merged@final rows per campsite (long merged) ~ n_attributes"
+  },
+  {
+   "name": "park-level join ParentOrgID -> OrgID (both parks carry 'National Park Service')",
+   "passed": false,
+   "value": [
+    "gdf_parks@final",
+    "campsites_parks@final",
+    "summary@final"
+   ],
+   "threshold": "a table with both parks and their organisation",
+   "required": true,
+   "note": ""
+  },
+  {
+   "name": "relationship campground (FacilityID) 1 -> many campsites (ParentFacilityID) materialised",
+   "passed": true,
+   "value": 1.0,
+   "threshold": "per campground: all 6 counts exact; per campsite: >= 0.95 parent facility exact",
+   "required": true,
+   "note": "rel@final: FacilityID by CampsiteID (per campsite)"
+  }
+ ],
+ "replay": {
+  "success": true,
+  "outputs": [
+   "campsite_counts_by_park.csv",
+   "campsite_to_campground.gpkg",
+   "campsites_with_park.gpkg",
+   "merged_campsite_attributes.csv"
+  ],
+  "events": [],
+  "blocks_ok": 6,
+  "block_outcome": [
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok"
+  ],
+  "step_timeout_s": 900,
+  "same_outputs_as_original": true,
+  "block_mismatches": []
+ },
+ "replay_faithful": true,
+ "replay_unfaithful_reasons": [],
+ "replay_container_failure": [],
+ "emergency_files": []
+}

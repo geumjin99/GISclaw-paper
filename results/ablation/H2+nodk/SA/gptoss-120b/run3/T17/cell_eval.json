@@ -1,0 +1,96 @@
+{
+ "cell_id": "ablation.H2+nodk.SA.gptoss-120b.r3.T17",
+ "task": 17,
+ "status": "ok",
+ "analytically_correct": false,
+ "scorer_error": false,
+ "checks": [
+  {
+   "name": "required output present",
+   "passed": true,
+   "value": [
+    "collisions_map_vis.png"
+   ],
+   "threshold": [
+    "collisions_map_vis.png"
+   ],
+   "required": true,
+   "note": ""
+  },
+  {
+   "name": "map not blank",
+   "passed": true,
+   "value": 45.00358059724114,
+   "threshold": ">=3 grey-level std",
+   "required": true,
+   "note": ""
+  },
+  {
+   "name": "all 72 collisions drawn at their positions and visible on the map",
+   "passed": true,
+   "value": {
+    "drawn_points": 71,
+    "inputs_matched": 72
+   },
+   "threshold": "71-81 distinct drawn, >=71 matched",
+   "required": true,
+   "note": "save00; visibility from axes limits"
+  },
+  {
+   "name": "borough polygons drawn, in the points' coordinate space",
+   "passed": true,
+   "value": 1.0,
+   "threshold": 0.9,
+   "required": true,
+   "note": "drawn: boroughs_proj; boroughs_proj"
+  },
+  {
+   "name": "crash markers visible against a white background",
+   "passed": false,
+   "value": null,
+   "threshold": null,
+   "required": false,
+   "note": "UNVERIFIABLE: marker colours not captured (uniform colour or line markers)",
+   "kind": "figure",
+   "unverifiable": true
+  },
+  {
+   "name": "crashes plotted with geoplot (task: 'on a map by geoplot')",
+   "passed": false,
+   "value": null,
+   "threshold": null,
+   "required": true,
+   "note": "no geoplot point-layer call (pointplot/kdeplot/quadtree/voronoi/webmap) in the code"
+  },
+  {
+   "name": "fatalities encoded (size/colour by persons killed)",
+   "passed": true,
+   "value": null,
+   "threshold": null,
+   "required": false,
+   "note": ""
+  }
+ ],
+ "replay": {
+  "success": true,
+  "outputs": [
+   "collisions_map_vis.png"
+  ],
+  "events": [],
+  "blocks_ok": 3,
+  "block_outcome": [
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok"
+  ],
+  "step_timeout_s": 900,
+  "same_outputs_as_original": true,
+  "block_mismatches": []
+ },
+ "replay_faithful": true,
+ "replay_unfaithful_reasons": [],
+ "replay_container_failure": [],
+ "emergency_files": []
+}

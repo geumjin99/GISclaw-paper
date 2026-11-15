@@ -1,0 +1,108 @@
+{
+ "cell_id": "ablation.H2-g3.SA.qwen38-27b.r1.T02",
+ "experiment": "ablation",
+ "tier": "H2-g3",
+ "arch": "SA",
+ "model": "qwen38-27b",
+ "run": 1,
+ "task": 2,
+ "elapsed_s": 537.5,
+ "protocol": "native",
+ "tier_config": {
+  "tools": [
+   "list_files",
+   "load_vector",
+   "load_raster",
+   "inspect",
+   "execute",
+   "lookup_api",
+   "finish"
+  ],
+  "generic": true,
+  "g1": true,
+  "g2": true,
+  "g3": false,
+  "g4": true,
+  "g5": true,
+  "g6": true,
+  "g7": true,
+  "no_dd": false,
+  "no_dk": false
+ },
+ "outputs": [
+  "transit_access.png"
+ ],
+ "required_outputs": [
+  "transit_access.png"
+ ],
+ "required_present": true,
+ "emergency_files": [],
+ "rounds": 17,
+ "self_corrections": 2,
+ "agent_stats": {
+  "rounds": 17,
+  "format_errors": 0,
+  "format_error_kinds": {},
+  "self_corrections": 2,
+  "exec_blocks": 14,
+  "exec_failed": 6,
+  "finish_rejections": 0,
+  "dedup_blocked": 0,
+  "triggers": {
+   "g1:card": 1,
+   "g6:suggest": 2
+  },
+  "checks_run": {
+   "g2": 14,
+   "g7": 14,
+   "g6": 6,
+   "g4": 6
+  },
+  "end_reason": "finish",
+  "empty_retries": 0,
+  "history_truncations": 0,
+  "finished": true,
+  "agent_time_s": 9.5
+ },
+ "llm_stats": {
+  "calls": 17,
+  "retries": 0,
+  "errors": 0,
+  "context_overflow": 0,
+  "empty": 0,
+  "prompt_tokens": 234620,
+  "completion_tokens": 23328,
+  "reasoning_tokens": 10629,
+  "cached_tokens": 0
+ },
+ "llm_time_s": 526.6,
+ "agent_time_s": 9.5,
+ "hit_deadline": false,
+ "sandbox_events": [],
+ "inputs_intact": true,
+ "container_memory": "12g",
+ "deliverable_produced": true,
+ "config": {
+  "image": "gisclaw-exec:1.0",
+  "step_timeout_s": 300,
+  "task_wall_s": 1200,
+  "max_rounds": 50,
+  "blocked_packages": {
+   "arcpy": "Use geopandas + rasterio + shapely instead."
+  },
+  "agent": {
+   "history_tokens": 60000,
+   "max_format_errors": 15
+  }
+ },
+ "model_config": {
+  "provider": "vllm",
+  "model_name": "qwen3.8-27b-fp8",
+  "request": {
+   "set": {
+    "max_tokens": 32768,
+    "temperature": 1.0
+   }
+  }
+ }
+}

@@ -1,0 +1,18 @@
+{
+ "task": 36,
+ "source": "instruction names no output file ('summarize the extent of damage for each field'); checks.py: any file in pred_results (required); per-field loss from captured objects or a CSV/vector file in pred_results (ctx.objects with files)",
+ "deliverables": [
+  {
+   "id": "field_loss_layer",
+   "kind": "vector",
+   "patterns": ["*.shp", "*.geojson", "*.gpkg", "*.json"],
+   "required": false,
+   "crs_required": true,
+   "geometry_type": ["Polygon", "MultiPolygon"],
+   "checked_by": ["result file written to pred_results", "per-field loss result covers >= 80 % of gold fields", "per-field loss ranking matches gold (Spearman >= 0.85)"]
+  }
+ ],
+ "not_deliverables": [
+  {"pattern": "f.shp", "reason": "temporary copy of the input Field_boundaries.shp made by checks.py in a temp dir"}
+ ]
+}

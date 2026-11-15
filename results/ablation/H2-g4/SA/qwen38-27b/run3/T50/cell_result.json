@@ -1,0 +1,129 @@
+{
+ "cell_id": "ablation.H2-g4.SA.qwen38-27b.r3.T50",
+ "experiment": "ablation",
+ "tier": "H2-g4",
+ "arch": "SA",
+ "model": "qwen38-27b",
+ "run": 3,
+ "task": 50,
+ "elapsed_s": 2927.4,
+ "protocol": "native",
+ "tier_config": {
+  "tools": [
+   "list_files",
+   "load_vector",
+   "load_raster",
+   "inspect",
+   "execute",
+   "lookup_api",
+   "finish"
+  ],
+  "generic": true,
+  "g1": true,
+  "g2": true,
+  "g3": true,
+  "g4": false,
+  "g5": true,
+  "g6": true,
+  "g7": true,
+  "no_dd": false,
+  "no_dk": false
+ },
+ "outputs": [
+  "USA_seagrass_dissolved.cpg",
+  "USA_seagrass_dissolved.dbf",
+  "USA_seagrass_dissolved.prj",
+  "USA_seagrass_dissolved.shp",
+  "USA_seagrass_dissolved.shx",
+  "emergency_output.geojson",
+  "presence_points.cpg",
+  "presence_points.dbf",
+  "presence_points.prj",
+  "presence_points.shp",
+  "presence_points.shx"
+ ],
+ "required_outputs": [],
+ "required_present": null,
+ "emergency_files": [
+  "emergency_output.geojson"
+ ],
+ "rounds": 32,
+ "self_corrections": 8,
+ "agent_stats": {
+  "rounds": 32,
+  "format_errors": 0,
+  "format_error_kinds": {},
+  "self_corrections": 8,
+  "exec_blocks": 30,
+  "exec_failed": 12,
+  "finish_rejections": 0,
+  "dedup_blocked": 0,
+  "triggers": {
+   "g1:card": 1,
+   "g6:suggest": 1,
+   "g6:lookup": 1,
+   "h1:time_left": 1,
+   "h1:emergency_save": 1
+  },
+  "checks_run": {
+   "g2": 30,
+   "g3": 30,
+   "g7": 30,
+   "g6": 12,
+   "g6_lookup": 1
+  },
+  "end_reason": "budget",
+  "empty_retries": 0,
+  "history_truncations": 0,
+  "finished": false,
+  "agent_time_s": 1285.2
+ },
+ "llm_stats": {
+  "calls": 32,
+  "retries": 0,
+  "errors": 0,
+  "context_overflow": 0,
+  "empty": 0,
+  "prompt_tokens": 666364,
+  "completion_tokens": 70660,
+  "reasoning_tokens": 56117,
+  "cached_tokens": 0
+ },
+ "llm_time_s": 1641.2,
+ "agent_time_s": 1285.2,
+ "hit_deadline": true,
+ "sandbox_events": [
+  {
+   "event": "timeout_interrupted"
+  },
+  {
+   "event": "timeout_interrupted"
+  }
+ ],
+ "inputs_intact": true,
+ "container_memory": "12g",
+ "deliverable_produced": false,
+ "config": {
+  "image": "gisclaw-exec:1.0",
+  "step_timeout_s": 300,
+  "task_wall_s": 1200,
+  "max_rounds": 50,
+  "blocked_packages": {
+   "arcpy": "Use geopandas + rasterio + shapely instead."
+  },
+  "agent": {
+   "history_tokens": 60000,
+   "max_format_errors": 15
+  }
+ },
+ "model_config": {
+  "provider": "vllm",
+  "model_name": "qwen3.8-27b-fp8",
+  "request": {
+   "set": {
+    "max_tokens": 32768,
+    "temperature": 1.0
+   }
+  }
+ }
+}

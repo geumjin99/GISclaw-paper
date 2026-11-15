@@ -1,0 +1,94 @@
+{
+ "cell_id": "ablation.H2-g3.SA.qwen38-27b.r1.T47",
+ "task": 47,
+ "status": "ok",
+ "analytically_correct": true,
+ "scorer_error": false,
+ "checks": [
+  {
+   "name": "joined parcel layer saved (121 features)",
+   "passed": true,
+   "value": [
+    "parcels_joined.shp",
+    "parcels_joined.gpkg"
+   ],
+   "threshold": null,
+   "required": true,
+   "note": ""
+  },
+  {
+   "name": "impervious (Value 0) area per parcel matches gold (>= 90 % within 5 %)",
+   "passed": true,
+   "value": 1.0,
+   "threshold": "0.9 (per parcel: within 5 % or one boundary cell ring)",
+   "required": true,
+   "note": "0 in parcels_joined.shp [unit cells(0.25 ft2)]"
+  },
+  {
+   "name": "pervious (Value 1) area also tabulated",
+   "passed": true,
+   "value": 1.0,
+   "threshold": null,
+   "required": false,
+   "note": ""
+  },
+  {
+   "name": "class meaning read from attribute table (vat.dbf / Class_name)",
+   "passed": true,
+   "value": null,
+   "threshold": null,
+   "required": false,
+   "note": ""
+  },
+  {
+   "name": "deliverable files carry a CRS (uniform rule)",
+   "passed": true,
+   "value": [
+    "parcels_joined.gpkg",
+    "parcels_joined.shp"
+   ],
+   "threshold": "every geographic deliverable file has a CRS",
+   "required": true,
+   "note": "2 geographic deliverable file(s), all with a CRS"
+  }
+ ],
+ "replay": {
+  "success": true,
+  "outputs": [
+   "impervious_by_parcel_map.png",
+   "parcels_joined.cpg",
+   "parcels_joined.dbf",
+   "parcels_joined.gpkg",
+   "parcels_joined.prj",
+   "parcels_joined.shp",
+   "parcels_joined.shx",
+   "parcels_joined_table.csv",
+   "tabulate_area.csv"
+  ],
+  "events": [],
+  "blocks_ok": 10,
+  "block_outcome": [
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok"
+  ],
+  "step_timeout_s": 900,
+  "same_outputs_as_original": true,
+  "block_mismatches": []
+ },
+ "replay_faithful": true,
+ "replay_unfaithful_reasons": [],
+ "replay_container_failure": [],
+ "emergency_files": []
+}

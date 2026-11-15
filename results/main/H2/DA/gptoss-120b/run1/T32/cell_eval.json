@@ -1,0 +1,116 @@
+{
+ "cell_id": "main.H2.DA.gptoss-120b.r1.T32",
+ "task": 32,
+ "status": "ok",
+ "analytically_correct": false,
+ "scorer_error": false,
+ "checks": [
+  {
+   "name": "required output present",
+   "passed": true,
+   "value": [
+    "optimal_path.png"
+   ],
+   "threshold": [
+    "optimal_path.png",
+    "Optimal_path.png",
+    "optimal_path.PNG"
+   ],
+   "required": true,
+   "note": ""
+  },
+  {
+   "name": "map not blank",
+   "passed": true,
+   "value": 70.09609762789466,
+   "threshold": ">=3 grey-level std",
+   "required": true,
+   "note": ""
+  },
+  {
+   "name": "cost surface = weighted sum of ruggedness, road-distance, land-cover and protection costs",
+   "passed": false,
+   "value": "R2=0.857; weights rug=0.81 landcover=0.15 protected=0.02 roads=0.05 (all roads, decile rank; ruggedness MSLarge; presence from max-R2 fit (all roads; ruggedness linear): partial r [0.98, 0.06, 0.01, 0.01]); partial r [0.87, 0.27, 0.04, 0.09]",
+   "threshold": "R2>=0.75, every weight>=0.08, every partial r>=0.35",
+   "required": true,
+   "note": "ruggedness_cost.tif@file"
+  },
+  {
+   "name": "corridors follow gold least-cost paths (recall & precision >= 0.80 within 1.5 km)",
+   "passed": true,
+   "value": "recall=1.00, precision=0.52",
+   "threshold": "recall>=0.80 and precision>=0.80, or recall>=0.90 and precision>=0.35 (superset network)",
+   "required": true,
+   "note": "paths_gdf@final"
+  },
+  {
+   "name": "map draws the corridors",
+   "passed": true,
+   "value": null,
+   "threshold": "figure lines pass check 3, or drawn path boxes cover/precision >= 0.80",
+   "required": true,
+   "note": "fig_ax0_image1@save00 (path raster) (recall=1.00, precision=0.45)"
+  },
+  {
+   "name": "deliverable files carry a CRS (uniform rule)",
+   "passed": true,
+   "value": [
+    "final_cost.tif",
+    "landcover_cost.tif",
+    "optimal_paths.tif",
+    "paths.geojson",
+    "protected_cost.tif",
+    "road_distance.tif",
+    "ruggedness_cost.tif"
+   ],
+   "threshold": "every geographic deliverable file has a CRS",
+   "required": true,
+   "note": "7 geographic deliverable file(s), all with a CRS"
+  }
+ ],
+ "replay": {
+  "success": true,
+  "outputs": [
+   "final_cost.tif",
+   "landcover_cost.tif",
+   "optimal_path.png",
+   "optimal_paths.tif",
+   "paths.geojson",
+   "protected_cost.tif",
+   "road_distance.tif",
+   "ruggedness_cost.tif",
+   "weight_dict.json"
+  ],
+  "events": [],
+  "blocks_ok": 20,
+  "block_outcome": [
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok"
+  ],
+  "step_timeout_s": 900,
+  "same_outputs_as_original": true,
+  "block_mismatches": []
+ },
+ "replay_faithful": true,
+ "replay_unfaithful_reasons": [],
+ "replay_container_failure": [],
+ "emergency_files": []
+}

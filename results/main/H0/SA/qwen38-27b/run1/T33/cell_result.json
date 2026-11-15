@@ -1,0 +1,97 @@
+{
+ "cell_id": "main.H0.SA.qwen38-27b.r1.T33",
+ "experiment": "main",
+ "tier": "H0",
+ "arch": "SA",
+ "model": "qwen38-27b",
+ "run": 1,
+ "task": 33,
+ "elapsed_s": 1457.4,
+ "protocol": "native",
+ "tier_config": {
+  "tools": [
+   "execute",
+   "finish"
+  ],
+  "generic": false,
+  "g1": false,
+  "g2": false,
+  "g3": false,
+  "g4": false,
+  "g5": false,
+  "g6": false,
+  "g7": false,
+  "no_dd": false,
+  "no_dk": false
+ },
+ "outputs": [
+  "Buildings_FloodDamage_2050.gpkg",
+  "FloodDamage_Map_2050.png",
+  "FloodDamage_Summary_2050.csv",
+  "FloodDepth_2050.tif",
+  "FloodZone_2050.gpkg"
+ ],
+ "required_outputs": [],
+ "required_present": null,
+ "emergency_files": [],
+ "rounds": 33,
+ "self_corrections": 11,
+ "agent_stats": {
+  "rounds": 33,
+  "format_errors": 0,
+  "format_error_kinds": {},
+  "self_corrections": 11,
+  "exec_blocks": 32,
+  "exec_failed": 13,
+  "finish_rejections": 0,
+  "dedup_blocked": 0,
+  "triggers": {},
+  "checks_run": {},
+  "end_reason": "finish",
+  "empty_retries": 0,
+  "history_truncations": 0,
+  "finished": true,
+  "agent_time_s": 45.0
+ },
+ "llm_stats": {
+  "calls": 33,
+  "retries": 0,
+  "errors": 0,
+  "context_overflow": 0,
+  "empty": 0,
+  "prompt_tokens": 579255,
+  "completion_tokens": 50356,
+  "reasoning_tokens": 34941,
+  "cached_tokens": 0
+ },
+ "llm_time_s": 1411.2,
+ "agent_time_s": 45.0,
+ "hit_deadline": false,
+ "sandbox_events": [],
+ "inputs_intact": true,
+ "container_memory": "12g",
+ "deliverable_produced": true,
+ "config": {
+  "image": "gisclaw-exec:1.0",
+  "step_timeout_s": 300,
+  "task_wall_s": 1200,
+  "max_rounds": 50,
+  "blocked_packages": {
+   "arcpy": "Use geopandas + rasterio + shapely instead."
+  },
+  "agent": {
+   "history_tokens": 60000,
+   "max_format_errors": 15
+  }
+ },
+ "model_config": {
+  "provider": "vllm",
+  "model_name": "qwen3.8-27b-fp8",
+  "request": {
+   "set": {
+    "max_tokens": 32768,
+    "temperature": 1.0
+   }
+  }
+ }
+}

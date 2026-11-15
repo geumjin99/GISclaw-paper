@@ -1,0 +1,106 @@
+{
+ "cell_id": "main.H2.SA.claude-opus-5-5.r1.T01",
+ "task": 1,
+ "status": "ok",
+ "analytically_correct": true,
+ "scorer_error": false,
+ "checks": [
+  {
+   "name": "required output present",
+   "passed": true,
+   "value": [
+    "interpolated_urban_heat.png"
+   ],
+   "threshold": [
+    "interpolated_urban_heat.png"
+   ],
+   "required": true,
+   "note": ""
+  },
+  {
+   "name": "map not blank",
+   "passed": true,
+   "value": 63.698907745064744,
+   "threshold": ">=3 grey-level std",
+   "required": true,
+   "note": ""
+  },
+  {
+   "name": "per-block mean temperature matches gold pattern (Spearman >= 0.90)",
+   "passed": true,
+   "value": 0.997,
+   "threshold": 0.9,
+   "required": true,
+   "note": "bg.MeanTempF@final"
+  },
+  {
+   "name": "values are temperatures of this data (mean within 2 F)",
+   "passed": true,
+   "value": 79.45,
+   "threshold": "79.43+/-2",
+   "required": true,
+   "note": ""
+  },
+  {
+   "name": "values come from an interpolated surface, not copied station readings",
+   "passed": true,
+   "value": 0.0,
+   "threshold": "< 0.5 of blocks equal a station value",
+   "required": true,
+   "note": ""
+  },
+  {
+   "name": "drawn choropleth shows the per-block temperature",
+   "passed": true,
+   "value": 0.981,
+   "threshold": 0.9,
+   "required": true,
+   "note": "array drawn on blocks@final (fig_ax1_coll0_values)"
+  },
+  {
+   "name": "hot & elderly-dense highlight set derived",
+   "passed": true,
+   "value": [
+    12,
+    0.83,
+    0.86
+   ],
+   "threshold": "1-60 % of blocks; mean temp & density percentile > 0.6",
+   "required": true,
+   "note": "bg.Hotspot@final"
+  },
+  {
+   "name": "method: Kriging / GP interpolation (prescribed by the task)",
+   "passed": true,
+   "value": null,
+   "threshold": null,
+   "required": true,
+   "note": "pykrige"
+  }
+ ],
+ "replay": {
+  "success": true,
+  "outputs": [
+   "blockgroup_mean_temperature.csv",
+   "interpolated_urban_heat.png"
+  ],
+  "events": [],
+  "blocks_ok": 7,
+  "block_outcome": [
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok"
+  ],
+  "step_timeout_s": 900,
+  "same_outputs_as_original": true,
+  "block_mismatches": []
+ },
+ "replay_faithful": true,
+ "replay_unfaithful_reasons": [],
+ "replay_container_failure": [],
+ "emergency_files": []
+}

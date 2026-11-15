@@ -1,0 +1,35 @@
+{
+ "task": 20,
+ "title": "Random-forest prospectivity for tin-tungsten deposits, NE Tasmania",
+ "output_type": "image (probability map)",
+ "required_outputs": [
+  "mineral_prospectivity.png"
+ ],
+ "method": "Stack the 7 evidence rasters (50 m, 2633 x 1876; NoData -99999 masked), label cells within 1 km of the 199 Sn-W occurrences as 1, balance classes by random undersampling, fit a random forest (200 trees, depth 3, seed 42), evaluate ROC AUC with the task's random 67/33 split and with 10 km spatial-block GroupKFold CV, refit on all balanced samples and map P(deposit) for all valid cells.",
+ "key_parameters": {
+  "buffer": "1000 m",
+  "undersampling": "RandomUnderSampler(random_state=42)",
+  "model": "RandomForestClassifier(n_estimators=200, max_depth=3, random_state=42)",
+  "validation": "random split AUC 0.945; spatial block CV AUC 0.926",
+  "seeds": "fixed (42) everywhere"
+ },
+ "benchmark_defects": [
+  "The published reference script sets no random_state on RandomForestClassifier, takes the NoData mask from the last raster in os.listdir order, and calls main() only under an `if __name__ == '__main__'` guard.",
+  "The rasters carry a LOCAL_CS 'GDA94 / MGA zone 55' without EPSG code while the points are EPSG:28355; they are the same space, but a solution that trusts the raster CRS may 'correct' it wrongly.",
+  "'The final auc should be at least 0.9' rewards random pixel splits, which leak information between buffered neighbouring pixels of the same deposit: a deep RF scores 0.995 on a random split but 0.926 with spatial block CV.",
+  "Dataset Description lists the rasters under 'datasets\\\\' (Windows path, wrong folder name)."
+ ],
+ "checks": [
+  "required: mineral_prospectivity.png present",
+  "required: map not blank",
+  "required: a non-binary probability map on the evidence grid ([0,1], or percent rescaled) rank-agrees with the gold RF map (Spearman >= 0.60)",
+  "required: in-sample ROC AUC of that map for cells within 1 km of occurrences >= 0.85",
+  "required: the figure shows that map (drawn image in either row order, rho >= 0.60; orientation is the figure check); no raster artist -> UNVERIFIABLE (not passed)",
+  "required: all 7 evidence layers are model features (captured feature matrix whose columns contain each layer's values; rescaled matrix with >= 7 columns also counts); no feature matrix -> UNVERIFIABLE",
+  "required (the text says 'build a random forest classifier'): a RandomForestClassifier (or imblearn BalancedRandomForestClassifier, aliases followed, comments ignored) is constructed in the code",
+  "required (task text \"The final auc should be at least 0.9\"): an AUC was computed (scalar named *auc* or a number on a stdout line mentioning AUC, in [0.5, 1]) and the largest is >= 0.9",
+  "optional: labels = occurrences buffered by 1 km (label raster positives ~ gold)",
+  "optional: spatially blocked / grouped validation",
+  "optional, kind=figure: the drawn probability image as displayed (origin respected) reaches rho >= 0.60 (north-up)"
+ ]
+}

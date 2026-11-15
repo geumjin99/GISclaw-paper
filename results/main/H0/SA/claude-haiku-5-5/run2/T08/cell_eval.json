@@ -1,0 +1,82 @@
+{
+ "cell_id": "main.H0.SA.claude-haiku-5-5.r2.T08",
+ "task": 8,
+ "status": "ok",
+ "analytically_correct": true,
+ "scorer_error": false,
+ "checks": [
+  {
+   "name": "required output present",
+   "passed": true,
+   "value": [
+    "Fire_Service_Analysis.png"
+   ],
+   "threshold": [
+    "Fire_Service_Analysis.png"
+   ],
+   "required": true,
+   "note": ""
+  },
+  {
+   "name": "map not blank",
+   "passed": true,
+   "value": 50.58579996880529,
+   "threshold": ">=3 grey-level std",
+   "required": true,
+   "note": ""
+  },
+  {
+   "name": "coverage-gap polygons match Etobicoke minus station buffers (IoU >= 0.90)",
+   "passed": true,
+   "value": {
+    "iou": 0.993,
+    "buffer_m": 2500
+   },
+   "threshold": "IoU 0.9; true radius = stated distance +-10 %; <= 0.5 % of the gap within 0.9 d of a station",
+   "required": true,
+   "note": "gap@final; stated buffer distance(s) [2000, 2500] m; 0.00 % of the gap within 0.9 d of a station"
+  },
+  {
+   "name": "the saved map draws the coverage-gap polygons",
+   "passed": true,
+   "value": 1.0,
+   "threshold": ">= 90 % of the gap area drawn",
+   "required": true,
+   "note": "save00 wrote Fire_Service_Analysis.png last (savefig record); gap@final drawn in save00"
+  },
+  {
+   "name": "buffer distance 1.5-3 km",
+   "passed": true,
+   "value": 2500,
+   "threshold": "1500-3000 m",
+   "required": false,
+   "note": ""
+  }
+ ],
+ "replay": {
+  "success": true,
+  "outputs": [
+   "Fire_Service_Analysis.png",
+   "coverage_gaps.geojson",
+   "coverage_summary.csv"
+  ],
+  "events": [],
+  "blocks_ok": 7,
+  "block_outcome": [
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok"
+  ],
+  "step_timeout_s": 900,
+  "same_outputs_as_original": true,
+  "block_mismatches": []
+ },
+ "replay_faithful": true,
+ "replay_unfaithful_reasons": [],
+ "replay_container_failure": [],
+ "emergency_files": []
+}

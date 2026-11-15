@@ -1,0 +1,85 @@
+{
+ "cell_id": "ablation.H2-g4.SA.gptoss-120b.r1.T14",
+ "task": 14,
+ "status": "ok",
+ "analytically_correct": true,
+ "scorer_error": false,
+ "checks": [
+  {
+   "name": "required output present",
+   "passed": true,
+   "value": [
+    "temperature_statistic_vis.png"
+   ],
+   "threshold": [
+    "temperature_statistic_vis.png"
+   ],
+   "required": true,
+   "note": ""
+  },
+  {
+   "name": "map not blank",
+   "passed": true,
+   "value": 85.67783941109249,
+   "threshold": ">=3 grey-level std",
+   "required": true,
+   "note": ""
+  },
+  {
+   "name": "spell-count grid equals an accepted counting rule (>=98 % cells)",
+   "passed": true,
+   "value": 1.0,
+   "threshold": 0.98,
+   "required": true,
+   "note": "count@save00: overlapping windows"
+  },
+  {
+   "name": "figure shows the spell count",
+   "passed": true,
+   "value": 1.0,
+   "threshold": 0.98,
+   "required": true,
+   "note": "fig_ax0_coll0_values@save00 (QuadMesh, orientation free): overlapping windows"
+  },
+  {
+   "name": "figure drawn north up (presentation)",
+   "passed": true,
+   "value": 1.0,
+   "threshold": 0.98,
+   "required": false,
+   "note": "fig_ax0_coll0_values@save00 (pcolormesh coordinate space (both vertical orientations)): overlapping windows",
+   "kind": "figure"
+  },
+  {
+   "name": "reference counting rule (overlapping windows)",
+   "passed": true,
+   "value": null,
+   "threshold": null,
+   "required": false,
+   "note": "overlapping windows"
+  }
+ ],
+ "replay": {
+  "success": true,
+  "outputs": [
+   "temperature_statistic_vis.png"
+  ],
+  "events": [],
+  "blocks_ok": 6,
+  "block_outcome": [
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok"
+  ],
+  "step_timeout_s": 900,
+  "same_outputs_as_original": true,
+  "block_mismatches": []
+ },
+ "replay_faithful": true,
+ "replay_unfaithful_reasons": [],
+ "replay_container_failure": [],
+ "emergency_files": []
+}

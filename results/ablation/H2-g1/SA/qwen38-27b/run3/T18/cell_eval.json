@@ -1,0 +1,109 @@
+{
+ "cell_id": "ablation.H2-g1.SA.qwen38-27b.r3.T18",
+ "task": 18,
+ "status": "ok",
+ "analytically_correct": false,
+ "scorer_error": false,
+ "checks": [
+  {
+   "name": "required output present",
+   "passed": true,
+   "value": [
+    "trees_count_vis.png"
+   ],
+   "threshold": [
+    "trees_count_vis.png"
+   ],
+   "required": true,
+   "note": ""
+  },
+  {
+   "name": "map not blank",
+   "passed": true,
+   "value": 26.27777464125109,
+   "threshold": ">=3 grey-level std",
+   "required": true,
+   "note": ""
+  },
+  {
+   "name": "species nullity indicator from the Species column",
+   "passed": true,
+   "value": 1.0,
+   "threshold": 0.99,
+   "required": false,
+   "note": "columns ['nullity'] (isnull)"
+  },
+  {
+   "name": "null share aggregated by region and mapped",
+   "passed": false,
+   "value": null,
+   "threshold": null,
+   "required": true,
+   "note": "no drawn regional null share (layer column, hexbin or quadtree(hue=<nullity>))"
+  },
+  {
+   "name": "NULL share (not its complement) mapped",
+   "passed": false,
+   "value": null,
+   "threshold": null,
+   "required": true,
+   "note": "None"
+  },
+  {
+   "name": "regions are quadtree cells (task: 'quadtree format map')",
+   "passed": false,
+   "value": null,
+   "threshold": null,
+   "required": true,
+   "note": "no geoplot.quadtree call and no drawn share layer with quadtree cells (grid / hexbin / other regions)"
+  }
+ ],
+ "replay": {
+  "success": true,
+  "outputs": [
+   "trees_count_vis.png"
+  ],
+  "events": [],
+  "blocks_ok": 22,
+  "block_outcome": [
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok"
+  ],
+  "step_timeout_s": 900,
+  "same_outputs_as_original": true,
+  "block_mismatches": []
+ },
+ "replay_faithful": true,
+ "replay_unfaithful_reasons": [],
+ "replay_container_failure": [],
+ "emergency_files": []
+}

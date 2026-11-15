@@ -1,0 +1,15 @@
+{
+ "task": 8,
+ "source": "instruction: save the figure as 'pred_results/Fire_Service_Analysis.png'; checks.py file_exists + png_not_blank + gap polygons drawn in the figure saved as Fire_Service_Analysis.png",
+ "deliverables": [
+  {
+   "id": "map",
+   "kind": "figure",
+   "patterns": ["Fire_Service_Analysis.png"],
+   "required": true,
+   "crs_required": false,
+   "checked_by": ["required output present", "map not blank", "the saved map draws the coverage-gap polygons"]
+  }
+ ],
+ "not_deliverables": []
+}

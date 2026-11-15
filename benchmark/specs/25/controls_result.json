@@ -1,0 +1,112 @@
+[
+ {
+  "control": "correct_main_shp_only",
+  "expected_correct": true,
+  "judged_correct": true,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [],
+  "scorer_error": false
+ },
+ {
+  "control": "correct_string_labels",
+  "expected_correct": true,
+  "judged_correct": true,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [],
+  "scorer_error": false
+ },
+ {
+  "control": "wrong_cluster_raw_attributes",
+  "expected_correct": false,
+  "judged_correct": false,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [
+   "transmission risk score matches gold (Spearman)",
+   "susceptibility risk score matches gold (Spearman)",
+   "resource scarcity risk score matches gold (Spearman)",
+   "exposure risk score matches gold (Spearman)",
+   "clustering is a near-optimal K-means partition of the four risk scores",
+   "method fidelity: SEEDS-initialised K-means (3 clusters, ARI>=0.8 with gold)"
+  ],
+  "scorer_error": false
+ },
+ {
+  "control": "wrong_deliverable_no_crs",
+  "expected_correct": false,
+  "judged_correct": false,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [
+   "deliverable files carry a CRS (uniform rule)"
+  ],
+  "scorer_error": false
+ },
+ {
+  "control": "wrong_expo_from_raw_value",
+  "expected_correct": false,
+  "judged_correct": false,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [
+   "exposure risk score matches gold (Spearman)"
+  ],
+  "scorer_error": false
+ },
+ {
+  "control": "wrong_method_kmeanspp_k3",
+  "expected_correct": false,
+  "judged_correct": false,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [
+   "method fidelity: SEEDS-initialised K-means (3 clusters, ARI>=0.8 with gold)"
+  ],
+  "scorer_error": false
+ },
+ {
+  "control": "wrong_simrank_not_inverted",
+  "expected_correct": false,
+  "judged_correct": false,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [
+   "transmission risk score matches gold (Spearman)",
+   "susceptibility risk score matches gold (Spearman)",
+   "resource scarcity risk score matches gold (Spearman)",
+   "exposure risk score matches gold (Spearman)",
+   "clustering is a near-optimal K-means partition of the four risk scores",
+   "method fidelity: SEEDS-initialised K-means (3 clusters, ARI>=0.8 with gold)"
+  ],
+  "scorer_error": false
+ },
+ {
+  "control": "wrong_susceptibility_missing_attr",
+  "expected_correct": false,
+  "judged_correct": false,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [
+   "susceptibility risk score matches gold (Spearman)",
+   "method fidelity: SEEDS-initialised K-means (3 clusters, ARI>=0.8 with gold)"
+  ],
+  "scorer_error": false
+ },
+ {
+  "control": "wrong_unstandardised_similarity",
+  "expected_correct": false,
+  "judged_correct": false,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [
+   "transmission risk score matches gold (Spearman)",
+   "susceptibility risk score matches gold (Spearman)",
+   "resource scarcity risk score matches gold (Spearman)",
+   "clustering is a near-optimal K-means partition of the four risk scores",
+   "method fidelity: SEEDS-initialised K-means (3 clusters, ARI>=0.8 with gold)"
+  ],
+  "scorer_error": false
+ }
+]

@@ -1,0 +1,191 @@
+{
+ "cell_id": "main.H2.SA.qwen38-27b.r1.T50",
+ "task": 50,
+ "status": "ok",
+ "analytically_correct": false,
+ "scorer_error": false,
+ "checks": [
+  {
+   "name": "presence points inside dissolved seagrass (>= 97 %)",
+   "passed": true,
+   "value": 1.0,
+   "threshold": 0.97,
+   "required": true,
+   "note": "seagrass_random_points_5000.shp (5000 pts)"
+  },
+  {
+   "name": "training features saved with kriged temp/salinity values (r >= 0.8 / 0.6)",
+   "passed": false,
+   "value": [
+    0.729,
+    0.195
+   ],
+   "threshold": [
+    0.8,
+    0.6
+   ],
+   "required": true,
+   "note": "seagrass_random_points_5000.shp"
+  },
+  {
+   "name": "global prediction raster agrees with gold suitability (coverage >= 0.8, Spearman >= 0.5)",
+   "passed": false,
+   "value": [
+    0.0,
+    0.002
+   ],
+   "threshold": [
+    0.5,
+    0.8
+   ],
+   "required": true,
+   "note": "best candidate seagrass_predict.tif (rho 0.369, coverage 0.002); coverage over gold cells with centre inside Global_shallow_waters"
+  },
+  {
+   "name": "prediction is a function of both temperature and salinity (rank R2 gain >= 0.05 each)",
+   "passed": false,
+   "value": null,
+   "threshold": null,
+   "required": true,
+   "note": "no acceptable prediction raster"
+  },
+  {
+   "name": "method: kriging-type interpolation of temp/salinity (prescribed: EBK)",
+   "passed": true,
+   "value": null,
+   "threshold": null,
+   "required": true,
+   "note": "call spherical_variogram("
+  },
+  {
+   "name": "method: presence-only MaxEnt-type model (prescribed: MaxEnt)",
+   "passed": true,
+   "value": null,
+   "threshold": null,
+   "required": true,
+   "note": "presence-background GLM (IWLR / MaxEnt-equivalent): fit_logit("
+  },
+  {
+   "name": "spatial CV / thinning considered",
+   "passed": true,
+   "value": null,
+   "threshold": null,
+   "required": false,
+   "note": ""
+  },
+  {
+   "name": "deliverable files carry a CRS (uniform rule)",
+   "passed": true,
+   "value": [
+    "EBK_salinity.tif",
+    "EBK_temp.tif",
+    "seagrass_dissolved.shp",
+    "seagrass_dissolved_EPSG5070.shp",
+    "seagrass_predict.tif",
+    "seagrass_random_points_5000.shp"
+   ],
+   "threshold": "every geographic deliverable file has a CRS",
+   "required": true,
+   "note": "6 geographic deliverable file(s), all with a CRS"
+  },
+  {
+   "name": "copies of input datasets not counted as results (uniform rule)",
+   "passed": true,
+   "value": {
+    "emergency_output.geojson": "USA_shallow_waters.shp"
+   },
+   "threshold": null,
+   "required": false,
+   "note": "hidden from the task checks: emergency_output.geojson",
+   "info": true
+  }
+ ],
+ "replay": {
+  "success": true,
+  "outputs": [
+   "EBK_salinity.tif",
+   "EBK_temp.tif",
+   "README_summary.txt",
+   "results_map.png",
+   "seagrass_dissolved.cpg",
+   "seagrass_dissolved.dbf",
+   "seagrass_dissolved.prj",
+   "seagrass_dissolved.shp",
+   "seagrass_dissolved.shx",
+   "seagrass_dissolved_EPSG5070.cpg",
+   "seagrass_dissolved_EPSG5070.dbf",
+   "seagrass_dissolved_EPSG5070.prj",
+   "seagrass_dissolved_EPSG5070.shp",
+   "seagrass_dissolved_EPSG5070.shx",
+   "seagrass_predict.tif",
+   "seagrass_random_points_5000.cpg",
+   "seagrass_random_points_5000.dbf",
+   "seagrass_random_points_5000.prj",
+   "seagrass_random_points_5000.shp",
+   "seagrass_random_points_5000.shx",
+   "train_features.csv"
+  ],
+  "events": [],
+  "blocks_ok": 31,
+  "block_outcome": [
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok"
+  ],
+  "step_timeout_s": 900,
+  "same_outputs_as_original": false,
+  "block_mismatches": []
+ },
+ "replay_faithful": true,
+ "replay_unfaithful_reasons": [],
+ "replay_container_failure": [],
+ "correct_without_emergency": false,
+ "emergency_files": [
+  "emergency_output.geojson"
+ ]
+}

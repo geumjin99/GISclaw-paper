@@ -1,0 +1,105 @@
+{
+ "cell_id": "main.H2.DA.gptoss-120b.r1.T25",
+ "task": 25,
+ "status": "ok",
+ "analytically_correct": false,
+ "scorer_error": false,
+ "checks": [
+  {
+   "name": "output written (non-blank map or result file)",
+   "passed": true,
+   "value": [
+    "emergency_output.csv",
+    "health_risk_rank.csv"
+   ],
+   "threshold": null,
+   "required": true,
+   "note": ""
+  },
+  {
+   "name": "transmission risk score matches gold (Spearman)",
+   "passed": false,
+   "value": -0.2853,
+   "threshold": 0.95,
+   "required": true,
+   "note": "SIMRANK_HEALTH in gdf_constituency@final"
+  },
+  {
+   "name": "susceptibility risk score matches gold (Spearman)",
+   "passed": false,
+   "value": -0.4704,
+   "threshold": 0.95,
+   "required": true,
+   "note": "SIMRANK_HEALTH in gdf_constituency@final"
+  },
+  {
+   "name": "resource scarcity risk score matches gold (Spearman)",
+   "passed": false,
+   "value": -0.2094,
+   "threshold": 0.95,
+   "required": true,
+   "note": "TRANS_DIST in gdf_constituency@final"
+  },
+  {
+   "name": "exposure risk score matches gold (Spearman)",
+   "passed": false,
+   "value": -0.0361,
+   "threshold": 0.95,
+   "required": true,
+   "note": "SIMRANK_HEALTH in gdf_constituency@final"
+  },
+  {
+   "name": "clustering is a near-optimal K-means partition of the four risk scores",
+   "passed": false,
+   "value": null,
+   "threshold": null,
+   "required": true,
+   "note": "no cluster-label column (2-10 classes) per constituency"
+  },
+  {
+   "name": "method fidelity: SEEDS-initialised K-means (3 clusters, ARI>=0.8 with gold)",
+   "passed": false,
+   "value": null,
+   "threshold": null,
+   "required": true,
+   "note": "instructed: K-means initialised from SEEDS"
+  },
+  {
+   "name": "deliverable files carry a CRS (uniform rule)",
+   "passed": true,
+   "value": [],
+   "threshold": "every geographic deliverable file has a CRS",
+   "required": true,
+   "note": "no geographic deliverable file written (presence is judged by the task checks)"
+  }
+ ],
+ "replay": {
+  "success": true,
+  "outputs": [
+   "health_risk_rank.csv"
+  ],
+  "events": [],
+  "blocks_ok": 9,
+  "block_outcome": [
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok"
+  ],
+  "step_timeout_s": 900,
+  "same_outputs_as_original": false,
+  "block_mismatches": []
+ },
+ "replay_faithful": true,
+ "replay_unfaithful_reasons": [],
+ "replay_container_failure": [],
+ "correct_without_emergency": false,
+ "emergency_files": [
+  "emergency_output.csv"
+ ]
+}

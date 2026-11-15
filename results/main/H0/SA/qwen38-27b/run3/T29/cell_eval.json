@@ -1,0 +1,199 @@
+{
+ "cell_id": "main.H0.SA.qwen38-27b.r3.T29",
+ "task": 29,
+ "status": "ok",
+ "analytically_correct": true,
+ "scorer_error": false,
+ "checks": [
+  {
+   "name": "map/figure written (non-blank PNG)",
+   "passed": true,
+   "value": [
+    "fig1_study_area_sources.png",
+    "fig2_arrival_time_map.png",
+    "fig3_arrival_by_source.png",
+    "fig4_coastal_hazard_zones.png",
+    "fig5_paths_and_profiles.png",
+    "fig6_country_arrivals.png"
+   ],
+   "threshold": null,
+   "required": true,
+   "note": ""
+  },
+  {
+   "name": "figure shows the analysis (speed/arrival surface or the tsunami routes)",
+   "passed": true,
+   "value": "fig_ax0_image0@save00 rho as drawn 0.964 / flipped 0.067",
+   "threshold": null,
+   "required": true,
+   "note": ""
+  },
+  {
+   "name": "surface drawn north-up (tie as drawn)",
+   "passed": true,
+   "value": null,
+   "threshold": null,
+   "required": false,
+   "note": "fig_ax0_image0@save00 rho as drawn 0.964 / flipped 0.067",
+   "kind": "figure"
+  },
+  {
+   "name": "colour scale covers the drawn data range",
+   "passed": true,
+   "value": {
+    "data_5_95": [
+     222.894,
+     5475.66
+    ],
+    "clim": [
+     0.0,
+     6000.0
+    ],
+    "span_share": 0.8755,
+    "inside_share": 0.998
+   },
+   "threshold": "5-95 % data span >= 0.1 of the colour range; >= 50 % of values inside it",
+   "required": false,
+   "note": "fig_ax0_image0@save00 rho as drawn 0.964 / flipped 0.067",
+   "kind": "figure"
+  },
+  {
+   "name": "travel time to Virginia Beach correct (route times A or arrival surface B)",
+   "passed": true,
+   "value": {
+    "A_route_times": "sensitivity_virginia_beach.csv@file (h least-time)",
+    "B_arrival_surface": "tmin2@final ~ first arrival (min of 3 sources): rho 0.994, VB 1.89 h (gold 1.99 h)"
+   },
+   "threshold": "A: all 3 routes +/-6 % of 2.21/9.45/6.25 h or in the least-time ranges; B: rho>=0.95 & VB +/-15 %, or a surface from VB matching at the origins",
+   "required": true,
+   "note": ""
+  },
+  {
+   "name": "speed raster sqrt(g*d) matches gold (>=95 % cells within 2 m/s)",
+   "passed": true,
+   "value": null,
+   "threshold": null,
+   "required": false,
+   "note": "WaveSpeed.tif[1]: 0.984 within 2 m/s"
+  },
+  {
+   "name": "both route times and an arrival-time surface",
+   "passed": true,
+   "value": null,
+   "threshold": null,
+   "required": false,
+   "note": ""
+  },
+  {
+   "name": "deliverable files carry a CRS (uniform rule)",
+   "passed": true,
+   "value": [
+    "ArrivalTime_BySource.tif",
+    "ArrivalTime_Min.tif",
+    "Bathymetry_Depth.tif",
+    "FirstSource.tif",
+    "SourcesWithin6h.tif",
+    "WaveSpeed.tif"
+   ],
+   "threshold": "every geographic deliverable file has a CRS",
+   "required": true,
+   "note": "6 geographic deliverable file(s), all with a CRS"
+  }
+ ],
+ "replay": {
+  "success": false,
+  "outputs": [
+   "ArrivalTime_BySource.tif",
+   "ArrivalTime_Min.tif",
+   "Bathymetry_Depth.tif",
+   "FirstSource.tif",
+   "SourcesWithin6h.tif",
+   "WaveSpeed.tif",
+   "_arr.npy",
+   "_coast.npy",
+   "_depth.npy",
+   "_dist.npy",
+   "_idx.npy",
+   "_mask.npy",
+   "_meta.pkl",
+   "_ocean.npy",
+   "_paths.pkl",
+   "_speed.npy",
+   "_w6.npy",
+   "city_arrival_table.csv",
+   "country_arrival_table.csv",
+   "fig1_study_area_sources.png",
+   "fig2_arrival_time_map.png",
+   "fig3_arrival_by_source.png",
+   "fig4_coastal_hazard_zones.png",
+   "fig5_paths_and_profiles.png",
+   "fig6_country_arrivals.png",
+   "sensitivity_virginia_beach.csv",
+   "tsunami_coastal_hazard.gpkg",
+   "tsunami_coastline.gpkg",
+   "tsunami_fastest_paths.gpkg",
+   "tsunami_wavefronts.gpkg"
+  ],
+  "events": [],
+  "blocks_ok": 27,
+  "block_outcome": [
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok"
+  ],
+  "step_timeout_s": 900,
+  "same_outputs_as_original": true,
+  "block_mismatches": []
+ },
+ "replay_faithful": true,
+ "replay_unfaithful_reasons": [],
+ "replay_container_failure": [],
+ "emergency_files": []
+}

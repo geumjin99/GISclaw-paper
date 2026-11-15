@@ -1,0 +1,107 @@
+{
+ "cell_id": "main.H0.SA.qwen38-27b.r1.T25",
+ "experiment": "main",
+ "tier": "H0",
+ "arch": "SA",
+ "model": "qwen38-27b",
+ "run": 1,
+ "task": 25,
+ "elapsed_s": 1163.7,
+ "protocol": "native",
+ "tier_config": {
+  "tools": [
+   "execute",
+   "finish"
+  ],
+  "generic": false,
+  "g1": false,
+  "g2": false,
+  "g3": false,
+  "g4": false,
+  "g5": false,
+  "g6": false,
+  "g7": false,
+  "no_dd": false,
+  "no_dk": false
+ },
+ "outputs": [
+  "cluster_profiles.csv",
+  "covid19_hkg_rankings.csv",
+  "covid19_hkg_risk_maps.png",
+  "covid19_risk_profiles.cpg",
+  "covid19_risk_profiles.dbf",
+  "covid19_risk_profiles.prj",
+  "covid19_risk_profiles.shp",
+  "covid19_risk_profiles.shx",
+  "hkg_constituency_risk.cpg",
+  "hkg_constituency_risk.dbf",
+  "hkg_constituency_risk.gpkg",
+  "hkg_constituency_risk.prj",
+  "hkg_constituency_risk.shp",
+  "hkg_constituency_risk.shx",
+  "hkg_constituency_risk_full.csv"
+ ],
+ "required_outputs": [],
+ "required_present": null,
+ "emergency_files": [],
+ "rounds": 24,
+ "self_corrections": 6,
+ "agent_stats": {
+  "rounds": 24,
+  "format_errors": 0,
+  "format_error_kinds": {},
+  "self_corrections": 6,
+  "exec_blocks": 23,
+  "exec_failed": 13,
+  "finish_rejections": 0,
+  "dedup_blocked": 0,
+  "triggers": {},
+  "checks_run": {},
+  "end_reason": "finish",
+  "empty_retries": 0,
+  "history_truncations": 0,
+  "finished": true,
+  "agent_time_s": 3.9
+ },
+ "llm_stats": {
+  "calls": 24,
+  "retries": 0,
+  "errors": 0,
+  "context_overflow": 0,
+  "empty": 0,
+  "prompt_tokens": 430177,
+  "completion_tokens": 48710,
+  "reasoning_tokens": 32516,
+  "cached_tokens": 0
+ },
+ "llm_time_s": 1158.8,
+ "agent_time_s": 3.9,
+ "hit_deadline": false,
+ "sandbox_events": [],
+ "inputs_intact": true,
+ "container_memory": "12g",
+ "deliverable_produced": true,
+ "config": {
+  "image": "gisclaw-exec:1.0",
+  "step_timeout_s": 300,
+  "task_wall_s": 1200,
+  "max_rounds": 50,
+  "blocked_packages": {
+   "arcpy": "Use geopandas + rasterio + shapely instead."
+  },
+  "agent": {
+   "history_tokens": 60000,
+   "max_format_errors": 15
+  }
+ },
+ "model_config": {
+  "provider": "vllm",
+  "model_name": "qwen3.8-27b-fp8",
+  "request": {
+   "set": {
+    "max_tokens": 32768,
+    "temperature": 1.0
+   }
+  }
+ }
+}

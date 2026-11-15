@@ -1,0 +1,134 @@
+{
+ "cell_id": "ablation.H2+nodk.SA.claude-sonnet-5-5.r1.T46",
+ "experiment": "ablation",
+ "tier": "H2+nodk",
+ "arch": "SA",
+ "model": "claude-sonnet-5-5",
+ "run": 1,
+ "task": 46,
+ "elapsed_s": 86.3,
+ "protocol": "native",
+ "tier_config": {
+  "tools": [
+   "list_files",
+   "load_vector",
+   "load_raster",
+   "inspect",
+   "execute",
+   "lookup_api",
+   "finish"
+  ],
+  "generic": true,
+  "g1": true,
+  "g2": true,
+  "g3": true,
+  "g4": true,
+  "g5": true,
+  "g6": true,
+  "g7": true,
+  "no_dd": false,
+  "no_dk": true
+ },
+ "outputs": [
+  "crash_hotspot_map.png",
+  "crash_hotspots_only.cpg",
+  "crash_hotspots_only.dbf",
+  "crash_hotspots_only.prj",
+  "crash_hotspots_only.shp",
+  "crash_hotspots_only.shx",
+  "crash_hotspots_roads.cpg",
+  "crash_hotspots_roads.dbf",
+  "crash_hotspots_roads.prj",
+  "crash_hotspots_roads.shp",
+  "crash_hotspots_roads.shx",
+  "peak_crashes.cpg",
+  "peak_crashes.dbf",
+  "peak_crashes.prj",
+  "peak_crashes.shp",
+  "peak_crashes.shx",
+  "peak_crashes_snapped_joined.cpg",
+  "peak_crashes_snapped_joined.dbf",
+  "peak_crashes_snapped_joined.prj",
+  "peak_crashes_snapped_joined.shp",
+  "peak_crashes_snapped_joined.shx"
+ ],
+ "required_outputs": [],
+ "required_present": null,
+ "emergency_files": [],
+ "rounds": 12,
+ "self_corrections": 1,
+ "agent_stats": {
+  "rounds": 12,
+  "format_errors": 0,
+  "format_error_kinds": {},
+  "self_corrections": 1,
+  "exec_blocks": 11,
+  "exec_failed": 1,
+  "finish_rejections": 0,
+  "dedup_blocked": 0,
+  "triggers": {
+   "g1:card": 1
+  },
+  "checks_run": {
+   "g2": 11,
+   "g3": 12,
+   "g7": 11,
+   "g6": 1,
+   "g4": 1
+  },
+  "end_reason": "finish",
+  "empty_retries": 0,
+  "history_truncations": 0,
+  "finished": true,
+  "agent_time_s": 13.3
+ },
+ "llm_stats": {
+  "calls": 12,
+  "retries": 0,
+  "errors": 0,
+  "context_overflow": 0,
+  "empty": 0,
+  "refusals": 0,
+  "prompt_tokens": 26,
+  "completion_tokens": 7270,
+  "cached_tokens": 119171,
+  "cache_write_tokens": 18295
+ },
+ "llm_time_s": 72.0,
+ "agent_time_s": 13.3,
+ "hit_deadline": false,
+ "sandbox_events": [],
+ "inputs_intact": true,
+ "container_memory": "12g",
+ "deliverable_produced": true,
+ "config": {
+  "image": "gisclaw-exec:1.0",
+  "step_timeout_s": 300,
+  "task_wall_s": 1200,
+  "max_rounds": 50,
+  "blocked_packages": {
+   "arcpy": "Use geopandas + rasterio + shapely instead."
+  },
+  "agent": {
+   "history_tokens": 60000,
+   "max_format_errors": 15
+  }
+ },
+ "model_config": {
+  "provider": "anthropic",
+  "model_name": "claude-sonnet-5-5",
+  "request": {
+   "set": {
+    "max_tokens": 32000,
+    "thinking": {
+     "type": "adaptive",
+     "display": "summarized"
+    },
+    "output_config": {
+     "effort": "high"
+    }
+   }
+  },
+  "history_tokens": 700000
+ }
+}

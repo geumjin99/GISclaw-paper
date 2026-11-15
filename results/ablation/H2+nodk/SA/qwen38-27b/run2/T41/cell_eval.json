@@ -1,0 +1,116 @@
+{
+ "cell_id": "ablation.H2+nodk.SA.qwen38-27b.r2.T41",
+ "task": 41,
+ "status": "ok",
+ "analytically_correct": true,
+ "scorer_error": false,
+ "checks": [
+  {
+   "name": "result file written to pred_results",
+   "passed": true,
+   "value": [
+    "README.md",
+    "campground_summary.csv",
+    "campsite_joins_map.png",
+    "campsites_enriched.gpkg",
+    "campsites_joined_campgrounds.csv",
+    "campsites_with_attributes.csv"
+   ],
+   "threshold": "any non-empty file",
+   "required": true,
+   "note": ""
+  },
+  {
+   "name": "one-to-many campsite relate materialised (per-campsite related-record counts, Wyoming campsites)",
+   "passed": true,
+   "value": 1.0,
+   "threshold": ">= 0.95 of the 1,170 Wyoming campsites exact",
+   "required": true,
+   "note": "merged@final row non-null count ~ n_valued_attribute_names"
+  },
+  {
+   "name": "park-level join ParentOrgID -> OrgID (both parks carry 'National Park Service')",
+   "passed": true,
+   "value": [
+    "porg@final",
+    "porg@save00",
+    "parks_organizations.csv@file"
+   ],
+   "threshold": "a table with both parks and their organisation",
+   "required": true,
+   "note": ""
+  },
+  {
+   "name": "relationship campground (FacilityID) 1 -> many campsites (ParentFacilityID) materialised",
+   "passed": true,
+   "value": 1.0,
+   "threshold": "per campground: all 6 counts exact; per campsite: >= 0.95 parent facility exact",
+   "required": true,
+   "note": "cs_match@final: ParentFacilityID by CampsiteID (per campsite)"
+  },
+  {
+   "name": "copies of input datasets not counted as results (uniform rule)",
+   "passed": true,
+   "value": {
+    "Campsites_Facilities_Relationship.gpkg": "Campsites.gpkg"
+   },
+   "threshold": null,
+   "required": false,
+   "note": "hidden from the task checks: Campsites_Facilities_Relationship.gpkg",
+   "info": true
+  }
+ ],
+ "replay": {
+  "success": true,
+  "outputs": [
+   "Campsites_Facilities_Relationship.gpkg",
+   "README.md",
+   "campground_summary.csv",
+   "campsite_joins_map.png",
+   "campsites_enriched.gpkg",
+   "campsites_joined_campgrounds.csv",
+   "campsites_with_attributes.csv",
+   "facilities_organizations.csv",
+   "park_summary.csv",
+   "parks_organizations.csv"
+  ],
+  "events": [],
+  "blocks_ok": 22,
+  "block_outcome": [
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok"
+  ],
+  "step_timeout_s": 900,
+  "same_outputs_as_original": true,
+  "block_mismatches": []
+ },
+ "replay_faithful": true,
+ "replay_unfaithful_reasons": [],
+ "replay_container_failure": [],
+ "emergency_files": []
+}

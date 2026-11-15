@@ -1,0 +1,25 @@
+{
+ "task": 47,
+ "title": "Calculate impervious surface area per parcel",
+ "output_type": "vector (parcels joined with tabulated class areas)",
+ "required_outputs": [
+  "parcels_joint.shp (any vector name/format with 121 parcels)"
+ ],
+ "method": "Tabulate Area of impervious.tif (0.5 ft cells; VAT: Value 0 = Impervious, 1 = Pervious, 255 = NoData) within each of the 121 parcels (cell-centre rule), areas in ft2 as VALUE_0 / VALUE_1, joined to the parcels on Parcel_ID and saved.",
+ "key_parameters": {
+  "impervious_class": "Value 0 (per impervious.tif.vat.dbf)",
+  "cell_area_ft2": 0.25,
+  "join_key": "Parcel_ID"
+ },
+ "benchmark_defects": [
+  "The class coding is counter-intuitive (0 = Impervious, 1 = Pervious) and is documented only in impervious.tif.vat.dbf, not in the task text.",
+  "The instruction names no output file (the benchmark's script writes output/parcels_joint.shp)."
+ ],
+ "checks": [
+  "required: a saved vector layer with one feature per parcel (121 +/- 2)",
+  "required: a column proportional to the gold impervious (Value 0) area in a known unit (ft2, m2, acres, ha, km2, cell count) within 5 % (or within half a boundary ring of cells = parcel perimeter x 0.25 ft) for >= 90 % of parcels",
+  "optional: pervious area also tabulated",
+  "optional: code reads the class meaning from the VAT",
+  "unit-declaring column names are read in their unit; a layer is rejected if a named impervious column is wrong in its declared unit"
+ ]
+}

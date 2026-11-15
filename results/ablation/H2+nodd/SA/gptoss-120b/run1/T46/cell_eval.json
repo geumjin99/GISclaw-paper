@@ -1,0 +1,107 @@
+{
+ "cell_id": "ablation.H2+nodd.SA.gptoss-120b.r1.T46",
+ "task": 46,
+ "status": "ok",
+ "analytically_correct": false,
+ "scorer_error": false,
+ "checks": [
+  {
+   "name": "map present",
+   "passed": true,
+   "value": [
+    "hotspot_map.png"
+   ],
+   "threshold": [
+    "hotspot_map.png"
+   ],
+   "required": true,
+   "note": ""
+  },
+  {
+   "name": "map not blank",
+   "passed": true,
+   "value": 38.62722839118837,
+   "threshold": ">=3 grey-level std",
+   "required": true,
+   "note": ""
+  },
+  {
+   "name": "peak selection: weekday 15-17 h (or 15-16 h) crashes",
+   "passed": true,
+   "value": "peak@final: 16515 rows (15-16)",
+   "threshold": {
+    "15-17": 24746,
+    "15-16": 16515,
+    "15-16+17:00": 16978
+   },
+   "required": true,
+   "note": ""
+  },
+  {
+   "name": "per-segment crash count/rate matches gold (Pearson >= 0.9)",
+   "passed": true,
+   "value": 1.0,
+   "threshold": 0.9,
+   "required": true,
+   "note": "crash_count in roads_counts@final ~ count 15-16"
+  },
+  {
+   "name": "Gi* z-scores on the network SWM (Pearson >= 0.9 with a spatially meaningful Gi* variant)",
+   "passed": false,
+   "value": 0.432,
+   "threshold": 0.9,
+   "required": true,
+   "note": "z_score in roads_counts@final ~ Gi[rate 15-17/bin/self1/row]"
+  },
+  {
+   "name": "FDR correction applied (code)",
+   "passed": false,
+   "value": null,
+   "threshold": null,
+   "required": false,
+   "note": ""
+  },
+  {
+   "name": "map colours drawn from the Gi* column (data-coloured maps only)",
+   "passed": false,
+   "value": [],
+   "threshold": null,
+   "required": false,
+   "note": "maps coloured class-by-class (colour=) leave no drawn values; reported only"
+  },
+  {
+   "name": "hot spots found (>= 0.5 % of segments with z > 1.96)",
+   "passed": true,
+   "value": 0.1271,
+   "threshold": null,
+   "required": false,
+   "note": ""
+  }
+ ],
+ "replay": {
+  "success": true,
+  "outputs": [
+   "crashes_snapped.gpkg",
+   "hotspot_map.png",
+   "peak_crashes.gpkg",
+   "roads_hotspots.gpkg"
+  ],
+  "events": [],
+  "blocks_ok": 4,
+  "block_outcome": [
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok"
+  ],
+  "step_timeout_s": 900,
+  "same_outputs_as_original": true,
+  "block_mismatches": []
+ },
+ "replay_faithful": true,
+ "replay_unfaithful_reasons": [],
+ "replay_container_failure": [],
+ "emergency_files": []
+}

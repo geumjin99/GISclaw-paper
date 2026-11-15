@@ -1,0 +1,131 @@
+[
+ {
+  "control": "correct_1500m_low_artifact",
+  "expected_correct": true,
+  "judged_correct": true,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [],
+  "scorer_error": false
+ },
+ {
+  "control": "correct_3km_shapely_gpkg",
+  "expected_correct": true,
+  "judged_correct": true,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [],
+  "scorer_error": false
+ },
+ {
+  "control": "correct_mtm_1500m_shp",
+  "expected_correct": true,
+  "judged_correct": true,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [],
+  "scorer_error": false
+ },
+ {
+  "control": "correct_top3_pieces_only_tolerated",
+  "expected_correct": true,
+  "judged_correct": true,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [],
+  "scorer_error": false
+ },
+ {
+  "control": "wrong_buffer_in_degrees",
+  "expected_correct": false,
+  "judged_correct": false,
+  "as_expected": true,
+  "ran": false,
+  "failed_checks": [
+   "map present",
+   "map not blank",
+   "no-service area saved, non-empty and inside Etobicoke",
+   "gap = Etobicoke minus station buffers of a plausible radius (IoU >= 0.85)"
+  ],
+  "scorer_error": false
+ },
+ {
+  "control": "wrong_degree_ellipses",
+  "expected_correct": false,
+  "judged_correct": false,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [
+   "gap = Etobicoke minus station buffers of a plausible radius (IoU >= 0.85)"
+  ],
+  "scorer_error": false
+ },
+ {
+  "control": "wrong_deliverable_no_crs",
+  "expected_correct": false,
+  "judged_correct": false,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [
+   "no-service area saved, non-empty and inside Etobicoke",
+   "gap = Etobicoke minus station buffers of a plausible radius (IoU >= 0.85)",
+   "deliverable files carry a CRS (uniform rule)"
+  ],
+  "scorer_error": false
+ },
+ {
+  "control": "wrong_inside_stations_1000m",
+  "expected_correct": false,
+  "judged_correct": false,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [
+   "gap = Etobicoke minus station buffers of a plausible radius (IoU >= 0.85)"
+  ],
+  "scorer_error": false
+ },
+ {
+  "control": "wrong_inside_stations_only",
+  "expected_correct": false,
+  "judged_correct": false,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [
+   "gap = Etobicoke minus station buffers of a plausible radius (IoU >= 0.85)"
+  ],
+  "scorer_error": false
+ },
+ {
+  "control": "wrong_mun_name_stations",
+  "expected_correct": false,
+  "judged_correct": false,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [
+   "gap = Etobicoke minus station buffers of a plausible radius (IoU >= 0.85)"
+  ],
+  "scorer_error": false
+ },
+ {
+  "control": "wrong_saves_covered_area",
+  "expected_correct": false,
+  "judged_correct": false,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [
+   "gap = Etobicoke minus station buffers of a plausible radius (IoU >= 0.85)"
+  ],
+  "scorer_error": false
+ },
+ {
+  "control": "wrong_web_mercator_2500",
+  "expected_correct": false,
+  "judged_correct": false,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [
+   "gap = Etobicoke minus station buffers of a plausible radius (IoU >= 0.85)"
+  ],
+  "scorer_error": false
+ }
+]

@@ -1,0 +1,145 @@
+[
+ {
+  "control": "correct_contourf_rbf_lonlat",
+  "expected_correct": true,
+  "judged_correct": true,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [],
+  "scorer_error": false
+ },
+ {
+  "control": "correct_figonly_misoriented_map",
+  "expected_correct": true,
+  "judged_correct": true,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [],
+  "scorer_error": false
+ },
+ {
+  "control": "correct_idw_raw_samples",
+  "expected_correct": true,
+  "judged_correct": true,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [],
+  "scorer_error": false
+ },
+ {
+  "control": "correct_km_axes_kriging",
+  "expected_correct": true,
+  "judged_correct": true,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [],
+  "scorer_error": false
+ },
+ {
+  "control": "correct_kriging_depth2m_surface",
+  "expected_correct": true,
+  "judged_correct": true,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [],
+  "scorer_error": false
+ },
+ {
+  "control": "correct_kriging_surface_layer",
+  "expected_correct": true,
+  "judged_correct": true,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [],
+  "scorer_error": false
+ },
+ {
+  "control": "correct_padded_kriging",
+  "expected_correct": true,
+  "judged_correct": true,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [],
+  "scorer_error": false
+ },
+ {
+  "control": "correct_rasterio_tif_points",
+  "expected_correct": true,
+  "judged_correct": true,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [],
+  "scorer_error": false
+ },
+ {
+  "control": "wrong_column_totaldepth",
+  "expected_correct": false,
+  "judged_correct": false,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [
+   "the DRAWN map is an interpolated DO surface (Spearman >= 0.65 vs a yardstick, any orientation)",
+   "drawn values are DO in mg/L"
+  ],
+  "scorer_error": false
+ },
+ {
+  "control": "wrong_km_axes_totaldepth",
+  "expected_correct": false,
+  "judged_correct": false,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [
+   "the DRAWN map is an interpolated DO surface (Spearman >= 0.65 vs a yardstick, any orientation)",
+   "drawn values are DO in mg/L"
+  ],
+  "scorer_error": false
+ },
+ {
+  "control": "wrong_plots_kde_computes_idw",
+  "expected_correct": false,
+  "judged_correct": false,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [
+   "the DRAWN map is an interpolated DO surface (Spearman >= 0.65 vs a yardstick, any orientation)",
+   "drawn values are DO in mg/L"
+  ],
+  "scorer_error": false
+ },
+ {
+  "control": "wrong_points_only",
+  "expected_correct": false,
+  "judged_correct": false,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [
+   "the DRAWN map is an interpolated DO surface (Spearman >= 0.65 vs a yardstick, any orientation)",
+   "drawn values are DO in mg/L"
+  ],
+  "scorer_error": false
+ },
+ {
+  "control": "wrong_subset_one_agency",
+  "expected_correct": false,
+  "judged_correct": false,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [
+   "the DRAWN map is an interpolated DO surface (Spearman >= 0.65 vs a yardstick, any orientation)"
+  ],
+  "scorer_error": false
+ },
+ {
+  "control": "wrong_weighted_kde",
+  "expected_correct": false,
+  "judged_correct": false,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [
+   "the DRAWN map is an interpolated DO surface (Spearman >= 0.65 vs a yardstick, any orientation)",
+   "drawn values are DO in mg/L"
+  ],
+  "scorer_error": false
+ }
+]

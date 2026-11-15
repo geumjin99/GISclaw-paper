@@ -1,0 +1,126 @@
+{
+ "cell_id": "main.H1.SA.qwen38-27b.r2.T34",
+ "task": 34,
+ "status": "ok",
+ "analytically_correct": false,
+ "scorer_error": false,
+ "checks": [
+  {
+   "name": "required output present",
+   "passed": true,
+   "value": [
+    "accessibility.png"
+   ],
+   "threshold": [
+    "accessibility.png",
+    "Accessibility.png",
+    "accessibility.PNG"
+   ],
+   "required": true,
+   "note": ""
+  },
+  {
+   "name": "map not blank",
+   "passed": true,
+   "value": 60.661076691446745,
+   "threshold": ">=3 grey-level std",
+   "required": true,
+   "note": ""
+  },
+  {
+   "name": "rural-only per-area access result present",
+   "passed": true,
+   "value": 1.0,
+   "threshold": ">=0.9 of rows RURAL",
+   "required": true,
+   "note": "rural_final.pct@final"
+  },
+  {
+   "name": "per-area pattern matches gold (Spearman>=0.70 or MAE<=7pp)",
+   "passed": false,
+   "value": "rho=0.536, MAE=9.8",
+   "threshold": "rho>=0.70 or MAE<=7",
+   "required": true,
+   "note": "rural_final.pct@final"
+  },
+  {
+   "name": "choropleth draws the per-area access share",
+   "passed": false,
+   "value": [
+    "rural_final.pct",
+    "rural_final.pct",
+    "rural_final.pct",
+    "rural_final.pct",
+    "rural_final.pct"
+   ],
+   "threshold": null,
+   "required": true,
+   "note": "drawn columns do not carry the per-area access share"
+  },
+  {
+   "name": "overall rural share within 3 pp of gold",
+   "passed": true,
+   "value": 87.48,
+   "threshold": "87.67 +/- 3",
+   "required": true,
+   "note": "stdout: Variant 2 centroid in buffer:        87.48% (reported)"
+  },
+  {
+   "name": "deliverable files carry a CRS (uniform rule)",
+   "passed": true,
+   "value": [],
+   "threshold": "every geographic deliverable file has a CRS",
+   "required": true,
+   "note": "no geographic deliverable file written (presence is judged by the task checks)"
+  }
+ ],
+ "replay": {
+  "success": false,
+  "outputs": [
+   "accessibility.png"
+  ],
+  "events": [],
+  "blocks_ok": 21,
+  "block_outcome": [
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok"
+  ],
+  "step_timeout_s": 900,
+  "same_outputs_as_original": true,
+  "block_mismatches": []
+ },
+ "replay_faithful": true,
+ "replay_unfaithful_reasons": [],
+ "replay_container_failure": [],
+ "emergency_files": []
+}

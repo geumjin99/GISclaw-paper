@@ -1,0 +1,145 @@
+[
+ {
+  "control": "correct_figonly_upside_down_map",
+  "expected_correct": true,
+  "judged_correct": true,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [],
+  "scorer_error": false
+ },
+ {
+  "control": "correct_func_pp_xarray",
+  "expected_correct": true,
+  "judged_correct": true,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [],
+  "scorer_error": false
+ },
+ {
+  "control": "correct_rioxarray_3class",
+  "expected_correct": true,
+  "judged_correct": true,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [],
+  "scorer_error": false
+ },
+ {
+  "control": "wrong_deliverable_no_crs",
+  "expected_correct": false,
+  "judged_correct": false,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [
+   "deliverable files carry a CRS (uniform rule)"
+  ],
+  "scorer_error": false
+ },
+ {
+  "control": "wrong_map_shows_2000_layer",
+  "expected_correct": false,
+  "judged_correct": false,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [
+   "map shows the change (drawn image Spearman >= 0.85)",
+   "drawn change map masks nodata"
+  ],
+  "scorer_error": false
+ },
+ {
+  "control": "wrong_method_sequential_cmap",
+  "expected_correct": false,
+  "judged_correct": false,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [
+   "diverging colour scheme (code inspection)"
+  ],
+  "scorer_error": false
+ },
+ {
+  "control": "wrong_nodata_unmasked_sequential",
+  "expected_correct": false,
+  "judged_correct": false,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [
+   "drawn change map masks nodata",
+   "diverging colour scheme (code inspection)"
+  ],
+  "scorer_error": false
+ },
+ {
+  "control": "wrong_ratio_instead_of_difference",
+  "expected_correct": false,
+  "judged_correct": false,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [
+   "change field matches gold (Pearson)",
+   "change has gold scale and sign (mean within 25 %)",
+   "map shows the change (drawn image Spearman >= 0.85)",
+   "drawn change map masks nodata"
+  ],
+  "scorer_error": false
+ },
+ {
+  "control": "wrong_reversed_direction_stated",
+  "expected_correct": false,
+  "judged_correct": false,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [
+   "change field matches gold (Pearson)",
+   "change has gold scale and sign (mean within 25 %)",
+   "map shows the change (drawn image Spearman >= 0.85)",
+   "drawn change map masks nodata"
+  ],
+  "scorer_error": false
+ },
+ {
+  "control": "wrong_reversed_no_direction_statement",
+  "expected_correct": false,
+  "judged_correct": false,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [
+   "change field matches gold (Pearson)",
+   "change has gold scale and sign (mean within 25 %)",
+   "map shows the change (drawn image Spearman >= 0.85)",
+   "drawn change map masks nodata"
+  ],
+  "scorer_error": false
+ },
+ {
+  "control": "wrong_reversed_subtraction",
+  "expected_correct": false,
+  "judged_correct": false,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [
+   "change field matches gold (Pearson)",
+   "change has gold scale and sign (mean within 25 %)",
+   "map shows the change (drawn image Spearman >= 0.85)",
+   "drawn change map masks nodata"
+  ],
+  "scorer_error": false
+ },
+ {
+  "control": "wrong_single_year_no_minus",
+  "expected_correct": false,
+  "judged_correct": false,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [
+   "change field matches gold (Pearson)",
+   "change has gold scale and sign (mean within 25 %)",
+   "map shows the change (drawn image Spearman >= 0.85)",
+   "drawn change map masks nodata"
+  ],
+  "scorer_error": false
+ }
+]

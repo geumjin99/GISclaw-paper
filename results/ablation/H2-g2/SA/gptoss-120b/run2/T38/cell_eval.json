@@ -1,0 +1,98 @@
+{
+ "cell_id": "ablation.H2-g2.SA.gptoss-120b.r2.T38",
+ "task": 38,
+ "status": "ok",
+ "analytically_correct": true,
+ "scorer_error": false,
+ "checks": [
+  {
+   "name": "required output present",
+   "passed": true,
+   "value": [
+    "travel_time.png"
+   ],
+   "threshold": [
+    "travel_time.png",
+    "Travel_Time.png",
+    "travel_time.PNG"
+   ],
+   "required": true,
+   "note": ""
+  },
+  {
+   "name": "figure not blank",
+   "passed": true,
+   "value": 37.804367216446174,
+   "threshold": ">=3 grey-level std",
+   "required": true,
+   "note": ""
+  },
+  {
+   "name": "per-node travel times match gold (Pearson >= 0.90)",
+   "passed": true,
+   "value": 1.0,
+   "threshold": 0.9,
+   "required": true,
+   "note": "G.nodes.travel_time@final; vs own origin field"
+  },
+  {
+   "name": "values are travel times (median ratio 0.67-1.5, s or min)",
+   "passed": true,
+   "value": 1.0,
+   "threshold": "0.67-1.5 (or x60 for minutes)",
+   "required": true,
+   "note": ""
+  },
+  {
+   "name": "origin within 400 m of Natural History Building",
+   "passed": true,
+   "value": 275.1,
+   "threshold": 400,
+   "required": true,
+   "note": "origin node 1514714265"
+  },
+  {
+   "name": "network routing (r with own-origin network time >= 0.97 and > straight-line r + 0.01)",
+   "passed": true,
+   "value": "r_network=1.0000, r_straight=0.8960",
+   "threshold": ">= 0.97 and > r_straight + 0.01",
+   "required": true,
+   "note": "G.nodes.travel_time@final"
+  },
+  {
+   "name": "speeds derived from the graph (not a pure network-length field, r < 0.999)",
+   "passed": true,
+   "value": 0.9968,
+   "threshold": "< 0.999",
+   "required": true,
+   "note": "G.nodes.travel_time@final"
+  },
+  {
+   "name": "figure colours nodes by travel time (|Spearman| >= 0.90 vs gold)",
+   "passed": true,
+   "value": 1.0,
+   "threshold": 0.9,
+   "required": true,
+   "note": "fig_ax0_coll0@save00 values"
+  }
+ ],
+ "replay": {
+  "success": true,
+  "outputs": [
+   "travel_time.png",
+   "uiuc_drive_network_travel.graphml"
+  ],
+  "events": [],
+  "blocks_ok": 1,
+  "block_outcome": [
+   "ok"
+  ],
+  "step_timeout_s": 900,
+  "same_outputs_as_original": true,
+  "block_mismatches": []
+ },
+ "replay_faithful": true,
+ "replay_unfaithful_reasons": [],
+ "replay_container_failure": [],
+ "emergency_files": []
+}

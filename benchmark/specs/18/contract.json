@@ -1,0 +1,20 @@
+{
+ "task": 18,
+ "source": "instruction: save the figure as 'pred_results/trees_count_vis.png'; checks.py file_exists + png_not_blank",
+ "deliverables": [
+  {
+   "id": "map",
+   "kind": "figure",
+   "patterns": [
+    "trees_count_vis.png"
+   ],
+   "required": true,
+   "crs_required": false,
+   "checked_by": [
+    "required output present",
+    "map not blank"
+   ]
+  }
+ ],
+ "not_deliverables": []
+}

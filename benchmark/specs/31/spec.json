@@ -1,0 +1,32 @@
+{
+ "task": 31,
+ "title": "Spatial aggregation scale of geographical flows - flow L-function",
+ "output_type": "figure (L-function with envelope) + table",
+ "required_outputs": [
+  "a non-blank figure (instruction names no file)"
+ ],
+ "reference_outputs": [
+  "flow_L_function.png",
+  "flow_L_function.csv"
+ ],
+ "method": "1000 OD flows, origin and destination areas = unit square. Flow distance d_ij = max(|o_i-o_j|, |d_i-d_j|); local K_i(r) = |O||D|/(n-1) * sum_{j!=i} w_ij 1(d_ij<=r) with translation edge correction w_ij = |O||D| / (|O ∩ O+(o_i-o_j)| |D ∩ D+(d_i-d_j)|); global K = mean of local K; L(r) = (K/pi^2)^(1/4) - r (0 under CSR); pointwise envelope from 99 CSR simulations; critical scales = r where L leaves the envelope. Result: L within +/-0.007 of 0 and inside the envelope for all r in (0, 0.5]: no significant aggregation.",
+ "key_parameters": {
+  "r": "0.005-0.5, 100 steps",
+  "edge_correction": "translation (closed form for rectangles)",
+  "simulations": 99,
+  "seed": 42
+ },
+ "benchmark_defects": [
+  "The supplied flows are statistically indistinguishable from CSR (uniform origins and destinations), so there is no aggregation scale to find; the critical distance 0.13 in the published reference script is written as a constant (axvline(0.13)), not derived from the computed L-function.",
+  "In the published reference script the edge-correction function returns a weight of 1 for every flow (its comment marks it as a placeholder), each flow is included in its own neighbour count, and the plotted confidence band is generated as 0.05*np.random.randn(...).",
+  "The axis label 'distance r (in km)' is wrong: coordinates are unitless in [0, 1].",
+  "Workflow numbering skips step 4."
+ ],
+ "checks": [
+  "required: non-blank PNG",
+  "required: the plotted L(r) curve (figure line or scatter offsets, >= 10 points, r_max >= 0.2) within max |dL| <= 0.012 and mean |dL| <= 0.005 of gold over r in [0.05, min(0.35, r_max)]",
+  "required: the flow K (~pi^2 r^4): a captured K vector on an r grid or the column mean of a per-flow local-K matrix within 10 % mean relative error of the gold K; also a CSR-normalised (observed / edge-corrected expected) flow K, accepted only with a captured per-flow expectation array on the 4-D scale (~pi^2 r^4) and a count array it is the flow mean of, converted by pi^2 r^4 and compared with the gold K",
+  "optional: local K per flow (1000 x m array)",
+  "required (the text asks for confidence intervals): CSR simulation envelope in the code (not a noise band), or a band drawn around L in the figure (fill_between polygon or two further lines) bracketing the gold L or the drawn L at >= 80 % of r in [0.05, min(0.35, r_max)] with both bounds within +/-0.03"
+ ]
+}

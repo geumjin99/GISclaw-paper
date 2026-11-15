@@ -1,0 +1,184 @@
+[
+ {
+  "control": "correct_band_detected_from_figure",
+  "expected_correct": true,
+  "judged_correct": true,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [],
+  "scorer_error": false
+ },
+ {
+  "control": "correct_delta_method_band",
+  "expected_correct": true,
+  "judged_correct": true,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [],
+  "scorer_error": false
+ },
+ {
+  "control": "correct_local_k_analytic_norm",
+  "expected_correct": true,
+  "judged_correct": true,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [],
+  "scorer_error": false
+ },
+ {
+  "control": "correct_ratio_form_k_bootstrap_band",
+  "expected_correct": true,
+  "judged_correct": true,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [],
+  "scorer_error": false
+ },
+ {
+  "control": "correct_ratio_form_k_planar_scale",
+  "expected_correct": true,
+  "judged_correct": true,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [],
+  "scorer_error": false
+ },
+ {
+  "control": "correct_ripley_isotropic",
+  "expected_correct": true,
+  "judged_correct": true,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [],
+  "scorer_error": false
+ },
+ {
+  "control": "correct_rmax_quarter",
+  "expected_correct": true,
+  "judged_correct": true,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [],
+  "scorer_error": false
+ },
+ {
+  "control": "wrong_first_200_flows",
+  "expected_correct": false,
+  "judged_correct": false,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [
+   "L(r) curve matches gold"
+  ],
+  "scorer_error": false
+ },
+ {
+  "control": "wrong_local_k_euclid4d_normalised",
+  "expected_correct": false,
+  "judged_correct": false,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [
+   "L(r) curve matches gold",
+   "flow K-function (4-D, ~pi^2 r^4) computed - matches gold K"
+  ],
+  "scorer_error": false
+ },
+ {
+  "control": "wrong_method_euclidean4d_flow_distance",
+  "expected_correct": false,
+  "judged_correct": false,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [
+   "flow K-function (4-D, ~pi^2 r^4) computed - matches gold K"
+  ],
+  "scorer_error": false
+ },
+ {
+  "control": "wrong_no_confidence_band",
+  "expected_correct": false,
+  "judged_correct": false,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [
+   "confidence envelope (CSR simulation or drawn band around L)"
+  ],
+  "scorer_error": false
+ },
+ {
+  "control": "wrong_no_edge_correction",
+  "expected_correct": false,
+  "judged_correct": false,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [
+   "L(r) curve matches gold",
+   "flow K-function (4-D, ~pi^2 r^4) computed - matches gold K",
+   "confidence envelope (CSR simulation or drawn band around L)"
+  ],
+  "scorer_error": false
+ },
+ {
+  "control": "wrong_no_edge_with_csr_line",
+  "expected_correct": false,
+  "judged_correct": false,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [
+   "L(r) curve matches gold",
+   "confidence envelope (CSR simulation or drawn band around L)"
+  ],
+  "scorer_error": false
+ },
+ {
+  "control": "wrong_origin_points_ripley",
+  "expected_correct": false,
+  "judged_correct": false,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [
+   "flow K-function (4-D, ~pi^2 r^4) computed - matches gold K",
+   "confidence envelope (CSR simulation or drawn band around L)"
+  ],
+  "scorer_error": false
+ },
+ {
+  "control": "wrong_planar_L_transform",
+  "expected_correct": false,
+  "judged_correct": false,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [
+   "L(r) curve matches gold",
+   "confidence envelope (CSR simulation or drawn band around L)"
+  ],
+  "scorer_error": false
+ },
+ {
+  "control": "wrong_planar_ripley_normalised",
+  "expected_correct": false,
+  "judged_correct": false,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [
+   "flow K-function (4-D, ~pi^2 r^4) computed - matches gold K",
+   "confidence envelope (CSR simulation or drawn band around L)"
+  ],
+  "scorer_error": false
+ },
+ {
+  "control": "wrong_self_pairs_counted",
+  "expected_correct": false,
+  "judged_correct": false,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [
+   "L(r) curve matches gold",
+   "flow K-function (4-D, ~pi^2 r^4) computed - matches gold K",
+   "confidence envelope (CSR simulation or drawn band around L)"
+  ],
+  "scorer_error": false
+ }
+]

@@ -1,0 +1,81 @@
+{
+ "cell_id": "oneshot.C0.SA.claude-haiku-5-5.r2.T43",
+ "task": 43,
+ "status": "ok",
+ "analytically_correct": true,
+ "scorer_error": false,
+ "checks": [
+  {
+   "name": "home range (convex hull) stored and matches gold (IoU >= 0.9)",
+   "passed": true,
+   "value": 1.0,
+   "threshold": 0.9,
+   "required": true,
+   "note": "mbg_polygons.geojson[mbg_type == 'convex_hull'] vs hull of all fixes"
+  },
+  {
+   "name": "kernel density raster stored and agrees with gold (3 km block Pearson >= 0.6)",
+   "passed": true,
+   "value": 0.817,
+   "threshold": 0.6,
+   "required": true,
+   "note": "kde_density_Cervus_elaphus.tif (coverage 1.00)"
+  },
+  {
+   "name": "density-based clusters with noise; clustered fixes denser than noise (ratio >= 1.5)",
+   "passed": true,
+   "value": 29.13,
+   "threshold": 1.5,
+   "required": true,
+   "note": "dbscan_label in elk_points_dbscan.gpkg:elk_points_dbscan [n_clusters, noise share, n]=[129, 0.011, 150191]"
+  },
+  {
+   "name": "density-based clustering estimator called (DBSCAN/HDBSCAN/OPTICS)",
+   "passed": true,
+   "value": "DBSCAN(",
+   "threshold": null,
+   "required": true,
+   "note": "call required, not just an import"
+  },
+  {
+   "name": "deliverable files carry a CRS (uniform rule)",
+   "passed": true,
+   "value": [
+    "dbscan_clusters.geojson",
+    "elk_points_dbscan.gpkg",
+    "kde_density_Cervus_elaphus.tif",
+    "kde_isopleths.geojson",
+    "mbg_polygons.geojson"
+   ],
+   "threshold": "every geographic deliverable file has a CRS",
+   "required": true,
+   "note": "5 geographic deliverable file(s), all with a CRS"
+  }
+ ],
+ "replay": {
+  "success": true,
+  "outputs": [
+   "dbscan_clusters.geojson",
+   "elk_points_dbscan.gpkg",
+   "fig_home_range_Cervus_elaphus.png",
+   "fig_home_range_area_comparison.png",
+   "fig_overview_fixes_mcp.png",
+   "home_range_summary.csv",
+   "kde_density_Cervus_elaphus.tif",
+   "kde_isopleths.geojson",
+   "mbg_polygons.geojson"
+  ],
+  "events": [],
+  "blocks_ok": 1,
+  "block_outcome": [
+   "ok"
+  ],
+  "step_timeout_s": 3600,
+  "same_outputs_as_original": true,
+  "block_mismatches": []
+ },
+ "replay_faithful": true,
+ "replay_unfaithful_reasons": [],
+ "replay_container_failure": [],
+ "emergency_files": []
+}

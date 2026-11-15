@@ -1,0 +1,129 @@
+{
+ "cell_id": "main.H2.SA.claude-haiku-5-5.r3.T50",
+ "experiment": "main",
+ "tier": "H2",
+ "arch": "SA",
+ "model": "claude-haiku-5-5",
+ "run": 3,
+ "task": 50,
+ "elapsed_s": 104.2,
+ "protocol": "native",
+ "tier_config": {
+  "tools": [
+   "list_files",
+   "load_vector",
+   "load_raster",
+   "inspect",
+   "execute",
+   "lookup_api",
+   "finish"
+  ],
+  "generic": true,
+  "g1": true,
+  "g2": true,
+  "g3": true,
+  "g4": true,
+  "g5": true,
+  "g6": true,
+  "g7": true,
+  "no_dd": false,
+  "no_dk": false
+ },
+ "outputs": [
+  "salinity_ebk_kriging.tif",
+  "seagrass_maxent_overview.png",
+  "seagrass_maxent_prediction.tif",
+  "seagrass_random_points.cpg",
+  "seagrass_random_points.dbf",
+  "seagrass_random_points.prj",
+  "seagrass_random_points.shp",
+  "seagrass_random_points.shx",
+  "seagrass_train_features.cpg",
+  "seagrass_train_features.csv",
+  "seagrass_train_features.dbf",
+  "seagrass_train_features.prj",
+  "seagrass_train_features.shp",
+  "seagrass_train_features.shx",
+  "temp_ebk_kriging.tif"
+ ],
+ "required_outputs": [],
+ "required_present": null,
+ "emergency_files": [],
+ "rounds": 16,
+ "self_corrections": 0,
+ "agent_stats": {
+  "rounds": 16,
+  "format_errors": 0,
+  "format_error_kinds": {},
+  "self_corrections": 0,
+  "exec_blocks": 14,
+  "exec_failed": 0,
+  "finish_rejections": 0,
+  "dedup_blocked": 0,
+  "triggers": {
+   "g1:card": 1,
+   "g6:lookup": 1,
+   "g2:nodata_unmasked": 3
+  },
+  "checks_run": {
+   "g2": 14,
+   "g3": 15,
+   "g7": 14,
+   "g6_lookup": 1
+  },
+  "end_reason": "finish",
+  "empty_retries": 0,
+  "history_truncations": 0,
+  "finished": true,
+  "agent_time_s": 15.3
+ },
+ "llm_stats": {
+  "calls": 16,
+  "retries": 0,
+  "errors": 0,
+  "context_overflow": 0,
+  "empty": 0,
+  "refusals": 0,
+  "prompt_tokens": 34,
+  "completion_tokens": 17426,
+  "cached_tokens": 273219,
+  "cache_write_tokens": 31638
+ },
+ "llm_time_s": 87.8,
+ "agent_time_s": 15.3,
+ "hit_deadline": false,
+ "sandbox_events": [],
+ "inputs_intact": true,
+ "container_memory": "12g",
+ "deliverable_produced": true,
+ "config": {
+  "image": "gisclaw-exec:1.0",
+  "step_timeout_s": 300,
+  "task_wall_s": 1200,
+  "max_rounds": 50,
+  "blocked_packages": {
+   "arcpy": "Use geopandas + rasterio + shapely instead."
+  },
+  "agent": {
+   "history_tokens": 60000,
+   "max_format_errors": 15
+  }
+ },
+ "model_config": {
+  "provider": "anthropic",
+  "model_name": "claude-haiku-5-5",
+  "request": {
+   "set": {
+    "max_tokens": 32000,
+    "thinking": {
+     "type": "adaptive",
+     "display": "summarized"
+    },
+    "output_config": {
+     "effort": "high"
+    }
+   }
+  },
+  "history_tokens": 700000
+ }
+}

@@ -1,0 +1,165 @@
+{
+ "cell_id": "main.H2.SA.qwen38-27b.r3.T05",
+ "experiment": "main",
+ "tier": "H2",
+ "arch": "SA",
+ "model": "qwen38-27b",
+ "run": 3,
+ "task": 5,
+ "elapsed_s": 2303.0,
+ "protocol": "native",
+ "tier_config": {
+  "tools": [
+   "list_files",
+   "load_vector",
+   "load_raster",
+   "inspect",
+   "execute",
+   "lookup_api",
+   "finish"
+  ],
+  "generic": true,
+  "g1": true,
+  "g2": true,
+  "g3": true,
+  "g4": true,
+  "g5": true,
+  "g6": true,
+  "g7": true,
+  "no_dd": false,
+  "no_dk": false
+ },
+ "outputs": [
+  "blood_lead_cases_points.gpkg",
+  "emergency_output.csv"
+ ],
+ "required_outputs": [
+  "blood_lead_hotspots.png"
+ ],
+ "required_present": false,
+ "emergency_files": [
+  "emergency_output.csv"
+ ],
+ "rounds": 34,
+ "self_corrections": 7,
+ "agent_stats": {
+  "rounds": 34,
+  "format_errors": 0,
+  "format_error_kinds": {},
+  "self_corrections": 7,
+  "exec_blocks": 29,
+  "exec_failed": 10,
+  "finish_rejections": 0,
+  "dedup_blocked": 0,
+  "triggers": {
+   "g1:card": 1,
+   "g6:lookup": 4,
+   "g6:suggest": 1,
+   "h1:time_left": 1,
+   "h1:emergency_save": 1
+  },
+  "checks_run": {
+   "g2": 29,
+   "g3": 29,
+   "g7": 29,
+   "g6_lookup": 4,
+   "g6": 10,
+   "g4": 10
+  },
+  "end_reason": "budget",
+  "empty_retries": 0,
+  "history_truncations": 0,
+  "finished": false,
+  "agent_time_s": 1223.5
+ },
+ "llm_stats": {
+  "calls": 34,
+  "retries": 0,
+  "errors": 0,
+  "context_overflow": 0,
+  "empty": 0,
+  "prompt_tokens": 532038,
+  "completion_tokens": 48051,
+  "reasoning_tokens": 38033,
+  "cached_tokens": 0
+ },
+ "llm_time_s": 1078.2,
+ "agent_time_s": 1223.5,
+ "hit_deadline": true,
+ "sandbox_events": [
+  {
+   "event": "timeout_interrupted"
+  },
+  {
+   "event": "container_oom",
+   "exit_code": 137,
+   "oom_killed": true
+  },
+  {
+   "event": "restarted",
+   "replayed": 20
+  },
+  {
+   "event": "container_oom",
+   "exit_code": 137,
+   "oom_killed": true
+  },
+  {
+   "event": "restarted",
+   "replayed": 21
+  },
+  {
+   "event": "container_oom",
+   "exit_code": 137,
+   "oom_killed": true
+  },
+  {
+   "event": "restarted",
+   "replayed": 22
+  },
+  {
+   "event": "container_oom",
+   "exit_code": 137,
+   "oom_killed": true
+  },
+  {
+   "event": "restarted",
+   "replayed": 23
+  },
+  {
+   "event": "container_oom",
+   "exit_code": 137,
+   "oom_killed": true
+  },
+  {
+   "event": "restarted",
+   "replayed": 23
+  }
+ ],
+ "inputs_intact": true,
+ "container_memory": "12g",
+ "deliverable_produced": false,
+ "config": {
+  "image": "gisclaw-exec:1.0",
+  "step_timeout_s": 300,
+  "task_wall_s": 1200,
+  "max_rounds": 50,
+  "blocked_packages": {
+   "arcpy": "Use geopandas + rasterio + shapely instead."
+  },
+  "agent": {
+   "history_tokens": 60000,
+   "max_format_errors": 15
+  }
+ },
+ "model_config": {
+  "provider": "vllm",
+  "model_name": "qwen3.8-27b-fp8",
+  "request": {
+   "set": {
+    "max_tokens": 32768,
+    "temperature": 1.0
+   }
+  }
+ }
+}

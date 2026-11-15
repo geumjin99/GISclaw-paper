@@ -1,0 +1,20 @@
+{
+ "task": 14,
+ "source": "instruction: save the figure as 'pred_results/temperature_statistic_vis.png'; checks.py file_exists + png_not_blank",
+ "deliverables": [
+  {
+   "id": "map",
+   "kind": "figure",
+   "patterns": [
+    "temperature_statistic_vis.png"
+   ],
+   "required": true,
+   "crs_required": false,
+   "checked_by": [
+    "required output present",
+    "map not blank"
+   ]
+  }
+ ],
+ "not_deliverables": []
+}

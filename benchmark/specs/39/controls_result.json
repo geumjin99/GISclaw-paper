@@ -1,0 +1,232 @@
+[
+ {
+  "control": "correct_aicc_bar",
+  "expected_correct": true,
+  "judged_correct": true,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [],
+  "scorer_error": false
+ },
+ {
+  "control": "correct_criteria_list",
+  "expected_correct": true,
+  "judged_correct": true,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [],
+  "scorer_error": false
+ },
+ {
+  "control": "correct_criteria_list_noleak",
+  "expected_correct": true,
+  "judged_correct": true,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [],
+  "scorer_error": false
+ },
+ {
+  "control": "correct_fixed_kernel_standardized",
+  "expected_correct": true,
+  "judged_correct": true,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [],
+  "scorer_error": false
+ },
+ {
+  "control": "correct_fixed_km_profile",
+  "expected_correct": true,
+  "judged_correct": true,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [],
+  "scorer_error": false
+ },
+ {
+  "control": "correct_grid40_search",
+  "expected_correct": true,
+  "judged_correct": true,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [],
+  "scorer_error": false
+ },
+ {
+  "control": "correct_gwr_vs_mgwr_maps",
+  "expected_correct": true,
+  "judged_correct": true,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [],
+  "scorer_error": false
+ },
+ {
+  "control": "correct_intercept_maps",
+  "expected_correct": true,
+  "judged_correct": true,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [],
+  "scorer_error": false
+ },
+ {
+  "control": "correct_latlon_bandwidth_maps",
+  "expected_correct": true,
+  "judged_correct": true,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [],
+  "scorer_error": false
+ },
+ {
+  "control": "correct_opt_map_plus_difference_map",
+  "expected_correct": true,
+  "judged_correct": true,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [],
+  "scorer_error": false
+ },
+ {
+  "control": "correct_opt_maps_plus_diag_bars",
+  "expected_correct": true,
+  "judged_correct": true,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [],
+  "scorer_error": false
+ },
+ {
+  "control": "correct_polycentroid_fixed_gauss",
+  "expected_correct": true,
+  "judged_correct": true,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [],
+  "scorer_error": false
+ },
+ {
+  "control": "wrong_extra_regressor_pctpov",
+  "expected_correct": false,
+  "judged_correct": false,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [
+   "local GWR slope surfaces match gold (Pearson >= 0.97) and no extra regressor",
+   "figure compares >= 2 GWR-family models"
+  ],
+  "scorer_error": false
+ },
+ {
+  "control": "wrong_fixedgauss_single_model_4maps",
+  "expected_correct": false,
+  "judged_correct": false,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [
+   "figure compares >= 2 GWR-family models"
+  ],
+  "scorer_error": false
+ },
+ {
+  "control": "wrong_hardcoded_bw100",
+  "expected_correct": false,
+  "judged_correct": false,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [
+   "optimal bandwidth searched (Sel_BW result present)",
+   "figure compares >= 2 GWR-family models"
+  ],
+  "scorer_error": false
+ },
+ {
+  "control": "wrong_latlon_single_model_maps",
+  "expected_correct": false,
+  "judged_correct": false,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [
+   "figure compares >= 2 GWR-family models"
+  ],
+  "scorer_error": false
+ },
+ {
+  "control": "wrong_misaligned_join",
+  "expected_correct": false,
+  "judged_correct": false,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [
+   "optimal bandwidth searched (Sel_BW result present)",
+   "local GWR slope surfaces match gold (Pearson >= 0.97) and no extra regressor",
+   "figure shows GWR surfaces or the AICc-bandwidth profile",
+   "figure compares >= 2 GWR-family models"
+  ],
+  "scorer_error": false
+ },
+ {
+  "control": "wrong_nonstandard_aicc",
+  "expected_correct": false,
+  "judged_correct": false,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [
+   "figure shows GWR surfaces or the AICc-bandwidth profile",
+   "figure compares >= 2 GWR-family models"
+  ],
+  "scorer_error": false
+ },
+ {
+  "control": "wrong_raw_maps_no_gwr_surfaces",
+  "expected_correct": false,
+  "judged_correct": false,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [
+   "local GWR slope surfaces match gold (Pearson >= 0.97) and no extra regressor",
+   "figure shows GWR surfaces or the AICc-bandwidth profile",
+   "figure compares >= 2 GWR-family models"
+  ],
+  "scorer_error": false
+ },
+ {
+  "control": "wrong_regressor_pcteld",
+  "expected_correct": false,
+  "judged_correct": false,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [
+   "local GWR slope surfaces match gold (Pearson >= 0.97) and no extra regressor",
+   "figure shows GWR surfaces or the AICc-bandwidth profile",
+   "figure compares >= 2 GWR-family models"
+  ],
+  "scorer_error": false
+ },
+ {
+  "control": "wrong_single_model_maps_no_comparison",
+  "expected_correct": false,
+  "judged_correct": false,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [
+   "figure compares >= 2 GWR-family models"
+  ],
+  "scorer_error": false
+ },
+ {
+  "control": "wrong_target_pctpov",
+  "expected_correct": false,
+  "judged_correct": false,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [
+   "local GWR slope surfaces match gold (Pearson >= 0.97) and no extra regressor",
+   "figure shows GWR surfaces or the AICc-bandwidth profile",
+   "figure compares >= 2 GWR-family models"
+  ],
+  "scorer_error": false
+ }
+]

@@ -1,0 +1,113 @@
+{
+ "cell_id": "main.H0.SA.claude-sonnet-5-5.r1.T25",
+ "task": 25,
+ "status": "ok",
+ "analytically_correct": true,
+ "scorer_error": false,
+ "checks": [
+  {
+   "name": "output written (non-blank map or result file)",
+   "passed": true,
+   "value": [
+    "risk_maps.png",
+    "hkg_covid_risk_profiles.csv",
+    "hkg_covid_risk_profiles.shp",
+    "simrank_Exposure.csv",
+    "simrank_Scarcity.csv",
+    "simrank_Suscept.csv",
+    "simrank_Transmission.csv"
+   ],
+   "threshold": null,
+   "required": true,
+   "note": ""
+  },
+  {
+   "name": "transmission risk score matches gold (Spearman)",
+   "passed": true,
+   "value": 1.0,
+   "threshold": 0.95,
+   "required": true,
+   "note": "Tran_Risk in out@final"
+  },
+  {
+   "name": "susceptibility risk score matches gold (Spearman)",
+   "passed": true,
+   "value": 1.0,
+   "threshold": 0.95,
+   "required": true,
+   "note": "Susc_Risk in out@final"
+  },
+  {
+   "name": "resource scarcity risk score matches gold (Spearman)",
+   "passed": true,
+   "value": 1.0,
+   "threshold": 0.95,
+   "required": true,
+   "note": "Scar_Risk in out@final"
+  },
+  {
+   "name": "exposure risk score matches gold (Spearman)",
+   "passed": true,
+   "value": 1.0,
+   "threshold": 0.95,
+   "required": true,
+   "note": "Expo_Risk in out@final"
+  },
+  {
+   "name": "clustering is a near-optimal K-means partition of the four risk scores",
+   "passed": true,
+   "value": 0.989,
+   "threshold": 0.9,
+   "required": true,
+   "note": "CLUSTER in out@final, k=3"
+  },
+  {
+   "name": "method fidelity: SEEDS-initialised K-means (3 clusters, ARI>=0.8 with gold)",
+   "passed": true,
+   "value": 1.0,
+   "threshold": 0.8,
+   "required": true,
+   "note": "CLUSTER in out@final; instructed: K-means initialised from SEEDS"
+  },
+  {
+   "name": "deliverable files carry a CRS (uniform rule)",
+   "passed": true,
+   "value": [
+    "hkg_covid_risk_profiles.shp"
+   ],
+   "threshold": "every geographic deliverable file has a CRS",
+   "required": true,
+   "note": "1 geographic deliverable file(s), all with a CRS"
+  }
+ ],
+ "replay": {
+  "success": true,
+  "outputs": [
+   "hkg_covid_risk_profiles.cpg",
+   "hkg_covid_risk_profiles.csv",
+   "hkg_covid_risk_profiles.dbf",
+   "hkg_covid_risk_profiles.prj",
+   "hkg_covid_risk_profiles.shp",
+   "hkg_covid_risk_profiles.shx",
+   "risk_maps.png",
+   "simrank_Exposure.csv",
+   "simrank_Scarcity.csv",
+   "simrank_Suscept.csv",
+   "simrank_Transmission.csv"
+  ],
+  "events": [],
+  "blocks_ok": 3,
+  "block_outcome": [
+   "ok",
+   "ok",
+   "ok"
+  ],
+  "step_timeout_s": 900,
+  "same_outputs_as_original": true,
+  "block_mismatches": []
+ },
+ "replay_faithful": true,
+ "replay_unfaithful_reasons": [],
+ "replay_container_failure": [],
+ "emergency_files": []
+}

@@ -1,0 +1,15 @@
+{
+ "task": 11,
+ "source": "instruction: visualize as 'pred_results/CoralandSponge.png'; checks.py file_exists + png_not_blank (updated point table and category means are scored on captured objects)",
+ "deliverables": [
+  {
+   "id": "chart",
+   "kind": "figure",
+   "patterns": ["CoralandSponge.png"],
+   "required": true,
+   "crs_required": false,
+   "checked_by": ["required output present", "figure not blank", "figure shows per-category mean slope and mean aspect"]
+  }
+ ],
+ "not_deliverables": []
+}

@@ -1,0 +1,92 @@
+{
+ "cell_id": "ablation.H2-g2.SA.qwen38-27b.r3.T27",
+ "task": 27,
+ "status": "ok",
+ "analytically_correct": true,
+ "scorer_error": false,
+ "checks": [
+  {
+   "name": "undeveloped_areas.tif present",
+   "passed": true,
+   "value": "replay_agent_outputs/undeveloped_areas.tif",
+   "threshold": null,
+   "required": true,
+   "note": ""
+  },
+  {
+   "name": "selected cells match gold (IoU)",
+   "passed": true,
+   "value": 1.0,
+   "threshold": 0.7,
+   "required": true,
+   "note": "pred 665 cells, gold 665 (on gold grid)"
+  },
+  {
+   "name": "every undeveloped class of the gold selection is selected (recall >= 0.5)",
+   "passed": true,
+   "value": {
+    "31": 1.0,
+    "81": 1.0
+   },
+   "threshold": 0.5,
+   "required": true,
+   "note": "per land-cover class with >= 20 gold cells"
+  },
+  {
+   "name": "values are undeveloped land-cover codes",
+   "passed": false,
+   "value": [
+    1
+   ],
+   "threshold": null,
+   "required": false,
+   "note": "a 0/1 mask is acceptable but loses the class"
+  },
+  {
+   "name": "selected area within 25 % of gold",
+   "passed": true,
+   "value": 1.0,
+   "threshold": null,
+   "required": false,
+   "note": ""
+  },
+  {
+   "name": "deliverable files carry a CRS (uniform rule)",
+   "passed": true,
+   "value": [
+    "undeveloped_areas.tif"
+   ],
+   "threshold": "every geographic deliverable file has a CRS",
+   "required": true,
+   "note": "1 geographic deliverable file(s), all with a CRS"
+  }
+ ],
+ "replay": {
+  "success": true,
+  "outputs": [
+   "undeveloped_areas.tif"
+  ],
+  "events": [],
+  "blocks_ok": 9,
+  "block_outcome": [
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok"
+  ],
+  "step_timeout_s": 900,
+  "same_outputs_as_original": true,
+  "block_mismatches": []
+ },
+ "replay_faithful": true,
+ "replay_unfaithful_reasons": [],
+ "replay_container_failure": [],
+ "emergency_files": []
+}

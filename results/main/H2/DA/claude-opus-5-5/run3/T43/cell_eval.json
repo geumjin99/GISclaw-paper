@@ -1,0 +1,83 @@
+{
+ "cell_id": "main.H2.DA.claude-opus-5-5.r3.T43",
+ "task": 43,
+ "status": "ok",
+ "analytically_correct": true,
+ "scorer_error": false,
+ "checks": [
+  {
+   "name": "home range (convex hull) stored and matches gold (IoU >= 0.9)",
+   "passed": true,
+   "value": 1.0,
+   "threshold": 0.9,
+   "required": true,
+   "note": "Elk_convex_hull_individual.geojson vs per-animal hulls"
+  },
+  {
+   "name": "kernel density raster stored and agrees with gold (3 km block Pearson >= 0.6)",
+   "passed": true,
+   "value": 0.973,
+   "threshold": 0.6,
+   "required": true,
+   "note": "Elk_kernel_density.tif (coverage 1.00)"
+  },
+  {
+   "name": "density-based clusters with noise; clustered fixes denser than noise (ratio >= 1.5)",
+   "passed": true,
+   "value": 5.35,
+   "threshold": 1.5,
+   "required": true,
+   "note": "cluster in Elk_dbscan_points.geojson [n_clusters, noise share, n]=[192, 0.746, 150191]"
+  },
+  {
+   "name": "density-based clustering estimator called (DBSCAN/HDBSCAN/OPTICS)",
+   "passed": true,
+   "value": "DBSCAN(",
+   "threshold": null,
+   "required": true,
+   "note": "call required, not just an import"
+  },
+  {
+   "name": "deliverable files carry a CRS (uniform rule)",
+   "passed": true,
+   "value": [
+    "Elk_convex_hull_all.geojson",
+    "Elk_convex_hull_individual.geojson",
+    "Elk_dbscan_clusters.geojson",
+    "Elk_dbscan_points.geojson",
+    "Elk_kernel_density.tif"
+   ],
+   "threshold": "every geographic deliverable file has a CRS",
+   "required": true,
+   "note": "5 geographic deliverable file(s), all with a CRS"
+  }
+ ],
+ "replay": {
+  "success": true,
+  "outputs": [
+   "Elk_analysis.png",
+   "Elk_convex_hull_all.geojson",
+   "Elk_convex_hull_individual.geojson",
+   "Elk_dbscan_clusters.geojson",
+   "Elk_dbscan_points.geojson",
+   "Elk_kernel_density.tif"
+  ],
+  "events": [],
+  "blocks_ok": 6,
+  "block_outcome": [
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok"
+  ],
+  "step_timeout_s": 900,
+  "same_outputs_as_original": true,
+  "block_mismatches": []
+ },
+ "replay_faithful": true,
+ "replay_unfaithful_reasons": [],
+ "replay_container_failure": [],
+ "emergency_files": []
+}

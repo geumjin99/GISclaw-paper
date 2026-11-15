@@ -1,0 +1,96 @@
+{
+ "cell_id": "oneshot.C0.SA.claude-haiku-5-5.r1.T13",
+ "task": 13,
+ "status": "ok",
+ "analytically_correct": false,
+ "scorer_error": false,
+ "checks": [
+  {
+   "name": "required output present",
+   "passed": true,
+   "value": [
+    "ocean_profiles_vis.png"
+   ],
+   "threshold": [
+    "ocean_profiles_vis.png"
+   ],
+   "required": true,
+   "note": ""
+  },
+  {
+   "name": "figure not blank",
+   "passed": true,
+   "value": 34.785746874156594,
+   "threshold": ">=3 grey-level std",
+   "required": true,
+   "note": ""
+  },
+  {
+   "name": "temperature profile extracted",
+   "passed": false,
+   "value": 0,
+   "threshold": null,
+   "required": true,
+   "note": "no captured theta profile"
+  },
+  {
+   "name": "salinity profile from the same column/box",
+   "passed": false,
+   "value": 0,
+   "threshold": null,
+   "required": true,
+   "note": "no salinity profile"
+  },
+  {
+   "name": "figure shows both profiles against depth, from the same column/box",
+   "passed": false,
+   "value": {
+    "temperature_drawn": false,
+    "salinity_drawn": false,
+    "same_location": false
+   },
+   "threshold": null,
+   "required": true,
+   "note": "a profile is not drawn against depth"
+  },
+  {
+   "name": "drawn profiles legible (each spans >= 3 % of its axis) (figure)",
+   "passed": true,
+   "value": {
+    "illegible": []
+   },
+   "threshold": null,
+   "required": false,
+   "note": "not assessed (profiles not drawn)",
+   "kind": "figure"
+  },
+  {
+   "name": "canonical selection (330.5E, 9.83S, <=1000 m)",
+   "passed": false,
+   "value": null,
+   "threshold": null,
+   "required": false,
+   "note": ""
+  }
+ ],
+ "replay": {
+  "success": true,
+  "outputs": [
+   "ocean_profile_filtered_points.csv",
+   "ocean_profile_stats.csv",
+   "ocean_profiles_vis.png"
+  ],
+  "events": [],
+  "blocks_ok": 1,
+  "block_outcome": [
+   "ok"
+  ],
+  "step_timeout_s": 3600,
+  "same_outputs_as_original": true,
+  "block_mismatches": []
+ },
+ "replay_faithful": true,
+ "replay_unfaithful_reasons": [],
+ "replay_container_failure": [],
+ "emergency_files": []
+}

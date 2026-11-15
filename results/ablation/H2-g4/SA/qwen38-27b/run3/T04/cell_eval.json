@@ -1,0 +1,130 @@
+{
+ "cell_id": "ablation.H2-g4.SA.qwen38-27b.r3.T04",
+ "task": 4,
+ "status": "ok",
+ "analytically_correct": false,
+ "scorer_error": false,
+ "checks": [
+  {
+   "name": "required output present",
+   "passed": true,
+   "value": [
+    "undeveloped_areas.tif"
+   ],
+   "threshold": [
+    "undeveloped_areas.tif",
+    "undeveloped_areas.tiff"
+   ],
+   "required": true,
+   "note": ""
+  },
+  {
+   "name": "georeferenced raster with selected cells",
+   "passed": true,
+   "value": 304468,
+   "threshold": ">0",
+   "required": true,
+   "note": "pred CRS; 0 selected cells outside the land_cover grid"
+  },
+  {
+   "name": "selected cells match an accepted interpretation (1-cell tolerance)",
+   "passed": false,
+   "value": {
+    "precision": 0.003,
+    "recall": 0.998,
+    "cells": 304468,
+    "variant_cells": 665
+   },
+   "threshold": "precision>=0.85 and recall>=0.85",
+   "required": true,
+   "note": "appearance / upper-inclusive / linear"
+  },
+  {
+   "name": "soils projected to Lambert Conformal Conic (prescribed step)",
+   "passed": true,
+   "value": null,
+   "threshold": null,
+   "required": true,
+   "note": "soils layer soils_lcc@final in LCC"
+  },
+  {
+   "name": "selected cells carry undeveloped NLCD codes or a 0/1 mask",
+   "passed": false,
+   "value": [
+    101.62466430664062,
+    101.6997299194336,
+    102.66487884521484,
+    103.6300277709961,
+    107.06702423095703,
+    108.64879608154297,
+    110.0,
+    111.6997299194336,
+    112.66487884521484,
+    113.6300277709961,
+    117.06702423095703,
+    118.64879608154297,
+    121.6997299194336,
+    122.66487884521484,
+    123.6300277709961,
+    128.6488037109375,
+    130.0
+   ],
+   "threshold": null,
+   "required": false,
+   "note": ""
+  },
+  {
+   "name": "deliverable files carry a CRS (uniform rule)",
+   "passed": true,
+   "value": [
+    "undeveloped_areas.tif"
+   ],
+   "threshold": "every geographic deliverable file has a CRS",
+   "required": true,
+   "note": "1 geographic deliverable file(s), all with a CRS"
+  }
+ ],
+ "replay": {
+  "success": true,
+  "outputs": [
+   "drainage_conditions_reclass.tif",
+   "land_cover_reclass.tif",
+   "result_map.png",
+   "risk_zones.tif",
+   "undeveloped_areas.tif",
+   "vulnerable_areas.tif",
+   "water_depth.tif"
+  ],
+  "events": [],
+  "blocks_ok": 14,
+  "block_outcome": [
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok"
+  ],
+  "step_timeout_s": 900,
+  "same_outputs_as_original": true,
+  "block_mismatches": []
+ },
+ "replay_faithful": true,
+ "replay_unfaithful_reasons": [],
+ "replay_container_failure": [],
+ "emergency_files": []
+}

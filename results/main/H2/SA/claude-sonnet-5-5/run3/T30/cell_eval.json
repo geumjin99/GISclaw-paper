@@ -1,0 +1,164 @@
+{
+ "cell_id": "main.H2.SA.claude-sonnet-5-5.r3.T30",
+ "task": 30,
+ "status": "ok",
+ "analytically_correct": true,
+ "scorer_error": false,
+ "checks": [
+  {
+   "name": "map written (non-blank PNG)",
+   "passed": true,
+   "value": [
+    "bike_network_map.png"
+   ],
+   "threshold": null,
+   "required": false,
+   "note": ""
+  },
+  {
+   "name": "proposed routes cover the three designated corridors",
+   "passed": true,
+   "value": {
+    "Central": 1.0,
+    "East": 1.0,
+    "West": 1.0
+   },
+   "threshold": ">=0.5 each",
+   "required": true,
+   "note": "sel@final; 5.39 mi near Capitol Hill (gold 5.37)"
+  },
+  {
+   "name": "precision: proposed length lies on designated corridors",
+   "passed": true,
+   "value": 1.0,
+   "threshold": 0.5,
+   "required": false,
+   "note": ""
+  },
+  {
+   "name": "map shows the proposed routes",
+   "passed": true,
+   "value": 1.0,
+   "threshold": 0.5,
+   "required": false,
+   "note": "share of proposed route segments whose bbox matches a drawn path"
+  },
+  {
+   "name": "half-mile coverage of Capitol Hill matches gold",
+   "passed": true,
+   "value": null,
+   "threshold": "IoU>=0.85 (clipped to Capitol Hill) or share in [0.95, 0.983]",
+   "required": true,
+   "note": "cm = 96.765"
+  },
+  {
+   "name": "network analysis performed (graph shortest paths)",
+   "passed": true,
+   "value": [
+    "networkx",
+    "dijkstra",
+    "nx."
+   ],
+   "threshold": null,
+   "required": true,
+   "note": "instructed: 'Use Network Analyst to propose new routes'"
+  },
+  {
+   "name": "existing trail length in Capitol Hill measured",
+   "passed": false,
+   "value": null,
+   "threshold": null,
+   "required": false,
+   "note": "5227 ft / 0.99 mi / 1593 m"
+  },
+  {
+   "name": "deliverable files carry a CRS (uniform rule)",
+   "passed": true,
+   "value": [
+    "city_proposed_protected_lanes.shp",
+    "demand_employment_hotspots_grid.shp",
+    "halfmile_coverage_combined.shp",
+    "od_nodes.shp",
+    "proposed_bike_routes.shp",
+    "street_suitability.shp"
+   ],
+   "threshold": "every geographic deliverable file has a CRS",
+   "required": true,
+   "note": "6 geographic deliverable file(s), all with a CRS"
+  }
+ ],
+ "replay": {
+  "success": true,
+  "outputs": [
+   "README.md",
+   "bike_network_map.png",
+   "city_proposed_protected_lanes.cpg",
+   "city_proposed_protected_lanes.dbf",
+   "city_proposed_protected_lanes.prj",
+   "city_proposed_protected_lanes.shp",
+   "city_proposed_protected_lanes.shx",
+   "coverage_metrics_halfmile.csv",
+   "demand_employment_hotspots_grid.cpg",
+   "demand_employment_hotspots_grid.dbf",
+   "demand_employment_hotspots_grid.prj",
+   "demand_employment_hotspots_grid.shp",
+   "demand_employment_hotspots_grid.shx",
+   "halfmile_coverage_combined.cpg",
+   "halfmile_coverage_combined.dbf",
+   "halfmile_coverage_combined.prj",
+   "halfmile_coverage_combined.shp",
+   "halfmile_coverage_combined.shx",
+   "od_nodes.cpg",
+   "od_nodes.dbf",
+   "od_nodes.prj",
+   "od_nodes.shp",
+   "od_nodes.shx",
+   "od_route_summary.csv",
+   "proposed_bike_routes.cpg",
+   "proposed_bike_routes.dbf",
+   "proposed_bike_routes.prj",
+   "proposed_bike_routes.shp",
+   "proposed_bike_routes.shx",
+   "street_suitability.cpg",
+   "street_suitability.dbf",
+   "street_suitability.prj",
+   "street_suitability.shp",
+   "street_suitability.shx"
+  ],
+  "events": [],
+  "blocks_ok": 22,
+  "block_outcome": [
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok"
+  ],
+  "step_timeout_s": 900,
+  "same_outputs_as_original": true,
+  "block_mismatches": []
+ },
+ "replay_faithful": true,
+ "replay_unfaithful_reasons": [],
+ "replay_container_failure": [],
+ "emergency_files": []
+}

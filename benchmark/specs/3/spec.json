@@ -1,0 +1,28 @@
+{
+ "task": 3,
+ "title": "Assess burn scars and understanding the impact of wildfire in Montana using satellite imagery",
+ "output_type": "image (dNBR map with burn-scar polygons)",
+ "required_outputs": [
+  "burn_scar_analysis.png"
+ ],
+ "method": "Per year, NBR = (B5 - B7)/(B5 + B7) on float data (B5 = NIR, B7 = SWIR2; the 8-band stacks have no panchromatic band, 65536 = nodata). dNBR = NBR_2014 - NBR_2015. Burned = dNBR > 0.27 (USGS moderate-low and above), sieved (< 11 px), vectorised with rasterio.features.shapes (445 polygons, 61.6 km2, UTM 12N) and drawn over the dNBR surface.",
+ "key_parameters": {
+  "bands": "NIR = band 5, SWIR2 = band 7",
+  "dNBR": "pre (2014) - post (2015)",
+  "threshold": "0.27 (any 0.1-0.44 accepted)",
+  "min_patch": "11 pixels"
+ },
+ "benchmark_defects": [
+  "Domain knowledge gives NBR = (Band 5 + Band 7)/(Band 5 + Band 7) (always 1); the correct formula is (B5 - B7)/(B5 + B7).",
+  "The dataset description lists 9 Landsat bands including panchromatic, but the files have 8 bands (no PAN); band indices 5 and 7 are nevertheless NIR and SWIR2.",
+  "Rasters are uint32 L1T digital numbers, so integer arithmetic without a float cast silently overflows; DN-based dNBR has a ~0.05 unburned offset.",
+  "No burn-severity threshold is specified."
+ ],
+ "checks": [
+  "required: map file present",
+  "required: map not blank",
+  "required: a captured 2-D array matches the gold dNBR cell by cell (|Pearson r| >= 0.98, either sign convention; coarser arrays compared with gold area-averaged onto their grid)",
+  "required: the MAPPED polygon layer (captured layer plotted in the code; best captured layer only if the plotted object is inline) covers >= 70 % of the gold burned core (dNBR > 0.44) with >= 60 % of its area at dNBR > 0.10",
+  "optional: total burned area 15-350 km2"
+ ]
+}

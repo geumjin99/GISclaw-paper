@@ -1,0 +1,100 @@
+{
+ "cell_id": "ablation.H2+nodk.SA.claude-haiku-5-5.r2.T11",
+ "task": 11,
+ "status": "ok",
+ "analytically_correct": true,
+ "scorer_error": false,
+ "checks": [
+  {
+   "name": "required output present",
+   "passed": true,
+   "value": [
+    "CoralandSponge.png"
+   ],
+   "threshold": [
+    "CoralandSponge.png"
+   ],
+   "required": true,
+   "note": ""
+  },
+  {
+   "name": "figure not blank",
+   "passed": true,
+   "value": 40.53454552867342,
+   "threshold": ">=3 grey-level std",
+   "required": true,
+   "note": ""
+  },
+  {
+   "name": "points updated with correct slope and aspect",
+   "passed": true,
+   "value": {
+    "slope_spearman": 1.0,
+    "aspect_within_25deg": 1.0
+   },
+   "threshold": "spearman >= 0.9, >= 80 % within 25 deg",
+   "required": true,
+   "note": "cs2@final"
+  },
+  {
+   "name": "per-category mean slope and aspect match gold",
+   "passed": true,
+   "value": {
+    "slope_share_ok": 1.0,
+    "aspect_share_ok": 1.0
+   },
+   "threshold": ">= 80 % of categories (n >= 20) within tolerance",
+   "required": true,
+   "note": "slope: g@final by ScientificName; aspect: summ@final by ScientificName"
+  },
+  {
+   "name": "figure shows per-category mean slope and mean aspect",
+   "passed": true,
+   "value": {
+    "slope_share_drawn": 1.0,
+    "aspect_share_drawn": 0.875
+   },
+   "threshold": ">= 80 % of categories (n >= 20) drawn within tolerance, one-to-one",
+   "required": true,
+   "note": "slope: fig_ax0_line1@save00 x by VernacularNameCategory (slope); aspect: fig_ax1_coll0_offsets@save00 x by ScientificName (asp_circ, labels bound)"
+  },
+  {
+   "name": "aspect averaged circularly",
+   "passed": true,
+   "value": null,
+   "threshold": null,
+   "required": false,
+   "note": ""
+  }
+ ],
+ "replay": {
+  "success": true,
+  "outputs": [
+   "Catalina_aspect.tif",
+   "Catalina_slope.tif",
+   "CoralandSponge.png",
+   "CoralandSponge_slope_aspect_summary.csv",
+   "CoralandSponge_updated.geojson"
+  ],
+  "events": [],
+  "blocks_ok": 9,
+  "block_outcome": [
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok"
+  ],
+  "step_timeout_s": 900,
+  "same_outputs_as_original": true,
+  "block_mismatches": []
+ },
+ "replay_faithful": true,
+ "replay_unfaithful_reasons": [],
+ "replay_container_failure": [],
+ "emergency_files": []
+}

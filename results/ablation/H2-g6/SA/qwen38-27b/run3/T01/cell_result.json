@@ -1,0 +1,108 @@
+{
+ "cell_id": "ablation.H2-g6.SA.qwen38-27b.r3.T01",
+ "experiment": "ablation",
+ "tier": "H2-g6",
+ "arch": "SA",
+ "model": "qwen38-27b",
+ "run": 3,
+ "task": 1,
+ "elapsed_s": 238.9,
+ "protocol": "native",
+ "tier_config": {
+  "tools": [
+   "list_files",
+   "load_vector",
+   "load_raster",
+   "inspect",
+   "execute",
+   "finish"
+  ],
+  "generic": true,
+  "g1": true,
+  "g2": true,
+  "g3": true,
+  "g4": true,
+  "g5": true,
+  "g6": false,
+  "g7": true,
+  "no_dd": false,
+  "no_dk": false
+ },
+ "outputs": [
+  "block_stats.gpkg",
+  "interpolated_urban_heat.png",
+  "kriged_temperature.tif"
+ ],
+ "required_outputs": [
+  "interpolated_urban_heat.png"
+ ],
+ "required_present": true,
+ "emergency_files": [],
+ "rounds": 19,
+ "self_corrections": 4,
+ "agent_stats": {
+  "rounds": 19,
+  "format_errors": 0,
+  "format_error_kinds": {},
+  "self_corrections": 4,
+  "exec_blocks": 18,
+  "exec_failed": 6,
+  "finish_rejections": 0,
+  "dedup_blocked": 0,
+  "triggers": {
+   "g1:card": 1
+  },
+  "checks_run": {
+   "g2": 18,
+   "g3": 19,
+   "g7": 18,
+   "g4": 6
+  },
+  "end_reason": "finish",
+  "empty_retries": 0,
+  "history_truncations": 0,
+  "finished": true,
+  "agent_time_s": 7.3
+ },
+ "llm_stats": {
+  "calls": 19,
+  "retries": 0,
+  "errors": 0,
+  "context_overflow": 0,
+  "empty": 0,
+  "prompt_tokens": 148791,
+  "completion_tokens": 10642,
+  "reasoning_tokens": 4903,
+  "cached_tokens": 0
+ },
+ "llm_time_s": 230.4,
+ "agent_time_s": 7.3,
+ "hit_deadline": false,
+ "sandbox_events": [],
+ "inputs_intact": true,
+ "container_memory": "12g",
+ "deliverable_produced": true,
+ "config": {
+  "image": "gisclaw-exec:1.0",
+  "step_timeout_s": 300,
+  "task_wall_s": 1200,
+  "max_rounds": 50,
+  "blocked_packages": {
+   "arcpy": "Use geopandas + rasterio + shapely instead."
+  },
+  "agent": {
+   "history_tokens": 60000,
+   "max_format_errors": 15
+  }
+ },
+ "model_config": {
+  "provider": "vllm",
+  "model_name": "qwen3.8-27b-fp8",
+  "request": {
+   "set": {
+    "max_tokens": 32768,
+    "temperature": 1.0
+   }
+  }
+ }
+}

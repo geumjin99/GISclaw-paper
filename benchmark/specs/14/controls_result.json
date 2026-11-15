@@ -1,0 +1,137 @@
+[
+ {
+  "control": "correct_benchmark_script_iris",
+  "expected_correct": true,
+  "judged_correct": true,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [],
+  "scorer_error": false
+ },
+ {
+  "control": "correct_distinct_runs_pcolormesh",
+  "expected_correct": true,
+  "judged_correct": true,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [],
+  "scorer_error": false
+ },
+ {
+  "control": "correct_figonly_imshow_upside_down",
+  "expected_correct": true,
+  "judged_correct": true,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [],
+  "scorer_error": false
+ },
+ {
+  "control": "correct_gdf_cell_boxes",
+  "expected_correct": true,
+  "judged_correct": true,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [],
+  "scorer_error": false
+ },
+ {
+  "control": "correct_loop_imshow",
+  "expected_correct": true,
+  "judged_correct": true,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [],
+  "scorer_error": false
+ },
+ {
+  "control": "correct_xarray_rolling",
+  "expected_correct": true,
+  "judged_correct": true,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [],
+  "scorer_error": false
+ },
+ {
+  "control": "wrong_celsius_threshold",
+  "expected_correct": false,
+  "judged_correct": false,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [
+   "spell-count grid equals an accepted counting rule (>=98 % cells)",
+   "figure shows the spell count"
+  ],
+  "scorer_error": false
+ },
+ {
+  "control": "wrong_count_contourf_mean_temp",
+  "expected_correct": false,
+  "judged_correct": false,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [
+   "figure shows the spell count"
+  ],
+  "scorer_error": false
+ },
+ {
+  "control": "wrong_count_hot_years",
+  "expected_correct": false,
+  "judged_correct": false,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [
+   "spell-count grid equals an accepted counting rule (>=98 % cells)",
+   "figure shows the spell count"
+  ],
+  "scorer_error": false
+ },
+ {
+  "control": "wrong_first_100_years",
+  "expected_correct": false,
+  "judged_correct": false,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [
+   "spell-count grid equals an accepted counting rule (>=98 % cells)",
+   "figure shows the spell count"
+  ],
+  "scorer_error": false
+ },
+ {
+  "control": "wrong_gdf_cell_boxes_mean_temp",
+  "expected_correct": false,
+  "judged_correct": false,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [
+   "figure shows the spell count"
+  ],
+  "scorer_error": false
+ },
+ {
+  "control": "wrong_plots_mean_temperature",
+  "expected_correct": false,
+  "judged_correct": false,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [
+   "figure shows the spell count"
+  ],
+  "scorer_error": false
+ },
+ {
+  "control": "wrong_rolling_mean_threshold",
+  "expected_correct": false,
+  "judged_correct": false,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [
+   "spell-count grid equals an accepted counting rule (>=98 % cells)",
+   "figure shows the spell count"
+  ],
+  "scorer_error": false
+ }
+]

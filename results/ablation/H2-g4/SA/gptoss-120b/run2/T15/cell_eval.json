@@ -1,0 +1,105 @@
+{
+ "cell_id": "ablation.H2-g4.SA.gptoss-120b.r2.T15",
+ "task": 15,
+ "status": "ok",
+ "analytically_correct": true,
+ "scorer_error": false,
+ "checks": [
+  {
+   "name": "required output present",
+   "passed": true,
+   "value": [
+    "TEC_vis.png"
+   ],
+   "threshold": [
+    "TEC_vis.png",
+    "tec_vis.png"
+   ],
+   "required": true,
+   "note": ""
+  },
+  {
+   "name": "map not blank",
+   "passed": true,
+   "value": 82.33672209783657,
+   "threshold": ">=3 grey-level std",
+   "required": true,
+   "note": ""
+  },
+  {
+   "name": "figure draws TEC at its true geographic location (plotting call evaluated)",
+   "passed": true,
+   "value": {
+    "position_match": 1.0,
+    "value_match": 1.0,
+    "coverage": 1.0,
+    "negatives_drawn": true,
+    "crs": "geo"
+   },
+   "threshold": null,
+   "required": true,
+   "note": "contourf @save00"
+  },
+  {
+   "name": "TEC drawn as filled contours (task: 'filled contour map')",
+   "passed": true,
+   "value": null,
+   "threshold": null,
+   "required": true,
+   "note": "contourf @save00"
+  },
+  {
+   "name": "negative TEC cells masked",
+   "passed": false,
+   "value": {
+    "agreement_valid_cells": 1.0,
+    "negatives_masked": false
+   },
+   "threshold": ">=0.99 and negatives masked",
+   "required": false,
+   "note": "ds.TEC@final"
+  },
+  {
+   "name": "contour levels span ~0 .. max TEC",
+   "passed": false,
+   "value": "fig_ax0_coll0_values: levels -13.22..36.24",
+   "threshold": null,
+   "required": false,
+   "note": "",
+   "kind": "figure"
+  },
+  {
+   "name": "coastline / geographic background drawn",
+   "passed": true,
+   "value": null,
+   "threshold": null,
+   "required": true,
+   "note": "code: coastlines("
+  }
+ ],
+ "replay": {
+  "success": true,
+  "outputs": [
+   "TEC_vis.png"
+  ],
+  "events": [],
+  "blocks_ok": 5,
+  "block_outcome": [
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok"
+  ],
+  "step_timeout_s": 900,
+  "same_outputs_as_original": true,
+  "block_mismatches": []
+ },
+ "replay_faithful": true,
+ "replay_unfaithful_reasons": [],
+ "replay_container_failure": [],
+ "emergency_files": []
+}

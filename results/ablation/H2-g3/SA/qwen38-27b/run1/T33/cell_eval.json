@@ -1,0 +1,130 @@
+{
+ "cell_id": "ablation.H2-g3.SA.qwen38-27b.r1.T33",
+ "task": 33,
+ "status": "ok",
+ "analytically_correct": true,
+ "scorer_error": false,
+ "checks": [
+  {
+   "name": "result file written to pred_results",
+   "passed": true,
+   "value": [
+    "FloodDamage_Map.png",
+    "FloodDamage_Summary.csv",
+    "FloodDepth_2050.tif",
+    "FloodDepth_Polygons.cpg",
+    "FloodDepth_Polygons.dbf",
+    "FloodDepth_Polygons.geojson"
+   ],
+   "threshold": "any non-empty file",
+   "required": true,
+   "note": ""
+  },
+  {
+   "name": "per-building damage matches gold (Jaccard>=0.80, Spearman>=0.90)",
+   "passed": true,
+   "value": "Jaccard=0.964, precision=0.964, weighted recall=1.000, rho=0.995",
+   "threshold": "(Jaccard>=0.80 or (precision>=0.90 and weighted recall>=0.90)) and rho>=0.90",
+   "required": true,
+   "note": "bf.Damage@final"
+  },
+  {
+   "name": "per-building damage values follow the given function (median pred/gold ratio 0.95-1.05)",
+   "passed": true,
+   "value": 1.0,
+   "threshold": "0.95-1.05",
+   "required": true,
+   "note": "bf.Damage@final"
+  },
+  {
+   "name": "total damage within 10 % of gold",
+   "passed": true,
+   "value": 414356031,
+   "threshold": "4.113e+08 +/- 10 %",
+   "required": true,
+   "note": "sum of bf.Damage@final"
+  },
+  {
+   "name": "per-building mean flood depth matches gold",
+   "passed": false,
+   "value": null,
+   "threshold": 0.9,
+   "required": false,
+   "note": "sel.flooded@final"
+  },
+  {
+   "name": "deliverable files carry a CRS (uniform rule)",
+   "passed": true,
+   "value": [
+    "FloodDepth_Polygons.geojson",
+    "FloodDepth_Polygons.shp",
+    "FloodedBuildings_Damage.geojson",
+    "FloodedBuildings_Damage.shp"
+   ],
+   "threshold": "every geographic deliverable file has a CRS",
+   "required": true,
+   "note": "4 geographic deliverable file(s), all with a CRS"
+  }
+ ],
+ "replay": {
+  "success": true,
+  "outputs": [
+   "FloodDamage_Map.png",
+   "FloodDamage_Summary.csv",
+   "FloodDepth_2050.tif",
+   "FloodDepth_Polygons.cpg",
+   "FloodDepth_Polygons.dbf",
+   "FloodDepth_Polygons.geojson",
+   "FloodDepth_Polygons.prj",
+   "FloodDepth_Polygons.shp",
+   "FloodDepth_Polygons.shx",
+   "FloodedBuildings_Damage.cpg",
+   "FloodedBuildings_Damage.dbf",
+   "FloodedBuildings_Damage.geojson",
+   "FloodedBuildings_Damage.prj",
+   "FloodedBuildings_Damage.shp",
+   "FloodedBuildings_Damage.shx"
+  ],
+  "events": [],
+  "blocks_ok": 20,
+  "block_outcome": [
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok"
+  ],
+  "step_timeout_s": 900,
+  "same_outputs_as_original": true,
+  "block_mismatches": [
+   8
+  ]
+ },
+ "replay_faithful": false,
+ "replay_unfaithful_reasons": [
+  "block success differs at [8]"
+ ],
+ "replay_container_failure": [],
+ "emergency_files": []
+}

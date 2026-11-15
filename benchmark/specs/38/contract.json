@@ -1,0 +1,17 @@
+{
+ "task": 38,
+ "source": "instruction: 'save the graph as \"pred_results/travel_time.png\"'; checks.py file_exists/png_not_blank on it (required); travel times are read from captured objects and the drawn figure",
+ "deliverables": [
+  {
+   "id": "figure",
+   "kind": "figure",
+   "patterns": ["travel_time.png"],
+   "required": true,
+   "crs_required": false,
+   "checked_by": ["required output present", "figure not blank"]
+  }
+ ],
+ "not_deliverables": [
+  {"pattern": "no travel_time.png", "reason": "a result note string in checks.py, not a file name"}
+ ]
+}

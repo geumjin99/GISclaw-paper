@@ -1,0 +1,88 @@
+{
+ "cell_id": "main.H0.SA.claude-opus-5-5.r3.T41",
+ "task": 41,
+ "status": "ok",
+ "analytically_correct": true,
+ "scorer_error": false,
+ "checks": [
+  {
+   "name": "result file written to pred_results",
+   "passed": true,
+   "value": [
+    "campgrounds_related_campsite_counts.csv",
+    "campsite_attributes_wide.csv",
+    "campsite_data_quality.gpkg",
+    "facilities_join_organizations.csv",
+    "national_parks_join_organizations.csv",
+    "orphan_campsites_by_parentfacility.csv"
+   ],
+   "threshold": "any non-empty file",
+   "required": true,
+   "note": ""
+  },
+  {
+   "name": "one-to-many campsite relate materialised (per-campsite related-record counts, Wyoming campsites)",
+   "passed": true,
+   "value": 0.9991,
+   "threshold": ">= 0.95 of the 1,170 Wyoming campsites exact",
+   "required": true,
+   "note": "camp_att_relate@final rows per campsite (long merged) ~ n_attributes"
+  },
+  {
+   "name": "park-level join ParentOrgID -> OrgID (both parks carry 'National Park Service')",
+   "passed": true,
+   "value": [
+    "parks_j@final",
+    "park_fac_relate@final",
+    "g@ret01_clean"
+   ],
+   "threshold": "a table with both parks and their organisation",
+   "required": true,
+   "note": ""
+  },
+  {
+   "name": "relationship campground (FacilityID) 1 -> many campsites (ParentFacilityID) materialised",
+   "passed": true,
+   "value": 1.0,
+   "threshold": "per campground: all 6 counts exact; per campsite: >= 0.95 parent facility exact",
+   "required": true,
+   "note": "rc@final: FacilityID by CampsiteID (per campsite)"
+  }
+ ],
+ "replay": {
+  "success": true,
+  "outputs": [
+   "campgrounds_related_campsite_counts.csv",
+   "campsite_attributes_wide.csv",
+   "campsite_data_quality.gpkg",
+   "facilities_join_organizations.csv",
+   "national_parks_join_organizations.csv",
+   "orphan_campsites_by_parentfacility.csv",
+   "relate_campsites_to_attributes.csv",
+   "relate_parks_to_facilities.csv",
+   "relationship_class_Facilities_Campsites.csv",
+   "relationship_class_definition.json",
+   "relationship_validation_map.png"
+  ],
+  "events": [],
+  "blocks_ok": 9,
+  "block_outcome": [
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok"
+  ],
+  "step_timeout_s": 900,
+  "same_outputs_as_original": true,
+  "block_mismatches": []
+ },
+ "replay_faithful": true,
+ "replay_unfaithful_reasons": [],
+ "replay_container_failure": [],
+ "emergency_files": []
+}

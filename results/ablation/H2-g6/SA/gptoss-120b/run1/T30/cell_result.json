@@ -1,0 +1,122 @@
+{
+ "cell_id": "ablation.H2-g6.SA.gptoss-120b.r1.T30",
+ "experiment": "ablation",
+ "tier": "H2-g6",
+ "arch": "SA",
+ "model": "gptoss-120b",
+ "run": 1,
+ "task": 30,
+ "elapsed_s": 131.8,
+ "protocol": "native",
+ "tier_config": {
+  "tools": [
+   "list_files",
+   "load_vector",
+   "load_raster",
+   "inspect",
+   "execute",
+   "finish"
+  ],
+  "generic": true,
+  "g1": true,
+  "g2": true,
+  "g3": true,
+  "g4": true,
+  "g5": true,
+  "g6": false,
+  "g7": true,
+  "no_dd": false,
+  "no_dk": false
+ },
+ "outputs": [
+  "accessibility_metrics.csv",
+  "bike_network_map.png",
+  "demand_clusters.cpg",
+  "demand_clusters.dbf",
+  "demand_clusters.prj",
+  "demand_clusters.shp",
+  "demand_clusters.shx",
+  "existing_protected_lanes.cpg",
+  "existing_protected_lanes.dbf",
+  "existing_protected_lanes.prj",
+  "existing_protected_lanes.shp",
+  "existing_protected_lanes.shx",
+  "proposed_routes.cpg",
+  "proposed_routes.dbf",
+  "proposed_routes.prj",
+  "proposed_routes.shp",
+  "proposed_routes.shx"
+ ],
+ "required_outputs": [],
+ "required_present": null,
+ "emergency_files": [],
+ "rounds": 12,
+ "self_corrections": 0,
+ "agent_stats": {
+  "rounds": 12,
+  "format_errors": 1,
+  "format_error_kinds": {
+   "no_action": 1
+  },
+  "self_corrections": 0,
+  "exec_blocks": 7,
+  "exec_failed": 0,
+  "finish_rejections": 0,
+  "dedup_blocked": 0,
+  "triggers": {
+   "g1:card": 1
+  },
+  "checks_run": {
+   "g2": 7,
+   "g3": 8,
+   "g7": 7
+  },
+  "end_reason": "finish",
+  "empty_retries": 0,
+  "history_truncations": 0,
+  "finished": true,
+  "agent_time_s": 19.0
+ },
+ "llm_stats": {
+  "calls": 13,
+  "retries": 0,
+  "errors": 0,
+  "context_overflow": 0,
+  "empty": 0,
+  "prompt_tokens": 121851,
+  "completion_tokens": 7169,
+  "reasoning_tokens": 0,
+  "cached_tokens": 0
+ },
+ "llm_time_s": 111.7,
+ "agent_time_s": 19.0,
+ "hit_deadline": false,
+ "sandbox_events": [],
+ "inputs_intact": true,
+ "container_memory": "12g",
+ "deliverable_produced": true,
+ "config": {
+  "image": "gisclaw-exec:1.0",
+  "step_timeout_s": 300,
+  "task_wall_s": 1200,
+  "max_rounds": 50,
+  "blocked_packages": {
+   "arcpy": "Use geopandas + rasterio + shapely instead."
+  },
+  "agent": {
+   "history_tokens": 60000,
+   "max_format_errors": 15
+  }
+ },
+ "model_config": {
+  "provider": "vllm",
+  "model_name": "gpt-oss-120b",
+  "request": {
+   "set": {
+    "max_tokens": 32768,
+    "temperature": 1.0,
+    "reasoning_effort": "medium"
+   }
+  }
+ }
+}

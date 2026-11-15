@@ -1,0 +1,149 @@
+{
+ "cell_id": "main.H0.SA.qwen38-27b.r2.T43",
+ "task": 43,
+ "status": "ok",
+ "analytically_correct": true,
+ "scorer_error": false,
+ "checks": [
+  {
+   "name": "home range (convex hull) stored and matches gold (IoU >= 0.9)",
+   "passed": true,
+   "value": 1.0,
+   "threshold": 0.9,
+   "required": true,
+   "note": "home_ranges_annual.gpkg:home_ranges_annual vs per-animal hulls"
+  },
+  {
+   "name": "kernel density raster stored and agrees with gold (3 km block Pearson >= 0.6)",
+   "passed": true,
+   "value": 0.79,
+   "threshold": 0.6,
+   "required": true,
+   "note": "kde_all_points.tif (coverage 1.00)"
+  },
+  {
+   "name": "density-based clusters with noise; clustered fixes denser than noise (ratio >= 1.5)",
+   "passed": true,
+   "value": 19.81,
+   "threshold": 1.5,
+   "required": true,
+   "note": "dbscan_id in elk_utm@final [n_clusters, noise share, n]=[357, 0.032, 150191]"
+  },
+  {
+   "name": "density-based clustering estimator called (DBSCAN/HDBSCAN/OPTICS)",
+   "passed": true,
+   "value": "DBSCAN(",
+   "threshold": null,
+   "required": true,
+   "note": "call required, not just an import"
+  },
+  {
+   "name": "deliverable files carry a CRS (uniform rule)",
+   "passed": true,
+   "value": [
+    "Elk_in_MBG.geojson",
+    "dbscan_clusters.geojson",
+    "dbscan_clusters.gpkg",
+    "dbscan_noise_points.gpkg",
+    "home_ranges_annual.gpkg",
+    "home_ranges_seasonal.gpkg",
+    "kde_all_points.tif",
+    "kde_fall.tif",
+    "kde_seasonal.tif",
+    "kde_spring.tif",
+    "kde_summer.tif",
+    "kde_winter.tif",
+    "min_bounding_rectangles.gpkg"
+   ],
+   "threshold": "every geographic deliverable file has a CRS",
+   "required": true,
+   "note": "13 geographic deliverable file(s), all with a CRS"
+  }
+ ],
+ "replay": {
+  "success": true,
+  "outputs": [
+   "ANALYSIS_REPORT.md",
+   "Elk_in_MBG.geojson",
+   "dbscan_clusters.geojson",
+   "dbscan_clusters.gpkg",
+   "dbscan_noise_points.gpkg",
+   "fig1_home_ranges_kde.png",
+   "fig2_seasonal_kde.png",
+   "fig3_dbscan_clusters.png",
+   "fig4_home_range_metrics.png",
+   "home_range_summary.csv",
+   "home_ranges_annual.gpkg",
+   "home_ranges_seasonal.gpkg",
+   "kde_all_points.tif",
+   "kde_fall.tif",
+   "kde_seasonal.tif",
+   "kde_spring.tif",
+   "kde_summer.tif",
+   "kde_winter.tif",
+   "min_bounding_rectangles.gpkg",
+   "ud_core_areas_seasonal.csv"
+  ],
+  "events": [
+   {
+    "event": "timeout_interrupted"
+   }
+  ],
+  "blocks_ok": 30,
+  "block_outcome": [
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "timeout_interrupted",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok"
+  ],
+  "step_timeout_s": 900,
+  "same_outputs_as_original": true,
+  "block_mismatches": []
+ },
+ "replay_faithful": false,
+ "replay_unfaithful_reasons": [
+  "replay block(s) [21] cut off (timeout_interrupted)"
+ ],
+ "replay_container_failure": [],
+ "emergency_files": []
+}

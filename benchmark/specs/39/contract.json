@@ -1,0 +1,25 @@
+{
+ "task": 39,
+ "source": "instruction: 'Save the plots as \"pred_results/GA_GWR.png\"'; checks.py file_exists(GA_GWR.png variants) + png_not_blank; GWR data checks use captured objects",
+ "deliverables": [
+  {
+   "id": "map",
+   "kind": "figure",
+   "patterns": [
+    "GA_GWR.png"
+   ],
+   "required": true,
+   "crs_required": false,
+   "checked_by": [
+    "required output present",
+    "figure not blank"
+   ]
+  }
+ ],
+ "not_deliverables": [
+  {
+   "pattern": "no GA_GWR.png",
+   "reason": "note text of a failed check in checks.py, not a file name"
+  }
+ ]
+}

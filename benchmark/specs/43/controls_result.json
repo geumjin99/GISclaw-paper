@@ -1,0 +1,140 @@
+[
+ {
+  "control": "correct_3400_hdbscan_gpkg",
+  "expected_correct": true,
+  "judged_correct": true,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [],
+  "scorer_error": false
+ },
+ {
+  "control": "correct_mbg_types_one_file",
+  "expected_correct": true,
+  "judged_correct": true,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [],
+  "scorer_error": false
+ },
+ {
+  "control": "correct_per_collar_hulls",
+  "expected_correct": true,
+  "judged_correct": true,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [],
+  "scorer_error": false
+ },
+ {
+  "control": "correct_sklearn_logdensity",
+  "expected_correct": true,
+  "judged_correct": true,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [],
+  "scorer_error": false
+ },
+ {
+  "control": "correct_utm_gaussian_dbscan_per_animal",
+  "expected_correct": true,
+  "judged_correct": true,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [],
+  "scorer_error": false
+ },
+ {
+  "control": "wrong_dbscan_first_20k_fixes",
+  "expected_correct": false,
+  "judged_correct": false,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [
+   "density-based clusters with noise; clustered fixes denser than noise (ratio >= 1.5)"
+  ],
+  "scorer_error": false
+ },
+ {
+  "control": "wrong_deliverable_no_crs",
+  "expected_correct": false,
+  "judged_correct": false,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [
+   "home range (convex hull) stored and matches gold (IoU >= 0.9)",
+   "kernel density raster stored and agrees with gold (3 km block Pearson >= 0.6)",
+   "deliverable files carry a CRS (uniform rule)"
+  ],
+  "scorer_error": false
+ },
+ {
+  "control": "wrong_envelope_flipped_kde",
+  "expected_correct": false,
+  "judged_correct": false,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [
+   "home range (convex hull) stored and matches gold (IoU >= 0.9)",
+   "kernel density raster stored and agrees with gold (3 km block Pearson >= 0.6)"
+  ],
+  "scorer_error": false
+ },
+ {
+  "control": "wrong_kmeans_only_plot",
+  "expected_correct": false,
+  "judged_correct": false,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [
+   "kernel density raster stored and agrees with gold (3 km block Pearson >= 0.6)",
+   "density-based clusters with noise; clustered fixes denser than noise (ratio >= 1.5)",
+   "density-based clustering estimator called (DBSCAN/HDBSCAN/OPTICS)"
+  ],
+  "scorer_error": false
+ },
+ {
+  "control": "wrong_log_raw_counts",
+  "expected_correct": false,
+  "judged_correct": false,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [
+   "kernel density raster stored and agrees with gold (3 km block Pearson >= 0.6)"
+  ],
+  "scorer_error": false
+ },
+ {
+  "control": "wrong_mbg_types_no_hull",
+  "expected_correct": false,
+  "judged_correct": false,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [
+   "home range (convex hull) stored and matches gold (IoU >= 0.9)"
+  ],
+  "scorer_error": false
+ },
+ {
+  "control": "wrong_raw_count_grid",
+  "expected_correct": false,
+  "judged_correct": false,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [
+   "kernel density raster stored and agrees with gold (3 km block Pearson >= 0.6)"
+  ],
+  "scorer_error": false
+ },
+ {
+  "control": "wrong_threshold_regions_not_dbscan",
+  "expected_correct": false,
+  "judged_correct": false,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [
+   "density-based clustering estimator called (DBSCAN/HDBSCAN/OPTICS)"
+  ],
+  "scorer_error": false
+ }
+]

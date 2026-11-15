@@ -1,0 +1,33 @@
+{
+ "task": 22,
+ "source": "instruction: save the composite cost surface as 'pred_results/mountainLionCorridor.png'; checks.py also scores output rasters (include_files) as the composite surface",
+ "deliverables": [
+  {
+   "id": "map",
+   "kind": "figure",
+   "patterns": [
+    "mountainLionCorridor.png"
+   ],
+   "required": true,
+   "crs_required": false,
+   "checked_by": [
+    "required output present",
+    "map not blank"
+   ]
+  },
+  {
+   "id": "cost_surface_raster",
+   "kind": "raster",
+   "patterns": [
+    "*.tif*"
+   ],
+   "required": false,
+   "crs_required": true,
+   "checked_by": [
+    "composite surface agrees with gold (Pearson)",
+    "weighted combination of all four layers with the given weights"
+   ]
+  }
+ ],
+ "not_deliverables": []
+}

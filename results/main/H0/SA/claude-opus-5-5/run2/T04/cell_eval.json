@@ -1,0 +1,118 @@
+{
+ "cell_id": "main.H0.SA.claude-opus-5-5.r2.T04",
+ "task": 4,
+ "status": "ok",
+ "analytically_correct": true,
+ "scorer_error": false,
+ "checks": [
+  {
+   "name": "required output present",
+   "passed": true,
+   "value": [
+    "undeveloped_areas.tif"
+   ],
+   "threshold": [
+    "undeveloped_areas.tif",
+    "undeveloped_areas.tiff"
+   ],
+   "required": true,
+   "note": ""
+  },
+  {
+   "name": "georeferenced raster with selected cells",
+   "passed": true,
+   "value": 665,
+   "threshold": ">0",
+   "required": true,
+   "note": "pred CRS; 0 selected cells outside the land_cover grid"
+  },
+  {
+   "name": "selected cells match an accepted interpretation (1-cell tolerance)",
+   "passed": true,
+   "value": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "cells": 665,
+    "variant_cells": 665
+   },
+   "threshold": "precision>=0.85 and recall>=0.85",
+   "required": true,
+   "note": "appearance / upper-inclusive / linear"
+  },
+  {
+   "name": "soils projected to Lambert Conformal Conic (prescribed step)",
+   "passed": true,
+   "value": null,
+   "threshold": null,
+   "required": true,
+   "note": "soils layer soils_p@final in LCC"
+  },
+  {
+   "name": "selected cells carry undeveloped NLCD codes or a 0/1 mask",
+   "passed": true,
+   "value": [
+    31.0,
+    52.0,
+    81.0
+   ],
+   "threshold": null,
+   "required": false,
+   "note": ""
+  },
+  {
+   "name": "deliverable files carry a CRS (uniform rule)",
+   "passed": true,
+   "value": [
+    "undeveloped_areas.tif"
+   ],
+   "threshold": "every geographic deliverable file has a CRS",
+   "required": true,
+   "note": "1 geographic deliverable file(s), all with a CRS"
+  },
+  {
+   "name": "copies of input datasets not counted as results (uniform rule)",
+   "passed": true,
+   "value": {
+    "mc_soils_lcc.cpg": "mc_soils.shp",
+    "mc_soils_lcc.dbf": "mc_soils.shp",
+    "mc_soils_lcc.prj": "mc_soils.shp",
+    "mc_soils_lcc.shp": "mc_soils.shp",
+    "mc_soils_lcc.shx": "mc_soils.shp"
+   },
+   "threshold": null,
+   "required": false,
+   "note": "hidden from the task checks: mc_soils_lcc.cpg, mc_soils_lcc.dbf, mc_soils_lcc.prj, mc_soils_lcc.shp, mc_soils_lcc.shx",
+   "info": true
+  }
+ ],
+ "replay": {
+  "success": true,
+  "outputs": [
+   "high_risk_zones.tif",
+   "mc_soils_lcc.cpg",
+   "mc_soils_lcc.dbf",
+   "mc_soils_lcc.prj",
+   "mc_soils_lcc.shp",
+   "mc_soils_lcc.shx",
+   "risk_zones.tif",
+   "undeveloped_areas.png",
+   "undeveloped_areas.tif",
+   "vulnerable_areas.tif"
+  ],
+  "events": [],
+  "blocks_ok": 4,
+  "block_outcome": [
+   "ok",
+   "ok",
+   "ok",
+   "ok"
+  ],
+  "step_timeout_s": 900,
+  "same_outputs_as_original": true,
+  "block_mismatches": []
+ },
+ "replay_faithful": true,
+ "replay_unfaithful_reasons": [],
+ "replay_container_failure": [],
+ "emergency_files": []
+}

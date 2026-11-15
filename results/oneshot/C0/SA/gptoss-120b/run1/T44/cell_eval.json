@@ -1,0 +1,93 @@
+{
+ "cell_id": "oneshot.C0.SA.gptoss-120b.r1.T44",
+ "task": 44,
+ "status": "ok",
+ "analytically_correct": false,
+ "scorer_error": false,
+ "checks": [
+  {
+   "name": "map present",
+   "passed": true,
+   "value": [
+    "etobicoke_coverage.png"
+   ],
+   "threshold": [
+    "etobicoke_coverage.png"
+   ],
+   "required": true,
+   "note": ""
+  },
+  {
+   "name": "map not blank",
+   "passed": true,
+   "value": 48.38100359617395,
+   "threshold": ">=3 grey-level std",
+   "required": true,
+   "note": ""
+  },
+  {
+   "name": "no-service area saved, non-empty and inside Etobicoke",
+   "passed": true,
+   "value": 1.0,
+   "threshold": ">=0.98 inside",
+   "required": true,
+   "note": "no_service_areas.geojson, 164.50 km2"
+  },
+  {
+   "name": "gap = Etobicoke minus station buffers of a plausible radius (IoU >= 0.85)",
+   "passed": false,
+   "value": [
+    0.999,
+    580.0
+   ],
+   "threshold": "IoU>=0.85, radius 400-5000 m, <=0.5 % of the gap within 0.9 d of a station",
+   "required": true,
+   "note": "no_service_areas.geojson; best radius 580 m (nearest station 576 m); 0.00 % of the gap within 0.9 d of a station; MERCATOR: inferred 580 m = 805 m x cos(lat) - distance taken in Web Mercator units"
+  },
+  {
+   "name": "gap equals the gold 2500 m gap (IoU >= 0.85)",
+   "passed": false,
+   "value": 0.022,
+   "threshold": 0.85,
+   "required": false,
+   "note": ""
+  },
+  {
+   "name": "buffered stations saved as a file",
+   "passed": false,
+   "value": null,
+   "threshold": null,
+   "required": false,
+   "note": ""
+  },
+  {
+   "name": "deliverable files carry a CRS (uniform rule)",
+   "passed": true,
+   "value": [
+    "no_service_areas.geojson"
+   ],
+   "threshold": "every geographic deliverable file has a CRS",
+   "required": true,
+   "note": "1 geographic deliverable file(s), all with a CRS"
+  }
+ ],
+ "replay": {
+  "success": true,
+  "outputs": [
+   "etobicoke_coverage.png",
+   "no_service_areas.geojson"
+  ],
+  "events": [],
+  "blocks_ok": 1,
+  "block_outcome": [
+   "ok"
+  ],
+  "step_timeout_s": 3600,
+  "same_outputs_as_original": true,
+  "block_mismatches": []
+ },
+ "replay_faithful": true,
+ "replay_unfaithful_reasons": [],
+ "replay_container_failure": [],
+ "emergency_files": []
+}

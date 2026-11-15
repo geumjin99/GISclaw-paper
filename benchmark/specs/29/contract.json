@@ -1,0 +1,39 @@
+{
+ "task": 29,
+ "source": "instruction: create an arrival time map, visualize and report; checks.py: any non-blank *.png (required), any *.tif* band as arrival/speed surface (evidence B, speed check), route times from any *.csv or *.txt/*.json/*.md (evidence A); A or B may also come from captured data",
+ "deliverables": [
+  {
+   "id": "map",
+   "kind": "figure",
+   "patterns": ["*.png"],
+   "required": true,
+   "crs_required": false,
+   "checked_by": ["map/figure written (non-blank PNG)"]
+  },
+  {
+   "id": "arrival_or_speed_surface",
+   "kind": "raster",
+   "patterns": ["*.tif*"],
+   "required": false,
+   "crs_required": true,
+   "checked_by": ["travel time to Virginia Beach correct (route times A or arrival surface B)", "speed raster sqrt(g*d) matches gold (>=95 % cells within 2 m/s)", "both route times and an arrival-time surface"]
+  },
+  {
+   "id": "route_times_table",
+   "kind": "table",
+   "patterns": ["*.csv"],
+   "required": false,
+   "crs_required": false,
+   "checked_by": ["travel time to Virginia Beach correct (route times A or arrival surface B)", "both route times and an arrival-time surface"]
+  },
+  {
+   "id": "route_times_text",
+   "kind": "text",
+   "patterns": ["*.txt", "*.json", "*.md"],
+   "required": false,
+   "crs_required": false,
+   "checked_by": ["travel time to Virginia Beach correct (route times A or arrival surface B)", "both route times and an arrival-time surface"]
+  }
+ ],
+ "not_deliverables": []
+}

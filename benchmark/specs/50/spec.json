@@ -1,0 +1,34 @@
+{
+ "task": 50,
+ "title": "Predict seagrass habitats (kriging + presence-only MaxEnt)",
+ "output_type": "vector (training features) + raster (global prediction) + intermediate rasters",
+ "required_outputs": [
+  "trainfeatures2.shp (any point vector with explanatory values)",
+  "seagrass_predict2.tif (any georeferenced raster)"
+ ],
+ "method": "EPSG:8857. Dissolve USA_seagrass; 5 000 random points inside (seed 0). Ordinary kriging (open substitute for EBK) of temp and salinity from 33 196 points: linear semivariogram fitted to lags <= 1 000 km, 50 nearest neighbours, 25 km grid over Global_shallow_waters + USA_shallow_waters. Presence-only model = infinitely weighted logistic regression (MaxEnt equivalent): presence thinned at 2 km inside USA_shallow_waters (3 280), background = 25 km study-area cells (1 949, weight 100), linear/quadratic/product/hinge features, cloglog output; global prediction over shallow waters.",
+ "key_parameters": {
+  "cell": "25 km",
+  "kriging": "OK, linear variogram, 50 NN",
+  "presence": 5000,
+  "thinning_km": 2,
+  "background_weight": 100,
+  "features": "L,Q,P,H(10 knots)",
+  "link": "cloglog"
+ },
+ "benchmark_defects": [
+  "Empirical Bayesian Kriging and ArcGIS Presence-only Prediction have no open-source equivalent; the checks accept open-source substitutes (ordinary kriging or Gaussian-process regression; maxnet or a presence-background GLM).",
+  "The study-area/mask roles of USA_shallow_waters and Global_shallow_waters are only implied; 13 % of the seagrass area lies outside USA_shallow_waters.",
+  "Random points at 2 km thinning on 25 km rasters give many presence points per cell (pseudo-replication); the original's random 3-group CV is optimistic (reference: random AUC 0.815 vs 500 km spatial-block AUC 0.751).",
+  "Global prediction extrapolates far outside the US training range (tropical waters), which the original explicitly allows."
+ ],
+ "checks": [
+  "required: a point set of 4 000-5 100 presence points (the instruction asks for 5 000) >= 97 % inside the dissolved seagrass (1 km tolerance)",
+  "required: a saved training point file whose temperature / salinity columns agree with the gold kriged surfaces at the points (Pearson >= 0.8 / 0.6)",
+  "required: a georeferenced prediction raster covering >= 80 % of the gold prediction cells whose centre lies inside Global_shallow_waters with Spearman >= 0.5 to the gold probability (rasters that reproduce a kriged explanatory surface, |Spearman| >= 0.95 with the gold kriged temperature or salinity, are not candidates)",
+  "optional: spatial CV or thinning mentioned",
+  "required: prediction depends on both temperature and salinity (joint-bin rank R2 >= 0.5, gain >= 0.05 over each single variable)",
+  "required (the instruction prescribes EBK): kriging-type interpolation in the code (comments removed) - pykrige OK/UK, gstools, GP regression, a *krig*/*ebk*/*vario*() call, or a hand-rolled kriging (fitted variogram/covariance model + linear-system solve); IDW / nearest / RBF / ML regression fail",
+  "required (the instruction prescribes MaxEnt): presence-only MaxEnt-type model - maxnet / elapid / maxent*() or a presence-vs-background logistic/Poisson GLM (IWLR); random forest / boosting fail"
+ ]
+}

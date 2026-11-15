@@ -1,0 +1,92 @@
+{
+ "cell_id": "perturbation_rerun.H2.SA.claude-haiku-5-5.r2.T18",
+ "task": 18,
+ "status": "ok",
+ "analytically_correct": true,
+ "scorer_error": false,
+ "checks": [
+  {
+   "name": "required output present",
+   "passed": true,
+   "value": [
+    "trees_count_vis.png"
+   ],
+   "threshold": [
+    "trees_count_vis.png"
+   ],
+   "required": true,
+   "note": ""
+  },
+  {
+   "name": "map not blank",
+   "passed": true,
+   "value": 56.02796318631422,
+   "threshold": ">=3 grey-level std",
+   "required": true,
+   "note": ""
+  },
+  {
+   "name": "species nullity indicator from the Species column",
+   "passed": true,
+   "value": 1.0,
+   "threshold": 0.99,
+   "required": false,
+   "note": "columns ['null_pct', 'null_sp'] (isnull)"
+  },
+  {
+   "name": "null share aggregated by region and mapped",
+   "passed": true,
+   "value": null,
+   "threshold": null,
+   "required": true,
+   "note": "drawn: cg.null_pct (isnull), cgp.null_pct (isnull)"
+  },
+  {
+   "name": "NULL share (not its complement) mapped",
+   "passed": true,
+   "value": null,
+   "threshold": null,
+   "required": true,
+   "note": "isnull"
+  },
+  {
+   "name": "regions are quadtree cells (task: 'quadtree format map')",
+   "passed": true,
+   "value": null,
+   "threshold": null,
+   "required": true,
+   "note": "cg: {'rect_cells': 46, 'on_power2_share': 1.0, 'levels': [0, 1]}"
+  }
+ ],
+ "replay": {
+  "success": true,
+  "outputs": [
+   "trees_count_vis.png",
+   "trees_null_species_by_quadtree_cell.csv"
+  ],
+  "events": [],
+  "blocks_ok": 12,
+  "block_outcome": [
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok"
+  ],
+  "step_timeout_s": 900,
+  "same_outputs_as_original": true,
+  "block_mismatches": []
+ },
+ "replay_faithful": true,
+ "replay_unfaithful_reasons": [],
+ "replay_container_failure": [],
+ "emergency_files": []
+}

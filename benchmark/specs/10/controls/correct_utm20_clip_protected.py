@@ -1,0 +1,20 @@
+# Correct: UTM 20S, planned road buffered 5.5 km, overlay difference with the deforested
+# area, then clipped to the protected forests (protected forest at risk); no state boundary.
+import geopandas as gpd, matplotlib.pyplot as plt
+roads = gpd.read_file('dataset/roads.geojson').to_crs(32720)
+defo = gpd.read_file('dataset/deforestedArea.geojson').to_crs(32720)
+defo['geometry'] = defo.make_valid()
+prot = gpd.read_file('dataset/protectedForest.geojson').to_crs(32720)
+prot['geometry'] = prot.make_valid()
+plan = gpd.read_file('dataset/planned_road.geojson').to_crs(32720)
+buf = gpd.GeoDataFrame(geometry=plan.buffer(5500), crs=32720)
+defo_near = gpd.clip(defo, buf.total_bounds)
+risk = gpd.overlay(buf, defo_near, how='difference')
+risk_protected = gpd.overlay(risk, prot, how='intersection')
+fig, ax = plt.subplots(figsize=(10, 10))
+prot.plot(ax=ax, color='green', alpha=0.5)
+defo.plot(ax=ax, color='orange', alpha=0.5)
+roads.plot(ax=ax, color='grey', linewidth=0.2)
+risk_protected.plot(ax=ax, color='red')
+plan.plot(ax=ax, color='k')
+plt.savefig('pred_results/predictedRiskyArea.png')

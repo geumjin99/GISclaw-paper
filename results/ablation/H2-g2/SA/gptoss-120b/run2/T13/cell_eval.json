@@ -1,0 +1,97 @@
+{
+ "cell_id": "ablation.H2-g2.SA.gptoss-120b.r2.T13",
+ "task": 13,
+ "status": "ok",
+ "analytically_correct": true,
+ "scorer_error": false,
+ "checks": [
+  {
+   "name": "required output present",
+   "passed": true,
+   "value": [
+    "ocean_profiles_vis.png"
+   ],
+   "threshold": [
+    "ocean_profiles_vis.png"
+   ],
+   "required": true,
+   "note": ""
+  },
+  {
+   "name": "figure not blank",
+   "passed": true,
+   "value": 27.030607132671456,
+   "threshold": ">=3 grey-level std",
+   "required": true,
+   "note": ""
+  },
+  {
+   "name": "temperature profile extracted",
+   "passed": true,
+   "value": 2,
+   "threshold": null,
+   "required": true,
+   "note": "theta over >=5 consecutive levels of a column/box"
+  },
+  {
+   "name": "salinity profile from the same column/box",
+   "passed": true,
+   "value": 2,
+   "threshold": null,
+   "required": true,
+   "note": ""
+  },
+  {
+   "name": "figure shows both profiles against depth, from the same column/box",
+   "passed": true,
+   "value": {
+    "temperature_drawn": true,
+    "salinity_drawn": true,
+    "same_location": true
+   },
+   "threshold": null,
+   "required": true,
+   "note": ""
+  },
+  {
+   "name": "drawn profiles legible (each spans >= 3 % of its axis) (figure)",
+   "passed": true,
+   "value": {
+    "illegible": []
+   },
+   "threshold": null,
+   "required": false,
+   "note": "",
+   "kind": "figure"
+  },
+  {
+   "name": "canonical selection (330.5E, 9.83S, <=1000 m)",
+   "passed": false,
+   "value": null,
+   "threshold": null,
+   "required": false,
+   "note": ""
+  }
+ ],
+ "replay": {
+  "success": true,
+  "outputs": [
+   "ocean_profiles_vis.png"
+  ],
+  "events": [],
+  "blocks_ok": 4,
+  "block_outcome": [
+   "ok",
+   "ok",
+   "ok",
+   "ok"
+  ],
+  "step_timeout_s": 900,
+  "same_outputs_as_original": true,
+  "block_mismatches": []
+ },
+ "replay_faithful": true,
+ "replay_unfaithful_reasons": [],
+ "replay_container_failure": [],
+ "emergency_files": []
+}

@@ -1,0 +1,44 @@
+{
+ "task": 29,
+ "title": "Tsunami travel time to Virginia Beach over Atlantic bathymetry",
+ "output_type": "table (travel time per route) + rasters (speed, arrival time) + map",
+ "required_outputs": [
+  "a non-blank map PNG (instruction names no file)",
+  "route travel times (table/CSV/text) or an arrival-time surface"
+ ],
+ "reference_outputs": [
+  "tsunami_travel_times.csv",
+  "tsunami_speed.tif",
+  "tsunami_arrival_time_hours.tif",
+  "tsunami_travel_time.png"
+ ],
+ "method": "Assign the DEM's custom Atlantic Albers CRS to the GeoJSON layers (their coordinates are in that CRS but undeclared). Invert the DEM, speed = Int(sqrt(9.80665*depth)) m/s on ocean cells; densify the three source->Virginia Beach paths geodesically (~1 km), sample speed at each segment midpoint, time = geodesic segment length / speed, sum per route (segments over NoData/land skipped, as ArcGIS Extract by Mask + Intersect does). Gold: Currituck Slide 2.21 h, La Palma 9.45 h, Puerto Rico Trench 6.25 h. Additionally, least-time arrival surfaces from each origin over the speed grid (skimage MCP_Geometric, 8-connected).",
+ "key_parameters": {
+  "g": 9.80665,
+  "speed": "Int(sqrt(g*d))",
+  "densify": "geodesic, ~1 km",
+  "cell": "5 km",
+  "crs": "Atlantic_Albers_EqualArea_Custom (from AtlanticDEM.tif)"
+ },
+ "simplifications_vs_arcgis": [
+  "Raster to Polygon + Intersect replaced by midpoint sampling of ~1 km segments (equivalent at 5 km cells)",
+  "Geodesic segment length used instead of planar Albers Shape_Length (< 1 % difference)",
+  "Arrival-time surface is an addition (least-time path, no wave physics beyond c = sqrt(gd))"
+ ],
+ "benchmark_defects": [
+  "The benchmark distributes only .lyrx layer files for this task; the inputs are taken from the Learn ArcGIS project package of the lesson.",
+  "The GeoJSON input files contain projected (Atlantic Albers, metres) coordinates but no 'crs' member, so GeoJSON readers label them EPSG:4326; reprojecting them is a trap.",
+  "File name typo 'TsuniamiPaths.gpkg'.",
+  "The instruction ('simulate wave travel ... arrival time map', 'adjust for accuracy', 'prepare a report') is vaguer than the path-based workflow in the domain knowledge; both readings are accepted.",
+  "Domain knowledge text has mojibake for the square-root sign."
+ ],
+ "checks": [
+  "required: a non-blank map PNG",
+  "required: the figure shows the analysis - a drawn image/mesh rank-correlated (>= 0.9) with the gold speed or an arrival surface, or a tsunami route drawn (end points within 15 km / 0.15 deg) (a drawn surface is accepted as drawn or flipped N-S)",
+  "figure (kind=figure, never required): surface drawn north-up (as drawn it rank-correlates with the references at least as well as its N-S flip)",
+  "figure (kind=figure, never required): colour scale covers the drawn data range (5-95 % span >= 0.1 of vmin..vmax, >= 50 % of values inside)",
+  "required: travel time correct - (A) all three route times consistent with one reading in h/min/s: straight path +/-6 % of gold, or least-time arrival (gold VB value +10 % to the minimum within +/-5 cells -10 %); or (B) an arrival-time surface (DEM grid or same-aspect grid) with Spearman >= 0.95 to a gold least-time surface and Virginia Beach value within +/-15 %, or a surface from Virginia Beach (~0 there) whose values at the three origins fall in the least-time ranges",
+  "optional: speed raster within 2 m/s of gold on >= 95 % of ocean cells",
+  "optional: both A and B present"
+ ]
+}

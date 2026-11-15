@@ -1,0 +1,92 @@
+{
+ "cell_id": "ablation.H2+nodk.SA.claude-haiku-5-5.r3.T43",
+ "task": 43,
+ "status": "ok",
+ "analytically_correct": false,
+ "scorer_error": false,
+ "checks": [
+  {
+   "name": "home range (convex hull) stored and matches gold (IoU >= 0.9)",
+   "passed": true,
+   "value": 1.0,
+   "threshold": 0.9,
+   "required": true,
+   "note": "elk_MCP_home_range.geojson vs per-animal hulls"
+  },
+  {
+   "name": "kernel density raster stored and agrees with gold (3 km block Pearson >= 0.6)",
+   "passed": false,
+   "value": 0.325,
+   "threshold": 0.6,
+   "required": true,
+   "note": "elk_population_use_intensity_km2.tif (coverage 1.00)"
+  },
+  {
+   "name": "density-based clusters with noise; clustered fixes denser than noise (ratio >= 1.5)",
+   "passed": true,
+   "value": 5.93,
+   "threshold": 1.5,
+   "required": true,
+   "note": "db_cluster in elk_points_DBSCAN.gpkg:points [n_clusters, noise share, n]=[230, 0.287, 150191]"
+  },
+  {
+   "name": "density-based clustering estimator called (DBSCAN/HDBSCAN/OPTICS)",
+   "passed": true,
+   "value": "DBSCAN(",
+   "threshold": null,
+   "required": true,
+   "note": "call required, not just an import"
+  },
+  {
+   "name": "deliverable files carry a CRS (uniform rule)",
+   "passed": true,
+   "value": [
+    "elk_DBSCAN_clusters_hulls.geojson",
+    "elk_KDE_isopleths.geojson",
+    "elk_MCP_home_range.geojson",
+    "elk_points_DBSCAN.gpkg",
+    "elk_population_use_intensity_km2.tif"
+   ],
+   "threshold": "every geographic deliverable file has a CRS",
+   "required": true,
+   "note": "5 geographic deliverable file(s), all with a CRS"
+  }
+ ],
+ "replay": {
+  "success": true,
+  "outputs": [
+   "elk_DBSCAN_clusters_hulls.geojson",
+   "elk_KDE_isopleths.geojson",
+   "elk_MCP_home_range.geojson",
+   "elk_home_range_overview.png",
+   "elk_home_range_summary.csv",
+   "elk_points_DBSCAN.gpkg",
+   "elk_population_use_intensity_km2.tif"
+  ],
+  "events": [],
+  "blocks_ok": 14,
+  "block_outcome": [
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok"
+  ],
+  "step_timeout_s": 900,
+  "same_outputs_as_original": true,
+  "block_mismatches": []
+ },
+ "replay_faithful": true,
+ "replay_unfaithful_reasons": [],
+ "replay_container_failure": [],
+ "emergency_files": []
+}

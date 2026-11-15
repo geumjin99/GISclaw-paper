@@ -1,0 +1,99 @@
+{
+ "cell_id": "ablation.H2+nodd.SA.claude-haiku-5-5.r2.T43",
+ "task": 43,
+ "status": "ok",
+ "analytically_correct": false,
+ "scorer_error": false,
+ "checks": [
+  {
+   "name": "home range (convex hull) stored and matches gold (IoU >= 0.9)",
+   "passed": true,
+   "value": 1.0,
+   "threshold": 0.9,
+   "required": true,
+   "note": "elk_mcp_convex_hull_by_individual.geojson vs per-animal hulls"
+  },
+  {
+   "name": "kernel density raster stored and agrees with gold (3 km block Pearson >= 0.6)",
+   "passed": false,
+   "value": 0.279,
+   "threshold": 0.6,
+   "required": true,
+   "note": "elk_population_kde_fixes_per_km2.tif (coverage 1.00)"
+  },
+  {
+   "name": "density-based clusters with noise; clustered fixes denser than noise (ratio >= 1.5)",
+   "passed": true,
+   "value": 6.13,
+   "threshold": 1.5,
+   "required": true,
+   "note": "cluster_id in elk_dbscan_clustered_fixes.gpkg:fixes [n_clusters, noise share, n]=[588, 0.271, 147320]"
+  },
+  {
+   "name": "density-based clustering estimator called (DBSCAN/HDBSCAN/OPTICS)",
+   "passed": true,
+   "value": "DBSCAN(",
+   "threshold": null,
+   "required": true,
+   "note": "call required, not just an import"
+  },
+  {
+   "name": "deliverable files carry a CRS (uniform rule)",
+   "passed": true,
+   "value": [
+    "elk_dbscan_cluster_hulls.geojson",
+    "elk_dbscan_clustered_fixes.gpkg",
+    "elk_kde_isopleths_95_50_by_individual.geojson",
+    "elk_mcp_convex_hull_by_individual.geojson",
+    "elk_population_kde_fixes_per_km2.tif"
+   ],
+   "threshold": "every geographic deliverable file has a CRS",
+   "required": true,
+   "note": "5 geographic deliverable file(s), all with a CRS"
+  }
+ ],
+ "replay": {
+  "success": true,
+  "outputs": [
+   "README_methods.md",
+   "elk_dbscan_cluster_hulls.geojson",
+   "elk_dbscan_clustered_fixes.gpkg",
+   "elk_example_individual_homerange.png",
+   "elk_home_range_summary_by_individual.csv",
+   "elk_homerange_density_clusters.png",
+   "elk_kde_isopleths_95_50_by_individual.geojson",
+   "elk_mcp_convex_hull_by_individual.geojson",
+   "elk_population_kde_fixes_per_km2.tif",
+   "elk_site_cluster_use.csv"
+  ],
+  "events": [],
+  "blocks_ok": 18,
+  "block_outcome": [
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok"
+  ],
+  "step_timeout_s": 900,
+  "same_outputs_as_original": true,
+  "block_mismatches": []
+ },
+ "replay_faithful": true,
+ "replay_unfaithful_reasons": [],
+ "replay_container_failure": [],
+ "emergency_files": []
+}

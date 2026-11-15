@@ -1,0 +1,24 @@
+{
+ "task": 33,
+ "source": "instruction names no output file; checks.py: any file in pred_results (required), a per-building damage table from captured objects or output files (ctx.objects with files), the total damage also from numbers in *.txt/*.json/*.md summaries",
+ "deliverables": [
+  {
+   "id": "building_damage_layer",
+   "kind": "vector",
+   "patterns": ["*.shp", "*.geojson", "*.gpkg", "*.json"],
+   "required": false,
+   "crs_required": true,
+   "geometry_type": ["Polygon", "MultiPolygon"],
+   "checked_by": ["result file written to pred_results", "per-building damage matches gold (Jaccard>=0.80, Spearman>=0.90)", "per-building damage values follow the given function (median pred/gold ratio 0.95-1.05)", "total damage within 10 % of gold", "per-building mean flood depth matches gold"]
+  },
+  {
+   "id": "damage_summary",
+   "kind": "text",
+   "patterns": ["*.txt", "*.json", "*.md"],
+   "required": false,
+   "crs_required": false,
+   "checked_by": ["result file written to pred_results", "total damage within 10 % of gold"]
+  }
+ ],
+ "not_deliverables": []
+}

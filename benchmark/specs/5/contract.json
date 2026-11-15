@@ -1,0 +1,25 @@
+{
+ "task": 5,
+ "source": "instruction: output saved as 'pred_results/blood_lead_hotspots.png'; checks.py file_exists also accepts 'transit_access.png', the name in the published instruction, and a .png whose name contains lead/hot/hex/blood, + png_not_blank",
+ "deliverables": [
+  {
+   "id": "map",
+   "kind": "figure",
+   "patterns": [
+    "blood_lead_hotspots.png",
+    "transit_access.png",
+    "*lead*.png",
+    "*hot*.png",
+    "*hex*.png",
+    "*blood*.png"
+   ],
+   "required": true,
+   "crs_required": false,
+   "checked_by": [
+    "required output present",
+    "map not blank"
+   ]
+  }
+ ],
+ "not_deliverables": []
+}

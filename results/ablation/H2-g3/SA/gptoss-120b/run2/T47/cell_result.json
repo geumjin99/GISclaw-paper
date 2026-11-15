@@ -1,0 +1,110 @@
+{
+ "cell_id": "ablation.H2-g3.SA.gptoss-120b.r2.T47",
+ "experiment": "ablation",
+ "tier": "H2-g3",
+ "arch": "SA",
+ "model": "gptoss-120b",
+ "run": 2,
+ "task": 47,
+ "elapsed_s": 23.4,
+ "protocol": "native",
+ "tier_config": {
+  "tools": [
+   "list_files",
+   "load_vector",
+   "load_raster",
+   "inspect",
+   "execute",
+   "lookup_api",
+   "finish"
+  ],
+  "generic": true,
+  "g1": true,
+  "g2": true,
+  "g3": false,
+  "g4": true,
+  "g5": true,
+  "g6": true,
+  "g7": true,
+  "no_dd": false,
+  "no_dk": false
+ },
+ "outputs": [
+  "impervious_parcels.cpg",
+  "impervious_parcels.dbf",
+  "impervious_parcels.prj",
+  "impervious_parcels.shp",
+  "impervious_parcels.shx"
+ ],
+ "required_outputs": [],
+ "required_present": null,
+ "emergency_files": [],
+ "rounds": 7,
+ "self_corrections": 0,
+ "agent_stats": {
+  "rounds": 7,
+  "format_errors": 1,
+  "format_error_kinds": {
+   "no_action": 1
+  },
+  "self_corrections": 0,
+  "exec_blocks": 4,
+  "exec_failed": 0,
+  "finish_rejections": 0,
+  "dedup_blocked": 0,
+  "triggers": {
+   "g1:card": 1
+  },
+  "checks_run": {
+   "g2": 4,
+   "g7": 4
+  },
+  "end_reason": "finish",
+  "empty_retries": 0,
+  "history_truncations": 0,
+  "finished": true,
+  "agent_time_s": 0.7
+ },
+ "llm_stats": {
+  "calls": 8,
+  "retries": 0,
+  "errors": 0,
+  "context_overflow": 0,
+  "empty": 0,
+  "prompt_tokens": 34040,
+  "completion_tokens": 3271,
+  "reasoning_tokens": 0,
+  "cached_tokens": 0
+ },
+ "llm_time_s": 21.6,
+ "agent_time_s": 0.7,
+ "hit_deadline": false,
+ "sandbox_events": [],
+ "inputs_intact": true,
+ "container_memory": "12g",
+ "deliverable_produced": true,
+ "config": {
+  "image": "gisclaw-exec:1.0",
+  "step_timeout_s": 300,
+  "task_wall_s": 1200,
+  "max_rounds": 50,
+  "blocked_packages": {
+   "arcpy": "Use geopandas + rasterio + shapely instead."
+  },
+  "agent": {
+   "history_tokens": 60000,
+   "max_format_errors": 15
+  }
+ },
+ "model_config": {
+  "provider": "vllm",
+  "model_name": "gpt-oss-120b",
+  "request": {
+   "set": {
+    "max_tokens": 32768,
+    "temperature": 1.0,
+    "reasoning_effort": "medium"
+   }
+  }
+ }
+}

@@ -1,0 +1,82 @@
+{
+ "cell_id": "ablation.H2+nodd.SA.claude-sonnet-5-5.r1.T36",
+ "task": 36,
+ "status": "ok",
+ "analytically_correct": true,
+ "scorer_error": false,
+ "checks": [
+  {
+   "name": "result file written to pred_results",
+   "passed": true,
+   "value": [
+    "field_vegetation_loss.csv",
+    "field_vegetation_loss.gpkg",
+    "vegetation_loss_map.png",
+    "vegetation_loss_savi.tif"
+   ],
+   "threshold": "any non-empty file",
+   "required": true,
+   "note": ""
+  },
+  {
+   "name": "per-field loss result covers >= 80 % of gold fields",
+   "passed": true,
+   "value": 0.997,
+   "threshold": 0.8,
+   "required": true,
+   "note": "field_vegetation_loss.csv.mean_loss@file (ids-1)"
+  },
+  {
+   "name": "per-field loss ranking matches gold (Spearman >= 0.85)",
+   "passed": true,
+   "value": 0.991,
+   "threshold": 0.85,
+   "required": true,
+   "note": "field_vegetation_loss.csv.mean_loss@file (ids-1)"
+  },
+  {
+   "name": "SAVI (L = 0.5) used",
+   "passed": true,
+   "value": null,
+   "threshold": null,
+   "required": true,
+   "note": "code inspection (soil factor L = 0.5 / (1 + L) / * 1.5)"
+  },
+  {
+   "name": "deliverable files carry a CRS (uniform rule)",
+   "passed": true,
+   "value": [
+    "field_vegetation_loss.gpkg"
+   ],
+   "threshold": "every geographic deliverable file has a CRS",
+   "required": true,
+   "note": "1 geographic deliverable file(s), all with a CRS"
+  }
+ ],
+ "replay": {
+  "success": true,
+  "outputs": [
+   "field_vegetation_loss.csv",
+   "field_vegetation_loss.gpkg",
+   "vegetation_loss_map.png",
+   "vegetation_loss_savi.tif"
+  ],
+  "events": [],
+  "blocks_ok": 5,
+  "block_outcome": [
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok"
+  ],
+  "step_timeout_s": 900,
+  "same_outputs_as_original": true,
+  "block_mismatches": []
+ },
+ "replay_faithful": true,
+ "replay_unfaithful_reasons": [],
+ "replay_container_failure": [],
+ "emergency_files": []
+}

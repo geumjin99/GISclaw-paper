@@ -1,0 +1,105 @@
+{
+ "tasks": [
+  1,
+  8,
+  36
+ ],
+ "sha256": {
+  "T1/H0+nodd": {
+   "system": "0f05d658f780698240db3603b8e5f3d480009ac665de18102e440e237c4cc274",
+   "task": "366c3655b2ae592ecb1a18d7840f52d0655307cb4a31b15461334682d9a3fa2b"
+  },
+  "T1/H0": {
+   "system": "0f05d658f780698240db3603b8e5f3d480009ac665de18102e440e237c4cc274",
+   "task": "64ac08ddcf96b088dca02e0aa3f467a23d519a3ad1f73598f51030f95ad6cab5"
+  },
+  "T1/H1": {
+   "system": "4ed7c46de8cd7155345d2dcd014dbde6ee6b499f5ca84021a405c499104d3c0e",
+   "task": "64ac08ddcf96b088dca02e0aa3f467a23d519a3ad1f73598f51030f95ad6cab5"
+  },
+  "T1/H2+nodd": {
+   "system": "9e9304aac40855bf77fe4b1a7e0dd35692cab2ccdea8e8d3f219098f173b2f5d",
+   "task": "071863268651e3ed0f7e3c5615a967fa0e530503547faff42053d70b9cd017b2"
+  },
+  "T1/H2+nodk": {
+   "system": "9e9304aac40855bf77fe4b1a7e0dd35692cab2ccdea8e8d3f219098f173b2f5d",
+   "task": "c0bfe316daa26d3e0c06fa6cfd25e08f0a361c10601aa4d014d57acb9fee4d3f"
+  },
+  "T1/H2-g1": {
+   "system": "9e9304aac40855bf77fe4b1a7e0dd35692cab2ccdea8e8d3f219098f173b2f5d",
+   "task": "64ac08ddcf96b088dca02e0aa3f467a23d519a3ad1f73598f51030f95ad6cab5"
+  },
+  "T1/H2-g5": {
+   "system": "cbd9ab9e6722f1da7ff9a7b0556c24b9f244d556873711e9d02032b9fc6425d8",
+   "task": "d177cde0972c59fb6e2cc398e040211a0dda38d59e1955440740401c11836b0d"
+  },
+  "T1/H2": {
+   "system": "9e9304aac40855bf77fe4b1a7e0dd35692cab2ccdea8e8d3f219098f173b2f5d",
+   "task": "d177cde0972c59fb6e2cc398e040211a0dda38d59e1955440740401c11836b0d"
+  },
+  "T36/H0+nodd": {
+   "system": "0f05d658f780698240db3603b8e5f3d480009ac665de18102e440e237c4cc274",
+   "task": "486e5eae34de7e6981218aab2d8057d8fd9f237b7a82c1e235a235495a1ab3ea"
+  },
+  "T36/H0": {
+   "system": "0f05d658f780698240db3603b8e5f3d480009ac665de18102e440e237c4cc274",
+   "task": "02a41d96764e1ab915548fb7b0d6a449899b1a750e6b57b1000aeef29f94d685"
+  },
+  "T36/H1": {
+   "system": "4ed7c46de8cd7155345d2dcd014dbde6ee6b499f5ca84021a405c499104d3c0e",
+   "task": "02a41d96764e1ab915548fb7b0d6a449899b1a750e6b57b1000aeef29f94d685"
+  },
+  "T36/H2+nodd": {
+   "system": "9e9304aac40855bf77fe4b1a7e0dd35692cab2ccdea8e8d3f219098f173b2f5d",
+   "task": "246e5f1cf3e00d850e410db4a51f23b354140f46c33d6504bdef5cb2269580ca"
+  },
+  "T36/H2+nodk": {
+   "system": "9e9304aac40855bf77fe4b1a7e0dd35692cab2ccdea8e8d3f219098f173b2f5d",
+   "task": "a9a330a783e7721ab87ead8fd4c10d49e4a37fc9d4c1876219e07c37d74dd642"
+  },
+  "T36/H2-g1": {
+   "system": "9e9304aac40855bf77fe4b1a7e0dd35692cab2ccdea8e8d3f219098f173b2f5d",
+   "task": "02a41d96764e1ab915548fb7b0d6a449899b1a750e6b57b1000aeef29f94d685"
+  },
+  "T36/H2-g5": {
+   "system": "cbd9ab9e6722f1da7ff9a7b0556c24b9f244d556873711e9d02032b9fc6425d8",
+   "task": "210e74ea5f4f380571a4ac2bcfec484cdf642e47fbc1582bb3924ae2e8cb9aa9"
+  },
+  "T36/H2": {
+   "system": "9e9304aac40855bf77fe4b1a7e0dd35692cab2ccdea8e8d3f219098f173b2f5d",
+   "task": "210e74ea5f4f380571a4ac2bcfec484cdf642e47fbc1582bb3924ae2e8cb9aa9"
+  },
+  "T8/H0+nodd": {
+   "system": "0f05d658f780698240db3603b8e5f3d480009ac665de18102e440e237c4cc274",
+   "task": "d3f0756385b0ed20546dc78dbc812337090c8f1ad416a53374ba1cb0cf917241"
+  },
+  "T8/H0": {
+   "system": "0f05d658f780698240db3603b8e5f3d480009ac665de18102e440e237c4cc274",
+   "task": "c1029636afaa9bf2ae13886be144dc07140f87a2f68bbc18de7fe9743229d289"
+  },
+  "T8/H1": {
+   "system": "4ed7c46de8cd7155345d2dcd014dbde6ee6b499f5ca84021a405c499104d3c0e",
+   "task": "c1029636afaa9bf2ae13886be144dc07140f87a2f68bbc18de7fe9743229d289"
+  },
+  "T8/H2+nodd": {
+   "system": "9e9304aac40855bf77fe4b1a7e0dd35692cab2ccdea8e8d3f219098f173b2f5d",
+   "task": "2f887b3b419cb144158d4ec3b9ef9577694bdfe48cbc429247520656d6411140"
+  },
+  "T8/H2+nodk": {
+   "system": "9e9304aac40855bf77fe4b1a7e0dd35692cab2ccdea8e8d3f219098f173b2f5d",
+   "task": "c55c3a033aae9a396a1a9afe06e861ec09b122956b769f76ab0eaaa0d011609a"
+  },
+  "T8/H2-g1": {
+   "system": "9e9304aac40855bf77fe4b1a7e0dd35692cab2ccdea8e8d3f219098f173b2f5d",
+   "task": "c1029636afaa9bf2ae13886be144dc07140f87a2f68bbc18de7fe9743229d289"
+  },
+  "T8/H2-g5": {
+   "system": "cbd9ab9e6722f1da7ff9a7b0556c24b9f244d556873711e9d02032b9fc6425d8",
+   "task": "e160b5071fe25224d4048017a7994866f9f1d4f78bc7d1ca615e4560889fb151"
+  },
+  "T8/H2": {
+   "system": "9e9304aac40855bf77fe4b1a7e0dd35692cab2ccdea8e8d3f219098f173b2f5d",
+   "task": "e160b5071fe25224d4048017a7994866f9f1d4f78bc7d1ca615e4560889fb151"
+  }
+ }
+}

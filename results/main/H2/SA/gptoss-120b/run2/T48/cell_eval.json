@@ -1,0 +1,95 @@
+{
+ "cell_id": "main.H2.SA.gptoss-120b.r2.T48",
+ "task": 48,
+ "status": "ok",
+ "analytically_correct": false,
+ "scorer_error": false,
+ "checks": [
+  {
+   "name": "selection AcceptedLo >= 30 (808 tracts)",
+   "passed": false,
+   "value": "no 808-row table",
+   "threshold": 808,
+   "required": true,
+   "note": ""
+  },
+  {
+   "name": "hot spots: Gi* z of AveInteres (Pearson >= 0.85 with a Gi* variant, closer than to Gi* of AveLoanGra)",
+   "passed": false,
+   "value": -1.0,
+   "threshold": 0.85,
+   "required": true,
+   "note": "no z-like per-tract column"
+  },
+  {
+   "name": "GWR (22 NN) of AveInteres: a local slope matches a 22-NN reference fit (Pearson >= 0.95)",
+   "passed": false,
+   "value": -1.0,
+   "threshold": 0.95,
+   "required": true,
+   "note": "no per-tract coefficient"
+  },
+  {
+   "name": "local R2 reported",
+   "passed": false,
+   "value": null,
+   "threshold": null,
+   "required": false,
+   "note": ""
+  },
+  {
+   "name": "FDR correction (code)",
+   "passed": false,
+   "value": null,
+   "threshold": null,
+   "required": false,
+   "note": ""
+  },
+  {
+   "name": "deliverable files carry a CRS (uniform rule)",
+   "passed": true,
+   "value": [
+    "gwr_results.shp",
+    "interest_hotspots.shp"
+   ],
+   "threshold": "every geographic deliverable file has a CRS",
+   "required": true,
+   "note": "2 geographic deliverable file(s), all with a CRS"
+  }
+ ],
+ "replay": {
+  "success": true,
+  "outputs": [
+   "gwr_results.cpg",
+   "gwr_results.dbf",
+   "gwr_results.prj",
+   "gwr_results.shp",
+   "gwr_results.shx",
+   "interest_hotspots.cpg",
+   "interest_hotspots.dbf",
+   "interest_hotspots.prj",
+   "interest_hotspots.shp",
+   "interest_hotspots.shx"
+  ],
+  "events": [],
+  "blocks_ok": 8,
+  "block_outcome": [
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok"
+  ],
+  "step_timeout_s": 900,
+  "same_outputs_as_original": true,
+  "block_mismatches": []
+ },
+ "replay_faithful": true,
+ "replay_unfaithful_reasons": [],
+ "replay_container_failure": [],
+ "emergency_files": []
+}

@@ -1,0 +1,58 @@
+{
+ "cell_id": "perturbation_rerun.H2.SA.qwen38-27b.r1.T18",
+ "task": 18,
+ "status": "ok",
+ "analytically_correct": null,
+ "scorer_error": true,
+ "checks": [
+  {
+   "name": "checks.py crashed",
+   "passed": false,
+   "value": null,
+   "threshold": null,
+   "required": true,
+   "note": "the check raised an error",
+   "scorer_error": true
+  }
+ ],
+ "replay": {
+  "success": true,
+  "outputs": [
+   "trees_count_vis.png"
+  ],
+  "events": [],
+  "blocks_ok": 20,
+  "block_outcome": [
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok"
+  ],
+  "step_timeout_s": 900,
+  "same_outputs_as_original": true,
+  "block_mismatches": []
+ },
+ "replay_faithful": true,
+ "replay_unfaithful_reasons": [],
+ "replay_container_failure": [],
+ "emergency_files": []
+}

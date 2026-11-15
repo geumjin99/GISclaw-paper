@@ -1,0 +1,98 @@
+{
+ "cell_id": "main.H0.SA.gptoss-120b.r3.T38",
+ "experiment": "main",
+ "tier": "H0",
+ "arch": "SA",
+ "model": "gptoss-120b",
+ "run": 3,
+ "task": 38,
+ "elapsed_s": 39.0,
+ "protocol": "native",
+ "tier_config": {
+  "tools": [
+   "execute",
+   "finish"
+  ],
+  "generic": false,
+  "g1": false,
+  "g2": false,
+  "g3": false,
+  "g4": false,
+  "g5": false,
+  "g6": false,
+  "g7": false,
+  "no_dd": false,
+  "no_dk": false
+ },
+ "outputs": [
+  "travel_time.png"
+ ],
+ "required_outputs": [
+  "travel_time.png"
+ ],
+ "required_present": true,
+ "emergency_files": [],
+ "rounds": 8,
+ "self_corrections": 2,
+ "agent_stats": {
+  "rounds": 8,
+  "format_errors": 1,
+  "format_error_kinds": {
+   "no_action": 1
+  },
+  "self_corrections": 2,
+  "exec_blocks": 7,
+  "exec_failed": 3,
+  "finish_rejections": 0,
+  "dedup_blocked": 0,
+  "triggers": {},
+  "checks_run": {},
+  "end_reason": "finish",
+  "empty_retries": 0,
+  "history_truncations": 0,
+  "finished": true,
+  "agent_time_s": 1.7
+ },
+ "llm_stats": {
+  "calls": 9,
+  "retries": 0,
+  "errors": 0,
+  "context_overflow": 0,
+  "empty": 0,
+  "prompt_tokens": 33025,
+  "completion_tokens": 3662,
+  "reasoning_tokens": 0,
+  "cached_tokens": 0
+ },
+ "llm_time_s": 36.1,
+ "agent_time_s": 1.7,
+ "hit_deadline": false,
+ "sandbox_events": [],
+ "inputs_intact": true,
+ "container_memory": "12g",
+ "deliverable_produced": true,
+ "config": {
+  "image": "gisclaw-exec:1.0",
+  "step_timeout_s": 300,
+  "task_wall_s": 1200,
+  "max_rounds": 50,
+  "blocked_packages": {
+   "arcpy": "Use geopandas + rasterio + shapely instead."
+  },
+  "agent": {
+   "history_tokens": 60000,
+   "max_format_errors": 15
+  }
+ },
+ "model_config": {
+  "provider": "vllm",
+  "model_name": "gpt-oss-120b",
+  "request": {
+   "set": {
+    "max_tokens": 32768,
+    "temperature": 1.0,
+    "reasoning_effort": "medium"
+   }
+  }
+ }
+}

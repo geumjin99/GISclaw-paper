@@ -1,0 +1,188 @@
+[
+ {
+  "control": "correct_analysis_right_map_without_routes_network",
+  "expected_correct": true,
+  "judged_correct": true,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [],
+  "scorer_error": false
+ },
+ {
+  "control": "correct_dk_literal_west_10th_only_network",
+  "expected_correct": true,
+  "judged_correct": true,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [],
+  "scorer_error": false
+ },
+ {
+  "control": "correct_metrics_dict_csv",
+  "expected_correct": true,
+  "judged_correct": true,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [],
+  "scorer_error": false
+ },
+ {
+  "control": "correct_osm_style_network",
+  "expected_correct": true,
+  "judged_correct": true,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [],
+  "scorer_error": false
+ },
+ {
+  "control": "correct_stats_dict_unclipped_network",
+  "expected_correct": true,
+  "judged_correct": true,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [],
+  "scorer_error": false
+ },
+ {
+  "control": "correct_tutorial_broadway",
+  "expected_correct": true,
+  "judged_correct": true,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [],
+  "scorer_error": false
+ },
+ {
+  "control": "wrong_all_arterials",
+  "expected_correct": false,
+  "judged_correct": false,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [
+   "proposed routes cover the three designated corridors",
+   "half-mile coverage of Capitol Hill matches gold",
+   "network analysis performed (graph shortest paths)",
+   "deliverable files carry a CRS (uniform rule)"
+  ],
+  "scorer_error": false
+ },
+ {
+  "control": "wrong_buffer_meters_in_feet_crs",
+  "expected_correct": false,
+  "judged_correct": false,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [
+   "half-mile coverage of Capitol Hill matches gold",
+   "network analysis performed (graph shortest paths)",
+   "deliverable files carry a CRS (uniform rule)"
+  ],
+  "scorer_error": false
+ },
+ {
+  "control": "wrong_corridors_plus_extra_arterials",
+  "expected_correct": false,
+  "judged_correct": false,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [
+   "proposed routes cover the three designated corridors",
+   "network analysis performed (graph shortest paths)"
+  ],
+  "scorer_error": false
+ },
+ {
+  "control": "wrong_coverage_whole_city_denominator",
+  "expected_correct": false,
+  "judged_correct": false,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [
+   "half-mile coverage of Capitol Hill matches gold",
+   "network analysis performed (graph shortest paths)"
+  ],
+  "scorer_error": false
+ },
+ {
+  "control": "wrong_deliverable_no_crs",
+  "expected_correct": false,
+  "judged_correct": false,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [
+   "deliverable files carry a CRS (uniform rule)"
+  ],
+  "scorer_error": false
+ },
+ {
+  "control": "wrong_downtown_neighborhood",
+  "expected_correct": false,
+  "judged_correct": false,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [
+   "proposed routes cover the three designated corridors",
+   "half-mile coverage of Capitol Hill matches gold",
+   "network analysis performed (graph shortest paths)",
+   "deliverable files carry a CRS (uniform rule)"
+  ],
+  "scorer_error": false
+ },
+ {
+  "control": "wrong_method_analysis_right_map_without_routes",
+  "expected_correct": false,
+  "judged_correct": false,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [
+   "network analysis performed (graph shortest paths)"
+  ],
+  "scorer_error": false
+ },
+ {
+  "control": "wrong_method_dk_literal_west_10th_only",
+  "expected_correct": false,
+  "judged_correct": false,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [
+   "network analysis performed (graph shortest paths)"
+  ],
+  "scorer_error": false
+ },
+ {
+  "control": "wrong_method_stats_dict_unclipped",
+  "expected_correct": false,
+  "judged_correct": false,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [
+   "network analysis performed (graph shortest paths)"
+  ],
+  "scorer_error": false
+ },
+ {
+  "control": "wrong_metrics_csv_buffer_metres",
+  "expected_correct": false,
+  "judged_correct": false,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [
+   "half-mile coverage of Capitol Hill matches gold"
+  ],
+  "scorer_error": false
+ },
+ {
+  "control": "wrong_utm_buffer_2640m",
+  "expected_correct": false,
+  "judged_correct": false,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [
+   "half-mile coverage of Capitol Hill matches gold",
+   "network analysis performed (graph shortest paths)"
+  ],
+  "scorer_error": false
+ }
+]

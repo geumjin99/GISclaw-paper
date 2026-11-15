@@ -1,0 +1,35 @@
+{
+ "task": 46,
+ "title": "Identify hot spots for peak-hour crashes (Brevard County, FL, 2010-2015)",
+ "output_type": "vector (road segments with Gi* z / bins) + map",
+ "required_outputs": [
+  "any .png map",
+  "selected_crash_hotspots.shp (optional file; per-segment results are checked from captured data)"
+ ],
+ "method": "Weekday crashes with CRASH_HOD 15-17 (24 746); nearest-edge snap within 1 320 ft (0.25 mi, data in US feet); crash count per road segment (all 69 531 kept); CrashRate = count / (6 * length_ft); Getis-Ord Gi* on CrashRate with the supplied network SWM (inverse network distance, keyed by UniqID), self weight = nearest-neighbour weight, no standardisation, analytical z, FDR-corrected bins.",
+ "key_parameters": {
+  "peak": "Mon-Fri, CRASH_HOD 15-17 (15-16 accepted)",
+  "snap": "1320 ft",
+  "rate": "count / (6 * Shape_Leng)",
+  "weights": "nwswm360ft.swm (network)",
+  "self_weight": "row max (esda star=True default); self weight 1 with inverse weights is degenerate and not accepted",
+  "fdr": true
+ },
+ "benchmark_defects": [
+  "'3 pm to 5 pm' is ambiguous (original SQL keeps hours 15, 16 and 17); both readings accepted.",
+  "With the SWM's inverse-distance weights (~0.003) the ArcGIS/esda default self weight of 1 makes Gi* equal to the standardised rate (r = 0.9999) - a non-spatial ranking. It is not accepted (UNVERIFIABLE when Gi* + SWM were used): it carries no spatial information.",
+  "Workflow text contains a mojibake character (in 'Select Layer By Attribute'); original code refers to 'NwSWM360ft.swm' while the file is 'nwswm360ft.swm' (case).",
+  "The benchmark publishes only an ArcPy reference script for this task; no open-source reference script is available."
+ ],
+ "checks": [
+  "required: a PNG map present",
+  "required: map not blank",
+  "required: captured peak crash table (24 746 or 16 515 rows, only weekday 15-17 h) or per-segment counts summing to it",
+  "required: per-segment count/rate column (69 531 rows) with Pearson >= 0.9 to gold count/rate",
+  "required: per-segment z-like column with Pearson >= 0.9 to a Gi(*) variant computed on the supplied network SWM",
+  "optional: FDR correction in code",
+  "optional: >= 0.5 % segments with z > 1.96",
+  "self-weight-dominated Gi* variants excluded; candidates with r >= 0.95 to the plain count/rate rejected (UNVERIFIABLE if Gi*+SWM used in that convention)",
+  "optional: map colours drawn from the Gi column"
+ ]
+}

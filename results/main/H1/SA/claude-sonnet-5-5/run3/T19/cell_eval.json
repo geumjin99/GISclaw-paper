@@ -1,0 +1,103 @@
+{
+ "cell_id": "main.H1.SA.claude-sonnet-5-5.r3.T19",
+ "task": 19,
+ "status": "ok",
+ "analytically_correct": true,
+ "scorer_error": false,
+ "checks": [
+  {
+   "name": "required output present",
+   "passed": true,
+   "value": [
+    "interploated_water_quality.png"
+   ],
+   "threshold": [
+    "interploated_water_quality.png",
+    "interpolated_water_quality.png"
+   ],
+   "required": true,
+   "note": ""
+  },
+  {
+   "name": "map not blank",
+   "passed": true,
+   "value": 45.3369070556272,
+   "threshold": ">=3 grey-level std",
+   "required": true,
+   "note": ""
+  },
+  {
+   "name": "the DRAWN map is an interpolated DO surface (Spearman >= 0.65 vs a yardstick, any orientation)",
+   "passed": true,
+   "value": 0.907,
+   "threshold": 0.65,
+   "required": true,
+   "note": "fig_ax0_image0@save00 (image extent) ~ IDW of all samples"
+  },
+  {
+   "name": "drawn values are DO in mg/L",
+   "passed": true,
+   "value": [
+    7.876,
+    6.746,
+    8.756
+   ],
+   "threshold": "mean 7.88+/-1.0, p1-p99 in [0,20]",
+   "required": true,
+   "note": "fig_ax0_image0@save00 (image extent)"
+  },
+  {
+   "name": "figure: drawn surface placed correctly on the Bay (Spearman >= 0.65 as georeferenced)",
+   "passed": true,
+   "value": 0.907,
+   "threshold": 0.65,
+   "required": false,
+   "note": "fig_ax0_image0@save00 (image extent)",
+   "kind": "figure"
+  },
+  {
+   "name": "a DO surface was computed (any captured grid, orientation-free)",
+   "passed": true,
+   "value": 0.908,
+   "threshold": null,
+   "required": false,
+   "note": ""
+  },
+  {
+   "name": "surface clipped to the Bay",
+   "passed": false,
+   "value": 0.788,
+   "threshold": 0.25,
+   "required": false,
+   "note": ""
+  },
+  {
+   "name": "deliverable files carry a CRS (uniform rule)",
+   "passed": true,
+   "value": [],
+   "threshold": "every geographic deliverable file has a CRS",
+   "required": true,
+   "note": "no geographic deliverable file written (presence is judged by the task checks)"
+  }
+ ],
+ "replay": {
+  "success": true,
+  "outputs": [
+   "interploated_water_quality.png"
+  ],
+  "events": [],
+  "blocks_ok": 3,
+  "block_outcome": [
+   "ok",
+   "ok",
+   "ok"
+  ],
+  "step_timeout_s": 900,
+  "same_outputs_as_original": true,
+  "block_mismatches": []
+ },
+ "replay_faithful": true,
+ "replay_unfaithful_reasons": [],
+ "replay_container_failure": [],
+ "emergency_files": []
+}

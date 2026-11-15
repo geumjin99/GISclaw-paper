@@ -1,0 +1,113 @@
+{
+ "cell_id": "main.H0.SA.claude-opus-5-5.r2.T29",
+ "experiment": "main",
+ "tier": "H0",
+ "arch": "SA",
+ "model": "claude-opus-5-5",
+ "run": 2,
+ "task": 29,
+ "elapsed_s": 115.1,
+ "protocol": "native",
+ "tier_config": {
+  "tools": [
+   "execute",
+   "finish"
+  ],
+  "generic": false,
+  "g1": false,
+  "g2": false,
+  "g3": false,
+  "g4": false,
+  "g5": false,
+  "g6": false,
+  "g7": false,
+  "no_dd": false,
+  "no_dk": false
+ },
+ "outputs": [
+  "arrival_time_hours_Currituck_Slide.tif",
+  "arrival_time_hours_La_Palma.tif",
+  "arrival_time_hours_Puerto_Rico_Trench.tif",
+  "profile_Currituck_Slide_to_Virginia_Beach.csv",
+  "profile_La_Palma_to_Virginia_Beach.csv",
+  "profile_Puerto_Rico_Trench_to_Virginia_Beach.csv",
+  "tsunami_arrival_time_maps.png",
+  "tsunami_path_profiles.png",
+  "tsunami_paths_densified_traveltime.gpkg",
+  "tsunami_speed_map.png",
+  "tsunami_speed_ms.tif",
+  "tsunami_travel_time_report.md",
+  "tsunami_travel_times.csv"
+ ],
+ "required_outputs": [],
+ "required_present": null,
+ "emergency_files": [],
+ "rounds": 9,
+ "self_corrections": 0,
+ "agent_stats": {
+  "rounds": 9,
+  "format_errors": 0,
+  "format_error_kinds": {},
+  "self_corrections": 0,
+  "exec_blocks": 8,
+  "exec_failed": 0,
+  "finish_rejections": 0,
+  "dedup_blocked": 0,
+  "triggers": {},
+  "checks_run": {},
+  "end_reason": "finish",
+  "empty_retries": 0,
+  "history_truncations": 0,
+  "finished": true,
+  "agent_time_s": 16.6
+ },
+ "llm_stats": {
+  "calls": 9,
+  "retries": 0,
+  "errors": 0,
+  "context_overflow": 0,
+  "empty": 0,
+  "refusals": 0,
+  "prompt_tokens": 20,
+  "completion_tokens": 9663,
+  "cached_tokens": 63033,
+  "cache_write_tokens": 19108
+ },
+ "llm_time_s": 97.5,
+ "agent_time_s": 16.6,
+ "hit_deadline": false,
+ "sandbox_events": [],
+ "inputs_intact": true,
+ "container_memory": "12g",
+ "deliverable_produced": true,
+ "config": {
+  "image": "gisclaw-exec:1.0",
+  "step_timeout_s": 300,
+  "task_wall_s": 1200,
+  "max_rounds": 50,
+  "blocked_packages": {
+   "arcpy": "Use geopandas + rasterio + shapely instead."
+  },
+  "agent": {
+   "history_tokens": 60000,
+   "max_format_errors": 15
+  }
+ },
+ "model_config": {
+  "provider": "anthropic",
+  "model_name": "claude-opus-5-5",
+  "request": {
+   "set": {
+    "max_tokens": 32000,
+    "thinking": {
+     "type": "adaptive",
+     "display": "summarized"
+    },
+    "output_config": {
+     "effort": "high"
+    }
+   }
+  },
+  "history_tokens": 700000
+ }
+}

@@ -1,0 +1,29 @@
+{
+ "task": 28,
+ "title": "Subregion interaction strength with a GridSearchCV-tuned Random Forest",
+ "output_type": "model evaluation (MSE) + tables",
+ "required_outputs": [
+  "none named by the instruction; reference writes rf_model_performance.json, rf_test_predictions.csv, subregion_interactions.csv"
+ ],
+ "method": "Sum the 5000 OD records to 2139 (Origin, Destination) pairs, attach the six socio-economic attributes of the origin and of the destination (12 features), 80/20 train/test split, GridSearchCV (5-fold, neg MSE) over RandomForestRegressor hyper-parameters, refit best model, report test MSE. Gold: test MSE 5664 (R2 -0.06; mean-only baseline 5348) - the data carry no signal.",
+ "key_parameters": {
+  "aggregation": "sum of FlowVolume per pair",
+  "features": "6 origin + 6 destination attributes",
+  "split": "test_size 0.2, random_state 42",
+  "grid": "n_estimators {100,300}, max_depth {None,10,20}, min_samples_split {2,10}, min_samples_leaf {1,4}",
+  "cv": "KFold(5, shuffle, 42)"
+ },
+ "benchmark_defects": [
+  "The data are synthetic and uninformative: FlowVolume is uniform random 1-99 independent of the attributes, so the 'interaction strength' model cannot beat a constant prediction (test R2 ~ 0); the task only tests the pipeline.",
+  "No output file is requested; the published reference script only prints the MSE.",
+  "'Aggregate the OD flow data to the subregion scale' is ambiguous: the records are already subregion pairs; aggregation means summing duplicate records per pair (2861 duplicates)."
+ ],
+ "checks": [
+  "required: a captured pair table (2139 or 2095 rows; key columns found by name or by subregion-name values) whose flow column equals the gold pair sums on >= 99 % of pairs",
+  "required: origin and destination attributes merged (>= 3 of 6 matched per side, aligned on the key columns or positionally on a captured pair table)",
+  "required: an MSE-named value (variable, file, small table wide or long; RMSE squared; train/baseline/cv excluded; ctx.stdout when available) or MSE recomputed from captured test targets/predictions within 0.8-1.5 x variance of aggregated flows; no evidence -> UNVERIFIABLE",
+  "required: a captured train/test feature matrix (10-95 % of pairs as rows) contains >= 3 attributes for both origin and destination",
+  "required: RandomForestRegressor(...) and GridSearchCV(...) called in the executed code (comments stripped) - the only evidence of the method on this signal-free data",
+  "optional: results written to pred_results"
+ ]
+}

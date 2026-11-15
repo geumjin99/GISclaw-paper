@@ -1,0 +1,180 @@
+[
+ {
+  "control": "correct_benchmark_script_iris",
+  "expected_correct": true,
+  "judged_correct": true,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [],
+  "scorer_error": false
+ },
+ {
+  "control": "correct_clip_zero_rotated",
+  "expected_correct": true,
+  "judged_correct": true,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [],
+  "scorer_error": false
+ },
+ {
+  "control": "correct_inline_where_mask_rotated",
+  "expected_correct": true,
+  "judged_correct": true,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [],
+  "scorer_error": false
+ },
+ {
+  "control": "correct_pyproj_obtran",
+  "expected_correct": true,
+  "judged_correct": true,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [],
+  "scorer_error": false
+ },
+ {
+  "control": "correct_true_latlon_pcolormesh",
+  "expected_correct": true,
+  "judged_correct": true,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [],
+  "scorer_error": false
+ },
+ {
+  "control": "correct_unmasked_rotated",
+  "expected_correct": true,
+  "judged_correct": true,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [],
+  "scorer_error": false
+ },
+ {
+  "control": "correct_unmasked_true_latlon_manual_rotation",
+  "expected_correct": true,
+  "judged_correct": true,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [],
+  "scorer_error": false
+ },
+ {
+  "control": "correct_xarray_plot_rotated",
+  "expected_correct": true,
+  "judged_correct": true,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [],
+  "scorer_error": false
+ },
+ {
+  "control": "wrong_aux_latlon_fillvalues",
+  "expected_correct": false,
+  "judged_correct": false,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [
+   "figure draws TEC at its true geographic location (plotting call evaluated)",
+   "TEC drawn as filled contours (task: 'filled contour map')"
+  ],
+  "scorer_error": false
+ },
+ {
+  "control": "wrong_electron_density",
+  "expected_correct": false,
+  "judged_correct": false,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [
+   "figure draws TEC at its true geographic location (plotting call evaluated)",
+   "TEC drawn as filled contours (task: 'filled contour map')"
+  ],
+  "scorer_error": false
+ },
+ {
+  "control": "wrong_masks_tec_but_plots_ne",
+  "expected_correct": false,
+  "judged_correct": false,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [
+   "figure draws TEC at its true geographic location (plotting call evaluated)",
+   "TEC drawn as filled contours (task: 'filled contour map')"
+  ],
+  "scorer_error": false
+ },
+ {
+  "control": "wrong_method_pcolormesh_rotated",
+  "expected_correct": false,
+  "judged_correct": false,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [
+   "TEC drawn as filled contours (task: 'filled contour map')"
+  ],
+  "scorer_error": false
+ },
+ {
+  "control": "wrong_mirrored_transform_direction",
+  "expected_correct": false,
+  "judged_correct": false,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [
+   "figure draws TEC at its true geographic location (plotting call evaluated)",
+   "TEC drawn as filled contours (task: 'filled contour map')"
+  ],
+  "scorer_error": false
+ },
+ {
+  "control": "wrong_no_coastline_background",
+  "expected_correct": false,
+  "judged_correct": false,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [
+   "coastline / geographic background drawn"
+  ],
+  "scorer_error": false
+ },
+ {
+  "control": "wrong_rotated_as_geographic",
+  "expected_correct": false,
+  "judged_correct": false,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [
+   "figure draws TEC at its true geographic location (plotting call evaluated)",
+   "TEC drawn as filled contours (task: 'filled contour map')"
+  ],
+  "scorer_error": false
+ },
+ {
+  "control": "wrong_rotatedpole_axes_platecarree_transform",
+  "expected_correct": false,
+  "judged_correct": false,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [
+   "figure draws TEC at its true geographic location (plotting call evaluated)",
+   "TEC drawn as filled contours (task: 'filled contour map')"
+  ],
+  "scorer_error": false
+ },
+ {
+  "control": "wrong_transposed_field",
+  "expected_correct": false,
+  "judged_correct": false,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [
+   "figure draws TEC at its true geographic location (plotting call evaluated)",
+   "TEC drawn as filled contours (task: 'filled contour map')"
+  ],
+  "scorer_error": false
+ }
+]

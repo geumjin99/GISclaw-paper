@@ -1,0 +1,17 @@
+{
+ "task": 31,
+ "source": "instruction: 'visualize the L-function with confidence intervals'; checks.py: any non-blank *.png (required); the L curve is read from what the figure draws and K from captured arrays, not from files",
+ "deliverables": [
+  {
+   "id": "figure",
+   "kind": "figure",
+   "patterns": ["*.png"],
+   "required": true,
+   "crs_required": false,
+   "checked_by": ["figure written (non-blank PNG)"]
+  }
+ ],
+ "not_deliverables": [
+  {"pattern": "flow_L_function.csv", "reason": "gold reference curve read via ctx.gold(); a run's file of that name is not scored"}
+ ]
+}

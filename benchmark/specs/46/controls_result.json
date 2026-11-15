@@ -1,0 +1,116 @@
+[
+ {
+  "control": "correct_binary_network_neighbours",
+  "expected_correct": true,
+  "judged_correct": true,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [],
+  "scorer_error": false
+ },
+ {
+  "control": "correct_closed_interval_1500_1700",
+  "expected_correct": true,
+  "judged_correct": true,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [],
+  "scorer_error": false
+ },
+ {
+  "control": "correct_esda_counts_1516",
+  "expected_correct": true,
+  "judged_correct": true,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [],
+  "scorer_error": false
+ },
+ {
+  "control": "correct_esda_counts_1516_gi",
+  "expected_correct": true,
+  "judged_correct": true,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [],
+  "scorer_error": false
+ },
+ {
+  "control": "correct_esda_swm_rowstd_gi",
+  "expected_correct": true,
+  "judged_correct": true,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [],
+  "scorer_error": false
+ },
+ {
+  "control": "wrong_euclidean_invdist_star",
+  "expected_correct": false,
+  "judged_correct": false,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [
+   "Gi* z-scores on the network SWM (Pearson >= 0.9 with a spatially meaningful Gi* variant)"
+  ],
+  "scorer_error": false
+ },
+ {
+  "control": "wrong_euclidean_knn",
+  "expected_correct": false,
+  "judged_correct": false,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [
+   "Gi* z-scores on the network SWM (Pearson >= 0.9 with a spatially meaningful Gi* variant)"
+  ],
+  "scorer_error": false
+ },
+ {
+  "control": "wrong_no_peak_filter",
+  "expected_correct": false,
+  "judged_correct": false,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [
+   "peak selection: weekday 15-17 h (or 15-16 h) crashes",
+   "per-segment crash count/rate matches gold (Pearson >= 0.9)"
+  ],
+  "scorer_error": false
+ },
+ {
+  "control": "wrong_points_local_moran_no_swm",
+  "expected_correct": false,
+  "judged_correct": false,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [
+   "peak selection: weekday 15-17 h (or 15-16 h) crashes",
+   "per-segment crash count/rate matches gold (Pearson >= 0.9)",
+   "Gi* z-scores on the network SWM (Pearson >= 0.9 with a spatially meaningful Gi* variant)"
+  ],
+  "scorer_error": false
+ },
+ {
+  "control": "wrong_star_selfweight1_degenerate",
+  "expected_correct": false,
+  "judged_correct": false,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [
+   "Gi* z-scores on the network SWM (Pearson >= 0.9 with a spatially meaningful Gi* variant)"
+  ],
+  "scorer_error": false
+ },
+ {
+  "control": "wrong_zscore_no_spatial",
+  "expected_correct": false,
+  "judged_correct": false,
+  "as_expected": true,
+  "ran": true,
+  "failed_checks": [
+   "Gi* z-scores on the network SWM (Pearson >= 0.9 with a spatially meaningful Gi* variant)"
+  ],
+  "scorer_error": false
+ }
+]

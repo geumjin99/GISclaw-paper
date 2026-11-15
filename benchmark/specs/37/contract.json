@@ -1,0 +1,26 @@
+{
+ "task": 37,
+ "source": "instruction: 'save the results as \"pred_results/US_heat_exposure_map.png\"'; checks.py file_exists/png_not_blank on it (required); per-county table from captured objects or output files (ctx.objects with files)",
+ "deliverables": [
+  {
+   "id": "map",
+   "kind": "figure",
+   "patterns": ["US_heat_exposure_map.png"],
+   "required": true,
+   "crs_required": false,
+   "checked_by": ["required output present", "map not blank"]
+  },
+  {
+   "id": "county_exposure_layer",
+   "kind": "vector",
+   "patterns": ["*.shp"],
+   "required": false,
+   "crs_required": true,
+   "geometry_type": ["Polygon", "MultiPolygon"],
+   "checked_by": ["per-county heat exposure matches gold (coverage>=60 %, Spearman>=0.80)", "county value is the mean (not the sum) of tweet values", "only weather-related tweets used (counties with value <= 1.5x gold)", "min-max normalised to [0, 1]", "post counts per county computed"]
+  }
+ ],
+ "not_deliverables": [
+  {"pattern": "no US_heat_exposure_map.png", "reason": "a result note string in checks.py, not a file name"}
+ ]
+}
